@@ -1,0 +1,192 @@
+html,
+body {
+    min-height: 100%;
+    min-width: 100%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue, Arial, sans-serif;
+    font-size: 15px;
+    color: #27282c;
+    margin: 0;
+    line-height: 2;
+}
+
+.navbar {
+    background-color: #27282c;
+}
+
+.navbar-nav {
+    position: absolute;
+    right: 7%;
+}
+
+.navbar-brand {
+    font-size: 1.7rem;
+}
+
+.nav-link {
+    font-size: 1.15rem;
+}
+
+.leftnav {
+    border-right: 1px solid rgba(39, 40, 44, .2);
+}
+
+.main {
+    min-height: 100%;
+}
+
+.leftnav p {
+    display: block;
+    overflow: hidden;
+    padding: 8px 0;
+    font-size: 12px;
+    margin-left: 0%;
+    padding-left: 10%;
+    margin-right: 0%;
+    margin-bottom: 0%;
+}
+
+.leftnav p.active {
+    color: white;
+    background-color: #27282c;
+    margin-left: 0%;
+    padding-left: 10%;
+    margin-right: 0%;
+}
+
+.leftnav p.active:hover {
+    background-color: #27282c;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.u {
+    border-bottom: 1px solid rgb(218, 218, 218);
+    padding-bottom: 2px;
+    color: #27282c;
+}
+
+.u:hover {
+    border-bottom: 1px solid black;
+    cursor: pointer;
+    color: #27282c;
+}
+
+.context {
+    padding-left: 3%;
+    padding-right: 10%;
+    color: #27282c;
+}
+
+@media only screen and (max-width: 600px) {
+    .context {
+        width: 90%;
+        margin: auto;
+    }
+    .leftnav {
+        display: none;
+    }
+}
+
+.marge-5 {
+    margin-top: 5%;
+}
+
+.context a {
+    color: #7f52ff;
+    border-bottom: 1px solid #7f52ff;
+    text-decoration: none;
+}
+
+.context a:hover {
+    color: #7f52ff;
+    border-bottom: 1px solid #7f52ff;
+    text-decoration: none;
+}
+
+.nav-item {
+    margin-right: 15%;
+}
+
+h2 {
+    font-size: 31px;
+    font-weight: 700;
+}
+
+.leftnav p:hover {
+    background-color: rgb(228, 228, 228);
+    cursor: pointer;
+}
+
+.compare {
+    width: 95%;
+    margin: auto;
+}
+
+tr.th {
+    border-bottom: 1px solid gray;
+}
+
+tr {
+    width: 100%;
+}
+
+td {
+    width: 50%;
+    padding-right: 5%;
+}
+
+.compare tr td ul li {
+    text-align: justify;
+}
+
+.next {
+    font-weight: 700;
+    text-align: right;
+}
+
+.next:hover {
+    cursor: pointer;
+}
+
+.compare tr th {
+    color: #7f52ff;
+}
+
+
+/* in-built terminal */
+
+.terminal {
+    width: 85%;
+    background: #f5f2f0;
+    padding: 5% 5%;
+    border-radius: 5px;
+}
+
+.terminal .h {
+    color: #0077AA;
+    font-weight: bold;
+}
+
+.terminal pre {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue, Arial, sans-serif;
+    font-size: 16px;
+}
+
+.terminal .g {
+    color: green;
+}
+
+.terminal .str {
+    color: tomato;
+}
+
+.terminal .s {
+    color: magenta;
+}
+
+.terminal .c {
+    color: green;
+}
