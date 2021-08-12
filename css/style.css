@@ -250,11 +250,13 @@ textarea {
     }
     #codepen-stats .left {
         border-right: none;
+        border-bottom: 1px solid black;
         margin-bottom: 10%;
         margin-top: 10%;
     }
     #codepen-stats .center {
         border-right: none;
+        border-bottom: 1px solid black;
         margin-bottom: 10%;
     }
 }
