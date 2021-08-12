@@ -299,3 +299,10 @@ a {
 .card:hover {
     cursor: pointer;
 }
+
+#about img,
+#blogs img {
+    width: 100%;
+    min-height: 75%;
+    height: auto;
+}
