@@ -204,6 +204,28 @@ textarea {
     border-bottom: 2px solid dodgerblue
 }
 
+#codepen-stats {
+    background-color: #f3f3f3;
+    width: 100%;
+    padding: 5%;
+    margin-top: 15%;
+    margin-bottom: 15%;
+}
+
+#codepen-stats .row {
+    width: 90%;
+    margin: auto;
+    text-align: center;
+}
+
+#codepen-stats .left {
+    border-right: 1px solid black;
+}
+
+#codepen-stats .center {
+    border-right: 1px solid black;
+}
+
 @media only screen and (max-width: 600px) {
     #social-handle {
         display: none;
@@ -225,6 +247,15 @@ textarea {
     }
     #credits {
         margin-top: 25%;
+    }
+    #codepen-stats .left {
+        border-right: none;
+        margin-bottom: 10%;
+        margin-top: 10%;
+    }
+    #codepen-stats .center {
+        border-right: none;
+        margin-bottom: 10%;
     }
 }
 
