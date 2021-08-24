@@ -425,7 +425,7 @@ a svg:hover {
 
 #solutions a svg {
     position: absolute;
-    bottom: 5%;
+    bottom: 2%;
     left: 7%;
 }
 
@@ -694,4 +694,9 @@ a svg:hover {
     .header-right {
         float: none;
     }
+}
+
+#search,
+#search-btn {
+    display: none;
 }
