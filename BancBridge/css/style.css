@@ -469,7 +469,7 @@ a svg:hover {
 
 #solutions a svg {
     position: absolute;
-    bottom: 2%;
+    bottom: 5%;
     left: 7%;
 }
 
@@ -633,6 +633,9 @@ a svg:hover {
     #solutions .card {
         min-height: 585px;
     }
+    #information .row {
+        width: 80%;
+    }
 }
 
 .sec {
@@ -782,4 +785,8 @@ a svg:hover {
         top: 15px;
         right: 35px;
     }
+}
+
+.lr {
+    text-align: center;
 }
