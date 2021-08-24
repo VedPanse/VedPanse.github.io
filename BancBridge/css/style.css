@@ -585,7 +585,7 @@ a svg:hover {
 
 @media screen and (max-width: 1500px) {
     #solutions .card {
-        min-height: 575px;
+        min-height: 585px;
     }
 }
 
