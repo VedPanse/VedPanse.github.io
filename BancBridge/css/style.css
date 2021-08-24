@@ -137,6 +137,7 @@ p {
     max-width: 300px;
     font-weight: 350;
     position: relative;
+    margin-bottom: 20px;
 }
 
 .search:hover {
@@ -719,4 +720,10 @@ a svg:hover {
     .header {
         display: block;
     }
+}
+
+.header-menu i {
+    position: absolute;
+    top: 2.5%;
+    right: 2%;
 }
