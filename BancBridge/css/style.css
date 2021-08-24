@@ -788,5 +788,6 @@ a svg:hover {
 }
 
 .lr {
-    text-align: center;
+    text-align: right;
+    padding-right: 5%;
 }
