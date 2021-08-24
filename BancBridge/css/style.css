@@ -11,6 +11,7 @@ body {
     background-color: white;
     padding: 2px 1px;
     display: none;
+    position: relative;
 }
 
 .header a {
