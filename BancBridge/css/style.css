@@ -178,7 +178,7 @@ p {
 /* COMPANY */
 
 #company-band {
-    background-image: url(https://wallpaperaccess.com/full/4528477.jpg);
+    background-image: url(../images/company-band.jpeg);
     width: 100%;
     min-height: 50%;
     max-height: 250%;
@@ -699,4 +699,10 @@ a svg:hover {
 #search,
 #search-btn {
     display: none;
+}
+
+@media screen and (max-width: 3000px) {
+    #solutions .card {
+        min-height: 700px;
+    }
 }
