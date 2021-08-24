@@ -6,6 +6,47 @@ body {
     line-height: 2;
 }
 
+.header {
+    overflow: hidden;
+    background-color: white;
+    padding: 2px 1px;
+    display: none;
+}
+
+.header a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 25px;
+}
+
+.header a:hover {
+    border: none;
+    color: #0063cc;
+}
+
+.header a.logo {
+    font-size: 20px;
+}
+
+.header-right {
+    float: right;
+}
+
+@media screen and (max-width: 500px) {
+    .header a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+    .header-right {
+        float: none;
+    }
+}
+
 p {
     font-size: 15px;
 }
@@ -656,47 +697,6 @@ a svg:hover {
     color: #b10101;
 }
 
-.header {
-    overflow: hidden;
-    background-color: white;
-    padding: 2px 1px;
-    display: none;
-}
-
-.header a {
-    float: left;
-    color: black;
-    text-align: center;
-    padding: 12px;
-    text-decoration: none;
-    font-size: 16px;
-    line-height: 25px;
-}
-
-.header a:hover {
-    border: none;
-    color: #0063cc;
-}
-
-.header a.logo {
-    font-size: 20px;
-}
-
-.header-right {
-    float: right;
-}
-
-@media screen and (max-width: 500px) {
-    .header a {
-        float: none;
-        display: block;
-        text-align: left;
-    }
-    .header-right {
-        float: none;
-    }
-}
-
 #search,
 #search-btn {
     display: none;
@@ -710,4 +710,13 @@ a svg:hover {
 
 .card-img-top {
     height: 40% !important;
+}
+
+@media screen and (max-width: 991px) {
+    .navbar {
+        display: none;
+    }
+    .header {
+        display: block;
+    }
 }
