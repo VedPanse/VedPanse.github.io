@@ -468,7 +468,7 @@ a svg:hover {
 /* EXP */
 
 #exp-band {
-    background-image: url(https://s3.us-south.cloud-object-storage.appdomain.cloud/ibv/3c46a74594bd4234be040406d966330c.jpg);
+    background-image: url(../images/exp-band.jpeg);
     width: 100%;
     min-height: 50%;
     max-height: 250%;
