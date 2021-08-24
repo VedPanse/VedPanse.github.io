@@ -247,7 +247,9 @@ p {
     }
     #experience .btn-lg,
     #join .btn-lg {
-        display: none;
+        width: 30%;
+        height: 30%;
+        right: 5%;
     }
 }
 
