@@ -109,6 +109,8 @@ function checkInConst() {
         window.location.href = "index.html"
     } else if (query.toLowerCase() === "privacy") {
         window.location.href = "privacy.html"
+    } else if (query.toLowerCase() === "news") {
+        window.location.href = "news.html"
     } else if (query.toLowerCase() === "legal") {
         window.location.href = "legal.html"
     } else if (query.toLowerCase().includes("terms of use")) {
