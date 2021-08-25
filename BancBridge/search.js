@@ -134,7 +134,7 @@ function checkInConst() {
     } else if (faq.toLowerCase().includes(query.toLowerCase())) {
         window.location.href = "faq.html"
     } else if (fastEasy.toLowerCase().includes(query.toLowerCase())) {
-        window.location.href = "fastEasy.html"
+        window.location.href = "fast-easy.html"
     } else if (fileAdaptor.toLowerCase().includes(query.toLowerCase())) {
         window.location.href = "fileAdaptor.html"
     } else if (ftp.toLowerCase().includes(query.toLowerCase())) {
