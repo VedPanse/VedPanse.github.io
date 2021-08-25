@@ -93,7 +93,7 @@ function checkInConst() {
     // Checks if query fits in any const
     if (query.toLowerCase() === "company") {
         window.location.href = "company.html"
-    } else if (query.toLowerCase().includes("products")) {
+    } else if (query.toLowerCase().includes("product")) {
         window.location.href = "products.html"
     } else if (query.toLowerCase().includes("investor")) {
         window.location.href = "investor.html"
