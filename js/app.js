@@ -65,3 +65,11 @@ document.querySelector(".iss").addEventListener("click", function() {
 document.querySelector(".workout").addEventListener("click", function() {
     window.open("https://github.com/VedPanse/Python_Advanced/blob/master/Workout%20Tracking/main.py", "_blank")
 });
+
+function openNav() {
+    document.getElementById("myNav").style.width = "50%";
+}
+
+function closeNav() {
+    document.getElementById("myNav").style.width = "0%";
+}
