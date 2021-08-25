@@ -7,10 +7,11 @@ function closeNav() {
 }
 
 let query
-
+const access = document.querySelector("#accessibility-body").textContent
 document.querySelector("#search").addEventListener("keydown", function(e) {
     if (e.keyCode === 13) {
         query = document.querySelector("#search").value
-        alert(query)
+
+        console.log(access)
     }
 })
