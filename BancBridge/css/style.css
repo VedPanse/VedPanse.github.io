@@ -702,10 +702,11 @@ a svg:hover {
     color: #b10101;
 }
 
-#search,
+
+/* #search,
 #search-btn {
     display: none;
-}
+} */
 
 @media screen and (max-width: 6000px) {
     #solutions .card {
