@@ -5,10 +5,10 @@ $(window).on('scroll', function() {
         document.querySelectorAll(".nav-link").forEach((link) => {
             link.style.color = "black";
             link.addEventListener("mouseover", function() {
-                link.style.borderBottom = "2px solid black"
+                link.style.color = "dodgerblue"
             })
             link.addEventListener("mouseout", function() {
-                link.style.borderBottom = "none"
+                link.style.color = "black"
             })
         })
         document.querySelector(".sep").style.color = "black";
@@ -25,10 +25,10 @@ document.addEventListener("scroll", function() {
         document.querySelectorAll(".nav-link").forEach((link) => {
             link.style.color = "white";
             link.addEventListener("mouseover", function() {
-                link.style.borderBottom = "2px solid white"
+                link.style.color = "dodgerblue"
             });
             link.addEventListener("mouseout", function() {
-                link.style.borderBottom = "none"
+                link.style.color = "white"
             })
         });
         document.querySelector(".sep").style.color = "white";

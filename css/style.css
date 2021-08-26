@@ -207,8 +207,7 @@ footer .row .right a:hover {
 }
 
 .nav-link:hover {
-    padding-bottom: 2px;
-    border-bottom: 2px solid white;
+    color: dodgerblue;
 }
 
 #contact input,
