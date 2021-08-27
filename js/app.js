@@ -5,7 +5,7 @@ $(window).on('scroll', function() {
         document.querySelectorAll(".nav-link").forEach((link) => {
             link.style.color = "black";
             link.addEventListener("mouseover", function() {
-                link.style.color = "dodgerblue"
+                link.style.color = "#0063cc"
             })
             link.addEventListener("mouseout", function() {
                 link.style.color = "black"
@@ -25,7 +25,7 @@ document.addEventListener("scroll", function() {
         document.querySelectorAll(".nav-link").forEach((link) => {
             link.style.color = "white";
             link.addEventListener("mouseover", function() {
-                link.style.color = "dodgerblue"
+                link.style.color = "#0063cc"
             });
             link.addEventListener("mouseout", function() {
                 link.style.color = "white"

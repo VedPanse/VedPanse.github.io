@@ -43,7 +43,7 @@ body {
 }
 
 .header a.active {
-    background-color: dodgerblue;
+    background-color: #0063cc;
     color: white;
 }
 
@@ -207,7 +207,7 @@ footer .row .right a:hover {
 }
 
 .nav-link:hover {
-    color: dodgerblue;
+    color: #0063cc;
 }
 
 #contact input,
@@ -248,12 +248,12 @@ textarea {
 }
 
 #credits a {
-    color: dodgerblue;
+    color: #0063cc;
 }
 
 #credits a:hover {
     text-decoration: none;
-    border-bottom: 2px solid dodgerblue
+    border-bottom: 2px solid #0063cc
 }
 
 #codepen-stats {
@@ -326,14 +326,14 @@ textarea {
 }
 
 .a-mid {
-    color: dodgerblue;
+    color: #0063cc;
     text-decoration: none;
 }
 
 .a-mid:hover {
-    color: dodgerblue;
+    color: #0063cc;
     text-decoration: none;
-    border-bottom: 2px solid dodgerblue;
+    border-bottom: 2px solid #0063cc;
 }
 
 u {
