@@ -23,12 +23,12 @@ $(window).on('scroll', function() {
 document.addEventListener("scroll", function() {
     if ($(window).scrollTop() === 0) {
         document.querySelectorAll(".nav-link").forEach((link) => {
-            link.style.color = "white";
+            link.style.color = "rgba(255,255,255,.5)";
             link.addEventListener("mouseover", function() {
-                link.style.color = "#0063cc"
+                link.style.color = "white"
             });
             link.addEventListener("mouseout", function() {
-                link.style.color = "white"
+                link.style.color = "rgba(255,255,255,.5)"
             })
         });
         document.querySelector(".sep").style.color = "white";
