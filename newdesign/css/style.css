@@ -314,6 +314,7 @@ textarea {
     padding-left: 2%;
     background-color: black;
     color: white;
+    border-radius: 5px;
 }
 
 .content span.active {
