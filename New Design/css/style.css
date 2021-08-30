@@ -61,7 +61,6 @@ body {
 #home {
     min-height: 100%;
     position: relative;
-    margin-top: 10%;
     background-image: url(../images/vp.png);
     background-size: cover;
     background-position: center;
@@ -162,6 +161,7 @@ body {
     width: 150px;
     height: 150px;
     position: relative;
+    z-index: 0;
 }
 
 .top-left-black {
@@ -171,6 +171,7 @@ body {
     position: absolute;
     bottom: 0%;
     right: 0%;
+    z-index: 1;
 }
 
 .contain-top-left {
@@ -191,6 +192,8 @@ body {
 .content {
     margin-left: 12%;
     width: 80%;
+    z-index: 5;
+    position: relative;
 }
 
 .context {
