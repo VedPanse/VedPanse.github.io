@@ -430,3 +430,7 @@ textarea {
         left: 50%;
     }
 }
+
+.fa-bars:hover {
+    cursor: pointer;
+}
