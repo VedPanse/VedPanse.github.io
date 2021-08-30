@@ -21,3 +21,17 @@ function openNav() {
 function closeNav() {
     document.getElementById("myNav").style.width = "0%";
 }
+
+
+$(window).on('scroll', function() {
+    if ($(window).scrollTop() >= $('.stopper').offset().top + $('.stopper').outerHeight() - window.innerHeight) {
+        document.querySelector(".header").style.backgroundColor = "dodgerblue";
+
+    }
+});
+
+document.addEventListener("scroll", function() {
+    if ($(window).scrollTop() === 0) {
+        document.querySelector(".header").style.backgroundColor = "transparent";
+    }
+})
