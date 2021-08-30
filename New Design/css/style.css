@@ -1,0 +1,320 @@
+html,
+body {
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    color: white;
+    font-family: 'Roboto';
+    line-height: 2;
+    scroll-behavior: smooth;
+}
+
+.t-bg {
+    background-color: #233EF7;
+}
+
+.t {
+    color: #233EF7;
+}
+
+.header {
+    overflow: hidden;
+    padding: 7px 5px;
+    width: 100%;
+    position: fixed;
+    background: rgb(0, 0, 0, 0.9);
+    z-index: 3;
+    top: 0%;
+    left: 0%;
+}
+
+.header a {
+    float: left;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    color: white;
+}
+
+.header a.logo {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.header-right {
+    float: right;
+}
+
+@media screen and (max-width: 500px) {
+    .header a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+    .header-right {
+        float: none;
+    }
+}
+
+#home {
+    min-height: 100%;
+    position: relative;
+    margin-top: 10%;
+    background-image: url(../images/vp.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#about,
+#skills,
+#projects,
+#docs,
+#contact {
+    min-height: 100%;
+    position: relative;
+    margin-top: 10%;
+}
+
+.header a:hover {
+    color: #233EF7;
+}
+
+.header span.active {
+    padding-bottom: 5px;
+    border-bottom: 2px solid #233EF7;
+}
+
+.dec {
+    border-left: 10px solid #233EF7;
+    padding-left: 3%;
+}
+
+.dec p {
+    font-size: 1.15rem;
+    color: rgb(221, 221, 221);
+}
+
+.dec h1 {
+    font-size: 2rem;
+}
+
+#skeleton,
+#skeleton a {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    color: white;
+    text-decoration: none;
+    padding-bottom: 5%;
+    width: 1%;
+    height: 100%;
+}
+
+#skeleton {
+    position: fixed;
+    right: 2%;
+    top: 60%;
+    z-index: 2;
+}
+
+#skeleton span.active {
+    border-left: 2px solid #233EF7;
+    padding-left: 1%;
+}
+
+.slide {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    position: absolute;
+    left: 3%;
+    top: 40%;
+    font-size: 25px;
+    transform: translate(-50%, -50%);
+}
+
+.dec p.s-w {
+    color: white;
+}
+
+.navigator {
+    position: absolute;
+    top: 85%;
+    right: 15%;
+    width: 10%;
+}
+
+.navigator a {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.low {
+    height: 15px;
+    width: 20%;
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+}
+
+.top-left-brochet {
+    width: 150px;
+    height: 150px;
+    position: relative;
+}
+
+.top-left-black {
+    background-color: black;
+    width: 140px;
+    height: 140px;
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+}
+
+.contain-top-left {
+    position: absolute;
+    top: 0%;
+    bottom: 0%;
+    z-index: 0;
+}
+
+.o-bg {
+    background-color: orange;
+}
+
+.o {
+    color: orange;
+}
+
+.content {
+    margin-left: 12%;
+    width: 80%;
+}
+
+.context {
+    margin-top: 10%;
+}
+
+p {
+    font-size: 1.15rem;
+}
+
+.r-bg {
+    background-color: orangered;
+}
+
+.r {
+    color: orangered;
+}
+
+.progress-bar-success {
+    background-color: orangered;
+}
+
+.progress {
+    height: 2px;
+    width: 80%;
+    margin-bottom: 5%;
+    background-color: black;
+}
+
+.g-bg {
+    background-color: rgb(2, 170, 2);
+}
+
+.g {
+    color: rgb(2, 170, 2);
+}
+
+#projects .card-body p {
+    text-align: justify;
+}
+
+#projects .card {
+    height: 100%;
+    background-color: black;
+    border: 1px solid white;
+}
+
+#projects .card:hover {
+    cursor: pointer;
+}
+
+#projects .card h3,
+#projects .card h2 {
+    text-align: center;
+}
+
+#projects .card h2 {
+    color: rgb(2, 170, 2);
+}
+
+.bv-bg {
+    background-color: blueviolet;
+}
+
+.bv {
+    color: blueviolet;
+}
+
+#docs h2 {
+    color: blueviolet;
+}
+
+.b-bg {
+    background-color: dodgerblue;
+}
+
+.b {
+    color: dodgerblue;
+}
+
+#contact input,
+label {
+    display: block;
+    background-color: black;
+    color: white;
+}
+
+#contact form {
+    margin: auto;
+    width: 80%;
+}
+
+#contact input {
+    width: 100%;
+    padding: 1%;
+    border-radius: 5px;
+    border: 1px solid gray;
+    margin-bottom: 5%;
+    padding-left: 2%;
+}
+
+textarea {
+    width: 100%;
+    min-height: 200px;
+    padding-left: 2%;
+    background-color: black;
+    color: white;
+}
+
+.content span.active {
+    padding-bottom: 5px;
+    border-bottom: 2px solid #233EF7;
+}
+
+.content a {
+    color: white;
+}
+
+.content a:hover {
+    text-decoration: none;
+}
+
+.overlay-t {
+    background-image: linear-gradient(to right, rgb(0, 0, 0), rgb(0, 0, 0), rgb(0, 0, 0, 0.5), rgb(0, 0, 0));
+    width: 100%;
+    height: 100%;
+}
