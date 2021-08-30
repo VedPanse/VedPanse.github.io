@@ -56,6 +56,9 @@ body {
     .header-right {
         float: none;
     }
+    #projects .card {
+        max-height: 500px;
+    }
 }
 
 #home {
@@ -239,7 +242,6 @@ p {
     height: 100%;
     background-color: black;
     border: 1px solid white;
-    max-height: 500px;
 }
 
 #projects .card:hover {
