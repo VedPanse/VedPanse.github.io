@@ -13,6 +13,13 @@ body {
     background-color: #233EF7;
 }
 
+.first {
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+}
+
 .t {
     color: #233EF7;
 }
@@ -49,26 +56,6 @@ body {
 
 .header-right {
     float: right;
-}
-
-@media screen and (max-width: 500px) {
-    .header a {
-        float: none;
-        display: block;
-        text-align: left;
-    }
-    .header-right {
-        float: none;
-    }
-    #projects .card {
-        max-height: 600px;
-    }
-    .header {
-        display: none;
-    }
-    .short {
-        display: block;
-    }
 }
 
 #home {
@@ -356,4 +343,90 @@ textarea {
     right: 5%;
     top: 50%;
     transform: translate(-50%, -50%);
+}
+
+.overlay-he {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 9;
+    top: 0;
+    right: 0;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.overlay-he a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 1rem;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.overlay-he a:hover,
+.overlay-he a:focus {
+    color: #f1f1f1;
+}
+
+.overlay-he .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 1.15rem;
+}
+
+.second {
+    position: absolute;
+    top: 75%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+}
+
+@media screen and (max-height: 450px) {
+    .overlay-he a {
+        font-size: 0.8rem;
+    }
+    .overlay-he .closebtn {
+        font-size: 1rem;
+        top: 15px;
+        right: 35px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .header a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+    .header-right {
+        float: none;
+    }
+    #projects .card {
+        max-height: 500px;
+    }
+    .header {
+        display: none;
+    }
+    .short {
+        display: block;
+    }
+    .first {
+        left: 40%;
+    }
+    .second {
+        left: 50%;
+    }
 }

@@ -12,4 +12,12 @@ function workout() {
 
 document.querySelector('.algorithms').addEventListener("click", function() {
     window.open("../algorithms/index.html", "_blank")
-})
+});
+
+function openNav() {
+    document.getElementById("myNav").style.width = "50%";
+}
+
+function closeNav() {
+    document.getElementById("myNav").style.width = "0%";
+}

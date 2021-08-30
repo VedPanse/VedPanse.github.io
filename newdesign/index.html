@@ -24,9 +24,17 @@
 
     <div class="header short">
         <a href="#home" class="logo"><span class="t">Ved</span> Panse</a>
-        <i class="fas fa-bars"></i>
+        <i class="fas fa-bars" onclick="openNav()"></i>
     </div>
-
+    <div id="myNav" class="overlay-he">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Clients</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
 
 
     <section id="home">
@@ -46,12 +54,12 @@
                 <a href="https://codepen.io/vedpanse" target="_blank"><span class="active">Cod</span>ePen</a>
                 <a href="https://github.com/vedpanse" target="_blank"><span class="active">Git</span>Hub</a>
             </section>
-            <div class="dec" style="position: absolute; top: 50%; left: 20%; transform: translate(-50%, -50%);">
+            <div class="dec first">
                 <h1>Ved Panse</h1>
                 <p>Aspiring Artificial Intelligence</p>
             </div>
 
-            <div class="dec" style="position: absolute; top: 75%; left: 30%; transform: translate(-50%, -50%);">
+            <div class="dec second">
                 <p class="s-w">vedkpanse@gmail.com</p>
             </div>
             <div class="navigator">
