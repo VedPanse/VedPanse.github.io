@@ -350,3 +350,10 @@ textarea {
     border: none;
     cursor: pointer;
 }
+
+.fa-bars {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
