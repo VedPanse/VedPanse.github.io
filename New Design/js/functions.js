@@ -9,3 +9,7 @@ function iss() {
 function workout() {
     window.open("https://github.com/VedPanse/Python_Advanced/blob/master/Workout%20Tracking/main.py", "_blank")
 }
+
+document.querySelector('.algorithms').addEventListener("click", function() {
+    window.open("../algorithms/index.html", "_blank")
+})
