@@ -46,6 +46,10 @@ function ig() {
     window.location.href = "implementing.html"
 }
 
+function dja() {
+    window.location.href = "dja.html"
+}
+
 document.getElementById("home").addEventListener("click", function() {
     home()
 })

@@ -42,142 +42,101 @@
             <p id="hash" onclick="hash()">Hash Tables</p>
             <p id="bfs" onclick="bfs()">Breadth First Search</p>
             <p id="implementing" onclick="ig()" class="active">Implementing Graphs</p>
+
+            <p id="dja" onclick="dja()">Dijkstra's Algorithm</p>
         </div>
         <div class="col-lg-9 col-md-6 context">
             <div style="margin-top: 9%;">
 
 
                 <section id="introduction-content">
-                    <h1>Breadth First Search</h1>
+                    <h1>Implementing Graphs</h1>
                     <span>Written By<span class="u"> Ved Panse</span>
                     </span><span style="color: gray; margin-left: 5%;">Last Modified: 30 June 2021</span>
                     <section class="marge-5 intro">
-                        <p>In this section of the documentation, we will be looking at breadth-first search: one of the most used algorithms in the world.
+                        <p>In this section of the documentation, we will be looking at a very easy concept called graphs, and their use in writing efficient algorithmic programs.
                         </p>
                     </section>
 
                     <section class="marge-5 algo-start">
 
-                        <h2>What is Breadth-First Search?</h2>
+                        <h2>What is a Graph?</h2>
                         <p>
-                            Breadth-first search can be described as one of those "Find the shortest distance to a restaurant" algorithms. You might have used one in Google Maps.
+                            The term "graph" used in this section is different from the graphs you might have learned in your school life as a part of Mathematics.<br><br> A more technical classification of it is done as an 'abstract data structure'.
+                            One can get confused between graphs and hash-tables quite easily.<br><br> Here's the difference:
+                        </p>
+                        <table class="compare">
+                            <tr class="th">
+                                <th>Graphs</th>
+                                <th>Hash Tables</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Graphs can establish a one-way or a two-way relationship.
+                                </td>
+                                <td>
+                                    Hash-Tables establish only a one-way relationship.
+                                </td>
+                            </tr>
+
+                        </table><br>
+                        <p>That's it. That's the only difference that should set you.</p>
+                        <br><br>
+
+
+
+                        <h2>One-Way relationship</h2>
+                        <p>
+                            Just like a hash-table, graphs can relate a key to a value. Thus, if you call out a key and print its output, you'll get the value associated with that key.<br><br> When a graph uses a one-way relationship, it is said to be
+                            an <b>undirected graph</b>.
                         </p><br><br>
 
-
-
-                        <h2>General Applications of Breadth-First Search</h2>
+                        <h2>Two-Way Relationship</h2>
                         <p>
-                            <ol>
-                                <li>
-                                    Shortest moves to victory in Chess
-                                </li>
-                                <li>
-                                    Restaurant within the closest proximity
-                                </li>
-                                <li>
-                                    Spelling filter
-                                </li>
-                            </ol>
-                        </p><br><br>
-
-                        <h2>General Example</h2>
-                        <p>
-                            Suppose you are in a cafe in New York, sipping coffee and planning your itinerary to The Statue of Liberty. Having an exhausting day, you want to shorten your itinerary to the minimum. Thus, you target the shortest walking distance to your destination.
-                            This is an application of the shortest path problem, that falls under Breadth-First search.
+                            Unlike a hash-table, the key-value pair in a graph can be used in any way. This means that you can input the key, get its associated value, and also the other way round. Such a graph is said to be a <b>directed graph</b>.
                         </p>
                         <br><br>
 
-                        <h2>How would you solve the above problem?</h2>
+                        <h2>Two-Way Relationship General Example</h2>
                         <p>
-                            Well, as a tourist to New York, it is most likely that you will be there for the first time. Thus, you will use your map to calculate your route to The Statue of Liberty.<br>
-                            <ol>
-                                <li>
-                                    Open a map (graph).
-                                </li>
-                                <li>
-                                    Calculate the shortest route using breadth-first search.
-                                </li>
-                            </ol>
+                            Two-way relationships can be seen often in our daily life. For instance, when you shake hands with your friend, he shakes hands with you back. Let's take your friend's name to be Eric. When a third-person asks you who you shook hands with, your answer
+                            would be "Eric." Similarly, if that same third-person asks Eric the same question he asked you, he would answer taking your name. <br><br>Basically, both of you would be conveying the same message:
+                            "You shook hands with Eric" and "Eric shook hands with you."<br><br>This is the perfect example of a two-way relationship.
 
                         </p><br><br>
 
-                        <h2>Graphs</h2>
-                        <p>The graphs used in this section of the documentation aren't those with the x and y axes, which you see in Mathematics.<br><br>They are made up of nodes and edges. A node can be directly or indirectly linked to multiple other nodes.
-                            The nodes that are directly connected to the selected node are called neighbor nodes.<br>
-                            <b>Note: </b>There can be only one selected node at a time.<br><br>Thus, the graphs used in this section are just a representation of how places or things are connected to one another.</p><br><br>
-
-                        <h2>Back to Breadth-First Search</h2>
-                        <p>We can say that breadth-first searches are examples of
-                            <a href="searches.html" target="_blank"> binary search</a>. The only difference is that breadth-first search algorithms use graphs to find items.
-                        </p><br><br>
-                        <h2>Breadth-First Search: How it thinks</h2>
+                        <h2>The Technical Side of Two-Way Relationships</h2>
                         <p>
-                            It systematically maps the following steps:-<br>
-                            <ol>
-                                <li>
-                                    Is there a way to achieve Node B, if the selected node is Node A?
-                                </li>
-                                <li>
-                                    If yes, what is the shortest distance between them?
-                                </li>
-                                <li>
-                                    If no, then perform recursive breadth-first searches (described below)
-                                </li>
-                            </ol>
-                        </p><br><br>
-                        <h2>Recursive Breadth-first searches</h2>
-                        <p>Suppose you work in a vacuum cleaner-producing company, but you have no idea where to start getting feedback and suggestions. Thus, you ask your friends for feedback on their vacuum cleaners.<br><br>On satisfying their suggestions,
-                            you also ask their friends for feedback and suggestions. Thus, by performing the above tasks recursively, you will achieve your goal. This is how breadth-first searches can be used recursively.
+                            In the real-time example stated above, the third person asked both you and Eric the same question. Thus, we can conclude that at least O(number of people involved) functions are required.
+                            <br><br> Above all, you'll also have to get rid of redundant code, which happens to be asking the same question to Eric and you both.
                         </p><br><br>
 
-                        <h2>Shortest Paths</h2>
+                        <h2>Worst Case Scenario</h2>
                         <p>
-                            Let's call directly connected nodes 1st-degree connections and indirectly connected nodes as 2nd-degree connections.<br><br> In the above example, your friends and you are connected with 1st-degree connections, while your friends'
-                            friends and you are connected with 2nd-degree connections.<br><br><b>Note: </b>2nd-degree connections are not possible without 1st-degree connections.
-                        </p><br><br>
-                        <h2>Queue</h2>
-                        <p>Queues are data structures that primarily function based on the order of the elements in them.<br><br>Suppose you are before your friend in a queue in a shopping mall for checking out. First, you get to check out, and only after
-                            you, your friend can check out.<br><br>Queues function on the same analogy. In a queue, you cannot pick any element. You have to follow the order to find your element. Thus, only two operations are possible when working with
-                            queuing:
-                        </p><br><br>
-                        <table class="compare">
-                            <tr class="th">
-                                <th>Enqueue</th>
-                                <th>Dequeue</th>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Adding elements to a queue
-                                </td>
-                                <td>
-                                    List/Array provided through callback function.
-                                </td>
-                            </tr>
+                            Let's say the third person gets redirected to the person with who one handshakes. In this case, he will ask Eric the question, then you. Then, he will get redirected back to Eric and this will lead to an infinite loop. This happens to be the worst-case
+                            scenario.
+                            <br><br> Thus, a proposable solution pseudocode is:-
+                        </p>
 
-                        </table><br><br>
-                        <p>Considering the example of a queue in which your friend and you are standing, you will be dequeued and searched for before your friend.<br><br>Queues are commonly attributed to the abbreviations: FIFO and LIFO.</p>
                         <br><br>
-                        <table class="compare">
-                            <tr class="th">
-                                <th>FIFO</th>
-                                <th>LIFO</th>
-                            </tr>
-                            <tr>
-                                <td>
-                                    First In First Out
-                                </td>
-                                <td>
-                                    Last In First Out.
-                                </td>
-                            </tr>
+                        <div class="terminal">
+                            <pre>
 
-                        </table>
+<span class="g">asked_list</span> = [<span class="str">"Eric"</span>, <span class="str">"Sam"</span>, <span class="str">"Tom"</span>]
 
+<span class="h">def</span> ask_question(name):
+    <span class="s">if</span> name in <span class="g">asked_list</span>:
+        print(<span class="str">"Asked already."</span>)
+    <span class="s">else</span>:
+        <span class="h">ask()</span> <span class="g"># Asks question</span>
+        <span class="g">asked_list</span>.append(name)
+</pre>
+                        </div>
                         <br><br>
                         <div style="width: 100%;">
                             <span style="text-align: left; display: inline-block;" class="next" onclick="hash()">&larr;
-                            Hash Tables</span>
-                            <span style="text-align: right; display:inline-block; position: absolute; right: 10%;" class="next" onclick="neon()">Senseless &rarr;</span>
+                                Hash Tables</span>
+                            <span style="text-align: right; display:inline-block; position: absolute; right: 10%;" class="next" onclick="dja()">Dijkstra's Algorithm &rarr;</span>
                         </div>
                     </section>
             </div>

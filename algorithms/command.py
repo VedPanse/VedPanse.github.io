@@ -29,3 +29,15 @@ def showResult(query):
         cache[query] = 1
 
     google.search(query[url])
+
+
+# Tackling worst case scenario in graphs
+
+asked_list = ["Eric", "Sam", "Tom"]
+
+def ask_question(name):
+    if name in asked_list:
+        print("Asked already.")
+    else:
+        ask() # Asks question
+        asked_list.append(name)
