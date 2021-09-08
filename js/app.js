@@ -121,7 +121,7 @@ function changeTheme() {
 
         document.querySelector("#contact").style.padding = "auto";
         document.querySelector("#contact").style.backgroundColor = "white";
-        document.querySelectorAll("input").forEach((box) => {
+        document.querySelectorAll("#contact input").forEach((box) => {
             box.style.backgroundColor = "white";
             box.style.color = "black";
         });
@@ -169,7 +169,7 @@ function changeTheme() {
         document.querySelector("#contact").style.padding = "5%";
         document.querySelector("#contact").style.backgroundColor = "black";
 
-        document.querySelectorAll("input").forEach((box) => {
+        document.querySelectorAll("#contact input").forEach((box) => {
             box.style.backgroundColor = "black";
             box.style.color = "white";
         });
