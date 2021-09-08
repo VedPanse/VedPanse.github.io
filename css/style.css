@@ -233,6 +233,7 @@ textarea {
     width: 100%;
     min-height: 200px;
     padding-left: 2%;
+    border-radius: 5px;
 }
 
 #contact {
@@ -270,14 +271,6 @@ textarea {
     text-align: center;
 }
 
-#codepen-stats .left {
-    border-right: 1px solid black;
-}
-
-#codepen-stats .center {
-    border-right: 1px solid black;
-}
-
 @media only screen and (max-width: 600px) {
     #social-handle {
         display: none;
@@ -300,17 +293,6 @@ textarea {
     #credits {
         margin-top: 25%;
     }
-    #codepen-stats .left {
-        border-right: none;
-        border-bottom: 1px solid black;
-        margin-bottom: 10%;
-        margin-top: 10%;
-    }
-    #codepen-stats .center {
-        border-right: none;
-        border-bottom: 1px solid black;
-        margin-bottom: 10%;
-    }
 }
 
 .algorithms:hover {
@@ -325,7 +307,8 @@ textarea {
     cursor: pointer;
 }
 
-.a-mid {
+
+/* .a-mid {
     color: #0063cc;
     text-decoration: none;
 }
@@ -334,6 +317,17 @@ textarea {
     color: #0063cc;
     text-decoration: none;
     border-bottom: 2px solid #0063cc;
+} */
+
+.a-mid {
+    color: #233ef7;
+    text-decoration: none;
+}
+
+.a-mid:hover {
+    color: #233ef7;
+    text-decoration: none;
+    border-bottom: 2px solid #233ef7;
 }
 
 u {
@@ -430,4 +424,8 @@ a {
 
 .fas.fa-bars:hover {
     cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #233ef7;
 }

@@ -11,11 +11,19 @@ $(window).on('scroll', function() {
                 link.style.color = "black"
             })
         })
-        document.querySelector(".sep").style.color = "black";
+
         document.querySelector(".navbar-brand").style.color = "black";
-        document.querySelectorAll(".social").forEach((icon) => {
-            icon.style.color = "black"
-        })
+        if (light) {
+            document.querySelector(".sep").style.color = "black";
+            document.querySelectorAll(".social").forEach((icon) => {
+                icon.style.color = "black"
+            })
+        } else {
+            document.querySelector(".sep").style.color = "white";
+            document.querySelectorAll(".social").forEach((icon) => {
+                icon.style.color = "white"
+            })
+        }
         document.querySelector(".navbar").style.backgroundColor = "rgb(248,249,250, 0.9)";
     }
 });
@@ -72,4 +80,103 @@ function openNav() {
 
 function closeNav() {
     document.getElementById("myNav").style.width = "0%";
+}
+
+let light = true
+
+document.querySelector("#toggle").addEventListener("click", function(e) {
+    if (light) {
+        light = false
+    } else {
+        light = true
+    }
+    changeTheme();
+})
+
+function changeTheme() {
+    if (light) {
+        document.querySelector("body").style.backgroundColor = "white";
+        document.querySelector("body").style.color = "black";
+        document.querySelector("#skills").style.backgroundColor = "#f3f3f3";
+        document.querySelectorAll(".progress-bar-success").forEach((item) => {
+            item.style.backgroundColor = "black";
+        });
+
+        document.querySelectorAll(".progress").forEach((item) => {
+            item.style.backgroundColor = "#d2d2d7";
+        });
+
+        // CARD
+
+        document.querySelectorAll(".card").forEach((item) => {
+            item.style.backgroundColor = "white";
+            item.style.border = "1px solid rgba(0,0,0,.125)";
+        });
+
+        // CODEPEN STATS
+        document.querySelector("#codepen-stats").style.backgroundColor = "#f3f3f3";
+
+
+        // CONTACT
+
+        document.querySelector("#contact").style.padding = "auto";
+        document.querySelector("#contact").style.backgroundColor = "white";
+        document.querySelectorAll("input").forEach((box) => {
+            box.style.backgroundColor = "white";
+            box.style.color = "black";
+        });
+
+        document.querySelectorAll("textarea").forEach((box) => {
+            box.style.backgroundColor = "white";
+            box.style.color = "black";
+        });
+
+    } else {
+        document.querySelectorAll(".btn-primary").forEach((item) => {
+            item.style.backgroundColor = "#233ef7";
+        })
+        document.querySelector("body").style.backgroundColor = "#1e1e1f";
+        document.querySelector("body").style.color = "white";
+        document.querySelector("#skills").style.backgroundColor = "black";
+        document.querySelectorAll(".progress-bar-success").forEach((item) => {
+            item.style.backgroundColor = "#233ef7";
+        });
+
+        document.querySelectorAll(".progress").forEach((item) => {
+            item.style.backgroundColor = "#1e1e1f";
+        });
+
+        // CARD
+
+        document.querySelectorAll(".card").forEach((item) => {
+            item.style.backgroundColor = "#1a1a1a";
+            item.style.border = "1px solid white";
+        });
+
+        // CODEPEN STATS
+        document.querySelector("#codepen-stats").style.backgroundColor = "black";
+
+        // CONTACT
+
+        document.querySelector("#contact").style.padding = "5%";
+        document.querySelector("#contact").style.backgroundColor = "black";
+
+        document.querySelectorAll("input").forEach((box) => {
+            box.style.backgroundColor = "black";
+            box.style.color = "white";
+        });
+
+        document.querySelectorAll("textarea").forEach((box) => {
+            box.style.backgroundColor = "black";
+            box.style.color = "white";
+        });
+
+        // FOOTER
+
+        document.querySelector("footer").style.backgroundColor = "black";
+        document.querySelector("footer").style.padding = "2%";
+        document.querySelectorAll("footer a").forEach((anchor) => {
+            anchor.style.color = "white";
+        })
+    }
 }
