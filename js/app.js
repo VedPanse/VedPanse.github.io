@@ -131,6 +131,14 @@ function changeTheme() {
             box.style.color = "black";
         });
 
+        // FOOTER
+
+        document.querySelector("footer").style.backgroundColor = "white";
+        document.querySelector("footer").style.padding = "2%";
+        document.querySelectorAll("footer a").forEach((anchor) => {
+            anchor.style.color = "black";
+        });
+
     } else {
         document.querySelectorAll(".btn-primary").forEach((item) => {
             item.style.backgroundColor = "#233ef7";
@@ -177,6 +185,6 @@ function changeTheme() {
         document.querySelector("footer").style.padding = "2%";
         document.querySelectorAll("footer a").forEach((anchor) => {
             anchor.style.color = "white";
-        })
+        });
     }
 }
