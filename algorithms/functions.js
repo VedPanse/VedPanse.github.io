@@ -56,4 +56,31 @@ document.getElementById("home").addEventListener("click", function() {
 
 document.querySelector(".u").addEventListener("click", function() {
     window.location.href = "../index.html"
-})
+});
+
+// let dark_mode = false
+
+// document.querySelector("body").addEventListener("keydown", function(e) {
+//     if (e.which === 27) {
+//         if (dark_mode === false) {
+//             changeToDark()
+//         } else {
+//             document.querySelector("body").style.color = "black";
+//             document.querySelector(".context").style.color = "black";
+//             document.querySelector(".u").style.color = "black";
+//             document.querySelector("body").style.backgroundColor = "white";
+//             dark_mode = false
+//         }
+//         console.log(dark_mode)
+//     }
+// });
+
+// function changeToDark() {
+//     document.querySelector("body").style.color = "#f5f5f7";
+//     document.querySelector(".context").style.color = "#f5f5f7";
+//     document.querySelector(".u").style.color = "#7f52ff";
+//     document.querySelector("body").style.backgroundColor = "black";
+//     dark_mode = true
+// }
+
+// console.log(dark_mode)
