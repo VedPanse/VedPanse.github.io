@@ -47,7 +47,11 @@
         </div>
         <div class="col-lg-9 col-md-6 context">
             <div style="margin-top: 9%;">
-
+                <div class="content-bar">
+                    <a href="#general" class="active">General Example</a>
+                    <a href="#common">Common Applications</a>
+                    <a href="#basics">Basics</a>
+                </div>
 
                 <section id="introduction-content">
                     <h1>Dijkstra's Algorithm</h1>
@@ -61,7 +65,7 @@
 
                     <section class="marge-5 algo-start">
 
-                        <h2>General Example</h2>
+                        <h2 id="general">General Example</h2>
                         <p>
                             Recall the concept of Breadth-First Search. It can be used to find the shortest find, segment by segment, but that need not be the shortest path.<br><br> For example, the shortest path that takes you to your favorite destination
                             need not be the fastest. The traffic and quality of connecting roads also matters.<br><br> This is what the breadth-first search ignores. Third perspective factors like traffic and road quality are said to be 'weights'.<br><br>                            Thus, graphs can be classified as 'weighted' and 'unweighted'.<br><br>
@@ -93,7 +97,7 @@
 
 
 
-                        <h2>Common Applications</h2>
+                        <h2 id="common">Common Applications</h2>
                         <p><b>Using unweighted graphs</b></p>
                         <p>
                             You may use unweighted graphs while going on morning jogs. You try to walk a particular distance and not walk for a specific time. Thus, only distance matters, but the weight, that is time, does not matter.
@@ -102,32 +106,33 @@
                         <p>
                             Weighted graphs are used by location service providers. Google Maps, for example, calculates the shortest, and the cheapest route (that does not cost you much time). Thus, the weight, time, is used here.
                         </p><br><br>
+                        <section id="basics">
+                            <h2>Basics of the Working of Dijkstra's Algorithm</h2>
+                            <p>
+                                Dijkstra's algorithm maps all the paths that take you from your current location to your destination. Thus, it counts all the roads that take you from A (your position) to B (your destination). Then, through its live servers (which do not happen to be
+                                related to our topic), it generates an estimate of the time it would cost you to reach B. Considering both, it maps the most perfect path for you.
+                            </p>
+                            <br><br>
 
-                        <h2>Basics of the Working of Dijkstra's Algorithm</h2>
-                        <p>
-                            Dijkstra's algorithm maps all the paths that take you from your current location to your destination. Thus, it counts all the roads that take you from A (your position) to B (your destination). Then, through its live servers (which do not happen to be
-                            related to our topic), it generates an estimate of the time it would cost you to reach B. Considering both, it maps the most perfect path for you.
-                        </p>
-                        <br><br>
+                            <h2>Working of Breadth-First Search</h2>
+                            <p>
+                                The Breadth-First search only takes into consideration the number of roads that lie between A and B. Based on that, it maps you a not-so-accurate path to reach B.<br><br>On having knowledge of both, which do you think seems
+                                more appealing? If I were you, I would say Dijkstra's Algorithm.
 
-                        <h2>Working of Breadth-First Search</h2>
-                        <p>
-                            The Breadth-First search only takes into consideration the number of roads that lie between A and B. Based on that, it maps you a not-so-accurate path to reach B.<br><br>On having knowledge of both, which do you think seems
-                            more appealing? If I were you, I would say Dijkstra's Algorithm.
+                            </p><br><br>
 
-                        </p><br><br>
-
-                        <p><b>Note: </b>Dijkstra Algorithm may seem to be a better alternative to breadth-first search, but in the long run, there are many applications of breadth-first search that cannot be replaced by Dijkstra's algorithm (one of them
-                            being unweighted graphs).</p>
-                        <br><br>
-                        <div style="width: 100%; margin-bottom: 2%">
-                            <span style="text-align: left; display: inline-block;" class="next" onclick="ig()">&larr;
+                            <p><b>Note: </b>Dijkstra Algorithm may seem to be a better alternative to breadth-first search, but in the long run, there are many applications of breadth-first search that cannot be replaced by Dijkstra's algorithm (one of them
+                                being unweighted graphs).</p>
+                            <br><br>
+                            <div style="width: 100%; margin-bottom: 2%">
+                                <span style="text-align: left; display: inline-block;" class="next" onclick="ig()">&larr;
                                 Implementing Graphs</span>
-                            <span style="text-align: right; display:inline-block; position: absolute; right: 10%;" class="next" onclick="neo()">Senseless &rarr;</span>
-                        </div>
-                    </section>
+                                <span style="text-align: right; display:inline-block; position: absolute; right: 10%;" class="next" onclick="neo()">Senseless &rarr;</span>
+                            </div>
             </div>
+            </section>
         </div>
+    </div>
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
