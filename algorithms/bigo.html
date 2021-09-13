@@ -49,9 +49,9 @@
         <div class="col-lg-9 col-md-6 context">
             <div style="margin-top: 9%;">
                 <div class="content-bar">
-                    <a href="#general" class="active">General Example</a>
-                    <a href="#common">Common Applications</a>
-                    <a href="#basics">Basics</a>
+                    <a href="#bigo" class="active">The Big O</a>
+                    <a href="#common">Applications</a>
+                    <a href="#runtime">Run Time</a>
                 </div>
 
 
@@ -65,7 +65,7 @@
                         </p>
                     </section>
 
-                    <section class="marge-5 algo-start">
+                    <section class="marge-5 algo-start" id="bigo">
 
                         <h2>The Big O</h2>
                         <p>The Big O notation is a simple method that tells you how fast a computer program runs. However, it doesn't measure the time taken by the algorithm. It denotes the number of tasks that that particular algorithm takes.<br><br> The
@@ -98,11 +98,11 @@
                         <p><em>This table measures the maximum possible guesses it may take.</em><br><br>As you can see, binary search takes very few guesses, thus making it far more efficient than simple search. However, everything has its own disadvantages.
                             As binary search follows a complicated algorithm, it increases the chances of bugs and errors. Simple search, after iterating over the complete array, reduces the chances of any such bugs and errors to a negligible extent.</p><br><br>
 
-                        <h2>Applications and need of such techniques</h2>
+                        <h2 id="common">Applications and need of such techniques</h2>
                         <p>Imagine yourself writing a program for social media websites. You have been assigned to write a program that goes through an array of all users and provides the users relevant data of the value they input in a search box. This
                             is where your search algorithm comes into play. You must consider that you are working with arrays with billions of elements in them. Thus, the speed should be fast and with minimum code.</p>
                     </section><br><br>
-                    <h2>Some Common Big O Run times</h2>
+                    <h2 id="runtime">Some Common Big O Run times</h2>
                     <p>From fastest to slowest</p>
                     <ol>
                         <li>O (log n), also known as log time. Example: Binary search.</li>
