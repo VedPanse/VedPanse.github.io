@@ -167,7 +167,8 @@ function checkInConst() {
         window.location.href = "terms.html"
     } else if (treasuryAgent.toLowerCase().includes(query.toLowerCase())) {
         window.location.href = "treasuryAgent.html"
-    } else {
-        alert("No matches found")
     }
+    // else {
+    //     alert("No matches found")
+    // }
 }
