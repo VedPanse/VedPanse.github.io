@@ -288,3 +288,7 @@ if (url.slice(url.length - 5) === "light") {
 } else if (url.slice(url.length - 4) === "dark") {
     changeToDark()
 }
+
+document.querySelector(".fas.fa-times").addEventListener("click", function() {
+    document.querySelector(".dark-notifier").style.display = "none";
+});

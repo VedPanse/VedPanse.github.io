@@ -405,16 +405,29 @@ table.linear td {
 
 .dark-notifier {
     background-color: #444444;
-    padding: 1%;
     color: white;
     position: relative;
 }
 
 .dark-notifier p {
     font-size: 13px;
+    text-align: center;
+    padding: 1%;
 }
 
-button.btn-darkMode {
+.dark-notifier i {
+    position: absolute;
+    top: 50%;
+    right: 2%;
+    transform: translate(-50%, -50%);
+}
+
+.dark-notifier i:hover {
+    cursor: pointer;
+}
+
+
+/* button.btn-darkMode {
     border-color: #07c;
     background: linear-gradient(#42a1ec, #0070c9);
     color: white;
@@ -422,4 +435,4 @@ button.btn-darkMode {
     right: 0%;
     top: 50%;
     transform: translate(-50%, -50%);
-}
+} */
