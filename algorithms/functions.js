@@ -301,6 +301,8 @@ if (url.slice(url.length - 5) === "light") {
     changeToDark()
 }
 
-document.querySelector(".fas.fa-times").addEventListener("click", function() {
-    document.querySelector(".dark-notifier").style.display = "none";
-});
+if (url.slice(url.length - 10) === "index.html") {
+    document.querySelector(".fas.fa-times").addEventListener("click", function() {
+        document.querySelector(".dark-notifier").style.display = "none";
+    });
+}
