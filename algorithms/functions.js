@@ -172,7 +172,12 @@ function changeToLight() {
             item.style.color = "black"
         });
     });
-
+    document.querySelectorAll("table.linear tr").forEach((item) => {
+        item.style.border = "1px solid black";
+    });
+    document.querySelectorAll("table.linear td").forEach((item) => {
+        item.style.borderRight = "1px solid black";
+    });
 
     dark_mode = false
 }
@@ -235,6 +240,13 @@ function changeToDark() {
             item.style.color = "white"
         });
         // Secluded end //
+    });
+
+    document.querySelectorAll("table.linear tr").forEach((item) => {
+        item.style.border = "1px solid white";
+    });
+    document.querySelectorAll("table.linear td").forEach((item) => {
+        item.style.borderRight = "1px solid white";
     });
 
 
