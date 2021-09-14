@@ -436,3 +436,9 @@ table.linear td {
     top: 50%;
     transform: translate(-50%, -50%);
 } */
+
+@media screen and (max-width: 600px) {
+    .loc-band {
+        display: none;
+    }
+}
