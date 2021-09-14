@@ -49,8 +49,8 @@ function sorting() {
 function hash() {
     darkRelocation();
     window.location.href = "hash-tables.html" + pass_down;
-
 }
+
 
 function bfs() {
     darkRelocation();
@@ -119,6 +119,10 @@ document.querySelector("body").addEventListener("keydown", function(e) {
 });
 
 function changeToLight() {
+    document.querySelectorAll(".overlay-content a").forEach((item) => {
+        item.style.color = "white";
+    });
+
     document.querySelector("body").style.color = "black";
     document.querySelector(".context").style.color = "black";
     document.querySelector(".u").style.color = "black";
