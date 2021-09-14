@@ -88,8 +88,10 @@ document.querySelector(".u").addEventListener("click", function() {
 document.addEventListener("scroll", function() {
     if ($(window).scrollTop() === 0) {
         document.querySelector(".loc-band").style.top = "inherit";
+        document.querySelector(".loc-band").style.borderBottom = "none"
     } else {
         document.querySelector(".loc-band").style.top = "0%";
+        document.querySelector(".loc-band").style.borderBottom = "1px solid gray"
     }
 });
 
