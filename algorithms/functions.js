@@ -1,61 +1,93 @@
 function getStarted() {
-    window.location.href = "get-started.html"
+    darkRelocation();
+    window.location.href = "get-started.html" + pass_down;
+
 }
 
 function introduction() {
-    window.location.href = "introduction.html"
+    darkRelocation();
+    window.location.href = "introduction.html" + pass_down;
+
 }
 
 function searches() {
-    window.location.href = "searches.html"
+    darkRelocation();
+    window.location.href = "searches.html" + pass_down;
+
 }
 
 function bigo() {
-    window.location.href = "bigo.html"
+    darkRelocation();
+    window.location.href = "bigo.html" + pass_down;
+
 }
 
 function arrays_lists() {
-    window.location.href = "arrays_lists.html"
+    darkRelocation();
+    window.location.href = "arrays_lists.html" + pass_down;
+
 }
 
 function recursion() {
-    window.location.href = "recursion.html"
+    darkRelocation();
+    window.location.href = "recursion.html" + pass_down;
+
 }
 
 function stacking() {
-    window.location.href = "stacking.html"
+    darkRelocation();
+    window.location.href = "stacking.html" + pass_down;
+
 }
 
 function sorting() {
-    window.location.href = "sorting.html"
+    darkRelocation();
+    window.location.href = "sorting.html" + pass_down;
+
 }
 
 function hash() {
-    window.location.href = "hash-tables.html"
+    darkRelocation();
+    window.location.href = "hash-tables.html" + pass_down;
+
 }
 
 function bfs() {
-    window.location.href = "breadth-first.html"
+    darkRelocation();
+    window.location.href = "breadth-first.html" + pass_down;
+
 }
 
 function home() {
-    window.location.href = "index.html"
+    darkRelocation();
+    window.location.href = "index.html" + pass_down;
+
 }
 
 function ig() {
-    window.location.href = "implementing.html"
+    darkRelocation();
+    window.location.href = "implementing.html" + pass_down;
+
 }
 
 function dja() {
-    window.location.href = "dja.html"
+    darkRelocation();
+    window.location.href = "dja.html" + pass_down;
+
 }
 
 function idja() {
-    window.location.href = "implement-dja.html"
+    darkRelocation();
+
+    window.location.href = "implement-dja.html" + pass_down;
+
 }
 
 function dynamic() {
-    window.location.href = "dynamic.html"
+    darkRelocation();
+
+    window.location.href = "dynamic.html" + pass_down;
+
 }
 
 document.getElementById("home").addEventListener("click", function() {
@@ -80,65 +112,68 @@ document.querySelector("body").addEventListener("keydown", function(e) {
         if (dark_mode === false) {
             changeToDark()
         } else {
-            document.querySelector("body").style.color = "black";
-            document.querySelector(".context").style.color = "black";
-            document.querySelector(".u").style.color = "black";
-            document.querySelector("body").style.backgroundColor = "white";
-            document.querySelector(".leftnav").style.borderRight = "1px solid rgba(39, 40, 44, .2)";
-            document.querySelectorAll(".terminal").forEach((item) => {
-                item.style.backgroundColor = "#f5f2f0";
-            })
-            document.querySelectorAll("pre").forEach((item) => {
-                item.style.color = "black";
-            });
-            document.querySelectorAll(".content-bar .active").forEach((item) => {
-                item.style.color = "black";
-                item.style.borderLeft = "2px solid black"
-            });
-            document.querySelectorAll(".leftnav .active").forEach((item) => {
-                item.style.color = "white";
-                item.style.borderLeft = "none"
-            });
-
-            document.querySelectorAll(".leftnav p").forEach((item) => {
-                item.addEventListener("mouseover", function() {
-                    item.style.backgroundColor = "rgb(228, 228, 228)";
-                });
-                item.addEventListener("mouseout", function() {
-                    if (item.classList.contains("active")) {
-                        item.style.backgroundColor = "#27282c";
-                    } else {
-                        item.style.backgroundColor = "transparent";
-                    }
-                });
-            });
-
-            document.querySelectorAll(".content-bar a").forEach((item) => {
-                item.addEventListener("mouseover", function() {
+            function changeToLight() {
+                document.querySelector("body").style.color = "black";
+                document.querySelector(".context").style.color = "black";
+                document.querySelector(".u").style.color = "black";
+                document.querySelector("body").style.backgroundColor = "white";
+                document.querySelector(".leftnav").style.borderRight = "1px solid rgba(39, 40, 44, .2)";
+                document.querySelectorAll(".terminal").forEach((item) => {
+                    item.style.backgroundColor = "#f5f2f0";
+                })
+                document.querySelectorAll("pre").forEach((item) => {
                     item.style.color = "black";
                 });
-                item.addEventListener("mouseout", function() {
-                    if (item.classList.contains("active")) {
+                document.querySelectorAll(".content-bar .active").forEach((item) => {
+                    item.style.color = "black";
+                    item.style.borderLeft = "2px solid black"
+                });
+                document.querySelectorAll(".leftnav .active").forEach((item) => {
+                    item.style.color = "white";
+                    item.style.borderLeft = "none"
+                });
+
+                document.querySelectorAll(".leftnav p").forEach((item) => {
+                    item.addEventListener("mouseover", function() {
+                        item.style.backgroundColor = "rgb(228, 228, 228)";
+                    });
+                    item.addEventListener("mouseout", function() {
+                        if (item.classList.contains("active")) {
+                            item.style.backgroundColor = "#27282c";
+                        } else {
+                            item.style.backgroundColor = "transparent";
+                        }
+                    });
+                });
+
+                document.querySelectorAll(".content-bar a").forEach((item) => {
+                    item.addEventListener("mouseover", function() {
                         item.style.color = "black";
-                    } else {
-                        item.style.color = "gray";
-                    }
+                    });
+                    item.addEventListener("mouseout", function() {
+                        if (item.classList.contains("active")) {
+                            item.style.color = "black";
+                        } else {
+                            item.style.color = "gray";
+                        }
+                    });
                 });
-            });
 
-            document.querySelector(".loc-band").style.backgroundColor = "rgb(245, 245, 247, 0.8)";
-            document.querySelectorAll(".loc-band a").forEach((item) => {
-                item.style.color = "black";
-                item.addEventListener("mouseout", function() {
-                    item.style.color = "black"
+                document.querySelector(".loc-band").style.backgroundColor = "rgb(245, 245, 247, 0.8)";
+                document.querySelectorAll(".loc-band a").forEach((item) => {
+                    item.style.color = "black";
+                    item.addEventListener("mouseout", function() {
+                        item.style.color = "black"
+                    });
                 });
-            });
 
 
-            dark_mode = false
+                dark_mode = false
+            }
+            // console.log(dark_mode)
         }
-        // console.log(dark_mode)
     }
+    changeToLight()
 });
 
 function changeToDark() {
@@ -235,4 +270,20 @@ function openNav() {
 
 function closeNav() {
     document.getElementById("myNav").style.width = "0%";
+}
+let pass_down
+
+function darkRelocation() {
+    if (dark_mode) {
+        pass_down = "#dark"
+    } else {
+        pass_down = "#light"
+    }
+}
+
+const url = document.URL
+if (url.slice(url.length - 5) === "light") {
+    changeToLight()
+} else if (url.slice(url.length - 4) === "dark") {
+    changeToDark()
 }
