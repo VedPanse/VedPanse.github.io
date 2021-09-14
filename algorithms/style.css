@@ -24,10 +24,17 @@ body {
 
 .navbar-brand {
     font-size: 18px;
+    color: white;
 }
 
 .nav-link {
     font-size: 14px;
+    color: white;
+}
+
+.navbar-brand:hover,
+.nav-link:hover {
+    color: white;
 }
 
 .leftnav {
