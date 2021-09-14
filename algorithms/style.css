@@ -36,6 +36,7 @@ body {
 
 .main {
     min-height: 100%;
+    margin-top: 2%;
 }
 
 .leftnav p {
@@ -236,11 +237,13 @@ td {
 }
 
 .loc-band {
-    background-color: white;
+    background-color: #F5F5F7;
     color: black;
     width: 100%;
-    padding: 0.1% 2%;
+    padding: 0.5% 2%;
     font-size: 14px;
+    position: fixed;
+    z-index: 9;
 }
 
 .loc-band .a {
@@ -250,4 +253,10 @@ td {
 .loc-band a {
     color: black;
     display: inline;
+    margin-right: 0.5%;
+}
+
+.loc-band a:hover {
+    color: #7f52ff;
+    text-decoration: none;
 }

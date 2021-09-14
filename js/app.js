@@ -46,7 +46,7 @@ document.addEventListener("scroll", function() {
         });
         document.querySelector(".navbar").style.backgroundColor = "transparent";
     }
-})
+});
 
 document.querySelectorAll(".algorithms").forEach((item) => {
     item.addEventListener("click", () => {

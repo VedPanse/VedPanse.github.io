@@ -84,3 +84,11 @@ document.querySelector(".u").addEventListener("click", function() {
 // }
 
 // console.log(dark_mode)
+
+document.addEventListener("scroll", function() {
+    if ($(window).scrollTop() === 0) {
+        document.querySelector(".loc-band").style.top = "inherit";
+    } else {
+        document.querySelector(".loc-band").style.top = "0%";
+    }
+});
