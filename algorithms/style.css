@@ -11,7 +11,10 @@ body {
 }
 
 .navbar {
-    background-color: #27282c;
+    /* background-color: #27282c; */
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: saturate(180%) blur(20px);
+    padding: 0.1% 2%;
 }
 
 .navbar-nav {
@@ -20,11 +23,11 @@ body {
 }
 
 .navbar-brand {
-    font-size: 1.7rem;
+    font-size: 18px;
 }
 
 .nav-link {
-    font-size: 1.15rem;
+    font-size: 14px;
 }
 
 .leftnav {
@@ -230,4 +233,21 @@ td {
 
 #introduction-content {
     width: 90%;
+}
+
+.loc-band {
+    background-color: white;
+    color: black;
+    width: 100%;
+    padding: 0.1% 2%;
+    font-size: 14px;
+}
+
+.loc-band .a {
+    color: #7f52ff;
+}
+
+.loc-band a {
+    color: black;
+    display: inline;
 }
