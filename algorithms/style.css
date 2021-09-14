@@ -328,8 +328,9 @@ td {
     position: relative;
     top: 25%;
     width: 100%;
-    text-align: center;
+    text-align: left;
     margin-top: 20px;
+    padding-left: 5%;
 }
 
 .overlay-nav a {
@@ -362,4 +363,8 @@ td {
         top: 15px;
         right: 35px;
     }
+}
+
+.overlay-nav .active {
+    color: white;
 }
