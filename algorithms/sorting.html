@@ -31,10 +31,10 @@
     <div class="loc-band">
         <a href="#introduction-content">Sorting Algorithms&nbsp;&nbsp; <i class="fas fa-chevron-right"></i></a>
         <a href="#sorting">What are sorting algorithms?&nbsp;&nbsp; <i class="fas fa-chevron-right"></i></a>
-        <a href="#sorting">Introduction to Selection Sort&nbsp;&nbsp; <i class="fas fa-chevron-right"></i></a>
-        <a href="#sorting">Introduction to Quick Sort&nbsp;&nbsp; <i class="fas fa-chevron-right"></i></a>
-        <a href="#sorting">Merge Sort Sort&nbsp;&nbsp; <i class="fas fa-chevron-right"></i></a>
-        <a href="#sorting">Average Case VS Worst Case&nbsp;&nbsp; <i class="fas fa-chevron-right"></i></a>
+        <a href="#selection">Introduction to Selection Sort&nbsp;&nbsp; <i class="fas fa-chevron-right"></i></a>
+        <a href="#quick">Introduction to Quick Sort&nbsp;&nbsp; <i class="fas fa-chevron-right"></i></a>
+        <a href="#merge">Merge Sort Sort&nbsp;&nbsp; <i class="fas fa-chevron-right"></i></a>
+        <a href="#case">Average Case VS Worst Case</a>
     </div>
     <div class="row main">
         <div class="leftnav col-lg-3 col-md-6">
@@ -57,11 +57,11 @@
             <div style="margin-top: 9%;">
                 <div class="content-bar">
                     <a href="#sorting" class="active">Sorting Algorithms</a>
-                    <a href="#common">Types</a>
-                    <a href="#basics">Selection Sort</a>
-                    <a href="#basics">Quick Sort</a>
-                    <a href="#basics">Merge Sort</a>
-                    <a href="#basics">Cases</a>
+                    <a href="#types">Types</a>
+                    <a href="#selection">Selection Sort</a>
+                    <a href="#quick">Quick Sort</a>
+                    <a href="#merge">Merge Sort</a>
+                    <a href="#case">Cases</a>
                 </div>
 
 
@@ -74,7 +74,7 @@
                         </p>
                     </section>
 
-                    <section class="marge-5 algo-start">
+                    <section class="marge-5 algo-start" id="sorting">
 
                         <h2>What are sorting algorithms?</h2>
                         <p>Suppose you are given a list and an array, each containing billions of elements. You are assigned to sort all the elements in alphabetical order. To maximize your program, you use an algorithm that gets you the output in the minimum
@@ -83,7 +83,7 @@
 
 
 
-                        <h2>What are different types of sorting algorithms?</h2>
+                        <h2 id="types">What are different types of sorting algorithms?</h2>
                         <p>In this documentation, we will be broadly classifying the sorting algorithms into two parts:
                             <br>
                             <ol>
@@ -96,13 +96,13 @@
                             </ol>
                         </p><br><br>
 
-                        <h2>Introduction to Selection Sort</h2>
+                        <h2 id="selection">Introduction to Selection Sort</h2>
                         <p>
                             This algorithm is neat-looking, but not necessarily fast. In this documentation, we will be focussing on Quick Sort algorithms.
                         </p>
                         <br><br>
 
-                        <h2>Introduction to Quick Sort</h2>
+                        <h2 id="quick">Introduction to Quick Sort</h2>
                         <p>
                             Quicksort is a well-known recursive technique used to solve problems. It is a type of Divide-and-Conquer Technique (D&C). It is a sorting algorithm and a much faster one as compared to selection sort. It can be solved in the following two ways:<br>
                             <ol>
@@ -131,7 +131,7 @@
                             </ul>
                         </p><br><br>
 
-                        <h2>Merge Sort</h2>
+                        <h2 id="merge">Merge Sort</h2>
                         <p>This is another sorting algorithm, with a big O notation of O(n log n). Much faster! Quicksort is a tricky case. If we consider the worst-case scenario, quicksort would take O(n^2) time. Thus, this case of quicksort is as slow
                             as the selection sort.</p><br><br>
                         <h2>Merge Sort vs Quicksort</h2>
@@ -163,7 +163,7 @@
                         </div>
 
                         <br><br>
-                        <h2>Average Case VS Worst Case</h2>
+                        <h2 id="case">Average Case VS Worst Case</h2>
                         <p>You might also be wondering what the average cases and worst cases are. This would require us to ponder over back to our sorting algorithm where we had chosen a pivot (to be the first element of the array). </p>
 
                         <table class="compare">
