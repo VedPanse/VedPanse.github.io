@@ -92,3 +92,11 @@ document.addEventListener("scroll", function() {
         document.querySelector(".loc-band").style.top = "0%";
     }
 });
+
+function openNav() {
+    document.getElementById("myNav").style.width = "50%";
+}
+
+function closeNav() {
+    document.getElementById("myNav").style.width = "0%";
+}
