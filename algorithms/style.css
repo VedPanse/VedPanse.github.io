@@ -99,6 +99,19 @@ h1 {
     margin-top: 5%;
 }
 
+
+/* .context a {
+    color: #7f52ff;
+    border-bottom: 1px solid #7f52ff;
+    text-decoration: none;
+}
+
+.context a:hover {
+    color: #7f52ff;
+    border-bottom: 1px solid #7f52ff;
+    text-decoration: none;
+} */
+
 .context a {
     color: #7f52ff;
     border-bottom: 1px solid #7f52ff;
@@ -245,10 +258,6 @@ td {
     position: fixed;
     z-index: 9;
     backdrop-filter: blur(40px);
-}
-
-.loc-band .a {
-    color: #7f52ff;
 }
 
 .loc-band a {
