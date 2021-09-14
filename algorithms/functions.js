@@ -112,69 +112,70 @@ document.querySelector("body").addEventListener("keydown", function(e) {
         if (dark_mode === false) {
             changeToDark()
         } else {
-            function changeToLight() {
-                document.querySelector("body").style.color = "black";
-                document.querySelector(".context").style.color = "black";
-                document.querySelector(".u").style.color = "black";
-                document.querySelector("body").style.backgroundColor = "white";
-                document.querySelector(".leftnav").style.borderRight = "1px solid rgba(39, 40, 44, .2)";
-                document.querySelectorAll(".terminal").forEach((item) => {
-                    item.style.backgroundColor = "#f5f2f0";
-                })
-                document.querySelectorAll("pre").forEach((item) => {
-                    item.style.color = "black";
-                });
-                document.querySelectorAll(".content-bar .active").forEach((item) => {
-                    item.style.color = "black";
-                    item.style.borderLeft = "2px solid black"
-                });
-                document.querySelectorAll(".leftnav .active").forEach((item) => {
-                    item.style.color = "white";
-                    item.style.borderLeft = "none"
-                });
-
-                document.querySelectorAll(".leftnav p").forEach((item) => {
-                    item.addEventListener("mouseover", function() {
-                        item.style.backgroundColor = "rgb(228, 228, 228)";
-                    });
-                    item.addEventListener("mouseout", function() {
-                        if (item.classList.contains("active")) {
-                            item.style.backgroundColor = "#27282c";
-                        } else {
-                            item.style.backgroundColor = "transparent";
-                        }
-                    });
-                });
-
-                document.querySelectorAll(".content-bar a").forEach((item) => {
-                    item.addEventListener("mouseover", function() {
-                        item.style.color = "black";
-                    });
-                    item.addEventListener("mouseout", function() {
-                        if (item.classList.contains("active")) {
-                            item.style.color = "black";
-                        } else {
-                            item.style.color = "gray";
-                        }
-                    });
-                });
-
-                document.querySelector(".loc-band").style.backgroundColor = "rgb(245, 245, 247, 0.8)";
-                document.querySelectorAll(".loc-band a").forEach((item) => {
-                    item.style.color = "black";
-                    item.addEventListener("mouseout", function() {
-                        item.style.color = "black"
-                    });
-                });
-
-
-                dark_mode = false
-            }
-            // console.log(dark_mode)
+            changeToLight()
+                // console.log(dark_mode)
         }
     }
-    changeToLight()
 });
+
+function changeToLight() {
+    document.querySelector("body").style.color = "black";
+    document.querySelector(".context").style.color = "black";
+    document.querySelector(".u").style.color = "black";
+    document.querySelector("body").style.backgroundColor = "white";
+    document.querySelector(".leftnav").style.borderRight = "1px solid rgba(39, 40, 44, .2)";
+    document.querySelectorAll(".terminal").forEach((item) => {
+        item.style.backgroundColor = "#f5f2f0";
+    })
+    document.querySelectorAll("pre").forEach((item) => {
+        item.style.color = "black";
+    });
+    document.querySelectorAll(".content-bar .active").forEach((item) => {
+        item.style.color = "black";
+        item.style.borderLeft = "2px solid black"
+    });
+    document.querySelectorAll(".leftnav .active").forEach((item) => {
+        item.style.color = "white";
+        item.style.borderLeft = "none"
+    });
+
+    document.querySelectorAll(".leftnav p").forEach((item) => {
+        item.addEventListener("mouseover", function() {
+            item.style.backgroundColor = "rgb(228, 228, 228)";
+        });
+        item.addEventListener("mouseout", function() {
+            if (item.classList.contains("active")) {
+                item.style.backgroundColor = "#27282c";
+            } else {
+                item.style.backgroundColor = "transparent";
+            }
+        });
+    });
+
+    document.querySelectorAll(".content-bar a").forEach((item) => {
+        item.addEventListener("mouseover", function() {
+            item.style.color = "black";
+        });
+        item.addEventListener("mouseout", function() {
+            if (item.classList.contains("active")) {
+                item.style.color = "black";
+            } else {
+                item.style.color = "gray";
+            }
+        });
+    });
+
+    document.querySelector(".loc-band").style.backgroundColor = "rgb(245, 245, 247, 0.8)";
+    document.querySelectorAll(".loc-band a").forEach((item) => {
+        item.style.color = "black";
+        item.addEventListener("mouseout", function() {
+            item.style.color = "black"
+        });
+    });
+
+
+    dark_mode = false
+}
 
 function changeToDark() {
     document.querySelector("body").style.color = "#f5f5f7";

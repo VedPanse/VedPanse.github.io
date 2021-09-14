@@ -402,3 +402,24 @@ table.linear td {
     border-right: 1px solid black;
     padding-left: 2%;
 }
+
+.dark-notifier {
+    background-color: #444444;
+    padding: 1%;
+    color: white;
+    position: relative;
+}
+
+.dark-notifier p {
+    font-size: 13px;
+}
+
+button.btn-darkMode {
+    border-color: #07c;
+    background: linear-gradient(#42a1ec, #0070c9);
+    color: white;
+    position: absolute;
+    right: 0%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
