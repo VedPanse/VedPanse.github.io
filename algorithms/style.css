@@ -237,13 +237,14 @@ td {
 }
 
 .loc-band {
-    background-color: #F5F5F7;
+    background-color: rgb(245, 245, 247, 0.8);
     color: black;
     width: 100%;
     padding: 0.5% 2%;
     font-size: 14px;
     position: fixed;
     z-index: 9;
+    backdrop-filter: blur(40px);
 }
 
 .loc-band .a {
