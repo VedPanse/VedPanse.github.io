@@ -58,10 +58,10 @@
         </div>
     </div>
     <div class="loc-band">
-        <a href="#introduction-content">Dijkstra's Algorithm&nbsp;&nbsp; <i class="fas fa-chevron-right"></i></a>
-        <a href="#common">Applications&nbsp;&nbsp; <i class="fas fa-chevron-right"></i></a>
-        <a href="#basics">Basics of working&nbsp;&nbsp; <i class="fas fa-chevron-right"></i></a>
-        <a href="#bfs-c">Breadth First Search</a>
+        <a href="#introduction-content">Dynamic Programming&nbsp;&nbsp; <i class="fas fa-chevron-right"></i></a>
+        <a href="#general">The Problem&nbsp;&nbsp; <i class="fas fa-chevron-right"></i></a>
+        <a href="#common">The Solution&nbsp;&nbsp; <i class="fas fa-chevron-right"></i></a>
+        <a href="#suitcase">The Suitcase Problem</a>
     </div>
     <div class="row main">
         <div class="leftnav col-lg-3 col-md-6">
@@ -86,9 +86,9 @@
         <div class="col-lg-9 col-md-6 context">
             <div style="margin-top: 9%;">
                 <div class="content-bar">
-                    <a href="#general" class="active">General Example</a>
-                    <a href="#common">Common Applications</a>
-                    <a href="#basics">Basics</a>
+                    <a href="#general" class="active">The Problem</a>
+                    <a href="#common">The Solution</a>
+                    <a href="#suitcase">The Suitcase Problem</a>
                 </div>
 
                 <section id="introduction-content">
@@ -97,16 +97,16 @@
                     </span><span style="color: gray; margin-left: 5%;">Last Modified: 30 June 2021</span>
                     <section class="marge-5 intro">
                         <p>
-                            In this section of the documentation, we will be taking a look at the applications of Dijkstra's Algorithm.
+                            In this section of the documentation, we will be learning about dynamic programming.
                         </p>
                     </section>
 
                     <section class="marge-5 algo-start">
 
-                        <h2 id="general">Negative Weight Edges</h2>
+                        <h2 id="general">The Problem</h2>
                         <p>
-                            Recall weights from Dijkstra's Algorithm. All the weights that we studied were the costs that you'll need to be to reach from one node to other. But, what if you'll get paid for reaching B from A?<br><br>Practically thinking,
-                            that would be the cheapest path from A to B since you will be getting, let's say, $2.<br><br>But, Dijkstra's Algorithm doesn't work with negative weight edges. Thus, it is one of the drawbacks of Dijkstra's Algorithm.
+                            Imagine that you are going on a world tour. Seems pretty pleasant, right? Well, it may not be. Suppose you are permitted to take only one suitcase with you for the trip.<br><br>For airplane boarding, the maximum weight of your
+                            suitcase must be 67 pounds. So, the problem is that you will have to take items whose sum of weight should be less than 50 pounds. Also, you will have to take the maximum number of items that you can.
                         </p>
                         <!-- </p>
                         <table class="compare">
@@ -136,33 +136,48 @@
 
 
 
-                        <h2 id="common">Using Dijkstra's Algorithm</h2>
+                        <h2 id="common">The Solution</h2>
 
                         <p>
-                            Let us look at a general outline of Dijkstra's Algorithm.
+                            Dynamic programming is the method of approaching problems. The concept of dynamic programming deals with breaking the given problems and solving all of them step-by-step.
+                            <br><br>This concept may seem complicated; but with time, it becomes easier to solve them.
                         </p><br><br>
-                        <div class="terminal">
-                            <pre>
-remaining_nodes <span class="e">=</span> [<span class="s">node1</span>, <span class="s">node2</span>, <span class="s">node3</span>] <span class="c"># Nodes that are remaining to be processed</span>
 
-<span class="h">while</span> len(remaining_nodes) <span class="e">!=</span> 0: <span class="c"># Condition to check if the remaining_nodes still has any item or not</span>
-    node <span class="e">=</span> <span class="p">min</span>(remaining_nodes) <span class="c"># Gets minimum of remaining_nodes</span>
-    cost <span class="e">=</span> costs[node]
-    neighbors <span class="e">=</span> <span class="p">graph</span>[node]
-    <span class="h">for</span> <span class="s">n</span> <span class="h">in</span> neighbors.keys(): <span class="c"># Iterate through all the neighbors of the node</span>
-        new_cost <span class="e">=</span> cost + neighbors
-        <span class="h">if</span> costs[<span class="s">n</span>] <span class="e">></span> new_cost: <span class="c"># Get the cheapest of tours from neighbor to neighbor</span>
-            costs[<span class="s">n</span>] <span class="e">=</span> new_cost <span class="c"># Update the cost of the node.</span>
-            parents[<span class="s">n</span>] <span class="e">=</span> node
-    remaining_nodes.<span class="p">pop</span>(node) <span class="c"># Remove this node from remaining nodes.</span>
-    node <span class="e">=</span> <span class="p">min</span>(remaining_nodes) <span class="c"># Get another node and continue the while loop</span>
-</pre>
-                        </div><br><br>
+                        <h2 id="suitcase">The Suitcase Problem</h2>
+                        <p>
+                            It turns out that dynamic programming can help you solve this problem. Let's take this step-by-step. We'll use a grid to better understand this. Let's say that following are the items that you want to take along with you for the trip.
+                        </p>
 
-                        <br><br>
+                        <table class="linear">
+                            <tr>
+                                <td>Shirts</td>
+                                <td>10 pounds</td>
+                            </tr>
+                            <tr>
+                                <td>Jeans</td>
+                                <td>15 pounds</td>
+                            </tr>
+                            <tr>
+                                <td>Navigation devices</td>
+                                <td>10 pounds</td>
+                            </tr>
+                            <tr>
+                                <td>Power bank</td>
+                                <td>5 pounds</td>
+                            </tr>
+                            <tr>
+                                <td>Laptop</td>
+                                <td>5 pounds</td>
+                            </tr>
+                            <tr>
+                                <td>Other items</td>
+                                <td>10 pounds</td>
+                            </tr>
+                        </table><br><br>
+                        <p>Let us fill in the Shirts' row first.</p><br><br>
                         <div style="width: 100%; margin-bottom: 2%">
                             <span style="text-align: left; display: inline-block;" class="next" onclick="idja()">&larr;
-Implementing Dijkstra's Algorithm</span>
+                                Implementing Dijkstra's Algorithm</span>
                             <span style="text-align: right; display:inline-block; position: absolute; right: 10%;" class="next" onclick="neo()">Senseless &rarr;</span>
                         </div>
             </div>

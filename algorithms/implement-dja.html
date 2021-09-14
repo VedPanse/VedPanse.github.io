@@ -58,10 +58,9 @@
         </div>
     </div>
     <div class="loc-band">
-        <a href="#introduction-content">Dijkstra's Algorithm&nbsp;&nbsp; <i class="fas fa-chevron-right"></i></a>
-        <a href="#common">Applications&nbsp;&nbsp; <i class="fas fa-chevron-right"></i></a>
-        <a href="#basics">Basics of working&nbsp;&nbsp; <i class="fas fa-chevron-right"></i></a>
-        <a href="#bfs-c">Breadth First Search</a>
+        <a href="#introduction-content">Implementing Dijkstra's Algorithm&nbsp;&nbsp; <i class="fas fa-chevron-right"></i></a>
+        <a href="#negative">Negative weight edges&nbsp;&nbsp; <i class="fas fa-chevron-right"></i></a>
+        <a href="#using">Using Dijkstra's Algorithm</a>
     </div>
     <div class="row main">
         <div class="leftnav col-lg-3 col-md-6">
@@ -87,9 +86,8 @@
         <div class="col-lg-9 col-md-6 context">
             <div style="margin-top: 9%;">
                 <div class="content-bar">
-                    <a href="#general" class="active">General Example</a>
-                    <a href="#common">Common Applications</a>
-                    <a href="#basics">Basics</a>
+                    <a href="#negative" class="active">Negative weight edges</a>
+                    <a href="#using">Using Dijkstra's Algorithm</a>
                 </div>
 
                 <section id="introduction-content">
@@ -104,7 +102,7 @@
 
                     <section class="marge-5 algo-start">
 
-                        <h2 id="general">Negative Weight Edges</h2>
+                        <h2 id="negative">Negative Weight Edges</h2>
                         <p>
                             Recall weights from Dijkstra's Algorithm. All the weights that we studied were the costs that you'll need to be to reach from one node to other. But, what if you'll get paid for reaching B from A?<br><br>Practically thinking,
                             that would be the cheapest path from A to B since you will be getting, let's say, $2.<br><br>But, Dijkstra's Algorithm doesn't work with negative weight edges. Thus, it is one of the drawbacks of Dijkstra's Algorithm.
@@ -137,7 +135,7 @@
 
 
 
-                        <h2 id="common">Using Dijkstra's Algorithm</h2>
+                        <h2 id="using">Using Dijkstra's Algorithm</h2>
 
                         <p>
                             Let us look at a general outline of Dijkstra's Algorithm.
@@ -164,7 +162,7 @@ remaining_nodes <span class="e">=</span> [<span class="s">node1</span>, <span cl
                         <div style="width: 100%; margin-bottom: 2%">
                             <span style="text-align: left; display: inline-block;" class="next" onclick="dja()">&larr;
 Dijkstra's Algorithm</span>
-                            <span style="text-align: right; display:inline-block; position: absolute; right: 10%;" class="next" onclick="neo()">Senseless &rarr;</span>
+                            <span style="text-align: right; display:inline-block; position: absolute; right: 10%;" class="next" onclick="dynamic()">Dynamic Programming &rarr;</span>
                         </div>
             </div>
             </section>
