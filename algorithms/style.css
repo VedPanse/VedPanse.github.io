@@ -441,4 +441,7 @@ table.linear td {
     .loc-band {
         display: none;
     }
+    .dark-notifier {
+        display: none;
+    }
 }
