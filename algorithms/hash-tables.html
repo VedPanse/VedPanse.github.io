@@ -29,8 +29,13 @@
         </div>
     </nav>
     <div class="loc-band">
-        <a href="#">Algorithms Explained&nbsp;&nbsp; <i class="fas fa-chevron-right"></i></a>
-        <a href="#">Why this documentation?</a>
+        <a href="#introduction-content">Hash Tables&nbsp;&nbsp; <i class="fas fa-chevron-right"></i></a>
+        <a href="#hash-table">What is a hash table?&nbsp;&nbsp; <i class="fas fa-chevron-right"></i></a>
+        <a href="#hash-functions">Hash Functions&nbsp;&nbsp; <i class="fas fa-chevron-right"></i></a>
+        <a href="#caching">Caching&nbsp;&nbsp; <i class="fas fa-chevron-right"></i></a>
+        <a href="#collisions">Collisions&nbsp;&nbsp; <i class="fas fa-chevron-right"></i></a>
+        <a href="#performance">Performance&nbsp;&nbsp; <i class="fas fa-chevron-right"></i></a>
+        <a href="#load-factor">Load Factor</a>
     </div>
     <div class="row main">
         <div class="leftnav col-lg-3 col-md-6">
@@ -52,9 +57,12 @@
         <div class="col-lg-9 col-md-6 context">
             <div style="margin-top: 9%;">
                 <div class="content-bar">
-                    <a href="#general" class="active">General Example</a>
-                    <a href="#common">Common Applications</a>
-                    <a href="#basics">Basics</a>
+                    <a href="#hash-table" class="active">Hash Tables</a>
+                    <a href="#hash-functions">Hash Functions</a>
+                    <a href="#caching">Caching</a>
+                    <a href="#collisions">Collisions</a>
+                    <a href="#performance">Performance</a>
+                    <a href="#load-factor">Load Factor</a>
                 </div>
 
 
@@ -67,7 +75,7 @@
                         </p>
                     </section>
 
-                    <section class="marge-5 algo-start">
+                    <section class="marge-5 algo-start" id="hash-table">
 
                         <h2>What is a hash table?</h2>
                         <p>
@@ -79,7 +87,7 @@
 
 
 
-                        <h2>Hash Functions</h2>
+                        <h2 id="hash-functions">Hash Functions</h2>
                         <p>A hash function is a function in which you input a string and get back a number.<br><br>A hash function matches a string to a number. You may think that there are no desirable patterns of numbers that get associated with a string.
                             However, there are two conditions.<br>
                             <ol>
@@ -144,7 +152,7 @@
 <span class="h">checkVote</span>(<span class="str">'Tom'</span>)
 </pre>
                         </div><br><br>
-                        <h2>Caching</h2>
+                        <h2 id="caching">Caching</h2>
                         <p>Caching can be considered as an example of hash tables too. Caching is just as simple as making the client-side devices (customer's devices) memorize the data that they search over and over again. For example, if you search "Java"
                             over and over again in Google, you may get either of the results:</p>
                         <ul>
@@ -173,12 +181,12 @@
     <span class="h">google</span>.<span class="g">search</span>(query[url])
 </pre>
                         </div><br><br>
-                        <h2>Collisions</h2>
+                        <h2 id="collisions">Collisions</h2>
                         <p>Collisions occur when two keys get assigned the same slot in the array. The name "Adrienne" in our hash table may overwrite "Adrian" in the array. A common solution to prevent such collisions is by using linked lists in that hash
                             table. But, this would slow down its speed.</p><br><br>
 
 
-                        <h2>Performance of Hash Tables</h2>
+                        <h2 id="performance">Performance of Hash Tables</h2>
                         <p>Hash tables take O(1) time, which means that it is constant. Thus, its performance doesn't depend on how large a hash table is. A hash table with 1 billion elements will produce output just as fast as another hash table with 1
                             element.
                         </p><br><br>
@@ -197,7 +205,7 @@
                             </ul>
                         </p><br><br>
 
-                        <h2>Load Factor</h2>
+                        <h2 id="load-factor">Load Factor</h2>
                         <p>The load factor can be calculated by dividing the number of items in a hash table by the total number of slots. Thus, it calculates the number of slots occupied in a given array.<br><br>The best-case scenario is when the load factor
                             is less than 1. It would imply that each item in the array has at least 1 slot to itself. The worst-case scenario is when the load factor is more than 1. It would imply that not all items in an array have an entire slot to
                             themselves.

@@ -29,8 +29,11 @@
         </div>
     </nav>
     <div class="loc-band">
-        <a href="#">Algorithms Explained&nbsp;&nbsp; <i class="fas fa-chevron-right"></i></a>
-        <a href="#">Why this documentation?</a>
+        <a href="#introduction-content">Breadth First Search&nbsp;&nbsp; <i class="fas fa-chevron-right"></i></a>
+        <a href="#what">What is Breadth-First Search?&nbsp;&nbsp; <i class="fas fa-chevron-right"></i></a>
+        <a href="#graphs">Graphs&nbsp;&nbsp; <i class="fas fa-chevron-right"></i></a>
+        <a href="#shortest">Shortest Paths&nbsp;&nbsp; <i class="fas fa-chevron-right"></i></a>
+        <a href="#queue">Queue</a>
     </div>
     <div class="row main">
         <div class="leftnav col-lg-3 col-md-6">
@@ -52,9 +55,10 @@
         <div class="col-lg-9 col-md-6 context">
             <div style="margin-top: 9%;">
                 <div class="content-bar">
-                    <a href="#general" class="active">General Example</a>
-                    <a href="#common">Common Applications</a>
-                    <a href="#basics">Basics</a>
+                    <a href="#what" class="active">Breadth First Search</a>
+                    <a href="#graphs">Graphs</a>
+                    <a href="#shortest">Shortest Paths</a>
+                    <a href="#queue">Queue</a>
                 </div>
 
 
@@ -67,7 +71,7 @@
                         </p>
                     </section>
 
-                    <section class="marge-5 algo-start">
+                    <section class="marge-5 algo-start" id="what">
 
                         <h2>What is Breadth-First Search?</h2>
                         <p>
@@ -112,7 +116,7 @@
 
                         </p><br><br>
 
-                        <h2>Graphs</h2>
+                        <h2 id="graphs">Graphs</h2>
                         <p>The graphs used in this section of the documentation aren't those with the x and y axes, which you see in Mathematics.<br><br>They are made up of nodes and edges. A node can be directly or indirectly linked to multiple other nodes.
                             The nodes that are directly connected to the selected node are called neighbor nodes.<br>
                             <b>Note: </b>There can be only one selected node at a time.<br><br>Thus, the graphs used in this section are just a representation of how places or things are connected to one another.</p><br><br>
@@ -141,12 +145,12 @@
                             you also ask their friends for feedback and suggestions. Thus, by performing the above tasks recursively, you will achieve your goal. This is how breadth-first searches can be used recursively.
                         </p><br><br>
 
-                        <h2>Shortest Paths</h2>
+                        <h2 id="shortest">Shortest Paths</h2>
                         <p>
                             Let's call directly connected nodes 1st-degree connections and indirectly connected nodes as 2nd-degree connections.<br><br> In the above example, your friends and you are connected with 1st-degree connections, while your friends'
                             friends and you are connected with 2nd-degree connections.<br><br><b>Note: </b>2nd-degree connections are not possible without 1st-degree connections.
                         </p><br><br>
-                        <h2>Queue</h2>
+                        <h2 id="queue">Queue</h2>
                         <p>Queues are data structures that primarily function based on the order of the elements in them.<br><br>Suppose you are before your friend in a queue in a shopping mall for checking out. First, you get to check out, and only after
                             you, your friend can check out.<br><br>Queues function on the same analogy. In a queue, you cannot pick any element. You have to follow the order to find your element. Thus, only two operations are possible when working with
                             queuing:

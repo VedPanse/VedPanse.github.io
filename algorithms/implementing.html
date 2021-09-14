@@ -29,8 +29,10 @@
         </div>
     </nav>
     <div class="loc-band">
-        <a href="#">Algorithms Explained&nbsp;&nbsp; <i class="fas fa-chevron-right"></i></a>
-        <a href="#">Why this documentation?</a>
+        <a href="#introduction-content">Implementing Graphs&nbsp;&nbsp; <i class="fas fa-chevron-right"></i></a>
+        <a href="#what">What is a graph?&nbsp;&nbsp; <i class="fas fa-chevron-right"></i></a>
+        <a href="#relationships">Relationships&nbsp;&nbsp; <i class="fas fa-chevron-right"></i></a>
+        <a href="#worst-case">Worst-Case scenario</a>
     </div>
     <div class="row main">
         <div class="leftnav col-lg-3 col-md-6">
@@ -53,9 +55,9 @@
         <div class="col-lg-9 col-md-6 context">
             <div style="margin-top: 9%;">
                 <div class="content-bar">
-                    <a href="#general" class="active">General Example</a>
-                    <a href="#common">Common Applications</a>
-                    <a href="#basics">Basics</a>
+                    <a href="#what" class="active">Graphs</a>
+                    <a href="#relationships">Relationships</a>
+                    <a href="#worst-case">Worst-Case scenario</a>
                 </div>
 
 
@@ -70,7 +72,7 @@
 
                     <section class="marge-5 algo-start">
 
-                        <h2>What is a Graph?</h2>
+                        <h2 id="what">What is a Graph?</h2>
                         <p>
                             The term "graph" used in this section is different from the graphs you might have learned in your school life as a part of Mathematics.<br><br> A more technical classification of it is done as an 'abstract data structure'.
                             One can get confused between graphs and hash-tables quite easily.<br><br> Here's the difference:
@@ -95,7 +97,7 @@
 
 
 
-                        <h2>One-Way relationship</h2>
+                        <h2 id="relationships">One-Way relationship</h2>
                         <p>
                             Just like a hash-table, graphs can relate a key to a value. Thus, if you call out a key and print its output, you'll get the value associated with that key.<br><br> When a graph uses a one-way relationship, it is said to be
                             an <b>undirected graph</b>.
@@ -121,7 +123,7 @@
                             <br><br> Above all, you'll also have to get rid of redundant code, which happens to be asking the same question to Eric and you both.
                         </p><br><br>
 
-                        <h2>Worst Case Scenario</h2>
+                        <h2 id="worst-case">Worst Case Scenario</h2>
                         <p>
                             Let's say the third person gets redirected to the person with who one handshakes. In this case, he will ask Eric the question, then you. Then, he will get redirected back to Eric and this will lead to an infinite loop. This happens to be the worst-case
                             scenario.
