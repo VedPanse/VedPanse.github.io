@@ -54,6 +54,10 @@ function idja() {
     window.location.href = "implement-dja.html"
 }
 
+function dynamic() {
+    window.location.href = "dynamic.html"
+}
+
 document.getElementById("home").addEventListener("click", function() {
     home()
 });
