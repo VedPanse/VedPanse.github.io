@@ -163,14 +163,14 @@
                         <div class="terminal">
                             <pre>
 
-<span class="g">asked_list</span> = [<span class="str">"Eric"</span>, <span class="str">"Sam"</span>, <span class="str">"Tom"</span>]
+asked_list = [<span class="s">"Eric"</span>, <span class="s">"Sam"</span>, <span class="s">"Tom"</span>]
 
 <span class="h">def</span> ask_question(name):
-    <span class="s">if</span> name in <span class="g">asked_list</span>:
+    <span class="h">if</span> name <span class="h">in</span> <span class="g">asked_list</span>:
         print(<span class="str">"Asked already."</span>)
-    <span class="s">else</span>:
-        <span class="h">ask()</span> <span class="g"># Asks question</span>
-        <span class="g">asked_list</span>.append(name)
+    <span class="h">else</span>:
+        ask() <span class="c"># Asks question</span>
+        asked_list.<span class="p">append</span>(name)
 </pre>
                         </div>
                         <br><br>

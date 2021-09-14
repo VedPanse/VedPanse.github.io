@@ -105,12 +105,12 @@
                         <div class="terminal">
                             <pre>
 <span class="h">def</span> greet(name):
-    print(<span class="g">f</span><span class="str">"hello, {name}!"</span>)
+    print(<span class="p">f</span><span class="str">"hello, {name}!"</span>)
     <span class="h">greet2</span>(name)
     print(<span class="str">"getting ready to say bye..."</span>)
 
 <span class="h">def</span> greet2(name):
-    print(<span class="g">f</span><span class="str">"How are you {name}?"</span>)
+    print(<span class="p">f</span><span class="str">"How are you {name}?"</span>)
 
     <span class="h">def</span> bye():
         print(<span class="str">"ok bye!"</span>)
@@ -120,12 +120,12 @@
 
 
 <span class="h">def</span> fact(x): #fact -> factorial
-    <span class="s">if</span> x == 1:
-        <span class="g">return</span> <span class="str">1</span>
-    <span class="s">else</span>:
-        <span class="g">return</span> <span class="str">x * fact(x-1)</span>
+    <span class="h">if</span> x <span class="e">==</span> 1:
+        return <span class="str">1</span>
+    <span class="h">else</span>:
+        return <span class="str">x * fact(x-1)</span>
 
-print(<span class="str">fact(12)</span>)
+print(fact(<span class="s">12</span>))
 
 </pre>
                         </div>

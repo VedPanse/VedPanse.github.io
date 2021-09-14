@@ -152,10 +152,10 @@
                         <p>Some common use cases are the built-in phonebooks in your mobile.</p>
                         <div class="terminal">
                             <pre>
-    <span class="g">phone_book</span> = {
-        <span class="str">"John Doe"</span>: 5816609820,
-        <span class="str">"Jane Doe"</span>: 4842344680,
-        <span class="str">"Mom"</span>: 4155673579
+phone_book = {
+        <span class="str">"John Doe"</span>: <span class="s">5816609820</span>,
+        <span class="str">"Jane Doe"</span>: <span class="s">4842344680</span>,
+        <span class="str">"Mom"</span>: <span class="s">4155673579</span>
     }
 </pre>
                         </div><br><br>
@@ -167,18 +167,18 @@
 
                         <div class="terminal">
                             <pre>
-<span class="g">voted</span> = { }
+voted = { }
 
 <span class="h">def</span> checkVote(name):
-    <span class="s">if</span> name in <span class="h">voted.keys()</span>:
-        print(<span class="g">f</span><span class="str">"Kick {name} out!"</span>)
-    <span class="s">else</span>:
-        <span class="g">voted</span>[name] = 1
+    <span class="h">if</span> name <span class="h">in</span> voted.keys():
+        print(<span class="p">f</span><span class="str">"Kick {name} out!"</span>)
+    <span class="h">else</span>:
+        voted<span class="s">[name]</span> = 1
         print(<span class="str">"Welcome the new voter"</span>)
 
-<span class="h">checkVote</span>(<span class="str">'John'</span>)
-<span class="h">checkVote</span>(<span class="str">'Tom'</span>)
-<span class="h">checkVote</span>(<span class="str">'Tom'</span>)
+checkVote(<span class="str">'John'</span>)
+checkVote(<span class="str">'Tom'</span>)
+checkVote(<span class="str">'Tom'</span>)
 </pre>
                         </div><br><br>
                         <h2 id="caching">Caching</h2>
@@ -196,18 +196,18 @@
                         <div class="terminal">
                             <pre>
 
-<span class="g">cache</span> = { }
+cache = { }
 
 <i><span class="c"># Query is the question/data that you typed in the search bar.</span></i>
 
 <span class="h">def</span> showResult(query):
-    <span class="s">if</span> query in cache.keys():
-        <span class="g">cache</span>[query] += 1
-    <span class="s">else</span>:
-        <span class="g">cache</span>[query] = 1
+    <span class="h">if</span> query <span class="h">in</span> cache.keys():
+        cache</span>[<span class="s">query</span>] += 1
+    <span class="h">else</span>:
+        cache[<span class="s">query</span>] = 1
 
 <span class="c"># google.search() is the search algorithm for google to navigate you to your result page.<br>That has not been defined here.</span>
-    <span class="h">google</span>.<span class="g">search</span>(query[url])
+google.<span class="g">search</span>(query[url])
 </pre>
                         </div><br><br>
                         <h2 id="collisions">Collisions</h2>

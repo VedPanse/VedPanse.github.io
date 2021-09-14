@@ -202,19 +202,23 @@ td {
 }
 
 .terminal .g {
-    color: green;
+    color: #669900;
 }
 
 .terminal .str {
-    color: tomato;
+    color: #669900;
+}
+
+.terminal .e {
+    color: #9A6E3A;
 }
 
 .terminal .s {
-    color: magenta;
+    color: #990055;
 }
 
 .terminal .c {
-    color: green;
+    color: #708090;
 }
 
 .content-bar {
@@ -378,4 +382,8 @@ td {
     .main {
         margin-top: 35%;
     }
+}
+
+.terminal .p {
+    color: #dd4a68;
 }
