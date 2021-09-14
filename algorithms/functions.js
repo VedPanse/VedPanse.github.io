@@ -50,9 +50,13 @@ function dja() {
     window.location.href = "dja.html"
 }
 
+function idja() {
+    window.location.href = "implement-dja.html"
+}
+
 document.getElementById("home").addEventListener("click", function() {
     home()
-})
+});
 
 document.querySelector(".u").addEventListener("click", function() {
     window.location.href = "../index.html"
