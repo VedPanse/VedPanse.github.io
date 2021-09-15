@@ -17,7 +17,13 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="dark-notifier">
+        <p>This documentation is available in two different themes. Press <b>"Esc"</b> to toggle between modes.</p>
+        <button onclick="changeToDark()" class="btn btn-darkMode">Dark</button>
+        <button onclick="changeToLight()" class="btn btn-lightMode">Light</button>
+        <span><i class="fas fa-times" onclick="closeDarkNotifier();"></i></span>
+    </div>
+    <nav class="navbar navbar-expand-lg">
         <a class="navbar-brand" href="index.html">Algorithms Explained</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
