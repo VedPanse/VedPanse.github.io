@@ -97,6 +97,7 @@ function changeTheme() {
     if (light) {
         document.querySelector("body").style.backgroundColor = "white";
         document.querySelector("body").style.color = "black";
+        document.querySelector(".navbar").style.backgroundColor = "background-color: rgb(255, 255, 255, 0.2)";
         document.querySelector("#skills").style.backgroundColor = "#f3f3f3";
         document.querySelectorAll(".progress-bar-success").forEach((item) => {
             item.style.backgroundColor = "black";
@@ -140,6 +141,7 @@ function changeTheme() {
         });
 
     } else {
+        document.querySelector(".navbar").style.backgroundColor = "background-color: rgb(0, 0, 0, 0.2)";
         document.querySelectorAll(".btn-primary").forEach((item) => {
             item.style.backgroundColor = "#233ef7";
         })

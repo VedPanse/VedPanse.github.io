@@ -71,6 +71,9 @@ body {
     width: 100%;
     position: fixed;
     z-index: 2;
+    padding: 0%;
+    backdrop-filter: blur(5px);
+    background-color: rgb(255, 255, 255, 0.2);
 }
 
 .navbar-nav {
