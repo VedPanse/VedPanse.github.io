@@ -39,6 +39,7 @@ body {
 
 .leftnav {
     border-right: 1px solid rgba(39, 40, 44, .2);
+    max-width: 20%;
 }
 
 .main {
