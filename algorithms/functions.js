@@ -110,10 +110,10 @@ let dark_mode = false
 document.querySelector("body").addEventListener("keydown", function(e) {
     if (e.which === 27) {
         if (dark_mode === false) {
-            changeToDark()
+            changeToDark();
         } else {
-            changeToLight()
-                // console.log(dark_mode)
+            changeToLight();
+            // console.log(dark_mode)
         }
     }
 });
@@ -310,10 +310,11 @@ if (url.slice(url.length - 5) === "light") {
 }
 
 function closeDarkNotifier() {
-    document.querySelector(".dark-notifier").style.display = "none";
+    // document.querySelector(".dark-notifier").style.display = "none";
+
 }
 
 
 if (url.slice(url.length - 10) === "index.html") {
-    document.querySelector(".fas.fa-times").addEventListener("click", closeDarkNotifier())
+    // document.querySelector(".fas.fa-times").addEventListener("click", closeDarkNotifier())
 }

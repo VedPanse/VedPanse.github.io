@@ -427,7 +427,7 @@ table.linear td {
 
 button.btn-darkMode {
     border-color: #07c;
-    background: linear-gradient(#42a1ec, #0070c9);
+    background-color: #233EF7;
     color: white;
     position: absolute;
     right: 2%;
@@ -446,7 +446,7 @@ button.btn-darkMode {
 
 button.btn-lightMode {
     border-color: #07c;
-    background: linear-gradient(#42a1ec, #0070c9);
+    background-color: #233EF7;
     color: white;
     position: absolute;
     right: 7%;
