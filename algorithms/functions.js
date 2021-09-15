@@ -145,7 +145,11 @@ function changeToLight() {
 
     document.querySelectorAll(".leftnav p").forEach((item) => {
         item.addEventListener("mouseover", function() {
-            item.style.backgroundColor = "rgb(228, 228, 228)";
+            if (item.classList.contains("active")) {
+                item.style.backgroundColor = "#27282c"
+            } else {
+                item.style.backgroundColor = "rgb(228, 228, 228)";
+            }
         });
         item.addEventListener("mouseout", function() {
             if (item.classList.contains("active")) {
@@ -305,8 +309,11 @@ if (url.slice(url.length - 5) === "light") {
     changeToDark()
 }
 
+function closeDarkNotifier() {
+    document.querySelector(".dark-notifier").style.display = "none";
+}
+
+
 if (url.slice(url.length - 10) === "index.html") {
-    document.querySelector(".fas.fa-times").addEventListener("click", function() {
-        document.querySelector(".dark-notifier").style.display = "none";
-    });
+    document.querySelector(".fas.fa-times").addEventListener("click", closeDarkNotifier())
 }

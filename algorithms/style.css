@@ -411,7 +411,6 @@ table.linear td {
 
 .dark-notifier p {
     font-size: 13px;
-    text-align: center;
     padding: 1%;
 }
 
@@ -426,16 +425,15 @@ table.linear td {
     cursor: pointer;
 }
 
-
-/* button.btn-darkMode {
+button.btn-darkMode {
     border-color: #07c;
     background: linear-gradient(#42a1ec, #0070c9);
     color: white;
     position: absolute;
-    right: 0%;
+    right: 2%;
     top: 50%;
     transform: translate(-50%, -50%);
-} */
+}
 
 @media screen and (max-width: 600px) {
     .loc-band {
@@ -444,4 +442,14 @@ table.linear td {
     .dark-notifier {
         display: none;
     }
+}
+
+button.btn-lightMode {
+    border-color: #07c;
+    background: linear-gradient(#42a1ec, #0070c9);
+    color: white;
+    position: absolute;
+    right: 15%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
