@@ -114,7 +114,7 @@
 <script>
     var url = document.URL;
     var video = url.substring(url.length - 4);
-    document.querySelectorAll("source").forEach((item) => {
+    document.querySelectorAll("video source").forEach((item) => {
         item.src = "High Jump/" + video + ".mp4";
     });
 </script>
