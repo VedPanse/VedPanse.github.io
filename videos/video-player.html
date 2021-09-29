@@ -16,7 +16,6 @@
     <link rel="stylesheet" href="style.css">
 
     <link rel="shortcut icon" type="image/jpg" href="images/favicon.ico" />
-
     <title>Ved Panse | Video Archives</title>
 </head>
 
@@ -47,17 +46,17 @@
 
     <div class="container">
         <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
-            <div class="col" onclick="redirectVideo()">
+            <div class="col">
 
-                <img src="High Jump/PIC 1.jpeg">
+                <img src="High Jump/PIC 1.jpeg" class="pic1">
 
             </div>
             <div class="col">
 
-                <img src="bg.jpeg">
+                <img src="bg.jpeg" class="pic2">
             </div>
             <div class="col">
-                <img src="bg.jpeg">
+                <img src="bg.jpeg" class="pic3">
             </div>
         </div>
     </div>
@@ -65,15 +64,15 @@
         <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
             <div class="col">
 
-                <img src="bg.jpeg">
+                <img src="bg.jpeg" class="pic4">
 
             </div>
             <div class="col">
 
-                <img src="bg.jpeg">
+                <img src="bg.jpeg" class="pic5">
             </div>
             <div class="col">
-                <img src="bg.jpeg">
+                <img src="bg.jpeg" class="pic6">
             </div>
         </div>
     </div>
@@ -103,7 +102,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-    <script src="video.js"></script>
+
 </body>
+<script>
+    document.querySelectorAll(".col img").forEach((items) => {
+        items.addEventListener("click", function(e) {
+            var classes = items.classList;
+            var url = 'play.html#' + classes;
+            window.open(url, "_blank")
+        });
+    });
+</script>
 
 </html>
