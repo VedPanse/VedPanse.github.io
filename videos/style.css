@@ -73,3 +73,10 @@ footer .row .right a:hover {
 #archive-starter .content p {
     font-size: 1.2rem;
 }
+
+.container {
+    color: black;
+    width: 100%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
