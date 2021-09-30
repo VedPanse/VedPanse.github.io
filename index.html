@@ -237,15 +237,6 @@
             cursor: pointer;
         }
         
-        section#contact button {
-            border-radius: 40px;
-            padding-left: 30px;
-            padding-right: 30px;
-            padding-top: 7px;
-            padding-bottom: 7px;
-            font-size: 1.15rem;
-        }
-        
         .blog-blush:hover {
             cursor: pointer;
         }
@@ -303,6 +294,13 @@
         a {
             text-decoration: none;
         }
+        
+        .btn-primary {
+            border-radius: 40px;
+            font-weight: 300;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
     </style>
 </head>
 
@@ -344,7 +342,8 @@
                 <div class="col-lg-4 col-md-4">
                     <p>My name is Ved Panse. I am a young, passionate web designer and I wish to pursue expertise in AI. I was introduced to the basics of computers at a very young age and I can't let go the interest.</p><br>
                     <p>I have built premium websites and made open-source contributions on GitHub and CodePen. Also, I have had internships with companies like BancBridge and Xceed Imagination which included working with clients like WellsFargo bank and
-                        Magna International. I look forward to convert my hobby and passion into my career.</p>
+                        Magna International. I look forward to convert my hobby and passion into my career.</p><br>
+                    <button class="btn btn-primary" onclick="themeChange()">Download CV</button>
                 </div>
                 <div class="col-lg-8 col-md-8 bg-img">
                 </div>
@@ -468,7 +467,7 @@
                         <input name="email" id="email" aria-required="true" required type="email">
                         <label for="message">Message *</label>
                         <textarea name="message" id="message" aria-required="true" required type="text"></textarea><br><br>
-                        <button class="btn btn-lg btn-primary" type="submit">Submit</button>
+                        <button class="btn btn-primary" type="submit">Submit</button>
                     </form>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6">
