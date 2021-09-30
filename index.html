@@ -301,6 +301,27 @@
             padding-left: 20px;
             padding-right: 20px;
         }
+        
+        @media screen and (max-width: 400px) {
+            .collapse .navbar-nav {
+                background-color: rgba(207, 207, 207, 0.5);
+                backdrop-filter: blur(20px) !important;
+                width: 100%;
+                position: absolute;
+                right: 0%;
+                padding: 5%;
+            }
+            .navbar .btn-primary {
+                position: absolute;
+                right: 0%;
+                top: 150%;
+                transform: translate(-50%, -50%);
+            }
+        }
+        
+        footer .col-lg-4 {
+            margin-bottom: 5%;
+        }
     </style>
 </head>
 
@@ -320,6 +341,7 @@
                     <a class="nav-link" href="#blogs">Blogs</a>
                     <a class="nav-link" href="#contact">Contact</a>
                     <a class="nav-link" href="videos/video-player.html" target="_blank">Videos</a>
+
 
                 </div>
                 <button class="btn btn-primary" onclick="themeChange()">Change Theme</button>
