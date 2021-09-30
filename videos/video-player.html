@@ -261,6 +261,48 @@
     function workout() {
         window.open("https://github.com/VedPanse/Python_Advanced/blob/master/Workout%20Tracking/main.py", "_blank")
     }
+
+    function themeChange() {
+        if (document.body.classList.contains("light")) {
+            changeToDark();
+        } else if (document.body.classList.contains("dark")) {
+            changeToLight();
+        }
+    }
+
+    function changeToDark() {
+        document.querySelector(".navbar").style.backgroundColor = "rgb(0, 0, 0, 0.8)";
+        document.querySelectorAll(".nav-link").forEach((item) => {
+            item.style.color = "rgb(255, 255, 255, 0.7)";
+        });
+        document.querySelector(".navbar-brand").style.color = "white";
+
+        document.body.classList.remove("light");
+        document.body.classList.add("dark");
+        document.body.style.backgroundColor = "black";
+        document.body.style.color = "white";
+
+        document.querySelector(".col-lg-2 .active").style.color = "white";
+        document.querySelector(".col-lg-2").style.borderRight = "1px solid #d2d2d7";
+        document.querySelector(".navbar").style.borderBottom = "1px solid #d2d2d7";
+
+    }
+
+    function changeToLight() {
+        document.querySelector(".navbar").style.backgroundColor = "rgb(255, 255, 255, 0.9)";
+        document.querySelectorAll(".nav-link").forEach((item) => {
+            item.style.color = "rgb(0,0,0)";
+        });
+        document.querySelector(".navbar-brand").style.color = "black";
+        document.body.classList.add("light");
+        document.body.classList.remove("dark");
+        document.body.style.backgroundColor = "white";
+        document.body.style.color = "black";
+
+        document.querySelector(".col-lg-2 .active").style.color = "black";
+        document.querySelector(".col-lg-2").style.borderRight = "1px solid rgba(39, 40, 44, 0.2)";
+        document.querySelector(".navbar").style.borderBottom = "1px solid rgba(39, 40, 44, 0.2)";
+    }
 </script>
 
 </html>
