@@ -16,6 +16,7 @@
         body {
             width: 100%;
             height: 100%;
+            scroll-behavior: smooth;
         }
         
         .navbar {
@@ -242,10 +243,51 @@
         section#projects .col-lg-4:hover {
             cursor: pointer;
         }
+        
+        footer {
+            width: 100%;
+            background-color: #27282c;
+            padding: 5%;
+            color: #FFFFFF99;
+            font-size: 12px;
+        }
+        
+        footer p {
+            color: white;
+        }
+        
+        footer a {
+            display: block;
+            line-height: 2;
+        }
+        
+        div.developer {
+            color: #FFFFFF99;
+            border-top: 1px solid #FFFFFF99;
+            margin-top: 6%;
+            padding-top: 2%;
+        }
+        
+        div.developer p {
+            color: #FFFFFF99;
+        }
+        
+        footer a {
+            color: #FFFFFF99;
+        }
+        
+        footer a:hover {
+            color: white;
+        }
+        
+        div.developer a {
+            display: inline;
+            color: white;
+        }
     </style>
 </head>
 
-<body>
+<body class="light">
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Ved Panse</a>
@@ -260,10 +302,10 @@
                     <a class="nav-link" href="#projects">Projects</a>
                     <a class="nav-link" href="#blogs">Blogs</a>
                     <a class="nav-link" href="#contact">Contact</a>
-                    <a class="nav-link" href="#">Videos</a>
+                    <a class="nav-link" href="videos/video-player.html" target="_blank">Videos</a>
 
                 </div>
-                <button class="btn btn-primary">Change Theme</button>
+                <button class="btn btn-primary" onclick="themeChange()">Change Theme</button>
 
             </div>
         </div>
@@ -398,7 +440,16 @@
                     </form>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6">
-                    <h4>Follow Me</h4>
+                    <h4>Note</h4>
+                    <p>Filling all the fields in the form is necessary.</p>
+                    <p>The chat in the form is <span style="color: #007BFF;">private</span> and will not be leaked.</p>
+                    <br>
+                    <h5>Response</h5>
+                    <p>My response to your message will be sent to the email address that you provide.</p><br>
+                    <h5>How will information provided in the form be used?</h5>
+                    <p>All the information in the form will be used for communicating purposes. Any feedback, suggestion, recommendation and bug report will be highly appreciated.</p>
+
+                    <h3 style="margin-top: 15%;">Follow Me</h3>
                     <a href="https://codepen.io/vedpanse" target="_blank">CodePen</a>
                     <a href="https://github.com/vedpanse" target="_blank">GitHub</a>
                 </div>
@@ -406,6 +457,29 @@
         </div>
     </section>
 
+    <footer>
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                <p>Initiatives</p>
+                <a href="#">Leo Club</a>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4">
+
+                <p>Credits</p>
+                <a href="#">Design</a>
+                <a href="#">Content</a>
+                <a href="#">Development</a>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                <p>Contact</p>
+                <a href="#">CodePen</a>
+                <a href="#">GitHub</a>
+            </div>
+        </div><br>
+        <div class="developer">
+            <p>Website developed by <a href="#intro">Ved Panse</a>.</p>
+        </div>
+    </footer>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -432,6 +506,99 @@
 
     function workout() {
         window.open("https://github.com/VedPanse/Python_Advanced/blob/master/Workout%20Tracking/main.py", "_blank")
+    }
+
+    function themeChange() {
+        if (document.body.classList.contains("light")) {
+            changeToDark();
+        } else if (document.body.classList.contains("dark")) {
+            changeToLight();
+        }
+    }
+
+    function changeToDark() {
+        document.querySelector(".navbar").style.backgroundColor = "rgb(0, 0, 0, 0.8)";
+        document.querySelectorAll(".nav-link").forEach((item) => {
+            item.style.color = "rgb(255, 255, 255, 0.7)";
+        });
+        document.querySelector(".navbar-brand").style.color = "white";
+
+        document.body.classList.remove("light");
+        document.body.classList.add("dark");
+        document.body.style.backgroundColor = "black";
+        document.body.style.color = "white";
+        document.querySelector("#about").style.backgroundColor = "#333";
+        document.querySelectorAll("#about p").forEach((item) => {
+            item.style.color = "#B8BCBF";
+        });
+        document.querySelectorAll(".progress").forEach((item) => {
+            item.style.backgroundColor = "#333";
+        });
+
+        document.querySelectorAll(".progress-bar-success").forEach((item) => {
+            item.style.backgroundColor = "#d2d2d7";
+        });
+
+        document.querySelector("#skills p").style.color = "#b8bcbf";
+
+        document.querySelectorAll(".blog-blush").forEach((item) => {
+            item.style.borderColor = "white";
+        });
+        document.querySelectorAll(".blog-blush p").forEach((item) => {
+            item.style.color = "#b8bcbf";
+        });
+
+        document.querySelector("#contact").style.backgroundColor = "#333";
+        document.querySelectorAll("#contact input").forEach((item) => {
+            item.style.borderColor = "white";
+        });
+
+        document.querySelectorAll("#contact textarea").forEach((item) => {
+            item.style.borderColor = "white";
+        });
+        document.querySelector("section#intro").style.backgroundImage = "url('images/bg-img-2.svg')"
+    }
+
+    function changeToLight() {
+        document.querySelector(".navbar").style.backgroundColor = "rgb(255, 255, 255, 0.9)";
+        document.querySelectorAll(".nav-link").forEach((item) => {
+            item.style.color = "rgb(0,0,0)";
+        });
+        document.querySelector(".navbar-brand").style.color = "black";
+        document.body.classList.add("light");
+        document.body.classList.remove("dark");
+        document.body.style.backgroundColor = "white";
+        document.body.style.color = "black";
+        document.querySelector("#about").style.backgroundColor = "#eaeaec";
+        document.querySelectorAll("#about p").forEach((item) => {
+            item.style.color = "#696969";
+        });
+        document.querySelectorAll(".progress").forEach((item) => {
+            item.style.backgroundColor = "#d2d2d7";
+        });
+
+        document.querySelectorAll(".progress-bar-success").forEach((item) => {
+            item.style.backgroundColor = "black";
+        });
+
+        document.querySelector("#skills p").style.color = "#696969";
+
+        document.querySelectorAll(".blog-blush").forEach((item) => {
+            item.style.borderColor = "black";
+        });
+        document.querySelectorAll(".blog-blush p").forEach((item) => {
+            item.style.color = "#27282cb3";
+        });
+
+        document.querySelector("#contact").style.backgroundColor = "#f4f4f4";
+        document.querySelectorAll("#contact input").forEach((item) => {
+            item.style.borderColor = "gray";
+        });
+
+        document.querySelectorAll("#contact textarea").forEach((item) => {
+            item.style.borderColor = "gray";
+        });
+        document.querySelector("section#intro").style.backgroundImage = "url('images/bg-img.svg')"
     }
 </script>
 
