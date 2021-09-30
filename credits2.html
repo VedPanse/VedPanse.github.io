@@ -289,13 +289,63 @@
             display: inline;
             color: white;
         }
+        
+        .col-lg-2 {
+            border-right: 1px solid rgba(39, 40, 44, 0.2);
+            min-height: 100%;
+        }
+        
+        .col-lg-2 a {
+            display: block;
+            line-height: 3;
+        }
+        
+        #frame-1 {
+            min-height: 100%;
+            width: 100%;
+        }
+        
+        #frame-1 .row {
+            height: 100%;
+        }
+        
+        .col-lg-10 p {
+            font-size: 1.15rem;
+        }
+        
+        .col-lg-2 a {
+            color: #696969;
+            text-decoration: none;
+        }
+        
+        .col-lg-2 a.active {
+            color: black;
+        }
+        
+        .col-lg-2 a:hover {
+            color: black;
+        }
+        
+        .col-lg-10 img {
+            width: 100%;
+            height: auto;
+        }
+        
+        #content,
+        #developement {
+            display: block;
+        }
+        
+        .row {
+            min-height: 100%;
+        }
     </style>
 </head>
 
 <body class="light">
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Ved Panse</a>
+            <a class="navbar-brand" href="index.html">Ved Panse</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -315,147 +365,35 @@
             </div>
         </div>
     </nav>
-    <section id="intro">
-        <div class="content">
-            <h1>Ved Panse</h1>
-            <p>I am an aspiring AI Expert</p>
-            <a href="#about"><button class="btn">Read More</button></a>
-        </div>
-    </section>
-
-    <section id="about">
-        <div class="margin-10">
-            <h1>ABOUT ME</h1><br>
-            <div class="row">
-                <div class="col-lg-4 col-md-4">
-                    <p>My name is Ved Panse. I am a young, passionate web designer and I wish to pursue expertise in AI. I was introduced to the basics of computers at a very young age and I can't let go the interest.</p><br>
-                    <p>I have built premium websites and made open-source contributions on GitHub and CodePen. Also, I have had internships with companies like BancBridge and Xceed Imagination which included working with clients like WellsFargo bank and
-                        Magna International. I look forward to convert my hobby and passion into my career.</p>
-                </div>
-                <div class="col-lg-8 col-md-8 bg-img">
+    <section id="frame-1">
+        <div class="row">
+            <div class="col-lg-2 col-md-3 col-sm-6">
+                <div style="margin-top: 30%; padding-left: 10%;">
+                    <a href="#" id="design-tab" class="active">Design</a>
+                    <a href="#" id="content-tab">Content</a>
+                    <a href="#" id="developement-tab">Developement</a>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section id="skills">
-        <div class="margin-10">
-            <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-6">
-                    <h1>My Skills</h1><br>
-                    <p>I have acquired these skills through my experience. I had much fun learning and working with these. I used these skills for making open-source contributions on GitHub and CodePen. Also, I used them to make this website from scratch!</p>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-6">
-                    <label for="progress">HTML &bull; 100%</label>
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
-                        </div>
+            <div class="col-lg-10 col-md-9 col-sm-6">
+                <div style="padding-left: 10%; margin-top: 10%; width: 85%;">
+                    <div id="design">
+                        <h1>Credits for this Website Design</h1>
+                        <p>This webpage extends credits to all those whose content has been used in my official website.</p><br><br>
+                        <h5>Jet Brains for this image</h5><br>
+                        <a href="https://static.tildacdn.com/tild3564-3163-4531-a530-366264326164/beam_3.svg" target="_blank"><img src="images/bg-img.svg"></a><br><br>
+                        <h5>Jet Brains for this image</h5><br>
+                        <a href="https://www.jetbrains.com/idea/business/img/beam.svg" target="_blank"><img src="images/bg-img-2.svg"></a><br><br>
+                        <h5>Jet Brains for this image</h5><br>
+                        <a href="https://www.jetbrains.com/store/business/img/store-business-beam.svg" target="_blank"><img src="images/bg-img-3.svg"></a>
                     </div>
-
-                    <label for="progress">CSS &bull; 99%</label>
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100" style="width:99%">
-                        </div>
+                    <div id="content">
+                        <h1>Credits for Content used for this Website Design</h1>
+                        <p>The content has been written completely by me. Information used in Algorithms Explained is heavily based on syllabi (only) covered by "Grokking Algorithms" by Aditya Bhargav.</p>
                     </div>
-
-                    <label for="progress">JavaScript &bull; 85%</label>
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width:85%">
-                        </div>
+                    <div id="developement">
+                        <h1>Credits for Website Developement</h1>
+                        <p>This website is developed by scratch completely by me. Design or program resemblance to any other websites is purely coincidential.</p>
                     </div>
-
-                    <label for="progress">Python &bull; 95%</label>
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width:95%">
-                        </div>
-                    </div>
-
-                    <label for="progress">Kotlin &bull; 15%</label>
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" style="width:15%">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects">
-        <div class="margin-10">
-            <h1>My Projects</h1><br><br>
-
-            <div class="row">
-                <div class="col-lg-4 col-md-6 col-sm-6" onclick="amazon()">
-                    <h4>Amazon Price Tracker</h4><br>
-                    <p>A program that takes in the budget of the user, the targeted item, and sends an email to the provided email address when the price of the item on Amazon falls below the budget. Built on Python.</p>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6" onclick="iss()">
-                    <h4>ISS Notifier</h4><br>
-                    <p>A program that notifies you when the ISS is in close proximity with your position. Taking the current latitude and longitude of the user via input, it gets the position of the ISS through an API and emails the user on the email address
-                        provided beforehand when the ISS is overhead.</p>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6" onclick="workout()">
-                    <h4>Workout Tracker</h4><br>
-                    <p>A program, that keeps in track your daily workout record and notifies you about your weekly progress. Written in Python, this program uses an interface from API provided by Sheety.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <div class="gradient-footer" onclick="github()">
-        <h5>The above projects are also available on my GitHub page.</h5>
-    </div>
-
-    <section id="blogs">
-        <div class="margin-10">
-            <h1>My Blogs</h1><br><br>
-            <div class="row">
-                <div class="col-lg-5 col-md-6">
-                    <div class="blog-blush" onclick="algorithms()">
-                        <h5>Algorithms Explained</h5>
-                        <p>In this documentation, I take you along with me and help you understand the basics of algorithms. I have written this documentation after reading and being inspired by Grokking Algorithms by Aditya Bhargava. The algorithms mentioned
-                            further have been written in Python. However, pseudocode has been used at some places for those without any experience in programming languages. Let's get started!</p>
-                    </div>
-                </div>
-                <div class="col-lg-5 col-md-6">
-                    <div class="blog-blush">
-                        <h5>Making Minimalist Websites</h5>
-                        <p>In this documentation, we will be skimming through the basics of developing minimalist websites. This blog will help you think like an artist, and create professional websites using your knowledge.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact">
-        <div class="margin-10">
-            <h1>Contact Me</h1><br><br>
-            <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-6">
-                    <form method="POST" action="https://formspree.io/f/xdoyprne">
-                        <label for="fName">First Name *</label>
-                        <input name="fName" id="fName" aria-required="true" required type="text">
-                        <label for="lName">Last Name *</label>
-                        <input name="lName" id="lName" aria-required="true" required type="text">
-                        <label for="email">Email Address *</label>
-                        <input name="email" id="email" aria-required="true" required type="email">
-                        <label for="message">Message *</label>
-                        <textarea name="message" id="message" aria-required="true" required type="text"></textarea><br><br>
-                        <button class="btn btn-lg btn-primary" type="submit">Submit</button>
-                    </form>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-6">
-                    <h4>Note</h4>
-                    <p>Filling all the fields in the form is necessary.</p>
-                    <p>The chat in the form is <span style="color: #007BFF;">private</span> and will not be leaked.</p>
-                    <br>
-                    <h5>Response</h5>
-                    <p>My response to your message will be sent to the email address that you provide.</p><br>
-                    <h5>How will information provided in the form be used?</h5>
-                    <p>All the information in the form will be used for communicating purposes. Any feedback, suggestion, recommendation and bug report will be highly appreciated.</p>
-
-                    <h3 style="margin-top: 15%;">Follow Me</h3>
-                    <a href="https://codepen.io/vedpanse" target="_blank">CodePen</a>
-                    <a href="https://github.com/vedpanse" target="_blank">GitHub</a>
                 </div>
             </div>
         </div>
@@ -604,6 +542,44 @@
         });
         document.querySelector("section#intro").style.backgroundImage = "url('images/bg-img.svg')"
     }
+
+    document.querySelector("#design-tab").addEventListener("click", function(e) {
+        document.querySelector("#design").style.display = "block";
+        document.querySelector("#content").style.display = "none";
+        document.querySelector("#developement").style.display = "none";
+
+        document.querySelectorAll(".col-lg-2 a").forEach((item) => {
+            item.classList.remove("active")
+        });
+
+        document.querySelector("#design-tab").classList.add("active");
+    });
+
+    document.querySelector("#content-tab").addEventListener("click", function(e) {
+        document.querySelector("#design").style.display = "none";
+        document.querySelector("#content").style.display = "block";
+        document.querySelector("#developement").style.display = "none";
+
+
+        document.querySelectorAll(".col-lg-2 a").forEach((item) => {
+            item.classList.remove("active")
+        });
+
+        document.querySelector("#content-tab").classList.add("active");
+    });
+
+    document.querySelector("#developement-tab").addEventListener("click", function(e) {
+        document.querySelector("#design").style.display = "none";
+        document.querySelector("#content").style.display = "none";
+        document.querySelector("#developement").style.display = "block";
+
+
+        document.querySelectorAll(".col-lg-2 a").forEach((item) => {
+            item.classList.remove("active")
+        });
+
+        document.querySelector("#developement-tab").classList.add("active");
+    });
 </script>
 
 </html>
