@@ -4,29 +4,254 @@
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="description" content="Welcome to my official website. I am Ved Panse.">
-    <meta name="keywords" content="Ved, Panse, Ved Panse, Official Ved Panse">
-    <meta name="author" content="Ved Panse">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-    <link rel="stylesheet" href="css/style.css">
+    <title>Ved Panse</title>
 
-    <link rel="shortcut icon" type="image/jpg" href="images/favicon.ico" />
-
-    <title>Ved Panse | Home</title>
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .navbar {
+            border-bottom: 1px solid rgba(39, 40, 44, 0.2);
+            position: fixed;
+            width: 100%;
+            z-index: 2;
+            backdrop-filter: blur(10px);
+            background-color: rgb(255, 255, 255, 0.9);
+        }
+        
+        .nav-link {
+            font-size: 15px;
+        }
+        
+        section {
+            line-height: 2;
+        }
+        
+        section#intro {
+            text-align: center;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            background-image: url(images/bg-img.svg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        section#intro .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        section#intro .content h1 {
+            font-size: 4rem;
+            font-weight: 700;
+        }
+        
+        section#intro .content p {
+            font-size: 1.2rem;
+        }
+        
+        section#intro .content button {
+            border-radius: 40px;
+            margin-top: 2%;
+            background-color: black;
+            color: white;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            padding-left: 30px;
+            padding-right: 30px;
+            padding-top: 12px;
+            padding-bottom: 12px;
+        }
+        
+        section#about {
+            width: 100%;
+            min-height: 100%;
+            background-color: #EAEAEC;
+        }
+        
+        section#about h1,
+        section#skills h1,
+        section#projects h1,
+        section#blogs h1 {
+            font-weight: 700;
+            font-size: 3rem;
+        }
+        
+        .navbar .btn-primary {
+            border-radius: 40px;
+            font-weight: 300;
+            padding-left: 20px;
+            padding-right: 20px;
+            position: absolute;
+            right: 2%;
+        }
+        
+        .margin-10 {
+            padding-left: 10%;
+            padding-top: 10%;
+            padding-bottom: 10%;
+        }
+        
+        section#about p,
+        section#skills p {
+            font-size: 1.15rem;
+            color: #696969;
+        }
+        
+        section#about .bg-img {
+            background-image: url(images/ved_panse.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        section#about .col-lg-4.col-md-4 {
+            padding-right: 2%;
+        }
+        
+        .navbar-nav {
+            position: absolute;
+            right: 30%;
+        }
+        
+        section#skills {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .progress-bar-success {
+            background-color: black;
+        }
+        
+        .progress {
+            height: 2px;
+            width: 80%;
+            margin-bottom: 5%;
+            background-color: #d2d2d7;
+        }
+        
+        section#projects {
+            background-color: #3B3E43;
+            width: 100%;
+            min-height: 100%;
+            color: white;
+        }
+        
+        section#projects p {
+            font-size: 1.15rem;
+            color: #B8BCBF;
+        }
+        
+        section#blogs {
+            width: 100%;
+            min-height: 100%;
+        }
+        
+        .blog-blush {
+            padding: 5%;
+            border: 1px solid black;
+        }
+        
+        .blog-blush {
+            height: 100%;
+        }
+        
+        .blog-blush p {
+            color: #27282CB3;
+            font-size: 15px;
+        }
+        
+        .gradient-footer {
+            background: linear-gradient( 90deg, #48a4f7, #bc42ab);
+            color: white;
+            padding: 2%;
+            text-align: center;
+        }
+        
+        section#contact {
+            width: 100%;
+            min-height: 50%;
+            background-color: #F4F4F4;
+        }
+        
+        #contact input,
+        label {
+            display: block;
+        }
+        
+        #contact form {
+            margin: auto;
+            width: 80%;
+        }
+        
+        #contact input {
+            width: 100%;
+            padding: 1%;
+            border: 1px solid gray;
+            margin-bottom: 5%;
+            padding-left: 2%;
+        }
+        
+        textarea {
+            width: 100%;
+            min-height: 200px;
+            padding-left: 2%;
+            border: 1px solid gray;
+        }
+        
+        section#contact a {
+            color: #007BFF;
+            margin-right: 5%;
+        }
+        
+        section#contact a:hover {
+            cursor: pointer;
+            border-bottom: 2px solid #007BFF;
+            text-decoration: none;
+        }
+        
+        .gradient-footer:hover {
+            cursor: pointer;
+        }
+        
+        section#contact button {
+            border-radius: 40px;
+            padding-left: 30px;
+            padding-right: 30px;
+            padding-top: 7px;
+            padding-bottom: 7px;
+            font-size: 1.15rem;
+        }
+        
+        .blog-blush:hover {
+            cursor: pointer;
+        }
+        
+        section#projects .col-lg-4:hover {
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#intro">Ved Panse</a>
+            <a class="navbar-brand" href="#">Ved Panse</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            <span class="navbar-toggler-icon"></span>
+          </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                     <a class="nav-link active" aria-current="page" href="#intro">Home</a>
@@ -35,111 +260,74 @@
                     <a class="nav-link" href="#projects">Projects</a>
                     <a class="nav-link" href="#blogs">Blogs</a>
                     <a class="nav-link" href="#contact">Contact</a>
-                    <a class="nav-link" href="videos/video-player.html" target="_blank">Videos</a>
+                    <a class="nav-link" href="#">Videos</a>
+
                 </div>
-                <div style="position: absolute; right: 5%;">
-                    <a class="nav-link" id="toggle" onclick="toggleMode();"><input type="checkbox" class="toggle"></a>
-                </div>
+                <button class="btn btn-primary">Change Theme</button>
+
             </div>
         </div>
     </nav>
-    <div class="header">
-        <a href="#default" class="logo">Ved Panse</a>
-        <div class="header-right">
-            <i class="fas fa-bars" onclick="openNav()"></i>
-        </div>
-    </div>
-
-
-    <div id="myNav" class="overlay-nav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <div class="overlay-content">
-            <a href="#intro">Home</a>
-            <a href="#about">About Me</a>
-            <a href="#skills">My Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#blogs">Blogs</a>
-            <a href="#contact">Contact</a>
-            <a class="nav-link" title="Toggle Mode" id="toggle"><input type="checkbox" class="toggle"></a>
-        </div>
-    </div>
-
-    <div id="social-handle">
-        <p class="sep">&boxh;&boxh;&boxh;&nbsp;</p>
-        <h5 class="social codepen"><i class="fab fa-codepen"></i></h5>
-        <h5 class="social github"><i class="fab fa-github"></i></h5>
-
-
-
-    </div>
-
     <section id="intro">
-        <div class="dark">
-            <div class="content">
-                <h3>Hello</h3>
-                <h1>I am <span style="font-weight: 500;">Ved Panse</span></h1>
-                <br>
-                <p>&boxh;&boxh;&boxh;&nbsp;Web Developer &bull; Aspiring AI Expert&nbsp;&boxh;&boxh;&boxh;</p><br>
-                <a href="#about"><button class="btn btn-light btn-lg gut">Read More</button></a>
-            </div>
+        <div class="content">
+            <h1>Ved Panse</h1>
+            <p>I am an aspiring AI Expert</p>
+            <button class="btn">Read More</button>
         </div>
     </section>
 
     <section id="about">
-        <div class="row">
-            <div class="col-lg-6 col-md-6 col-sm-6">
-                <img src="images/ved_panse.png">
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-6">
-                <h1>About Me</h1>
-                <div class="stopper"></div>
-                <p>
-                    My name is Ved Panse. I am a young, passionate web designer and I wish to pursue expertise in AI. I started learning computer programming at 5 and I can't let go the interest.<br><br>
-                    <div class="stopper"></div>I have built premium websites and made open-source contributions on <a href="https://github.com/vedpanse" target="_blank" class="a-mid">GitHub</a> and <a href="https://codepen.io/vedpanse" target="_blank" class="a-mid">CodePen</a>.
-                    Also, I have had internships with companies like BancBridge and Xceed Imagination which included working with clients like <u>WellsFargo bank</u> and <u>Magna International</u>. I look forward to convert my hobby and passion into my
-                    career.
-                </p><br>
-                <button class="btn btn-primary btn-lg" onclick="window.open('Resume.pdf', '_blank')">Download CV</button>
+        <div class="margin-10">
+            <h1>ABOUT ME</h1><br>
+            <div class="row">
+                <div class="col-lg-4 col-md-4">
+                    <p>My name is Ved Panse. I am a young, passionate web designer and I wish to pursue expertise in AI. I started learning computer programming at 5 and I can't let go the interest.</p><br>
+                    <p>I have built premium websites and made open-source contributions on GitHub and CodePen. Also, I have had internships with companies like BancBridge and Xceed Imagination which included working with clients like WellsFargo bank and
+                        Magna International. I look forward to convert my hobby and passion into my career.</p>
+                </div>
+                <div class="col-lg-8 col-md-8 bg-img">
+                </div>
             </div>
         </div>
     </section>
 
     <section id="skills">
-
-        <div class="row">
-            <div class="col-lg-6 col-md-6 col-sm-6">
-                <h1>My Skills</h1><br>
-                <p>I have acquired these skills through my experience. I had much fun learning and working with these. I used these skills for making open-source contributions on GitHub and CodePen. Also, I made complete use of them to make this website
-                    from scratch!</p>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-6">
-                <label for="progress">HTML &bull; 100%</label>
-                <div class="progress">
-                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
-                    </div>
+        <div class="margin-10">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <h1>My Skills</h1><br>
+                    <p>I have acquired these skills through my experience. I had much fun learning and working with these. I used these skills for making open-source contributions on GitHub and CodePen. Also, I made complete use of them to make this website
+                        from scratch!</p>
                 </div>
-
-                <label for="progress">CSS &bull; 99%</label>
-                <div class="progress">
-                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100" style="width:99%">
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <label for="progress">HTML &bull; 100%</label>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+                        </div>
                     </div>
-                </div>
 
-                <label for="progress">JavaScript &bull; 85%</label>
-                <div class="progress">
-                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width:85%">
+                    <label for="progress">CSS &bull; 99%</label>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100" style="width:99%">
+                        </div>
                     </div>
-                </div>
 
-                <label for="progress">Python &bull; 95%</label>
-                <div class="progress">
-                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width:95%">
+                    <label for="progress">JavaScript &bull; 85%</label>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width:85%">
+                        </div>
                     </div>
-                </div>
 
-                <label for="progress">Kotlin &bull; 15%</label>
-                <div class="progress">
-                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" style="width:15%">
+                    <label for="progress">Python &bull; 95%</label>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width:95%">
+                        </div>
+                    </div>
+
+                    <label for="progress">Kotlin &bull; 15%</label>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" style="width:15%">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -147,129 +335,77 @@
     </section>
 
     <section id="projects">
-        <h1 style="text-align: center;">Projects</h1><br>
-        <div class="row">
-            <div class="col-lg-4 col-md-6">
+        <div class="margin-10">
+            <h1>My Projects</h1><br><br>
 
-                <div class="card amazon">
-                    <div class="card-body">
-                        <h3><i class="fas fa-tags"></i></h3>
-                        <h2>Amazon Price Tracker</h2><br>
-                        <p>A program that takes in the budget of the user, the targeted item, and sends an email to the provided email address when the price of the item on Amazon falls below the budget. Built on Python.</p>
-                    </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-6" onclick="amazon()">
+                    <h4>Amazon Price Tracker</h4><br>
+                    <p>A program that takes in the budget of the user, the targeted item, and sends an email to the provided email address when the price of the item on Amazon falls below the budget. Built on Python.</p>
                 </div>
-
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-                <div class="card iss">
-                    <div class="card-body">
-                        <h3><i class="fas fa-satellite"></i></h3>
-                        <h2>ISS Notifier</h2><br>
-                        <p>A program that notifies you when the ISS is in close proximity with your position. Taking the current latitude and longitude of the user via input, it gets the position of the ISS through an API and emails the user on the email
-                            address provided beforehand when the ISS is overhead.</p>
-                    </div>
+                <div class="col-lg-4 col-md-6 col-sm-6" onclick="iss()">
+                    <h4>ISS Notifier</h4><br>
+                    <p>A program that notifies you when the ISS is in close proximity with your position. Taking the current latitude and longitude of the user via input, it gets the position of the ISS through an API and emails the user on the email address
+                        provided beforehand when the ISS is overhead.</p>
                 </div>
-
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="card workout">
-                    <div class="card-body">
-                        <h3><i class="fas fa-running"></i></h3>
-                        <h2>Workout Tracker</h2><br>
-                        <p>A program, that keeps in track your daily workout record and notifies you about your weekly progress. Written in Python, this program uses an interface from API provided by Sheety.</p>
-                    </div>
+                <div class="col-lg-4 col-md-6 col-sm-6" onclick="workout()">
+                    <h4>Workout Tracker</h4><br>
+                    <p>A program, that keeps in track your daily workout record and notifies you about your weekly progress. Written in Python, this program uses an interface from API provided by Sheety.</p>
                 </div>
-
             </div>
         </div>
     </section>
-
-    <section id="codepen-stats">
-        <h1 style="text-align: center;margin-bottom: 5%;">CodePen Statistics</h1>
-        <div class="row">
-            <div class="col-lg-4 col-md-4 left">
-                <h1>1</h1>
-                <p>CodePen Challenge Recognition</p>
-            </div>
-            <div class="col-lg-4 col-md-4 center">
-                <h1>44</h1>
-                <p>Pen Contirbutions</p>
-            </div>
-            <div class="col-lg-4 col-md-4 right">
-                <h1>10</h1>
-                <p>Total likes</p>
-            </div>
-        </div>
-    </section>
+    <div class="gradient-footer" onclick="github()">
+        <h5>The above projects are also available on my GitHub page.</h5>
+    </div>
 
     <section id="blogs">
-        <h1 style="text-align: center;">Documentations</h1><br>
-        <div class="row">
-            <div class="col-lg-6 col-md-6 algorithms">
-                <img src="images/ved_panse.png" width="100%" height="100%">
-            </div>
-            <div class="col-lg-6 col-md-6 algorithms">
-                <h2>Algorithms Explained</h2>
-                <p>In this documentation, I take you along with me and help you understand the basics of algorithms. I have written this documentation after reading and being inspired by <a href="https://www.oreilly.com/videos/grokking-algorithms-video/9781617292231VE/"
-                        target="_blank" class="a-mid">Grokking
-                    Algorithms</a> by Aditya Bhargava. The algorithms mentioned further have been written in Python. However, pseudocode has been used at some places for those without any experience in programming languages.
-                    <br><br>Let's get started!
-                </p>
+        <div class="margin-10">
+            <h1>My Blogs</h1><br><br>
+            <div class="row">
+                <div class="col-lg-5 col-md-6">
+                    <div class="blog-blush" onclick="algorithms()">
+                        <h5>Algorithms Explained</h5>
+                        <p>In this documentation, I take you along with me and help you understand the basics of algorithms. I have written this documentation after reading and being inspired by Grokking Algorithms by Aditya Bhargava. The algorithms mentioned
+                            further have been written in Python. However, pseudocode has been used at some places for those without any experience in programming languages. Let's get started!</p>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-6">
+                    <div class="blog-blush">
+                        <h5>Making Minimalist Websites</h5>
+                        <p>In this documentation, we will be skimming through the basics of developing minimalist websites. This blog will help you think like an artist, and create professional websites using your knowledge.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="contact">
-        <h1 style="text-align: center;">Let us start a conversation</h1><br><br>
-        <div class="row">
-            <div class="col-lg-6 col-md-6 terms" style="padding-left: 10%">
-                <div style="width: 80%;">
-                    <h4>Note</h4>
-                    <p>Filling all the fields in the form is necessary.</p>
-                    <p>The chat in the form is <span style="color: #0063cc;">private</span> and will not be leaked.</p>
-                    <br>
-                    <h4>Response</h4>
-                    <p>My response to your message will be sent to the email address that you provide.</p><br>
-                    <h4>How will information provided in the form be used?</h4>
-                    <p>All the information in the form will be used for communicating purposes. Any feedback, suggestion, recommendation and bug report will be highly appreciated.</p>
+        <div class="margin-10">
+            <h1>Contact Me</h1><br><br>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <form method="POST" action="https://formspree.io/f/xdoyprne">
+                        <label for="fName">First Name *</label>
+                        <input name="fName" id="fName" aria-required="true" required type="text">
+                        <label for="lName">Last Name *</label>
+                        <input name="lName" id="lName" aria-required="true" required type="text">
+                        <label for="email">Email Address *</label>
+                        <input name="email" id="email" aria-required="true" required type="email">
+                        <label for="message">Message *</label>
+                        <textarea name="message" id="message" aria-required="true" required type="text"></textarea><br><br>
+                        <button class="btn btn-lg btn-primary" type="submit">Submit</button>
+                    </form>
                 </div>
-            </div>
-            <div class="col-lg-6 col-md-6">
-                <form method="POST" action="https://formspree.io/f/xdoyprne">
-                    <label for="fName">First Name *</label>
-                    <input name="fName" id="fName" aria-required="true" required type="text">
-                    <label for="lName">Last Name *</label>
-                    <input name="lName" id="lName" aria-required="true" required type="text">
-                    <label for="email">Email Address *</label>
-                    <input name="email" id="email" aria-required="true" required type="email">
-                    <label for="message">Message *</label>
-                    <textarea name="message" id="message" aria-required="true" required type="text"></textarea><br><br>
-                    <button class="btn btn-lg btn-primary" type="submit">Submit</button>
-                </form>
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <h4>Follow Me</h4>
+                    <a href="https://codepen.io/vedpanse" target="_blank">CodePen</a>
+                    <a href="https://github.com/vedpanse" target="_blank">GitHub</a>
+                </div>
             </div>
         </div>
     </section>
 
-
-    <footer>
-        <div class="row">
-            <div class="col-lg-6 col-md-6 col-sm-6">
-                <h5>Ved Panse</h5>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-6 right">
-                <a href="#intro">Home</a>
-                <a href="#about">About Me</a>
-                <a href="#skills">Skills</a>
-                <a href="#projects">Projects</a>
-                <a href="#blogs">Blogs</a>
-                <a href="#contact">Contact</a>
-                <a href="credits.html">Credits</a>
-            </div>
-        </div>
-        <!-- <br>
-        <p style="margin-left: 3.25%;">&copy; Ved Panse 2021 - 2022</p> -->
-    </footer>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -277,7 +413,26 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
-<script src="js/app.js"></script>
-<script src="server.js"></script>
+<script>
+    function github() {
+        window.open("https://github.com/vedpanse", "_blank")
+    }
+
+    function algorithms() {
+        window.open("algorithms/index.html", "_blank")
+    }
+
+    function amazon() {
+        window.open("https://github.com/VedPanse/Python_Advanced/blob/master/AmazonPriceTracker/main.py", "_blank")
+    }
+
+    function iss() {
+        window.open("https://github.com/VedPanse/Python_Advanced/blob/master/ISSOverHeadNotifier/main.py", "_blank")
+    }
+
+    function workout() {
+        window.open("https://github.com/VedPanse/Python_Advanced/blob/master/Workout%20Tracking/main.py", "_blank")
+    }
+</script>
 
 </html>
