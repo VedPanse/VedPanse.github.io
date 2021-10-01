@@ -95,7 +95,8 @@
         section#about h1,
         section#skills h1,
         section#projects h1,
-        section#blogs h1 {
+        section#blogs h1,
+        section#work h1 {
             font-weight: 700;
             font-size: 3rem;
         }
@@ -322,6 +323,52 @@
         footer .col-lg-4 {
             margin-bottom: 5%;
         }
+        
+        section#work {
+            width: 100%;
+            min-height: 100%;
+        }
+        
+        .table-control .row {
+            width: 100%;
+            margin-right: 10%;
+            width: 85%;
+            margin: auto;
+        }
+        
+        .table-control .p {
+            border-top: 1px solid #d2d2d7;
+        }
+        
+        .table-control .col-lg-8,
+        .table-control .col-lg-4 {
+            border-bottom: 1px solid #d2d2d7;
+            padding: 2%;
+            border-collapse: collapse;
+            position: relative;
+        }
+        
+        .table-control .s {
+            border-right: 1px solid #d2d2d7;
+        }
+        
+        .table-control h1 {
+            color: #1d1d1d;
+            font-size: 3rem;
+        }
+        
+        .table-control p {
+            color: #6e6e73;
+        }
+        
+        .table-control .content {
+            text-align: right;
+        }
+        
+        .table-control .content p {
+            font-weight: 600;
+            font-size: 19px;
+        }
     </style>
 </head>
 
@@ -475,6 +522,73 @@
         </div>
     </section>
 
+    <section id=work>
+        <div class="margin-10">
+            <h1>Social Work</h1><br><br>
+            <div class="table-control">
+                <div class="row">
+                    <div class="col-lg-8 s p">
+                        <p>Leo Club</p>
+                        <h1>Oxygen Concentrators</h1>
+                        <div class="content">
+                            <p>
+                                Being a member of the Board of Directors of a social service club, my group and me decided to donate oxygen concentrators to government hospitals in India.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 p">
+                        <p>Leo Club</p>
+                        <h1>Linking generations</h1>
+                        <div class="content">
+                            <p>
+                                Being a member of the Board of Directors of a social service club, my group and me took the initiative of meeting children from an orphanage home and taking them to an old age home for interaction.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- <div class="col-lg-4 s">
+                        <p>Blog</p>
+                        <h1>Making Minimalist Websites</h1>
+                        <div class="content">
+                            <p>
+                                This documentation takes you through the nitty gritties of Algorithms.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <p>Documentation</p>
+                        <h1>Algorithms Explained</h1>
+                        <div class="content">
+                            <p>
+                                This documentation takes you through the nitty gritties of Algorithms.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-8 s">
+                        <p>Documentation</p>
+                        <h1>Algorithms Explained</h1>
+                        <div class="content">
+                            <p>
+                                This documentation takes you through the nitty gritties of Algorithms.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <p>Blog</p>
+                        <h1>Making Minimalist Websites</h1>
+                        <div class="content">
+                            <p>
+                                This documentation takes you through the nitty gritties of Algorithms.
+                            </p>
+                        </div>
+                    </div> -->
+
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="contact">
         <div class="margin-10">
             <h1>Contact Me</h1><br><br>
@@ -525,8 +639,8 @@
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4">
                 <p>Contact</p>
-                <a href="#">CodePen</a>
-                <a href="#">GitHub</a>
+                <a href="https://codepen.io/vedpanse">CodePen</a>
+                <a href="https://github.com/VedPanse">GitHub</a>
             </div>
         </div><br>
         <div class="developer">
@@ -609,7 +723,15 @@
         document.querySelectorAll("#contact textarea").forEach((item) => {
             item.style.borderColor = "white";
         });
-        document.querySelector("section#intro").style.backgroundImage = "url('images/bg-img-2.svg')"
+        document.querySelector("section#intro").style.backgroundImage = "url('images/bg-img-2.svg')";
+
+        document.querySelectorAll("section#work .table-control h1").forEach((item) => {
+            item.style.color = "white";
+        });
+
+        document.querySelectorAll("section#work .table-control .content p").forEach((item) => {
+            item.style.color = "#d2d2d7";
+        });
     }
 
     function changeToLight() {
@@ -651,7 +773,15 @@
         document.querySelectorAll("#contact textarea").forEach((item) => {
             item.style.borderColor = "gray";
         });
-        document.querySelector("section#intro").style.backgroundImage = "url('images/bg-img.svg')"
+        document.querySelector("section#intro").style.backgroundImage = "url('images/bg-img.svg')";
+
+        document.querySelectorAll("section#work .table-control h1").forEach((item) => {
+            item.style.color = "black";
+        });
+
+        document.querySelectorAll("section#work .table-control .content p").forEach((item) => {
+            item.style.color = "#6e6e73";
+        });
     }
 </script>
 
