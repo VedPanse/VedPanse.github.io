@@ -369,6 +369,11 @@
             font-weight: 600;
             font-size: 19px;
         }
+        
+        #work .col-lg-8:hover,
+        #work .col-lg-4:hover {
+            cursor: pointer;
+        }
     </style>
 </head>
 
@@ -527,7 +532,7 @@
             <h1>Social Work</h1><br><br>
             <div class="table-control">
                 <div class="row">
-                    <div class="col-lg-8 s p">
+                    <div class="col-lg-8 s p oxygen">
                         <p>Leo Club</p>
                         <h1>Oxygen Concentrators</h1>
                         <div class="content">
@@ -536,7 +541,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="col-lg-4 p">
+                    <div class="col-lg-4 p orphanage">
                         <p>Leo Club</p>
                         <h1>Linking generations</h1>
                         <div class="content">
@@ -658,6 +663,14 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 <script>
+    document.querySelector(".oxygen").addEventListener("click", function() {
+        window.open("social/index.html#oxygen", "_blank")
+    });
+
+    document.querySelector(".orphanage").addEventListener("click", function() {
+        window.open("social/index.html#orphanage", "_blank")
+    })
+
     function github() {
         window.open("https://github.com/vedpanse", "_blank")
     }
