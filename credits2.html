@@ -334,10 +334,10 @@
         
         #content,
         #developement {
-            display: block;
+            display: none;
         }
         
-        .row {
+        .row.main {
             min-height: 100%;
         }
     </style>
@@ -367,7 +367,7 @@
         </div>
     </nav>
     <section id="frame-1">
-        <div class="row">
+        <div class="row main">
             <div class="col-lg-2 col-md-3 col-sm-6">
                 <div style="margin-top: 30%; padding-left: 10%;">
                     <a href="#" id="design-tab" class="active">Design</a>
@@ -385,8 +385,11 @@
                         <h5>Jet Brains for this image</h5><br>
                         <a href="https://www.jetbrains.com/idea/business/img/beam.svg" target="_blank"><img src="images/bg-img-2.svg"></a><br><br>
                         <h5>Jet Brains for this image</h5><br>
-                        <a href="https://www.jetbrains.com/store/business/img/store-business-beam.svg" target="_blank"><img src="images/bg-img-3.svg"></a>
+                        <a href="https://www.jetbrains.com/store/business/img/store-business-beam.svg" target="_blank"><img src="images/bg-img-3.svg"></a><br><br>
+                        <h5>CDN logos for this image</h5>
+                        <a href="https://static.cdnlogo.com/logos/v/20/vp.svg"><img src="images/logo.svg"></a>
                     </div>
+
                     <div id="content">
                         <h1>Credits for Content used for this Website Design</h1>
                         <p>The content has been written completely by me. Information used in Algorithms Explained is heavily based on syllabi (only) covered by "Grokking Algorithms" by Aditya Bhargav.</p>
@@ -431,6 +434,33 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 <script>
+    document.querySelector("#design-tab").addEventListener("click", function(e) {
+        document.querySelector("#design").style.display = "block";
+        document.querySelector("#content").style.display = "none";
+        document.querySelector("#developement").style.display = "none";
+
+        document.querySelector(".col-lg-2.col-md-3.col-sm-6 .active").classList.remove("active");
+        document.querySelector("#design-tab").classList.add("active");
+    });
+
+    document.querySelector("#content-tab").addEventListener("click", function(e) {
+        document.querySelector("#design").style.display = "none";
+        document.querySelector("#content").style.display = "block";
+        document.querySelector("#developement").style.display = "none";
+
+        document.querySelector(".col-lg-2.col-md-3.col-sm-6 .active").classList.remove("active");
+        document.querySelector("#content-tab").classList.add("active");
+    });
+
+    document.querySelector("#developement-tab").addEventListener("click", function(e) {
+        document.querySelector("#design").style.display = "none";
+        document.querySelector("#content").style.display = "none";
+        document.querySelector("#developement").style.display = "block";
+
+        document.querySelector(".col-lg-2.col-md-3.col-sm-6 .active").classList.remove("active");
+        document.querySelector("#developement-tab").classList.add("active");
+    });
+
     function github() {
         window.open("https://github.com/vedpanse", "_blank")
     }
