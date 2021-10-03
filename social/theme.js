@@ -1,5 +1,5 @@
 function themeChange() {
-    var dark = document.querySelector("body").style.backgroundColor === "#171717";
+    var dark = document.querySelector("body").style.backgroundColor === "black";
 
     if (!dark) {
         changeToDark();
@@ -10,7 +10,7 @@ function themeChange() {
 }
 
 function changeToDark() {
-    document.querySelector("body").style.backgroundColor = "#171717";
+    document.querySelector("body").style.backgroundColor = "black";
     document.querySelectorAll("h1").forEach((item) => {
         item.style.color = "white";
     });
