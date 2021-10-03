@@ -518,7 +518,7 @@
                     </div>
                 </div>
                 <div class="col-lg-5 col-md-6">
-                    <div class="blog-blush">
+                    <div class="blog-blush" onclick="dilemma()">
                         <h5>Programming Dilemma</h5>
                         <p>In this blog, I will be presenting my opinion on the common dilemma of willing programmers: where to start? In this blog, I have used personal anecdotes too that might help you to relate, and accurately shape your programming journey.</p>
                     </div>
@@ -800,6 +800,10 @@
         document.querySelectorAll("section#work .table-control .content p").forEach((item) => {
             item.style.color = "#6e6e73";
         });
+    }
+
+    function dilemma() {
+        window.open("blogs/dilemma.html", "_blank")
     }
 </script>
 
