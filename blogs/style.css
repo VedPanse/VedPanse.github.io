@@ -38,12 +38,13 @@ section {
 
 @media screen and (max-width: 400px) {
     .collapse .navbar-nav {
-        background-color: rgba(207, 207, 207, 0.5);
+        background-color: white;
         backdrop-filter: blur(20px) !important;
         width: 100%;
         position: absolute;
         right: 0%;
         padding: 5%;
+        border-bottom: 1px solid rgba(39, 40, 44, 0.2);
     }
     .navbar .btn-primary {
         position: absolute;
@@ -108,4 +109,43 @@ p.main {
 
 .row.main .col-lg-10 a:hover {
     border-bottom: 1px solid #167DFF;
+}
+
+.table-control .row {
+    width: 100%;
+    margin: auto;
+}
+
+.table-control .p {
+    border-top: 1px solid #d2d2d7;
+}
+
+.table-control .col-lg-8,
+.table-control .col-lg-4 {
+    border-bottom: 1px solid #d2d2d7;
+    padding: 2%;
+    border-collapse: collapse;
+    position: relative;
+}
+
+.table-control .s {
+    border-right: 1px solid #d2d2d7;
+}
+
+.table-control h1 {
+    color: #1d1d1d;
+    font-size: 3rem;
+}
+
+.table-control p {
+    color: #6e6e73;
+}
+
+.table-control .content {
+    text-align: right;
+}
+
+.table-control .content p {
+    font-weight: 600;
+    font-size: 19px;
 }
