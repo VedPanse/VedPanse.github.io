@@ -435,12 +435,28 @@ button.btn-darkMode {
     transform: translate(-50%, -50%);
 }
 
+.dark-alt {
+    display: none;
+    font-size: 12px;
+    background-color: #444444;
+    color: white;
+}
+
+.dark-alt button {
+    border-color: #07c;
+    background-color: #233EF7;
+    color: white;
+}
+
 @media screen and (max-width: 600px) {
     .loc-band {
         display: none;
     }
     .dark-notifier {
         display: none;
+    }
+    .dark-alt {
+        display: block;
     }
 }
 
