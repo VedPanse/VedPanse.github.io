@@ -123,7 +123,7 @@ p.main {
 .table-control .col-lg-8,
 .table-control .col-lg-4 {
     border-bottom: 1px solid #d2d2d7;
-    padding: 2%;
+    padding: 5%;
     border-collapse: collapse;
     position: relative;
 }
