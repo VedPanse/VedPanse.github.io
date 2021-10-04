@@ -311,6 +311,7 @@ if (url.slice(url.length - 5) === "light") {
 
 function closeDarkNotifier() {
     document.querySelector(".dark-notifier").style.display = "none";
+    document.querySelector(".dark-alt").style.display = "none";
 
 }
 
