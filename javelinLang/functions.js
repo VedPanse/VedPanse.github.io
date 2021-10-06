@@ -4,9 +4,9 @@ function getStarted() {
 
 }
 
-function introduction() {
+function syntax() {
     darkRelocation();
-    window.location.href = "introduction.html" + pass_down;
+    window.location.href = "syntax.html" + pass_down;
 
 }
 
