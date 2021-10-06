@@ -119,6 +119,7 @@ document.querySelector("body").addEventListener("keydown", function(e) {
 });
 
 function changeToLight() {
+    document.querySelector(".download").style.borderColor = "rgba(39, 40, 44, .2)";
     document.querySelectorAll(".overlay-content a").forEach((item) => {
         item.style.color = "white";
     });
@@ -191,6 +192,7 @@ function changeToLight() {
 }
 
 function changeToDark() {
+    document.querySelector(".download").style.borderColor = "#d2d2d7";
     document.querySelector("body").style.color = "#f5f5f7";
     document.querySelector(".context").style.color = "#f5f5f7";
     document.querySelector(".u").style.color = "#7f52ff";

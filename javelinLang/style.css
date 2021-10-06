@@ -15,6 +15,7 @@ body {
     background-color: rgba(0, 0, 0, 0.8);
     backdrop-filter: saturate(180%) blur(20px);
     padding: 0.1% 2%;
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
 }
 
 .navbar-nav {
@@ -487,4 +488,15 @@ button.btn-lightMode {
     padding: 5%;
     width: 50%;
     border-radius: 5px;
+}
+
+.download a {
+    color: black;
+    padding-bottom: 2px;
+    border-bottom: 1px solid #d2d2d7;
+}
+
+.download a:hover {
+    border-bottom: 1px solid black;
+    color: black;
 }
