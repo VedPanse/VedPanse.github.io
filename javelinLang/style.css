@@ -469,3 +469,15 @@ button.btn-lightMode {
     top: 50%;
     transform: translate(-50%, -50%);
 }
+
+.img-features {
+    font-size: 5rem;
+    color: #236df7;
+    text-align: center;
+}
+
+.row.features {
+    width: 95%;
+    margin: auto;
+    margin-top: 5%;
+}
