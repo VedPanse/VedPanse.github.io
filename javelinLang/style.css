@@ -481,3 +481,10 @@ button.btn-lightMode {
     margin: auto;
     margin-top: 5%;
 }
+
+.download {
+    border: 1px solid rgba(39, 40, 44, 0.2);
+    padding: 5%;
+    width: 50%;
+    border-radius: 5px;
+}
