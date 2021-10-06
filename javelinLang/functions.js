@@ -192,7 +192,12 @@ function changeToLight() {
 }
 
 function changeToDark() {
-    document.querySelector(".download").style.borderColor = "#d2d2d7";
+    try {
+        document.querySelector(".download").style.borderColor = "#d2d2d7";
+        document.querySelector(".download a").style.color = "white";
+    } catch (error) {
+        console.log("Error")
+    }
     document.querySelector("body").style.color = "#f5f5f7";
     document.querySelector(".context").style.color = "#f5f5f7";
     document.querySelector(".u").style.color = "#7f52ff";
