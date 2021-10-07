@@ -196,7 +196,7 @@ td {
 }
 
 .terminal .h {
-    color: pink;
+    color: rgb(252, 180, 192);
 }
 
 .terminal pre {
@@ -209,7 +209,7 @@ td {
 }
 
 .terminal .str {
-    color: #e8f8c9;
+    color: limegreen;
 }
 
 .terminal .e {
@@ -222,6 +222,10 @@ td {
 
 .terminal .c {
     color: #708090;
+}
+
+.terminal .b {
+    color: rgb(179, 161, 226);
 }
 
 .terminal .o {

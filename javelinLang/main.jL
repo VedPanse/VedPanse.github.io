@@ -1,5 +1,4 @@
 $name = "Ved"
-
 !create_window(800, 800, "Test")
 !head -> "Just a Test" ||| 0, 0, 40
 !write -> "Testing..." ||| 1, 0, 15

@@ -119,9 +119,23 @@ document.querySelector("body").addEventListener("keydown", function(e) {
 });
 
 function changeToLight() {
-    document.querySelector(".download").style.borderColor = "rgba(39, 40, 44, .2)";
+    try {
+        document.querySelector(".download").style.borderColor = "rgba(39, 40, 44, .2)";
+        document.querySelector(".download a").style.color = "black";
+
+    } catch (error) {
+        console.log("Error")
+    }
     document.querySelectorAll(".overlay-content a").forEach((item) => {
         item.style.color = "white";
+    });
+
+
+    document.querySelectorAll(".terminal .str").forEach((item) => {
+        item.style.color = "limegreen";
+    });
+    document.querySelectorAll(".terminal .h").forEach((item) => {
+        item.style.color = "rgb(255, 180, 192)";
     });
 
     document.querySelector("body").style.color = "black";
@@ -195,9 +209,18 @@ function changeToDark() {
     try {
         document.querySelector(".download").style.borderColor = "#d2d2d7";
         document.querySelector(".download a").style.color = "white";
+
     } catch (error) {
         console.log("Error")
     }
+
+    document.querySelectorAll(".terminal .str").forEach((item) => {
+        item.style.color = "rgb(200, 245, 200)";
+    });
+    document.querySelectorAll(".terminal .h").forEach((item) => {
+        item.style.color = "pink";
+    });
+
     document.querySelector("body").style.color = "#f5f5f7";
     document.querySelector(".context").style.color = "#f5f5f7";
     document.querySelector(".u").style.color = "#7f52ff";

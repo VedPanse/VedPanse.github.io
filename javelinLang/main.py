@@ -1,3 +1,5 @@
+# https://wallpaperaccess.com/full/210902.jpg
+
 import os
 from tkinter import *
 from tkinter import ttk
@@ -18,7 +20,8 @@ class Color:
     END = '\033[0m'
 
 
-files = [f for f in os.listdir('.') if os.path.isfile(f)]
+files = os.listdir(os.curdir)
+print(files)
 wd = None
 for f in files:
     if (f[-3:]) == ".jL":
