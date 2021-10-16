@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Ved Panse</title>
+
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            background-color: #434343;
+            color: white;
+            line-height: 2;
+        }
+        
+        .special {
+            min-height: 100%;
+            background-color: #323232;
+            border-left: 1px solid rgba(255, 255, 255, 0.4);
+        }
+        
+        .row {
+            min-height: 100%;
+            width: 100%;
+        }
+        
+        .col-lg-6.intro {
+            background-color: #242424;
+            padding: 5%;
+        }
+        
+        .intro-img {
+            background-image: url(images/wall.jpeg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .card:hover {
+            cursor: pointer;
+        }
+        
+        .row .intro p {
+            font-size: 1.15rem;
+        }
+        
+        .border-n {
+            border-left: 1px solid rgba(255, 255, 255, 0.4);
+        }
+        
+        input {
+            background-color: #323232;
+            border: transparent;
+            border-radius: 3px;
+            color: white;
+        }
+        
+        input::placeholder {
+            color: #c7c6c6;
+            padding-left: 5%;
+            font-size: 12px;
+        }
+        
+        .head {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+            padding-bottom: 4px;
+        }
+        
+        .card {
+            height: 150px;
+            border: none;
+            position: relative;
+        }
+        
+        .card p {
+            bottom: -2%;
+            left: 4%;
+            position: absolute;
+        }
+        
+        .card.one {
+            background-image: linear-gradient(to right, #e497f5, #e38cf5, #e381f5, #e275f5, #e268f5);
+        }
+        
+        .card.two {
+            background-image: linear-gradient(to right, rgb(255, 38, 0), rgb(255, 102, 0));
+        }
+        
+        .card.three {
+            background-image: linear-gradient(to right, #4a76e3, #009df9, #00befb, #00dbf0, #68f5e2);
+        }
+        
+        .card.four {
+            background-image: linear-gradient(to right, #ee00ff, #c647ff, #9e5fff, #766dff, #4f75f6);
+        }
+        
+        .card.five {
+            background-image: linear-gradient(to right, #07c512, #6ad300, #a0df00, #d0eb00, #fff500);
+        }
+        
+        .card.six {
+            background-image: linear-gradient(to right, #7130f3, #802df5, #8e2af6, #9b27f7, #a822f8);
+        }
+        
+        .card.seven {
+            background-image: linear-gradient(to right, rgb(255, 38, 0), rgb(255, 102, 0));
+        }
+        
+        .card.eight {
+            background-image: linear-gradient(to right, rgb(255, 38, 0), rgb(255, 102, 0));
+        }
+        
+        .card.nine {
+            background-image: linear-gradient(to right, rgb(255, 38, 0), rgb(255, 102, 0));
+        }
+        
+        .terminal {
+            width: 100%;
+            min-height: 100%;
+        }
+        
+        .terminal .area {
+            width: 100%;
+            min-height: 100vh;
+            background-color: #323232;
+            color: white;
+            border: 1px solid rgb(255, 255, 255, 0.4);
+        }
+        
+        .terminal .area pre {
+            color: white;
+            padding: 2%;
+        }
+        
+        pre .i {
+            color: rgb(180, 240, 180);
+        }
+        
+        pre .def {
+            color: rgb(255, 144, 181);
+        }
+        
+        pre .s {
+            color: rgb(160, 241, 160);
+        }
+        
+        pre .b {
+            color: rgb(133, 162, 247);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="row" style="min-height: 100%; width: 100%;">
+        <div class="col-lg-6 col-md-6 col-sm-12" style="padding: 2%;">
+            <h5 class="head">Console</h5><br>
+            <div class="terminal">
+                <div class="area">
+                    <pre>
+<span class="def">import</span> requests
+<span class="def">from</span> datetime <span class="def">import</span> datetime
+
+<span class="b">GENDER</span> = <span class="s">"MALE"</span>
+<span class="b">WEIGHT_KG</span> = <span class="s">"69"</span>
+<span class="b">HEIGHT_CM</span> = <span class="s">"188"</span>
+<span class="b">AGE</span> = <span class="s">"16"</span>
+
+<span class="b">APP_ID</span> = <span class="s">"myid"</span>
+<span class="b">API_KEY</span> = <span class="s">"mykey"</span>
+
+<span class="b">exercise_endpoint</span> = <span class="s">"https://trackapi.nutrionix.com/v2/natural/exercise"</span>
+<span class="b">sheet_endpoint</span> = <span class="s">"https://api.sheety.co/"</span>
+<span class="b">exercise_text</span> = <span class="def">input</span>(<span class="s">"Tell me which exercise you did: "</span>)
+
+<span class="b">headers</span> = {
+    <span class="i">"x-app-id"</span>: <span class="b">APP_ID</span>,
+    <span class="i">"x-app-key"</span>: <span class="b">API_KEY</span>,
+}
+
+<span class="b">parameters</span> = {
+    <span class="s">"query"</span>: <span class="b">exercise_text</span>,
+    <span class="s">"gender"</span>: <span class="b">GENDER</span>,
+    <span class="s">"weight_kg"</span>: <span class="b">WEIGHT_KG</span>,
+    <span class="s">"height_cm"</span>: <span class="b">HEIGHT_CM</span>,
+    <span class="s">"age"</span>: <span class="b">AGE</span>
+}
+
+<span class="b">response</span> = <span class="def">requests</span>.post(exercise_endpoint, json=parameters, headers=headers)
+<span class="b">result</span> = response<span class="def">.json()</span>
+
+<span class="b">today_date</span> = datetime.<span class="def">now()</span>.strftime("%d/%m/%Y")
+<span class="b">now_time</span> = datetime.<span class="def">now()</span>.strftime("%X")
+
+<span class="def">for</span> exercise <span class="def">in</span> result["exercises"]:
+    <span class="b">sheet_inputs</span> = {
+        "workout": {
+            "date": <span class="b">today_date</span>,
+            "time": <span class="b">now_time</span>,
+            "exercise": <span class="b">exercise["name"]</span>.title(),
+            "duration": <span class="b">exercise</span>["duration_min"],
+            "calories": <span class="b">exercise</span>["nf_calories"]
+        }
+    }
+
+<span class="b">sheet_response</span> = <span class="def">requests</span>.post(url=sheet_endpoint, json=sheet_inputs)
+
+<span class="b">sheet_response</span> = <span class="def">requests</span>.post(
+    sheet_endpoint, json=sheet_inputs,
+    <span class="b">auth</span>=("ved", "__my__pass__")
+)
+
+<span class="b">bearer_headers</span> = {
+    "Authorization": "__Your API KEY__"
+}
+                    </pre>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 special" style="padding: 2%; min-height: 100%;">
+            <h5 class="head">Output</h5><br>
+
+        </div>
+    </div>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
+</html>
