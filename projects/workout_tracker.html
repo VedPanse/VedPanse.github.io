@@ -186,27 +186,27 @@
 }
 
 <span class="b">parameters</span> = {
-    <span class="s">"query"</span>: <span class="b">exercise_text</span>,
-    <span class="s">"gender"</span>: <span class="b">GENDER</span>,
-    <span class="s">"weight_kg"</span>: <span class="b">WEIGHT_KG</span>,
-    <span class="s">"height_cm"</span>: <span class="b">HEIGHT_CM</span>,
-    <span class="s">"age"</span>: <span class="b">AGE</span>
+    <span class="i">"query"</span>: <span class="b">exercise_text</span>,
+    <span class="i">"gender"</span>: <span class="b">GENDER</span>,
+    <span class="i">"weight_kg"</span>: <span class="b">WEIGHT_KG</span>,
+    <span class="i">"height_cm"</span>: <span class="b">HEIGHT_CM</span>,
+    <span class="i">"age"</span>: <span class="b">AGE</span>
 }
 
 <span class="b">response</span> = <span class="def">requests</span>.post(exercise_endpoint, json=parameters, headers=headers)
 <span class="b">result</span> = response<span class="def">.json()</span>
 
-<span class="b">today_date</span> = datetime.<span class="def">now()</span>.strftime("%d/%m/%Y")
-<span class="b">now_time</span> = datetime.<span class="def">now()</span>.strftime("%X")
+<span class="b">today_date</span> = datetime.<span class="def">now()</span>.strftime(<span class="s">"%d/%m/%Y"</span>)
+<span class="b">now_time</span> = datetime.<span class="def">now()</span>.strftime(<span class="s">"%X"</span>)
 
-<span class="def">for</span> exercise <span class="def">in</span> result["exercises"]:
+<span class="def">for</span> exercise <span class="def">in</span> result[<span class="s">"exercises"</span>]:
     <span class="b">sheet_inputs</span> = {
-        "workout": {
-            "date": <span class="b">today_date</span>,
-            "time": <span class="b">now_time</span>,
-            "exercise": <span class="b">exercise["name"]</span>.title(),
-            "duration": <span class="b">exercise</span>["duration_min"],
-            "calories": <span class="b">exercise</span>["nf_calories"]
+        <span class="i">"workout"</span>: {
+            <span class="i">"date"</span>: <span class="b">today_date</span>,
+            <span class="i">"time"</span>: <span class="b">now_time</span>,
+            <span class="i">"exercise"</span>: <span class="b">exercise[<span class="s">"name"</span>]</span>.title(),
+            <span class="i">"duration"</span>: <span class="b">exercise</span>[<span class="s">"duration_min"</span>],
+            <span class="i">"calories"</span>: <span class="b">exercise</span>[<span class="s">"nf_calories"</span>]
         }
     }
 
@@ -214,11 +214,11 @@
 
 <span class="b">sheet_response</span> = <span class="def">requests</span>.post(
     sheet_endpoint, json=sheet_inputs,
-    <span class="b">auth</span>=("ved", "__my__pass__")
+    <span class="b">auth</span>=(<span class="s">"ved"</span>, <span class="s">"__my__pass__"</span>)
 )
 
 <span class="b">bearer_headers</span> = {
-    "Authorization": "__Your API KEY__"
+    <span class="i">"Authorization"</span>: <span class="s">"__Your API KEY__"</span>
 }
                     </pre>
                 </div>
