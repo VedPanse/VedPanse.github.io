@@ -397,7 +397,7 @@
 
 
                 </div>
-                <button class="btn btn-primary" onclick="themeChange()">Change Theme</button>
+                <button class="btn btn-primary themeChanger" onclick="themeChange()">Dark Theme</button>
 
             </div>
         </div>
@@ -714,6 +714,7 @@
     }
 
     function changeToDark() {
+        document.querySelector(".themeChanger").innerHTML = "Light Theme";
         document.querySelector(".navbar").style.backgroundColor = "rgb(0, 0, 0, 0.8)";
         document.querySelectorAll(".nav-link").forEach((item) => {
             item.style.color = "rgb(255, 255, 255, 0.7)";
@@ -765,6 +766,7 @@
     }
 
     function changeToLight() {
+        document.querySelector(".themeChanger").innerHTML = "Dark Theme";
         document.querySelector(".navbar").style.backgroundColor = "rgb(255, 255, 255, 0.9)";
         document.querySelectorAll(".nav-link").forEach((item) => {
             item.style.color = "rgb(0,0,0)";
