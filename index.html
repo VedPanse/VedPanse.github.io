@@ -796,8 +796,15 @@
     }
 
     function changeToDark() {
-        document.querySelector("#internships .table-control p").style.color = "white";
-        document.querySelector("#internships .table-control h1").style.color = "white";
+        document.querySelectorAll("#internships .table-control p").forEach((item) => {
+            item.style.color = "#c9c9c9";
+        });
+
+        document.querySelectorAll("#internships .table-control h1").forEach((item) => {
+            item.style.color = "white";
+        });
+
+
         document.querySelector(".themeChanger").innerHTML = "Light Theme";
         document.querySelector(".navbar").style.backgroundColor = "rgb(0, 0, 0, 0.8)";
         document.querySelectorAll(".nav-link").forEach((item) => {
@@ -850,8 +857,13 @@
     }
 
     function changeToLight() {
-        document.querySelector("#internships .table-control p").style.color = "white";
-        document.querySelector("#internships .table-control h1").style.color = "black";
+        document.querySelectorAll("#internships .table-control p").forEach((item) => {
+            item.style.color = "#6e6e63";
+        });
+
+        document.querySelectorAll("#internships .table-control h1").forEach((item) => {
+            item.style.color = "black";
+        });
 
         document.querySelector(".themeChanger").innerHTML = "Dark Theme";
         document.querySelector(".navbar").style.backgroundColor = "rgb(255, 255, 255, 0.9)";
