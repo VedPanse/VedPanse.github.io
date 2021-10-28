@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>{ Browser }</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+
+<body>
+
+
+    <section id="intro">
+        <h1 id="title"><span class="curl-logo">{</span> Browser <span class="curl-logo">}</span></h1>
+        <form method="post" id="main">
+            <input id="query" name="query">
+        </form>
+
+    </section>
+
+
+    <section id="results">
+        <h1><span style="border-bottom: 2px solid black;">Res</span>ults</h1><br><br>
+        <div class="row">
+            {% for element in list_to_send%}
+            <div class="col-lg-4 col-md-6">
+                <div class="wrap-up">
+                    <a href="{{all_links[list_to_send.index(element)]}}">{{element}}</a>
+                </div>
+            </div>
+            {% endfor %}
+            <br><br>
+            <br><br><br>
+        </div>
+    </section>
+</body>
+<script>
+    document.querySelector("#query").addEventListener("keydown", (e) => {
+        if (e.keyCode === 13) {
+            document.querySelector("section#results").style.display = "block";
+        }
+    });
+    // if (window.history.replaceState) {
+    //     window.history.replaceState(null, null, window.location.href);
+    // }
+</script>
+
+</html>
