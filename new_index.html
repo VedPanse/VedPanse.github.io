@@ -97,9 +97,7 @@
         section#projects h1,
         section#blogs h1,
         section#work h1,
-        section#internships h1,
-        section#contact h1,
-        section#follow h1 {
+        section#internships h1 {
             font-weight: 700;
             font-size: 3rem;
         }
@@ -199,14 +197,7 @@
         section#contact {
             width: 100%;
             min-height: 50%;
-        }
-        
-        #contact label {
-            color: #27282CB3;
-        }
-        
-        #contact input::selection {
-            border: 1px solid black;
+            background-color: #F4F4F4;
         }
         
         #contact input,
@@ -384,52 +375,6 @@
         #work .col-lg-8:hover,
         #work .col-lg-4:hover {
             cursor: pointer;
-        }
-        
-        section#contact h2 {
-            line-height: 2;
-            font-weight: 300;
-            letter-spacing: 1.1px;
-        }
-        
-        .back-target {
-            background-image: url(https://static.tildacdn.com/tild3965-3837-4434-b463-356533653935/beam.svg);
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-        
-        section#contact p {
-            color: #27282CB3;
-        }
-        
-        .btn-special {
-            border-radius: 40px;
-            font-weight: 300;
-            padding-left: 20px;
-            padding-right: 20px;
-            background-color: transparent;
-            border-color: gray;
-            color: black;
-        }
-        
-        section#contact input,
-        textarea {
-            backdrop-filter: blur(30px);
-            background-color: rgb(255, 255, 255, 0.6);
-        }
-        
-        section#follow .margin-10 {
-            padding-top: 0%;
-        }
-        
-        section#contact .margin-10 {
-            padding-bottom: 2%;
-        }
-        
-        section#follow p {
-            color: #27282CB3;
-            font-size: 18px;
         }
     </style>
 </head>
@@ -747,30 +692,22 @@
 
     <section id="contact">
         <div class="margin-10">
+            <h1>Contact Me</h1><br><br>
             <div class="row">
-                <div class="back-target">
-                    <div class="col-lg-6 col-md-6">
-
-                        <h1>Contact Me</h1><br>
-                        <h2>How can I help you? Drop a message below and I will get back to you.</h2>
-                        <br><br>
-                        <form method="POST" action="https://formspree.io/f/xdoyprne">
-                            <label for="fName">First Name *</label>
-                            <input name="fName" id="fName" aria-required="true" required type="text">
-                            <label for="lName">Last Name *</label>
-                            <input name="lName" id="lName" aria-required="true" required type="text">
-                            <label for="email">Email Address *</label>
-                            <input name="email" id="email" aria-required="true" required type="email">
-                            <label for="message">Message *</label>
-                            <textarea name="message" id="message" aria-required="true" required type="text"></textarea><br><br>
-                            <button class="btn btn-primary" type="submit">Submit</button>
-                        </form><br><br>
-
-                    </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <form method="POST" action="https://formspree.io/f/xdoyprne">
+                        <label for="fName">First Name *</label>
+                        <input name="fName" id="fName" aria-required="true" required type="text">
+                        <label for="lName">Last Name *</label>
+                        <input name="lName" id="lName" aria-required="true" required type="text">
+                        <label for="email">Email Address *</label>
+                        <input name="email" id="email" aria-required="true" required type="email">
+                        <label for="message">Message *</label>
+                        <textarea name="message" id="message" aria-required="true" required type="text"></textarea><br><br>
+                        <button class="btn btn-primary" type="submit">Submit</button>
+                    </form>
                 </div>
-            </div>
-            <div class="row" style="margin-top: 5%;">
-                <div class="col-lg-6 col-md-6">
+                <div class="col-lg-6 col-md-6 col-sm-6">
                     <h4>Note</h4>
                     <p>Filling all the fields in the form is necessary.</p>
                     <p>The chat in the form is <span style="color: #007BFF;">private</span> and will not be leaked.</p>
@@ -779,29 +716,14 @@
                     <p>My response to your message will be sent to the email address that you provide.</p><br>
                     <h5>How will information provided in the form be used?</h5>
                     <p>All the information in the form will be used for communicating purposes. Any feedback, suggestion, recommendation and bug report will be highly appreciated.</p>
-                </div>
-            </div>
 
-        </div>
-    </section>
-
-    <section id="follow">
-        <div class="margin-10">
-            <h1 style="margin-top: 15%;">Follow Me</h1><br>
-            <div class="row" style="width: 90%; margin: auto;">
-                <div class="col-lg-6 col-md-6">
-                    <p>CodePen is a social development environment for front-end designers and developers. Build and deploy a website, show off your work, build test cases to learn and debug, and find inspiration.</p><br>
-                    <a href="https://codepen.io/vedpanse" target="_blank"><button class="btn-special btn">CodePen</button></a>
-                </div>
-
-                <div class="col-lg-6 col-md-6">
-                    <p>Millions of developers and companies build, ship, and maintain their software on GitHub—the largest and most advanced development platform in the world.</p><br>
-                    <a href="https://github.com/vedpanse" target="_blank"><button class="btn-special btn">GitHub</button></a>
+                    <h3 style="margin-top: 15%;">Follow Me</h3>
+                    <a href="https://codepen.io/vedpanse" target="_blank">CodePen</a>
+                    <a href="https://github.com/vedpanse" target="_blank">GitHub</a>
                 </div>
             </div>
         </div>
     </section>
-
 
     <footer>
         <div class="row">
