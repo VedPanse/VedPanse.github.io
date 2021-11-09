@@ -773,7 +773,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row" style="margin-top: 5%;">
+            <div class="row note" style="margin-top: 5%;">
                 <div class="col-lg-6 col-md-6">
                     <h4>Note</h4>
                     <p>Filling all the fields in the form is necessary.</p>
@@ -878,6 +878,10 @@
     }
 
     function changeToDark() {
+        document.querySelectorAll(".note p").forEach((item) => {
+            item.style.color = "white";
+        });
+
         document.querySelectorAll("label").forEach((item) => {
             item.style.color = "white";
         });
@@ -953,6 +957,10 @@
     }
 
     function changeToLight() {
+        document.querySelectorAll(".note p").forEach((item) => {
+            item.style.color = "#27282CB3";
+        });
+
         document.querySelectorAll("label").forEach((item) => {
             item.style.color = "#27282CB3";
         });
