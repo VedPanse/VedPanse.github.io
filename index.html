@@ -878,6 +878,20 @@
     }
 
     function changeToDark() {
+        document.querySelectorAll("label").forEach((item) => {
+            item.style.color = "white";
+        });
+
+        document.querySelectorAll("section#contact input").forEach((item) => {
+            item.style.backgroundColor = "rgb(50, 50, 50, 0.7)";
+            item.style.color = "white";
+        });
+
+        document.querySelectorAll("section#contact textarea").forEach((item) => {
+            item.style.backgroundColor = "rgb(50, 50, 50, 0.7)";
+            item.style.color = "white";
+        });
+
         document.querySelectorAll("#internships .table-control p").forEach((item) => {
             item.style.color = "#c9c9c9";
         });
@@ -939,6 +953,23 @@
     }
 
     function changeToLight() {
+        document.querySelectorAll("label").forEach((item) => {
+            item.style.color = "#27282CB3";
+        });
+
+        document.querySelectorAll("section#contact input").forEach((item) => {
+            item.style.backgroundColor = "rgb(255, 255, 255, 0.6)";
+            item.style.color = "black";
+        });
+
+        document.querySelectorAll("section#contact textarea").forEach((item) => {
+            item.style.backgroundColor = "rgb(255, 255, 255, 0.6)";
+            item.style.color = "black";
+        });
+
+
+
+
         document.querySelectorAll("#internships .table-control p").forEach((item) => {
             item.style.color = "#6e6e63";
         });
