@@ -217,4 +217,5 @@ div.translucent {
 
 .a-button:hover {
     border: 1px dashed black;
+    color: black;
 }
