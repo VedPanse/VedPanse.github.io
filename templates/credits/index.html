@@ -18,6 +18,38 @@
     div.none {
         visibility: none !important;
     }
+    
+    .topnav {
+        overflow: hidden;
+        background-color: white;
+        border-bottom: 1px solid rgb(210, 210, 215);
+        min-width: 25%;
+        max-width: 100%;
+    }
+    
+    .topnav a {
+        float: left;
+        display: block;
+        color: #9a9a9c !important;
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+        font-size: 15px;
+        border-bottom: 3px solid transparent;
+    }
+    
+    .topnav a:hover {
+        color: #646468;
+    }
+    
+    .topnav a.active {
+        border-bottom: 3px solid black;
+        color: black !important;
+    }
+    
+    .topnav a:hover {
+        cursor: pointer;
+    }
 </style>
 
 <body>
@@ -48,77 +80,24 @@
         <input id="search-query" placeholder="Search...">
     </div>
     <section id="news">
-        <div class="cr-img" style="background-image: url(../../images/ved_panse.png);">
-            <h1 style="color: white; position: absolute; top: 70%; left: 50%; transform: translate(-50%, -50%);">High Jump</h1>
-            <a href="#high" style="position: absolute; top: 90%; left: 50%; transform: translate(-50%, -50%);"><button class="btn btn-lg btn-light">Watch Videos <i class="fa fa-chevron-right"></i></button></a>
-        </div><br><br><br><br>
-        <h1>Topic: High Jump</h1><br>
-        <div class="row" id="high">
-            <div class="col-lg-4 col-md-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title"><i class="fas fa-code"></i></h5><br>
-                        <h3 class="card-subtitle">Attempt 1: Success</h3><br>
-
-                        <p class="card-text">Oh yes! Cleared a height that I deemed good for my age (then) in the first attempt. I didn't expect to jump this high. Seemed like I had improved.</p>
-                        <a href="Vid1.html" class="card-link">Watch Video <i class="fa fa-chevron-right"></i></a>
-
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title"><i class="fas fa-code"></i></h5><br>
-                        <h3 class="card-subtitle">Attempt 2: Fail</h3><br>
-
-                        <p class="card-text">A height of 150cm seemed monstrous for me to clear in the first attempt. I hoped I would get it right in the coming attempts.</p>
-                        <a href="Vid2.html" class="card-link">Watch Video <i class="fa fa-chevron-right"></i></a>
-
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title"><i class="fas fa-users"></i></h5><br>
-                        <h3 class="card-subtitle">Attempt 3: The suspense</h3><br>
-
-                        <p class="card-text">After failing to clear the height of 150cm in the first attempt and the second attempt, I have got only one more attempt to clear the level. Will I make it to the finals?</p>
-                        <a href="Vid4.html" class="card-link">Watch Video <i class="fa fa-chevron-right"></i></a>
-
-                    </div>
-                </div>
-            </div>
-        </div><br><br>
-        <hr>
+        <div class="topnav">
+            <a class="active" onclick="images()" id="nav-html">Images</a>
+            <!-- <a onclick="python()" id="nav-python">Deserts</a> -->
+        </div>
         <br><br>
-        <div class="row">
-            <div class="col-lg-6 col-md-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title"><i class="fas fa-users"></i></h5><br>
-                        <h3 class="card-subtitle">The final 'decider' round</h3><br>
-
-                        <p class="card-text">My best friend and I had made it to the finals! And we had to compete between ourselves to grab the first position. Who will make it to the top position and qualify for the State Championships?</p>
-                        <a href="Vid3.html" class="card-link">Watch Video <i class="fa fa-chevron-right"></i></a>
-
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title"><i class="fas fa-users"></i></h5><br>
-                        <h3 class="card-subtitle">Award distribution</h3><br>
-
-                        <p class="card-text">The most awaited event: the award distribution. This did not mark my first rank in the tournament. Rather, it marked the great scale by which I had improved myself to become worthy enough to bag the gold medal in district championships,
-                            and qualify for the state level.</p>
-                        <a href="Vid5.html" class="card-link">Watch Video <i class="fa fa-chevron-right"></i></a>
-
-                    </div>
-                </div>
-            </div>
+        <div id="images">
+            <img src="../../images/in-school.jpg">
+            <a href="https://woodridgehigh.com/static/media/9.b787960b.jpg" target="_blank">https://woodridgehigh.com/static/media/9.b787960b.jpg</a>
+            <img src="../../images/mime1.jpg">
+            <a href="https://woodridgehigh.com/static/media/1.5ed4f0f3.jpg" target="_blank">https://woodridgehigh.com/static/media/1.5ed4f0f3.jpg</a>
+            <img src="../../images/mime2.jpg">
+            <a href="https://woodridgehigh.com/static/media/11.16648695.jpg" target="_blank">https://woodridgehigh.com/static/media/11.16648695.jpg</a>
+            <img src="../../images/mime3.jpg">
+            <a href="https://woodridgehigh.com/static/media/2.2070859d.jpg" target="_blank">https://woodridgehigh.com/static/media/2.2070859d.jpg</a>
+            <img src="../../images/mime4.jpg">
+            <a href="https://woodridgehigh.com/static/media/9.21918e87.jpg" target="_blank">https://woodridgehigh.com/static/media/9.21918e87.jpg</a>
+            <img src="../../images/hurdles.jpeg">
+            <a href="https://woodridgehigh.com/static/media/14.d3edb9c7.jpg" target="_blank">https://woodridgehigh.com/static/media/14.d3edb9c7.jpg</a>
         </div>
         <section id="footer">
             <div class="row">
