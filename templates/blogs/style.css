@@ -149,3 +149,8 @@ p.main {
     /* font-weight: 600; */
     /* font-size: 19px; */
 }
+
+.dark {
+    background-color: black;
+    color: white;
+}

@@ -1,9 +1,37 @@
 function themeChange() {
     if (document.body.classList.contains("dark")) {
-        alert("True")
-        document.body.classList.remove("dark")
+
+        document.body.classList.remove("dark");
+        toLight();
     } else {
-        alert("False")
-        document.body.classList.add("dark")
+        document.body.classList.add("dark");
+        toDark();
     }
+}
+
+function toLight() {
+
+    // NAVBAR
+    document.querySelector(".navbar").style.backgroundColor = "white";
+    document.querySelector(".navbar-brand").style.color = "black";
+
+    document.querySelector(".navbar").style.borderBottom = "1px solid rgba(39, 40, 44, 0.2)";
+
+    // LEFTNAV
+    document.querySelector(".leftnav").style.borderRight = "1px solid rgba(39, 40, 44, 0.2)";
+    document.querySelector(".leftnav a").style.color = "#27282c";
+    document.querySelector(".leftnav a.active").style.color = "black";
+}
+
+function toDark() {
+
+    // NAVBAR
+    document.querySelector(".navbar").style.backgroundColor = "black";
+    document.querySelector(".navbar-brand").style.color = "white";
+    document.querySelector(".navbar").style.borderBottom = "1px solid rgb(201, 201, 201)";
+
+    // LEFTNAV
+    document.querySelector(".leftnav").style.borderRight = "1px solid rgb(201, 201, 201)";
+    document.querySelector(".leftnav a").style.color = "rgb(201, 201, 201)";
+    document.querySelector(".leftnav a.active").style.color = "white";
 }
