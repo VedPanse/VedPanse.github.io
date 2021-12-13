@@ -19,7 +19,9 @@ function toLight() {
 
     // LEFTNAV
     document.querySelector(".leftnav").style.borderRight = "1px solid rgba(39, 40, 44, 0.2)";
-    document.querySelector(".leftnav a").style.color = "#27282c";
+    document.querySelectorAll(".leftnav a").forEach((item) => {
+        item.style.color = "#27282c";
+    });
     document.querySelector(".leftnav a.active").style.color = "black";
 }
 
@@ -32,6 +34,8 @@ function toDark() {
 
     // LEFTNAV
     document.querySelector(".leftnav").style.borderRight = "1px solid rgb(201, 201, 201)";
-    document.querySelector(".leftnav a").style.color = "rgb(201, 201, 201)";
+    document.querySelectorAll(".leftnav a").forEach((item) => {
+        item.style.color = "rgb(201, 201, 201)";
+    });
     document.querySelector(".leftnav a.active").style.color = "white";
 }
