@@ -59,6 +59,10 @@
     #images a {
         margin-bottom: 10%;
     }
+    
+    #icons {
+        display: none;
+    }
 </style>
 
 <body>
@@ -90,7 +94,8 @@
     </div>
     <section id="news">
         <div class="topnav">
-            <a class="active" onclick="images()" id="nav-html">Images</a>
+            <a class="active" onclick="imager()" id="nav-images" href="#imagery">Images</a>
+            <a onclick="icons()" href="#iconery" id="nav-icons">Icons</a>
             <!-- <a onclick="python()" id="nav-python">Deserts</a> -->
         </div>
         <br><br>
@@ -127,6 +132,10 @@
             <img src="../../images/hurdles.jpeg"><br><br>
             <a href="https://woodridgehigh.com/static/media/14.d3edb9c7.jpg" target="_blank">https://woodridgehigh.com/static/media/14.d3edb9c7.jpg <i class="fa fa-chevron-right"></i></a><br><br>
         </div>
+        <div id="icons">
+            <h1>FontAwesome Icons</h1>
+            <a href="https://fontawesome.com/v5.15/icons?d=gallery&p=2" target="_blank">https://fontawesome.com/v5.15/icons?d=gallery&p=2 <i class="fa fa-chevron-right"></i></a>
+        </div>
         <section id="footer">
             <div class="row">
                 <div class="col-lg-4 col-md-4">
@@ -147,12 +156,29 @@
     </section><br><br>
 
 
+    <script>
+        function imager() {
+            document.querySelector("#images").style.display = "block";
+            document.querySelector("#icons").style.display = "none";
 
+            document.querySelector("#nav-icons").classList.remove("active");
+            document.querySelector("#nav-images").classList.add("active");
+        }
+
+        function icons() {
+            document.querySelector("#images").style.display = "none";
+            document.querySelector("#icons").style.display = "block";
+
+            document.querySelector("#nav-icons").classList.add("active");
+            document.querySelector("#nav-images").classList.remove("active");
+        }
+    </script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
+
 
 </html>
