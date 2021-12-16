@@ -226,3 +226,7 @@ div.translucent {
         width: 100%;
     }
 }
+
+a.centroid {
+    text-align: center;
+}
