@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="css/style.css">
 
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/sign-in/">
+
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>Ved Panse</title>
 </head>
 
@@ -463,17 +466,25 @@
                             <a href="#contact-text"><button style="position: absolute; top: 85%; left: 50%; transform: translate(-50%, -50%);" class="btn btn-lg btn-dark">Learn More <i class="fa fa-chevron-right"></i></button></a>
                         </div><br><br><br>
                         <h1 id="contact-text">Contact Me</h1><br><br>
-                        <form method="POST" action="https://formspree.io/f/xdoyprne">
-                            <label for="fName">First Name *</label>
-                            <input name="fName" id="fName" aria-required="true" required type="text">
-                            <label for="lName">Last Name *</label>
-                            <input name="lName" id="lName" aria-required="true" required type="text">
-                            <label for="email">Email Address *</label>
-                            <input name="email" id="email" aria-required="true" required type="email">
-                            <label for="message">Message *</label>
-                            <textarea name="message" id="message" aria-required="true" required type="text"></textarea>
-                            <button class="a-button" style="color: #0067B8;;" type="submit">Submit <i class="fa fa-chevron-right"></i></button>
-                        </form>
+                        <main class="form-signin">
+                            <form method="POST" action="https://formspree.io/f/xdoyprne">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="floatingInput" placeholder="Name" name="Name" required>
+                                    <label for="floatingInput">Name</label>
+                                </div>
+                                <div class="form-floating">
+                                    <input type="email" class="form-control" id="floatingPassword" placeholder="Email ID" name="Email" required>
+                                    <label for="floatingPassword">Email ID</label>
+                                </div>
+                                <div class="form-floating">
+                                    <textarea type="message" class="form-control" id="floatingPassword" placeholder="Message" name="Message" required></textarea>
+                                    <label for="floatingPassword">Message</label>
+                                </div>
+
+
+                                <button class="a-button" style="color: #0067B8;;" type="submit">Submit <i class="fa fa-chevron-right"></i></button>
+                            </form>
+                        </main>
 
                         <section id="footer">
                             <div class="row">

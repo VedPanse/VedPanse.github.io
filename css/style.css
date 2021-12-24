@@ -103,23 +103,6 @@ section#about p {
     text-align: center;
 }
 
-section#contact form input,
-textarea {
-    display: block;
-    margin-bottom: 5%;
-}
-
-input {
-    width: 35%;
-    padding: 5px;
-}
-
-textarea {
-    width: 50%;
-    min-height: 100px;
-    height: 200px;
-}
-
 section#footer {
     width: 100%;
     position: relative;
@@ -220,13 +203,37 @@ div.translucent {
     color: black;
 }
 
-@media only screen and (max-width: 800px) {
-    section#contact input,
-    section#contact textarea {
-        width: 100%;
-    }
-}
-
 a.centroid {
     text-align: center;
+}
+
+.form-signin {
+    width: 50%;
+    padding: 15px;
+    margin: auto;
+}
+
+.form-signin .checkbox {
+    font-weight: 400;
+}
+
+.form-signin .form-floating:focus-within {
+    z-index: 2;
+}
+
+.form-signin input[type="text"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="email"] {
+    border-radius: 0%;
+    margin-bottom: -1px;
+}
+
+.form-signin textarea[type="message"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
 }
