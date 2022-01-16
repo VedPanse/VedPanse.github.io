@@ -32,39 +32,53 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">Ved Panse</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="#news">Home</a>
-                    <a class="nav-link" href="#about">About Me</a>
-                    <a class="nav-link" href="#projects">Projects</a>
-                    <a class="nav-link" href="#blogs">Blogs</a>
-                    <a class="nav-link" href="#documentations">Documentations and Research</a>
-                    <a class="nav-link" href="templates/video/index.html">Videos</a>
-                    <a class="nav-link" href="#contact">Contact</a>
-                </div>
-                <div style="position: absolute; right: 0%;" class="accessories">
-                    <a class="nav-link search" href="#" id="search">Search &nbsp;<i class="fa fa-search"></i></a>
-                </div>
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="#">Ved Panse</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="index.html">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="templates/blogs/index.html">Blogs</a>
+                <a class="nav-item nav-link" href="templates/docs/index.html">Documentations & Research</a>
+                <a class="nav-item nav-link" href="templates/social/index.html">Social Work</a>
 
+                <a class="nav-item nav-link" href="#">Videos</a>
             </div>
         </div>
     </nav>
-    <div class="translucent" class="none">
-        <input id="search-query" placeholder="Search...">
+
+    <nav class="navbar navbar-expand-lg brownie">
+        <a class="navbar-brand" href="#" style="visibility: hidden;">Ved Panse</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="#">What have I been upto? <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="#">About Me</a>
+                <a class="nav-item nav-link" href="#">Projects</a>
+                <a class="nav-item nav-link" href="#">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <div class="brownie teller">
+        <p style="position: absolute;">Welcome to my personal website.</p>
     </div>
+    <br><br><br>
+    <div class="brownie" style="color: black;">
+
+    </div>
+
+
     <section id="news">
         <div class="cr-img" style="background-image: url(images/home.png);">
             <h1 style="color: white; position: absolute; top: 70%; left: 50%; transform: translate(-50%, -50%);">Advent of Code 2021</h1>
             <a href="#recent" style="position: absolute; top: 90%; left: 50%; transform: translate(-50%, -50%);"><button class="btn btn-lg btn-light">Learn More <i class="fa fa-chevron-right"></i></button></a>
         </div><br><br><br>
         <div id="news-search">
-            <h1 id="recent">What I have been upto</h1><br><br>
+            <h1 id="recent">What have I been upto?</h1><br><br>
             <div class="row">
                 <div class="col-lg-4 col-md-6">
                     <div class="card">
@@ -537,42 +551,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
-<script>
-    const news = document.querySelector("div#news-search").textContent.toLowerCase()
-    const about = document.querySelector("div#about-search").textContent.toLowerCase()
-    const projects = document.querySelector("div#projects-search").textContent.toLowerCase()
-    const blogs = document.querySelector("div#blogs-search").textContent.toLowerCase()
-    const contact = document.querySelector("div#contact-search").textContent.toLowerCase()
 
-
-    document.querySelector("div.translucent").classList.add("none");
-    document.querySelector("#search").addEventListener("click", () => {
-        document.querySelector("div.translucent").classList.toggle("none");
-    });
-
-    document.querySelector("#search-query").addEventListener("keydown", (e) => {
-        if (e.keyCode === 13) {
-            const query = document.querySelector("#search-query").value.toLowerCase();
-            document.querySelector("div.translucent").classList.add("none");
-            search(query)
-        }
-    });
-
-    function search(q) {
-        if (news.includes(q)) {
-            window.location.href = "#news"
-        } else if (about.includes(q)) {
-            window.location.href = "#about"
-        } else if (projects.includes(q)) {
-            window.location.href = "#projects"
-        } else if (blogs.includes(q)) {
-            window.location.href = "#blogs"
-        } else if (contact.includes(q)) {
-            window.location.href = "#contact"
-        } else {
-            alert("No results found.");
-        }
-    }
-</script>
 
 </html>
