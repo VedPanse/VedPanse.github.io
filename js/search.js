@@ -2,25 +2,54 @@ var query;
 var sequence = []
 
 document.querySelector("#search-box").addEventListener("keydown", (e) => {
-    if (e.keyCode === 13) {
-        sequence = []
-        query = e.target.value.toLowerCase();
-        getList()
 
-        appendo()
+    if (e.keyCode === 13) {
+        query = e.target.value.toLowerCase().trim();
+
+        if (query !== "") {
+            sequence = []
+            getList()
+            appendo()
+        }
     }
 });
 
 function appendo() {
     if (sequence.length === 0) {
         document.querySelector("#nothingness").style.display = "block";
+        document.querySelector("#somethingness").style.display = "none";
     } else {
+        document.querySelector("#nothingness").style.display = "none";
+        document.querySelector("#somethingness").style.display = "block";
+
+
         document.querySelector("div#somethingness").innerHTML = "";
         for (let i = 0; i < sequence.length; i++) {
             var suggestion = document.createElement("div");
-            var title = document.createElement("h3");
+            var title = document.createElement("a");
+            var desc = document.createElement("p");
             title.innerHTML = sequence[i];
+
+            switch (sequence[i]) {
+                case "Ved Panse - HomePage":
+                    desc.innerHTML = "Welcome to my personal website."
+                    break;
+                case "Ved Panse - Blogs":
+                    desc.innerHTML = "Hello. I am Ved Panse. This is my blog page."
+                case "Ved Panse - Documentations":
+                    desc.innerHTML = "Welcome to my documentations and research website. Here, I have pusblished my research papers and documentations on the softwares that I either built or keenly studied."
+                case "Ved Panse - Social Work":
+                    desc.innerHTML = "This website is dedicated for archiving my experiences of trying to bring positive changes in the society."
+                case "Ved Panse - Videos":
+                    desc.innerHTML = "Through this website, I want to share some of my experiences in the form of videos."
+                case "Ved Panse - Credits":
+                    desc.innerHTML = "This website is dedicated to attribute all the other websites and people who made building my personal website possible."
+            }
+
             suggestion.appendChild(title);
+            suggestion.appendChild(desc);
+
+            suggestion.style.marginBottom = "5%";
             document.querySelector("div#somethingness").appendChild(suggestion);
         }
     }
@@ -29,25 +58,25 @@ function appendo() {
 
 function getList() {
     if (indexContent.toLowerCase().includes(query)) {
-        sequence.push("Ved Panse");
+        sequence.push("Ved Panse - HomePage");
     }
 
     if (blogContent.toLowerCase().includes(query)) {
-        sequence.push("Blogs");
+        sequence.push("Ved Panse - Blogs");
     }
     if (documentationContent.toLowerCase().includes(query)) {
-        sequence.push("Documentations");
+        sequence.push("Ved Panse - Documentations");
     }
 
     if (socialContent.toLowerCase().includes(query)) {
-        sequence.push("Social");
+        sequence.push("Ved Panse - Social Work");
     }
 
     if (videosContent.toLowerCase().includes(query)) {
-        sequence.push("Videos");
+        sequence.push("Ved Panse - Videos");
     }
     if (credits.toLowerCase().includes(query)) {
-        sequence.push("Credits");
+        sequence.push("Ved Panse - Credits");
     }
 
 }

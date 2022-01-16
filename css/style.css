@@ -312,3 +312,18 @@ input#search-box {
 #nothingness {
     display: none;
 }
+
+#somethingness a {
+    font-size: 32px;
+    color: black;
+}
+
+#somethingness a:hover {
+    color: #06c;
+    border: none;
+    cursor: pointer;
+}
+
+#somethingness p {
+    padding-left: 17px;
+}
