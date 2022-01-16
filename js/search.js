@@ -4,43 +4,50 @@ var sequence = []
 document.querySelector("#search-box").addEventListener("keydown", (e) => {
     if (e.keyCode === 13) {
         sequence = []
-        query = e.target.value;
+        query = e.target.value.toLowerCase();
         getList()
-        alert(sequence);
+
+        appendo()
     }
 });
 
-function getList() {
-    if (indexContent.includes(query)) {
-        sequence.push(true);
+function appendo() {
+    if (sequence.length === 0) {
+        document.querySelector("#nothingness").style.display = "block";
     } else {
-        sequence.push(false)
+        document.querySelector("div#somethingness").innerHTML = "";
+        for (let i = 0; i < sequence.length; i++) {
+            var suggestion = document.createElement("div");
+            var title = document.createElement("h3");
+            title.innerHTML = sequence[i];
+            suggestion.appendChild(title);
+            document.querySelector("div#somethingness").appendChild(suggestion);
+        }
+    }
+}
+
+
+function getList() {
+    if (indexContent.toLowerCase().includes(query)) {
+        sequence.push("Ved Panse");
     }
 
-    if (blogContent.includes(query)) {
-        sequence.push(true);
-    } else {
-        sequence.push(false)
+    if (blogContent.toLowerCase().includes(query)) {
+        sequence.push("Blogs");
     }
-    if (documentationContent.includes(query)) {
-        sequence.push(true);
-    } else {
-        sequence.push(false)
+    if (documentationContent.toLowerCase().includes(query)) {
+        sequence.push("Documentations");
     }
-    if (socialContent.includes(query)) {
-        sequence.push(true);
-    } else {
-        sequence.push(false)
+
+    if (socialContent.toLowerCase().includes(query)) {
+        sequence.push("Social");
     }
-    if (videosContent.includes(query)) {
-        sequence.push(true);
-    } else {
-        sequence.push(false)
+
+    if (videosContent.toLowerCase().includes(query)) {
+        sequence.push("Videos");
     }
-    if (credits.includes(query)) {
-        sequence.push(true);
-    } else {
-        sequence.push(false)
+    if (credits.toLowerCase().includes(query)) {
+        sequence.push("Credits");
     }
 
 }

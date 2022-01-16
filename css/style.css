@@ -308,3 +308,7 @@ input#search-box {
     height: 35px;
     width: 300px;
 }
+
+#nothingness {
+    display: none;
+}
