@@ -305,4 +305,6 @@ input#search-box {
     border: 1px solid #c4c4c5;
     padding-left: 5px;
     font-size: 15px;
+    height: 35px;
+    width: 300px;
 }
