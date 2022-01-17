@@ -19,6 +19,10 @@
 </head>
 
 <style>
+    section#news {
+        margin-top: -10% !important;
+    }
+    
     div.none {
         visibility: none !important;
     }
@@ -71,31 +75,38 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="../../index.html">Ved Panse</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="../../index.html#news">Home</a>
-                    <a class="nav-link" href="../../index.html#about">About Me</a>
-                    <a class="nav-link" href="../../index.html#projects">Projects</a>
-                    <a class="nav-link" href="../../index.html#blogs">Blogs</a>
-                    <a class="nav-link" href="index.html">Videos</a>
-                    <a class="nav-link" href="../../index.html#contact">Contact</a>
-                </div>
-                <div style="position: absolute; right: 0%;" class="accessories">
-                    <a class="nav-link search" href="#" id="search">Search &nbsp;<i class="fa fa-search"></i></a>
-                </div>
 
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="#">Ved Panse</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="../../index.html">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="../blogs/index.html">Blogs</a>
+                <a class="nav-item nav-link" href="../docs/index.html">Documentations & Research</a>
+                <a class="nav-item nav-link" href="../social/index.html">Social Work</a>
+
+                <a class="nav-item nav-link" href="index.html">Videos</a>
             </div>
         </div>
     </nav>
-    <div class="translucent" class="none" style="display: none;">
-        <input id="search-query" placeholder="Search...">
-    </div>
+
+    <nav class="navbar navbar-expand-lg brownie">
+        <a class="navbar-brand" href="#" style="visibility: hidden;">Ved Panse</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="#news">What have I been upto? <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="#about">About Me</a>
+                <a class="nav-item nav-link" href="#projects">Projects</a>
+                <a class="nav-item nav-link" href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
     <section id="news">
         <div class="topnav">
             <a class="active" onclick="imager()" id="nav-images" href="#imagery">Images</a>
