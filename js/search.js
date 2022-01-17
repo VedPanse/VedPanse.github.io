@@ -55,6 +55,11 @@ function appendo() {
                 case "Ved Panse - Credits":
                     desc.innerHTML = "This website is dedicated to attribute all the other websites and people who made building my personal website possible."
                     href = "templates/credits/index.html"
+                    break;
+                case "Ved Panse - My Passion for Cricket | Blog":
+                    desc.innerHTML = "I felt like sharing my interest in cricket with you. In this blog, I describe how I developed this interest. From a young age, I was fascinated by the very idea of cricket: staying within 22 yards and hitting the ball past 107 yards."
+                    href = "templates/blogs/cricket.html"
+                    break;
             }
 
             title.href = href;
@@ -90,6 +95,10 @@ function getList() {
     }
     if (credits.toLowerCase().includes(query)) {
         sequence.push("Ved Panse - Credits");
+    }
+
+    if (blogContent.toLowerCase().includes(query)) {
+        sequence.push("Ved Panse - My Passion for Cricket | Blog");
     }
 
 }
@@ -482,3 +491,47 @@ The most awaited event: the award distribution. This did not mark my first rank 
 Watch Video `
 
 const credits = `Attributes credits credit`
+
+const cricketBlog = `My Passion for Cricket
+
+
+I felt like sharing my interest in cricket with you. In this blog, I describe how I developed this interest. From a young age, I was fascinated by the very idea of cricket: staying within 22 yards and hitting the ball past 107 yards.
+
+
+
+
+Cricket and India
+In India, calling cricket "India's favorite game" would be underestimating the love of Indians towards this sport. Many people even call cricket a religion in India.
+
+The number of people in India who play cricket daily surpasses the holding capacity of all the grounds in India. Thus, many of them take to the streets to play cricket.
+
+
+
+
+My introduction to cricket
+As my mother recalls it, my grandfather once took me on an evening stroll to show me a dog that lived just across the street (I was fascinated by dogs too). When we stepped out of the gate, we saw a group of kids playing cricket on the street. My young eyes were so fascinated as they played cricket that I compelled my grandfather to stay there for half an hour, holding me while I gazed at the kids playing.
+
+
+
+
+Cricket and me
+After that incident, I had developed a strange habit. Whenever anyone came to my house, I used to throw a ball at them and expect them to throw the ball back at me so that I could hit it with the bat.
+
+Even today, all of my relatives ask me if I am still into cricket.
+
+
+
+
+School team
+It was no surprise for my family that I made it to my school's cricket team. I was the opening batsman for my school because I was reputed for being a big hitter. However, this was not true when it came to leather ball cricket.
+
+
+
+
+Cricket today
+As my interest in cricket was developing at a tender age, my passion for computers was rising too. As it turned out, I liked computers more. Regardless, I still respect cricket as I used to before. I try to stay as connected as I can.
+
+
+
+
+Did you have such a passion for anything too? Let me know here.`
