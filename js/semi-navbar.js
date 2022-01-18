@@ -1,6 +1,8 @@
 document.addEventListener("scroll", function() {
     if ($(window).scrollTop() === 0) {
         document.querySelector(".navbar.brownie").style.top = "inherit";
+        document.querySelector(".navbar.brownie").style.backgroundColor = "rgba(255, 255, 255)";
+        document.querySelector(".navbar.brownie").style.backdropFilter = "none";
 
     } else {
         document.querySelector(".navbar.brownie").style.position = "fixed";
