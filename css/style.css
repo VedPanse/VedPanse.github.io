@@ -333,3 +333,8 @@ input#search-box {
 #somethingness p {
     padding-left: 17px;
 }
+
+.go-there {
+    color: #06c !important;
+    font-size: 17px !important;
+}

@@ -29,6 +29,9 @@ function appendo() {
             var title = document.createElement("a");
             var desc = document.createElement("p");
             var href;
+            var go = document.createElement("a");
+            go.innerHTML = "&nbsp;Go there &#8250;";
+            go.classList.add("go-there");
             title.innerHTML = sequence[i];
 
             switch (sequence[i]) {
@@ -63,9 +66,11 @@ function appendo() {
             }
 
             title.href = href;
+            go.href = href;
 
             suggestion.appendChild(title);
             suggestion.appendChild(desc);
+            suggestion.appendChild(go)
 
             suggestion.style.marginBottom = "5%";
             document.querySelector("div#somethingness").appendChild(suggestion);
