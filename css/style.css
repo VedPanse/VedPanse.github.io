@@ -73,6 +73,12 @@ div.brownie {
     width: 100%;
 }
 
+
+/* .navbar.brownie .navbar-brand {
+    font-size: 21px;
+    font-weight: 600;
+} */
+
 .navbar.brownie .nav-link {
     color: black;
 }

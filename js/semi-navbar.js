@@ -1,15 +1,16 @@
+const nav = document.querySelector(".navbar.brownie")
 document.addEventListener("scroll", function() {
     if ($(window).scrollTop() === 0) {
-        document.querySelector(".navbar.brownie").style.top = "inherit";
-        document.querySelector(".navbar.brownie").style.backgroundColor = "rgba(255, 255, 255)";
-        document.querySelector(".navbar.brownie").style.backdropFilter = "none";
+        nav.style.top = "inherit";
+        nav.style.backgroundColor = "rgba(255, 255, 255)";
+        nav.style.backdropFilter = "none";
 
     } else {
-        document.querySelector(".navbar.brownie").style.position = "fixed";
-        document.querySelector(".navbar.brownie").style.top = "0%";
-        document.querySelector(".navbar.brownie").style.zIndex = 5;
-        document.querySelector(".navbar.brownie").style.width = "85%";
-        document.querySelector(".navbar.brownie").style.backgroundColor = "rgba(255, 255, 255, 0.72)";
-        document.querySelector(".navbar.brownie").style.backdropFilter = "saturate(180%) blur(20px)";
+        nav.style.position = "fixed";
+        nav.style.top = "0%";
+        nav.style.zIndex = 5;
+        nav.style.width = "85%";
+        nav.style.backgroundColor = "rgba(255, 255, 255, 0.72)";
+        nav.style.backdropFilter = "saturate(180%) blur(20px)";
     }
 });

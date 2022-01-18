@@ -14,6 +14,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../../css/style.css">
     <title>Ved Panse | Documentations</title>
 </head>
 <style>
@@ -26,7 +27,12 @@
         line-height: 2;
     }
     
-    .navbar {
+    .brownie .nav-link.nav-item,
+    .navbar-brand,
+    .teller {
+        color: white;
+    }
+    /* .navbar {
         border-bottom: 1px solid #f5f5f799;
         font-size: 12px;
         background-color: rgb(0, 0, 0, 0.5);
@@ -61,6 +67,15 @@
         top: 50%;
         right: 0%;
         transform: translate(-50%, -50%);
+    } */
+    
+    .navbar.brownie {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.24);
+    }
+    
+    .navbar.brownie,
+    .teller {
+        background-color: rgba(29, 29, 31, 0.72);
     }
     
     h1,
@@ -206,10 +221,29 @@
 
 <body>
     <nav class="navbar navbar-expand-lg">
-        <a class="navbar-brand" href="../../index.html" target="_blank">Ved Panse</a>
+        <a class="navbar-brand" href="../../index.html">Ved Panse</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+      <span class="navbar-toggler-icon"></span>
+    </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="index.html">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="templates/blogs/index.html">Blogs</a>
+                <a class="nav-item nav-link" href="templates/docs/index.html">Documentations & Research</a>
+                <a class="nav-item nav-link" href="templates/social/index.html">Social Work</a>
+
+                <a class="nav-item nav-link" href="templates/video/index.html">Videos</a>
+
+                <a class="nav-item nav-link" href="search.html"><i class="fas fa-search"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <nav class="navbar navbar-expand-lg brownie">
+        <a class="navbar-brand" href="" style="color: white;">On this page</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
                 <a class="nav-item nav-link active" href="#write">Home <span class="sr-only">(current)</span></a>
@@ -219,6 +253,9 @@
             </div>
         </div>
     </nav>
+    <div class="brownie teller">
+        <p style="position: absolute;">Welcome to my documentations website.</p>
+    </div>
 
 
     <section id="write">
@@ -402,5 +439,26 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
+<script>
+    const nav = document.querySelector(".navbar.brownie")
+    document.addEventListener("scroll", function() {
+        if ($(window).scrollTop() === 0) {
+            nav.style.top = "inherit";
+            nav.style.backgroundColor = "rgba(29, 29, 31, 0.72)";
+            nav.style.backdropFilter = "none";
+            nav.style.zIndex = 1;
+            document.querySelector(".teller").style.display = "none";
+
+        } else {
+            nav.style.position = "fixed";
+            nav.style.top = "0%";
+            nav.style.zIndex = 5;
+            nav.style.width = "100%";
+            nav.style.backgroundColor = "rgba(29, 29, 31, 0.72)";
+            nav.style.backdropFilter = "saturate(180%) blur(20px)";
+            document.querySelector(".teller").style.display = "none";
+        }
+    });
+</script>
 
 </html>
