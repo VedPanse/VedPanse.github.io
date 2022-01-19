@@ -338,3 +338,10 @@ input#search-box {
     color: #06c !important;
     font-size: 17px !important;
 }
+
+.nav-item svg {
+    position: absolute;
+    top: 5%;
+    left: 90%;
+    z-index: 6;
+}
