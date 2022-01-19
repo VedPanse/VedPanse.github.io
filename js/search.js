@@ -10,6 +10,14 @@ document.querySelector("#search-box").addEventListener("keydown", (e) => {
             sequence = []
             getList()
             appendo()
+            switch (sequence.length) {
+                case 1:
+                    document.querySelector("p#results").innerHTML = "1 result found.";
+                    break;
+                default:
+                    document.querySelector("p#results").innerHTML = sequence.length + " results found.";
+                    break;
+            }
         }
     }
 });
