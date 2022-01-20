@@ -345,3 +345,19 @@ input#search-box {
     left: 90%;
     z-index: 6;
 }
+
+.navbar-toggler-icon {
+    background-image: url(../images/navbar.svg);
+}
+
+@media screen and (max-width: 991px) {
+    .brownie {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    #aboutme .col-lg-6 {
+        margin-bottom: 15%;
+    }
+}
