@@ -154,3 +154,7 @@ p.main {
     background-color: black;
     color: white;
 }
+
+li p {
+    font-size: 15px;
+}
