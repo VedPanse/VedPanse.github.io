@@ -279,7 +279,6 @@ a.centroid {
     width: 50%;
     padding: 15px;
     margin: auto;
-    min-width: 450px;
 }
 
 .form-signin .checkbox {
@@ -369,5 +368,8 @@ input#search-box {
 @media screen and (max-width: 767px) {
     #aboutme .col-lg-6 {
         margin-bottom: 15%;
+    }
+    .form-signin {
+        width: 85%;
     }
 }
