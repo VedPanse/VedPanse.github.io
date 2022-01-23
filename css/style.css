@@ -354,6 +354,15 @@ input#search-box {
     .brownie {
         display: none;
     }
+    .nav-item svg {
+        position: absolute;
+        top: 25%;
+        left: 90%;
+        z-index: 6;
+    }
+    .nav-link.nav-item {
+        padding-left: 20px;
+    }
 }
 
 @media screen and (max-width: 767px) {
