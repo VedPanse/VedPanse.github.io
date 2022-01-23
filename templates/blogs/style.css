@@ -145,10 +145,12 @@ p.main {
     text-align: right;
 }
 
+
+/* 
 .table-control .content p {
-    /* font-weight: 600; */
-    /* font-size: 19px; */
-}
+    font-weight: 600;
+    font-size: 19px;
+} */
 
 .dark {
     background-color: black;
@@ -157,4 +159,13 @@ p.main {
 
 li p {
     font-size: 15px;
+}
+
+@media screen and (max-width: 576px) {
+    .margin-10t {
+        display: none;
+    }
+    .margin-10 {
+        margin-top: 25%;
+    }
 }
