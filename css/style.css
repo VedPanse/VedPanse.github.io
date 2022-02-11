@@ -187,6 +187,12 @@ section#footer a {
     display: block;
 }
 
+section#footer a:hover {
+    border: none;
+    text-decoration: underline;
+    text-underline-position: under;
+}
+
 .none {
     display: none;
 }
