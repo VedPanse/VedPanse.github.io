@@ -103,12 +103,14 @@ p.main {
 }
 
 .row.main .col-lg-10 a {
-    color: #167DFF;
+    /* color: #167DFF; */
+    color: #0066cc;
     text-decoration: none;
 }
 
 .row.main .col-lg-10 a:hover {
-    border-bottom: 1px solid #167DFF;
+    border-bottom: 1px solid #0066cc;
+    /* border-bottom: 1px solid #167DFF; */
 }
 
 .table-control .row {
