@@ -261,8 +261,7 @@ section#about button {
 
 section#projects {
     background-color: rgba(48, 47, 47, 0.5);
-    min-height: 120vh;
-    height: 120vh;
+    height: 100vh;
 }
 
 section#projects .card {
@@ -443,11 +442,20 @@ section#footer a:hover {
 }
 
 @media screen and (max-width: 991px) {
+    #contact {
+        margin-top: 15%;
+    }
+    #blog-main {
+        height: 125vh;
+    }
+}
+
+@media screen and (max-width: 1250px) {
     #footer {
         display: none;
     }
-    #contact {
-        margin-top: 15%;
+    #video-main {
+        height: 200vh;
     }
 }
 
@@ -460,6 +468,9 @@ section#footer a:hover {
 @media screen and (max-width: 1270px) {
     section#projects .row {
         height: 10vh;
+    }
+    section#projects {
+        height: 100vh;
     }
 }
 
@@ -533,4 +544,49 @@ section#social .img-container-preview {
 
 section#social .card:hover {
     cursor: pointer;
+}
+
+@media screen and (max-width: 1154px) {
+    section#projects {
+        height: 150vh;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    section#projects {
+        height: 175vh;
+    }
+}
+
+@media screen and (max-width: 981px) {
+    section#projects {
+        height: 200vh;
+    }
+}
+
+@media screen and (max-width: 697px) {
+    section#projects {
+        height: 225vh;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    section#projects {
+        height: 250vh;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    /* section#projects {
+        height: 275vh;
+        margin-top: 25%;
+    } */
+    section#projects img,
+    section#internships img,
+    section#social img {
+        display: none;
+    }
+    .gradient {
+        display: none;
+    }
 }
