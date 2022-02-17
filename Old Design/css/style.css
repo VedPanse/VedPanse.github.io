@@ -1,0 +1,381 @@
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    width: 85%;
+    height: 100%;
+    margin: auto;
+}
+
+.navbar {
+    background-color: rgba(0, 0, 0, 0.8);
+    font-size: 17px;
+}
+
+.navbar-brand {
+    padding-left: 15px;
+}
+
+.nav-link {
+    color: #c4c4c5;
+    font-size: 12px;
+    margin-right: 20px;
+}
+
+.navbar-brand {
+    color: white;
+    font-size: 14px;
+}
+
+.navbar-nav {
+    margin: auto;
+}
+
+.nav-link:hover,
+.navbar-brand:hover {
+    color: white;
+}
+
+.brownie {
+    background-color: white;
+    color: black;
+}
+
+.brownie .navbar-nav {
+    margin-right: 2%;
+}
+
+.navbar .active {
+    color: white;
+}
+
+.brownie.navbar {
+    border-bottom: 1px solid rgb(0, 0, 0, 0.2);
+}
+
+.brownie p {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+}
+
+div.brownie {
+    padding: 25px;
+    position: relative;
+}
+
+.brownie.navbar {
+    width: 100%;
+}
+
+
+/* .navbar.brownie .navbar-brand {
+    font-size: 21px;
+    font-weight: 600;
+} */
+
+.navbar.brownie .nav-link {
+    color: black;
+}
+
+.navbar.brownie .nav-link.active {
+    opacity: 0.56;
+}
+
+.navbar.brownie .nav-link:hover {
+    color: #06c;
+    opacity: 1;
+}
+
+div.accessories a:hover {
+    border: 1px dashed black;
+    color: black;
+}
+
+section#news {
+    min-height: 100%;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    position: relative;
+    margin-top: 2%;
+}
+
+.cr-img {
+    background-image: url(../images/code.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 65%;
+    position: relative;
+}
+
+a {
+    text-decoration: none;
+    /* color: #0D6EFD; */
+    color: #0067B8;
+}
+
+section a {
+    padding: 10px;
+}
+
+section a:hover {
+    color: black;
+    border: 1px dashed black;
+}
+
+.card-title {
+    font-size: 48px;
+    text-align: center;
+}
+
+.card {
+    border: none;
+    width: 95%;
+}
+
+button {
+    border-radius: 0% !important;
+}
+
+section#about,
+section#projects,
+section#blogs,
+section#documentations,
+section#contact {
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    position: relative;
+    z-index: 1;
+    margin-top: 10%;
+}
+
+section#about p {
+    line-height: 2;
+}
+
+.img-collage img {
+    width: 100%;
+    height: 100%;
+}
+
+.card-subtitle {
+    text-align: center;
+}
+
+section#footer {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    margin-top: 10%;
+    background-color: rgb(248, 248, 248);
+    padding: 20px;
+    text-align: center;
+}
+
+section#footer a {
+    color: black;
+    font-size: 12px;
+    display: block;
+}
+
+section#footer a:hover {
+    border: none;
+    text-decoration: underline;
+    text-underline-position: under;
+}
+
+.none {
+    display: none;
+}
+
+#search-query {
+    border: none;
+    border-bottom: 2px solid black;
+    background-color: transparent;
+    width: 99%;
+}
+
+div.translucent {
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    z-index: 2;
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    border-radius: 5px;
+    padding: 10px;
+    width: 20%;
+}
+
+#search-query::placeholder {
+    color: black;
+}
+
+.box {
+    height: 100px;
+    width: 100%;
+}
+
+.orangered {
+    background-color: orangered;
+}
+
+.springgreen {
+    background-color: springgreen;
+}
+
+.dodgerblue {
+    background-color: dodgerblue;
+}
+
+.gold {
+    background-color: gold;
+}
+
+.progress-bar-success {
+    background-color: #0067B8;
+}
+
+.progress {
+    height: 2px;
+    width: 80%;
+    margin-bottom: 5%;
+    background-color: #d2d2d7;
+}
+
+.more {
+    background-color: #E6E6E6;
+    color: black;
+    width: 100%;
+    padding: 5%;
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.more a {
+    color: black;
+}
+
+.a-button {
+    padding: 10px;
+    background-color: transparent;
+    border: none;
+}
+
+.a-button:hover {
+    border: 1px dashed black;
+    color: black;
+}
+
+a.centroid {
+    text-align: center;
+}
+
+.form-signin {
+    width: 50%;
+    padding: 15px;
+    margin: auto;
+}
+
+.form-signin .checkbox {
+    font-weight: 400;
+}
+
+.form-signin .form-floating:focus-within {
+    z-index: 2;
+}
+
+.form-signin input[type="text"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="email"] {
+    border-radius: 0%;
+    margin-bottom: -1px;
+}
+
+.form-signin textarea[type="message"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+input#search-box {
+    border-radius: 5px;
+    border: 1px solid #c4c4c5;
+    padding-left: 5px;
+    font-size: 15px;
+    height: 35px;
+    width: 300px;
+}
+
+#nothingness {
+    display: none;
+}
+
+#somethingness a {
+    font-size: 32px;
+    color: black;
+}
+
+#somethingness a:hover {
+    color: #06c;
+    border: none;
+    cursor: pointer;
+}
+
+#somethingness p {
+    padding-left: 17px;
+}
+
+.go-there {
+    color: #06c !important;
+    font-size: 17px !important;
+}
+
+.nav-item svg {
+    position: absolute;
+    top: 5%;
+    left: 90%;
+    z-index: 6;
+}
+
+.navbar-toggler-icon {
+    background-image: url(../images/navbar.svg);
+}
+
+@media screen and (max-width: 991px) {
+    .brownie {
+        display: none;
+    }
+    .nav-item svg {
+        position: absolute;
+        top: 25%;
+        left: 90%;
+        z-index: 6;
+    }
+    .nav-link.nav-item {
+        padding-left: 20px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    #aboutme .col-lg-6 {
+        margin-bottom: 15%;
+    }
+    .form-signin {
+        width: 85%;
+    }
+}
