@@ -595,6 +595,11 @@ section#social .card:hover {
     .gradient {
         display: none;
     }
+    #projectURL,
+    #socialURL,
+    #internURL {
+        display: none;
+    }
     /* section#internships {
         margin-top: -25%;
     } */
