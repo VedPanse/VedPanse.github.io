@@ -20,7 +20,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg brownie">
+    <nav class="navbar navbar-expand-lg brownie navbar-dark">
         <a class="navbar-brand" href="index.html">Ved Panse</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -32,7 +32,7 @@
                 <a class="nav-item nav-link" href="docs/index.html">Documentations and Research</a>
                 <a class="nav-item nav-link" href="social/index.html">Social Work</a>
                 <a class="nav-item nav-link" href="video/index.html">Videos</a>
-                <div class="contain-me">
+                <div class="contain-me" onclick="document.getElementById('content-table').style.display = 'block'">
                     <div class="bar1"></div>
                     <div class="bar2"></div>
                     <div class="bar3"></div>
@@ -40,6 +40,26 @@
             </div>
         </div>
     </nav>
+
+    <div id="content-table">
+        <svg xmlns="http://www.w3.org/2000/svg" id="close" style="color: white; width: 25px; height: 25px" fill="white" viewBox="0 0 352 512" onclick="document.getElementById('content-table').style.display = 'none'"><!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) --><path d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"/></svg>
+        <br><br>
+        <a href="#about" onclick="document.getElementById('content-table').style.display = 'none'">About Me</a><br><br>
+        <a href="#projects" onclick="document.getElementById('content-table').style.display = 'none'">Projects</a><br><br>
+        <a href="#internships" onclick="document.getElementById('content-table').style.display = 'none'">Internships</a><br><br>
+        <a href="#social" onclick="document.getElementById('content-table').style.display = 'none'">Social Work</a><br><br>
+        <a href="#blogs" onclick="document.getElementById('content-table').style.display = 'none'">Blogs</a><br><br>
+        <a href="#contact" onclick="document.getElementById('content-table').style.display = 'none'">Contact</a>
+    </div>
+
+    <div id="index">
+        <div class="content">
+            <h1>Ved Panse</h1>
+            <p>Hello, I am Ved Panse. Welcome to my personal website.</p><br>
+            <a href="Resume.pdf" target="_blank"><button class="blue-button">Download CV</button></a>
+            <a href="#about"><button class="black-button">About Me</button></a>
+        </div>
+    </div>
 
     <section id="intro">
         <div class="row">
@@ -101,7 +121,7 @@
                     <div class="col-lg-6">
                         <div class="card toggler eAuthentication">
                             <h5>eAuthentication</h5>
-                            <p>javelinLang is an open-source DSL that helps to build GUIs quickly and easily. It was developed in Python.</p>
+                            <p>This project enables eAuthentication for any primitive website. It was built in Python.</p>
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -142,13 +162,13 @@
                     <div class="col-lg-6">
                         <div class="card active toggler BancBridge">
                             <h5>BancBridge</h5>
-                            <p>javelinLang is an open-source DSL that helps to build GUIs quickly and easily. It was developed in Python.</p>
+                            <p>I was assigned to come up with new designs for the new BancBridge website. Throughout my internship, I got to learn many things and work with different groups with mutual aims.</p>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="card toggler Magna">
                             <h5>Magna</h5>
-                            <p>javelinLang is an open-source DSL that helps to build GUIs quickly and easily. It was developed in Python.</p>
+                            <p>Through my BancBridge internship, I got the opportunity to develope software for Magna International as well. I was tasked with developing a software for handling uploads and downloads from the clients.</p>
                         </div>
                     </div>
 
