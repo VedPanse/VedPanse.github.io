@@ -95,6 +95,10 @@ body {
     background-color: #ffffff0f;
 }
 
+.navbar-brand:hover {
+    color: white;
+}
+
 
 /* PUBLIC */
 
