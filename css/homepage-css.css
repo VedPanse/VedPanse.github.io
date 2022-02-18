@@ -103,6 +103,21 @@ body {
     color: white;
 }
 
+#search {
+    position: absolute;
+    right: 7%;
+    top: 9%;
+    height: 20px;
+}
+
+#search:hover {
+    background-color: none;
+}
+
+#search svg:hover {
+    background-color: none;
+}
+
 
 /* PUBLIC */
 
@@ -192,7 +207,7 @@ div#content-table {
 
 div#content-table a {
     margin-bottom: 5%;
-    padding: 2px 5px;
+    padding: 3px 5px;
 }
 
 div#content-table a:hover {
