@@ -110,12 +110,12 @@ body {
     height: 20px;
 }
 
-#search:hover {
-    background-color: none;
+a#search:hover {
+    background-color: none !important;
 }
 
 #search svg:hover {
-    background-color: none;
+    background-color: none !important;
 }
 
 
