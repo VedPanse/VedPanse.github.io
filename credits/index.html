@@ -17,6 +17,38 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/sign-in/">
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>Ved Panse</title>
+
+    <style>
+        .card {
+            border: 1px solid gray;
+            height: 100%;
+        }
+        
+        .card:hover {
+            background-color: black !important;
+            border: 1px solid white;
+            cursor: pointer;
+            color: white !important;
+        }
+        
+        .card h2 {
+            color: white !important;
+            position: relative;
+            top: 15px;
+        }
+        
+        .h2:hover {
+            text-decoration: none !important;
+        }
+        
+        #blog-main a:hover {
+            text-decoration: none !important;
+        }
+        
+        #footer {
+            height: 40vh !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -56,7 +88,30 @@
 
     <section id="blog-main" style="text-align: center;">
         <h1>Attributes</h1>
-        <p style="width: 50%; margin: auto;">This webpage is dedicated to attributing all the sources of information, images, and icons without which this website wouldn't have been possible.</p>
+        <p style="width: 50%; margin: auto;">This webpage is dedicated to attributing all the sources of information, images, and icons without which this website wouldn't have been possible.</p><br><br>
+
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <a href="https://woodridgehigh.com" target="_blank">
+                    <div class="card">
+                        <h2 class="h2" style="top: 5px;">Woodridge High School</h2>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <a href="https://unsplash.com" target="_blank">
+                    <div class="card">
+                        <h2 class="h2">Unsplash</h2>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <a href="https://fontawesome.com" target="_blank">
+                    <div class="card">
+                        <h2 class="h2">Font Awesome</h2>
+                    </div>
+            </div>
+        </div>
     </section>
 
     <section id="footer">
