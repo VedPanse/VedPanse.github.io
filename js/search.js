@@ -49,27 +49,27 @@ function appendo() {
                     break;
                 case "Ved Panse - Blogs":
                     desc.innerHTML = "Hello. I am Ved Panse. This is my blog page."
-                    href = "templates/blogs/index.html"
+                    href = "blogs/index.html"
                     break;
                 case "Ved Panse - Documentations":
                     desc.innerHTML = "Welcome to my documentations and research website. Here, I have pusblished my research papers and documentations on the softwares that I either built or keenly studied."
-                    href = "templates/docs/index.html"
+                    href = "docs/index.html"
                     break;
                 case "Ved Panse - Social Work":
                     desc.innerHTML = "This website is dedicated for archiving my experiences of trying to bring positive changes in the society."
-                    href = "templates/social/index.html"
+                    href = "social/index.html"
                     break;
                 case "Ved Panse - Videos":
                     desc.innerHTML = "Through this website, I want to share some of my experiences in the form of videos."
-                    href = "templates/video/index.html"
+                    href = "video/index.html"
                     break;
                 case "Ved Panse - Credits":
                     desc.innerHTML = "This website is dedicated to attribute all the other websites and people who made building my personal website possible."
-                    href = "templates/credits/index.html"
+                    href = "credits/index.html"
                     break;
                 case "Ved Panse - My Passion for Cricket | Blog":
                     desc.innerHTML = "I felt like sharing my interest in cricket with you. In this blog, I describe how I developed this interest. From a young age, I was fascinated by the very idea of cricket: staying within 22 yards and hitting the ball past 107 yards."
-                    href = "templates/blogs/cricket.html"
+                    href = "blogs/cricket.html"
                     break;
             }
 
