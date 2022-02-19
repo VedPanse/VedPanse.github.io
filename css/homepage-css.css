@@ -118,6 +118,14 @@ a#search:hover {
     background-color: none !important;
 }
 
+button.navbar-toggler {
+    border: none;
+}
+
+span.navbar-toggler-icon {
+    color: white;
+}
+
 
 /* PUBLIC */
 
@@ -702,6 +710,8 @@ section#social .card:hover {
 
 @media screen and (max-width: 896px) {
     #search {
-        display: none;
+        position: absolute;
+        top: 55%;
+        right: 3%;
     }
 }
