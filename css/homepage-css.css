@@ -120,6 +120,8 @@ a#search:hover {
 
 button.navbar-toggler {
     border: none;
+    position: relative;
+    bottom: 7px;
 }
 
 span.navbar-toggler-icon {
