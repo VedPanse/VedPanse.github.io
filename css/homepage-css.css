@@ -341,6 +341,12 @@ section#about p.descr {
     margin: auto;
 }
 
+@media screen and (max-width: 575px) {
+    section#about p.descr {
+        width: 80%;
+    }
+}
+
 section#about button {
     font-size: 14px;
     padding: 4px 11px 6px;
