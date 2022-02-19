@@ -70,10 +70,12 @@ function changeFeature(lst) {
     } else if (independent === "spreadWarmth") {
         document.querySelector("#social-img").src = "images/Spread Warmth.jpeg";
         link3.href = "social/spread-warmth.html";
+        document.querySelector("#social-img").style.height = "auto";
 
     } else if (independent === "Eunoia") {
         document.querySelector("#social-img").src = "images/Eunoia - poster.jpeg";
         link3.href = "social/eunoia.html";
+        document.querySelector("#social-img").style.height = "278.5px";
     }
 }
 
