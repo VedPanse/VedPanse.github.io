@@ -675,12 +675,22 @@ section#social .card:hover {
     #internURL,
     #project a button,
     #internships button,
-    #social button {
+    #social button,
+    .tog-but {
         display: none;
     }
     /* section#internships {
         margin-top: -25%;
     } */
+    section {
+        padding: 20px;
+    }
+    section#blogs {
+        margin-bottom: 15%;
+    }
+    .highlighter {
+        margin-top: 10px;
+    }
 }
 
 @media screen and (max-width: 571px) {
