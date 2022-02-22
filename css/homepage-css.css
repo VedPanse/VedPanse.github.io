@@ -359,7 +359,7 @@ section#about button {
 
 section#projects {
     background-color: rgba(48, 47, 47, 0.5);
-    height: 100vh;
+    height: 120vh;
 }
 
 section#projects .card {
@@ -722,4 +722,8 @@ section#social .card:hover {
         top: 55%;
         right: 3%;
     }
+}
+
+.card.toggler {
+    min-height: 100%;
 }
