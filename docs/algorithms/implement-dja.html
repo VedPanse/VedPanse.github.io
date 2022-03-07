@@ -144,17 +144,17 @@
                         </p><br><br>
                         <div class="terminal">
                             <pre>
-remaining_nodes <span class="e">=</span> [<span class="s">node1</span>, <span class="s">node2</span>, <span class="s">node3</span>] <span class="c"># Nodes that are remaining to be processed</span>
+<span class="p">remaining_nodes</span> = [node1, node2, node3] <span class="c"># Nodes that are remaining to be processed</span>
 
-<span class="h">while</span> len(remaining_nodes) <span class="e">!=</span> 0: <span class="c"># Condition to check if the remaining_nodes still has any item or not</span>
+<span class="h">while</span> <span class="p">len</span>(remaining_nodes) != <span class="str">0</span>: <span class="c"># Condition to check if the remaining_nodes still has any item or not</span>
     node <span class="e">=</span> <span class="p">min</span>(remaining_nodes) <span class="c"># Gets minimum of remaining_nodes</span>
-    cost <span class="e">=</span> costs[node]
-    neighbors <span class="e">=</span> <span class="p">graph</span>[node]
-    <span class="h">for</span> <span class="s">n</span> <span class="h">in</span> neighbors.keys(): <span class="c"># Iterate through all the neighbors of the node</span>
+    cost <span class="e">=</span> costs[<span class="p">node</span>]
+    neighbors <span class="e">=</span> graph[<span class="p">node</span>]
+    <span class="h">for</span> n <span class="h">in</span> neighbors.keys(): <span class="c"># Iterate through all the neighbors of the node</span>
         new_cost <span class="e">=</span> cost + neighbors
-        <span class="h">if</span> costs[<span class="s">n</span>] <span class="e">></span> new_cost: <span class="c"># Get the cheapest of tours from neighbor to neighbor</span>
-            costs[<span class="s">n</span>] <span class="e">=</span> new_cost <span class="c"># Update the cost of the node.</span>
-            parents[<span class="s">n</span>] <span class="e">=</span> node
+        <span class="h">if</span> costs[<span class="p">n</span>] <span class="e">></span> <span class="p">new_cost</span>: <span class="c"># Get the cheapest of tours from neighbor to neighbor</span>
+            costs[<span class="p">n</span>] <span class="e">=</span> <span class="p">new_cost</span> <span class="c"># Update the cost of the node.</span>
+            parents[<span class="p">n</span>] <span class="e">=</span> node
     remaining_nodes.<span class="p">pop</span>(node) <span class="c"># Remove this node from remaining nodes.</span>
     node <span class="e">=</span> <span class="p">min</span>(remaining_nodes) <span class="c"># Get another node and continue the while loop</span>
 </pre>
