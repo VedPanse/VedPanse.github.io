@@ -1,0 +1,107 @@
+html,
+body {
+    width: 100%;
+    font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+.navbar {
+    background-color: rgb(255, 255, 255, 0.75);
+    backdrop-filter: blur(20px);
+    position: fixed;
+    width: 100%;
+    padding: 5px 15px;
+    z-index: 2;
+}
+
+.navbar .nav-link,
+.navbar-brand {
+    color: #1d1d1f !important;
+    font-size: 12px;
+    font-weight: 350;
+}
+
+.nav-link {
+    margin-right: 10px;
+}
+
+.navbar-brand {
+    font-size: 21px;
+    font-weight: 600;
+    margin-left: 16.5%;
+}
+
+.nav-link:hover {
+    color: #06c !important;
+}
+
+.nav-link.active {
+    color: #a39f9f !important;
+}
+
+.navbar-nav {
+    position: absolute;
+    right: 16.5%;
+}
+
+.light-nav-link {
+    color: #1d1d1f !important;
+}
+
+img {
+    border-radius: 15px;
+}
+
+a {
+    color: #0066cc;
+    font-size: 24px;
+    margin-right: 20px;
+}
+
+a:hover {
+    color: #0066cc;
+    text-decoration: underline;
+}
+
+.navbar.light {
+    border-bottom: 1px solid #a4a4a52a;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+h1.title {
+    font-size: 56px;
+    font-weight: 700;
+}
+
+p.details {
+    font-size: 14px;
+    color: #6e6e73;
+    font-weight: 600;
+}
+
+p.main {
+    font-size: 24px;
+}
+
+h1.title,
+p.main,
+p.details {
+    text-align: center;
+    width: 60%;
+    margin: auto;
+    letter-spacing: 0.012em;
+}
+
+.article {
+    width: 60%;
+    margin: auto;
+    letter-spacing: 0.012em;
+    font-size: 17px;
+}
+
+a {
+    color: #0066cc;
+    font-size: inherit;
+}
