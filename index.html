@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,281 +12,265 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/homepage-css.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/css/style.css">
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/sign-in/">
 
     <title>Ved Panse</title>
+
+
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg brownie navbar-dark">
-        <a class="navbar-brand" href="index.html">Ved Panse</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark main-nav" id="brownie">
+        <a class="navbar-brand" href="#">Ved Panse</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
                 <a class="nav-item nav-link active" href="index.html">Home <span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link" href="blogs/index.html">Blogs</a>
-                <a class="nav-item nav-link" href="docs/index.html">Documentations and Research</a>
-                <a class="nav-item nav-link" href="social/index.html">Social Work</a>
-                <a class="nav-item nav-link" href="video/index.html">Videos</a>
-                <a class="nav-item nav-link" id="search" href="search.html"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="88" viewBox="0 0 15 88"><rect width="15" height="44" fill="none"/><path d="M13.98,27.343l-3.5-3.5a5.436,5.436,0,1,0-.778.777l3.5,3.5a.55.55,0,1,0,.778-.778ZM1.959,20.418a4.319,4.319,0,1,1,4.319,4.32A4.323,4.323,0,0,1,1.959,20.418Z" fill="#fff"/><rect y="44" width="15" height="44" fill="none"/></svg></a>
-                <div class="contain-me" onclick="document.getElementById('content-table').style.display = 'block'">
-                    <div class="bar1"></div>
-                    <div class="bar2"></div>
-                    <div class="bar3"></div>
-                </div>
+                <a class="nav-item nav-link" href="static/blogs/index.html">Blogs</a>
+                <a class="nav-item nav-link" href="static/docs/index.html">Docs & Research</a>
+                <a class="nav-item nav-link" href="static/social/index.html">Social Work</a>
+                <a class="nav-item nav-link" href="static/video/index.html">Videos</a>
+                <!-- <a class="nav-item nav-link" href="static/video/index.html"><img src="static/images/search.svg"></a> -->
             </div>
         </div>
     </nav>
 
-    <div id="content-table">
-        <br>
-        <a onclick="document.getElementById('content-table').style.display = 'none'" id="close">&#10005;</a>
-        <br><br>
-        <a href="#about" onclick="document.getElementById('content-table').style.display = 'none'">About Me</a><br><br>
-        <a href="#projects" onclick="document.getElementById('content-table').style.display = 'none'">Projects</a><br><br>
-        <a href="#internships" onclick="document.getElementById('content-table').style.display = 'none'">Internships</a><br><br>
-        <a href="#social" onclick="document.getElementById('content-table').style.display = 'none'">Social Work</a><br><br>
-        <a href="#blogs" onclick="document.getElementById('content-table').style.display = 'none'">Blogs</a><br><br>
-        <a href="#contact" onclick="document.getElementById('content-table').style.display = 'none'">Contact</a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sub-nav" id="whitie">
+        <a class="navbar-brand" href="#">On this page</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="#about-me">About Me <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="#upto">What have I been upto?</a>
+                <a class="nav-item nav-link" href="#social">Commitments</a>
+                <a class="nav-item nav-link" href="#blogs">Blogs Preview</a>
+                <a class="nav-item nav-link" href="#projects">Projects Preview</a>
+                <a class="nav-item nav-link" href="#interns">Internships</a>
+                <a class="nav-item nav-link" href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <img src="static/images/ved_panse.png" class="master"><br><br>
+
+    <div id="about-me">
+        <p class="bold-center">Hello everyone. My name is Ved Panse, and I am a student at Woodridge High School, Aurangabad, India. I have an interminable list of what I find to be interesting: I love everything - from sports to computers.</p>
+    </div><br><br>
+
+    <!-- <div class="car">
+        <div class="row">
+            <div class="col-lg-6 col-md-6">
+                <img src="static/images/ved_panse.png" class="mega">
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <img src="static/images/ved_panse.png" class="snap s1">
+                <img src="static/images/ved_panse.png" class="snap">
+            </div>
+
+        </div>
+    </div> -->
+
+    <br><br><br><br><br>
+    <div class="content" id="upto">
+        <h1>What have I been upto?</h1><br><br>
+        <div class="sub-content">
+
+            <h3>Advent of Code</h3><br>
+            <p>Advent of Code is an Advent calendar of small programming puzzles for a variety of skill sets and skill levels that can be solved in any programming language you like. I participated in the event in 2020 and 2021, and I really enjoyed a lot.</p>
+            <a href="static/blogs/intro.html">Read more about this activity &rsaquo;</a><br>
+            <a href="https://adventofcode.com" target="_blank">Official link to the event &rsaquo;</a>
+        </div>
+        <div class="sub-content">
+
+            <h3>BancBridge Internship</h3><br>
+            <p>I was assigned to design a new report for Wells Fargo bank. It was accepted and is used in BancBridge product for Wells Fargo. I was also assigned to come up with new designs for the new BancBridge website. Throughout my internship, I got
+                to learn many things and work with different groups with mutual aims.
+            </p>
+            <a href="static/work/bancbridge.html">Read more about this internship &rsaquo;</a>
+        </div>
+        <div class="sub-content">
+
+            <h3>Denoization of Stuff Using AI</h3><br>
+            <p>Hi there. I am Ved Panse, and I live in India. I am an aspiring AI Expert, and I possess a deep interest in the fundamentals of Computer Science. I like innovating things that would make my life easier.</p>
+            <a href="static/blogs/intro.html">Read more about this project &rsaquo;</a>
+        </div>
     </div>
+    <br><br><br><br><br>
 
-
-
-    <div id="index">
+    <div class="bg" id="social">
+        <img src="static/images/me_at_spread_warmth.jpeg" class="master">
         <div class="content">
-            <h1>Ved Panse</h1>
-            <p>Hello, I am Ved Panse. Welcome to my personal website.</p><br>
-            <a href="Resume.pdf" target="_blank"><button class="blue-button" style="font-size:14px; width: 155.43px; font-weight: 450; padding: 7px 12px; height: 42px;">Download CV</button></a>
-            <a href="#about"><button class="black-button" style="font-size:14px; width: 155.43px; font-weight: 450; padding: 7px 12px; height: 42px;">About Me</button></a>
+            <div class="row">
+                <div class="col-lg-6">
+                    <h1 style="text-align: left; width: 100%;">Committing to the welfare of the society</h1><br>
+                    <p>I am a member of the Board of Directors of the WH-Leo Club, a child body of the Lions Club. WH-Leo Club is a social service club open for all those who are committed to the welfare of the society.</p><br>
+
+
+                    <h3>Spread Warmth</h3>
+                    <p>On December 12, 2021, the WH-Leo Club embarked on a mission to spread warmth in the winter of 2021 by donating clothes.</p>
+                    <a href="static/social/spread-warmth.html" target="_blank">Read more about this initiative &rsaquo;</a><br><br>
+
+                    <h3>Eunoia</h3>
+                    <p>The WH-Leo Club invited Mrs. Rebekah Poynor to speak about the art (therapy) of mind and combating mental illness.</p>
+                    <a href="static/social/eunoia.html" target="_blank">Read more about this initiative &rsaquo;</a><br><br>
+                    <br>
+                    <a href="static/social/eunoia.html" target="_blank">Read more of such initiatives &rsaquo;</a><br><br>
+                </div>
+                <div class="col-lg-6">
+                    <p style="font-size: 22px; width: 50%; margin-left: 15%; margin-top: 25%;">Leo clubs are a youth organization of Lions Clubs International. Leo clubs encourage youths to develop leadership qualities by participating in social service activities. They are dependent on a Lions club to sponsor and initiate a
+                        Leo club. Leo club members are addressed as "Leos."</p>
+
+                </div>
+            </div>
         </div>
     </div>
+    <br><br><br><br><br>
+    <div class="content" id="blogs">
+        <h1>I've got a lot of stuff to share with you</h1><br><br>
+        <div class="sub-content">
 
-
-
-    <section id="intro">
-        <div class="row">
-            <div class="col-lg-6 col-md-6">
-                <div class="content">
-                    <h1>Ved Panse</h1>
-                    <p>Hello, I am Ved Panse. Welcome to my personal website.</p><br>
-                    <a href="Resume.pdf" target="_blank"><button class="blue-button">Download CV</button></a>
-                    <a href="#about"><button class="black-button">About Me</button></a>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6">
-                <div class="gradient">
-                    <div class="trans">
-
-                    </div>
-                </div>
-            </div>
+            <h3>Introductory Blog</h3><br>
+            <p>Hi there. I am Ved Panse, and I live in India. I am an aspiring AI Expert, and I possess a deep interest in the fundamentals of Computer Science. I like innovating things that would make my life easier.</p>
+            <a href="static/blogs/intro.html">Read more about me in my introductory blog &rsaquo;</a>
         </div>
-    </section>
+        <div class="sub-content">
 
-
-    <section id="about">
-        <div class="highlighter">
-            <p>Preface</p>
-        </div><br>
-        <h1>About Me</h1>
-        <p class="descr">Hi there. I am Ved Panse, and I live in India. I am an aspiring AI Expert, and I possess a deep interest in the fundamentals of Computer Science. I like innovating things that would make my life easier.</p><br>
-        <a href="blogs/intro.html" target="_blank"><button class="blue-button">Read more</button></a><br><br>
-        <img src="images/ved_panse.png" width="50%"><br><br>
-    </section>
-
-
-    <section id="projects">
-        <div class="row">
-            <div class="col-lg-6 col-md-6 col-sm-6" style="position: relative; width: 100%;">
-                <div class="img-container-preview">
-                    <img src="images/javelinPreview.png" id="projects-img" width="100%"><br>
-                    <a href="https://github.com/VedPanse/javelin-lang" target="_blank" id="projectURL"><button class="blue-button">View project</button></a>
-                    <a href="https://github.com/vedpanse" target="_blank" class="tog-but"><button class="black-button" style="font-size: 14px;">More projects</button></a>
-                    <a href="https://codepen.io/vedpanse" target="_blank" class="tog-but"><button class="black-button" style="font-size: 14px;">View codepen</button></a>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-6"><br>
-                <div class="highlighter" style="text-align: center; margin-left: 0px;">
-                    <p>Projects</p>
-                </div>
-                <h1 style="font-size: 48px;">An overview of my projects...</h1>
-                <div style="border-bottom: 1px solid rgba(255, 254, 254, 0.2);">
-                    <p class="descr">Here are some of the many projects that I have completed as a middle school and a high school student. The projects are made in Python, HTML, JavaScript ES6/ES7, and Java.</p><br>
-                </div><br>
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="card active toggler javelinLang">
-                            <h5>javelinLang</h5>
-                            <p>javelinLang is an open-source DSL that helps to build GUIs quickly and easily. It was developed in Python.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="card toggler eAuthentication">
-                            <h5>eAuthentication</h5>
-                            <p>This project enables eAuthentication for any primitive website. It was built in Python.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="card toggler imageParser">
-                            <h5>Image parser</h5>
-                            <p>This program scrapes all the text from an image by using Machine Learning and AI. It looks cool.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="card toggler javelinLang">
-                            <h5>javelinLang</h5>
-                            <p>javelinLang is an open-source DSL that helps to build GUIs quickly and easily. It was developed in Python.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <h3>Programming Dilemma</h3><br>
+            <p>My opinions on where and how aspirant programmers should start, and remain productive throughout their journey.</p>
+            <a href="static/blogs/dilemma.html">Read more in my blog &rsaquo;</a>
         </div>
-    </section>
-    <section id="internships"><br><br><br>
-        <div class="row">
-            <div class="col-lg-6 col-md-6 col-sm-6" style="position: relative; width: 100%;">
-                <div class="img-container-preview">
-                    <img src="images/internshipsPreview.png" width="100%" id="internships-img">
-                    <a href="work/bancbridge.html" target="_blank" id="internURL"><button class="blue-button">Read more</button></a>
+        <div class="sub-content">
 
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-6"><br>
-                <div class="highlighter" style="text-align: center; margin-left: 0px;">
-                    <p>Internships</p>
-                </div>
-                <h1 style="font-size: 48px;">Everything I loved about my internships...</h1>
-                <div style="border-bottom: 1px solid rgba(255, 254, 254, 0.2);">
-                    <p class="descr">I was an intern at two MNCs as a Software Developer. I loved almost every moment of my life as an intern as I learned a voluminous amount of knowledge, and practically try computer programs that had direct applications to the services
-                        we use today.</p><br>
-                </div><br>
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="card active toggler BancBridge">
-                            <h5>BancBridge</h5>
-                            <p>I was assigned to come up with new designs for the new BancBridge website. Throughout my internship, I got to learn many things and work with different groups with mutual aims.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="card toggler Magna">
-                            <h5>Magna</h5>
-                            <p>Through my BancBridge internship, I got the opportunity to develope software for Magna International as well. I was tasked with developing a software for handling uploads and downloads from the clients.</p>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+            <h3>My Passion for Cricket</h3><br>
+            <p>I felt like sharing my interest in cricket with you. In this blog, I describe how I developed this interest.</p>
+            <a href="static/blogs/intro.html">Read more in my blog &rsaquo;</a>
         </div>
-    </section>
-    <section id="social">
-        <div class="row">
-            <div class="col-lg-6 col-md-6 col-sm-6" style="position: relative; width: 100%;">
-                <div class="img-container-preview">
-                    <img src="images/Spread Warmth.jpeg" width="100%" id="social-img">
-                    <a href="social/index.html" target="_blank" id="socialURL"><button class="blue-button">Read more</button></a>
+    </div>
+    <div style="position: relative;">
+        <img src="static/images/code.jpeg" style="position: relative; background-repeat: no-repeat;" class="master">
+        <div style="position: absolute; background-color: rgb(0, 0, 0, 0.4); min-width: 100vw; min-height: 100vh; top: 0%; left: 0%;">
 
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-6"><br>
-                <div class="highlighter" style="text-align: center; margin-left: 0px;">
-                    <p>Social Work</p>
-                </div>
-                <h1 style="font-size: 48px;">Committing to the welfare of the society...</h1>
-                <div style="border-bottom: 1px solid rgba(255, 254, 254, 0.2);">
-                    <p class="descr">I am a member of the Board of Directors of the WH-Leo Club, a child body of the Lions Club. WH-Leo Club is a social service club open for all those who are committed to the welfare of the society.</p><br>
-                </div><br>
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="card active toggler spreadWarmth">
-                            <h5>Spread Warmth</h5>
-                            <p>The WH-Leo Club members set out to spread warmth in the catastrophic winter cold for the landless by providing them warm clothes.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="card toggler Eunoia">
-                            <h5>Eunoia</h5>
-                            <p>The WH-Leo Club invited Mrs. Rebekah Poynor to speak about the art (therapy) of mind and combating mental illness.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
-    </section>
-
-    <section id="blogs">
-        <div class="highlighter">
-            <p>Blogs</p>
+        <div style="position: absolute; top: 50%; left: 50%; text-align: center; transform: translate(-50%, -50%);">
+            <h3 style="color: white; font-weight: 400; font-size: 2.5vh;">Here are some of the many projects that I have completed as a middle school and a high school student. The projects are made in Python, HTML, JavaScript ES6/ES7, and Java.</h3><br>
+            <!-- <p style="color: white; font-size: 19px;">I have been working hard through my high school years for this</p> -->
+            <a href="https://github.com/VedPanse/javelin-lang" style="color: white; font-size: 17px;">View more of such projects &rsaquo;</a>
         </div>
-        <h1>I've got a lot of stuff to share with you</h1>
-        <p class="descr">I have got a lot of stuff to share with you through my blogs. The topics range from technical stuff to sports - almost everything that I have done.</p><br>
-        <a href="blogs/index.html" target="_blank"><button class="blue-button">Visit my blogs</button></a><br><br>
-        <!-- <img src="images/ved_panse.png" width="50%"> -->
-    </section>
+    </div><br><br>
 
-    <section id="contact"><br><br>
-        <div class="rainbow">
+    <div class="content" id="projects">
+        <h1>An overview of my projects</h1><br><br>
+        <div class="sub-content">
 
-            <div class="highlighter" style="text-align: center; margin: auto; background-color: #00000018;">
-                <p style="color: #292929; font-weight: bold;">Contact</p>
-            </div><br>
-            <h1>Get in touch with me</h1><br>
-
-            <p style="color: black;">I'll try to revert to you via the email address that you provide below within a day.<br>All the chats are private.</p>
-
-            <main class="form-signin">
-                <form method="POST" action="https://formspree.io/f/xdoyprne">
-                    <div class="form-floating">
-                        <input type="text" class="form-control" id="floatingInput" placeholder="Name" name="Name" required>
-                        <label for="floatingInput">Name</label>
-                    </div>
-                    <div class="form-floating">
-                        <input type="email" class="form-control" id="floatingPassword" placeholder="Email ID" name="Email" required>
-                        <label for="floatingPassword">Email ID</label>
-                    </div>
-                    <div class="form-floating">
-                        <textarea type="message" class="form-control" id="floatingPassword" placeholder="Message" name="Message" required></textarea>
-                        <label for="floatingPassword">Message</label>
-                    </div>
-
-
-                    <button class="black-button" style="background-color: #292929; padding-left: 15px; padding-right: 15px; padding-top: 2px; padding-bottom: 2px;" type="submit">Submit</button>
-                </form>
-            </main>
+            <h3>javelinLang</h3><br>
+            <p>javelinLang is an open-source DSL that helps to build GUIs quickly and easily. It was developed in Python.</p>
+            <a href="https://github.com/VedPanse/javelin-lang" target="_blank">View this project on my GitHub &rsaquo;</a><br>
+            <a href="static/docs/algorithms/index.html" target="_blank">View documentation for javelinLang &rsaquo;</a>
         </div>
-    </section>
+        <div class="sub-content">
 
-    <section id="footer">
-        <div class="row">
-            <div class="col-lg-4 col-md-6 col-sm-4">
-                <h6>Initiatives</h6>
-                <a href="social/index.html">
-                    Leo Club
-                </a>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-4">
-                <h6>Credits</h6>
-                <a href="credits/index.html">Images</a><br>
-                <a href="credits/index.html">Icons</a>
-            </div>
-            <div class="col-lg-4 col-md-12 col-sm-4">
-                <h6>Social</h6>
-                <a href="https://github.com/vedpanse">CodePen</a><br>
-                <a href="https://codepen.io/vedpanse">GitHub</a>
-            </div>
-    </section>
+            <h3>eAuthentication</h3><br>
+            <p>This project enables eAuthentication for any primitive website. It was built in Python.</p>
+            <a href="https://github.com/VedPanse/eAuthentication" target="_blank">View this project on my GitHub &rsaquo;</a>
+        </div>
+        <div class="sub-content">
+
+            <h3>Image Text Parser</h3><br>
+            <p>This program scrapes all the text from an image by using Machine Learning and AI. It looks cool.</p>
+            <a href="https://github.com/VedPanse/image-text-parser" target="_blank">View this project on my GitHub &rsaquo;</a>
+        </div>
+        <div class="sub-content">
+
+            <h3>javelin Search Engine</h3><br>
+            <p>A search engine that interprets results from google and displays it locally. Built using python and html.</p>
+            <a href="https://github.com/VedPanse/Search-Engine" target="_blank">View this project on my GitHub &rsaquo;</a>
+        </div>
+    </div><br><br>
+
+
+
+
+    <div style="position: relative;">
+        <img src="static/images/ilya-pavlov-OqtafYT5kTw-unsplash.jpeg" style="position: relative;" class="master">
+        <div style="position: absolute; background-color: rgb(0, 0, 0, 0.75); min-width: 100vw; min-height: 100vh; top: 0%; left: 0%;">
+
+        </div>
+        <div style="position: absolute; top: 50%; left: 50%; text-align: center; transform: translate(-50%, -50%);">
+            <h3 style="color: white; font-weight: 400; font-size: 2.5vh;">I was an intern at two MNCs as a Software Developer. I loved almost every moment of my life as an intern as I learned a voluminous amount of knowledge, and practically try computer programs that had direct applications to the services we use
+                today.
+            </h3><br>
+            <!-- <p style="color: white; font-size: 19px;">I have been working hard through my high school years for this</p> -->
+            <a href="https://github.com/VedPanse/javelin-lang" style="color: white; font-size: 17px;">Learn more about my internships' experiences &rsaquo;</a>
+        </div>
+    </div><br><br>
+
+
+
+    <div class="content" id="interns">
+        <h1>Everything I Loved About My Internships</h1><br><br>
+        <div class="sub-content">
+
+            <h3>BancBridge</h3><br>
+            <p>I was assigned to design a new report for Wells Fargo bank. It was accepted and is used in BancBridge product for Wells Fargo. I was also assigned to come up with new designs for the new BancBridge website. Throughout my internship, I got
+                to learn many things and work with different groups with mutual aims.
+            </p>
+            <a href="https://github.com/VedPanse/javelin-lang" target="_blank">Read more about this internship &rsaquo;</a>
+        </div>
+        <div class="sub-content">
+
+            <h3>Xceed Imagination</h3><br>
+            <p>
+                Through my Xceed Imagination internship, I got the opportunity to develop software for Magna International. I was tasked with developing a software for handling uploads and downloads from the clients.
+            </p>
+            <a href="https://github.com/VedPanse/eAuthentication" target="_blank">Read more about this internship &rsaquo;</a>
+        </div>
+    </div><br><br>
+
+
+    <div id="contact">
+        <div class="content"><br><br>
+            <h1>Get in touch with me</h1>
+            <p>I'll try to revert to you via the email address that you provide below within a day. All the chats are private.</p>
+        </div>
+        <main class="form-signin">
+            <form method="POST" action="https://formspree.io/f/xdoyprne">
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="Name" name="Name" required>
+                    <label for="floatingInput">Name</label>
+                </div>
+                <div class="form-floating">
+                    <input type="email" class="form-control" id="floatingPassword" placeholder="Email ID" name="Email" required>
+                    <label for="floatingPassword">Email ID</label>
+                </div>
+                <div class="form-floating">
+                    <textarea type="message" class="form-control" id="floatingPassword" placeholder="Message" name="Message" required></textarea>
+                    <label for="floatingPassword">Message</label>
+                </div>
+                <br>
+                <button class="btner" type="submit">Submit</button>
+            </form>
+        </main>
+    </div><br><br>
+
+
+    <div id="footer">
+
+    </div>
+
     <!-- Optional JavaScript -->
+    <script src="templates/scroll.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-    <script src="js/toggler.js"></script>
-    <script src="js/isSafari.js"></script>
 </body>
+
 
 </html>
