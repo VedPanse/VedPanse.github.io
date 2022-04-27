@@ -330,6 +330,10 @@ label {
     margin: 2% 0%;
 }
 
+li {
+    line-height: 3;
+}
+
 #contact button {
     border: none;
     background-color: transparent;
@@ -338,8 +342,4 @@ label {
 
 #contact button:hover {
     text-decoration: underline;
-}
-
-li {
-    line-height: 3;
 }
