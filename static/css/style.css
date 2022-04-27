@@ -15,6 +15,7 @@ body {
 .sub-nav {
     background-color: rgb(255, 255, 255, 0.7) !important;
     backdrop-filter: blur(20px);
+    border-bottom: rgba(0, 0, 0, 0.5);
 }
 
 .sub-nav .navbar-brand {
@@ -77,28 +78,14 @@ a.nav-link {
 
 .bold-center {
     font-weight: 450;
-    font-size: 22px;
     text-align: center;
-    width: 50%;
-    margin: auto;
-}
-
-.img-centered {
-    width: 75vw;
-    height: 30% !important;
-    text-align: center;
+    font-size: 72px;
     margin: auto;
 }
 
 .master {
     width: 100vw;
     height: 100vh;
-}
-
-.img-c {
-    width: 100%;
-    height: 100%;
-    margin: auto;
 }
 
 .content {
@@ -137,14 +124,9 @@ div.car {
     height: 80vh;
 }
 
-div.car img.mega {
+img {
+    border-radius: 15px;
     width: 100%;
-    height: 100%;
-}
-
-div.car img.snap {
-    width: 100%;
-    height: 48%;
 }
 
 .s1 {
@@ -160,8 +142,17 @@ div {
 }
 
 #about-me {
-    margin-top: 5%;
-    margin-bottom: 5%;
+    position: relative;
+    height: 90vh;
+}
+
+.centroid {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+    margin: auto;
 }
 
 .bg {
@@ -242,10 +233,6 @@ a {
     text-decoration: none !important;
 }
 
-#contact .content {
-    border-top: 1px solid #e3e3e3;
-}
-
 @media screen and (max-width: 991px) {
     .sub-nav {
         display: none;
@@ -253,4 +240,106 @@ a {
     .navbar-nav {
         background-color: black !important;
     }
+}
+
+.progress-bar-success {
+    background-color: black;
+}
+
+.progress {
+    height: 2px;
+    margin-bottom: 5%;
+    background-color: #d2d2d7;
+}
+
+label {
+    font-size: 14px;
+}
+
+.spider .right {
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.spider .row {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.spider .col-md-6,
+.spider .col-lg-12 {
+    padding: 3%;
+}
+
+@media screen and (max-width: 700px) {
+    .content {
+        width: 80%;
+    }
+}
+
+.card {
+    background-color: #f8f8f8;
+    padding: 10%;
+    border-radius: 16px;
+    border-color: transparent;
+    text-align: center;
+    min-height: 100%;
+}
+
+.card h6 {
+    font-size: 15px;
+}
+
+.card p {
+    color: #666666;
+    letter-spacing: 1.2;
+}
+
+.card a,
+.card p {
+    font-size: 13px;
+    display: block;
+}
+
+.col-lg-6,
+.col-lg-12 {
+    margin-top: 15px;
+    min-height: 100% !important;
+    position: relative;
+}
+
+#footer {
+    background-color: #f5f5f7;
+    padding: 2%;
+}
+
+.foot-c {
+    color: #6e6e73;
+    width: 60%;
+    margin: auto;
+    font-size: 12px;
+}
+
+.foot-c p b {
+    color: black;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.foot-c a {
+    color: #3f3f42;
+    display: block;
+    margin: 2% 0%;
+}
+
+#contact button {
+    border: none;
+    background-color: transparent;
+    color: #06c;
+}
+
+#contact button:hover {
+    text-decoration: underline;
+}
+
+li {
+    line-height: 3;
 }

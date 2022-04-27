@@ -22,7 +22,7 @@
 
 </head>
 
-<body>
+<body onload="typeWriter()">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark main-nav" id="brownie">
         <a class="navbar-brand" href="#">Ved Panse</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,7 +32,7 @@
             <div class="navbar-nav">
                 <a class="nav-item nav-link active" href="index.html">Home <span class="sr-only">(current)</span></a>
                 <a class="nav-item nav-link" href="static/blogs/index.html">Blogs</a>
-                <a class="nav-item nav-link" href="static/docs/index.html">Docs & Research</a>
+                <a class="nav-item nav-link" href="static/docs/index.html">Projects</a>
                 <a class="nav-item nav-link" href="static/social/index.html">Social Work</a>
                 <a class="nav-item nav-link" href="static/video/index.html">Videos</a>
                 <!-- <a class="nav-item nav-link" href="static/video/index.html"><img src="static/images/search.svg"></a> -->
@@ -48,11 +48,10 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
                 <a class="nav-item nav-link active" href="#about-me">About Me <span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link" href="#upto">What have I been upto?</a>
-                <a class="nav-item nav-link" href="#social">Commitments</a>
+                <a class="nav-item nav-link" href="#projects">Projects</a>
+                <a class="nav-item nav-link" href="#internships">Internships</a>
+                <a class="nav-item nav-link" href="#social">Social Work</a>
                 <a class="nav-item nav-link" href="#blogs">Blogs Preview</a>
-                <a class="nav-item nav-link" href="#projects">Projects Preview</a>
-                <a class="nav-item nav-link" href="#interns">Internships</a>
                 <a class="nav-item nav-link" href="#contact">Contact</a>
             </div>
         </div>
@@ -60,199 +59,230 @@
 
 
     <div id="about-me">
+        <div class="centroid">
+            <h1 class="bold-center" id="demo"></h1>
+            <br><br>
+            <!-- <a href="static/blogs/intro.html" target="_blank" style="text-align: center; margin: auto; display: block; color: #0070c9;">Read more about me in my introductory blog &rsaquo;</a> -->
+        </div>
 
-        <p class="bold-center">Hello everyone. My name is Ved Panse, and I am a student at Woodridge High School, Aurangabad, India. I have an interminable list of what I find to be interesting: I love everything - from sports to computers.</p>
-        <br><br>
+    </div>
+
+
+
+    <div id="biography">
         <div class="content">
-            <h1>My Interests</h1><br><br>
-            <p style="text-align: center;">
-                <a href="">Artificial Intelligence, Machine Learning, Computer Vision, Natural Language Processing</a> |
+            <h2>About Me</h2><br>
+            <h5>Biography</h5>
+            <p>
+                I am currently a student at Woodridge High School, Aurangabad, Maharashtra, India. I aspire to be a software developer and specialize in Artificial Intelligence and Machine Learning. I have been programming computers for four years now, and I believe
+                I am ready to make at least small contributions to solving a big issue. I started making numerous open-source contributions on <a href="https://codepen.io/vedpanse" target="_blank">CodePen</a> and <a href="https://github.io/vedpanse"
+                    target="_blank">GitHub</a> when I was in middle school.
+            </p>
+            <a href="static/blogs/intro.html" target="_blank">Read more about me in my introductory blog &rsaquo;</a><br><br><br><br>
+            <h5>My Skills</h5>
+            <label for="progress">HTML &bull; 100%</label>
+            <div class="progress">
+                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+                </div>
+            </div>
+
+            <label for="progress">CSS &bull; 99%</label>
+            <div class="progress">
+                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100" style="width:99%">
+                </div>
+            </div>
+
+            <label for="progress">JavaScript &bull; 85%</label>
+            <div class="progress">
+                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width:85%">
+                </div>
+            </div>
+
+            <label for="progress">Python &bull; 95%</label>
+            <div class="progress">
+                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width:95%">
+                </div>
+            </div>
+
+            <label for="progress">Kotlin &bull; 15%</label>
+            <div class="progress">
+                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" style="width:15%">
+                </div>
+            </div>
+
+            <label for="progress">Java &bull; 2%</label>
+            <div class="progress">
+                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100" style="width:2%">
+                </div>
+            </div><br><br><br>
+            <h5>My Interests</h5>
+            <p style="font-size: 16px;">
+                <a href="">Artificial Intelligence (AI)</a> |
+                <a href="">Machine Learning (ML)</a> |
+                <a href="">Computer Vision (CV)</a>
+                <a href="">Natural Language Processing (NLP)</a> |
                 <a href="">Web Development</a> |
                 <a href="">Software Development</a> |
                 <a href="">Technology</a>
-            </p><br>
-        </div>
-
-
-        <a href="static/blogs/intro.html" target="_blank" style="text-align: center; margin: auto; display: block; color: #0070c9;">Read more about me in my introductory blog &rsaquo;</a>
-
-    </div><br><br>
-    <h1 class="img-centered"><img src="static/images/ved_panse.png" class="img-c"><br><br></h1>
-    <!-- <div class="car">
-        <div class="row">
-            <div class="col-lg-6 col-md-6">
-                <img src="static/images/ved_panse.png" class="mega">
-            </div>
-            <div class="col-lg-6 col-md-6">
-                <img src="static/images/ved_panse.png" class="snap s1">
-                <img src="static/images/ved_panse.png" class="snap">
-            </div>
-
-        </div>
-    </div> -->
-
-    <br><br>
-    <!-- <br><br><br> -->
-    <div class="content" id="upto">
-        <br><br><br><br><br>
-        <h1>What have I been upto?</h1><br><br>
-        <div class="sub-content">
-
-            <h3>Advent of Code</h3><br>
-            <p>Advent of Code is an Advent calendar of small programming puzzles for a variety of skill sets and skill levels that can be solved in any programming language you like. I participated in the event in 2020 and 2021, and I really enjoyed a lot.</p>
-            <a href="static/blogs/intro.html">Read more about this activity &rsaquo;</a><br>
-            <a href="https://adventofcode.com" target="_blank">Official link to the event &rsaquo;</a>
-        </div>
-        <div class="sub-content">
-
-            <h3>FindAbility Sciences | Internships</h3><br>
-            <p>I was assigned to design a new report for Wells Fargo bank. It was accepted and is used in BancBridge product for Wells Fargo. I was also assigned to come up with new designs for the new BancBridge website. Throughout my internship, I got
-                to learn many things and work with different groups with mutual aims.
-            </p>
-            <a href="static/work/bancbridge.html">Read more about this internship &rsaquo;</a>
-        </div>
-        <div class="sub-content">
-
-            <h3>Denoization of Stuff Using AI</h3><br>
-            <p>Hi there. I am Ved Panse, and I live in India. I am an aspiring AI Expert, and I possess a deep interest in the fundamentals of Computer Science. I like innovating things that would make my life easier.</p>
-            <a href="static/blogs/intro.html">Read more about this project &rsaquo;</a>
+            </p><br><br><br><br>
+            <h5>What have I been upto?</h5><br>
+            <div>
+                <h6>Detecting Fake News Using Machine Learning</h6>
+                <p>Currently, I am working on detecting fake news on social media using Machine Learning. Solving this problem intrigued me because it led to chaos during the COVID-19, especially in India, as unverified home remedies for tackling the virus
+                    surfaced through social media.<br><br>I have written an article for the newspaper to make the general audience aware about almost every basics of this issue: from its impacts to how it is being handled. I have uploaded my version of
+                    solving this issue on <a href="https://github.com/vedpanse" target="_blank">GitHub</a>. This program uses primitive machine learning methods and a CSV file to train as well as predict if a news is fake. My solution is not 100% accurate,
+                    but it is still a start.</p>
+                <a href="">Read more about this issue &rsaquo;</a>
+            </div><br><br><br><br>
+            <!-- <img src="static/images/ved_panse.png"> -->
         </div>
     </div>
-    <br><br><br><br><br>
-
-    <div class="bg" id="social">
-        <!-- <h1 class="img-centered"><img src="static/images/me_at_spread_warmth.jpeg" class="img-c"><br><br></h1> -->
+    <br><br><br>
+    <div id="projects">
         <div class="content">
+            <h2>Projects</h2><br>
             <div class="row">
                 <div class="col-lg-6">
-                    <h1 style="text-align: left; width: 100%;">Committing to the welfare of the society</h1><br>
-                    <p>I am a member of the Board of Directors of the WH-Leo Club, a child body of the Lions Club. WH-Leo Club is a social service club open for all those who are committed to the welfare of the society.</p><br>
-
-
-                    <h3>Spread Warmth</h3>
-                    <p>On December 12, 2021, the WH-Leo Club embarked on a mission to spread warmth in the winter of 2021 by donating clothes.</p>
-                    <a href="static/social/spread-warmth.html" target="_blank">Read more about this initiative &rsaquo;</a><br><br>
-
-                    <h3>Eunoia</h3>
-                    <p>The WH-Leo Club invited Mrs. Rebekah Poynor to speak about the art (therapy) of mind and combating mental illness.</p>
-                    <a href="static/social/eunoia.html" target="_blank">Read more about this initiative &rsaquo;</a><br><br>
-                    <br>
-                    <a href="static/social/eunoia.html" target="_blank">Read more of such initiatives &rsaquo;</a><br><br>
+                    <div class="card">
+                        <h6>JavelinLang</h6>
+                        <p>javelinLang is an open-source DSL that helps to build GUIs quickly and easily. It was developed in Python.</p>
+                        <a href="https://github.com/VedPanse/javelin-lang" target="_blank">View this project on GitHub &rsaquo;</a>
+                        <a href="static/docs/algorithms/index.html" target="_blank">View documentation for javelinLang &rsaquo;</a>
+                    </div>
                 </div>
                 <div class="col-lg-6">
-                    <p style="font-size: 22px; width: 50%; margin-left: 15%; margin-top: 25%;">Leo clubs are a youth organization of Lions Clubs International. Leo clubs encourage youths to develop leadership qualities by participating in social service activities. They are dependent on a Lions club to sponsor and initiate a
-                        Leo club. Leo club members are addressed as "Leos."</p>
-
+                    <div class="card">
+                        <h6>eAuthentication</h6>
+                        <p>This project enables eAuthentication for any primitive website. It was built in Python.</p>
+                        <a href="https://github.com/VedPanse/eAuthentication" target="_blank">View this project on GitHub &rsaquo;</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card">
+                        <h6>Image Text Parser</h6>
+                        <p>This program scrapes all the text from an image by using Machine Learning and AI. It looks cool.</p>
+                        <a href="https://github.com/VedPanse/image-text-parser" target="_blank">View this project on GitHub &rsaquo;</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card">
+                        <h6>javelin Search Engine</h6>
+                        <p>A search engine that interprets results from google and displays it locally. Built using python and html.</p>
+                        <a href="https://github.com/VedPanse/Search-Engine" target="_blank">View this project on GitHub &rsaquo;</a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <br><br><br><br><br>
-    <div class="content" id="blogs">
-        <h1>I've got a lot of stuff to share with you</h1><br><br>
-        <div class="sub-content">
 
-            <h3>Introductory Blog</h3><br>
-            <p>Hi there. I am Ved Panse, and I live in India. I am an aspiring AI Expert, and I possess a deep interest in the fundamentals of Computer Science. I like innovating things that would make my life easier.</p>
-            <a href="static/blogs/intro.html">Read more about me in my introductory blog &rsaquo;</a>
+
+
+
+    <br><br><br><br><br><br>
+
+
+
+
+
+    <div id="internships">
+        <div class="content">
+            <h2>Internships</h2><br>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="card">
+                        <h6>FindAbility Sciences </h6>
+                        <p>I am currently working with FindAbility Sciences as an intern.</p>
+                        <a href="https://findability.ai/" target="_blank">Visit their official website &rsaquo;</a><br>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card">
+                        <h6>Xceed Imagination</h6>
+                        <p>Through my Xceed Imagination internship, I got the opportunity to develop software for Magna International. I was tasked with developing a software for handling uploads and downloads from the clients.</p>
+                        <a href="http://xceedtech.in/" target="_blank">Visit their official website &rsaquo;</a><br>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="card">
+                        <h6>BancBridge</h6>
+                        <p>I was assigned to design a new report for Wells Fargo bank. It was accepted and is used in BancBridge product for Wells Fargo. I was also assigned to come up with new designs for the new BancBridge website. Throughout my internship,
+                            I got to learn many things and work with different groups with mutual aims.</p>
+                        <a href="https://bancbridge.com" target="_blank">Visit their official website &rsaquo;</a><br>
+                    </div>
+                </div>
+            </div>
+            <br>
+        </div><br><br><br>
+        <div class="bg" id="social">
+            <div class="content">
+                <div style="width: 60%; margin: auto;">
+                    <img src="static/images/me_at_spread_warmth.jpeg"><br><br>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h1 style="text-align: left; width: 100%;">Committing to the welfare of the society</h1><br>
+                        <p>I am a member of the Board of Directors of the WH-Leo Club, a child body of the Lions Club. WH-Leo Club is a social service club open for all those who are committed to the welfare of the society.</p><br>
+
+
+                        <h3>Spread Warmth</h3>
+                        <p>On December 12, 2021, the WH-Leo Club embarked on a mission to spread warmth in the winter of 2021 by donating clothes.</p>
+                        <a href="static/social/spread-warmth.html" target="_blank">Read more about this initiative &rsaquo;</a><br><br>
+
+                        <h3>Eunoia</h3>
+                        <p>The WH-Leo Club invited Mrs. Rebekah Poynor to speak about the art (therapy) of mind and combating mental illness.</p>
+                        <a href="static/social/eunoia.html" target="_blank">Read more about this initiative &rsaquo;</a><br><br>
+                        <br>
+                        <a href="static/social/eunoia.html" target="_blank">Read more of such initiatives &rsaquo;</a><br><br>
+                    </div>
+                    <div class="col-lg-6">
+                        <p style="font-size: 22px; width: 50%; margin-left: 15%; margin-top: 25%;">Leo clubs are a youth organization of Lions Clubs International. Leo clubs encourage youths to develop leadership qualities by participating in social service activities. They are dependent on a Lions club to sponsor and initiate
+                            a Leo club. Leo club members are addressed as "Leos."</p>
+
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="sub-content">
+    </div><br><br><br>
 
-            <h3>Programming Dilemma</h3><br>
-            <p>My opinions on where and how aspirant programmers should start, and remain productive throughout their journey.</p>
-            <a href="static/blogs/dilemma.html">Read more in my blog &rsaquo;</a>
-        </div>
-        <div class="sub-content">
 
-            <h3>My Passion for Cricket</h3><br>
-            <p>I felt like sharing my interest in cricket with you. In this blog, I describe how I developed this interest.</p>
-            <a href="static/blogs/cricket.html">Read more in my blog &rsaquo;</a>
+    <div id="blogs">
+        <div class="content">
+            <h2>Blogs</h2><br>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="card">
+                        <h6>Introductory Blog</h6>
+                        <p>
+                            Hi there. I am Ved Panse, and I live in India. I am an aspiring AI Expert, and I possess a deep interest in the fundamentals of Computer Science. I like innovating things that would make my life easier.
+                        </p>
+                        <a href="static/blogs/intro.html" target="_blank">Read the full blog &rsaquo;</a><br>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card">
+                        <h6>Programming Dilemma</h6>
+                        <p>
+                            My opinions on where and how aspirant programmers should start, and remain productive throughout their journey.
+                        </p>
+                        <a href="static/blogs/dilemma.html" target="_blank">Read the full blog &rsaquo;</a><br>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="card">
+                        <h6>My Passion for Cricket</h6>
+                        <p>I felt like sharing my interest in cricket with you. In this blog, I describe how I developed this interest.</p>
+                        <a href="static/blogs/cricket.html" target="_blank">Read the full blog &rsaquo;</a><br>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
-    <div style="position: relative;">
-        <img src="static/images/code.jpeg" style="position: relative; background-repeat: no-repeat;" class="master">
-        <div style="position: absolute; background-color: rgb(0, 0, 0, 0.4); min-width: 100vw; min-height: 100vh; top: 0%; left: 0%;">
 
-        </div>
-        <div style="position: absolute; top: 50%; left: 50%; text-align: center; transform: translate(-50%, -50%);">
-            <h3 style="color: white; font-weight: 400; font-size: 2.5vh;">Here are some of the many projects that I have completed as a middle school and a high school student. The projects are made in Python, HTML, JavaScript ES6/ES7, and Java.</h3><br>
-            <!-- <p style="color: white; font-size: 19px;">I have been working hard through my high school years for this</p> -->
-            <a href="https://github.com/VedPanse/javelin-lang" style="color: white; font-size: 17px;">View more of such projects &rsaquo;</a>
-        </div>
-    </div><br><br>
-
-    <div class="content" id="projects">
-        <h1>An overview of my projects</h1><br><br>
-        <div class="sub-content">
-
-            <h3>javelinLang</h3><br>
-            <p>javelinLang is an open-source DSL that helps to build GUIs quickly and easily. It was developed in Python.</p>
-            <a href="https://github.com/VedPanse/javelin-lang" target="_blank">View this project on my GitHub &rsaquo;</a><br>
-            <a href="static/docs/algorithms/index.html" target="_blank">View documentation for javelinLang &rsaquo;</a>
-        </div>
-        <div class="sub-content">
-
-            <h3>eAuthentication</h3><br>
-            <p>This project enables eAuthentication for any primitive website. It was built in Python.</p>
-            <a href="https://github.com/VedPanse/eAuthentication" target="_blank">View this project on my GitHub &rsaquo;</a>
-        </div>
-        <div class="sub-content">
-
-            <h3>Image Text Parser</h3><br>
-            <p>This program scrapes all the text from an image by using Machine Learning and AI. It looks cool.</p>
-            <a href="https://github.com/VedPanse/image-text-parser" target="_blank">View this project on my GitHub &rsaquo;</a>
-        </div>
-        <div class="sub-content">
-
-            <h3>javelin Search Engine</h3><br>
-            <p>A search engine that interprets results from google and displays it locally. Built using python and html.</p>
-            <a href="https://github.com/VedPanse/Search-Engine" target="_blank">View this project on my GitHub &rsaquo;</a>
-        </div>
-    </div><br><br>
-
-
-
-
-    <div style="position: relative;">
-        <img src="static/images/ilya-pavlov-OqtafYT5kTw-unsplash.jpeg" style="position: relative;" class="master">
-        <div style="position: absolute; background-color: rgb(0, 0, 0, 0.75); min-width: 100vw; min-height: 100vh; top: 0%; left: 0%;">
-
-        </div>
-        <div style="position: absolute; top: 50%; left: 50%; text-align: center; transform: translate(-50%, -50%);">
-            <h3 style="color: white; font-weight: 400; font-size: 2.5vh;">I was an intern at two MNCs as a Software Developer. I loved almost every moment of my life as an intern as I learned a voluminous amount of knowledge, and practically try computer programs that had direct applications to the services we use
-                today.
-            </h3><br>
-            <!-- <p style="color: white; font-size: 19px;">I have been working hard through my high school years for this</p> -->
-            <a href="https://github.com/VedPanse/javelin-lang" style="color: white; font-size: 17px;">Learn more about my internships' experiences &rsaquo;</a>
-        </div>
-    </div><br><br>
-
-
-
-    <div class="content" id="interns">
-        <h1>Everything I Loved About My Internships</h1><br><br>
-        <div class="sub-content">
-
-            <h3>BancBridge</h3><br>
-            <p>I was assigned to design a new report for Wells Fargo bank. It was accepted and is used in BancBridge product for Wells Fargo. I was also assigned to come up with new designs for the new BancBridge website. Throughout my internship, I got
-                to learn many things and work with different groups with mutual aims.
-            </p>
-            <a href="https://github.com/VedPanse/javelin-lang" target="_blank">Read more about this internship &rsaquo;</a>
-        </div>
-        <div class="sub-content">
-
-            <h3>Xceed Imagination</h3><br>
-            <p>
-                Through my Xceed Imagination internship, I got the opportunity to develop software for Magna International. I was tasked with developing a software for handling uploads and downloads from the clients.
-            </p>
-            <a href="https://github.com/VedPanse/eAuthentication" target="_blank">Read more about this internship &rsaquo;</a>
-        </div>
-    </div><br><br>
-
-
+    <br><br><br>
     <div id="contact">
         <div class="content"><br><br>
-            <h1>Get in touch with me</h1>
+            <h2>Contact Me</h2>
             <p>I'll try to revert to you via the email address that you provide below within a day. All the chats are private.</p>
         </div>
         <main class="form-signin">
@@ -270,23 +300,78 @@
                     <label for="floatingPassword">Message</label>
                 </div>
                 <br>
-                <button class="btner" type="submit">Submit</button>
+                <!-- <button class="btner" type="submit">Submit</button> -->
+                <button type="submit">Submit this message &rsaquo;</button>
             </form>
         </main>
     </div><br><br>
-
-
     <div id="footer">
-
+        <div class="foot-c">
+            <ol>
+                <li>This website was created by Ved Panse in 2018.</li>
+                <li>All the images used in this website have been linked below. All of the images used are free and non-copyright.</li>
+                <li>These images were taken from Unsplash.</li>
+            </ol>
+            <hr>
+            <div class="row">
+                <div class="col-lg-4">
+                    <p><b>My Social Media Accounts</b></p>
+                    <a href="https://codepen.io/vedpanse" target="_blank">CodePen</a>
+                    <a href="https://github.com/vedpanse" target="_blank">GitHub</a>
+                    <a href="https://twitter.com/vedpanse" target="_blank">Twitter</a>
+                </div>
+                <div class="col-lg-4">
+                    <p><b>Opportunity Credits</b></p>
+                    <a href="https://findability.ai/" target="_blank">FindAbility Sciences</a>
+                    <a href="http://xceedtech.in/" target="_blank">Xceed Imagination</a>
+                    <a href="https://www.bancbridge.com/" target="_blank">BancBridge</a>
+                </div>
+                <div class="col-lg-4">
+                    <p><b>Image Credits</b></p>
+                    <a href="https://unsplash.com/photos/AWZbbVFEW3k" target="_blank">Daniele Levis Pelusi's Green Textile Image on Unsplash</a>
+                    <a href="https://unsplash.com/photos/caH-ZLrisZA" target="_blank">Nio Milano on Unsplash</a>
+                    <a href="https://unsplash.com/photos/z77FVd3_xGI" target="_blank">Sharon McCutcheon Unsplash</a>
+                    <a href="https://unsplash.com/photos/_nWaeTF6qo0" target="_blank">Richard Horvath Unsplash</a>
+                </div>
+            </div>
+        </div>
     </div>
-
     <!-- Optional JavaScript -->
     <script src="templates/scroll.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>
+        var i = 0;
+        var txt = 'Hello, World! My name is Ved Panse.'; /* The text */
+        var speed = 50; /* The speed/duration of the effect in milliseconds */
+
+        function typeWriter() {
+            if (i < txt.length) {
+                document.getElementById("demo").innerHTML += txt.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    document.getElementById('whitie').classList.add('fixed-top');
+                    // add padding top to show content behind navbar
+                    navbar_height = document.querySelector('.sub-nav').offsetHeight;
+                    document.body.style.paddingTop = navbar_height + 'px';
+                    document.querySelector(".sub-nav").style.borderBottom = "1px solid rgb(0, 0, 0, 0.1)";
+                } else {
+                    document.getElementById('whitie').classList.remove('fixed-top');
+                    // remove padding top from body
+                    document.body.style.paddingTop = '0';
+                    document.querySelector(".sub-nav").style.borderBottom = "none";
+                }
+            });
+        });
+    </script>
 </body>
 
-
-</html>
+</html
