@@ -11,7 +11,7 @@ body {
     width: 100%;
     padding: 5px 15px;
     z-index: 2;
-    border-bottom: 1px solid rgb(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgb(0, 0, 0, 0.2) !important;
 }
 
 .navbar .nav-link,
