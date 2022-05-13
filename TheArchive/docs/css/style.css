@@ -39,7 +39,7 @@ body {
     -webkit-background-clip: text;
     -moz-background-clip: text;
     background-color: #9eadf1;
-    background-image: linear-gradient(90deg, #edf4c9, #9eadf1);
+    background-image: linear-gradient(90deg, #EAECC6, #2BC0E4);
     background-size: 100%;
     display: inline-block;
 }
@@ -89,6 +89,7 @@ div.python {
     line-height: 1.66667;
     padding: 20px;
     border-radius: 5px;
+    margin-bottom: 5%;
 }
 
 .python a:link {
@@ -151,7 +152,7 @@ div.python {
 }
 
 .python .me1 {
-    color: black;
+    color: rgb(138, 231, 144);
 }
 
 .python span.xtra {
@@ -200,4 +201,17 @@ p.author {
 
 .title.gradient {
     font-size: 60px !important;
+}
+
+h2 {
+    margin-top: 10%;
+}
+
+pre {
+    color: white;
+}
+
+img {
+    width: 100%;
+    height: auto;
 }

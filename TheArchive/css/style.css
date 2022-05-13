@@ -37,7 +37,7 @@ body {
     -webkit-background-clip: text;
     -moz-background-clip: text;
     background-color: #9eadf1;
-    background-image: linear-gradient(90deg, #edf4c9, #9eadf1);
+    background-image: linear-gradient(90deg, #EAECC6, #2BC0E4);
     background-size: 100%;
     display: inline-block;
 }

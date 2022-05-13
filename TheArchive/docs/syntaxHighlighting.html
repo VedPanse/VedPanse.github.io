@@ -40,9 +40,32 @@
             <p>This documentation covers how Syntax Code Highlighting is implemented on a website. Syntax code highlighting is an integral part of any technical documentation that involves code. It makes the code more 'visible.' Without syntax code highlighting,
                 a website will not be able to invite a large community of readers (traffic).</p>
 
-            <div class="python"><span class="kw1">import</span> pandas<br /> value = <span class="nu0">0</span><br />
-                <span class="kw1">print</span><span class="br0">&#40;</span>value<span class="br0">&#41;</span>
+            <h2>What do we want to get?</h2>
+            <p>The following is a code block.</p>
+
+            <div class="python">
+                <pre>
+import pandas as pd
+
+data = pd.read_csv("mycsv.csv")
+                    
+print(data)
+                </pre>
             </div>
+            <p>The following is a Syntax Code Highlighted block, which we desire to get.</p>
+            <div class="python"><span class="kw1">import</span> pandas <span class="kw1">as</span> pd<br />
+                <br /> data = pd.<span class="me1">read_csv</span><span class="br0">&#40;</span><span class="st0">&quot;mycsv.csv&quot;</span><span class="br0">&#41;</span><br />
+                <br />
+                <span class="kw1">print</span><span class="br0">&#40;</span>data<span class="br0">&#41;</span></div>
+            <h2>Using Quick Highlighter</h2>
+            <p><a href="https://quickhighlighter.com" target="_blank">Quick Highlighter</a> is a power tool, and it offers Syntax Code Highlighting for a wide array of programming languages.</p><br>
+            <img src="../images/sch-1.png"><br><br>
+            <p>As given in the above image, select the programming language and input the code in the box given on the right.</p>
+            <p>You can adjust the options according to your wish. Finally, click on the Highlight button at the bottom.</p>
+            <img src="../images/sch-2.png"><br><br>
+            <p>Click on toggle code view to look at the style tag and code block. Copy and paste them into your website. You are ready to go.</p>
+            <br>
+            <p>And do not forget to credit <a href="https://quickhighlighter.com" target="_blank">QuickHighlighter.com</a> to your website.</p>
         </div><br><br>
 
     </div>
