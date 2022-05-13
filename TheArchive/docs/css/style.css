@@ -192,3 +192,12 @@ span.program {
     color: #3dd6f5;
     background-color: #2dd6f51a;
 }
+
+p.author {
+    color: white;
+    margin-bottom: 5%;
+}
+
+.title.gradient {
+    font-size: 60px !important;
+}
