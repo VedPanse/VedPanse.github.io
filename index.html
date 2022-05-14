@@ -365,10 +365,28 @@
         li {
             line-height: 3;
         }
+        
+        #notification {
+            background-color: #0071E3;
+            color: white;
+            position: relative;
+            text-align: center;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            font-size: 14px;
+        }
+        
+        #notification a,
+        #notification a:hover {
+            color: white;
+        }
     </style>
 </head>
 
 <body onload="typeWriter()">
+    <div id="notification">
+        I just deployed a new organization called The Archive. <a href="TheArchive/index.html" target="_blank">Take a look &rsaquo;</a>
+    </div>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark main-nav" id="brownie">
         <a class="navbar-brand" href="#">Ved Panse</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
