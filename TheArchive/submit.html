@@ -57,7 +57,7 @@
                 </div>
             </div>
             <div class="col-lg-6 col-md-6" style="background-color: rgb(255, 255, 255, 0.1); backdrop-filter: blur(100px)">
-                <form action="https://formspree.io/f/xzboyanj" method="POST">
+                <form action="https://formspree.io/f/xzboyanj" method="POST" enctype="multipart/form-data">
                     <h5>Upload a File</h5><br>
                     <input name="fName" placeholder="First Name" required>
                     <input name="lName" placeholder="Last Name" required>
@@ -67,7 +67,7 @@
                         <header>Drag & Drop to Upload File</header>
                         <span>OR</span>
                         <button class="btn-blue">Browse File</button>
-                        <input type="file" hidden>
+                        <input type="file" name="upload" hidden required accept="application/pdf">
                     </div>
                     <br>
                     <button type="submit" class="btn-blue">Submit</button>
