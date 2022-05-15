@@ -57,85 +57,21 @@
                 </div>
             </div>
             <div class="col-lg-6 col-md-6" style="background-color: rgb(255, 255, 255, 0.1); backdrop-filter: blur(100px)">
-                <form action="https://formspree.io/f/xzboyanj" method="POST" enctype="multipart/form-data">
-                    <h5>Upload a File</h5><br>
-                    <input name="fName" placeholder="First Name" required>
-                    <input name="lName" placeholder="Last Name" required>
-                    <input name="email" placeholder="Email ID" required>
-                    <div class="drag-area">
-                        <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
-                        <header>Drag & Drop to Upload File</header>
-                        <span>OR</span>
-                        <button class="btn-blue">Browse File</button>
-                        <input type="file" name="upload" hidden required accept="application/pdf">
-                    </div>
-                    <br>
-                    <button type="submit" class="btn-blue">Submit</button>
-                </form><br><br>
+                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                    <p>FILE SUBMISSION</p>
+                    <h1 class="gradient">Requirements</h1><br>
+                    <p>The file to be submitted must be a PDF. That's it.</p>
+                    <span style="font-size: 13px">Please also note that I do not post your name or your email id on the blog without your permission. If you want me to credit you for the blog, mention so in the email id given below.</span>
+                    <br><br>
+                    <a href="mailto:vedkpanse@gmail.com"><button class="btn-blue">Submit</button></a>
+                </div>
             </div>
         </div>
+    </div><br>
+    <div id="submit">
+
     </div>
 
-    <script>
-        //selecting all required elements
-        const dropArea = document.querySelector(".drag-area"),
-            dragText = dropArea.querySelector("header"),
-            button = dropArea.querySelector("button"),
-            input = dropArea.querySelector("input");
-        let file; //this is a global variable and we'll use it inside multiple functions
-
-        button.onclick = () => {
-            input.click(); //if user click on the button then the input also clicked
-        }
-
-        input.addEventListener("change", function() {
-            //getting user select file and [0] this means if user select multiple files then we'll select only the first one
-            file = this.files[0];
-            dropArea.classList.add("active");
-            showFile(); //calling function
-        });
-
-
-        //If user Drag File Over DropArea
-        dropArea.addEventListener("dragover", (event) => {
-            event.preventDefault(); //preventing from default behaviour
-            dropArea.classList.add("active");
-            dragText.textContent = "Release to Upload File";
-        });
-
-        //If user leave dragged File from DropArea
-        dropArea.addEventListener("dragleave", () => {
-            dropArea.classList.remove("active");
-            dragText.textContent = "Drag & Drop to Upload File";
-        });
-
-        //If user drop File on DropArea
-        dropArea.addEventListener("drop", (event) => {
-            event.preventDefault(); //preventing from default behaviour
-            //getting user select file and [0] this means if user select multiple files then we'll select only the first one
-            file = event.dataTransfer.files[0];
-            showFile(); //calling function
-        });
-
-        function showFile() {
-            let fileType = file.type; //getting selected file type
-            let validExtensions = ["image/jpeg", "image/jpg", "image/png"]; //adding some valid image extensions in array
-            if (validExtensions.includes(fileType)) { //if user selected file is an image file
-                let fileReader = new FileReader(); //creating new FileReader object
-                fileReader.onload = () => {
-                    let fileURL = fileReader.result; //passing user file source in fileURL variable
-                    // UNCOMMENT THIS BELOW LINE. I GOT AN ERROR WHILE UPLOADING THIS POST SO I COMMENTED IT
-                    // let imgTag = `<img src="${fileURL}" alt="image">`; //creating an img tag and passing user selected file source inside src attribute
-                    dropArea.innerHTML = imgTag; //adding that created img tag inside dropArea container
-                }
-                fileReader.readAsDataURL(file);
-            } else {
-                alert("This is not an Image File!");
-                dropArea.classList.remove("active");
-                dragText.textContent = "Drag & Drop to Upload File";
-            }
-        }
-    </script>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
