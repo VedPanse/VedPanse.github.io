@@ -51,6 +51,10 @@ body {
 }
 
 #start .row {
+    min-height: 100vh;
+}
+
+#start .over {
     position: absolute;
     top: 40%;
     transform: translate(0%, -50%);

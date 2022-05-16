@@ -152,7 +152,7 @@ div.python {
 }
 
 .python .me1 {
-    color: rgb(138, 231, 144);
+    color: #7ec699;
 }
 
 .python span.xtra {
@@ -195,7 +195,7 @@ span.program {
 }
 
 p.author {
-    color: white;
+    color: #bcbec0;
     margin-bottom: 5%;
 }
 
@@ -214,4 +214,12 @@ pre {
 img {
     width: 100%;
     height: auto;
+}
+
+li {
+    color: #bcbec0;
+}
+
+.blog p b {
+    color: white;
 }
