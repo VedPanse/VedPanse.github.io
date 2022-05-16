@@ -110,6 +110,14 @@
             max-height: 100vh;
             overflow-y: scroll;
         }
+        
+        #images {
+            display: none;
+        }
+        
+        div#videos {
+            display: block;
+        }
     </style>
 </head>
 
@@ -140,11 +148,11 @@
                 <table>
                     <tr>
                         <td width="50%">
-                            <p>Open a random video.</p>
+                            <p id="toggleP">Open my image gallery.</p>
                         </td>
                         <td>
                             <span>
-                                <a href="" target="_blank">Open Random</a>
+                                <a href="#" id="toggle-button">Open Random</a>
                             </span>
                         </td>
                     </tr>
@@ -155,13 +163,14 @@
             </div>
         </div>
         <div class="col-lg-7">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light sub-nav" id="whitie">
-                <a class="navbar-brand" href="#">Videos Preview</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <div id="videos-div">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light sub-nav" id="whitie">
+                    <a class="navbar-brand" href="#">Videos Preview</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                             </button>
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <!-- <div class="navbar-nav">
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <!-- <div class="navbar-nav">
                         <a class="nav-item nav-link active" href="#about-me">About Me <span class="sr-only">(current)</span></a>
                         <a class="nav-item nav-link" href="#upto">What have I been upto?</a>
                         <a class="nav-item nav-link" href="#upto">Commitments</a>
@@ -170,69 +179,141 @@
                         <a class="nav-item nav-link" href="#interns">Internships</a>
                         <a class="nav-item nav-link" href="#contact">Contact</a>
                     </div> -->
+                    </div>
+                </nav>
+                <br>
+                <div class="article">
+                    <h6>High Jump - Attempt 1 - Success</h6>
+                    <p class="descr">
+                        Oh yes! I cleared a height that I deemed good for my age in the first attempt. I didn't expect to jump this high. Seemed like I had improved.
+                    </p>
+                    <a class="git" href="Vid1.html" target="_blank">View</a><br><br>
+                    <span>About Us</span>
                 </div>
-            </nav>
-            <br>
-            <div class="article">
-                <h6>High Jump - Attempt 1 - Success</h6>
-                <p class="descr">
-                    Oh yes! I cleared a height that I deemed good for my age in the first attempt. I didn't expect to jump this high. Seemed like I had improved.
-                </p>
-                <a class="git" href="Vid1.html" target="_blank">View</a><br><br>
-                <span>About Us</span>
+                <hr><br>
+                <div class="article">
+                    <h6>High Jump - Attempt 2 - Fail</h6>
+                    <p class="descr">
+                        A height of 150cm seemed monstrous for me to clear in the first attempt. I hoped I would get it right in the coming attempts.
+                    </p>
+                    <a class="git" href="Vid2.html" target="_blank">View</a><br><br>
+                    <span>Initiative</span>
+                </div>
+                <hr><br>
+                <div class="article">
+                    <h6>High Jump - Attempt 3 - Suspense</h6>
+                    <p class="descr">
+                        After failing to clear the height of 150cm in the first attempt and the second attempt, I have got only one more attempt to clear the level. Will I make it to the finals?
+                    </p>
+                    <a class="git" href="Vid3.html" target="_blank">View</a><br><br>
+                    <span>Webinar</span>
+                </div>
+                <hr><br>
+                <div class="article">
+                    <h6>The final 'decider' round</h6>
+                    <p class="descr">
+                        My best friend and I had made it to the finals! And we had to compete between ourselves to grab the first position. Who will make it to the top position and qualify for the State Championships?
+                    </p>
+                    <a class="git" href="Vid4.html" target="_blank">View</a><br><br>
+                    <span>Webinar</span>
+                </div>
+                <hr><br>
+                <div class="article">
+                    <h6>Award distribution</h6>
+                    <p class="descr">
+                        The most awaited event: the award distribution. This did not mark my first rank in the tournament. Rather, it marked the great scale by which I had improved myself to become worthy enough to bag the gold medal in district championships, and qualify for
+                        the state level.
+                    </p>
+                    <a class="git" href="Vid5.html" target="_blank">View</a><br><br>
+                    <span>Webinar</span>
+                </div>
+                <hr><br>
             </div>
-            <hr><br>
-            <div class="article">
-                <h6>High Jump - Attempt 2 - Fail</h6>
-                <p class="descr">
-                    A height of 150cm seemed monstrous for me to clear in the first attempt. I hoped I would get it right in the coming attempts.
-                </p>
-                <a class="git" href="Vid2.html" target="_blank">View</a><br><br>
-                <span>Initiative</span>
+            <div id="images-div">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light sub-nav" id="whitie">
+                    <a class="navbar-brand" href="#">Images Preview</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                            </button>
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <!-- <div class="navbar-nav">
+                        <a class="nav-item nav-link active" href="#about-me">About Me <span class="sr-only">(current)</span></a>
+                        <a class="nav-item nav-link" href="#upto">What have I been upto?</a>
+                        <a class="nav-item nav-link" href="#upto">Commitments</a>
+                        <a class="nav-item nav-link" href="#blogs">Blogs Preview</a>
+                        <a class="nav-item nav-link" href="#projects">Projects Preview</a>
+                        <a class="nav-item nav-link" href="#interns">Internships</a>
+                        <a class="nav-item nav-link" href="#contact">Contact</a>
+                    </div> -->
+                    </div>
+                </nav>
+                <br>
+                <div class="article">
+                    <h6>High Jump - Attempt 1 - Success</h6>
+                    <p class="descr">
+                        Oh yes! I cleared a height that I deemed good for my age in the first attempt. I didn't expect to jump this high. Seemed like I had improved.
+                    </p>
+                    <a class="git" href="Vid1.html" target="_blank">View</a><br><br>
+                    <span>About Us</span>
+                </div>
+                <hr><br>
+                <div class="article">
+                    <h6>High Jump - Attempt 2 - Fail</h6>
+                    <p class="descr">
+                        A height of 150cm seemed monstrous for me to clear in the first attempt. I hoped I would get it right in the coming attempts.
+                    </p>
+                    <a class="git" href="Vid2.html" target="_blank">View</a><br><br>
+                    <span>Initiative</span>
+                </div>
+                <hr><br>
+                <div class="article">
+                    <h6>High Jump - Attempt 3 - Suspense</h6>
+                    <p class="descr">
+                        After failing to clear the height of 150cm in the first attempt and the second attempt, I have got only one more attempt to clear the level. Will I make it to the finals?
+                    </p>
+                    <a class="git" href="Vid3.html" target="_blank">View</a><br><br>
+                    <span>Webinar</span>
+                </div>
+                <hr><br>
+                <div class="article">
+                    <h6>The final 'decider' round</h6>
+                    <p class="descr">
+                        My best friend and I had made it to the finals! And we had to compete between ourselves to grab the first position. Who will make it to the top position and qualify for the State Championships?
+                    </p>
+                    <a class="git" href="Vid4.html" target="_blank">View</a><br><br>
+                    <span>Webinar</span>
+                </div>
+                <hr><br>
+                <div class="article">
+                    <h6>Award distribution</h6>
+                    <p class="descr">
+                        The most awaited event: the award distribution. This did not mark my first rank in the tournament. Rather, it marked the great scale by which I had improved myself to become worthy enough to bag the gold medal in district championships, and qualify for
+                        the state level.
+                    </p>
+                    <a class="git" href="Vid5.html" target="_blank">View</a><br><br>
+                    <span>Webinar</span>
+                </div>
+                <hr><br>
             </div>
-            <hr><br>
-            <div class="article">
-                <h6>High Jump - Attempt 3 - Suspense</h6>
-                <p class="descr">
-                    After failing to clear the height of 150cm in the first attempt and the second attempt, I have got only one more attempt to clear the level. Will I make it to the finals?
-                </p>
-                <a class="git" href="Vid3.html" target="_blank">View</a><br><br>
-                <span>Webinar</span>
-            </div>
-            <hr><br>
-            <div class="article">
-                <h6>The final 'decider' round</h6>
-                <p class="descr">
-                    My best friend and I had made it to the finals! And we had to compete between ourselves to grab the first position. Who will make it to the top position and qualify for the State Championships?
-                </p>
-                <a class="git" href="Vid4.html" target="_blank">View</a><br><br>
-                <span>Webinar</span>
-            </div>
-            <hr><br>
-            <div class="article">
-                <h6>Award distribution</h6>
-                <p class="descr">
-                    The most awaited event: the award distribution. This did not mark my first rank in the tournament. Rather, it marked the great scale by which I had improved myself to become worthy enough to bag the gold medal in district championships, and qualify for
-                    the state level.
-                </p>
-                <a class="git" href="Vid5.html" target="_blank">View</a><br><br>
-                <span>Webinar</span>
-            </div>
-            <hr><br>
         </div>
     </div>
-    <script src="../../templates/scroll.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 <script>
-    const items = ["Vid1.html", "Vid2.html", "Vid3.html", "Vid4.html", "Vid5.html"]
-    document.querySelector(".github a").addEventListener("click", () => {
-        document.querySelector(".github a").href = items[Math.floor(Math.random() * items.length)];
+    document.querySelector("a#toggle-button").addEventListener("click", () => {
+        if (document.querySelector("div#videos-div").style.display !== "none") {
+            document.querySelector("#videos-div").style.display === "none";
+            document.querySelector("#images-div").style.display === "block"
+            document.querySelector("p#toggleP").innerHTML = "Open my video gallery";
+        } else {
+            document.querySelector("#videos-div").style.display === "block";
+            document.querySelector("#images-div").style.display === "none"
+            document.querySelector("p#toggleP").innerHTML = "Open my image gallery";
+        }
     });
-    // document.querySelector(".col-lg-7").style.height = document.body.style.height - document.querySelector(".main-nav").style.height;
 </script>
 
 </html>
