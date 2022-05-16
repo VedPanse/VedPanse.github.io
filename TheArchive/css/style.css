@@ -27,6 +27,10 @@ body {
     text-decoration: underline;
 }
 
+.nav-item.nav-link:active {
+    border: 1px solid white !important;
+}
+
 .navbar-nav {
     position: absolute;
     left: 50%;
