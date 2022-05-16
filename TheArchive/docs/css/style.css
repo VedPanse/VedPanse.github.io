@@ -182,6 +182,10 @@ span.html {
     text-decoration: underline;
 }
 
+.blog a:active {
+    border: 1px solid white;
+}
+
 span.mark {
     margin-right: 5px;
     padding: 5px 10px;
