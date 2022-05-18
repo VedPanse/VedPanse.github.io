@@ -235,3 +235,7 @@ li {
 .blog p b {
     color: white;
 }
+
+.col-lg-4 .main {
+    margin-bottom: 10%;
+}
