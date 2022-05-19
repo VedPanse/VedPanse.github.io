@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+    <title>Plotly</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="index.html">Plotly</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="#">Home</a>
+                <a class="nav-item nav-link active" href="#">Blogs <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="#">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <div class="header">
+        <a class="navbar-brand" href="index.html">Plotly</a>
+        <div class="header-right" onclick="openNav()">
+            <div class="menu"></div>
+            <div class="menu"></div>
+            <div class="menu"></div>
+        </div>
+    </div>
+
+    <div id="myNav" class="overlay-nav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+            <a onclick="getStarted()">Get Started</a>
+            <a onclick="lineGraphs()">Line Graphs</a>
+            <a onclick="barGraphs()">Bar Graphs</a>
+            <a onclick="histograms()">Histograms</a>
+            <a onclick="scatterPlots()">Scatter Plots</a>
+            <a onclick="pieCharts()">Pie Charts</a>
+            <a onclick="violinPlots()">Violin Plots</a>
+            <a onclick="boxPlots()" class="active">Box Plots</a>
+        </div>
+    </div>
+
+    <div class="loc-band">
+        <a href="#box">Box Plots</a>
+    </div>
+    <div class="row main">
+        <div class="leftnav col-lg-3 col-md-6">
+            <br>
+            <p id="get-started" onclick="getStarted()">Get Started</p>
+            <p id="line" onclick="lineGraphs()">Line Graphs</p>
+            <p id="bar" onclick="barGraphs()">Bar Graphs</p>
+            <p id="histogram" onclick="histograms()">Histograms</p>
+            <p id="scatterPlots" onclick="scatterPlots()">Scatter Plots</p>
+            <p id="pieCharts" onclick="pieCharts()">Pie Charts</p>
+            <p id="violinPlots" onclick="violinPlots()">Violin Plots</p>
+            <p id="boxPlots" onclick="boxPlots()" class="active">Box Plots</p>
+        </div>
+
+
+
+
+
+        <div class="col-lg-9 col-md-6 context ">
+            <div style="margin-top: 9%; ">
+                <div class="content-bar ">
+                    <a href="#box" class="active">Box Plots</a>
+                </div>
+                <section id="introduction-content">
+                    <section id="get-started-content">
+                        <h1 id="box">Box Plots</h1>
+                        <span>Written By<span class="u"> Ved Panse</span>
+                        </span>
+                        <span style="color: gray; margin-left: 5%; ">Last Modified: 19 May 2022</span>
+                        <section class="marge-5">
+                            <p>Box plots are used to represent the spread and skewness of data. Let us start plotting this important figure by importing the required modules.</p>
+                        </section>
+
+                        <section class="marge-5 use-this"><br><br>
+                            <h2>Importing Libraries</h2>
+
+                            <div class="python"><span class="kw1">import</span> plotly.<span class="me1">express</span> <span class="kw1">as</span> px<br />
+                                <span class="kw1">import</span> plotly.<span class="me1">graph_objects</span> <span class="kw1">as</span> go</div>
+
+                            <p>We will use df_tips as our data frame. We will import this data frame from plotly. The tips data frame presents tips received by employees at an imaginary restaurant.</p>
+
+                            <p>Let the x-axis and y-axis represent "sex" and "tip" respectively.</p>
+
+                            <div class="python">fig = px.<span class="me1">box</span><span class="br0">&#40;</span>df_tips, x=<span class="st0">&quot;sex&quot;</span>, y=<span class="st0">&quot;tip&quot;</span>, points=<span class="st0">&quot;all&quot;</span><span class="br0">&#41;</span><br
+                                /> fig.
+                                <span class="me1">show</span><span class="br0">&#40;</span><span class="br0">&#41;</span></div>
+
+                            <p>Here, the points are set to all so that all the points get displayed. This is what your plot should look like.</p>
+                            <img src="images/box.png">
+                        </section>
+                        <div style="width: 100%; margin-bottom: 5%; margin-top: 15%; ">
+                            <span style="text-align: left; display: inline-block; " class="next " onclick="violinPlots() ">&larr; Violin Plots</span>
+
+                        </div>
+                    </section>
+                </section>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js " integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN " crossorigin="anonymous "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js " integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q " crossorigin="anonymous "></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js " integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl " crossorigin="anonymous "></script>
+</body>
+<script src="functions.js "></script>
+
+</html>

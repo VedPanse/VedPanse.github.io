@@ -178,6 +178,11 @@ span.html {
     background-color: #ff386b1a;
 }
 
+span.python {
+    color: #fff238;
+    background-color: #fff2381a;
+}
+
 .blog a {
     color: #7084ff;
 }
@@ -238,4 +243,8 @@ li {
 
 .col-lg-4 .main {
     margin-bottom: 10%;
+}
+
+div.row.footer {
+    margin-top: 15%;
 }
