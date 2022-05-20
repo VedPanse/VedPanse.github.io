@@ -550,9 +550,18 @@ div.python {
 }
 
 img {
-    max-width: 100%;
+    max-width: auto;
     width: 100%;
     height: auto;
     margin-top: 10%;
     margin-bottom: 10%;
+    max-height: 300px;
+}
+
+.row.main {
+    min-height: 100vh;
+}
+
+p.src {
+    color: rgb(0, 0, 0, 0.5);
 }

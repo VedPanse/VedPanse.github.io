@@ -43,49 +43,65 @@
     <div id="myNav" class="overlay-nav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <div class="overlay-content">
-            <a onclick="getStarted()" class="active">Get Started</a>
+            <a onclick="getStarted()">Get Started</a>
             <a onclick="eda()">Exploratory Data Analysis</a>
             <a onclick="machineLearning()">Machine Learning</a>
             <a onclick="supervised()">More About Supervised Learning</a>
             <a onclick="unsupervised()">More About Unsupervised</a>
-            <a onclick="timeSeries()">Time Series Algorithms</a>
+            <a onclick="timeSeries()" class="active">Time Series Algorithms</a>
             <a onclick="regression()">Regression</a>
             <a onclick="clustering()">Clustering</a>
         </div>
     </div>
 
     <div class="loc-band">
-        <a href="#getStarted">Get started</a>
+        <a href="#getStarted">Get started with Machine Learning and Algorithms&nbsp;&nbsp; <i class="fas fa-chevron-right"></i></a>
     </div>
     <div class="row main">
         <div class="leftnav col-lg-3 col-md-6">
             <br>
-            <p id="get-started" onclick="getStarted()" class="active">Get Started</p>
+            <p id="get-started" onclick="getStarted()">Get Started</p>
             <p id="eda" onclick="eda()">Exploratory Data Analysis</p>
             <p id="machineLearning" onclick="machineLearning()">Machine Learning</p>
             <p id="supervised" onclick="supervised()">More About Supervised Learning</p>
             <p id="unsupervised" onclick="unsupervised()">More About Unsupervised Learning</p>
-            <p id="timeSeries" onclick="timeSeries()">Time Series Algorithms</p>
+            <p id="timeSeries" onclick="timeSeries()" class="active">Time Series Algorithms</p>
             <p id="regression" onclick="regression()">Regression</p>
             <p id="clustering" onclick="clustering()">Clustering</p>
         </div>
         <div class="col-lg-9 col-md-6 context">
             <div style="margin-top: 9%;">
                 <div class="content-bar">
-                    <a href="#getStarted" class="active">Get Started</a>
+                    <a href="#getStarted" class="active">Get Started with Machine Learning and Algorithms</a>
                 </div>
                 <section id="introduction-content">
                     <section id="get-started-content">
-                        <h1 id="getStarted">Get started with Machine Learning</h1>
+                        <h1 id="getStarted">Time Series Algorithms</h1>
                         <span>Written By<span class="u"> Ved Panse</span>
                         </span>
                         <span style="color: gray; margin-left: 5%;">Last Modified: 20 May 2022</span>
                         <section class="marge-5 in-this">
-                            <p>This documentation covers the basics of Machine Learning. Machine Learning (ML) is an extensive topic. Learning more about this topic is challenging because there is too much data on the internet. This documentation aims to
-                                make this research process easy. I have written this documentation as an intern at
-                                <a href="https://findability.ai" target="_blank">Findability Sciences</a> and as a Grade 12 student.
-                            </p>
-                            <p>Let's get started.</p>
+                            <p>A time-series algorithm is an algorithm that runs till infinity and has periodicity.</p>
+                        </section>
+
+                        <section class="marge-5">
+                            <h2>Decision Trees</h2>
+                            <p>Decision trees come under Supervised learning algorithms. These are one of the most beautiful graphic representations of a problem. Decision trees can also be called flowcharts in the shape of trees. They are weighted graphs
+                                with a condition placed at each node. The algorithm follows these conditions and generates the output.</p>
+                        </section>
+
+                        <section class="marge-5">
+                            <h2>ARIMA</h2>
+                            <p>ARIMA stands for Autoregressive Integrated Moving Average. It generalizes a time series, thus simplifying the data and helping to make a prediction.</p>
+                            <img src="https://miro.medium.com/max/789/1*Z7QvavK7s_8JAqCRzkMUvA.png">
+                            <p class="src">Image from <a href="https://miro.medium.com/max/789/1*Z7QvavK7s_8JAqCRzkMUvA.png">https://miro.medium.com/max/789/1*Z7QvavK7s_8JAqCRzkMUvA.png</a></p>
+                            <p>The above image shows how the original and the general graphs differ.</p>
+                        </section>
+
+                        <section class="marge-5">
+                            <h2>TBATS</h2>
+                            <p>TBATS has a complex long-form: Trigonometric seasonality, Box-cox transformation, ARMA errors, Trend components, and Seasonal components. It first carries out exponential smoothing on the data. Next, it uses smooth data to
+                                make predictions. It is different from ARIMA as it can also recognize patterns in complex graphs.</p>
                         </section>
 
                         <div style="width: 100%; margin-bottom: 5%; margin-top: 15%;">

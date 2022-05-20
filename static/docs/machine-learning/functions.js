@@ -4,6 +4,48 @@ function getStarted() {
 
 }
 
+function eda() {
+    darkRelocation();
+    window.location.href = "eda.html" + pass_down;
+
+}
+
+function machineLearning() {
+    darkRelocation();
+    window.location.href = "machineLearning.html" + pass_down;
+
+}
+
+function supervised() {
+    darkRelocation();
+    window.location.href = "supervised.html" + pass_down;
+
+}
+
+function unsupervised() {
+    darkRelocation();
+    window.location.href = "unsupervised.html" + pass_down;
+
+}
+
+function timeSeries() {
+    darkRelocation();
+    window.location.href = "timeSeries.html" + pass_down;
+
+}
+
+function regression() {
+    darkRelocation();
+    window.location.href = "regression.html" + pass_down;
+
+}
+
+function clustering() {
+    darkRelocation();
+    window.location.href = "clustering.html" + pass_down;
+
+}
+
 
 
 
