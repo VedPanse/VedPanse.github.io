@@ -46,7 +46,11 @@ function clustering() {
 
 }
 
+function thankYou() {
+    darkRelocation();
+    window.location.href = "thankyou.html" + pass_down;
 
+}
 
 
 document.querySelector(".u").addEventListener("click", function() {
@@ -83,6 +87,9 @@ function changeToLight() {
     document.querySelector(".u").style.color = "black";
     document.querySelector("body").style.backgroundColor = "white";
     document.querySelector(".leftnav").style.borderRight = "1px solid rgba(39, 40, 44, .2)";
+    document.querySelectorAll("p.src").forEach((item) => {
+        item.style.color = "rgb(0, 0, 0, 0.5)";
+    })
     document.querySelectorAll(".terminal").forEach((item) => {
         item.style.backgroundColor = "#f5f2f0";
     })
@@ -150,6 +157,9 @@ function changeToDark() {
     document.querySelector(".context").style.color = "#f5f5f7";
     document.querySelector(".u").style.color = "#7f52ff";
     document.querySelector("body").style.backgroundColor = "black";
+    document.querySelectorAll("p.src").forEach((item) => {
+        item.style.color = "rgb(255, 255, 255, 0.5)";
+    })
     document.querySelector(".leftnav").style.borderRight = "1px solid gray";
     document.querySelectorAll(".terminal").forEach((item) => {
         item.style.backgroundColor = "#333";

@@ -51,11 +51,15 @@
             <a onclick="timeSeries()">Time Series Algorithms</a>
             <a onclick="regression()">Regression</a>
             <a onclick="clustering()">Clustering</a>
+            <a onclick="thankYou()">Thank You Note</a>
         </div>
     </div>
 
     <div class="loc-band">
-        <a href="#getStarted">Get started with Machine Learning and Algorithms&nbsp;&nbsp; <i class="fas fa-chevron-right"></i></a>
+        <a href="#getStarted">More About Supervised Learning&nbsp;&nbsp; <i class="fas fa-chevron-right"></i></a>
+        <a href="#regression">Regression&nbsp;&nbsp; <i class="fas fa-chevron-right"></i></a>
+        <a href="#classification">Classification&nbsp;&nbsp; <i class="fas fa-chevron-right"></i></a>
+        <a href="#useCases">Use Cases</a>
     </div>
     <div class="row main">
         <div class="leftnav col-lg-3 col-md-6">
@@ -68,11 +72,15 @@
             <p id="timeSeries" onclick="timeSeries()">Time Series Algorithms</p>
             <p id="regression" onclick="regression()">Regression</p>
             <p id="clustering" onclick="clustering()">Clustering</p>
+            <p id="thankYou" onclick="thankYou()">Thank You Note</p>
         </div>
         <div class="col-lg-9 col-md-6 context">
             <div style="margin-top: 9%;">
                 <div class="content-bar">
-                    <a href="#getStarted" class="active">Get Started with Machine Learning and Algorithms</a>
+                    <a href="#getStarted" class="active">More About Supervised Learning</a>
+                    <a href="#regression">Regression</a>
+                    <a href="#classification">Classification</a>
+                    <a href="#useCases">Use Cases</a>
                 </div>
                 <section id="introduction-content">
                     <section id="get-started-content">
@@ -89,7 +97,7 @@
                         </section>
 
                         <section class="marge-5">
-                            <h2>Regression</h2>
+                            <h2 id="regression">Regression</h2>
                             <p>Regression is somewhat similar to creating a line of best fit. The line of best fit is the line that best represents the data. The values on this line are approximately equal to the provided values. This line is expanded to
                                 predict an outcome.</p>
                             <img src="https://upload.wikimedia.org/wikipedia/commons/b/be/Normdist_regression.png">
@@ -98,7 +106,7 @@
                         </section>
 
                         <section class="marge-5">
-                            <h2>Classification</h2>
+                            <h2 id="classification">Classification</h2>
                             <p>Classification deals with categorizing data into groups by drawing a line in between their graphs.</p>
                             <img src="https://static.javatpoint.com/tutorial/machine-learning/images/classification-algorithm-in-machine-learning.png">
                             <p class="src">Image from <a href="https://static.javatpoint.com/tutorial/machine-learning/images/classification-algorithm-in-machine-learning.png">https://static.javatpoint.com/tutorial/machine-learning/images/classification-algorithm-in-machine-learning.png</a></p>
@@ -107,7 +115,7 @@
                         </section>
 
                         <section class="marge-5">
-                            <h2>Use Cases</h2>
+                            <h2 id="useCases">Use Cases</h2>
                             <p>
                                 Supervised Learning has a large array of use cases:
                             </p>
@@ -118,8 +126,11 @@
                             </ol>
                         </section>
 
-                        <div style="width: 100%; margin-bottom: 5%; margin-top: 15%;">
-                            <span style="text-align: right; display:inline-block; position: absolute; right: 10%; " class="next " onclick="lineGraphs() ">Line Graph&rarr;</span>
+
+                        <div style="width: 100%; margin-bottom: 2%;">
+                            <span style="text-align: left; display: inline-block;" class="next" onclick="machineLearning()">&larr;
+                                Machine Learning</span>
+                            <span style="text-align: right; display:inline-block; position: absolute; right: 10%;" class="next" onclick="unsupervised()">More About Unsupervised Learning &rarr;</span>
                         </div>
                     </section>
                 </section>
