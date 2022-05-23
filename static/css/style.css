@@ -8,6 +8,9 @@ body {
     line-height: 1.7;
 }
 
+
+/* font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue, Arial, sans-serif; */
+
 .main-nav {
     background-color: rgba(0, 0, 0, 0.8) !important;
 }
