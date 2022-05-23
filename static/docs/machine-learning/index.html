@@ -19,17 +19,18 @@
         }
         
         .toggle {
-            background-color: #0040DD;
+            background-color: #2b2b2e;
             color: white;
             border-radius: 6px;
             border: none;
-            padding: 0 16px;
             text-align: center;
             vertical-align: middle;
             margin-bottom: 12px;
             align-items: center;
             justify-content: center;
-            margin-top: 5px;
+            position: absolute;
+            right: 2%;
+            top: 0.25%;
         }
         
         .toggle:hover {
@@ -42,7 +43,7 @@
 
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You can also toggle between light and dark theme by pressing "Esc".
     <button class="toggle" onclick="change();">Toggle Mode</button>
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg" style="margin-top: 5px">
         <a class="navbar-brand" href="index.html">Machine Learning and Algorithms</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
