@@ -565,3 +565,9 @@ img {
 p.src {
     color: rgb(0, 0, 0, 0.9);
 }
+
+.foot-header {
+    width: 100%;
+    margin-bottom: 5%;
+    margin-top: 15%;
+}
