@@ -13,11 +13,35 @@
     <title>Machine Learning</title>
 
     <link rel="stylesheet" href="style.css">
-
+    <style>
+        .alert {
+            padding: 0px !important;
+        }
+        
+        .toggle {
+            background-color: #0040DD;
+            color: white;
+            border-radius: 6px;
+            border: none;
+            padding: 0 16px;
+            text-align: center;
+            vertical-align: middle;
+            margin-bottom: 12px;
+            align-items: center;
+            justify-content: center;
+            margin-top: 5px;
+        }
+        
+        .toggle:hover {
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
 
+    You can also toggle between light and dark theme by pressing "Esc".
+    <button class="toggle" onclick="change();">Toggle Mode</button>
     <nav class="navbar navbar-expand-lg">
         <a class="navbar-brand" href="index.html">Machine Learning and Algorithms</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -90,7 +114,7 @@
                             <p>Let's get started.</p>
                         </section>
 
-                        <div style="width: 100%; margin-bottom: 5%; margin-top: 15%;">
+                        <div class="foot-header">
                             <span style="text-align: right; display:inline-block; position: absolute; right: 10%; " class="next " onclick="eda()">Exploratory Data Analysis&rarr;</span>
                         </div>
                     </section>

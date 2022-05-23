@@ -284,3 +284,11 @@ function closeDarkNotifier() {
 if (url.slice(url.length - 10) === "index.html") {
     // document.querySelector(".fas.fa-times").addEventListener("click", closeDarkNotifier())
 }
+
+function change() {
+    if (document.URL.includes("#light")) {
+        changeToDark();
+    } else if (document.URL.includes("#dark")) {
+        changeToLight();
+    }
+}
