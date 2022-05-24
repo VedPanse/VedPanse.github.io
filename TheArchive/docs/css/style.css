@@ -4,6 +4,12 @@ body {
     background-color: rgb(25, 25, 25);
     color: white;
     line-height: 2;
+    max-height: 100vh;
+}
+
+.row.mane .col-lg-4 {
+    max-height: 100vh;
+    overflow: scroll;
 }
 
 .main {
@@ -204,11 +210,23 @@ span.mark {
     padding: 5px 10px;
     font-size: 12px;
     text-transform: uppercase;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 span.program {
     color: #3dd6f5;
     background-color: #2dd6f51a;
+}
+
+span.ml {
+    color: #3df549;
+    background-color: #3df5491a;
+}
+
+span.alg {
+    color: #803df5;
+    background-color: #803df51a;
 }
 
 p.author {
@@ -247,4 +265,8 @@ li {
 
 div.row.footer {
     margin-top: 15%;
+}
+
+p.src {
+    border-bottom: 1px solid rgb(255, 255, 255, 0.5);
 }
