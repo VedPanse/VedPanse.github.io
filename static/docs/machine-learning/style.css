@@ -570,4 +570,17 @@ p.src {
     width: 100%;
     margin-bottom: 5%;
     margin-top: 15%;
+    position: relative;
+}
+
+.foot-header .left {
+    position: absolute;
+    left: 0%;
+    display: inline;
+}
+
+.foot-header .right {
+    position: absolute;
+    right: 0%;
+    display: inline;
 }
