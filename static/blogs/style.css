@@ -101,6 +101,12 @@ p.details {
     line-height: 2;
 }
 
+@media screen and (max-width: 991px) {
+    .article {
+        width: 80%;
+    }
+}
+
 a {
     color: #0066cc;
     font-size: inherit;
