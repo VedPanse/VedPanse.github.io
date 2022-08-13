@@ -160,3 +160,7 @@ div.quote p {
         padding: 2%;
     }
 }
+
+#customers h2 {
+    text-align: center;
+}
