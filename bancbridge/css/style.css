@@ -140,3 +140,23 @@ div.quote p {
 .tBanks#news .card {
     text-align: center;
 }
+
+.col-lg-4 {
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 767px) {
+    #solutions img {
+        display: none;
+    }
+    .navbar-nav {
+        background-color: black;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .navbar-nav {
+        background-color: black;
+        padding: 2%;
+    }
+}
