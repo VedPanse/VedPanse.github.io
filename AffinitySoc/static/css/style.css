@@ -1,0 +1,206 @@
+html,
+body {
+    background-color: black;
+    color: white;
+    width: 100vw;
+    min-height: 100vh;
+}
+
+.navbar {
+    border-top: 1px solid rgb(255, 255, 255, 0.9);
+    border-bottom: 1px solid rgb(255, 255, 255, 0.9);
+    ;
+}
+
+/* 
+.blob {
+    width: 10vw;
+    height: 10vw;
+    background-color: blueviolet;
+    border-radius: 100%;
+} */
+
+#overlay {
+    position: absolute;
+    background-color: rgb(0, 0, 0, 0.1);
+    backdrop-filter: blur(65px);
+    width: 100vw;
+    min-height: 100vh;
+    z-index: 2;
+    top: 0%;
+    left: 0%;
+}
+
+#start {
+    position: relative;
+    height: 91vh;
+}
+
+#start .row {
+    margin-left: 30px;
+    position: absolute;
+    top: 50%;
+    transform: translate(0%, -50%);
+}
+
+#start h1 {
+    font-size: 72px;
+}
+
+p {
+    color: rgb(202, 202, 202);
+}
+
+#start p {
+    font-size: 16px;
+}
+
+.card-holder {
+    position: relative;
+}
+
+.card {
+    position: absolute;
+    top: 0%;
+    left: 20%;
+    background-color: rgb(36, 36, 36, 0.5);
+    backdrop-filter: blur(100px);
+    padding: 20px;
+    max-width: 30vw;
+    border: 1px solid rgb(54, 54, 54);
+    -webkit-backdrop-filter: blur(100px);
+    display: flex;
+    align-items: center;
+}
+
+img {
+    border-radius: 5px;
+}
+
+.card img {
+    width: 23vw;
+    height: auto;
+}
+
+.card .image-holder {
+    position: absolute;
+    bottom: 10vw;
+    left: 10vw;
+}
+
+#about {
+    min-height: 100vh;
+    padding-left: 100px;
+    padding-top: 40px;
+}
+
+#about p {
+    width: 50%;
+}
+
+.blob.about {
+    position: absolute;
+    right: 0%;
+    top: 105%;
+    background-color: orangered;
+}
+
+.blob {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    animation: gradient 15s ease infinite;
+    width: 20vw;
+    height: 20vw;
+    border-radius: 100%;
+    background-size: 400% 400%;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+#contact {
+    min-height: 100vh;
+    padding-left: 100px;
+    padding-top: 40px;
+}
+
+.form-signin {
+    width: 80%;
+    padding: 15px;
+
+}
+
+.form-signin .checkbox {
+    font-weight: 400;
+}
+
+.form-signin .form-floating:focus-within {
+    z-index: 2;
+}
+
+.form-signin input[type="text"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.form-signin input,
+.form-signin textarea {
+    color: white !important;
+}
+
+.form-signin input:focus,
+.form-signin textarea:focus {
+    background-color: transparent;
+}
+
+.form-signin input[type="email"] {
+    border-radius: 0%;
+    margin-bottom: -1px;
+}
+
+.form-signin textarea[type="message"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.form-signin input,
+.form-signin textarea {
+    background-color: transparent;
+    border: 1px solid white;
+}
+
+.form-signin button {
+    color: white;
+    background-color: transparent;
+    border: transparent;
+}
+
+.blob.contact {
+    position: absolute;
+    left: 0%;
+    top: 205%;
+}
+
+.navbar-fix {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+}
+
+.navbar-nav {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
