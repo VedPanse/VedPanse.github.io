@@ -243,6 +243,9 @@ a {
     .navbar-nav {
         background-color: black !important;
     }
+    #biography {
+        margin-top: 5%;
+    }
 }
 
 .progress-bar-success {
