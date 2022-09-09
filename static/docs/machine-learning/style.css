@@ -269,6 +269,7 @@ td {
     position: fixed;
     z-index: 9;
     backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
 }
 
 .loc-band a {
