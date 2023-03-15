@@ -2,543 +2,352 @@
 <html lang="en">
 
 <head>
-
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Welcome to my official website. I am Ved Panse.">
-    <meta name="keywords" content="Ved, Panse, Ved Panse, Official Ved Panse">
-    <meta name="author" content="Ved Panse">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="static/css/style.css">
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/sign-in/">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin&display=swap" rel="stylesheet">
     <title>Ved Panse</title>
-
-    <style>
-        html,
-        body {
-            background-color: white;
-            min-height: 100%;
-            max-width: 100%;
-            width: 100%;
-            font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-            line-height: 1.7;
-        }
-
-        .main-nav {
-            background-color: rgba(0, 0, 0, 0.8) !important;
-        }
-
-        .sub-nav {
-            background-color: rgb(255, 255, 255, 0.7) !important;
-            backdrop-filter: blur(20px);
-            border-bottom: rgba(0, 0, 0, 0.5);
-        }
-
-        .sub-nav .navbar-brand {
-            font-weight: 500;
-        }
-
-        .main-nav a.nav-link {
-            color: #cdcdce !important;
-            font-size: 12px;
-        }
-
-        .main-nav a.nav-link,
-        .main-nav a.navbar-brand {
-            padding: 0%;
-        }
-
-        .main-nav a.nav-link:hover {
-            color: white !important;
-            text-decoration: none !important;
-        }
-
-        .navbar-brand:hover {
-            text-decoration: none !important;
-        }
-
-        .main-nav a.active {
-            color: white !important;
-        }
-
-        a.nav-link {
-            font-size: 12px;
-            margin-right: 7%;
-            padding: 20px;
-            letter-spacing: 0.25px;
-        }
-
-        .navbar-nav {
-            position: absolute;
-            right: 7%;
-        }
-
-        .navbar-brand {
-            margin-left: 7%;
-        }
-
-        .navbar {
-            padding: 5px;
-        }
-
-        .nav-item.nav-link {
-            padding: 5px 11px 6px;
-            margin: 0px 4px;
-            border-radius: 4px;
-        }
-
-        .sub-nav a.nav-link:hover {
-            color: #0070c9 !important;
-            text-decoration: none !important;
-        }
-
-        .bold-center {
-            font-weight: 450;
-            text-align: center;
-            font-size: 72px;
-            margin: auto;
-        }
-
-        .master {
-            width: 100vw;
-            height: 100vh;
-        }
-
-        .content {
-            width: 45%;
-            margin: auto;
-        }
-
-        .content h1 {
-            font-size: 40px;
-            text-align: center;
-            font-weight: 450;
-            width: 65%;
-            margin: auto;
-        }
-
-        .content h3 {
-            font-size: 24px !important;
-        }
-
-        .content a {
-            color: #0070c9;
-            text-decoration: none;
-        }
-
-        .content a:hover {
-            text-decoration: underline;
-        }
-
-        .content p {
-            font-size: 17px;
-            line-height: 2;
-        }
-
-        div.car {
-            width: 100vw;
-            height: 80vh;
-        }
-
-        img {
-            border-radius: 15px;
-            width: 100%;
-        }
-
-        .s1 {
-            margin-bottom: 3.5%;
-        }
-
-        div {
-            display: block;
-        }
-
-        .sub-content {
-            margin-bottom: 10%;
-        }
-
-        #about-me {
-            position: relative;
-            height: 90vh;
-        }
-
-        .centroid {
-            height: 80vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 90vw;
-            margin: auto;
-        }
-
-        .bg {
-            background-color: #e5eae9;
-            padding-top: 5%;
-            padding-bottom: 5%;
-        }
-
-        .bg h1 {
-            text-align: left;
-            margin-top: 20%;
-        }
-
-        .bg .content {
-            width: 75%;
-        }
-
-        .form-signin {
-            width: 50%;
-            padding: 15px;
-            margin: auto;
-        }
-
-        .form-signin .checkbox {
-            font-weight: 400;
-        }
-
-        .form-signin .form-floating:focus-within {
-            z-index: 2;
-        }
-
-        .form-signin input[type="text"] {
-            margin-bottom: -1px;
-            border-bottom-right-radius: 0;
-            border-bottom-left-radius: 0;
-        }
-
-        .form-signin input[type="email"] {
-            border-radius: 0%;
-            margin-bottom: -1px;
-        }
-
-        .form-signin textarea[type="message"] {
-            margin-bottom: 10px;
-            border-top-left-radius: 0;
-            border-top-right-radius: 0;
-        }
-
-        .form-signin input,
-        .form-signin textarea {
-            background-color: transparent;
-            border: 1px solid black;
-        }
-
-        label {
-            color: #212121;
-        }
-
-        .btner {
-            padding: 0px;
-            background: -webkit-gradient(linear, left top, left bottom, from(#46b8da), to(#0293dc));
-            color: white;
-            border: transparent;
-            border-radius: 20px;
-            padding-left: 15px;
-            padding-right: 15px;
-            padding-top: 2px;
-            padding-bottom: 2px;
-            font-size: 15px;
-            font-weight: 400;
-        }
-
-        a:hover {
-            text-decoration: underline !important;
-        }
-
-        a {
-            text-decoration: none !important;
-        }
-
-        @media screen and (max-width: 991px) {
-            .sub-nav {
-                display: none;
-            }
-
-            .navbar-nav {
-                background-color: black !important;
-            }
-        }
-
-        .progress-bar-success {
-            background-color: black;
-        }
-
-        .progress {
-            height: 2px;
-            margin-bottom: 5%;
-            background-color: #d2d2d7;
-        }
-
-        label {
-            font-size: 14px;
-        }
-
-        .spider .right {
-            border-right: 1px solid rgba(0, 0, 0, 0.2);
-        }
-
-        .spider .row {
-            border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-        }
-
-        .spider .col-md-6,
-        .spider .col-lg-12 {
-            padding: 3%;
-        }
-
-        @media screen and (max-width: 700px) {
-            .content {
-                width: 80%;
-            }
-        }
-
-        .card {
-            background-color: #f8f8f8;
-            padding: 10%;
-            border-radius: 16px;
-            border-color: transparent;
-            text-align: center;
-            min-height: 100%;
-        }
-
-        .card h6 {
-            font-size: 15px;
-        }
-
-        .card p {
-            color: #666666;
-            letter-spacing: 1.2;
-        }
-
-        .card a,
-        .card p {
-            font-size: 13px;
-            display: block;
-        }
-
-        .col-lg-6,
-        .col-lg-12 {
-            margin-top: 15px;
-            min-height: 100% !important;
-            position: relative;
-        }
-
-        #footer {
-            background-color: #f5f5f7;
-            padding: 2%;
-        }
-
-        .foot-c {
-            color: #6e6e73;
-            width: 60%;
-            margin: auto;
-            font-size: 12px;
-        }
-
-        .foot-c p b {
-            color: black;
-            font-size: 13px;
-            font-weight: 500;
-        }
-
-        .foot-c a {
-            color: #3f3f42;
-            display: block;
-            margin: 2% 0%;
-        }
-
-        #contact button {
-            border: none;
-            background-color: transparent;
-            color: #06c;
-        }
-
-        #contact button:hover {
-            text-decoration: underline;
-        }
-
-        li {
-            line-height: 3;
-        }
-
-        #notification {
-            background-color: #0071E3;
-            color: white;
-            position: relative;
-            text-align: center;
-            padding-top: 10px;
-            padding-bottom: 10px;
-            font-size: 14px;
-        }
-
-        #notification a,
-        #notification a:hover {
-            color: white;
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
 </head>
 
-<body onload="typeWriter()">
-    <!-- <div id="notification">
-        I just deployed a new technical blog called The Techies. <a href="TheArchive/index.html" target="_blank">Take a look &rsaquo;</a>
-    </div> -->
-    <div id="notification">
-        I just deployed my solutions to the Advent of Code Challenge, 2022 in Python. <a
-            href="https://github.com/VedPanse/Advent-Of-Code-2022" target="_blank">Take a look &rsaquo;</a>
-    </div>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark main-nav" id="brownie">
-        <a class="navbar-brand" href="">Ved Panse</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="index.html">Home <span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link" href="static/blogs/index.html">Blogs</a>
-                <a class="nav-item nav-link" href="static/docs/index.html">Projects</a>
-                <a class="nav-item nav-link" href="static/social/index.html">Social Work</a>
-                <a class="nav-item nav-link" href="static/video/index.html">Gallery</a>
-                <!-- <a class="nav-item nav-link" href="static/video/index.html"><img src="static/images/search.svg"></a> -->
-            </div>
-        </div>
-    </nav>
-
+<body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light sub-nav" id="whitie">
-        <a class="navbar-brand" href="#">On this page</a>
+        <a class="navbar-brand" href="#">Ved Panse</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="#biography">About Me <span
-                        class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link active" href="#intro">About Me <span class="sr-only">(current)</span></a>
                 <a class="nav-item nav-link" href="#internships">Internships</a>
                 <a class="nav-item nav-link" href="#projects">Projects</a>
                 <a class="nav-item nav-link" href="#social">Social Work</a>
-                <a class="nav-item nav-link" href="#blogs">Blogs Preview</a>
+                <a class="nav-item nav-link" href="#blogs">Blogs and Vlogs</a>
                 <a class="nav-item nav-link" href="#contact">Contact</a>
             </div>
         </div>
     </nav>
 
+    <div id="backdrop">
+        <div class="row">
+            <div class="col-lg-3 col-md-4 col-sm-6">
 
-    <!-- <div id="about-me">
-        <div class="centroid">
-            <h1 class="bold-center" id="demo"></h1>
-            <br><br>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+
+            </div>
+
         </div>
+    </div>
 
-    </div> -->
+    <div id="intro">
+        <img src="images/ved_panse.png" width="100%" height="100%" style="position: absolute; right: -30%;">
+        <div id="centroid">
+            <h1>Ved Panse</h1>
+            <p>I am currently a student at Woodridge High School, Aurangabad, Maharashtra, India. I aspire to be a
+                software
+                developer and specialize in Artificial Intelligence and Machine Learning. I have been programming
+                computers
+                for four years now, and I believe I am ready to make at least small contributions to solving a big
+                issue.
+            </p><br>
+            <a href="blogs/intro.html" target="_blank"><button class="btn btn-primary">Read more in my introductory blog
+                    <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor" width="30" height="10" viewBox="0 0 20 20" aria-hidden="true"
+                        class="bx--btn__icon">
+                        <path d="M11.8 2.8L10.8 3.8 16.2 9.3 1 9.3 1 10.7 16.2 10.7 10.8 16.2 11.8 17.2 19 10z"></path>
+                    </svg></button></a>
+        </div>
+    </div>
+    <br>
+    <hr>
+    <br>
+    <div id="interests">
+        <h1>My Interests</h1><br><br>
+        <div class="row">
+            <div class="col-lg-3 col-md-4 col-sm-6 indicator active">
+                <b>
+                    <a>
+                        <p>Artificial Intelligence</p>
+                    </a>
+                </b>
+            </div>
+            <div class="col-lg-9 col-md-8 col-sm-6">
+                <p>The theory and development of computer systems able to perform tasks normally requiring human
+                    intelligence, such as visual perception, speech recognition, decision-making, and translation
+                    between languages.</p>
+            </div>
 
+            <div class="col-lg-3 col-md-4 col-sm-6 indicator">
+                <b>
+                    <a>
+                        <p>Machine Learning</p>
+                    </a>
+                </b>
+            </div>
+            <div class="col-lg-9 col-md-8 col-sm-6">
+                <p>The use and development of computer systems that are able to learn and adapt without following
+                    explicit instructions, by using algorithms and statistical models to analyse and draw inferences
+                    from patterns in data.</p>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 indicator">
+                <b>
+                    <a>
+                        <p>Web Development</p>
+                    </a>
+                </b>
+            </div>
+            <div class="col-lg-9 col-md-8 col-sm-6">
+                <p>Web development is the work involved in developing a website for the Internet (World Wide Web) or an
+                    intranet (a private network). Web development can range from developing a simple single static page
+                    of plain text to complex web applications, electronic businesses, and social network services.</p>
+            </div>
 
+            <div class="col-lg-3 col-md-4 col-sm-6 indicator">
+                <b>
+                    <a>
+                        <p>Computer Programming</p>
+                    </a>
+                </b>
+            </div>
+            <div class="col-lg-9 col-md-8 col-sm-6">
+                <p>Web development is the work involved in developing a website for the Internet (World Wide Web) or an
+                    intranet (a private network). Web development can range from developing a simple single static page
+                    of plain text to complex web applications, electronic businesses, and social network
+                    services.Computer programming is the process of performing a particular computation, usually by
+                    designing and building an executable computer program. Programming involves tasks such as analysis,
+                    generating algorithms, profiling algorithms' accuracy and resource consumption, and the
+                    implementation of algorithms.</p>
+            </div>
+        </div>
+    </div>
 
-    <div id="biography">
-        <div class="content">
-            <h2>About Me</h2><br>
-            <h5>A brief introduction</h5>
-            <p>
-                I am currently a student at Woodridge High School, Aurangabad, Maharashtra, India. I aspire to be a
-                software developer and specialize in Artificial Intelligence and Machine Learning. I have been
-                programming computers for four years now, and I believe
-                I am ready to make at least small contributions to solving a big issue. I started making numerous
-                open-source contributions on <a href="https://codepen.io/VedPanse" target="_blank">CodePen</a> and <a
-                    href="https://github.com/VedPanse">GitHub</a> when I was in middle school.
-            </p>
-            <a href="static/blogs/intro.html" target="_blank">Read more about me in my introductory blog
-                &rsaquo;</a><br><br>
-            <hr>
-            <br><br>
-            <h5>My Interests</h5>
-            <p style="font-size: 16px;">
-                <a href="">Artificial Intelligence (AI)</a> |
-                <a href="">Machine Learning (ML)</a> |
-                <a href="">Computer Vision (CV)</a> |
-                <a href="">Natural Language Processing (NLP)</a> |
-                <a href="">Web Development</a> |
-                <a href="">Software Development</a> |
-                <a href="">Technology</a>
-            </p><br><br>
-            <hr><br><br>
-            <h5>Recent News</h5><br>
-            <div>
-                <h6>Advent of Code, 2022</h6>
-                <p>Deeply interested in computer programming, I participated in the Advent of Code, 2022. As I went
-                    coding along the days, I uploaded my solutions to my GitHub daily.<br>
-                    Unlike my previous attempts, I made a firm resolution to solve this year's challenges using
-                    efficient and concise code.</p>
-                <a href="https://github.com/VedPanse/Advent-Of-Code-2022" target="_blank">View my solutions &rsaquo;</a><br>
-                <a href="https://adventofcode.com/2022" target="_blank">Visit their official website &rsaquo;</a>
-            </div><br><br>
-            <div>
-                <h6>Deployed CyberPad</h6>
-                <p>Cyber Pad is a strategic note-taking web application that won't let you forget the highlights. The
-                    strategy is an adaptation of the 'Cornell Notes Taking Strategy.' Features include:-
-                <ul>
-                    <li>Open-source.</li>
-                    <li>Easy to customize.</li>
-                    <li>Built-in feature of "Recommended Revision" so that you can keep revising your notes regularly.
-                    </li>
-                </ul>
-                </p>
-                <a href="https://github.com/VedPanse/Advent-Of-Code-2022" target="_blank">View my solutions &rsaquo;</a>
-            </div><br><br>
-            <div>
-                <h6>Completed internship at Findability Sciences</h6>
-                <p>I was an intern at Findability Sciences from 25th April, 2022 to 25th May, 2022. It provided me with
-                    a lot of experience about my interest field: machine learning and algorithms. I got to meet and work
-                    amazing people. I could also hone
-                    my skills and knowledge of my favorite subject.<br>In a nutshell, it was amazing.</p>
-                <a href="static/blogs/findability.html" target="_blank">Read more about experience in my blog
-                    &rsaquo;</a><br>
-                <a href="static/docs/machine-learning/index.html" target="_blank">Read more about what I learned in my
-                    documentations &rsaquo;</a>
-            </div><br><br>
-            <div>
-                <h6>Completed internship at Findability Sciences</h6>
-                <p>I was an intern at Findability Sciences from 25th April, 2022 to 25th May, 2022. It provided me with
-                    a lot of experience about my interest field: machine learning and algorithms. I got to meet and work
-                    amazing people. I could also hone
-                    my skills and knowledge of my favorite subject.<br>In a nutshell, it was amazing.</p>
-                <a href="static/blogs/findability.html" target="_blank">Read more about experience in my blog
-                    &rsaquo;</a><br>
-                <a href="static/docs/machine-learning/index.html" target="_blank">Read more about what I learned in my
-                    documentations &rsaquo;</a>
-            </div><br><br>
-            <div>
-                <h6>The Techies</h6>
-                <p>I founded a technical blog called <a href="TheArchive/index.html" target="_blank">The Techies</a>.
-                    The Techies was founded to provide solutions to some common problems that most of the early
-                    programmers struggle to solve. Through days
-                    of hardwork and research, I was able to solve all the problems and I want to make it easily
-                    available to the rest of the world.</p>
-                <a href="TheArchive/index.html" target="_blank">Visit the official website &rsaquo;</a>
-            </div><br><br>
+    <br>
+    <hr>
+    <br>
 
-            <div>
-                <h6>Detecting Fake News Using Machine Learning</h6>
-                <p>I worked on detecting fake news on social media using Machine Learning. Solving this
-                    problem intrigued me because it led to chaos during the COVID-19, especially in India, as unverified
-                    home remedies for tackling the virus
-                    surfaced through social media.<br>I have written an article for The Lokmat Times, which has over 1.8 million readers, to make people
-                    aware of this issue. This article covers almost every basic: from impacts to prevention techniques
-                    employed to solve this issue on a large
-                    scale.</p>
-                <a
-                    href="https://www.lokmattimes.com/aurangabad/can-artificial-intelligence-be-used-to-detect-fake-news/">Read
-                    more about this issue &rsaquo;</a>
-            </div><br><br>
-            <hr><br><br>
-            <h5>My Skills</h5>
+    <div id="news">
+        <h1>What I Have Been Up To</h1><br><br>
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="card">
+                    <h4>Advent of Code, 2022</h4>
+                    <p>
+                        Deeply interested in computer programming, I participated in the Advent of Code, 2022. As I went
+                        coding
+                        along the days, I uploaded my solutions to my GitHub daily.<br>
+                        Unlike my previous attempts, I made a firm resolution to solve this year's challenges using
+                        efficient and
+                        concise code.
+                    </p>
+                    <a href="https://github.com/VedPanse/Advent-Of-Code-2022" target="_blank">View my
+                        solutions <svg focusable="false" preserveAspectRatio="xMidYMid meet"
+                            xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="30" height="10"
+                            viewBox="0 0 20 20" aria-hidden="true" class="bx--btn__icon">
+                            <path d="M11.8 2.8L10.8 3.8 16.2 9.3 1 9.3 1 10.7 16.2 10.7 10.8 16.2 11.8 17.2 19 10z">
+                            </path>
+                        </svg>
+                    </a>
+                    <a href="https://adventofcode.com/2022" target="_blank">
+                        Visit their official website <svg focusable="false" preserveAspectRatio="xMidYMid meet"
+                            xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="30" height="10"
+                            viewBox="0 0 20 20" aria-hidden="true" class="bx--btn__icon">
+                            <path d="M11.8 2.8L10.8 3.8 16.2 9.3 1 9.3 1 10.7 16.2 10.7 10.8 16.2 11.8 17.2 19 10z">
+                            </path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card">
+                    <h4>Deployed CyberPad</h4>
+                    <p>Cyber Pad is a strategic note-taking web application that won't let you forget the highlights.
+                        The strategy
+                        is an adaptation of the 'Cornell Notes Taking Strategy.' Features include:-
+                    </p>
+                    <p>
+                    <ul>
+                        <li>
+                            Open-source.
+                        </li>
+                        <li>
+                            Easy to customize.
+                        </li>
+                        <li>
+                            Built-in feature of "Recommended Revision" so that you can keep revising your notes
+                            regularly.
+                        </li>
+                    </ul>
+                    </p>
+                    <a href="https://github.com/VedPanse/CyberPad" target="_blank">Download CyberPad
+                        <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"
+                            fill="currentColor" width="30" height="10" viewBox="0 0 20 20" aria-hidden="true"
+                            class="bx--btn__icon">
+                            <path d="M11.8 2.8L10.8 3.8 16.2 9.3 1 9.3 1 10.7 16.2 10.7 10.8 16.2 11.8 17.2 19 10z">
+                            </path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card">
+                    <h4>Completed internship at Findability Sciences</h4>
+                    <p>I was an intern at Findability Sciences from 25th April, 2022 to 25th May, 2022. It provided me
+                        with a lot of
+                        experience about my interest field: machine learning and algorithms. I got to meet and work
+                        amazing people.
+                        I could also hone my skills and knowledge of my favorite subject.
+                        In a nutshell, it was amazing.</p>
+                    <a href="https://www.vedpanse.com/static/blogs/findability.html" target="_blank">
+                        Read more about experience in my blog <svg focusable="false" preserveAspectRatio="xMidYMid meet"
+                            xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="30" height="10"
+                            viewBox="0 0 20 20" aria-hidden="true" class="bx--btn__icon">
+                            <path d="M11.8 2.8L10.8 3.8 16.2 9.3 1 9.3 1 10.7 16.2 10.7 10.8 16.2 11.8 17.2 19 10z">
+                            </path>
+                        </svg>
+                    </a>
+                    <a href="https://www.vedpanse.com/static/docs/machine-learning/index.html" target="_blank">
+                        Read more about what I learned in my documentations <svg focusable="false"
+                            preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                            width="30" height="10" viewBox="0 0 20 20" aria-hidden="true" class="bx--btn__icon">
+                            <path d="M11.8 2.8L10.8 3.8 16.2 9.3 1 9.3 1 10.7 16.2 10.7 10.8 16.2 11.8 17.2 19 10z">
+                            </path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card">
+                    <h4>The Techies</h4>
+                    <p>
+                        I founded a technical blog called The Techies. The Techies was founded to provide solutions to
+                        some common
+                        problems that most of the early programmers struggle to solve. Through days of hardwork and
+                        research, I was
+                        able to solve all the problems and I want to make it easily available to the rest of the world.
+                    </p>
+                    <a href="https://www.vedpanse.com/TheArchive/index.html" target="_blank">Visit the official website
+                        <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"
+                            fill="currentColor" width="30" height="10" viewBox="0 0 20 20" aria-hidden="true"
+                            class="bx--btn__icon">
+                            <path d="M11.8 2.8L10.8 3.8 16.2 9.3 1 9.3 1 10.7 16.2 10.7 10.8 16.2 11.8 17.2 19 10z">
+                            </path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card">
+                    <h4>Detecting Fake News Using Machine Learning</h4>
+                    <p>I worked on detecting fake news on social media using Machine Learning. Solving this problem
+                        intrigued me
+                        because it led to chaos during the COVID-19, especially in India, as unverified home remedies
+                        for tackling
+                        the virus surfaced through social media.<br>I have written an article for The Lokmat Times,
+                        which has over
+                        1.8 million readers, to make people aware of this issue. This article covers almost every basic:
+                        from
+                        impacts to prevention techniques employed to solve this issue on a large scale.</p>
+                    <a href="https://www.lokmattimes.com/aurangabad/can-artificial-intelligence-be-used-to-detect-fake-news/"
+                        target="_blank">
+                        Read the article <svg focusable="false" preserveAspectRatio="xMidYMid meet"
+                            xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="30" height="10"
+                            viewBox="0 0 20 20" aria-hidden="true" class="bx--btn__icon">
+                            <path d="M11.8 2.8L10.8 3.8 16.2 9.3 1 9.3 1 10.7 16.2 10.7 10.8 16.2 11.8 17.2 19 10z">
+                            </path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br><br>
+    <hr>
+    <br><br><br>
+
+    <div id="internships">
+        <h1>Internships</h1>
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="card">
+                    <h4>Findability Sciences</h4>
+                    <p>
+                        I was an intern for machine learning and algorithms at Findability Sciences from 25th April,
+                        2022 to 25th May, 2022. I got to meet and work amazing people. I could also hone my skills and
+                        knowledge of my favorite subject.
+                    </p>
+                    <a href="https://www.vedpanse.com/static/blogs/findability.html" target="_blank">Read more in my
+                        blogs <svg focusable="false" preserveAspectRatio="xMidYMid meet"
+                            xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="30" height="10"
+                            viewBox="0 0 20 20" aria-hidden="true" class="bx--btn__icon">
+                            <path d="M11.8 2.8L10.8 3.8 16.2 9.3 1 9.3 1 10.7 16.2 10.7 10.8 16.2 11.8 17.2 19 10z">
+                            </path>
+                        </svg>
+                    </a>
+                    <a href="https://findability.ai" target="_blank">
+                        Visit their official website <svg focusable="false" preserveAspectRatio="xMidYMid meet"
+                            xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="30" height="10"
+                            viewBox="0 0 20 20" aria-hidden="true" class="bx--btn__icon">
+                            <path d="M11.8 2.8L10.8 3.8 16.2 9.3 1 9.3 1 10.7 16.2 10.7 10.8 16.2 11.8 17.2 19 10z">
+                            </path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card">
+                    <h4>Xceed Imagination</h4>
+                    <p>Through my Xceed Imagination internship, I got the opportunity to develop software for Magna
+                        International. I was tasked with developing a software for handling uploads and downloads from
+                        the clients.
+                    </p>
+                    <a href="https://xceedtech.in" target="_blank">Visit their official website
+                        <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"
+                            fill="currentColor" width="30" height="10" viewBox="0 0 20 20" aria-hidden="true"
+                            class="bx--btn__icon">
+                            <path d="M11.8 2.8L10.8 3.8 16.2 9.3 1 9.3 1 10.7 16.2 10.7 10.8 16.2 11.8 17.2 19 10z">
+                            </path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card">
+                    <h4>BancBridge</h4>
+                    <p>I was assigned to design a new report for Wells Fargo bank. It was accepted and is used in
+                        BancBridge product for Wells Fargo. I was also assigned to come up with new designs for the new
+                        BancBridge website.</p>
+                    <a href="https://www.bancbridge.com" target="_blank">
+                        Visit their official website <svg focusable="false" preserveAspectRatio="xMidYMid meet"
+                            xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="30" height="10"
+                            viewBox="0 0 20 20" aria-hidden="true" class="bx--btn__icon">
+                            <path d="M11.8 2.8L10.8 3.8 16.2 9.3 1 9.3 1 10.7 16.2 10.7 10.8 16.2 11.8 17.2 19 10z">
+                            </path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div><br><br>
+    <div id="skills">
+        <h4>My Skills</h4><br>
+        <div style="width: 80%;">
             <label for="progress">HTML &bull; 100%</label>
             <div class="progress">
                 <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0"
@@ -580,117 +389,147 @@
                     aria-valuemax="100" style="width:2%">
                 </div>
             </div>
-
-
-            <!-- <img src="static/images/ved_panse.png"> -->
         </div>
-    </div>
-    <br><br><br><br>
-    <div id="internships">
-        <div class="content">
-            <h2>Internships</h2><br>
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="card">
-                        <h6>Findability Sciences </h6>
-                        <p>I was an intern for machine learning and algorithms at Findability Sciences from 25th April,
-                            2022 to 25th May, 2022. I got to meet and work amazing people. I could also hone my skills
-                            and knowledge of my favorite subject.</p>
-                        <a href="static/blogs/findability.html" target="_blank">Read more in my blog &rsaquo;</a>
-                        <a href="https://findability.ai/" target="_blank">Visit their official website &rsaquo;</a>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="card">
-                        <h6>Xceed Imagination</h6>
-                        <p>Through my Xceed Imagination internship, I got the opportunity to develop software for Magna
-                            International. I was tasked with developing a software for handling uploads and downloads
-                            from the clients.</p>
-                        <a href="http://xceedtech.in/" target="_blank">Visit their official website &rsaquo;</a><br>
-                    </div>
-                </div>
-                <div class="col-lg-12">
-                    <div class="card">
-                        <h6>BancBridge</h6>
-                        <p>I was assigned to design a new report for Wells Fargo bank. It was accepted and is used in
-                            BancBridge product for Wells Fargo. I was also assigned to come up with new designs for the
-                            new BancBridge website. Throughout my internship,
-                            I got to learn many things and work with different groups with mutual aims.</p>
-                        <a href="https://bancbridge.com" target="_blank">Visit their official website &rsaquo;</a><br>
-                    </div>
-                </div>
-            </div>
-            <br>
-        </div>
-    </div>
-    <br><br><br><br>
 
-    <div id="projects">
-        <div class="content">
-            <h2>Projects</h2><br>
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="card">
-                        <h6>Advent of Code, 2022</h6>
-                        <p>These are my solutions to the Advent of Code 2022. I have typed the code in Python. However,
-                            Advent of Code challenges can be solved by any programming language you please.</p>
-                        <a href="https://github.com/VedPanse/Advent-Of-Code-2022" target="_blank">Read the documentations &rsaquo;</a>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="card">
-                        <h6>CyberPad</h6>
-                        <p>Cyber Pad is a strategic note-taking web application that won't let you forget the
-                            highlights. The strategy is an adaptation of the 'Cornell Notes Taking Strategy.'</p>
-                        <a href="static/docs/machine-learning/index.html" target="_blank">Read the documentations
-                            &rsaquo;</a>
-                    </div>
-                </div>
-
-                <div class="col-lg-6">
-                    <div class="card">
-                        <h6>Plotly Tutorials</h6>
-                        <p>Plotly is a tool that helps us to visualize data in Python. I learnt this skill as an intern
-                            at Findability Sciences.</p>
-                        <a href="static/docs/plotly/index.html" target="_blank">Read the documentations &rsaquo;</a>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="card">
-                        <h6>Machine Learning and Algorithms Basic Tutorial</h6>
-                        <p>This tutorial covers everything you need to know about Machine Learning - from regression to
-                            time series algorithms.</p>
-                        <a href="static/docs/machine-learning/index.html" target="_blank">Read the documentations
-                            &rsaquo;</a>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="card">
-                        <h6>Algorithms Explained</h6>
-                        <p>A detailed documentation that aims to teach algorithms to even those without techincal
-                            knowledge.</p>
-                        <a href="static/docs/algorithms/index.html" target="_blank">Read the complete documentation
-                            &rsaquo;</a>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="card">
-                        <h6>javelin Search Engine</h6>
-                        <p>A search engine that interprets results from google and displays it locally. Built using
-                            python and html.</p>
-                        <a href="https://github.com/VedPanse/Search-Engine" target="_blank">View this project on GitHub
-                            &rsaquo;</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
+    </div><br><br><br>
+    <hr>
     <br><br><br>
-
-
+    <div id="projects">
+        <h1>Projects</h1>
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="card">
+                    <h4>Advent of Code, 2022</h4>
+                    <p>
+                        These are my solutions to the Advent of Code 2022. I have typed the code in Python. However,
+                        Advent of Code challenges can be solved by any programming language you please.
+                    </p>
+                    <a href="https://github.com/VedPanse/Advent-Of-Code-2022" target="_blank">View my solutions <svg
+                            focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"
+                            fill="currentColor" width="30" height="10" viewBox="0 0 20 20" aria-hidden="true"
+                            class="bx--btn__icon">
+                            <path d="M11.8 2.8L10.8 3.8 16.2 9.3 1 9.3 1 10.7 16.2 10.7 10.8 16.2 11.8 17.2 19 10z">
+                            </path>
+                        </svg>
+                    </a>
+                    <a href="https://adventofcode.com" target="_blank">
+                        Visit their official website <svg focusable="false" preserveAspectRatio="xMidYMid meet"
+                            xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="30" height="10"
+                            viewBox="0 0 20 20" aria-hidden="true" class="bx--btn__icon">
+                            <path d="M11.8 2.8L10.8 3.8 16.2 9.3 1 9.3 1 10.7 16.2 10.7 10.8 16.2 11.8 17.2 19 10z">
+                            </path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card">
+                    <h4>CyberPad</h4>
+                    <p>Cyber Pad is a strategic note-taking web application that won't let you forget the highlights.
+                        The strategy is an adaptation of the 'Cornell Notes Taking Strategy.'
+                    </p>
+                    <a href="https://github.com/VedPanse/CyberPad" target="_blank">View my solutions
+                        <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"
+                            fill="currentColor" width="30" height="10" viewBox="0 0 20 20" aria-hidden="true"
+                            class="bx--btn__icon">
+                            <path d="M11.8 2.8L10.8 3.8 16.2 9.3 1 9.3 1 10.7 16.2 10.7 10.8 16.2 11.8 17.2 19 10z">
+                            </path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card">
+                    <h4>Plotly Tutorials</h4>
+                    <p>Plotly is a tool that helps us to visualize data in Python. I learnt this skill as an intern at
+                        Findability Sciences.</p>
+                    <a href="https://www.vedpanse.com/static/docs/plotly/index.html" target="_blank">
+                        Read the documentations <svg focusable="false" preserveAspectRatio="xMidYMid meet"
+                            xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="30" height="10"
+                            viewBox="0 0 20 20" aria-hidden="true" class="bx--btn__icon">
+                            <path d="M11.8 2.8L10.8 3.8 16.2 9.3 1 9.3 1 10.7 16.2 10.7 10.8 16.2 11.8 17.2 19 10z">
+                            </path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card">
+                    <h4>Machine Learning and Algorithms Basic Tutorial</h4>
+                    <p>
+                        This tutorial covers everything you need to know about Machine Learning - from regression to
+                        time series algorithms.
+                    </p>
+                    <a href="https://www.vedpanse.com/static/docs/machine-learning/index.html" target="_blank">Read the
+                        documentations
+                        <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"
+                            fill="currentColor" width="30" height="10" viewBox="0 0 20 20" aria-hidden="true"
+                            class="bx--btn__icon">
+                            <path d="M11.8 2.8L10.8 3.8 16.2 9.3 1 9.3 1 10.7 16.2 10.7 10.8 16.2 11.8 17.2 19 10z">
+                            </path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card">
+                    <h4>Algorithms Explained</h4>
+                    <p>A detailed documentation that aims to teach algorithms to even those without techincal knowledge.
+                    </p>
+                    <a href="https://www.vedpanse.com/static/docs/algorithms/index.html" target="_blank">Read the
+                        documentations
+                        <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"
+                            fill="currentColor" width="30" height="10" viewBox="0 0 20 20" aria-hidden="true"
+                            class="bx--btn__icon">
+                            <path d="M11.8 2.8L10.8 3.8 16.2 9.3 1 9.3 1 10.7 16.2 10.7 10.8 16.2 11.8 17.2 19 10z">
+                            </path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card">
+                    <h4>javelin Search Engine</h4>
+                    <p>A search engine that interprets results from google and displays it locally. Built using python
+                        and html.</p>
+                    <a href="https://github.com/VedPanse/Search-Engine" target="_blank">
+                        View my solutions <svg focusable="false" preserveAspectRatio="xMidYMid meet"
+                            xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="30" height="10"
+                            viewBox="0 0 20 20" aria-hidden="true" class="bx--btn__icon">
+                            <path d="M11.8 2.8L10.8 3.8 16.2 9.3 1 9.3 1 10.7 16.2 10.7 10.8 16.2 11.8 17.2 19 10z">
+                            </path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div><br>
+    <div class="row">
+        <div class="col-lg-6 codepen">
+            <h1>CodePen</h1>
+            <p>CodePen is a social development environment for front-end designers and developers. </p>
+            <a href="https://codepen.io/VedPanse" target="_blank"><button class="btn btn-special">Visit my CodePen Page
+                    <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor" width="30" height="10" viewBox="0 0 20 20" aria-hidden="true"
+                        class="bx--btn__icon">
+                        <path d="M11.8 2.8L10.8 3.8 16.2 9.3 1 9.3 1 10.7 16.2 10.7 10.8 16.2 11.8 17.2 19 10z">
+                        </path>
+                    </svg></button></a>
+        </div>
+        <div class="col-lg-6 github">
+            <h1>GitHub</h1>
+            <p>GitHub Codespaces offers a complete dev environment in seconds, so you can code, build, test, and open
+                pull requests from any repo anywhere.</p>
+            <a href="https://github.com/VedPanse" target="_blank"><button class="btn btn-special">Visit my GitHub Page
+                    <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor" width="30" height="10" viewBox="0 0 20 20" aria-hidden="true"
+                        class="bx--btn__icon">
+                        <path d="M11.8 2.8L10.8 3.8 16.2 9.3 1 9.3 1 10.7 16.2 10.7 10.8 16.2 11.8 17.2 19 10z">
+                        </path>
+                    </svg></button></a>
+        </div>
+    </div>
+    <br><br><br>
     <div class="bg" id="social">
         <div class="content">
             <!-- <div style="width: 60%; margin: auto;">
@@ -707,104 +546,223 @@
                     <h3>Spread Warmth</h3>
                     <p>On December 12, 2021, the WH-Leo Club embarked on a mission to spread warmth in the winter of
                         2021 by donating clothes.</p>
-                    <a href="static/social/spread-warmth.html" target="_blank">Read more about this initiative
-                        &rsaquo;</a><br><br>
+                    <a href="social/spread-warmth.html" target="_blank">
+                        Read more about this initiative <svg focusable="false" preserveAspectRatio="xMidYMid meet"
+                            xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="30" height="10"
+                            viewBox="0 0 20 20" aria-hidden="true" class="bx--btn__icon">
+                            <path d="M11.8 2.8L10.8 3.8 16.2 9.3 1 9.3 1 10.7 16.2 10.7 10.8 16.2 11.8 17.2 19 10z">
+                            </path>
+                        </svg>
+                    </a><br><br>
 
                     <h3>Eunoia</h3>
                     <p>The WH-Leo Club invited Mrs. Rebekah Poynor to speak about the art (therapy) of mind and
                         combating mental illness.</p>
-                    <a href="static/social/eunoia.html" target="_blank">Read more about this initiative
-                        &rsaquo;</a><br><br>
-                    <br>
-                    <a href="static/social/eunoia.html" target="_blank">Read more of such initiatives
-                        &rsaquo;</a><br><br>
+                    <a href="social/eunoia.html" target="_blank">
+                        Read more of this initiative <svg focusable="false" preserveAspectRatio="xMidYMid meet"
+                            xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="30" height="10"
+                            viewBox="0 0 20 20" aria-hidden="true" class="bx--btn__icon">
+                            <path d="M11.8 2.8L10.8 3.8 16.2 9.3 1 9.3 1 10.7 16.2 10.7 10.8 16.2 11.8 17.2 19 10z">
+                            </path>
+                        </svg>
+                    </a><br><br>
                 </div>
                 <div class="col-lg-6">
-                    <p style="font-size: 22px; width: 50%; margin-left: 15%; margin-top: 25%;">Leo clubs are a youth
+                    <p style="font-size: 22px; margin-left: 15%; margin-top: 25%;">Leo clubs are a youth
                         organization of Lions Clubs International. Leo clubs encourage youths to develop leadership
                         qualities by participating in social service activities. They are dependent on a Lions club to
                         sponsor and initiate a
-                        Leo club. Leo club members are addressed as "Leos."</p>
-
+                        Leo club. Leo club members are addressed as "Leos."<br>
+                        <a href="https://www.lionsclubs.org/en/discover-our-clubs/about-leos" target="_blank"
+                            style="font-size: 16px;">
+                            Visit their official website <svg focusable="false" preserveAspectRatio="xMidYMid meet"
+                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="30" height="10"
+                                viewBox="0 0 20 20" aria-hidden="true" class="bx--btn__icon">
+                                <path d="M11.8 2.8L10.8 3.8 16.2 9.3 1 9.3 1 10.7 16.2 10.7 10.8 16.2 11.8 17.2 19 10z">
+                                </path>
+                            </svg>
+                        </a>
+                    </p>
                 </div>
             </div>
         </div>
     </div><br><br><br>
 
-
     <div id="blogs">
-        <div class="content">
-            <h2>Blogs</h2><br>
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="card">
-                        <h6>My Special Internship Experience</h6>
-                        <p>I was an intern for machine learning and algorithms at Findability Sciences from 25th April,
-                            2022 to 25th May, 2022. I got to meet and work amazing people. I could also hone my skills
-                            and knowledge of my favorite subject.</p>
-                        <a href="static/blogs/findability.html" target="_blank">Read the complete blog &rsaquo;</a><br>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="card">
-                        <h6>Introductory Blog</h6>
-                        <p>
-                            Hi there. I am Ved Panse, and I live in India. I am an aspiring AI Expert, and I possess a
-                            deep interest in the fundamentals of Computer Science. I like innovating things that would
-                            make my life easier.
-                        </p>
-                        <a href="static/blogs/intro.html" target="_blank">Read the complete blog &rsaquo;</a><br>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="card">
-                        <h6>Programming Dilemma</h6>
-                        <p>
-                            My opinions on where and how aspirant programmers should start, and remain productive
-                            throughout their journey.
-                        </p>
-                        <a href="static/blogs/dilemma.html" target="_blank">Read the complete blog &rsaquo;</a><br>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="card">
-                        <h6>My Passion for Cricket</h6>
-                        <p>I felt like sharing my interest in cricket with you. In this blog, I describe how I developed
-                            this interest.</p>
-                        <a href="static/blogs/cricket.html" target="_blank">Read the complete blog &rsaquo;</a><br>
-                    </div>
+        <h1>Blogs</h1>
+        <div class="row">
+            <div class="col-lg-3 col-md-6">
+                <div class="card">
+                    <h4>My Special Internship Experience</h4>
+                    <p>
+                        I was an intern for machine learning and algorithms at Findability Sciences from 25th April,
+                        2022 to 25th May, 2022. I got to meet and work amazing people. I could also hone my skills and
+                        knowledge of my favorite subject.
+                    </p>
+                    <a href="https://www.vedpanse.com/static/blogs/findability.html" target="_blank">Read the blog <svg
+                            focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"
+                            fill="currentColor" width="30" height="10" viewBox="0 0 20 20" aria-hidden="true"
+                            class="bx--btn__icon">
+                            <path d="M11.8 2.8L10.8 3.8 16.2 9.3 1 9.3 1 10.7 16.2 10.7 10.8 16.2 11.8 17.2 19 10z">
+                            </path>
+                        </svg>
+                    </a>
                 </div>
             </div>
-
+            <div class="col-lg-3 col-md-6">
+                <div class="card">
+                    <h4>Introductory Blog</h4>
+                    <p>Hi there. I am Ved Panse, and I live in India. I am an aspiring AI Expert, and I possess a deep
+                        interest in the fundamentals of Computer Science. I like innovating things that would make my
+                        life easier.
+                    </p>
+                    <a href="https://www.vedpanse.com/static/blogs/intro.html" target="_blank">Read the blog <svg
+                            focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"
+                            fill="currentColor" width="30" height="10" viewBox="0 0 20 20" aria-hidden="true"
+                            class="bx--btn__icon">
+                            <path d="M11.8 2.8L10.8 3.8 16.2 9.3 1 9.3 1 10.7 16.2 10.7 10.8 16.2 11.8 17.2 19 10z">
+                            </path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="card">
+                    <h4>Programming Dilemma</h4>
+                    <p>My opinions on where and how aspirant programmers should start, and remain productive throughout
+                        their journey.</p>
+                    <a href="https://www.vedpanse.com/static/blogs/dilemma.html" target="_blank">Read the blog <svg
+                            focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"
+                            fill="currentColor" width="30" height="10" viewBox="0 0 20 20" aria-hidden="true"
+                            class="bx--btn__icon">
+                            <path d="M11.8 2.8L10.8 3.8 16.2 9.3 1 9.3 1 10.7 16.2 10.7 10.8 16.2 11.8 17.2 19 10z">
+                            </path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="card">
+                    <h4>My Passion for Cricket</h4>
+                    <p>
+                        I felt like sharing my interest in cricket with you. In this blog, I describe how I developed
+                        this interest.
+                    </p>
+                    <a href="https://www.vedpanse.com/static/blogs/cricket.html" target="_blank">Read the blog <svg
+                            focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"
+                            fill="currentColor" width="30" height="10" viewBox="0 0 20 20" aria-hidden="true"
+                            class="bx--btn__icon">
+                            <path d="M11.8 2.8L10.8 3.8 16.2 9.3 1 9.3 1 10.7 16.2 10.7 10.8 16.2 11.8 17.2 19 10z">
+                            </path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div><br><br><br>
+        <h1>Vlogs</h1><br>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 codepen">
+            <h1>High Jump Video 1</h1>
+            <p>Oh yes! I cleared a height that I deemed good for my age in the first attempt. I didn't expect to jump this high. Seemed like I had improved.</p>
+            <a href="video/Vid1.html" target="_blank"><button class="btn btn-special">View Video
+                    <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor" width="30" height="10" viewBox="0 0 20 20" aria-hidden="true"
+                        class="bx--btn__icon">
+                        <path d="M11.8 2.8L10.8 3.8 16.2 9.3 1 9.3 1 10.7 16.2 10.7 10.8 16.2 11.8 17.2 19 10z">
+                        </path>
+                    </svg></button></a>
+        </div>
+        <div class="col-lg-6 github">
+            <h1>High Jump Video 2</h1>
+            <p>A height of 150cm seemed monstrous for me to clear in the first attempt. I hoped I would get it right in the coming attempts.</p>
+            <a href="video/Vid2.html" target="_blank"><button class="btn btn-special">View Video
+                <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor" width="30" height="10" viewBox="0 0 20 20" aria-hidden="true"
+                    class="bx--btn__icon">
+                    <path d="M11.8 2.8L10.8 3.8 16.2 9.3 1 9.3 1 10.7 16.2 10.7 10.8 16.2 11.8 17.2 19 10z">
+                    </path>
+                </svg></button></a>
+        </div>
+        <div class="col-lg-6 github">
+            <h1>High Jump Video 3</h1>
+            <p>Oh yes! I cleared a height that I deemed good for my age in the first attempt. I didn't expect to jump this high. Seemed like I had improved.</p>
+            <a href="video/Vid3.html" target="_blank"><button class="btn btn-special">View Video
+                    <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor" width="30" height="10" viewBox="0 0 20 20" aria-hidden="true"
+                        class="bx--btn__icon">
+                        <path d="M11.8 2.8L10.8 3.8 16.2 9.3 1 9.3 1 10.7 16.2 10.7 10.8 16.2 11.8 17.2 19 10z">
+                        </path>
+                    </svg></button></a>
+        </div>
+        <div class="col-lg-6 codepen">
+            <h1>High Jump Video 4</h1>
+            <p>A height of 150cm seemed monstrous for me to clear in the first attempt. I hoped I would get it right in the coming attempts.</p>
+            <a href="video/Vid4.html" target="_blank"><button class="btn btn-special">View Video
+                <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor" width="30" height="10" viewBox="0 0 20 20" aria-hidden="true"
+                    class="bx--btn__icon">
+                    <path d="M11.8 2.8L10.8 3.8 16.2 9.3 1 9.3 1 10.7 16.2 10.7 10.8 16.2 11.8 17.2 19 10z">
+                    </path>
+                </svg></button></a>
+        </div>
+        <div class="col-lg-12 codepen">
+            <h1 style="text-align: center; margin-top: 2%;">High Jump Video 5</h1>
+            <p style="text-align: center;">A height of 150cm seemed monstrous for me to clear in the first attempt. I hoped I would get it right in the coming attempts.</p>
+            <a href="video/Vid5.html" target="_blank"><button class="btn btn-special">View Video
+                <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor" width="30" height="10" viewBox="0 0 20 20" aria-hidden="true"
+                    class="bx--btn__icon">
+                    <path d="M11.8 2.8L10.8 3.8 16.2 9.3 1 9.3 1 10.7 16.2 10.7 10.8 16.2 11.8 17.2 19 10z">
+                    </path>
+                </svg></button></a>
         </div>
     </div>
 
+
     <br><br><br>
+    <hr>
+    <br><br><br>
+
     <div id="contact">
-        <div class="content"><br><br>
-            <h2>Contact Me</h2>
-            <p>I'll try to revert to you via the email address that you provide below within a day. All the chats are
-                private.</p>
-        </div>
+        <h1>Contact Me</h1>
+        <p>I'll try to revert to you via the email address that you provide below within a day. All
+            the chats are private.</p>
         <main class="form-signin">
             <form method="POST" action="https://formspree.io/f/xdoyprne">
-                <div class="form-floating">
-                    <input type="text" class="form-control" id="floatingInput" placeholder="Name" name="Name" required>
-                    <label for="floatingInput">Name</label>
-                </div>
-                <div class="form-floating">
-                    <input type="email" class="form-control" id="floatingPassword" placeholder="Email ID" name="Email"
-                        required>
-                    <label for="floatingPassword">Email ID</label>
-                </div>
-                <div class="form-floating">
-                    <textarea type="message" class="form-control" id="floatingPassword" placeholder="Message"
-                        name="Message" required></textarea>
-                    <label for="floatingPassword">Message</label>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="form-floating">
+                            <label for="floatingInput">Name</label>
+                            <input type="text" class="form-control" id="floatingInput" placeholder="Name" name="Name"
+                                required>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="form-floating">
+                            <label for="floatingPassword">Email ID</label>
+                            <input type="email" class="form-control" id="floatingPassword" placeholder="Email ID"
+                                name="Email" required>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="form-floating">
+                            <label for="floatingPassword">Message</label>
+                            <textarea type="message" class="form-control" id="floatingPassword" placeholder="Message"
+                                name="Message" required></textarea>
+
+                        </div>
+                    </div>
                 </div>
                 <br>
                 <!-- <button class="btner" type="submit">Submit</button> -->
-                <button type="submit">Submit this message &rsaquo;</button>
+                <button type="submit" class="btn btn-primary">Submit this message &nbsp;<svg focusable="false"
+                        preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                        width="30" height="10" viewBox="0 0 20 20" aria-hidden="true" class="bx--btn__icon">
+                        <path d="M11.8 2.8L10.8 3.8 16.2 9.3 1 9.3 1 10.7 16.2 10.7 10.8 16.2 11.8 17.2 19 10z"></path>
+                    </svg></button>
             </form>
         </main>
     </div><br><br>
@@ -818,31 +776,22 @@
             </ol>
             <hr>
             <div class="row">
-                <div class="col-lg-4">
+                <div class="col-lg-6">
                     <p><b>My Social Media Accounts</b></p>
                     <a href="https://codepen.io/vedpanse" target="_blank">CodePen</a>
                     <a href="https://github.com/vedpanse" target="_blank">GitHub</a>
                     <a href="https://twitter.com/vedpanse" target="_blank">Twitter</a>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-6">
                     <p><b>Opportunity Credits</b></p>
                     <a href="https://findability.ai/" target="_blank">Findability Sciences</a>
                     <a href="http://xceedtech.in/" target="_blank">Xceed Imagination</a>
                     <a href="https://www.bancbridge.com/" target="_blank">BancBridge</a>
                 </div>
-                <div class="col-lg-4">
-                    <p><b>Image Credits</b></p>
-                    <a href="https://unsplash.com/photos/AWZbbVFEW3k" target="_blank">Daniele Levis Pelusi's Green
-                        Textile Image on Unsplash</a>
-                    <a href="https://unsplash.com/photos/caH-ZLrisZA" target="_blank">Nio Milano on Unsplash</a>
-                    <a href="https://unsplash.com/photos/z77FVd3_xGI" target="_blank">Sharon McCutcheon Unsplash</a>
-                    <a href="https://unsplash.com/photos/_nWaeTF6qo0" target="_blank">Richard Horvath Unsplash</a>
-                </div>
             </div>
         </div>
     </div>
     <!-- Optional JavaScript -->
-    <script src="templates/scroll.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -853,36 +802,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
-    <script>
-        var i = 0;
-        var txt = 'Hello, World! My name is Ved Panse.'; /* The text */
-        var speed = 50; /* The speed/duration of the effect in milliseconds */
-
-        function typeWriter() {
-            if (i < txt.length) {
-                document.getElementById("demo").innerHTML += txt.charAt(i);
-                i++;
-                setTimeout(typeWriter, speed);
-            }
-        }
-
-        document.addEventListener("DOMContentLoaded", function () {
-            window.addEventListener('scroll', function () {
-                if (window.scrollY > 50) {
-                    document.getElementById('whitie').classList.add('fixed-top');
-                    // add padding top to show content behind navbar
-                    navbar_height = document.querySelector('.sub-nav').offsetHeight;
-                    document.body.style.paddingTop = navbar_height + 'px';
-                    document.querySelector(".sub-nav").style.borderBottom = "1px solid rgb(0, 0, 0, 0.1)";
-                } else {
-                    document.getElementById('whitie').classList.remove('fixed-top');
-                    // remove padding top from body
-                    document.body.style.paddingTop = '0';
-                    document.querySelector(".sub-nav").style.borderBottom = "none";
-                }
-            });
-        });
-    </script>
+    <script src="js/handleCss.js"></script>
 </body>
 
 </html>

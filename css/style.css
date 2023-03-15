@@ -1,0 +1,327 @@
+html,
+body {
+    width: 100%;
+    min-height: 100vh;
+    font-family: 'Libre Franklin', sans-serif;
+    line-height: 2;
+}
+
+.sub-nav {
+    background-color: rgb(255, 255, 255, 0.7) !important;
+    backdrop-filter: blur(20px);
+    /* border-bottom: rgba(0, 0, 0, 0.5); */
+}
+
+.sub-nav .navbar-brand {
+    font-weight: 500;
+}
+
+.main-nav a.nav-link {
+    color: #cdcdce !important;
+    font-size: 12px;
+}
+
+.main-nav a.nav-link,
+.main-nav a.navbar-brand {
+    padding: 0%;
+}
+
+.main-nav a.nav-link:hover {
+    color: white !important;
+    text-decoration: none !important;
+}
+
+.navbar-brand:hover {
+    text-decoration: none !important;
+}
+
+.main-nav a.active {
+    color: white !important;
+}
+
+a.nav-link {
+    font-size: 12px;
+    margin-right: 7%;
+    padding: 20px;
+    letter-spacing: 0.25px;
+}
+
+.navbar-nav {
+    position: absolute;
+    right: 7%;
+}
+
+.navbar-brand {
+    margin-left: 7%;
+}
+
+.navbar {
+    padding: 5px;
+}
+
+.nav-item.nav-link {
+    padding: 5px 11px 6px;
+    margin: 0px 4px;
+    border-radius: 4px;
+}
+
+.sub-nav a.nav-link:hover {
+    color: #0070c9 !important;
+    text-decoration: none !important;
+}
+
+div#backdrop {
+    height: 100%;
+    min-height: 100vh;
+    width: 100vw;
+    position: fixed;
+    z-index: -2;
+}
+
+div#backdrop .row {
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
+}
+
+div#backdrop .col-lg-3 {
+    border-right: 1px solid rgb(224, 224, 224, 0.5);
+    width: 100%;
+    min-height: 100%;
+}
+
+div#intro {
+    position: relative;
+    min-height: 100vh;
+    height: 100%;
+}
+
+div#centroid {
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    width: 50%;
+}
+
+h1 {
+    font-size: 65px;
+}
+
+.btn {
+    border-radius: 0px;
+}
+
+svg.arrow {
+    fill: white;
+    padding: 0px !important;
+}
+
+div#interests,
+div#news,
+div#skills,
+div#internships,
+div#projects,
+div#contact,
+div#blogs {
+    padding-left: 10%;
+}
+
+hr {
+    background-color: black;
+}
+
+div#interests .indicator,
+div#skills .indicator {
+    font-size: 20px;
+    border-left: 3px solid rgb(223, 223, 223);
+}
+
+div#interests .indicator.active,
+div#skills .indicator.active {
+    border-left-color: #007bff;
+}
+
+a:hover {
+    text-decoration: none;
+    color: white;
+}
+
+.progress-bar-success {
+    background-color: black;
+}
+
+.progress {
+    height: 2px;
+    margin-bottom: 5%;
+    background-color: #d2d2d7;
+}
+
+label {
+    font-size: 14px;
+}
+
+#news .card,
+#internships .card,
+#projects .card,
+#blogs .card {
+    width: 100%;
+    padding: 20px;
+    border: none;
+    background-color: #f4f4f4;
+    min-height: 100%;
+}
+
+#news .row,
+#internships .row,
+#projects .row,
+#blogs .row {
+    width: 95%;
+}
+
+#news .col-lg-4,
+#internships .col-lg-4,
+#projects .col-lg-4,
+#blogs .col-lg-3 {
+    margin-top: 5%;
+}
+
+#news .card a:hover,
+#internships .card a:hover,
+#projects .card a:hover,
+#social a:hover,
+#blogs a:hover {
+    text-decoration: underline;
+    color: #007bff;
+}
+
+.bg {
+    background-color: #e5eae9;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.bg h1 {
+    text-align: left;
+    margin-top: 20%;
+}
+
+.bg .content {
+    width: 75%;
+}
+
+#social .content {
+    padding-left: 10%;
+}
+
+div#contact .col-lg-12 {
+    margin-top: 20px;
+}
+
+form {
+    width: 80%;
+}
+
+div#contact input,
+div#contact textarea {
+    background-color: #f4f4f4;
+    border: none;
+    border-bottom: 1px solid #8d8d8d;
+    border-radius: 0px;
+    width: 100%;
+}
+
+div#contact input::placeholder,
+div#contact textarea::placeholder {
+    color: #b6b6b6;
+    font-family: 'Libre Franklin', sans-serif;
+}
+
+div#contact textarea {
+    min-height: 100px;
+}
+
+#footer {
+    background-color: #f5f5f7;
+    padding: 2%;
+}
+
+.foot-c {
+    color: #6e6e73;
+    width: 60%;
+    margin: auto;
+    font-size: 12px;
+}
+
+.foot-c p b {
+    color: black;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.foot-c a {
+    color: #3f3f42;
+    display: block;
+    margin: 2% 0%;
+}
+
+@media only screen and (max-width: 500px) {
+    #interests {
+        margin-top: 20vh;
+    }
+
+    #intro {
+        position: relative;
+    }
+
+    #centroid {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    #interests {
+        margin-top: 50vh;
+    }
+}
+
+.codepen,
+.github {
+    padding-left: 5%;
+    padding-top: 1%;
+    position: relative;
+}
+
+.codepen h1,
+.github h1 {
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+.codepen {
+    background-color: rgb(35, 35, 35);
+    color: white;
+    min-height: 75vh;
+    background-image: url('../TheArchive/images/bg.png');
+}
+
+.github {
+    background-color: rgb(205, 229, 252);
+}
+
+.btn-special {
+    min-width: 100px;
+    height: 25%;
+    position: absolute;
+    bottom: 0%;
+    right: 20%;
+    padding: 30px;
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-special:hover {
+    background-color: royalblue;
+}
+
+#footer a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+    <title>Algorithms Explained</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="index.html">Algorithms Explained</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="#">Home</a>
+                <a class="nav-item nav-link active" href="#">Blogs <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="#">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <div class="header">
+        <a class="navbar-brand" href="index.html">Algorithms Explained</a>
+        <div class="header-right" onclick="openNav()">
+            <div class="menu"></div>
+            <div class="menu"></div>
+            <div class="menu"></div>
+        </div>
+    </div>
+
+    <div id="myNav" class="overlay-nav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+            <a onclick="home()">Home</a>
+            <a onclick="getStarted()">Get Started</a>
+            <a onclick="introduction()">Introduction</a>
+            <a onclick="searches()">Searches</a>
+            <a onclick="bigo()" class="active">The Big O Notation</a>
+            <a onclick="arrays_lists()">Algorithms for Arrays and Lists</a>
+            <a onclick="recursion()">Recursion</a>
+            <a onclick="stacking()">Stacking</a>
+            <a onclick="sorting()">Sorting Algorithms</a>
+            <a onclick="hash()">Hash Tables</a>
+            <a onclick="bfs()">Breadth First Search</a>
+            <a onclick="ig()">Implementing Graphs</a>
+            <a onclick="dja()">Dijkstra's Algorithm</a>
+            <a onclick="idja()">Implementing Dijkstra's Algorithm</a>
+            <a onclick="dynamic()">Dynamic Programming</a>
+        </div>
+    </div>
+
+    <div class="loc-band">
+        <a href="#introduction-content">The Big O Notation&nbsp;&nbsp; <i class="fas fa-chevron-right"></i></a>
+        <a href="#bigo">The Big O&nbsp;&nbsp; <i class="fas fa-chevron-right"></i></a>
+        <a href="#common">Applications and need of such techniques&nbsp;&nbsp; <i class="fas fa-chevron-right"></i></a>
+        <a href="#runtime">Some Common Big O Run times</a>
+    </div>
+    <div class="row main">
+        <div class="leftnav col-lg-3 col-md-6">
+            <br>
+            <p id="home">Home</p>
+            <p id="get-started" onclick="getStarted()">Get Started</p>
+            <p id="introduction" onclick="introduction()">Introduction</p>
+            <p id="searches" onclick="searches()">Searches</p>
+            <p id="searches" onclick="bigo()" class="active">The Big O Notation</p>
+            <p id="searches" onclick="arrays_lists()">Algorithms for Arrays and Lists</p>
+            <p id="recursion" onclick="recursion()">Recursion</p>
+            <p id="recursion" onclick="stacking()">Stacking</p>
+            <p id="sorting" onclick="sorting()">Sorting Algorithms</p>
+            <p id="hash" onclick="hash()">Hash Tables</p>
+            <p id="bfs" onclick="bfs()">Breadth First Search</p>
+            <p id="implementing" onclick="ig()">Implementing Graphs</p>
+            <p id="dja" onclick="dja()">Dijkstra's Algorithm</p>
+            <p id="implement-dja" onclick="idja()">Implementing Dijkstra's Algorithm</p>
+            <p id="dynamic" onclick="dynamic()">Dynamic Programming</p>
+        </div>
+        <div class="col-lg-9 col-md-6 context">
+            <div style="margin-top: 9%;">
+                <div class="content-bar">
+                    <a href="#bigo" class="active">The Big O</a>
+                    <a href="#common">Applications</a>
+                    <a href="#runtime">Run Time</a>
+                </div>
+
+
+                <section id="introduction-content">
+                    <h1>The Big O Notation</h1>
+                    <span>Written By<span class="u"> Ved Panse</span>
+                    </span><span style="color: gray; margin-left: 5%;">Last Modified: 30 June 2021</span>
+                    <section class="marge-5 intro">
+                        <p>In this section of the documentation, we will be looking at a concept that you might have never heard about. The Big O Notation is also not covered by any professional courses that teach you programming languages. Though this might
+                            be a new concept and may seem to be complex, it is actually very easy.<br><br>You can do this.
+                        </p>
+                    </section>
+
+                    <section class="marge-5 algo-start" id="bigo">
+
+                        <h2>The Big O</h2>
+                        <p>The Big O notation is a simple method that tells you how fast a computer program runs. However, it doesn't measure the time taken by the algorithm. It denotes the number of tasks that that particular algorithm takes.<br><br> The
+                            following table depicts the run times for simple search and binary search.
+                        </p><br><br>
+                        <table class="compare">
+                            <tr class="th">
+                                <th>Simple Search</th>
+                                <th>Binary Search</th>
+                            </tr>
+                            <tr class="th">
+                                <td>
+                                    100 items &rarr; 100 guesses
+                                </td>
+                                <td>
+                                    100 items &rarr; 7 guesses
+                                </td>
+                            </tr>
+                            <tr class="th">
+                                <td>
+                                    4,000,000,000 items &rarr; 4,000,000,000 guesses
+                                </td>
+                                <td>4,000,000,000 items &rarr; 32 guesses</td>
+                            </tr>
+                            <tr class="th">
+                                <td>O(n)...Linear Time</td>
+                                <td>O(log n)...Logarithmic Time</td>
+                            </tr>
+                        </table><br><br>
+                        <p><em>This table measures the maximum possible guesses it may take.</em><br><br>As you can see, binary search takes very few guesses, thus making it far more efficient than simple search. However, everything has its own disadvantages.
+                            As binary search follows a complicated algorithm, it increases the chances of bugs and errors. Simple search, after iterating over the complete array, reduces the chances of any such bugs and errors to a negligible extent.</p><br><br>
+
+                        <h2 id="common">Applications and need of such techniques</h2>
+                        <p>Imagine yourself writing a program for social media websites. You have been assigned to write a program that goes through an array of all users and provides the users relevant data of the value they input in a search box. This
+                            is where your search algorithm comes into play. You must consider that you are working with arrays with billions of elements in them. Thus, the speed should be fast and with minimum code.</p>
+                    </section><br><br>
+                    <h2 id="runtime">Some Common Big O Run times</h2>
+                    <p>From fastest to slowest</p>
+                    <ol>
+                        <li>O (log n), also known as log time. Example: Binary search.</li>
+                        <li>O(n), also known as linear time. Example: Simple search.</li>
+                        <li>O(n*log n). Example: A fast sorting algorithm, like quick-sort.</li>
+                        <li>O(n^2). Example: A slow sorting algorithm, like selection sort.</li>
+                        <li>O(n!). Example: A really slow algorithm, like the traveling salesperson.</li>
+                    </ol>
+                    <div style="width: 100%; margin-bottom: 2%;">
+                        <span class="next left" onclick="searches()">&larr; Searches</span>
+                        <span class="next right" onclick="arrays_lists()">Algorithms for Arrays and Lists &rarr;</span>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+<script src="functions.js"></script>
+
+</html>

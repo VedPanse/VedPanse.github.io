@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+    <title>Machine Learning</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="index.html">Machine Learning and Algorithms</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="https://vedpanse.com">Home</a>
+                <a class="nav-item nav-link active" href="https://vedpanse.com/static/blogs">Blogs <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="https://vedpanse.com#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <div class="header">
+        <a class="navbar-brand" href="index.html">Machine Learning and Algorithms</a>
+        <div class="header-right" onclick="openNav()">
+            <div class="menu"></div>
+            <div class="menu"></div>
+            <div class="menu"></div>
+        </div>
+    </div>
+
+    <div id="myNav" class="overlay-nav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+            <a onclick="getStarted()">Get Started</a>
+            <a onclick="eda()">Exploratory Data Analysis</a>
+            <a onclick="machineLearning()">Machine Learning</a>
+            <a onclick="supervised()">More About Supervised Learning</a>
+            <a onclick="unsupervised()">More About Unsupervised</a>
+            <a onclick="timeSeries()" class="active">Time Series Algorithms</a>
+            <a onclick="regression()">Regression</a>
+            <a onclick="clustering()">Clustering</a>
+            <a onclick="thankYou()">Thank You Note</a>
+        </div>
+    </div>
+
+    <div class="loc-band">
+        <a href="#getStarted">Time Series Algorithms&nbsp;&nbsp; <i class="fas fa-chevron-right"></i></a>
+        <a href="#arima">ARIMA&nbsp;&nbsp; <i class="fas fa-chevron-right"></i></a>
+        <a href="#sarima">SARIMA&nbsp;&nbsp; <i class="fas fa-chevron-right"></i></a>
+        <a href="#tbats">TBATS</a>
+    </div>
+    <div class="row main">
+        <div class="leftnav col-lg-3 col-md-6">
+            <br>
+            <p id="get-started" onclick="getStarted()">Get Started</p>
+            <p id="eda" onclick="eda()">Exploratory Data Analysis</p>
+            <p id="machineLearning" onclick="machineLearning()">Machine Learning</p>
+            <p id="supervised" onclick="supervised()">More About Supervised Learning</p>
+            <p id="unsupervised" onclick="unsupervised()">More About Unsupervised Learning</p>
+            <p id="timeSeries" onclick="timeSeries()" class="active">Time Series Algorithms</p>
+            <p id="regression" onclick="regression()">Regression</p>
+            <p id="clustering" onclick="clustering()">Clustering</p>
+            <p id="thankYou" onclick="thankYou()">Thank You Note</p>
+        </div>
+        <div class="col-lg-9 col-md-6 context">
+            <div style="margin-top: 9%;">
+                <div class="content-bar">
+                    <a href="#getStarted" class="active">Time Series Algorithms</a>
+                    <a href="#arima">ARIMA</a>
+                    <a href="#sarmia">SARIMA</a>
+                    <a href="#tbats">TBATS</a>
+                </div>
+                <section id="introduction-content">
+                    <section id="get-started-content">
+                        <h1 id="getStarted">Time Series Algorithms</h1>
+                        <span>Written By<span class="u"> Ved Panse</span>
+                        </span>
+                        <span style="color: gray; margin-left: 5%;">Last Modified: 20 May 2022</span>
+                        <section class="marge-5 in-this">
+                            <p>A time-series algorithm is an algorithm that runs till infinity and has periodicity.</p>
+                        </section>
+
+
+                        <section class="marge-5">
+                            <h2 id="arima">ARIMA</h2>
+                            <p>ARIMA stands for Autoregressive Integrated Moving Average. It generalizes a time series, thus simplifying the data and helping to make a prediction.</p>
+                            <img src="https://miro.medium.com/max/789/1*Z7QvavK7s_8JAqCRzkMUvA.png">
+                            <p class="src">Image from <a href="https://miro.medium.com/max/789/1*Z7QvavK7s_8JAqCRzkMUvA.png">https://miro.medium.com/max/789/1*Z7QvavK7s_8JAqCRzkMUvA.png</a></p>
+                            <p>The above image shows how the original and the general graphs differ.</p>
+                        </section>
+
+                        <section class="marge-5">
+                            <h2 id="sarima">SARIMA</h2>
+                            <p>The SARIMA algorithm is simply an extension of the ARIMA algorithm. The difference is the 'S' that stands for 'Seasonal.' The SARIMA enables ARIMA to handle data with seasonality.<br><br>What is seasonality? Let us see below.</p>
+                            <b><p>Seasonality</p></b>
+                            <p>Seasonality means periodicity. A seasonal event is an event that is certain to happen at a given time. <br>For example, a person's birthday is sure to come after one year on the same date. A sudden rise in profits is observed
+                                by resorts/hotels in the summer as people go out for vacations. Such kinds of events make up seasonal events.</p>
+                            <img src="https://miro.medium.com/max/960/1*1cxk8WImBj3pWOyVWQHwdg.png">
+                            <p class="src">Image from <a href="https://miro.medium.com/max/960/1*1cxk8WImBj3pWOyVWQHwdg.png">https://miro.medium.com/max/960/1*1cxk8WImBj3pWOyVWQHwdg.png</a></p>
+                            <p>Here, we can see that the data is recurring.</p>
+                            <b><p>Back to SARIMA</p></b>
+                            <p>ARIMA, as we read, does not handle seasonality well. Thus, SARIMA came up to fill in this flaw.</p>
+                        </section>
+
+                        <section class="marge-5">
+                            <h2 id="tbats">TBATS</h2>
+                            <p>TBATS has a complex long-form: Trigonometric seasonality, Box-cox transformation, ARMA errors, Trend components, and Seasonal components. It first carries out exponential smoothing on the data. Next, it uses smooth data to
+                                make predictions. It is different from ARIMA as it can also recognize patterns in complex graphs.</p>
+                        </section>
+
+
+                        <div class="foot-header">
+                            <span class="next left" onclick="unsupervised()">&larr;
+                                More About Unsupervised Learning</span>
+                            <span class="next right" onclick="regression()">Regression &rarr;</span>
+                        </div>
+                    </section>
+                </section>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js " integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN " crossorigin="anonymous "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js " integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q " crossorigin="anonymous "></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js " integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl " crossorigin="anonymous "></script>
+</body>
+<script src="functions.js "></script>
+
+</html>

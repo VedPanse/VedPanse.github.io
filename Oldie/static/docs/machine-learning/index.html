@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+    <title>Machine Learning</title>
+
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .alert {
+            padding: 0px !important;
+        }
+        
+        .toggle {
+            background-color: #2b2b2e;
+            color: white;
+            border-radius: 6px;
+            border: none;
+            text-align: center;
+            vertical-align: middle;
+            margin-bottom: 12px;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            right: 2%;
+            top: 0.25%;
+        }
+        
+        .toggle:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You can toggle between light and dark theme by pressing "Esc".
+    <!-- <button class="toggle" onclick="change();">Toggle Mode</button> -->
+    <nav class="navbar navbar-expand-lg" style="margin-top: 5px">
+        <a class="navbar-brand" href="index.html">Machine Learning and Algorithms</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="https://vedpanse.com">Home</a>
+                <a class="nav-item nav-link active" href="https://vedpanse.com/static/blogs">Blogs <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="https://vedpanse.com#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <div class="header">
+        <a class="navbar-brand" href="index.html">Machine Learning and Algorithms</a>
+        <div class="header-right" onclick="openNav()">
+            <div class="menu"></div>
+            <div class="menu"></div>
+            <div class="menu"></div>
+        </div>
+    </div>
+
+    <div id="myNav" class="overlay-nav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+            <a onclick="getStarted()" class="active">Get Started</a>
+            <a onclick="eda()">Exploratory Data Analysis</a>
+            <a onclick="machineLearning()">Machine Learning</a>
+            <a onclick="supervised()">More About Supervised Learning</a>
+            <a onclick="unsupervised()">More About Unsupervised</a>
+            <a onclick="timeSeries()">Time Series Algorithms</a>
+            <a onclick="regression()">Regression</a>
+            <a onclick="clustering()">Clustering</a>
+            <a onclick="thankYou()">Thank You Note</a>
+        </div>
+    </div>
+
+    <div class="loc-band">
+        <a href="#getStarted">Get started</a>
+    </div>
+    <div class="row main">
+        <div class="leftnav col-lg-3 col-md-6">
+            <br>
+            <p id="get-started" onclick="getStarted()" class="active">Get Started</p>
+            <p id="eda" onclick="eda()">Exploratory Data Analysis</p>
+            <p id="machineLearning" onclick="machineLearning()">Machine Learning</p>
+            <p id="supervised" onclick="supervised()">More About Supervised Learning</p>
+            <p id="unsupervised" onclick="unsupervised()">More About Unsupervised Learning</p>
+            <p id="timeSeries" onclick="timeSeries()">Time Series Algorithms</p>
+            <p id="regression" onclick="regression()">Regression</p>
+            <p id="clustering" onclick="clustering()">Clustering</p>
+            <p id="thankYou" onclick="thankYou()">Thank You Note</p>
+        </div>
+        <div class="col-lg-9 col-md-6 context">
+            <div style="margin-top: 9%;">
+                <div class="content-bar">
+                    <a href="#getStarted" class="active">Get Started</a>
+                </div>
+                <section id="introduction-content">
+                    <section id="get-started-content">
+                        <h1 id="getStarted">Get started with Machine Learning and Algorithms</h1>
+                        <span>Written By<span class="u"> Ved Panse</span>
+                        </span>
+                        <span style="color: gray; margin-left: 5%;">Last Modified: 20 May 2022</span>
+                        <section class="marge-5 in-this">
+                            <p>This documentation covers the basics of Machine Learning. Machine Learning (ML) is an extensive topic. Learning more about this topic is challenging because there is too much data on the internet. This documentation aims to
+                                make this research process easy. I have written this documentation as an intern at
+                                <a href="https://findability.ai" target="_blank">Findability Sciences</a> and as a Grade 12 student.
+                            </p>
+                            <p>Let's get started.</p>
+                        </section>
+
+                        <div class="foot-header">
+                            <span style="text-align: right; display:inline-block; position: absolute; right: 10%; " class="next " onclick="eda()">Exploratory Data Analysis&rarr;</span>
+                        </div>
+                    </section>
+                </section>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js " integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN " crossorigin="anonymous "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js " integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q " crossorigin="anonymous "></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js " integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl " crossorigin="anonymous "></script>
+</body>
+<script src="functions.js "></script>
+
+</html>

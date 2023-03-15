@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <meta name="description" content="The Techies was founded to provide solutions to some common problems that most of the early programmers struggle to solve. Through days of hardwork and research, I was able to solve all the problems and I want to make it easily available to the rest of the world.">
+    <meta name="keywords" content="The Techies, Archive, Documentations, Solutions, How, How To, HTML, CSS, JS, Python, Syntax Highlighting, Coding, Code, Web, Designing, Development">
+    <meta name="author" content="Ved Panse">
+
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Martel+Sans&display=swap" rel="stylesheet">
+
+    <title>The Techies</title>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="../index.html">The Techies</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="../index.html">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="../docs.html">Documentations</a>
+                <a class="nav-item nav-link btn-blue" href="../submit.html">Submit</a>
+            </div>
+        </div>
+    </nav><br><br>
+    <div class="main">
+
+        <div class="blog">
+            <h1 class="gradient title">All you need to know about Exploratory Data Analysis</h1>
+            <p class="author">Ved Panse &bull; 17 May, 2022</p>
+
+            <p>In this documentation, we will be covering how to perform an Exploratory Data Analysis (EDA). EDA is the analysis of data for predicting a future outcome. It is critical for companies as they can almost foresee their future sales and take
+                the necessary actions.</p>
+
+            <h2>What to use?</h2>
+            <p>We will be using Python in this documentation. Python is not the only way to carry out an Exploratory Data Analysis. It just helps us to visualize CSVs interactively. You can use Microsoft Excel or any other spreadsheet application as well.</p>
+
+            <h2>Importing modules</h2>
+            <p>We will start by importing plotly. Plotly is a popular Python library used for visualizing.</p>
+            <div class="python"><span class="kw1">import</span> plotly.<span class="me1">express</span> <span class="kw1">as</span> px</div>
+
+            <h2>Line Graphs</h2>
+            <p>Line modeling is one of the most basic models. It compares the growth rate of features. What are features?<br>Suppose you want to compare the stock prices of several companies. You are more likely to use a line graph to compare the growth
+                rate. Here, the stock prices are the features.</p><br>
+            <p>Let's start plotting using Python.</p>
+            <p>We have to start by uploading a dataset first. Fortunately, plotly has some inbuilt sets for us. Let us import the stocks dataset, that contains details about the stock prices of several major companies.</p>
+            <div class="python">df_stocks = px.<span class="me1">data</span>.<span class="me1">stocks</span><span class="br0">&#40;</span><span class="br0">&#41;</span></div>
+
+            <p>If you print df_stocks, you will see the features (headings of columns). You can use these features to plot your graphs. Let's plot a date VS price graph for Google (GOOG in the data frame).</p>
+
+            <div class="python">graph = px.<span class="me1">line</span><span class="br0">&#40;</span>df_stocks, x=<span class="st0">&quot;date&quot;</span>, y=<span class="st0">&quot;GOOG&quot;</span>, labels=<span class="br0">&#123;</span><span class="st0">&quot;x&quot;</span>:
+                <span class="st0">&quot;Date&quot;</span>, <span class="st0">&quot;y&quot;</span>: <span class="st0">&quot;Price&quot;</span><span class="br0">&#125;</span><span class="br0">&#41;</span><br />
+                <span class="co1"># labels are the titles for respective axes.</span><br />
+                <br /> graph.<span class="me1">show</span><span class="br0">&#40;</span><span class="br0">&#41;</span></div>
+
+
+            <p>You can print the date VS price graph for multiple companies.</p>
+
+
+            <div class="python">graph = px.<span class="me1">line</span><span class="br0">&#40;</span>df_stocks, x=<span class="st0">&quot;date&quot;</span>, y=<span class="br0">&#91;</span><span class="st0">&quot;GOOG&quot;</span>, <span class="st0">&quot;AAPL&quot;</span>,
+                <span class="st0">&quot;AMZN&quot;</span>, <span class="st0">&quot;FB&quot;</span>, <span class="st0">&quot;NFLX&quot;</span>, <span class="st0">&quot;MSFT&quot;</span><span class="br0">&#93;</span>, labels=<span class="br0">&#123;</span>
+                <span class="st0">&quot;x&quot;</span>: <span class="st0">&quot;Date&quot;</span>, <span class="st0">&quot;y&quot;</span>: <span class="st0">&quot;Company stocks&quot;</span><span class="br0">&#125;</span><span class="br0">&#41;</span><br
+                />
+                <br /> graph.<span class="me1">show</span><span class="br0">&#40;</span><span class="br0">&#41;</span></div>
+            <b>Analyzing the graph</b>
+            <p>Now, it is time for the most important job: analyzing data. Just observe trends and try to identify the reasons behind those trends. This analysis should also provide a valuable insight that can help us predict a future outcome. Try changing
+                the features that the coordinate axes represent to improve your computation.</p><br>
+            <p>Try to include many spectacular details to create a successful EDA. All the best!</p><br>
+
+            <div class="row" aria-colcount="foote">
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <a href="syntaxHighlighting.html" style="text-align: left;">&#8592; Syntax Highlighting</a>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <a href="plotlyComplete.html" style="text-align: left;">Complete Beginner's Guide to Plotly &#8594;</a>
+                </div>
+            </div>
+
+
+        </div><br><br>
+
+    </div>
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
+</html>

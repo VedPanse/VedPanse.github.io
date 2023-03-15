@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+    <title>Machine Learning</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="index.html">Machine Learning and Algorithms</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="https://vedpanse.com">Home</a>
+                <a class="nav-item nav-link active" href="https://vedpanse.com/static/blogs">Blogs <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="https://vedpanse.com#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <div class="header">
+        <a class="navbar-brand" href="index.html">Machine Learning and Algorithms</a>
+        <div class="header-right" onclick="openNav()">
+            <div class="menu"></div>
+            <div class="menu"></div>
+            <div class="menu"></div>
+        </div>
+    </div>
+
+    <div id="myNav" class="overlay-nav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+            <a onclick="getStarted()">Get Started</a>
+            <a onclick="eda()">Exploratory Data Analysis</a>
+            <a onclick="machineLearning()" class="active">Machine Learning</a>
+            <a onclick="supervised()">More About Supervised Learning</a>
+            <a onclick="unsupervised()">More About Unsupervised</a>
+            <a onclick="timeSeries()">Time Series Algorithms</a>
+            <a onclick="regression()">Regression</a>
+            <a onclick="clustering()">Clustering</a>
+            <a onclick="thankYou()">Thank You Note</a>
+        </div>
+    </div>
+
+    <div class="loc-band">
+        <a href="#getStarted">Machine Learning&nbsp;&nbsp; <i class="fas fa-chevron-right"></i></a>
+        <a href="#machineExperience">Machine Experience&nbsp;&nbsp; <i class="fas fa-chevron-right"></i></a>
+        <a href="#types">Types of Machine Learning&nbsp;&nbsp; <i class="fas fa-chevron-right"></i></a>
+        <a href="#supervisedLearning">Supervised Learning&nbsp;&nbsp; <i class="fas fa-chevron-right"></i></a>
+        <a href="#unsupervisedLearning">Unsupervised Learning&nbsp;&nbsp; <i class="fas fa-chevron-right"></i></a>
+        <a href="#reinforcementLearning">Reinforcement Learning&nbsp;&nbsp; <i class="fas fa-chevron-right"></i></a>
+        <a href="#useCases">Use Cases</a>
+    </div>
+    <div class="row main">
+        <div class="leftnav col-lg-3 col-md-6">
+            <br>
+            <p id="get-started" onclick="getStarted()">Get Started</p>
+            <p id="eda" onclick="eda()">Exploratory Data Analysis</p>
+            <p id="machineLearning" onclick="machineLearning()" class="active">Machine Learning</p>
+            <p id="supervised" onclick="supervised()">More About Supervised Learning</p>
+            <p id="unsupervised" onclick="unsupervised()">More About Unsupervised Learning</p>
+            <p id="timeSeries" onclick="timeSeries()">Time Series Algorithms</p>
+            <p id="regression" onclick="regression()">Regression</p>
+            <p id="clustering" onclick="clustering()">Clustering</p>
+            <p id="thankYou" onclick="thankYou()">Thank You Note</p>
+        </div>
+        <div class="col-lg-9 col-md-6 context">
+            <div style="margin-top: 9%;">
+                <div class="content-bar">
+                    <a href="#getStarted" class="active">Machine Learning</a>
+                    <a href="#machineExperience">Machine Experience</a>
+                    <a href="#types">Types of Machine Learning</a>
+                    <a href="#supervisedLearning">Supervised Learning</a>
+                    <a href="#unsupervisedLearning">Unsupervised Learning</a>
+                    <a href="#reinforcementLearning">Reinforcement Learning</a>
+                    <a href="#useCases">Use Cases</a>
+                </div>
+                <section id="introduction-content">
+                    <section id="get-started-content">
+                        <h1 id="getStarted">Machine Learning</h1>
+                        <span>Written By<span class="u"> Ved Panse</span>
+                        </span>
+                        <span style="color: gray; margin-left: 5%;">Last Modified: 20 May 2022</span>
+                        <section class="marge-5 in-this">
+                            <p>Machine Learning is a popular buzzword in today's world. Let us try to understand what it means. Machine Learning (ML) means making machines make decisions by providing some experience. Many people confuse Artificial Intelligence
+                                (AI) and Machine Learning as a single concept. Machine Learning is a subset of AI, while AI covers other concepts like Deep Learning (DL).</p>
+                            <img src="https://miro.medium.com/max/970/0*5NrDYk8PryKASFJD">
+                            <p class="src">Image from <a href="https://towardsdatascience.com/understanding-the-difference-between-ai-ml-and-dl-cceb63252a6c" target="_blank">https://towardsdatascience.com/understanding-the-difference-between-ai-ml-and-dl-cceb63252a6c</a></p>
+                        </section>
+
+                        <section class="marge-5">
+                            <h2 id="machineExperience">Machine Experience</h2>
+                            <p>Suppose you want to create an ML program that categorizes images into two classes: cats and dogs. You will have to start by feeding the program some pictures of cats and dogs. You would also need to provide the program with
+                                the respective class of animals for those images (label each image as a cat or a dog). Thus, the machine would get a brief idea of the appearance of cats and dogs. The pictures (or the data) fed to the computer are called
+                                'training data.' The training data is the experience that makes Machine Learning possible.</p>
+                        </section>
+
+                        <section class="marge-5">
+                            <h2 id="types">Types of Machine Learning</h2>
+                            <p>Machine Learning can be categorized into three types:</p>
+                            <ol>
+                                <li>Supervised Learning</li>
+                                <li>Unsupervised Learning</li>
+                                <li>Reinforcement Learning</li>
+                            </ol>
+                        </section>
+
+                        <section class="marge-5">
+                            <h2 id="supervisedLearning">Supervised Learning</h2>
+                            <p>Supervised learning is one of the most basic types of Machine Learning. It simply takes inspiration from the past data and predicts the future data. Such data is called 'labeled data.' This type of ML algorithm is most evident
+                                in a stock market website. The historical stock values are studied, and predictions are made.</p>
+                            <p>In other words, the machine is told what to look for. It does so till it recognizes patterns (like periodicity) in the data up to accuracy. These patterns then help to make a prediction. </p>
+                            <p>The "cats and dogs" example discussed above is an example of Supervised Learning.</p>
+                            <img src="https://miro.medium.com/max/1400/1*9vTNRbANVbDYGVDUpE2EFw.jpeg">
+                            <p class="src">Image from <a href="https://miro.medium.com/max/1400/1*9vTNRbANVbDYGVDUpE2EFw.jpeg">https://miro.medium.com/max/1400/1*9vTNRbANVbDYGVDUpE2EFw.jpeg</a></p>
+                        </section>
+                        <section class="marge-5">
+                            <p>Are you wondering how supervised learning is performed? Jump to
+                                <a href="supervised.html">this link</a>.
+                            </p>
+                        </section>
+                        <section class="marge-5">
+                            <h2 id="unsupervisedLearning">Unsupervised Learning</h2>
+                            <p>Unsupervised Learning is more advanced than Supervised Learning. It does not require any previous/historical data to make predictions. Thus, it works on unlabeled data. In this type of learning, the data is clustered into groups.
+                                You can read more about this on <a href="unsupervised.html">this link</a>. This type of learning does not need human supervision.</p>
+                        </section>
+                        <section class="marge-5">
+                            <h2 id="reinforcementLearning">Reinforcement Learning</h2>
+                            <p>Reinforcement learning refers to making the machines learn to make an on-the-spot decision. It takes inspiration from the human way of thinking. This algorithm works in situations where neither the user nor the algorithm knows
+                                what will happen next. The program has to build its own experience from scratch and use it as and when needed.</p>
+                            <p>For example, self-driving cars do not know what is coming next: will there be a pothole, a speed breaker, or a cross-road. Nor does the passenger know. For such situations, algorithms use reinforcement learning. In some games,
+                                the player's decision affects what will happen next. Such games use reinforcement learning.</p>
+                            <b><p>How does the algorithm work?</p></b>
+                            <p>The algorithm has a score. The score increases if the decision it produces is valid and appreciable by the client. On the other hand, the score decreases if the decision is either invalid or not appreciated. The algorithm studies
+                                this score and makes recommendations accordingly.</p>
+                        </section>
+
+                        <section class="marge-5">
+                            <h2 id="useCases">Use Cases</h2>
+                            <p>Machine Learning is now ubiquitous. Everything - right from voice assistants to self-driving car systems - uses machine learning.</p>
+                        </section>
+
+
+                        <div class="foot-header">
+                            <span class="next left" onclick="eda()">&larr;
+                                Exploratory Data Analysis</span>
+                            <span class="next right" onclick="supervised()">More About Supervised Learning &rarr;</span>
+                        </div>
+                    </section>
+                </section>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js " integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN " crossorigin="anonymous "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js " integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q " crossorigin="anonymous "></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js " integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl " crossorigin="anonymous "></script>
+</body>
+<script src="functions.js "></script>
+
+</html>

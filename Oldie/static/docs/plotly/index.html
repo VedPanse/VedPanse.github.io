@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+    <title>Plotly</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .toggle {
+            background-color: #2b2b2e;
+            color: white;
+            border-radius: 6px;
+            border: none;
+            text-align: center;
+            vertical-align: middle;
+            margin-bottom: 12px;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            right: 2%;
+            top: 0.25%;
+        }
+        
+        .toggle:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You can also toggle between light and dark theme by pressing "Esc".
+    <button class="toggle" onclick="change();">Toggle Mode</button>
+    <nav class="navbar navbar-expand-lg" style="margin-top: 5px;">
+        <a class="navbar-brand" href="index.html">Plotly</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="#">Home</a>
+                <a class="nav-item nav-link active" href="#">Blogs <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="#">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <div class="header">
+        <a class="navbar-brand" href="index.html">Plotly</a>
+        <div class="header-right" onclick="openNav()">
+            <div class="menu"></div>
+            <div class="menu"></div>
+            <div class="menu"></div>
+        </div>
+    </div>
+
+    <div id="myNav" class="overlay-nav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+            <a onclick="getStarted()" class="active">Get Started</a>
+            <a onclick="lineGraphs()">Line Graphs</a>
+            <a onclick="barGraphs()">Bar Graphs</a>
+            <a onclick="histograms()">Histograms</a>
+            <a onclick="scatterPlots()">Scatter Plots</p>
+            <a onclick="pieCharts()">Pie Charts</p>
+        </div>
+    </div>
+
+    <div class="loc-band">
+        <a href="#getStarted">Get started with Plotly&nbsp;&nbsp; <i class="fas fa-chevron-right"></i></a>
+            <a href="#use">Importing Modules</a>
+        </div>
+        <div class="row main">
+            <div class="leftnav col-lg-3 col-md-6">
+                <br>
+                <p id="get-started" onclick="getStarted()" class="active">Get Started</p>
+                <p id="introduction" onclick="lineGraphs()">Line Graphs</p>
+                <p id="bar" onclick="barGraphs()">Bar Graphs</p>
+                <p id="introduction" onclick="histograms()">Histograms</p>
+                <p id="scatterPlots" onclick="scatterPlots()">Scatter Plots</p>
+                <p id="pie" onclick="pieCharts()">Pie Charts</p>
+                <p id="violinPlots" onclick="violinPlots()">Violin Plots</p>
+                <p id="boxPlots" onclick="boxPlots()">Box Plots</p>
+            </div>
+            <div class="col-lg-9 col-md-6 context">
+                <div style="margin-top: 9%;">
+                    <div class="content-bar">
+                        <a href="#getStarted" class="active">Get Started</a>
+                        <a href="#import">Importing Modules</a>
+                    </div>
+                    <section id="introduction-content">
+                        <section id="get-started-content">
+                            <h1 id="getStarted">Get started with Plotly</h1>
+                            <span>Written By<span class="u"> Ved Panse</span>
+                            </span>
+                            <span style="color: gray; margin-left: 5%;">Last Modified: 18 May 2022</span>
+                            <section class="marge-5 in-this">
+                                <p>In this documentation, we will be covering the basics of plotly. Plotly is a Python library used for visualizing big datasets. We will be exploring nearly all the graphic representations available by plotly.
+                                    <br><br>Let's get started!
+                                </p>
+                            </section>
+                            <section class="marge-5 use-this">
+                                <h2 id="import">Importing modules</h2>
+                                <p>We will start by importing plotly.
+                                </p>
+                                <div class="python"><span class="kw1">import</span> plotly.<span class="me1">express</span> <span class="kw1">as</span> px</div>
+
+                            </section>
+
+                            <div style="width: 100%; margin-bottom: 5%; margin-top: 15%;">
+                                <span style="text-align: right; display:inline-block; position: absolute; right: 10%; " class="next " onclick="lineGraphs() ">Line Graph&rarr;</span>
+                            </div>
+                        </section>
+                    </section>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js " integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN " crossorigin="anonymous "></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js " integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q " crossorigin="anonymous "></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js " integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl " crossorigin="anonymous "></script>
+</body>
+<script src="functions.js "></script>
+
+</html>

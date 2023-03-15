@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+    <title>Algorithms Explained</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="index.html">Algorithms Explained</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="#">Home</a>
+                <a class="nav-item nav-link active" href="#">Blogs <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="#">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <div class="header">
+        <a class="navbar-brand" href="index.html">Algorithms Explained</a>
+        <div class="header-right" onclick="openNav()">
+            <div class="menu"></div>
+            <div class="menu"></div>
+            <div class="menu"></div>
+        </div>
+    </div>
+    <div id="myNav" class="overlay-nav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+            <a onclick="home()">Home</a>
+            <a onclick="getStarted()">Get Started</a>
+            <a onclick="introduction()" class="active">Introduction</a>
+            <a onclick="searches()">Searches</a>
+            <a onclick="bigo()">The Big O Notation</a>
+            <a onclick="arrays_lists()">Algorithms for Arrays and Lists</a>
+            <a onclick="recursion()">Recursion</a>
+            <a onclick="stacking()">Stacking</a>
+            <a onclick="sorting()">Sorting Algorithms</a>
+            <a onclick="hash()">Hash Tables</a>
+            <a onclick="bfs()">Breadth First Search</a>
+            <a onclick="ig()">Implementing Graphs</a>
+            <a onclick="dja()">Dijkstra's Algorithm</a>
+            <a onclick="idja()">Implementing Dijkstra's Algorithm</a>
+            <a onclick="dynamic()">Dynamic Programming</a>
+        </div>
+    </div>
+    <div class="loc-band">
+        <a href="#introduction-content">Introduction to Algorithms&nbsp;&nbsp; <i class="fas fa-chevron-right"></i></a>
+        <a href="#definition">What is an algorithm?&nbsp;&nbsp; <i class="fas fa-chevron-right"></i></a>
+        <a href="#item">How are items stored in a computer?</a>
+    </div>
+    <div class="row main">
+        <div class="leftnav col-lg-3 col-md-6">
+            <br>
+            <p id="home">Home</p>
+            <p id="get-started" onclick="getStarted()">Get Started</p>
+            <p id="introduction" onclick="introduction()" class="active">Introduction</p>
+            <p id="searches" onclick="searches()">Searches</p>
+            <p id="searches" onclick="bigo()">The Big O Notation</p>
+            <p id="searches" onclick="arrays_lists()">Algorithms for Arrays and Lists</p>
+            <p id="recursion" onclick="recursion()">Recursion</p>
+            <p id="recursion" onclick="stacking()">Stacking</p>
+            <p id="sorting" onclick="sorting()">Sorting Algorithms</p>
+            <p id="hash" onclick="hash()">Hash Tables</p>
+            <p id="bfs" onclick="bfs()">Breadth First Search</p>
+            <p id="implementing" onclick="ig()">Implementing Graphs</p>
+            <p id="dja" onclick="dja()">Dijkstra's Algorithm</p>
+            <p id="implement-dja" onclick="idja()">Implementing Dijkstra's Algorithm</p>
+            <p id="dynamic" onclick="dynamic()">Dynamic Programming</p>
+        </div>
+        <div class="col-lg-9 col-md-6 context">
+            <div style="margin-top: 9%;">
+                <div class="content-bar">
+                    <a href="#definition" class="active">What are algorithms?</a>
+                    <a href="#item">Item Storage</a>
+                </div>
+
+
+                <section id="introduction-content">
+                    <h1>Introduction to Algorithms</h1>
+                    <span>Written By<span class="u"> Ved Panse</span>
+                    </span><span style="color: gray; margin-left: 5%;">Last Modified: 30 June 2021</span>
+                    <section class="marge-5 intro">
+                        <p>In this section of the documentation, we will be looking at what an algorithm really is. Also, we will be looking at some of the misconception that attribute algorithms to be only a 'computer-related subject'.<br><br>You can do
+                            this!
+                        </p>
+                    </section>
+
+                    <section class="marge-5 algo-start" id="definition">
+                        <h2>What is an algorithm?</h2>
+                        <p>An algorithm is a set of instructions followed to accomplish a task. For instance, take a trip from your house to your school. It involves an algorithm of directions. You follow a particular code (set) of instructions to reach
+                            your destination. In this example, it is simply the directions (left, right, etc.). So, unknowingly, we all use algorithms in day-to-day life without even realizing it.<br><br>The brain is indeed a mystery. In the following
+                            lessons, I will be focussing on algorithms used to accomplish a task that you provide to your computer.
+                        </p>
+                    </section>
+
+                    <section class="marge-5 item-storage" id="item">
+                        <h2>How are items stored in a computer?</h2>
+                        <p>Imagine a computer to be a bookshelf that is already filled with some books, but is not full. The books that already occupy the bookshelf are kept in a random order and not next to each other. Consider the items that you want to
+                            be stored in the bookshelf to be books. Further explanation has been split into two datatypes: arrays and lists to understand two different cases of memory storage.
+                        </p><br><br>
+                        <table class="compare">
+                            <tr class="th">
+                                <th>Arrays</th>
+                                <th>Lists</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <ul>
+                                        <li>In arrays, their elements are stored one after the other on the shelf, just like books, in the order specified.</li>
+                                        <li>
+                                            Take, for example, that there is a shelf and you have 10 books to be stored. But, the maximum capacity for accommodating it in the bookshelf one after the other is seven (and the eighth position is occupied by something else).
+                                        </li>
+                                        <li>The books cannot be stored in an array, thus leading to problems dealing with memory. The elements cannot be spread over the place, like in the case of lists.
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <ul>
+                                        <li>In lists, their elements are stored in order, but not necessarily one after the other. The elements are spread over to occupy any given space. </li>
+                                        <li>Take for example that there are 10 books to be arranged. But, the maximum capacity for accommodating it in the bookshelf one after the other is seven (and the eighth position is occupied by something else).</li>
+                                        <li>In lists, the first seven elements get stored in the order provided, while the other elements occur after the seventh position. One element stores the link of the next one.</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </section><br><br>
+                    <div style="width: 100%; margin-bottom: 2%;">
+                        <span class="next left" onclick="getStarted()">&larr; Get Started</span>
+                        <span class="next right" onclick="searches()">Searches &rarr;</span>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+<script src="functions.js"></script>
+
+</html>

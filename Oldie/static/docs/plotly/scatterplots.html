@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+    <title>Plotly</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="index.html">Plotly</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="#">Home</a>
+                <a class="nav-item nav-link active" href="#">Blogs <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="#">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <div class="header">
+        <a class="navbar-brand" href="index.html">Plotly</a>
+        <div class="header-right" onclick="openNav()">
+            <div class="menu"></div>
+            <div class="menu"></div>
+            <div class="menu"></div>
+        </div>
+    </div>
+
+    <div id="myNav" class="overlay-nav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+            <a onclick="getStarted()">Get Started</a>
+            <a onclick="lineGraphs()">Line Graphs</a>
+            <a onclick="barGraphs()">Bar Graphs</a>
+            <a onclick="histograms()">Histograms</a>
+            <a onclick="scatterPlots()" class="active">Scatter Plots</a>
+            <a onclick="pieCharts()">Pie Charts</a>
+        </div>
+    </div>
+
+    <div class="loc-band">
+        <a href="#simple">Simple Scatter Plots &nbsp;&nbsp; <i class="fas fa-chevron-right"></i></a>
+        <a href="#complex">Complex Scatter Plots</a>
+    </div>
+    <div class="row main">
+        <div class="leftnav col-lg-3 col-md-6">
+            <br>
+            <p id="get-started" onclick="getStarted()">Get Started</p>
+            <p id="line" onclick="lineGraphs()">Line Graphs</p>
+            <p id="bar" onclick="barGraphs()">Bar Graphs</p>
+            <p id="histogram" onclick="histograms()">Histograms</p>
+            <p id="scatterPlots" onclick="scatterPlots()" class=" active ">Scatter Plots</p>
+            <p id="pie" onclick="pieCharts()">Pie Charts</p>
+            <p id="violinPlots" onclick="violinPlots()">Violin Plots</p>
+            <p id="boxPlots" onclick="boxPlots()">Box Plots</p>
+        </div>
+
+
+
+
+
+        <div class="col-lg-9 col-md-6 context ">
+            <div style="margin-top: 9%; ">
+                <div class="content-bar ">
+                    <a href="#simple" class="active">Simple Scatter Plots</a>
+                    <a href="#complex">Complex Scatter Plots</a>
+                </div>
+                <section id="introduction-content ">
+                    <section id="get-started-content ">
+                        <h1>Scatter Plots</h1>
+                        <span>Written By<span class="u "> Ved Panse</span>
+                        </span>
+                        <span style="color: gray; margin-left: 5%; ">Last Modified: 18 May 2022</span>
+
+                        <section class="marge-5 use-this"><br><br>
+                            <h2 id="scatter">Scatter Plots</h2>
+                            <p>
+                                Scatter plots display values of up to three variables. They usually show the spread of data (the concentrated and non-concentrated points) of data.
+                            </p>
+                        </section>
+                        <section class="marge-5">
+
+                            <h2 id="simple">Simple Scatter plots</h2>
+                            <p>
+                                For simple scatter plots, we can use our usual express module from the plotly library.
+                            </p>
+                            <p>This time, we will work on the iris dataset provided by the library module.</p>
+                            <div class="python"><span class="kw1">import</span> plotly.<span class="me1">express</span> <span class="kw1">as</span> px<br /> df_iris = px.<span class="me1">data</span>.<span class="me1">iris</span><span class="br0">&#40;</span><span class="br0">&#41;</span></div>
+
+                            <p>Let's create the scatter plot.</p>
+
+                            <div class="python">graph = px.<span class="me1">scatter</span><span class="br0">&#40;</span>df_iris, x=<span class="st0">&quot;sepal_width&quot;</span>, y=<span class="st0">&quot;sepal_length&quot;</span>, color=<span class="st0">&quot;species&quot;</span>,
+                                size=
+                                <span class="st0">&quot;petal_length&quot;</span>,<br /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;hover_data=<span class="br0">&#91;</span><span class="st0">&quot;petal_width&quot;</span>
+                                <span class="br0">&#93;</span><span class="br0">&#41;</span><br /> graph.<span class="me1">show</span><span class="br0">&#40;</span><span class="br0">&#41;</span><br /> &nbsp;
+                            </div>
+
+                            <img src="images/simple.png">
+
+                            <p>Here, we see a simple but beautiful scatterplot.</p>
+                        </section>
+
+
+                        <section class="marge-5">
+                            <h2 id="complex">Complex Scatter Plot</h2>
+                            <p>For complex or very large scatter plots, a different module is used. Let us start by importing this module. Instead of importing a large dataset, we will create our own by using NumPy.</p>
+                            <div class="python"><span class="kw1">import</span> plotly.<span class="me1">graph_objects</span> <span class="kw1">as</span> go<br />
+                                <span class="kw1">import</span> numpy <span class="kw1">as</span> np</div>
+                            <p>Let us initialize our figure.</p>
+                            <div class="python">fig = go.<span class="me1">Figure</span><span class="br0">&#40;</span>data=go.<span class="me1">Scattergl</span><span class="br0">&#40;</span><br /> &nbsp; &nbsp; x=np.<span class="kw3">random</span>.<span class="me1">randn</span>
+                                <span class="br0">&#40;</span><span class="nu0">100000</span><span class="br0">&#41;</span>, &nbsp;<span class="co1"># Random numbers for x-axis representation</span><br /> &nbsp; &nbsp; y=np.<span class="kw3">random</span>.
+                                <span class="me1">randn</span>
+                                <span class="br0">&#40;</span><span class="nu0">100000</span><span class="br0">&#41;</span>, &nbsp;<span class="co1"># Random numbers for y-axis representation</span><br /> &nbsp; &nbsp; mode=<span class="st0">&quot;markers&quot;</span>,
+                                &nbsp;
+                                <span class="co1"># Style</span><br /> &nbsp; &nbsp; marker=<span class="kw2">dict</span><span class="br0">&#40;</span><br /> &nbsp; &nbsp; &nbsp; &nbsp; color=np.<span class="kw3">random</span>.<span class="me1">randn</span>
+                                <span class="br0">&#40;</span><span class="nu0">100000</span><span class="br0">&#41;</span>, &nbsp;<span class="co1"># Randomized color</span><br /> &nbsp; &nbsp; &nbsp; &nbsp; colorscale=<span class="st0">&quot;Viridis&quot;</span>,
+                                &nbsp;
+                                <span class="co1"># An inbuilt theme</span><br /> &nbsp; &nbsp; &nbsp; &nbsp; line_width=<span class="nu0">1</span> &nbsp;<span class="co1"># Border-length</span><br /> &nbsp; &nbsp; <span class="br0">&#41;</span><br />
+                                <span class="br0">&#41;</span><span class="br0">&#41;</span><br />
+                                <br /> fig.<span class="me1">show</span><span class="br0">&#40;</span><span class="br0">&#41;</span></div>
+                        </section>
+                        <p>Refer to the comments beside the code to get an idea of what those lines of code mean.</p>
+
+                        <img src="images/complex.png">
+
+                        <p>This graph will be different from the one shown above because axis variables (values of the x and y-axis) are random.</p>
+
+                        <div style="width: 100%; margin-bottom: 5%; margin-top: 15%; ">
+                            <span style="text-align: left; display: inline-block; " class="next " onclick="histograms() ">&larr; Histograms</span>
+                            <span style="text-align: right; display:inline-block; position: absolute; right: 10%; " class="next " onclick="pieCharts() ">Pie Charts&rarr;</span>
+                        </div>
+                    </section>
+                </section>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js " integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN " crossorigin="anonymous "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js " integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q " crossorigin="anonymous "></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js " integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl " crossorigin="anonymous "></script>
+</body>
+<script src="functions.js "></script>
+
+</html>

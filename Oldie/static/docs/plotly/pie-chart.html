@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+    <title>Plotly</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="index.html">Plotly</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="#">Home</a>
+                <a class="nav-item nav-link active" href="#">Blogs <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="#">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <div class="header">
+        <a class="navbar-brand" href="index.html">Plotly</a>
+        <div class="header-right" onclick="openNav()">
+            <div class="menu"></div>
+            <div class="menu"></div>
+            <div class="menu"></div>
+        </div>
+    </div>
+
+    <div id="myNav" class="overlay-nav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+            <a onclick="getStarted()">Get Started</a>
+            <a onclick="lineGraphs()">Line Graphs</a>
+            <a onclick="barGraphs()">Bar Graphs</a>
+            <a onclick="histograms()">Histograms</a>
+            <a onclick="histograms()">Histograms</a>
+            <a onclick="scatterPlots()">Scatter Plots</a>
+            <a onclick="pieCharts()" class="active">Pie Charts</a>
+            <a onclick="violinPlots()">Violin Plots</a>
+            <a onclick="boxPlots()">Box Plots</a>
+        </div>
+    </div>
+
+    <div class="loc-band">
+        <a href="#simple">Simple Pie Charts &nbsp;&nbsp; <i class="fas fa-chevron-right"></i></a>
+        <a href="#complex">Complex Pie Charts</a>
+    </div>
+    <div class="row main">
+        <div class="leftnav col-lg-3 col-md-6">
+            <br>
+            <p id="get-started" onclick="getStarted()">Get Started</p>
+            <p id="line" onclick="lineGraphs()">Line Graphs</p>
+            <p id="bar" onclick="barGraphs()">Bar Graphs</p>
+            <p id="histogram" onclick="histograms()">Histograms</p>
+            <p id="scatterPlots" onclick="scatterPlots()">Scatter Plots</p>
+            <p id="pie" onclick="pieCharts()" class="active">Pie Charts</p>
+            <p id="violinPlots" onclick="violinPlots()">Violin Plots</p>
+            <p id="boxPlots" onclick="boxPlots()">Box Plots</p>
+        </div>
+
+
+
+
+
+        <div class="col-lg-9 col-md-6 context ">
+            <div style="margin-top: 9%; ">
+                <div class="content-bar ">
+                    <a href="#simple" class="active">Simple Pie Charts</a>
+                    <a href="#complex">Complex Pie Charts</a>
+                </div>
+                <section id="introduction-content">
+                    <section id="get-started-content">
+                        <h1>Pie Charts</h1>
+                        <span>Written By<span class="u"> Ved Panse</span>
+                        </span>
+                        <span style="color: gray; margin-left: 5%; ">Last Modified: 19 May 2022</span>
+
+                        <section class="marge-5 use-this"><br><br>
+                            <h2 id="simple">Simple Pie Charts</h2>
+                            <p>The pie chart is a circular representation of data. It can represent the data in proportional format.</p>
+                            <p>Let us plot one in Python. We will import our usual libraries and get started with them.</p>
+                            <div class="python"><span class="kw1">import</span> plotly.<span class="me1">express</span> <span class="kw1">as</span> px</div>
+
+                            <p>Let us import Asia's 2007 data using the gapminder() module provided by plotly. We will call this data df_asia.</p>
+                            <div class="python">df_asia = px.<span class="me1">data</span>.<span class="me1">gapminder</span><span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="me1">query</span><span class="br0">&#40;</span><span class="st0">&quot;continent == 'Asia' and year == 2007&quot;</span>
+                                <span class="br0">&#41;</span>
+                            </div>
+
+                            <p>Now, we will plot the pie chart. The color_discrete_sequence provides a theme color for the pie chart. Refer to this link
+                                <a target="_blank" href="https://plotly.com/python/builtin-colorscales/">this link</a> for the complete list of themes. We will be using the Rainbow theme. A pie chart can represent only one variable. This variable is called
+                                value. Let's plot the pie chart of the 'population' value.
+                            </p>
+                            <div class="python">pie = px.<span class="me1">pie</span><span class="br0">&#40;</span>df_asia, values=<span class="st0">&quot;pop&quot;</span>, names=<span class="st0">&quot;country&quot;</span>, title=<span class="st0">&quot;Population by countries in Asia&quot;</span>,<br
+                                /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;color_discrete_sequence=px.<span class="me1">colors</span>.<span class="me1">sequential</span>.<span class="me1">Rainbow</span><span class="br0">&#41;</span><br /> pie.
+                                <span class="me1">show</span><span class="br0">&#40;</span><span class="br0">&#41;</span></div>
+
+                            <img src="images/simple pie.png">
+                            <p>Your pie chart should look somewhat similar to this one.</p>
+                        </section>
+
+                        <section class="marge-5">
+                            <h2 id="complex">Pie Chart With Additional Features</h2>
+                            <p>You can add many features to your pie chart using Plotly's graph objects. Let us import the required module.</p>
+
+                            <div class="python"><span class="kw1">import</span> plotly.<span class="me1">graph_objects</span> <span class="kw1">as</span> go</div>
+
+                            <p>Let us create an array of colors that we could use on the pie chart. This would do nothing but simplify the code. Let us create a figure representing the number of students in a school who prefer a particular sport.</p>
+
+                            <div class="python">colors = <span class="br0">&#91;</span><span class="st0">'blue'</span>, <span class="st0">'green'</span>, <span class="st0">'black'</span>, <span class="st0">'purple'</span>, <span class="st0">'red'</span>, <span class="st0">'brown'</span>
+                                <span class="br0">&#93;</span><br />
+                                <br /> fig = go.<span class="me1">Figure</span><span class="br0">&#40;</span>data=<span class="br0">&#91;</span>go.<span class="me1">Pie</span><span class="br0">&#40;</span>labels=<span class="br0">&#91;</span>
+                                <span class="st0">&quot;Volleyball&quot;</span>, <span class="st0">&quot;Cricket&quot;</span>, <span class="st0">&quot;Football&quot;</span>, <span class="st0">&quot;Hockey&quot;</span>, <span class="st0">&quot;Badminton&quot;</span>,
+                                <span class="st0">&quot;Tennis&quot;</span><span class="br0">&#93;</span>,<br /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;values=<span class="br0">&#91;</span>
+                                <span class="nu0">110</span>, <span class="nu0">20</span>, <span class="nu0">100</span>, <span class="nu0">12</span>, <span class="nu0">23</span>, <span class="nu0">12</span><span class="br0">&#93;</span><span class="br0">&#41;</span>
+                                <span class="br0">&#93;</span><span class="br0">&#41;</span></div>
+                            <p>Here, the labels refer to the variables that are represented by the pie chart. The values refer to the corresponding values of labels. Let us update some features of this figure.</p>
+                            <div class="python">fig.<span class="me1">update_traces</span><span class="br0">&#40;</span>hoverinfo=<span class="st0">&quot;label+percent&quot;</span>, textfont_size=<span class="nu0">20</span>, textinfo=<span class="st0">'label+percent'</span>,<br
+                                /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; marker=<span class="kw2">dict</span><span class="br0">&#40;</span><br /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; colors=colors,
+                                <br /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; line=<span class="kw2">dict</span><span class="br0">&#40;</span>color=<span class="st0">'#ffffff'</span>, width=
+                                <span class="nu0">2</span><span class="br0">&#41;</span><br /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">&#41;</span><span class="br0">&#41;</span><br /> fig.
+                                <span class="me1">show</span><span class="br0">&#40;</span><span class="br0">&#41;</span></div>
+                            <p>
+                                Here, hoverinfo means the information shown when the mouse pointer hovers over the pie chart. The marker refers to the graphic (borders). The colors are set to the colors array. The borderline is set to #ffffff (white) and the width is 2. Also, note that
+                                you can write the color in RGB form. You'll find your graph to be somewhat similar to the one shown here.
+                            </p>
+
+                            <img src="images/complex pie.png">
+                            <p>Your pie chart should look somewhat similar to this one.</p>
+                        </section>
+                        <div style="width: 100%; margin-bottom: 5%; margin-top: 15%; ">
+                            <span style="text-align: left; display: inline-block; " class="next " onclick="scatterPlots() ">&larr; Scatter Plots</span>
+                            <span style="text-align: right; display:inline-block; position: absolute; right: 10%; " class="next " onclick="violinPlots() ">Violin Plots&rarr;</span>
+                        </div>
+                    </section>
+                </section>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js " integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN " crossorigin="anonymous "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js " integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q " crossorigin="anonymous "></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js " integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl " crossorigin="anonymous "></script>
+</body>
+<script src="functions.js "></script>
+
+</html>

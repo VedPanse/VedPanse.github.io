@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+    <title>Plotly</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="index.html">Plotly</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="#">Home</a>
+                <a class="nav-item nav-link active" href="#">Blogs <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="#">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <div class="header">
+        <a class="navbar-brand" href="index.html">Plotly</a>
+        <div class="header-right" onclick="openNav()">
+            <div class="menu"></div>
+            <div class="menu"></div>
+            <div class="menu"></div>
+        </div>
+    </div>
+
+    <div id="myNav" class="overlay-nav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+            <a onclick="getStarted()">Get Started</a>
+            <a onclick="lineGraphs()">Line Graphs</a>
+            <a onclick="barGraphs()" class="active">Bar Graphs</a>
+            <a onclick="histograms()">Histograms</a>
+            <p id="introduction" onclick="histograms()">Histograms</p>
+            <p id="scatterPlots" onclick="scatterPlots()">Scatter Plots</p>
+            <p id="pie" onclick="pieCharts()">Pie Charts</p>
+            <p id="violinPlots" onclick="violinPlots()">Violin Plots</p>
+            <p id="boxPlots" onclick="boxPlots()">Box Plots</p>
+        </div>
+    </div>
+
+    <div class="loc-band">
+        <a href="#single-query">Single Query&nbsp;&nbsp; <i class="fas fa-chevron-right"></i></a>
+        <a href="#multiple-query">Multiple Queries</a>
+    </div>
+    <div class="row main">
+        <div class="leftnav col-lg-3 col-md-6">
+            <br>
+            <p id="get-started" onclick="getStarted()">Get Started</p>
+            <p id="introduction" onclick="lineGraphs()">Line Graphs</p>
+            <p id="bar" onclick="barGraphs()" class="active">Bar Graphs</p>
+            <p id="introduction" onclick="histograms()">Histograms</p>
+            <p id="scatterPlots" onclick="scatterPlots()">Scatter Plots</p>
+            <p id="pie" onclick="pieCharts()">Pie Charts</p>
+            <p id="violinPlots" onclick="violinPlots()">Violin Plots</p>
+            <p id="boxPlots" onclick="boxPlots()">Box Plots</p>
+        </div>
+        <div class="col-lg-9 col-md-6 context">
+            <div style="margin-top: 9%;">
+                <div class="content-bar">
+                    <a href="#single-query" class="active">Single Query</a>
+                    <a href="#multiple-query">Multiple Queries</a>
+                </div>
+
+
+
+                <section id="introduction-content">
+                    <section id="get-started-content">
+                        <h1>Bar Graphs</h1>
+                        <span>Written By<span class="u"> Ved Panse</span>
+                        </span>
+                        <span style="color: gray; margin-left: 5%;">Last Modified: 18 May 2022</span>
+
+                        <section class="marge-5 use-this">
+                            <h2 id="single-query">Single query</h2>
+                            <p>'Single query' here refers to importing the dataset using a single query. </p>
+                            <p>We will use the gapminder function to import the required data.</p>
+
+                            <div class="python"><span class="kw1">import</span> plotly.<span class="me1">express</span> <span class="kw1">as</span> px<br />
+                                <br /> df_us = px.<span class="me1">data</span>.<span class="me1">gapminder</span><span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="me1">query</span><span class="br0">&#40;</span><span class="st0">&quot;country == 'United States'&quot;</span>
+                                <span class="br0">&#41;</span>
+                            </div>
+
+                            <p>In this program, we have imported only the data about the United States. It is similar to adding a filter to the data we need.</p>
+                            <p>Here, df_us is the dataset. Let us now plot the bar graph. We will select the x-axis to represent the "year" feature and the y-axis to represent the "population" or the "pop" attribute.</p>
+                            <p>Now, let us run the program. </p>
+
+                            <img src="images/single-query.png">
+
+                        </section>
+
+                        <section class="marge-5">
+                            <h2 id="multiple-query">Multiple Queries</h2>
+                            <p>Your output might be somewhat similar to that shown in the above image. It enables us to look at the given data from a different angle.</p>
+                            <div class="python">df_europe = px.<span class="me1">data</span>.<span class="me1">gapminder</span><span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="me1">query</span><span class="br0">&#40;</span><span class="st0">&quot;continent == 'Europe' and year == 2007 and pop &gt; 2.e6&quot;</span>
+                                <span class="br0">&#41;</span>
+                            </div>
+
+                            <p>Let us plot the graph now.</p>
+                            <div class="python">graph = px.<span class="me1">bar</span><span class="br0">&#40;</span>df_europe, y=<span class="st0">&quot;pop&quot;</span>, x=<span class="st0">&quot;country&quot;</span>, text=<span class="st0">&quot;pop&quot;</span>, color=
+                                <span class="st0">&quot;country&quot;</span><span class="br0">&#41;</span></div>
+
+                            <p>Here, the text attribute indicates the text of the graph; the color attribute (set to 'country') will produce different colors for countries.</p>
+                            <p>We can later update the attributes (like label, color, etc.) by the following using the '.update_traces' functionality.</p>
+
+
+                            <div class="python">graph.<span class="me1">update_traces</span><span class="br0">&#40;</span>texttemplate=<span class="st0">&quot;%{text:.2s}&quot;</span>, textposition=<span class="st0">&quot;outside&quot;</span><span class="br0">&#41;</span><br
+                                /> graph.
+                                <span class="me1">update_layout</span><span class="br0">&#40;</span>xaxis_tickangle=-<span class="nu0">45</span><span class="br0">&#41;</span></div>
+
+                            <p>The graph should look somewhat like this.</p>
+
+                            <img src="images/multiple-queries.png">
+                        </section>
+
+                        <div style="width: 100%; margin-bottom: 5%; margin-top: 15%;">
+                            <span class="next left" onclick="lineGraphs()">&larr; Line Graphs</span>
+                            <span class="next right" onclick="histograms()">Histograms&rarr;</span>
+                        </div>
+                    </section>
+                </section>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+<script src="functions.js"></script>
+
+</html>

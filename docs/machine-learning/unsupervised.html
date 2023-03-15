@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+    <title>Machine Learning</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="index.html">Machine Learning and Algorithms</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="https://vedpanse.com">Home</a>
+                <a class="nav-item nav-link active" href="https://vedpanse.com/static/blogs">Blogs <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="https://vedpanse.com#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <div class="header">
+        <a class="navbar-brand" href="index.html">Machine Learning and Algorithms</a>
+        <div class="header-right" onclick="openNav()">
+            <div class="menu"></div>
+            <div class="menu"></div>
+            <div class="menu"></div>
+        </div>
+    </div>
+
+    <div id="myNav" class="overlay-nav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+            <a onclick="getStarted()">Get Started</a>
+            <a onclick="eda()">Exploratory Data Analysis</a>
+            <a onclick="machineLearning()">Machine Learning</a>
+            <a onclick="supervised()">More About Supervised Learning</a>
+            <a onclick="unsupervised()" class="active">More About Unsupervised</a>
+            <a onclick="timeSeries()">Time Series Algorithms</a>
+            <a onclick="regression()">Regression</a>
+            <a onclick="clustering()">Clustering</a>
+            <a onclick="thankYou()">Thank You Note</a>
+        </div>
+    </div>
+
+    <div class="loc-band">
+        <a href="#getStarted">More About Unsupervised Learning&nbsp;&nbsp; <i class="fas fa-chevron-right"></i></a>
+        <a href="#advantages">Advantages&nbsp;&nbsp; <i class="fas fa-chevron-right"></i></a>
+        <a href="#disadvantage">A Disadvantage&nbsp;&nbsp; <i class="fas fa-chevron-right"></i></a>
+        <a href="#clustering">Clustering&nbsp;&nbsp; <i class="fas fa-chevron-right"></i></a>
+        <a href="#dimensionalReduction">Dimensional Reduction</a>
+    </div>
+    <div class="row main">
+        <div class="leftnav col-lg-3 col-md-6">
+            <br>
+            <p id="get-started" onclick="getStarted()">Get Started</p>
+            <p id="eda" onclick="eda()">Exploratory Data Analysis</p>
+            <p id="machineLearning" onclick="machineLearning()">Machine Learning</p>
+            <p id="supervised" onclick="supervised()">More About Supervised Learning</p>
+            <p id="unsupervised" onclick="unsupervised()" class="active">More About Unsupervised Learning</p>
+            <p id="timeSeries" onclick="timeSeries()">Time Series Algorithms</p>
+            <p id="regression" onclick="regression()">Regression</p>
+            <p id="clustering" onclick="clustering()">Clustering</p>
+            <p id="thankYou" onclick="thankYou()">Thank You Note</p>
+        </div>
+        <div class="col-lg-9 col-md-6 context">
+            <div style="margin-top: 9%;">
+                <div class="content-bar">
+                    <a href="#getStarted" class="active">More About Unsupervised Learning</a>
+                    <a href="#advantages">Advantages</a>
+                    <a href="#disadvantage">A Disadvantage</a>
+                    <a href="#clustering">Clustering</a>
+                    <a href="#dimensionalReduction">Dimensional Reduction</a>
+                </div>
+                <section id="introduction-content">
+                    <section id="get-started-content">
+                        <h1 id="getStarted">More About Unsupervised Learning</h1>
+                        <span>Written By<span class="u"> Ved Panse</span>
+                        </span>
+                        <span style="color: gray; margin-left: 5%;">Last Modified: 20 May 2022</span>
+                        <section class="marge-5 in-this">
+                            <p>Unsupervised Learning does not make use of historic data (labeled data). Instead, it is inspired by the patterns in data. These patterns can be co-relations between two features of the data, or the periodicity of the function.
+                            </p>
+                        </section>
+
+                        <section class="marge-5">
+                            <h2 id="advantages">Advantages</h2>
+                            <p>Unsupervised learning does not need human supervision and is self-complete.</p>
+                        </section>
+                        <section class="marge-5">
+                            <h2 id="disadvantage">A disadvantage</h2>
+                            <p>There is no way to check the accuracy of unsupervised learning.</p>
+                        </section>
+
+                        <section class="marge-5">
+                            <h2 id="clustering">Clustering</h2>
+                            <p>Clustering is somewhat similar to classification (in supervised learning). Elements can be classified into multiple 'clusters' based on multiple factors (as opposed to only two factors in classification).</p>
+                            <img src="https://cdn-images-1.medium.com/proxy/1*nykOoMQpu9GiODUU48Aesg.png">
+                            <p class="src">Image from <a href="https://cdn-images-1.medium.com/proxy/1*nykOoMQpu9GiODUU48Aesg.png">https://cdn-images-1.medium.com/proxy/1*nykOoMQpu9GiODUU48Aesg.png</a></p>
+                            <p>One of the most ubiquitous use cases is fake news detection algorithms. When a piece of news contains most of the factors in alignment with those of fake news, that piece of news is associated with fake news.</p>
+                        </section>
+
+                        <section class="marge-5">
+                            <h2 id="dimensionalReduction">Dimensional Reduction</h2>
+                            <p>As the name suggests, this process reduces some of the data. More particularly, it reduces the redundant information.</p>
+                            <p>For example, emails get filtered automatically into spam and non-spam folders. If you receive an email that has 4 factors in common with other spam emails but only 1 factor in common with non-spam emails, it will get redirected
+                                to the spam folder.</p>
+                        </section>
+
+                        <div class="foot-header">
+                            <span class="next left" onclick="supervised()">&larr;
+                                More About Supervised Learning</span>
+                            <span class="next right" onclick="timeSeries()">Time Series Algorithms &rarr;</span>
+                        </div>
+                    </section>
+                </section>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js " integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN " crossorigin="anonymous "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js " integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q " crossorigin="anonymous "></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js " integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl " crossorigin="anonymous "></script>
+</body>
+<script src="functions.js "></script>
+
+</html>
