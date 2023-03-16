@@ -309,6 +309,8 @@ div#contact textarea {
 }
 
 .btn-special {
+    width: 394px;
+    height: 166px;
     min-width: 100px;
     height: 25%;
     position: absolute;
