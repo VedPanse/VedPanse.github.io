@@ -300,7 +300,7 @@ div#contact textarea {
 .codepen {
     background-color: rgb(35, 35, 35);
     color: white;
-    min-height: 75vh;
+    min-height: 50vh;
     background-image: url('../TheArchive/images/bg.png');
 }
 
