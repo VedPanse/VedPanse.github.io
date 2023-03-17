@@ -328,3 +328,8 @@ div#contact textarea {
 #footer a:hover {
     text-decoration: underline;
 }
+
+.codepen p,
+.github p {
+    display: none;
+}
