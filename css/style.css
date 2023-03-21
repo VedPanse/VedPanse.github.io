@@ -292,8 +292,8 @@ div#contact textarea {
     position: relative;
 }
 
-.codepen h1,
-.github h1 {
+.codepen.independent h1,
+.github.independent h1 {
     font-family: 'IBM Plex Mono', monospace;
 }
 
@@ -327,9 +327,4 @@ div#contact textarea {
 
 #footer a:hover {
     text-decoration: underline;
-}
-
-.codepen p,
-.github p {
-    display: none;
 }
