@@ -35,11 +35,21 @@
         }
 
         img {
-            width: 100%;
+            width: 80%;
+            margin: 5%;
         }
 
         .col-lg-2 {
             margin-bottom: 5%;
+        }
+
+        p {
+            border-bottom: 2px solid black;
+            display: inline;
+        }
+
+        p:hover {
+            cursor: pointer;
         }
     </style>
 </head>
@@ -143,6 +153,7 @@
                 <a class="30"><img src="secret/pennstate.png"></a>
             </div>
         </div>
+        <p id="toggle">Toggle mode</p>
     </div>
 
     <!-- Optional JavaScript -->
@@ -197,6 +208,35 @@
         element.href = links[element.classList[0] - 1];
         element.target = "_blank";
     });
+
+    const acceptances = [1, 14, 20, 22, 23]
+    const rejections = [2, 8, 9, 19, 21]
+    const waitlist = [17, 18, 24]
+
+    var mode = "unshow";
+
+    document.querySelector("#toggle").addEventListener("click", () => {
+        if (mode === "unshow") {
+            mode = "show";
+            for (i = 0; i < acceptances.length; i++) {
+                document.querySelectorAll("[class='" + acceptances[i].toString() + "']").forEach((element) => {
+                    element.parentElement.style.backgroundColor = "green";
+                });
+            }
+
+            for (i = 0; i < rejections.length; i++) {
+                document.querySelectorAll("[class='" + rejections[i].toString() + "']").forEach((element) => {
+                    element.parentElement.style.backgroundColor = "red";
+                });
+            }
+
+            for (i = 0; i < waitlist.length; i++) {
+                document.querySelectorAll("[class='" + waitlist[i].toString() + "']").forEach((element) => {
+                    element.parentElement.style.backgroundColor = "gold";
+                });
+            }
+        }
+    })
 </script>
 
 </html>
