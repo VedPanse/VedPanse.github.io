@@ -15,11 +15,11 @@ body {
 }
 
 .nav-link {
-    font-size: 15px;
+    font-size: 16px;
 }
 
 section {
-    line-height: 2;
+    line-height: 1.15;
 }
 
 .navbar .btn-primary {
@@ -65,7 +65,7 @@ section {
 }
 
 .row.main .col-lg-2 a {
-    font-size: 12px;
+    font-size: 16px;
     color: #27282c;
     text-decoration: none;
     padding-left: 7%;
@@ -95,7 +95,7 @@ h1.main {
 }
 
 p.main {
-    font-size: 1.5rem;
+    font-size: 16px;
 }
 
 .row.main .col-lg-10 {
@@ -160,7 +160,7 @@ p.main {
 }
 
 li p {
-    font-size: 15px;
+    font-size: 16px;
 }
 
 @media screen and (max-width: 576px) {

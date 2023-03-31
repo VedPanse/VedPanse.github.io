@@ -328,3 +328,45 @@ div#contact textarea {
 #footer a:hover {
     text-decoration: underline;
 }
+
+.wrapper {
+    position: absolute;
+    overflow: hidden;
+    height: 100%;
+    min-height: 500px;
+    cursor: move;
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+}
+
+.wrapper:active {
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
+}
+
+.wrapper .container {
+    position: relative;
+    width: 90%;
+    max-width: 1000px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+
+.polka {
+    background: transparent;
+    background-image:
+        radial-gradient(white 7%, transparent 0),
+        radial-gradient(white 7%, transparent 0);
+    background-size: 30px 30px;
+    background-position: 0 0, 15px 15px;
+    position: absolute;
+    top: 10%;
+    left: 7%;
+    z-index: 9;
+    padding: 20px;
+    width: 7%;
+    height: 40%;
+}
