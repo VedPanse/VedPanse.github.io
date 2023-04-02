@@ -306,6 +306,7 @@ div#contact textarea {
 
 .github {
     background-color: rgb(205, 229, 252);
+    min-height: 50vh;
 }
 
 .btn-special {
