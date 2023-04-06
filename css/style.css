@@ -281,6 +281,7 @@ div#contact textarea {
         background-color: rgb(255, 255, 255, 0.7) !important;
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(10px);
+        max-width: 100vw;
     }
 
     #intro {
