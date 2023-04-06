@@ -32,13 +32,6 @@ body {
     padding: 0%;
 }
 
-/* Added new */
-#navbarNavAltMarkup {
-    background-color: white;
-}
-
-/* */
-
 .main-nav a.nav-link:hover {
     color: white !important;
     text-decoration: none !important;
@@ -280,6 +273,10 @@ div#contact textarea {
 @media only screen and (max-width: 500px) {
     #interests {
         margin-top: 20vh;
+    }
+
+    .navbar-nav {
+        background-color: white;
     }
 
     #intro {
