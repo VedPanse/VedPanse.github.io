@@ -32,6 +32,15 @@ body {
     padding: 0%;
 }
 
+.navbar.collapse {
+    display: flex;
+}
+
+.navbar.collapsing,
+.navbar.show {
+    background: white !important;
+}
+
 .navbar-collapse,
 .collapse {
     background-color: rgb(255, 255, 255, 0.7) !important;
