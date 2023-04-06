@@ -33,18 +33,11 @@ body {
 }
 
 /* Added new */
-.navbar-collapse {
+#navbarNavAltMarkup {
     background-color: white;
 }
 
 /* */
-
-.navbar-collapse,
-.collapse {
-    background-color: rgb(255, 255, 255, 0.7) !important;
-    width: 100%;
-    -webkit-backdrop-filter: blur(10px);
-}
 
 .main-nav a.nav-link:hover {
     color: white !important;
