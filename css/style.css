@@ -10,7 +10,12 @@ body {
 .sub-nav {
     background-color: rgb(255, 255, 255, 0.7) !important;
     backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(10px);
     /* border-bottom: rgba(0, 0, 0, 0.5); */
+}
+
+.sub-nav:before {
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .sub-nav .navbar-brand {
