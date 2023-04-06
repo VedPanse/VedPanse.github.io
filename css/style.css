@@ -284,6 +284,10 @@ div#contact textarea {
         max-width: 100vw;
     }
 
+    .nav-item.nav-link {
+        margin-left: 10%;
+    }
+
     #intro {
         position: relative !important;
         width: 100vw !important;
