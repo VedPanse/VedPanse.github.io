@@ -146,7 +146,8 @@ a.nav-link {
 }
 
 @media only screen and (max-width: 500px) {
-    .left-nav a, .left-nav b {
+    .left-nav a,
+    .left-nav b p {
         padding-left: 20px;
     }
 }
