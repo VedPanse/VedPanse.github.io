@@ -33,14 +33,10 @@ body {
 }
 
 /* Added new */
-.navbar.collapse {
-    display: flex;
+.navbar-collapse {
+    background-color: white;
 }
 
-.navbar.collapsing,
-.navbar.show {
-    background: white !important;
-}
 /* */
 
 .navbar-collapse,
