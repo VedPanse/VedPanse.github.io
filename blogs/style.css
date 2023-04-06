@@ -144,3 +144,9 @@ a.nav-link {
     color: #0070c9 !important;
     text-decoration: none !important;
 }
+
+@media only screen and (max-width: 500px) {
+    .left-nav a, .left-nav b {
+        padding-left: 20px;
+    }
+}
