@@ -99,7 +99,6 @@ div#backdrop .col-lg-3 {
 div#intro {
     position: relative;
     min-height: 100vh;
-    height: 100%;
 }
 
 div#centroid {
@@ -277,7 +276,14 @@ div#contact textarea {
     }
 
     #intro {
-        position: relative;
+        position: relative !important;
+        width: 100vw !important;
+        bottom: 50%;
+        transform: translate(0%, -40%);
+    }
+
+    #intro img {
+        display: none;
     }
 
     #centroid {
