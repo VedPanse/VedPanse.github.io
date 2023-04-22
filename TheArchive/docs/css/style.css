@@ -8,8 +8,9 @@ body {
 }
 
 .row.mane .col-lg-4 {
-    max-height: 100vh;
+    max-height: 80vh;
     overflow: scroll;
+    border-left: 1px solid rgb(255, 255, 255, 0.1);
 }
 
 .main {
@@ -206,12 +207,11 @@ a:active {
 }
 
 span.mark {
-    margin-right: 5px;
     padding: 5px 10px;
     font-size: 12px;
     text-transform: uppercase;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin: 5px;
+    display: inline-block;
 }
 
 span.program {
@@ -260,6 +260,8 @@ li {
 }
 
 .col-lg-4 .main {
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgb(255, 255, 255, 0.1);
     margin-bottom: 10%;
 }
 
