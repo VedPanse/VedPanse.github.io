@@ -19,3 +19,8 @@ document.querySelector("#all-blogs").addEventListener("click", () => {
     document.querySelector("#expanded-navbar").classList.toggle("hidden");
     document.querySelector("#overlay-hide").classList.toggle("hidden");
 });
+
+document.querySelector("#overlay-hide").addEventListener("click", () => {
+    document.querySelector("#expanded-navbar").classList.toggle("hidden");
+    document.querySelector("#overlay-hide").classList.toggle("hidden");
+});
