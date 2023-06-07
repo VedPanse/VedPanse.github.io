@@ -18,77 +18,90 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light sub-nav" id="whitie">
-        <a class="navbar-brand" href="../index.html">Ved Panse</a>
+        <a class="navbar-brand" href="../index.html">Ved Panse Blogs</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="../index.html#intro">About Me</a>
-                <a class="nav-item nav-link" href="../index.html#internships">Internships</a>
-                <a class="nav-item nav-link" href="../index.html#projects">Projects</a>
-                <a class="nav-item nav-link" href="../index.html#social">Social Work</a>
-                <a class="nav-item nav-link" href="../index.html#blogs">Blogs and Vlogs</a>
-                <a class="nav-item nav-link" href="../index.html#contact">Contact</a>
+                <a class="nav-item nav-link" id="all-blogs">All Blogs</a>
             </div>
         </div>
     </nav>
-    <div class="row">
-        <div class="col-lg-3 col-md-4 left-nav">
-            <b>
-                <p>Other blogs</p>
-            </b>
-            <a href="intro.html">Introductory Blog</a>
-            <a href="dilemma.html" class="tag">Programming Dilemma</a>
-            <a href="cricket.html">My Passion for Cricket</a>
-            <a href="findability.html">My Special Internship Experience</a>
+    <div id="expanded-navbar" class="hidden">
+        <div class="row" style="padding-left: 7%;">
+            <div class="col-lg-4 col-md-6">
+                <a href="intro.html">Introductory Blog</a>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <a href="cricket.html">My Passion for Cricket</a>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <a href="dilemma.html">Programming Dilemma</a>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <a href="findability.html">My Special Internship Experience</a>
+            </div>
         </div>
+    </div><br>
 
-        <div class="col-lg-9 col-md-8 col-sm-12">
-            <p class="title"><a class="parent" href="../index.html#blogs">Blogs</a>/<a href="dilemma.html">Programming
-                    Dilemma</a></p><br><br>
-            <h1>Programming Dilemma</h1>
-            <a class="tag" href="#">#dilemma</a>
-            <a class="tag" href="#">#programming</a>
-            <a class="tag" href="#">#SoftwareDevelopement</a><br><br>
-            <p>My opinions on where and how aspirant programmers should start, and remain productive throughout their
-                journey.</p><br>
-            <br>
-            <h3>Basics First</h3>
-            <p>Before making an entry into computers by learning programming languages, you should have a strong base
-                about how computers work. This knowledge will not only help you in your future projects, but will also
-                help you understand the interaction between programming languages and the Operating System. Having
-                general knowledge about the terminal, for example, will help to dive deeper into execution of code.</p>
-            <br>
-            <h3>Choosing a language</h3>
-            <p>Choosing a programming language has become difficult in the present day world, since a large number of
-                them are available readily. While each of them is better than the other in its unique way, it may not
-                necessarily mean that they are equally easy to learn. Python and JavaScript are usually opted by people
-                for starting their programming journey. I suggest that you must start with mark-up languages like HTML,
-                CSS and JS. After mastering them, proceeding towards learning Python is a good choice. If Python isn't
-                enough to quench your thirst, and you want to learn even more programming languages, Kotlin is a good
-                option because of its Cross-Platform feature.</p>
-            <br>
-            <h3>Staying productive</h3>
-            <p>After mastering at least one programming language, I suggest you to begin with solving problems that were
-                asked in job interviews. I personally tried this, and believe me, I was able to learn and understand
-                many new concepts. It is a whole different kind of exposure. When you solve one problem, you get instant
-                motivation to move on to the other. Thus, you gain self confidence. But if you get stuck anywhere, you
-                might get frustrated. This is what often happened to me.</p>
-            <p>So, all I did was take a break. In this break, I allowed my mind to refresh itself. I used to study in my
-                break, because I was in school when I started programming (and I obviously did not want to lag behind in
-                there). After a couple of days, or maybe weeks, I used to come back to programming with a fresh mind. It
-                was only then when I could solve the hard problems without any frustration.</p>
-            <br>
-            <h3>Communities</h3>
-            <p>You can also join popular communities like StackOverflow and GitHub to ask your questions to programmers
-                of the world, and also answer their questions. This is a promising opportunity for you to expand your
-                knowledge over a particular topic, and staying up-to-date with the news and trends.</p>
-            <p>So, this is it for this blog. Stay healthy, stay safe, and exercise your programming skills daily. All
-                the best!</p>
-        </div>
+    <div class="hidden" id="overlay-hide">
+
     </div>
+
+    <div id="blog">
+        <span>SOFTWARE</span>
+        <h1 id="title">Programming Dilemma</h1><br>
+        <p class="starter">My opinions on where and how aspirant programmers should start, and remain productive
+            throughout their journey.</p><br>
+        <img src="../images/programming-dilemma.jpeg">
+        <p class="desc">Credits: <a
+                href="https://www.pexels.com/photo/pink-white-black-purple-blue-textile-web-scripts-97077/"
+                target="_blank">Negative Space</a></p><br>
+
+        <h1>Basics First</h1>
+        <p>Before making an entry into computers by learning programming languages, you should have a strong base about
+            how computers work. This knowledge will not only help you in your future projects, but will also help you
+            understand the interaction between programming languages and the Operating System. Having general knowledge
+            about the terminal, for example, will help to dive deeper into execution of code.</p>
+        <br><br>
+
+
+        <h1>Choosing a language</h1>
+        <p>Choosing a programming language has become difficult in the present day world, since a large number of them
+            are available readily. While each of them is better than the other in its unique way, it may not necessarily
+            mean that they are equally easy to learn. Python and JavaScript are usually opted by people for starting
+            their programming journey.<br><br>I suggest that you must start with mark-up languages like HTML, CSS and
+            JS. After
+            mastering them, proceeding towards learning Python is a good choice. If Python isn't enough to quench your
+            thirst, and you want to learn even more programming languages, Kotlin is a good option because of its
+            Cross-Platform feature.</p><br><br>
+
+        <h1>Staying productive</h1>
+        <p>After mastering at least one programming language, I suggest you to begin with solving problems that were
+            asked in job interviews. I personally tried this, and believe me, I was able to learn and understand many
+            new concepts. It is a whole different kind of exposure. When you solve one problem, you get instant
+            motivation to move on to the other. Thus, you gain self confidence. But if you get stuck anywhere, you might
+            get frustrated. This is what often happened to me.<br><br>
+            So, all I did was take a break. In this break, I allowed my mind to refresh itself. I used to study in my
+            break, because I was in school when I started programming (and I obviously did not want to lag behind in
+            there). After a couple of days, or maybe weeks, I used to come back to programming with a fresh mind. It was
+            only then when I could solve the hard problems without any frustration.</p><br><br>
+
+        <h1>Communities</h1>
+        <p>You can also join popular communities like StackOverflow and GitHub to ask your questions to programmers of
+            the world, and also answer their questions. This is a promising opportunity for you to expand your knowledge
+            over a particular topic, and staying up-to-date with the news and trends.<br><br>So, this is it for this
+            blog. Stay healthy, stay safe, and exercise your programming skills daily. All the best!</p>
+        <br>
+        <hr>
+
+        <b>Share this article: </b>
+        <img src="../images/link.svg" id="share"><br><br>
+
+    </div>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -102,5 +115,6 @@
         crossorigin="anonymous"></script>
 </body>
 <script src="navbar.js"></script>
+<script src="blog.js"></script>
 
 </html>

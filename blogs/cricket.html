@@ -18,82 +18,83 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light sub-nav" id="whitie">
-        <a class="navbar-brand" href="../index.html">Ved Panse</a>
+        <a class="navbar-brand" href="../index.html">Ved Panse Blogs</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="../index.html#intro">About Me</a>
-                <a class="nav-item nav-link" href="../index.html#internships">Internships</a>
-                <a class="nav-item nav-link" href="../index.html#projects">Projects</a>
-                <a class="nav-item nav-link" href="../index.html#social">Social Work</a>
-                <a class="nav-item nav-link" href="../index.html#blogs">Blogs and Vlogs</a>
-                <a class="nav-item nav-link" href="../index.html#contact">Contact</a>
+                <a class="nav-item nav-link" id="all-blogs">All Blogs</a>
             </div>
         </div>
     </nav>
-    <div class="row">
-        <div class="col-lg-3 col-md-4 left-nav">
-            <b>
-                <p>Other blogs</p>
-            </b>
-            <a href="intro.html">Introductory Blog</a>
-            <a href="dilemma.html">Programming Dilemma</a>
-            <a href="cricket.html" class="tag">My Passion for Cricket</a>
-            <a href="findability.html">My Special Internship Experience</a>
-        </div>
-
-        <div class="col-lg-9 col-md-8 col-sm-12">
-            <p class="title"><a class="parent" href="../index.html#blogs">Blogs</a>/<a href="cricket.html">My Passion for
-                    Cricket</a></p><br><br>
-            <h1>My Passion for Cricket</h1>
-            <a class="tag" href="#">#sports</a>
-            <a class="tag" href="#">#cricket</a><br><br>
-            <p>I felt like sharing my interest in cricket with you. In this blog, I describe how I developed this
-                interest. From a young age, I was fascinated by the very idea of cricket: staying within 22 yards and
-                hitting the ball past 107 yards.</p><br>
-            <h3>Cricket and India</h3>
-            <p>In India, calling cricket "India's favorite game" would be underestimating the love of Indians towards
-                this sport. Many people even call cricket a religion in India. The number of people in India who play
-                cricket daily surpasses the holding capacity of all the grounds in India. Thus, many of them take to the
-                streets to play cricket.</p><br>
-
-            <h3>Cricket and me</h3>
-            <div class="quote">
-                <p>As my mother recalls it, my grandfather once took me on an evening stroll to show me a dog that lived
-                    just across the street (I was fascinated by dogs too). When we stepped out of the gate, we saw a
-                    group
-                    of kids playing cricket on the street. My young eyes were so fascinated as they played cricket that
-                    I
-                    compelled my grandfather to stay there for half an hour, holding me while I gazed at the kids
-                    playing.
-                </p>
+    <div id="expanded-navbar" class="hidden">
+        <div class="row" style="padding-left: 7%;">
+            <div class="col-lg-4 col-md-6">
+                <a href="intro.html">Introductory Blog</a>
             </div>
-            <p>After that incident, I had developed a strange habit. Whenever anyone came to my house, I used to throw a
-                ball at them and expect them to throw the ball back at me so that I could hit it with the bat.
-
-                Even today, all of my relatives ask me if I am still into cricket.</p><br>
-
-            <h3>School team</h3>
-            <p>It was no surprise to my family that I made it to my school's cricket team. I was the opening batsman for
-                my school because I was reputed for being a big hitter. However, this was not true when it came to
-                leather ball cricket.</p>
-
-            <br>
-
-            <h3>Cricket today</h3>
-            <p>As my interest in cricket was developing at a tender age, my passion for computers was rising too. As it
-                turned out, I liked computers more. Regardless, I still respect cricket as I used to before. I try to
-                stay as connected as I can.
-
-
-
-
-                Did you have such a passion for anything too? Let me know <a href="../index.html#contact">here</a>.</p>
+            <div class="col-lg-4 col-md-6">
+                <a href="cricket.html">My Passion for Cricket</a>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <a href="dilemma.html">Programming Dilemma</a>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <a href="findability.html">My Special Internship Experience</a>
+            </div>
         </div>
+    </div><br>
+
+    <div class="hidden" id="overlay-hide">
+
     </div>
+
+    <div id="blog">
+        <span>Sports</span>
+        <h1 id="title">My Passion for Cricket</h1><br>
+        <p class="starter">I felt like sharing my interest in cricket with you. In this blog, I describe how I developed
+            this interest. From a young age, I was fascinated by the very idea of cricket: staying within 22 yards and
+            hitting the ball past 107 yards.</p><br>
+        <img src="../images/cricket.jpeg">
+        <p class="desc">Credits: <a href="https://unsplash.com/photos/oDs_AxeR5g4" target="_blank">Alessandro
+                Bogliari</a></p><br>
+
+        <h1>Cricket and India</h1>
+        <p>In India, calling cricket "India's favorite game" would be underestimating the love of Indians towards this
+            sport. Many people even call cricket a religion in India. The number of people in India who play cricket
+            daily surpasses the holding capacity of all the grounds in India. Thus, many of them take to the streets to
+            play cricket.</p>
+        <br><br>
+
+
+        <h1>Cricket and me</h1>
+        <p>As my mother recalls it, my grandfather once took me on an evening stroll to show me a dog that lived just
+            across the street (I was fascinated by dogs too). When we stepped out of the gate, we saw a group of kids
+            playing cricket on the street. My young eyes were so fascinated as they played cricket that I compelled my
+            grandfather to stay there for half an hour, holding me while I gazed at the kids playing.<br><br>
+            After that incident, I had developed a strange habit. Whenever anyone came to my house, I used to throw a
+            ball at them and expect them to throw the ball back at me so that I could hit it with the bat. Even today,
+            all of my relatives ask me if I am still into cricket.</p><br><br>
+
+        <h1>School Team</h1>
+        <p>It was no surprise to my family that I made it to my school's cricket team. I was the opening batsman for my
+            school because I was reputed for being a big hitter. However, this was not true when it came to leather ball
+            cricket.</p><br><br>
+
+        <h1>Cricket today</h1>
+        <p>As my interest in cricket was developing at a tender age, my passion for computers was rising too. As it
+            turned out, I liked computers more. Regardless, I still respect cricket as I used to before. I try to stay
+            as connected as I can. Did you have such a passion for anything too? <a href="../index.html"
+                target="_blank">Let me know here.</a></p>
+        <br>
+        <hr>
+
+        <b>Share this article: </b>
+        <img src="../images/link.svg" id="share"><br><br>
+
+    </div>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -107,5 +108,6 @@
         crossorigin="anonymous"></script>
 </body>
 <script src="navbar.js"></script>
+<script src="blog.js"></script>
 
 </html>

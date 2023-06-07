@@ -18,61 +18,79 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light sub-nav" id="whitie">
-        <a class="navbar-brand" href="../index.html">Ved Panse</a>
+        <a class="navbar-brand" href="../index.html">Ved Panse Blogs</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="../index.html#intro">About Me</a>
-                <a class="nav-item nav-link" href="../index.html#internships">Internships</a>
-                <a class="nav-item nav-link" href="../index.html#projects">Projects</a>
-                <a class="nav-item nav-link" href="../index.html#social">Social Work</a>
-                <a class="nav-item nav-link" href="../index.html#blogs">Blogs and Vlogs</a>
-                <a class="nav-item nav-link" href="../index.html#contact">Contact</a>
+                <a class="nav-item nav-link" id="all-blogs">All Blogs</a>
             </div>
         </div>
     </nav>
-    <div class="row key">
-        <div class="col-lg-3 col-md-4 left-nav">
-            <b>
-                <p>Other blogs</p>
-            </b>
-            <a href="intro.html" class="tag">Introductory Blog</a>
-            <a href="dilemma.html">Programming Dilemma</a>
-            <a href="cricket.html">My Passion for Cricket</a>
-            <a href="findability.html">My Special Internship Experience</a>
-        </div>
-
-        <div class="col-lg-9 col-md-8 col-sm-12">
-            <p class="title"><a class="parent" href="../index.html#blogs">Blogs</a>/<a href="intro.html">Introductory
-                    Blog</a></p><br><br>
-            <h1>Introductory Blog</h1>
-            <a class="tag" href="#">#introduction</a><br><br>
-            <p>Hello everyone. My name is Ved Panse, and I am a student at Woodridge High School, Aurangabad, India.
-                Aurangabad might seem to be an inconspicuous city to some, but let me tell you, it is known as the 'City
-                of Gates', with about 52 gates!</p><br>
-            <p>I have an interminable list of what I find to be interesting. The activities that intrigue me the most
-                include:</p>
-            <div class="quote">
-                <ul>
-                    <li>Computer Science: Oh! I love this branch so much that I want to pursue my career in it.</li>
-                    <li>Cricket: You might already know how religiously cricket is followed in India. But let me tell
-                        you, the feeling of playing this game is magnificent.</li>
-                    <li>Mathematics: If it isn't the good ol' Mathematics that I find interesting.</li>
-                </ul>
+    <div id="expanded-navbar" class="hidden">
+        <div class="row" style="padding-left: 7%;">
+            <div class="col-lg-4 col-md-6">
+                <a href="intro.html">Introductory Blog</a>
             </div>
-            <br>
-            <p>I am a very foody person too, and I get that from my family. We usually set off to try something new from
-                the vast cuisine of India.</p><br>
-            <p>Talking about sports, do you know that there are more than 800 sports in the world? Well, I cannot play
-                all of them. But, the blood of a sportsperson runs down my family. Owing to this, I have actually played
-                3 different sports at the district level, and 7 different sports at the school level. So, if there is
-                any sportsperson reading this blog who might be interested to discuss sports with me, I'm always up for
-                it. You can contact me <a href="../index.html#contact">here</a>.</p>
+            <div class="col-lg-4 col-md-6">
+                <a href="cricket.html">My Passion for Cricket</a>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <a href="dilemma.html">Programming Dilemma</a>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <a href="findability.html">My Special Internship Experience</a>
+            </div>
         </div>
+    </div><br>
+
+    <div class="hidden" id="overlay-hide">
+
     </div>
+
+    <div id="blog">
+        <span>INTRODUCTION</span>
+        <h1 id="title">Hi, This is Ved.</h1><br>
+        <p class="starter">Hello everyone. My name is Ved Panse, and I am a student at Woodridge High School,
+            Aurangabad, India.</p><br>
+        <img src="../images/mecca_gate.jpeg">
+        <p class="desc">Mecca gate, Aurangabad. Credits: <a
+                href="https://commons.wikimedia.org/wiki/File:Mecca_gate_aurangabad.jpg" target="_blank">Wikimedia
+                Commons</a></p><br>
+
+        <p>Aurangabad might seem to be an inconspicuous city to some, but let me tell you, it is
+            known as the 'City of Gates', with about 52 gates! I have an interminable list of what I find to be
+            interesting. The activities that intrigue me the most
+            include: </p><br>
+        <div class="quote">
+            <ul>
+                <li>
+                    <b>Computers</b>, in which I want to pursue my career.
+                </li>
+                <li>
+                    <b>Cricket</b>, a sport that I religiously follow.
+                </li>
+                <li>
+                    <b>Mathematics</b>, the origin of every logical reasoning.
+                </li>
+            </ul>
+        </div><br><br>
+        <p>I am a very foody person too, and I get that from my family. We usually set off to try something new from the
+            vast cuisine of India.</p><br>
+        <p>Talking about sports, do you know that there are more than 800 sports in the world? Well, I cannot play all
+            of them. But, the blood of a sportsperson runs down my family. Owing to this, I have actually played 3
+            different sports at the district level, and 7 different sports at the school level. So, if there is any
+            sportsperson reading this blog who might be interested to discuss sports with me, I'm always up for it. You
+            can <a href="../index.html#contact" target="_blank">contact me here.</a></p><br>
+        <hr>
+
+        <b>Share this article: </b>
+        <img src="../images/link.svg" id="share"><br><br>
+
+    </div>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -86,5 +104,6 @@
         crossorigin="anonymous"></script>
 </body>
 <script src="navbar.js"></script>
+<script src="blog.js"></script>
 
 </html>

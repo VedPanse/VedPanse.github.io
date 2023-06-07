@@ -18,85 +18,97 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light sub-nav" id="whitie">
-        <a class="navbar-brand" href="../index.html">Ved Panse</a>
+        <a class="navbar-brand" href="../index.html">Ved Panse Blogs</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="../index.html#intro">About Me</a>
-                <a class="nav-item nav-link" href="../index.html#internships">Internships</a>
-                <a class="nav-item nav-link" href="../index.html#projects">Projects</a>
-                <a class="nav-item nav-link" href="../index.html#social">Social Work</a>
-                <a class="nav-item nav-link" href="../index.html#blogs">Blogs and Vlogs</a>
-                <a class="nav-item nav-link" href="../index.html#contact">Contact</a>
+                <a class="nav-item nav-link" id="all-blogs">All Blogs</a>
             </div>
         </div>
     </nav>
-    <div class="row">
-        <div class="col-lg-3 col-md-4 left-nav">
-            <b>
-                <p>Other blogs</p>
-            </b>
-            <a href="intro.html">Introductory Blog</a>
-            <a href="dilemma.html">Programming Dilemma</a>
-            <a href="cricket.html">My Passion for Cricket</a>
-            <a href="findability.html" class="tag">My Special Internship Experience</a>
-        </div>
-
-        <div class="col-lg-9 col-md-8 col-sm-12">
-            <p class="title"><a class="parent" href="../index.html#blogs">Blogs</a>/<a href="findability.html">My Special
-                    Internship Experience</a></p><br><br>
-            <h1>My Special Internship Experience</h1>
-            <a class="tag" href="#">#internship</a>
-            <a class="tag" href="#">#MachineLearning</a>
-            <a class="tag" href="#">#SoftwareDevelopement</a><br><br>
-
-            <p>I was an intern at Findability Sciences, Aurangabad. This blog narrates my experience and all I got
-                to learn there.</p>
-
-            <h3>Introduction</h3>
-            <p>Findability Sciences (FS) is a leading enterprise artificial intelligence company that operates in the
-                United States of America, India, and Japan. I was an intern at FS from 25th April to 25th May. Besides
-                meeting the awesome staff, I had a wonderful time learning there. I entered the office on the first day
-                with my eyes shining, excited to know more about my favorite subject. On the last day, I returned home
-                with more interest and curiosity about the topic.</p><br>
-
-            <h3>My Assignments</h3>
-            <p>Mr. Mandar Kulkarni was my supervisor. My first task was to prepare an Exploratory Data Analysis (EDA) on
-                an initiative by the Government of Maharashtra. It discussed how Defense and Aerospace Engineering
-                departments in Maharashtra could incorporate Artificial Intelligence (AI). I was bouncing from one desk
-                to another, talking with the staff, and hoping to camouflage in the corporate environment.</p>
-            <div class="quote">
-                <p>I felt like the spring festivals had begun - I had an infinite source of knowledge waiting - just
-                    that
-                    month.</p>
+    <div id="expanded-navbar" class="hidden">
+        <div class="row" style="padding-left: 7%;">
+            <div class="col-lg-4 col-md-6">
+                <a href="intro.html">Introductory Blog</a>
             </div>
-            <p>For my second assignment, Mr. Shravan Inamdar supervised me. This time, I had to work with real-time data
-                for one of our clients, who were from a big real-estate corporate. My task was to prepare reports on the
-                real-estate conditions in several Metropolitan Statistical Areas (MSAs) in the U.S. By the end of the
-                week, I had completed 4 reports about 26 MSAs. Mr. Shravan Inamdar was very impressed by my speed.</p>
-            <div class="quote">
-                <p>Initially, I was confused as I did not see any link connecting machine learning and report writing.
-                    But
-                    as I progressed, I understood that such reports make up about 20% of machine learning. Interesting,
-                    isn't it?</p>
+            <div class="col-lg-4 col-md-6">
+                <a href="cricket.html">My Passion for Cricket</a>
             </div>
-            <p>Next, it was time to learn something new: the basics of the coding part of machine learning. I have made
-                separate documentation of <a href="../docs/machine-learning/index.html">everything I learned there</a>.
-            </p>
-            <p>My other tasks included plotting graphs and sending them for presentations to clients. I could also add
-                my learnings to my technical blog called <a href="../TheArchive/index.html">The Techies</a>.</p>
-            <p>This internship opened up a new dimension for me. It was a dimension that changed my outlook toward AI as
-                something more than a career - it was a passion. I was quick to accept this passion, all thanks to the
-                wonderful team.</p><br>
-            <p>In the end, I would like to express my gratitude to Findability Sciences, Mr. Suresh Shakkarwar, Mr.
-                Mandar Kulkarni, and Mr. Shravan Inamdar for helping me to gain valuable insights about my 'aspiring'
-                career. Their guidance also helped me witness a corporate environment. I would also like to thank Mr.
-                Gajanan for serving me delicious lemonade and keeping me hydrated.</p>
+            <div class="col-lg-4 col-md-6">
+                <a href="dilemma.html">Programming Dilemma</a>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <a href="findability.html">My Special Internship Experience</a>
+            </div>
         </div>
+    </div><br>
+
+    <div class="hidden" id="overlay-hide">
+
     </div>
+
+    <div id="blog">
+        <span>Software</span>
+        <h1 id="title">My Special Internship Experience</h1><br>
+        <p class="starter">I was an intern at Findability Sciences, Aurangabad. This blog narrates my experience and all
+            I got to learn there.</p><br>
+        <img src="../images/findability.png"><br><br>
+
+        <h1>Introduction</h1>
+        <p>Findability Sciences (FS) is a leading enterprise artificial intelligence company that operates in the United
+            States of America, India, and Japan. I was an intern at FS from 25th April to 25th May. Besides meeting the
+            awesome staff, I had a wonderful time learning there. I entered the office on the first day with my eyes
+            shining, excited to know more about my favorite subject. On the last day, I returned home with more interest
+            and curiosity about the topic.</p>
+        <br><br>
+
+
+        <h1>My Assignments</h1>
+        <p>Mr. Mandar Kulkarni was my supervisor. My first task was to prepare an Exploratory Data Analysis (EDA) on an
+            initiative by the Government of Maharashtra. It discussed how Defense and Aerospace Engineering departments
+            in Maharashtra could incorporate Artificial Intelligence (AI). I was bouncing from one desk to another,
+            talking with the staff, and hoping to camouflage in the corporate environment.</p><br><br>
+
+        <div class="quote">
+            <p>I felt like the spring festivals had begun - I had an infinite source of knowledge waiting - just that
+                month.</p>
+        </div><br><br>
+
+        <p>For my second assignment, Mr. Shravan Inamdar supervised me. This time, I had to work with real-time data for
+            one of our clients, who were from a big real-estate corporate. My task was to prepare reports on the
+            real-estate conditions in several Metropolitan Statistical Areas (MSAs) in the U.S. By the end of the week,
+            I had completed 4 reports about 26 MSAs. Mr. Shravan Inamdar was very impressed by my speed.</p><br><br>
+
+        <div class="quote">
+            <p>Initially, I was confused as I did not see any link connecting machine learning and report writing. But
+                as I progressed, I understood that such reports make up about 20% of machine learning. Interesting,
+                isn't it?</p>
+        </div><br><br>
+
+        <p>Next, it was time to learn something new: the basics of the coding part of machine learning. I have made
+            separate documentation of <a href="../docs/machine-learning/index.html" target="_blank">everything I learned
+                there.</a>
+            My other tasks included plotting graphs and sending them for presentations to clients. I could also add my
+            learnings to my technical blog called <a href="../TheArchive/index.html" target="_blank">The Techies.</a>
+            This internship opened up a new dimension for me. It was a dimension that changed my outlook toward AI as
+            something more than a career - it was a passion. I was quick to accept this passion, all thanks to the
+            wonderful team.</p><br><br>
+
+        <p>In the end, I would like to express my gratitude to Findability Sciences, Mr. Suresh Shakkarwar, Mr. Mandar
+            Kulkarni, and Mr. Shravan Inamdar for helping me to gain valuable insights about my 'aspiring' career. Their
+            guidance also helped me witness a corporate environment. I would also like to thank Mr. Gajanan for serving
+            me delicious lemonade and keeping me hydrated.</p>
+        <br>
+        <hr>
+
+        <b>Share this article: </b>
+        <img src="../images/link.svg" id="share"><br><br>
+
+    </div>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -110,5 +122,6 @@
         crossorigin="anonymous"></script>
 </body>
 <script src="navbar.js"></script>
+<script src="blog.js"></script>
 
 </html>
