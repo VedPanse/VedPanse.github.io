@@ -128,7 +128,8 @@ div#internships,
 div#projects,
 div#contact,
 div#blogs,
-div#vlogs {
+div#vlogs,
+div#open-source {
     padding-left: 10%;
 }
 
@@ -170,7 +171,8 @@ label {
 #internships .card,
 #projects .card,
 #blogs .card,
-#vlogs .card {
+#vlogs .card,
+#open-source .card {
     width: 100%;
     padding: 20px;
     border: none;
@@ -182,7 +184,8 @@ label {
 #internships .row,
 #projects .row,
 #blogs .row ,
-#vlogs .row {
+#vlogs .row,
+#open-source .row {
     width: 95%;
 }
 
@@ -192,7 +195,8 @@ label {
 #projects .col-lg-4,
 #blogs .col-lg-3,
 #vlogs .col-lg-3,
-#vlogs .col-lg-12 {
+#vlogs .col-lg-12,
+#open-source .col-lg-6 {
     margin-top: 5%;
 }
 
@@ -201,7 +205,8 @@ label {
 #projects .card a:hover,
 #social a:hover,
 #blogs a:hover,
-#vlogs a:hover {
+#vlogs a:hover,
+#open-source a:hover {
     text-decoration: underline;
     color: #007bff;
 }
