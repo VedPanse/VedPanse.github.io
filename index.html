@@ -27,6 +27,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.4.3/mobile-detect.min.js"></script>
 </head>
 
+<style>
+    #dp-image {
+        max-inline-size: 100%;
+        block-size: auto;
+        aspect-ratio: 2/1;
+        object-fit: contain;
+        position: absolute; right: 0%;
+    }
+</style>
+
 <body>
     <!-- <div class="wrapper">
         <canvas id="stars"></canvas>
@@ -68,7 +78,7 @@
     </div>
 
     <div id="intro">
-        <img src="images/dp.jpeg" width="600vw" height="85%" style="position: absolute; right: 0%;">
+        <img src="images/dp.jpeg" width="600vw" height="85%" id="dp-image">
         <div id="centroid">
             <h1>Ved Panse</h1>
             <p>A freshman at the University of California, San Diego, with a dedicated focus on becoming a seasoned
@@ -400,7 +410,7 @@
             <div class="col-lg-4 col-md-6">
                 <div class="card">
                     <h4>CyberPad</h4>
-                    <p>Strategic note-taking web application. 
+                    <p>Strategic note-taking web application.
                     </p>
                     <a href="https://github.com/VedPanse/CyberPad" target="_blank">View my solutions
                         <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"
