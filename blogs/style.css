@@ -62,7 +62,7 @@ a.nav-link {
 
 .navbar-nav {
     position: absolute;
-    right: 27%; /* Fixing bug*/
+    right: 27%;
 }
 
 .navbar-brand {
