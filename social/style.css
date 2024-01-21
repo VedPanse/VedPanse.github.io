@@ -52,11 +52,11 @@ a.nav-link {
 
 .navbar-nav {
     position: absolute;
-    right: 7%;
+    right: 25%;
 }
 
 .navbar-brand {
-    margin-left: 7%;
+    margin-left: 25%;
 }
 
 .navbar {
