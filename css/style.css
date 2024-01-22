@@ -135,10 +135,6 @@ div#open-source {
     padding-left: 10%;
 }
 
-div#blogs div {
-    margin-bottom: 25px;
-}
-
 hr {
     background-color: black;
 }
@@ -199,7 +195,7 @@ label {
 #news .col-lg-6,
 #internships .col-lg-4,
 #projects .col-lg-4,
-#blogs .col-lg-3,
+#blogs .col-lg-4,
 #vlogs .col-lg-3,
 #vlogs .col-lg-12,
 #open-source .col-lg-6 {
