@@ -150,6 +150,11 @@ div#skills .indicator.active {
     border-left-color: #007bff;
 }
 
+a:active {
+    border: 1px dashed #007bff;
+    display: inline;
+}
+
 a:hover {
     text-decoration: none;
     color: white;
