@@ -212,3 +212,11 @@ a:hover {
 li {
     line-height: 3;
 }
+
+img#share {
+    width: 20px !important;
+}
+
+#share:hover {
+    cursor: pointer;
+}
