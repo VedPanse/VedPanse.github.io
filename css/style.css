@@ -134,6 +134,10 @@ div#open-source {
     padding-left: 10%;
 }
 
+div#blogs div {
+    margin-bottom: 25px;
+}
+
 hr {
     background-color: black;
 }
