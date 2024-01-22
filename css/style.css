@@ -408,3 +408,7 @@ div#contact textarea {
     width: 7%;
     height: 40%;
 }
+
+div#contact img {
+    width: 20px;
+}

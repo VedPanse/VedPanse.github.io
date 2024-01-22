@@ -9,7 +9,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin&display=swap" rel="stylesheet">
@@ -38,7 +38,8 @@
         max-inline-size: 100%;
         block-size: auto;
         object-fit: cover;
-        position: absolute; right: 0%;
+        position: absolute;
+        right: 0%;
     }
 </style>
 
@@ -717,50 +718,83 @@
     <br><br><br>
 
     <div id="contact">
-        <h1>Contact Me</h1>
-        <p>I'll try to revert to you via the email address that you provide below within a day. All
-            the chats are private.</p>
-        <main class="form-signin">
-            <form method="POST" action="https://formspree.io/f/xdoyprne">
+        <div class="row">
+            <div class="col-lg-6 col-md-12 col-sm-12" id="form-left">
+                <h1>Contact Me</h1>
+                <p>I'll try to revert to you via the email address that you provide below within a day. All
+                    the chats are private.</p>
+
                 <div class="row">
-                    <div class="col-lg-6 col-md-6">
-                        <div class="form-floating">
-                            <label for="floatingInput">Name</label>
-                            <input type="text" class="form-control" id="floatingInput" placeholder="Name" name="Name"
-                                required>
-
-                        </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <a href="https://codepen.io/VedPanse" target="_blank">
+                            <img src="images/codepen.png">
+                        </a>
                     </div>
-                    <div class="col-lg-6 col-md-6">
-                        <div class="form-floating">
-                            <label for="floatingPassword">Email ID</label>
-                            <input type="email" class="form-control" id="floatingPassword" placeholder="Email ID"
-                                name="Email" required>
-
-                        </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <a href="https://github.com/VedPanse" target="_blank">
+                            <img src="images/github.png">
+                        </a>
                     </div>
-                    <div class="col-lg-12">
-                        <div class="form-floating">
-                            <label for="floatingPassword">Message</label>
-                            <textarea type="message" class="form-control" id="floatingPassword" placeholder="Message"
-                                name="Message" required></textarea>
-
-                        </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <a href="https://linkedin.com/in/vedpanse" target="_blank">
+                            <img src="images/linkedin.png">
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <a href="https://twitter.com/VedPanse" target="_blank">
+                            <img src="images/x.png">
+                        </a>
                     </div>
                 </div>
-                <br>
-                <!-- <button class="btner" type="submit">Submit</button> -->
-                <button type="submit" class="btn btn-primary">Submit this message &nbsp;<svg focusable="false"
-                        preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-                        width="30" height="10" viewBox="0 0 20 20" aria-hidden="true" class="bx--btn__icon">
-                        <path d="M11.8 2.8L10.8 3.8 16.2 9.3 1 9.3 1 10.7 16.2 10.7 10.8 16.2 11.8 17.2 19 10z"></path>
-                    </svg></button>
-            </form>
-        </main>
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12" id="form-right">
+                <main class="form-signin">
+                    <form method="POST" action="https://formspree.io/f/xdoyprne">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6">
+                                <div class="form-floating">
+                                    <label for="floatingInput">Name</label>
+                                    <input type="text" class="form-control" id="floatingInput" placeholder="Name"
+                                        name="Name" required>
+
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <div class="form-floating">
+                                    <label for="floatingPassword">Email ID</label>
+                                    <input type="email" class="form-control" id="floatingPassword"
+                                        placeholder="Email ID" name="Email" required>
+
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="form-floating">
+                                    <label for="floatingPassword">Message</label>
+                                    <textarea type="message" class="form-control" id="floatingPassword"
+                                        placeholder="Message" name="Message" required></textarea>
+
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <!-- <button class="btner" type="submit">Submit</button> -->
+                        <button type="submit" class="btn btn-primary">Submit this message &nbsp;<svg focusable="false"
+                                preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"
+                                fill="currentColor" width="30" height="10" viewBox="0 0 20 20" aria-hidden="true"
+                                class="bx--btn__icon">
+                                <path d="M11.8 2.8L10.8 3.8 16.2 9.3 1 9.3 1 10.7 16.2 10.7 10.8 16.2 11.8 17.2 19 10z">
+                                </path>
+                            </svg></button>
+                    </form>
+                </main>
+            </div>
+
+        </div>
+
     </div><br><br>
     <div id="footer">
         <div class="foot-c">
-<p>&copy; 2017-2024 Ved Panse. All rights reserved.</p>
+            <p>&copy; 2017-2024 Ved Panse. All rights reserved.</p>
             <hr>
             <div class="row">
                 <div class="col-lg-6">
