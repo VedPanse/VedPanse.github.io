@@ -6,6 +6,7 @@ body {
     font-family: 'IBM Plex Sans', sans-serif;
     line-height: 2;
     max-width: 100vw !important;
+    overflow-x: hidden;
 }
 
 .sub-nav {
@@ -415,4 +416,12 @@ div#contact textarea {
 
 div#contact img {
     width: 20px;
+}
+
+#dp-image {
+    max-inline-size: 100%;
+    block-size: auto;
+    object-fit: cover;
+    position: absolute;
+    right: 0%;
 }
