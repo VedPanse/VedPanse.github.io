@@ -6,12 +6,12 @@
 <link rel="icon" type="image/x-icon" href="../images/logo_circle.png">
 <title>Video 1</title>
 <style>
+    html,
     body {
         margin: 0;
-        background: #000;
         font-family: 'IBM Plex Sans', sans-serif;
     }
-    
+
     video {
         position: fixed;
         top: 50%;
@@ -26,13 +26,12 @@
         background-size: cover;
         transition: 1s opacity;
     }
-    
+
     .stopfade {
         opacity: .5;
     }
-    
+
     #polina {
-        font-family: "Roboto";
         font-weight: 100;
         background: rgba(0, 0, 0, 0.3);
         color: white;
@@ -42,13 +41,13 @@
         float: right;
         font-size: 1.2rem;
     }
-    
+
     h1 {
         font-size: 3rem;
         text-transform: uppercase;
         margin-top: 0;
     }
-    
+
     #polina button {
         display: block;
         width: 80%;
@@ -62,11 +61,11 @@
         cursor: pointer;
         transition: .3s background;
     }
-    
+
     #polina button:hover {
         background: rgba(0, 0, 0, 0.5);
     }
-    
+
     a {
         display: inline-block;
         color: #fff;
@@ -75,31 +74,32 @@
         padding: .5rem;
         transition: .6s background;
     }
-    
+
     a:hover {
         background: rgba(0, 0, 0, 0.9);
     }
-    
+
     @media screen and (max-width: 500px) {
         div {
             width: 70%;
         }
     }
-    
+
     @media screen and (max-device-width: 800px) {
         html {
             background: url(../images/PIC\ 1.jpeg) #000 no-repeat center center fixed;
         }
+
         #bgvid {
             display: none;
         }
     }
-    
+
     p {
         line-height: 1.5;
         font-size: 18px;
     }
-    
+
     span {
         color: rgb(214, 214, 214);
     }
@@ -110,17 +110,19 @@
         <!-- 
       - Video needs to be muted, since Chrome 66+ will not autoplay video with sound.
       WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button  -->
-      <source src="High Jump/pic2.mp4" type="video/webm">
-      <source src="High Jump/pic2.mp4" type="video/mp4">
-      
-      </video>
+        <source src="High Jump/pic2.mp4" type="video/webm">
+        <source src="High Jump/pic2.mp4" type="video/mp4">
+
+    </video>
     <div id="polina">
         <h1>Video 1</h1>
-        <p>filmed in 2016
-            <p><a href="../index.html">Back to homepage</a>
-                <p>Oh yes! Cleared a height that I deemed good for my age (then) in the first attempt.<br><br>I didn't expect to jump this high. Seemed like I had improved.<br><br><span>District Level High Jump Competition (Association League)</span></p>
+        <p>filmed in 2019
+        <p><a href="../index.html">Back to homepage</a>
+        <p>Surprise success! Cleared a height I thought was good for my age on the first try. Didn't expect to jump that
+            high – definite improvement.<br><br><span>District Level High Jump Competition (Association
+                League)</span></p>
 
-                <button>Pause</button>
+        <button>Pause</button>
     </div>
 </body>
 <script>
@@ -137,7 +139,7 @@
         vid.classList.add("stopfade");
     }
 
-    vid.addEventListener('ended', function() {
+    vid.addEventListener('ended', function () {
         // only functional if "loop" is removed 
         vid.pause();
         // to capture IE10
@@ -145,7 +147,7 @@
     });
 
 
-    pauseButton.addEventListener("click", function() {
+    pauseButton.addEventListener("click", function () {
         vid.classList.toggle("stopfade");
         if (vid.paused) {
             vid.play();
