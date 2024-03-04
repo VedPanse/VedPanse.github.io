@@ -27,7 +27,7 @@ div#portfolio strong {
 }
 
 div#portfolio .details {
-    line-height: 1;
+    line-height: 1.5;
 }
 
 div#portfolio .date {
@@ -36,4 +36,10 @@ div#portfolio .date {
 div#portfolio li {
     line-height: 1.5;
     margin-bottom: 7px;
+}
+
+div#portfolio a:hover {
+    color: #4a77d4;
+    text-decoration: underline;
+    text-underline-position: under;
 }

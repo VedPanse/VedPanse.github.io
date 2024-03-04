@@ -154,10 +154,10 @@ a.nav-item.nav-link:active {
     border: none;
 }
 
-a:active {
-    border: 1px dashed #007bff;
-    display: inline;
-}
+/*a:active {*/
+/*    border: 1px dashed #007bff;*/
+/*    display: inline;*/
+/*}*/
 
 a:hover {
     text-decoration: none;
