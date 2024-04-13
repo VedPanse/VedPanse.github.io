@@ -1,0 +1,56 @@
+html,
+body {
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
+    background-color: rgb(25, 25, 25);
+    font-family: "IBM Plex Sans", sans-serif;
+    ;
+}
+
+nav {
+    background-color: #282828;
+}
+
+.nav-item.nav-link {
+    color: white;
+    margin-right: 50px;
+}
+
+.navbar-brand {
+    color: white;
+}
+
+.navbar-nav {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+#title {
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-color: #9eadf1;
+    background-image: linear-gradient(90deg, #edf4c9, #9eadf1);
+    background-size: 100%;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    font-size: 102px;
+    transform: translate(-50%, -50%);
+}
+
+div.content-maximizer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+p {
+    color: #bcbec0;
+    font-size: 1.25rem;
+    transform: translate(-20%, -300%);
+}
