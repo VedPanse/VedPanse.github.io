@@ -143,4 +143,8 @@ section#projects .lang-used {
     section#projects a.completed {
         float: none;
     }
+
+    section#projects div.card.bottom {
+        border-bottom: 1px solid rgb(0, 0, 0, 0.1) !important;
+    }
 }
