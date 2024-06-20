@@ -21,6 +21,7 @@ section#blog-content b {
     font-size: 22px;
 }
 
+/* Handle CSS */
 @media only screen and (max-width: 800px) {
     section#blog-content {
         width: 80vw !important;
