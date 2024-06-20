@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+    <title>Plotly</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="index.html">Plotly</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="#">Home</a>
+                <a class="nav-item nav-link active" href="#">Blogs</a>
+                <a class="nav-item nav-link" href="#">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <div class="header">
+        <a class="navbar-brand" href="index.html">Plotly</a>
+        <div class="header-right" onclick="openNav()">
+            <div class="menu"></div>
+            <div class="menu"></div>
+            <div class="menu"></div>
+        </div>
+    </div>
+
+    <div id="myNav" class="overlay-nav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+            <a onclick="getStarted()">Get Started</a>
+            <a onclick="lineGraphs()">Line Graphs</a>
+            <a onclick="barGraphs()">Bar Graphs</a>
+            <a onclick="histograms()" class="active">Histograms</a>
+            <p id="introduction" onclick="histograms()">Histograms</p>
+            <p id="scatterPlots" onclick="scatterPlots()">Scatter Plots</p>
+            <p id="pie" onclick="pieCharts()">Pie Charts</p>
+            <p id="violinPlots" onclick="violinPlots()">Violin Plots</p>
+            <p id="boxPlots" onclick="boxPlots()">Box Plots</p>
+        </div>
+    </div>
+
+    <div class="loc-band">
+        <a href="#histogram">Histograms</a>
+    </div>
+    <div class="row main">
+        <div class="leftnav col-lg-3 col-md-6">
+            <br>
+            <p id="get-started" onclick="getStarted()">Get Started</p>
+            <p id="line" onclick="lineGraphs()">Line Graphs</p>
+            <p id="bar" onclick="barGraphs()">Bar Graphs</p>
+            <p id="histogram" onclick="histograms()" class="active">Histograms</p>
+            <p id="scatterPlots" onclick="scatterPlots()">Scatter Plots</p>
+            <p id="pie" onclick="pieCharts()">Pie Charts</p>
+            <p id="violinPlots" onclick="violinPlots()">Violin Plots</p>
+            <p id="boxPlots" onclick="boxPlots()">Box Plots</p>
+        </div>
+
+
+
+
+
+        <div class="col-lg-9 col-md-6 context">
+            <div style="margin-top: 9%;">
+                <div class="content-bar">
+                    <a href="#histogram" class="active">Histograms</a>
+                </div>
+                <section id="introduction-content">
+                    <section id="get-started-content">
+                        <h1 id="histogram">Histograms</h1>
+                        <span>Written By<span class="u"> Ved Panse</span>
+                        </span>
+                        <span style="color: gray; margin-left: 5%;">Last Modified: 18 May 2022</span>
+
+                        <section class="marge-5 use-this">
+                            <h2 id="2D">Histograms</h2>
+                            <p>Histograms represent the distribution of data. Just like other graphics, they are vital to predicting many outcomes.</p>
+                            <p>Let us start by importing the modules we will need.</p>
+                            <div class="python"><span class="kw1">import</span> plotly.<span class="me1">express</span> <span class="kw1">as</span> px<br />
+                                <span class="kw1">import</span> numpy <span class="kw1">as</span> np</div>
+                            <p>In this example, we will not be importing any dataset. Instead, we will be creating our own using NumPy. This dataset represents the outcomes when two dice are rolled simultaneously 5000 times. The data is random so the results
+                                will be different most of the time.</p>
+
+                            <div class="python">dice_1 = np.<span class="kw3">random</span>.<span class="me1">randint</span><span class="br0">&#40;</span><span class="nu0">1</span>, <span class="nu0">7</span>, <span class="nu0">5000</span><span class="br0">&#41;</span> &nbsp;
+                                <span class="co1"># Dice will be rolled 5000 times</span><br /> dice_2 = np.<span class="kw3">random</span>.<span class="me1">randint</span><span class="br0">&#40;</span><span class="nu0">1</span>, <span class="nu0">7</span>,
+                                <span class="nu0">5000</span>
+                                <span class="br0">&#41;</span><br />
+                                <br /> dice_sum = dice_2 + dice_1</div>
+
+                            <p>Let us plot this data on a histogram by using plotly.express.</p>
+                            <div class="python">fig = px.<span class="me1">histogram</span><span class="br0">&#40;</span>dice_sum, nbins=<span class="nu0">11</span>, labels=<span class="br0">&#123;</span><span class="st0">&quot;value&quot;</span>: <span class="st0">&quot;Dice Roll&quot;</span>
+                                <span class="br0">&#125;</span>,<br /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;title=<span class="st0">&quot;5000 Dice rolls&quot;</span>, marginal=<span class="st0">&quot;violin&quot;</span>,<br
+                                /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;color_discrete_sequence=<span class="br0">&#91;</span><span class="st0">'green'</span><span class="br0">&#93;</span><span class="br0">&#41;</span>                                &nbsp;<span class="co1"># nbins: means the number of experiments to be done</span></div>
+
+                            <p>Let us configure some of the properties of the above graph.</p>
+
+
+                            <div class="python">fig.<span class="me1">update_layout</span><span class="br0">&#40;</span><br /> &nbsp; &nbsp; xaxis_title_text=<span class="st0">&quot;Dice rolls&quot;</span>,<br /> &nbsp; &nbsp; yaxis_title_text=<span class="st0">&quot;Dice sum&quot;</span>,<br
+                                /> &nbsp; &nbsp; bargap=<span class="nu0">0.2</span>,<br /> &nbsp; &nbsp; showlegend=<span class="kw2">False</span><br />
+                                <span class="br0">&#41;</span><br /> fig.<span class="me1">show</span><span class="br0">&#40;</span><span class="br0">&#41;</span></div>
+
+                            <img src="images/histrogram.png">
+                        </section>
+
+
+
+                        <div style="width: 100%; margin-bottom: 5%; margin-top: 15%;">
+                            <span class="next left" onclick="barGraphs()">&larr; Bar Graphs</span>
+                            <span class="next right" onclick="scatterPlots()">Scatter Plots&rarr;</span>
+                        </div>
+                    </section>
+                </section>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+<script src="functions.js"></script>
+
+</html>

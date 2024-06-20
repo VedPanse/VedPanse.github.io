@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <meta name="description"
+        content="The Techies was founded to provide solutions to some common problems that most of the early programmers struggle to solve. Through days of hardwork and research, I was able to solve all the problems and I want to make it easily available to the rest of the world.">
+    <meta name="keywords"
+        content="The Techies, Archive, Documentations, Solutions, How, How To, HTML, CSS, JS, Python, Syntax Highlighting, Coding, Code, Web, Designing, Development">
+    <meta name="author" content="Ved Panse">
+
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Martel+Sans&display=swap" rel="stylesheet">
+
+    <title>The Techies</title>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="../index.html">The Techies</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="../index.html">Home</a>
+                <a class="nav-item nav-link" href="../docs.html">Documentations</a>
+                <a class="nav-item nav-link btn-blue" href="../submit.html">Submit</a>
+            </div>
+        </div>
+    </nav><br><br>
+    <div class="main">
+
+        <div class="blog">
+            <h1 class="gradient title">Creating a working login form with encrypted password authorization</h1>
+            <p class="author">Ved Panse &bull; 14 June, 2023</p>
+
+            <p>In this documentation, we will create a login form through HTML and CSS to log in to a different page
+                using Python. We will also encrypt a password, making the login process safe.</p>
+
+            <h2>Creating a login form</h2>
+            <p>Create an index.html file and create a login form. The following is the code for a simple login form
+                created using Bootstrap HTML and CSS.</p>
+
+            <div class="python">
+                <a href="downloadFiles/login.html" download style="color: white;"
+                    onmouseover="this.style.color='white'; this.style.backgroundColor='transparent'">Download</a>
+            </div>
+            <p>In this code, the name attribute in the input tag is the most important. We will use these names in our
+                Python file to access the values of the input fields.</p>
+            <br>
+            <img src="../images/login.png"><br><br>
+
+            <h2>Arranging the files</h2>
+            <p>Next, we will set up our file tree to interlink our code according to Python's Flask library's
+                convention. Create two folders—templates and static—within the parent folder and an independent main.py
+                Python file in the parent folder. Move the index.html file into the templates folder and any other
+                non-HTML file (including CSS, JS, etc.) into the static folder.
+                This is how your arrangement should look like.</p><br>
+
+            <img src="../images/arrangement.png"><br><br>
+            <p>Create two HTML files within the templates folder with the titles success.html and fail.html. If the
+                login fails, fail.html will be programmed to load. If login passes, success.html will load.
+
+                Create another file called auth_crypt.txt, which will contain the encrypted password.</p>
+
+            <h2>main.py</h2>
+            <p>Now, we program the brain of the code. For that, we will use the boilerplate for Flask framework, a
+                framework in Python that works at the intersection of Python and HTML and is used to program the back
+                end of a website.</p>
+            <p>Here is the code:</p>
+
+            <div class="python"><span class="kw1">from</span> flask <span class="kw1">import</span> Flask,
+                render_template, request<br />
+                <span class="kw1">import</span> bcrypt<br />
+                <br />
+                ENCRYPTED_PATH = <span class="st0">'auth_crypt.txt'</span><br />
+                <br />
+                <br />
+                app = Flask<span class="br0">&#40;</span>__name__<span class="br0">&#41;</span><br><br><br>
+                <span class="kw1">def</span> authenticate<span class="br0">&#40;</span>entered_password<span
+                    class="br0">&#41;</span>:
+                <div class="displace">
+                    fs = <span class="me1">open</span>(ENCRYPTED_PATH, <span class="st0">'r'</span>)<br>
+                    saved_hash = fs.<span class="me1">read</span>()<br>
+                    fs.<span class="me1">close</span>()<br><br>
+
+                    enteredBytes = entered_password.<span class="me1">encode</span>(<span
+                        class="st0">'utf-8'</span>)<br><br>
+
+                    result = bcrypt.<span class="me1">checkpw</span>(enteredBytes, <span
+                        class="kw1">eval</span>(saved_hash))<br>
+                    <span class="kw1">return</span> result<br><br><br>
+                </div>
+
+                @app.<span class="me1">route</span><span class="br0">&#40;</span><span
+                    class="st0">&quot;/&quot;</span><span class="br0">&#41;</span><br />
+                <span class="kw1">def</span> say_hello<span class="br0">&#40;</span><span class="br0">&#41;</span>:
+                <div class="displace">
+                    <span class="kw1">return</span> render_template<span class="br0">&#40;</span><span
+                        class="st0">&quot;index.html&quot;</span><span class="br0">&#41;</span>
+                </div><br><br>
+
+                @app.<span class="me1">route</span><span class="br0">&#40;</span><span class="st0">&quot;/&quot;</span>,
+                methods=<span class="br0">&#91;</span><span class="st0">'GET'</span>, <span
+                    class="st0">'POST'</span><span class="br0">&#93;</span><span class="br0">&#41;</span><br />
+                <span class="kw1">def</span> receive_data<span class="br0">&#40;</span><span class="br0">&#41;</span>:
+
+                <div class="displace">
+                    <span class="co1"># receives data submitted via the form</span><br />
+                    username = request.<span class="me1">form</span>.<span class="me1">get</span><span
+                        class="br0">&#40;</span><span class="st0">&quot;username&quot;</span><span
+                        class="br0">&#41;</span><br />
+                    password = request.<span class="me1">form</span>.<span class="me1">get</span><span
+                        class="br0">&#40;</span><span class="st0">&quot;password&quot;</span><span
+                        class="br0">&#41;</span><br />
+                    <br />
+                    <span class="kw1">if</span> authenticate<span class="br0">&#40;</span>password<span
+                        class="br0">&#41;</span> <span class="kw1">and</span> username == <span class="st0">'Ved
+                        Panse'</span>:
+                    <div class="displace">
+                        <span class="kw1">return</span> render_template<span class="br0">&#40;</span><span
+                            class="st0">&quot;success.html&quot;</span><span class="br0">&#41;</span>
+                    </div>
+                    <span class="kw1">else</span>:
+                    <div class="displace">
+                        <span class="kw1">return</span> render_template<span class="br0">&#40;</span><span
+                            class="st0">&quot;fail.html&quot;</span><span class="br0">&#41;</span>
+                    </div>
+                </div>
+            </div>
+
+            <p>
+                The say_hello function returns the index.html page when the program is booted.
+
+                Next, when the login form is filled, the main.py program will receive a post function. For that, the
+                get_data function receives the data from the form and extracts the text content of the input fields
+                using their name tag.
+            </p><br>
+
+            <p>Here, the email id is stored in the variable name email_id and password, under the password variable.
+
+                The authenticate function is used to authorize the password. Use it to encrypt the password that you
+                want to set and store the encrypted password in the auth_crypt.txt file.</p><br>
+
+            <p>Lastly, within the get_data function, we call the authenticate function to validate the password entered.
+                If the password is correct, we return success.html. If the password is incorrect, we return fail.html.
+
+                This way, we have created a working login form that works by running main.py and visiting the link on
+                which it starts running.</p>
+            <br>
+            <div class="row footer">
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <a href="performingEDA.html" style="text-align: right;">Exploratory Data Analysis &#8594;</a>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <a href="contactForm.html" style="text-align: right;">Contact Form &#8594;</a>
+                </div>
+            </div>
+
+
+        </div><br><br>
+
+    </div>
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

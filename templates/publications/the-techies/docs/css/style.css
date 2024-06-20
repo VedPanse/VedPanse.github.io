@@ -1,0 +1,278 @@
+html,
+body {
+    /* background-image: url(../../images/bg.png); */
+    background-color: rgb(25, 25, 25);
+    color: white;
+    line-height: 2;
+    max-height: 100vh;
+}
+
+.row.mane .col-lg-4 {
+    max-height: 80vh;
+    overflow: scroll;
+    border-left: 1px solid rgb(255, 255, 255, 0.1);
+}
+
+.main {
+    font-family: 'Martel Sans', sans-serif;
+    width: 50%;
+    margin: auto;
+    margin-bottom: 5%;
+}
+
+.navbar-dark {
+    background-color: #282828 !important;
+}
+
+.nav-item.nav-link {
+    color: white !important;
+    font-size: 14px;
+    margin-right: 15%;
+}
+
+.nav-item.nav-link:hover {
+    text-decoration: underline;
+}
+
+.nav-item.nav-link:active {
+    border: 1px solid white !important;
+}
+
+.navbar-nav {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+.gradient {
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-color: #9eadf1;
+    background-image: linear-gradient(90deg, #EAECC6, #2BC0E4);
+    background-size: 100%;
+    display: inline-block;
+}
+
+#start {
+    width: 100vw;
+    min-height: 100vh;
+    position: relative;
+}
+
+#start .row {
+    position: absolute;
+    top: 40%;
+    transform: translate(0%, -50%);
+}
+
+.btn-blue {
+    color: white;
+    background-color: #405BFF;
+    min-width: 121px;
+    min-height: 43px;
+    border: transparent;
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.btn-blue:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+a {
+    color: white;
+}
+
+a:hover {
+    color: white;
+}
+
+div.python {
+    font-family: monospace;
+    color: white;
+    background-color: #333333;
+    font-family: SF Mono, SFMono-Regular, ui-monospace, Menlo, monospace;
+    font-size: .88235rem;
+    letter-spacing: -0.027em;
+    line-height: 1.66667;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 5%;
+}
+
+.python a:link {
+    color: #000060;
+}
+
+.python a:hover {
+    background-color: #f0f000;
+}
+
+.python .imp {
+    color: red;
+}
+
+.python .kw1 {
+    color: #ff7ab2;
+}
+
+.python .kw2 {
+    color: #008000;
+}
+
+.python .kw3 {
+    color: #dc143c;
+}
+
+.python .kw4 {
+    color: #0000cd;
+}
+
+.python .co1 {
+    color: #808080;
+    font-style: italic;
+}
+
+.python .coMULTI {
+    color: #808080;
+    font-style: italic;
+}
+
+.python .es0 {
+    color: #000099;
+    font-weight: bold;
+}
+
+.python .br0 {
+    color: white;
+}
+
+.python .sy0 {
+    color: #66cc66;
+}
+
+.python .st0 {
+    color: #dabaff;
+}
+
+.python .nu0 {
+    color: #d9c97c;
+}
+
+.python .me1 {
+    color: #7ec699;
+}
+
+.python span.xtra {
+    display: block;
+}
+
+div.blog {
+    width: 100%;
+    margin: auto;
+    max-width: 46.875rem
+}
+
+.blog p {
+    color: #bcbec0;
+}
+
+span.html {
+    color: #ff386b;
+    background-color: #ff386b1a;
+}
+
+span.python {
+    color: #fff238;
+    background-color: #fff2381a;
+}
+
+.blog a {
+    color: #7084ff;
+}
+
+.blog a:hover {
+    text-decoration: underline;
+}
+
+.blog a:active {
+    border: 1px solid white;
+}
+
+a:active {
+    border: 1px solid white !important;
+}
+
+span.mark {
+    padding: 5px 10px;
+    font-size: 12px;
+    text-transform: uppercase;
+    margin: 5px;
+    display: inline-block;
+}
+
+span.program {
+    color: #3dd6f5;
+    background-color: #2dd6f51a;
+}
+
+span.ml {
+    color: #3df549;
+    background-color: #3df5491a;
+}
+
+span.alg {
+    color: #803df5;
+    background-color: #803df51a;
+}
+
+p.author {
+    color: #bcbec0;
+    margin-bottom: 5%;
+}
+
+.title.gradient {
+    font-size: 60px !important;
+}
+
+h2 {
+    margin-top: 10%;
+}
+
+pre {
+    color: white;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+li {
+    color: #bcbec0;
+}
+
+.blog p b {
+    color: white;
+}
+
+.col-lg-4 .main {
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgb(255, 255, 255, 0.1);
+    margin-bottom: 10%;
+}
+
+div.row.footer {
+    margin-top: 15%;
+}
+
+p.src {
+    border-bottom: 1px solid rgb(255, 255, 255, 0.5);
+}
+
+.python .displace {
+    padding-left: 40px;
+}

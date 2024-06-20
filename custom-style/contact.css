@@ -1,0 +1,30 @@
+/* CONTACT */
+section#contact h2 {
+    color: gray;
+    font-weight: 300;
+}
+
+textarea {
+    min-height: 100px;
+}
+
+input, textarea {
+    border: none !important;
+    border-radius: 0 !important;
+    background-color: transparent !important;
+    border-bottom: 1px solid black !important;
+    display: block !important;
+    margin-bottom: 5%;
+    height: 40px;
+    width: 80% !important;
+}
+
+
+input::placeholder, textarea::placeholder {
+    color: black !important;
+}
+
+section#contact {
+    min-height: 50vh;
+    height: 100%;
+}

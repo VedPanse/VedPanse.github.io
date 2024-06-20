@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+    <title>Algorithms Explained</title>
+       <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="../../images/logo_circle.png">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="index.html">Algorithms Explained</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="#">Home</a>
+                <a class="nav-item nav-link active" href="#">Blogs</a>
+                <a class="nav-item nav-link" href="#">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <div class="header">
+        <a class="navbar-brand" href="index.html">Algorithms Explained</a>
+        <div class="header-right" onclick="openNav()">
+            <div class="menu"></div>
+            <div class="menu"></div>
+            <div class="menu"></div>
+        </div>
+    </div>
+
+    <div id="myNav" class="overlay-nav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+            <a onclick="home()">Home</a>
+            <a onclick="getStarted()">Get Started</a>
+            <a onclick="introduction()">Introduction</a>
+            <a onclick="searches()">Searches</a>
+            <a onclick="bigo()">The Big O Notation</a>
+            <a onclick="arrays_lists()">Algorithms for Arrays and Lists</a>
+            <a onclick="recursion()">Recursion</a>
+            <a onclick="stacking()">Stacking</a>
+            <a onclick="sorting()">Sorting Algorithms</a>
+            <a onclick="hash()">Hash Tables</a>
+            <a onclick="bfs()">Breadth First Search</a>
+            <a onclick="ig()" class="active">Implementing Graphs</a>
+            <a onclick="dja()">Dijkstra's Algorithm</a>
+            <a onclick="idja()">Implementing Dijkstra's Algorithm</a>
+            <a onclick="dynamic()">Dynamic Programming</a>
+        </div>
+    </div>
+
+    <div class="loc-band">
+        <a href="#introduction-content">Implementing Graphs&nbsp;&nbsp; <i class="fas fa-chevron-right"></i></a>
+        <a href="#what">What is a graph?&nbsp;&nbsp; <i class="fas fa-chevron-right"></i></a>
+        <a href="#relationships">Relationships&nbsp;&nbsp; <i class="fas fa-chevron-right"></i></a>
+        <a href="#worst-case">Worst-Case scenario</a>
+    </div>
+    <div class="row main">
+        <div class="leftnav col-lg-3 col-md-6">
+            <br>
+            <p id="home">Home</p>
+            <p id="get-started" onclick="getStarted()">Get Started</p>
+            <p id="introduction" onclick="introduction()">Introduction</p>
+            <p id="searches" onclick="searches()">Searches</p>
+            <p id="searches" onclick="bigo()">The Big O Notation</p>
+            <p id="searches" onclick="arrays_lists()">Algorithms for Arrays and Lists</p>
+            <p id="recursion" onclick="recursion()">Recursion</p>
+            <p id="recursion" onclick="stacking()">Stacking</p>
+            <p id="sorting" onclick="sorting()">Sorting Algorithms</p>
+            <p id="hash" onclick="hash()">Hash Tables</p>
+            <p id="bfs" onclick="bfs()">Breadth First Search</p>
+            <p id="implementing" onclick="ig()" class="active">Implementing Graphs</p>
+
+            <p id="dja" onclick="dja()">Dijkstra's Algorithm</p>
+            <p id="implement-dja" onclick="idja()">Implementing Dijkstra's Algorithm</p>
+            <p id="dynamic" onclick="dynamic()">Dynamic Programming</p>
+        </div>
+        <div class="col-lg-9 col-md-6 context">
+            <div style="margin-top: 9%;">
+                <div class="content-bar">
+                    <a href="#what" class="active">Graphs</a>
+                    <a href="#relationships">Relationships</a>
+                    <a href="#worst-case">Worst-Case scenario</a>
+                </div>
+
+
+                <section id="introduction-content">
+                    <h1>Implementing Graphs</h1>
+                    <span>Written By<span class="u"> Ved Panse</span>
+                    </span><span style="color: gray; margin-left: 5%;">Last Modified: 30 June 2021</span>
+                    <section class="marge-5 intro">
+                        <p>In this section of the documentation, we will be looking at a very easy concept called graphs, and their use in writing efficient algorithmic programs.
+                        </p>
+                    </section>
+
+                    <section class="marge-5 algo-start">
+
+                        <h2 id="what">What is a Graph?</h2>
+                        <p>
+                            The term "graph" used in this section is different from the graphs you might have learned in your school life as a part of Mathematics.<br><br> A more technical classification of it is done as an 'abstract data structure'.
+                            One can get confused between graphs and hash-tables quite easily.<br><br> Here's the difference:
+                        </p>
+                        <table class="compare">
+                            <tr class="th">
+                                <th>Graphs</th>
+                                <th>Hash Tables</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Graphs can establish a one-way or a two-way relationship.
+                                </td>
+                                <td>
+                                    Hash-Tables establish only a one-way relationship.
+                                </td>
+                            </tr>
+
+                        </table><br>
+                        <p>That's it. That's the only difference that should set you.</p>
+                        <br><br>
+
+
+
+                        <h2 id="relationships">One-Way relationship</h2>
+                        <p>
+                            Just like a hash-table, graphs can relate a key to a value. Thus, if you call out a key and print its output, you'll get the value associated with that key.<br><br> When a graph uses a one-way relationship, it is said to be
+                            an <b>undirected graph</b>.
+                        </p><br><br>
+
+                        <h2>Two-Way Relationship</h2>
+                        <p>
+                            Unlike a hash-table, the key-value pair in a graph can be used in any way. This means that you can input the key, get its associated value, and also the other way round. Such a graph is said to be a <b>directed graph</b>.
+                        </p>
+                        <br><br>
+
+                        <h2>Two-Way Relationship General Example</h2>
+                        <p>
+                            Two-way relationships can be seen often in our daily life. For instance, when you shake hands with your friend, he shakes hands with you back. Let's take your friend's name to be Eric. When a third-person asks you who you shook hands with, your answer
+                            would be "Eric." Similarly, if that same third-person asks Eric the same question he asked you, he would answer taking your name. <br><br>Basically, both of you would be conveying the same message:
+                            "You shook hands with Eric" and "Eric shook hands with you."<br><br>This is the perfect example of a two-way relationship.
+
+                        </p><br><br>
+
+                        <h2>The Technical Side of Two-Way Relationships</h2>
+                        <p>
+                            In the real-time example stated above, the third person asked both you and Eric the same question. Thus, we can conclude that at least O(number of people involved) functions are required.
+                            <br><br> Above all, you'll also have to get rid of redundant code, which happens to be asking the same question to Eric and you both.
+                        </p><br><br>
+
+                        <h2 id="worst-case">Worst Case Scenario</h2>
+                        <p>
+                            Let's say the third person gets redirected to the person with who one handshakes. In this case, he will ask Eric the question, then you. Then, he will get redirected back to Eric and this will lead to an infinite loop. This happens to be the worst-case
+                            scenario.
+                            <br><br> Thus, a proposable solution pseudocode is:-
+                        </p>
+
+                        <br><br>
+                        <div class="terminal">
+                            <pre>
+
+<span class="p">asked_list</span> = ["Eric", "Sam", "Tom"]
+
+<span class="h">def</span> <span class="p">ask_question</span>(name):
+    <span class="h">if</span> name <span class="h">in</span> <span class="p">asked_list</span>:
+        print(<span class="str">"Asked already."</span>)
+    <span class="h">else</span>:
+        <span class="p">ask</span>() <span class="c"># Asks question</span>
+        asked_list.<span class="p">append</span>(name)
+</pre>
+                        </div>
+                        <br><br>
+                        <div style="width: 100%; margin-bottom: 2%">
+                            <span class="next left" onclick="hash()">&larr;
+                                Hash Tables</span>
+                            <span class="next right" onclick="dja()">Dijkstra's Algorithm &rarr;</span>
+                        </div>
+                    </section>
+            </div>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+<script src="functions.js"></script>
+
+</html>

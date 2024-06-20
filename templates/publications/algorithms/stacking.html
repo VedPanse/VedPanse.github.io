@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+    <title>Algorithms Explained</title>
+       <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="../../images/logo_circle.png">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="index.html">Algorithms Explained</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="#">Home</a>
+                <a class="nav-item nav-link active" href="#">Blogs</a>
+                <a class="nav-item nav-link" href="#">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <div class="header">
+        <a class="navbar-brand" href="index.html">Algorithms Explained</a>
+        <div class="header-right" onclick="openNav()">
+            <div class="menu"></div>
+            <div class="menu"></div>
+            <div class="menu"></div>
+        </div>
+    </div>
+
+    <div id="myNav" class="overlay-nav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+            <a onclick="home()">Home</a>
+            <a onclick="getStarted()">Get Started</a>
+            <a onclick="introduction()">Introduction</a>
+            <a onclick="searches()">Searches</a>
+            <a onclick="bigo()">The Big O Notation</a>
+            <a onclick="arrays_lists()">Algorithms for Arrays and Lists</a>
+            <a onclick="recursion()">Recursion</a>
+            <a onclick="stacking()" class="active">Stacking</a>
+            <a onclick="sorting()">Sorting Algorithms</a>
+            <a onclick="hash()">Hash Tables</a>
+            <a onclick="bfs()">Breadth First Search</a>
+            <a onclick="ig()">Implementing Graphs</a>
+            <a onclick="dja()">Dijkstra's Algorithm</a>
+            <a onclick="idja()">Implementing Dijkstra's Algorithm</a>
+            <a onclick="dynamic()">Dynamic Programming</a>
+        </div>
+    </div>
+
+    <div class="loc-band">
+        <a href="#introduction-content">Stacking&nbsp;&nbsp; <i class="fas fa-chevron-right"></i></a>
+        <a href="#what">What is Stacking?&nbsp;&nbsp; <i class="fas fa-chevron-right"></i></a>
+        <a href="#relation">How is this related to our topic?&nbsp;&nbsp; <i class="fas fa-chevron-right"></i></a>
+        <a href="#why">Why is Stack Algorithm necessary to be known?</a>
+    </div>
+    <div class="row main">
+        <div class="leftnav col-lg-3 col-md-6">
+            <br>
+            <p id="home">Home</p>
+            <p id="get-started" onclick="getStarted()">Get Started</p>
+            <p id="introduction" onclick="introduction()">Introduction</p>
+            <p id="searches" onclick="searches()">Searches</p>
+            <p id="searches" onclick="bigo()">The Big O Notation</p>
+            <p id="searches" onclick="arrays_lists()">Algorithms for Arrays and Lists</p>
+            <p id="recursion" onclick="recursion()">Recursion</p>
+            <p id="recursion" onclick="stacking()" class="active">Stacking</p>
+            <p id="sorting" onclick="sorting()">Sorting Algorithms</p>
+            <p id="hash" onclick="hash()">Hash Tables</p>
+            <p id="bfs" onclick="bfs()">Breadth First Search</p>
+            <p id="implementing" onclick="ig()">Implementing Graphs</p>
+            <p id="dja" onclick="dja()">Dijkstra's Algorithm</p>
+            <p id="implement-dja" onclick="idja()">Implementing Dijkstra's Algorithm</p>
+            <p id="dynamic" onclick="dynamic()">Dynamic Programming</p>
+        </div>
+        <div class="col-lg-9 col-md-6 context">
+            <div style="margin-top: 9%;">
+                <div class="content-bar">
+                    <a href="#what" class="active">What is stacking?</a>
+                    <a href="#relation">Relation</a>
+                    <a href="#why">Necessity</a>
+                </div>
+
+
+                <section id="introduction-content">
+                    <h1>Stacking</h1>
+                    <span>Written By<span class="u"> Ved Panse</span>
+                    </span><span style="color: gray; margin-left: 5%;">Last Modified: 30 June 2021</span>
+                    <section class="marge-5 intro">
+                        <p>In this section of the documentation, we will be looking at stacking: an efficient program that is known by many. It has also made its way into job interview questions asked by Big Tech companies around the world.<br><br>Let's
+                            do this!
+                        </p>
+                    </section>
+
+                    <section class="marge-5 algo-start">
+
+                        <h2 id="what">What is Stacking?</h2>
+                        <p>Stacking is a common terminology when you learn to program. It can be best explained with an analogy. Imagine that you are having a stack of playing cards with you. The elements in a list and arrays are stored in the same way.
+                            There are two functions that you can perform with the given lists and arrays.
+                        </p><br><br>
+
+                        <table class="compare">
+                            <tr class="th">
+                                <th>Push</th>
+                                <th>Pop</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    It is the same as appending to the end of the list. For example, adding a card to the stack of cards.
+                                </td>
+                                <td>
+                                    It is reading the topmost element and then removing it. For example, this function reads the top-most card in the stack and then pops it off the stack.
+                                </td>
+                            </tr>
+
+                        </table><br><br>
+
+                        <h2 id="relation">How is this related to our topic?</h2>
+                        <p>Well, it turns out that the functions which we write work in a similar manner. They get stacked one over the other and are perceived by the computer in this way.</p><br><br>
+
+                        <h2 id="why">Why is Stack Algorithm necessary to be known?</h2>
+                        <p>
+                            With stack, you do not have to keep a check on the functions that have been completed. The stack function does it for you. Using stack is convenient but there is a cost: saving all that info can take up a lot of memory. Each of those function calls takes
+                            up some memory. At that point, you may choose any of the following courses:
+                        </p>
+                        <ol>
+                            <li>
+                                Rewrite the code to use a loop instead.
+                            </li>
+                            <li>
+                                Use tail recursion.
+                            </li>
+                        </ol>
+
+
+
+
+                    </section><br><br>
+                    <div style="width: 100%; margin-bottom: 2%;">
+                        <span class="next left" onclick="recursion()">&larr;
+                            Recursion</span>
+                        <span class="next right" onclick="sorting()">Sorting Algorithms &rarr;</span>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+<script src="functions.js"></script>
+
+</html>

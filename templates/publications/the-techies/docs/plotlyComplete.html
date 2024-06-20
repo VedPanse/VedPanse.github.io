@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <meta name="description" content="The Techies was founded to provide solutions to some common problems that most of the early programmers struggle to solve. Through days of hardwork and research, I was able to solve all the problems and I want to make it easily available to the rest of the world.">
+    <meta name="keywords" content="The Techies, Archive, Documentations, Solutions, How, How To, HTML, CSS, JS, Python, Syntax Highlighting, Coding, Code, Web, Designing, Development">
+    <meta name="author" content="Ved Panse">
+
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Martel+Sans&display=swap" rel="stylesheet">
+
+    <title>The Techies</title>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="../index.html">The Techies</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="../index.html">Home</a>
+                <a class="nav-item nav-link" href="../docs.html">Documentations</a>
+                <a class="nav-item nav-link btn-blue" href="../submit.html">Submit</a>
+            </div>
+        </div>
+    </nav><br><br>
+    <div class="main">
+
+        <div class="blog">
+            <h1 class="gradient title">A very brief plotly introduction for beginners</h1>
+            <p class="author">Ved Panse &bull; 18 May, 2022</p>
+
+            <p>In this documentation, we will be covering the basics of plotly. Plotly is a Python library used for visualizing big datasets. We will be exploring nearly all the graphic representations available by plotly.</p>
+
+            <h2>Importing modules</h2>
+            <p>We will start by importing plotly.</p>
+            <div class="python"><span class="kw1">import</span> plotly.<span class="me1">express</span> <span class="kw1">as</span> px</div>
+
+            <h2>Line Plots</h2>
+            <h5>2-Dimensional</h5>
+            <p>2-D line plots are generally to visualize simple datasets. The data is represented by a line or more. Line plots frequently help evaluate stock markets. Let us create one using python.</p><br>
+            <p>We have to start by uploading a dataset first. Fortunately, plotly has some inbuilt sets for us. Let us import the stocks dataset, that contains details about the stock prices of several major companies.</p>
+
+            <div class="python">df_stocks = px.<span class="me1">data</span>.<span class="me1">stocks</span><span class="br0">&#40;</span><span class="br0">&#41;</span></div>
+
+            <p>Let's plot the graph.</p>
+
+            <div class="python">graph = px.<span class="me1">line</span><span class="br0">&#40;</span>df_stocks, x=<span class="st0">&quot;date&quot;</span>, y=<span class="st0">&quot;GOOG&quot;</span>, labels=<span class="br0">&#123;</span><span class="st0">&quot;x&quot;</span>:
+                <span class="st0">&quot;Date&quot;</span>, <span class="st0">&quot;y&quot;</span>: <span class="st0">&quot;Price&quot;</span><span class="br0">&#125;</span><span class="br0">&#41;</span><br />
+                <span class="co1"># labels are the titles for respective axes.</span><br />
+                <br /> graph.<span class="me1">show</span><span class="br0">&#40;</span><span class="br0">&#41;</span></div>
+
+            <img src="../images/plotlyComplete-2D_lineGraph.png"><br><br>
+
+            <p>On running the program, you will find a similar graph. Specific data gets displayed by hovering over a point, as shown in the image above. Here, we can precisely monitor the price of stocks at a given date.</p>
+            <p>For a more detailed explanation, visit my docs at <a href="https://vedpanse.com/docs/plotly/index.html" target="_blank">this link</a>.</p>
+
+
+
+
+
+
+            <div class="row footer">
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <a href="performingEDA.html" style="text-align: left;">&#8592; Exploratory Data Analysis</a>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <a href="realTime.html" style="text-align: left;">Machine Learning &#8594;</a>
+                </div>
+            </div>
+
+
+        </div><br><br>
+
+    </div>
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
+</html>

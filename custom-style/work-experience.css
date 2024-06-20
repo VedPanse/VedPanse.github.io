@@ -1,0 +1,38 @@
+section#work-experience h2 {
+    text-align: center;
+    font-weight: 400;
+    font-size: 50px;
+}
+
+section#work-experience a {
+    color: black;
+}
+
+section#work-experience a:hover {
+    text-decoration: none;
+}
+
+section#work-experience div.row.companies {
+    margin: 10% 0 10% 0;
+}
+
+section#work-experience div.row.companies p {
+    width: 80%;
+    margin: auto;
+}
+
+section#work-experience div.row.companies hr {
+    margin-top: 40%;
+}
+
+@media only screen and (max-width: 800px) {
+    section#work-experience div.row.companies hr {
+        display: none;
+    }
+
+    section#work-experience div.row.companies p {
+        border-bottom: 1px solid rgb(0, 0, 0, 0.1);
+        margin-bottom: 20%;
+        padding-bottom: 10%;
+    }
+}

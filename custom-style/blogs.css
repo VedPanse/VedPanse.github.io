@@ -1,0 +1,41 @@
+section#blogs img, section#publications img {
+    margin: auto;
+    width: 100% !important;;
+    display: block;
+}
+
+
+section#blogs div.container, section#publications div.container {
+    width: 50% !important;
+}
+
+section#blogs div.sep, section#publications div.sep {
+    border-bottom: 1px solid rgb(0, 0, 0, 0.1);
+    padding: 20px 0 20px 0;
+}
+
+section#blogs div.sep h2, section#publications div.sep h2 {
+    font-weight: 300;
+}
+
+section#blogs #other-blogs a, #recent-blog a, section#publications #other-publications a, #recent-publication a {
+    color: black;
+}
+
+section#blogs #other-blogs a:hover, #recent-blog a:hover, section#publications #other-publications a:hover, #recent-publication a:hover {
+    text-decoration: none;
+}
+
+section#blogs .introduction, section#publications .introduction {
+    padding-bottom: 30px;
+}
+
+@media only screen and (max-width: 600px) {
+    section#publications div.container, section#blogs div.container {
+        width: 95% !important;
+    }
+
+    section#blogs #other-blogs, section#publications #other-publications {
+        padding-left: 12% !important;
+    }
+}

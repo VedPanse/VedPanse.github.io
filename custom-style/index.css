@@ -1,0 +1,107 @@
+/* UNIVERSAL CSS */
+:root {
+    --blue: #0050c9;
+}
+/* HTML, BODY */
+html, body {
+    width: 100vw;
+    min-height: 100vh;
+    height: 100%;
+    font-family: 'IBM Plex Sans', sans-serif;
+    overflow-x: hidden;
+}
+
+/* DEFAULT */
+a {
+    color: var(--blue);
+}
+
+/* NAVBAR */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgb(255, 255, 255, 0.5);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    z-index: 1000;
+
+}
+
+
+.navbar-brand {
+    padding-left: 5%;
+    color: black !important;
+}
+
+.navbar-nav {
+    position: absolute;
+    right: 5%;
+}
+
+.navbar button.resume {
+    background-color: var(--blue);
+    padding: 0 25px 0 25px;
+    border-radius: 16px;
+    margin-right: 25%;
+    font-size: 14px;
+}
+
+.navbar button.resume a {
+    color: white !important;
+}
+
+.navbar i {
+    color: black;
+}
+
+div#header {
+    position: fixed;
+    right: 0;
+    padding: 50px;
+    background-color: rgb(255, 255, 255, 0.5);
+    backdrop-filter: blur(20px);
+    display: none;
+    z-index: 1;
+    width: 20vw;
+    height: 100vh;
+}
+
+div#header a {
+    line-height: 1.15 !important;
+    margin-top: 40px !important;
+}
+
+.show {
+    display: block !important;
+}
+
+div#header a {
+    display: block;
+    font-size: 25px;
+    line-height: 2;
+    color: black;
+    text-underline-position: under;
+}
+
+.navbar #menu-icon {
+    cursor: pointer;
+}
+
+/* BUTTONS */
+button.hollow {
+    border-radius: 16px;
+    color: black;
+    border: 1px solid black;
+    background-color: transparent;
+}
+
+/* SECTIONS */
+section.gray {
+    background-color: #c4c4c4;
+}
+
+a.all-linker {
+    display: block;
+    text-align: right;
+}

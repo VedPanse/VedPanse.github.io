@@ -1,0 +1,44 @@
+section#skills div#languages h2 {
+    display: inline;
+}
+
+section#skills div#languages span {
+    position: relative;
+    bottom: 10px;
+    font-size: 12px;
+    margin-right: 10px;
+}
+
+div#languages div {
+    padding: 10px 0 10px 0;
+    border-bottom: 1px solid rgb(0, 0, 0, 0.15) !important;
+    cursor: pointer;
+}
+
+div#languages div:hover, div#languages div.active {
+    color: #0050c9;
+}
+
+section#skills div.col-sm-6 {
+    margin-bottom: 5% !important;
+}
+
+section#skills div.row {
+    text-align: center;
+}
+
+section#skills h2 {
+    font-weight: 400;
+}
+
+section#skills img {
+    width: 100px !important;
+    height: 100px !important;
+}
+
+section#skills div.row {
+    border-top: 1px solid rgb(0, 0, 0, 0.15) !important;
+    padding-top: 2% !important;
+    padding-bottom: 2% !important;
+    border-bottom: 1px solid rgb(0, 0, 0, 0.15) !important;
+}
