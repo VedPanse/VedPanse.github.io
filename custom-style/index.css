@@ -105,3 +105,10 @@ a.all-linker {
     display: block;
     text-align: right;
 }
+
+@media only screen and (max-width: 800px) {
+    div#header {
+        width: 100vw;
+        padding-top: 20%;
+    }
+}
