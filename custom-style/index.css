@@ -39,7 +39,7 @@ a {
     right: 5%;
 }
 
-.navbar button.resume {
+button.resume {
     background-color: var(--blue);
     padding: 0 25px 0 25px;
     border-radius: 16px;
@@ -47,7 +47,7 @@ a {
     font-size: 14px;
 }
 
-.navbar button.resume a {
+button.resume a {
     color: white !important;
 }
 
@@ -110,5 +110,18 @@ a.all-linker {
     div#header {
         width: 100vw;
         padding-top: 20%;
+    }
+
+    .navbar-nav {
+        display: none;
+    }
+
+    div#header button {
+        color: white !important;
+    }
+
+    div#header button {
+        padding: 5px 20px 5px 20px !important;
+        margin-top: 15%;
     }
 }
