@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // SMALL SCREEN SIZE
+    // HANDLE SMALL SCREEN SIZE
     const windowWidth = window.innerWidth;
 
     // Show header instead of navbar-nav
