@@ -25,6 +25,10 @@ section#work-experience div.row.companies hr {
     margin-top: 40%;
 }
 
+section#work-experience div.row div.col-md-6 {
+    margin-bottom: 15%;
+}
+
 @media only screen and (max-width: 800px) {
     section#work-experience div.row.companies hr {
         display: none;
