@@ -101,9 +101,15 @@ section.gray {
     background-color: #c4c4c4;
 }
 
+/* LINKS */
 a.all-linker {
     display: block;
     text-align: right;
+}
+
+a.credit {
+    color: gray !important;
+    font-size: 12px;
 }
 
 /* SMALL SCREEN */

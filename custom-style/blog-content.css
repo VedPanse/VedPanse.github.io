@@ -1,6 +1,6 @@
 section#blog-content {
     padding-top: 7%;
-    width: 30vw;
+    width: 50vw;
     margin: auto;
     padding-bottom: 7%;
 }
@@ -12,7 +12,7 @@ section#blog-content h1 {
     margin-bottom: 30px;
 }
 
-section#blog-content p {
+section#blog-content p, section#blog-content ul li {
     margin-bottom: 3%;
     font-size: 20px;
 }
