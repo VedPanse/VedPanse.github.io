@@ -32,7 +32,7 @@ div.row.desc {
 }
 
 div.limit-20 {
-    width: 20vw;
+    width: 23vw;
     float: right;
 }
 
@@ -49,6 +49,7 @@ div.strip span {
 div.strip h2 {
     font-size: 3.4rem;
 }
+
 
 @media only screen and (max-width: 800px) {
     .limit-20 {
