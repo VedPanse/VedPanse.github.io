@@ -61,6 +61,7 @@ div#header {
     padding: 50px;
     background-color: rgb(255, 255, 255, 0.5);
     -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
     display: none;
     z-index: 1;
     width: 20vw;
