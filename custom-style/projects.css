@@ -1,5 +1,5 @@
 :root {
-    --size: 20vw;
+    --size: calc(80vw / 3);
     --theme-color: #0050c9;
     --bg-color: transparent;
 }
@@ -29,7 +29,7 @@ section#projects a.completed {
 
 section#projects div#completed div.row,
 section#projects div#ongoing div.row {
-    width: 60vw;
+    width: 80vw;
     margin: auto;
 }
 
