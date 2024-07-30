@@ -49,7 +49,7 @@ section#projects div#ongoing {
 
 section#projects div.card {
     border: 1px solid rgb(0, 0, 0, 0.1);
-    padding: 20%;
+    padding: 10%;
     border-radius: 0;
     cursor: pointer;
     width: var(--size);
