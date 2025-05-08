@@ -76,8 +76,7 @@ div.hero a:hover {
 
 @media (max-width: 768px) {
     #skills {
-        overflow: scroll;
-        -webkit-overflow-scrolling: touch;
+        overflow-y: scroll;
     }
 }
 
