@@ -1,0 +1,152 @@
+/* Home page */
+
+html,
+body {
+    height: 100%;
+    max-width: 100vw;
+    width: 100vw;
+    overflow-x: hidden;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    background-color: black;
+}
+
+section#home {
+    background-image: url('../image/bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center 32%;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+section#home .content {
+    position: absolute;
+    bottom: 5%;
+    font-weight: 100;
+    left: 5%;
+    width: 60%;
+}
+
+section#home .content h1 {
+    font-size: 4rem;
+    margin: 0;
+}
+
+div.hero {
+    border-top: 1.5px solid rgba(255, 255, 255, 0.5);
+    border-bottom: 1.5px solid rgba(255, 255, 255, 0.5);
+    padding: 20px;
+    margin-top: 20%;
+    text-align: left;
+}
+
+div.hero a {
+    display: inline-block;
+    color: lightgray !important;
+    text-decoration: none;
+}
+
+div.hero a:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+
+
+@media (max-width: 768px) {
+    div.hero {
+        text-align: center;
+        margin: 0 auto;
+    }
+}
+
+#skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 26px;
+    max-width: 360px;
+    margin: 0 auto;
+    padding: 32px;
+    position: relative;
+    height: 150vh;
+}
+
+
+.skill {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 4px;
+    transition: transform 0.2s ease-out;
+}
+
+.skill img {
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
+    transition: transform 0.2s ease-out;
+}
+
+.skill:hover img {
+    transform: scale(1.3); /* Only the image scales, centered */
+}
+
+section#work-experience {
+    z-index: 0; /* Ensure it is under skills */
+    margin-top: 75vh !important; /* Add spacing to avoid overlap */
+    padding-left: 5%;
+}
+
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 40px auto;
+    padding-left: 20px;
+    border-left: 2px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .timeline-item {
+    margin-bottom: 40px;
+    position: relative;
+    padding-left: 20px;
+  }
+  
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: -27px;
+    width: 12px;
+    height: 12px;
+    background-color: #4f4f4f;
+    border-radius: 50%;
+    border: 2px solid royalblue;
+  }
+  
+  .timeline-date {
+    font-size: 0.9rem;
+    color: #aaa;
+    margin-bottom: 6px;
+  }
+  
+  .timeline-content h3 {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+  
+  .timeline-content p {
+    margin: 4px 0 0;
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+  
