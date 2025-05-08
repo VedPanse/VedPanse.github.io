@@ -19,8 +19,9 @@ const skillsHTML = skills.map((rawSkill, i) => {
     const y = yOffset + row * spacing + (col % 2 === 1 ? spacing / 2 : 0); // vertical offset
 
     return `<div class="skill" style="position: absolute; left: ${x}%; top: ${y}%; transform: translate(-50%, -50%);">
-                <img src="static/image/icons/${skill}.png" alt="${rawSkill}"/>
+                <img src="static/image/icons/${skill}.png" alt="${rawSkill}" title="${rawSkill}" />
             </div>`;
+
 }).join('');
 
 // Set the container height and insert content

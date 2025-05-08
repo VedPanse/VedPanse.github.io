@@ -18,3 +18,27 @@ tabButtons.forEach(button => {
     });
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".lang").forEach(lang => {
+    const languages = Array.from(lang.classList);
+    languages.splice(languages.indexOf("lang"), 1); // remove 'lang'
+
+    languages.forEach(language => {
+      let skill = language;
+      if (language === "C++") skill = "CPP";
+      else if (language === "C#") skill = "CS";
+
+      const div = document.createElement("div");
+      div.classList.add("rounded");
+
+      const img = document.createElement("img");
+      img.src = `static/image/icons/${skill}.png`; // ✅ fixed template string
+      img.alt = skill;
+
+      div.appendChild(img);
+      lang.appendChild(div);
+    });
+  });
+});
+
