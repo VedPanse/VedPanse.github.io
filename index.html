@@ -92,10 +92,75 @@
         </div>
     </div>
     </section>
+    <img src="static/image/sep.png" width="100%">
 
-
+    <section id="projects">
+        <h1>Projects</h1>
+        <div class="project-tabs">
+          <button class="tab-btn active" data-tab="ai">Artificial Intelligence</button>
+          <button class="tab-btn" data-tab="software">Software Development</button>
+          <button class="tab-btn" data-tab="embedded">Embedded Systems</button>
+        </div>
+      <br/><br/>
+        <div class="tab-content" id="ai">
+            <div class="project">
+              <h3>Spuddie</h3>
+              <p>Conversational AI with persistent memory using vector databases.</p>
+              <span><img src="static/image/icons/Python.png"></span>
+            </div>
+            <div class="project">
+              <h3>FalconEye</h3>
+              <p>Real-time synthetic vision for aircraft navigation using terrain data.</p>
+              <span>OpenGL, C++, BlenderGIS</span>
+            </div>
+            <div class="project">
+              <h3>TextEmotion</h3>
+              <p>AI engine classifying emotional tone of text with real-time feedback.</p>
+              <span>Python, Transformers, text2emotion</span>
+            </div>
+          </div>
+          
+          <div class="tab-content" id="software" style="display: none;">
+            <div class="project">
+              <h3>Orion</h3>
+              <p>macOS assistant with command engine and markdown-rendered output.</p>
+              <span>SwiftUI, Gemini API, Tauri</span>
+            </div>
+            <div class="project">
+              <h3>Lakewood HVAC</h3>
+              <p>Community dashboard with authentication, JWT, and admin panel UI.</p>
+              <span>Next.js, Prisma, Tailwind CSS</span>
+            </div>
+            <div class="project">
+              <h3>ZeroWaste</h3>
+              <p>Hackathon project that matches excess food supply with local demand.</p>
+              <span>React, Firebase, Google Maps API</span>
+            </div>
+          </div>
+          
+          <div class="tab-content" id="embedded" style="display: none;">
+            <div class="project">
+              <h3>NanoBot</h3>
+              <p>Remote-controlled robot with video stream and directional control.</p>
+              <span>Kotlin Multiplatform, Raspberry Pi, WebRTC</span>
+            </div>
+            <div class="project">
+              <h3>Avi</h3>
+              <p>Talking robot head with emotional rendering and cloud-based AI.</p>
+              <span>Raspberry Pi, Python, ElevenLabs, ChatGPT API</span>
+            </div>
+            <div class="project">
+              <h3>Rocket Avionics</h3>
+              <p>Custom data logger to measure acceleration, apogee, and velocity.</p>
+              <span>Arduino, BMP280, MPU6050</span>
+            </div>
+          </div>
+          
+      </section>
+      
     <img src="static/image/wave.png" width="100%">
+
 </body>
 <script src="static/render/skills.js"></script>
-
+<script src="static/render/projects.js"></script>
 </html>

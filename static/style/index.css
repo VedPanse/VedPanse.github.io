@@ -12,7 +12,7 @@ body {
 }
 
 section#home {
-    background-image: url('../image/bg.png');
+    background-image: url('../image/bg-red.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center 32%;
@@ -81,8 +81,6 @@ div.hero a:hover {
 }
 
 
-
-
 .skill {
     width: 72px;
     height: 72px;
@@ -105,12 +103,15 @@ div.hero a:hover {
 }
 
 .skill:hover img {
-    transform: scale(1.3); /* Only the image scales, centered */
+    transform: scale(1.3);
+    /* Only the image scales, centered */
 }
 
 section#work-experience {
-    z-index: 0; /* Ensure it is under skills */
-    margin-top: 75vh !important; /* Add spacing to avoid overlap */
+    z-index: 0;
+    /* Ensure it is under skills */
+    margin-top: 75vh !important;
+    /* Add spacing to avoid overlap */
     padding-left: 5%;
 }
 
@@ -121,15 +122,15 @@ section#work-experience {
     margin: 40px auto;
     padding-left: 20px;
     border-left: 2px solid rgba(255, 255, 255, 0.2);
-  }
-  
-  .timeline-item {
+}
+
+.timeline-item {
     margin-bottom: 40px;
     position: relative;
     padding-left: 20px;
-  }
-  
-  .timeline-item::before {
+}
+
+.timeline-item::before {
     content: "";
     position: absolute;
     top: 4px;
@@ -139,22 +140,111 @@ section#work-experience {
     background-color: #4f4f4f;
     border-radius: 50%;
     border: 2px solid royalblue;
-  }
-  
-  .timeline-date {
+}
+
+.timeline-date {
     font-size: 0.9rem;
     color: #aaa;
     margin-bottom: 6px;
-  }
-  
-  .timeline-content h3 {
+}
+
+.timeline-content h3 {
     margin: 0;
     font-size: 1.2rem;
-  }
-  
-  .timeline-content p {
+}
+
+.timeline-content p {
     margin: 4px 0 0;
     font-size: 0.95rem;
     line-height: 1.4;
+}
+
+
+#projects {
+    padding-left: 5%;
+}
+
+.project-tabs {
+    margin: 20px 0;
+    display: flex;
+    gap: 12px;
+    justify-content: center; /* 👈 Centers the tabs horizontally */
   }
   
+
+.tab-btn {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    padding: 8px 20px;
+    border-radius: 999px;
+    /* 👈 makes it rounded */
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+    font-size: 0.95rem;
+}
+
+.tab-btn.active {
+    background-color: white;
+    color: black;
+}
+
+
+.tab-content {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.project {
+    flex: 1 1 280px; /* Responsive width, min 280px */
+    min-width: 240px;
+    padding: 16px 20px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    color: white;
+    transition: transform 0.2s ease;
+}
+
+.project h3 {
+    margin: 0 0 4px;
+    font-size: 1.1rem;
+}
+
+.project p {
+    margin: 0 0 4px;
+    color: #ccc;
+    font-size: 0.95rem;
+}
+
+.project span {
+    font-size: 0.85rem;
+    color: #999;
+}
+
+.project:hover {
+    transform: scale(1.03);
+}
+
+
+.project img {
+    width: 20px;
+    height: 20px;
+}

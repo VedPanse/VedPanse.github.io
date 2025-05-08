@@ -1,14 +1,16 @@
-const skills = ["Python", "C", "C++", "Swift", "C#", "Java", "Kotlin", "Javascript", "Typescript", "AWK", "SED", "Bash", "HTML", "CSS"];
+const skills = ["Python", "C", "C++", "Swift", "C#", "Java", "Kotlin", "Javascript", "Typescript", "AWK",
+    "SED", "Bash", "HTML", "CSS", "Rust", "NextJS", "Raspberry Pi", "Firebase", "GitHub"];
 
 const containerHeight = 400; // in pixels
 const spacing = 45;
-const xOffset = -40; // Center x in %
+const xOffset = -70; // Center x in %
 const yOffset = 50;  // Center y in %
 
 const skillsHTML = skills.map((rawSkill, i) => {
     let skill = rawSkill;
     if (skill === "C++") skill = "CPP";
     if (skill === "C#") skill = "CS";
+    if (skill === "Raspberry Pi") skill = "RaspberryPi"
 
     const col = Math.floor(i / 3); // 3 items per column
     const row = i % 3;
