@@ -37,16 +37,6 @@ body {
     transform: translate(-50%, 0%);
 }
 
-.gradient {
-    -webkit-text-fill-color: transparent;
-    -moz-text-fill-color: transparent;
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    background-color: #9eadf1;
-    background-image: linear-gradient(90deg, #EAECC6, #2BC0E4);
-    background-size: 100%;
-    display: inline-block;
-}
 
 #start {
     width: 100vw;
