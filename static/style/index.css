@@ -410,3 +410,14 @@ section#work-experience {
     display: block;
     margin: auto !important;
 }
+
+
+@media screen and (max-width: 768px) {
+    #blogs img {
+        display: none;
+    }
+
+    #blogs span {
+        display: none;
+    }
+}
