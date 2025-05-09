@@ -74,14 +74,8 @@ div.hero a:hover {
     margin: 0 auto;
     padding: 32px;
     position: relative;
-    height: 150vh;
 }
 
-@media (max-width: 768px) {
-    #skills {
-        overflow-x: scroll;
-    }
-}
 
 
 .skill {
@@ -114,7 +108,7 @@ div.hero a:hover {
 section#work-experience {
     z-index: 0;
     /* Ensure it is under skills */
-    margin-top: 75vh !important;
+    margin-top: 75vh;
     /* Add spacing to avoid overlap */
     padding-left: 5%;
 }
@@ -324,7 +318,7 @@ section#work-experience {
 
 .blog-card .blog-text {
     flex: 1;
-  }
+}
 
 .blog-card .credit {
     font-size: 0.75rem;
@@ -335,7 +329,7 @@ section#work-experience {
 .blog-card .credit a {
     color: #46a0ff;
     text-decoration: none;
-  }
+}
 
 .blog-card a {
     color: white !important;
@@ -343,4 +337,57 @@ section#work-experience {
 
 .featured {
     grid-column: span 2;
+}
+
+
+@media (max-width: 768px) {
+    #skills {
+        overflow-x: scroll;
+        max-width: 100%;
+    }
+
+    .skill {
+        width: 60px !important;
+        height: 60px !important;
+    }
+
+    #work-experience {
+        margin-top: 0vh !important;
+    }
+}
+
+#contact {
+  padding: 5%;
+  background-image: url('../image/wave.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  color: white;
+}
+
+#contact .row {
+    width: 50%;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+#contact input, #contact textarea {
+    background-color: transparent;
+    border-radius: 0;
+    color: white;
+    border: none;
+}
+
+#contact .row {
+    border-bottom: 1px solid white;
+}
+
+#contact input::placeholder, #contact textarea::placeholder {
+    color: rgb(195, 195, 195) !important;
+}
+
+#contact button {
+    border-radius: 20px;
+    display: block;
+    margin: auto !important;
 }

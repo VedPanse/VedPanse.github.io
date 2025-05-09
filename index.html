@@ -209,10 +209,89 @@
         </a>
       </div>
     </div>
+
+
+    <br /><br /><br />
+
+
+    <h1>Publications</h1>
+    <div class="blog-grid">
+      <!-- Featured Publication -->
+      <div class="blog-card featured">
+        <a href="templates/blogs/vim.html" target="_blank">
+          <img src="https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg" alt="Social Media" />
+          <div class="blog-text">
+            <h3>Can Artificial Intelligence Be Used to Detect Fake News Online?</h3>
+            <p>In this blog, I share my experience with the Vim editing technique.</p>
+            <span class="credit">
+              Image Credits:
+              <a href="https://www.pexels.com/photo/close-up-photography-of-smartphone-icons-267350/"
+                target="_blank">Pixabay</a>
+            </span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Other Publications -->
+      <div class="blog-card">
+        <a href="templates/publications/machine-learning/index.html" target="_blank">
+          <h3>Machine Learning and Algorithms - Basic Tutorial</h3>
+        </a>
+      </div>
+      <div class="blog-card">
+        <a href="templates/publications/algorithms/index.html" target="_blank">
+          <h3>Algorithms Explained</h3>
+        </a>
+      </div>
+      <div class="blog-card">
+        <a href="templates/publications/plotly/index.html" target="_blank">
+          <h3>Plotly Tutorials</h3>
+        </a>
+      </div>
+      <div class="blog-card">
+        <a href="templates/publications/the-techies/index.html" target="_blank">
+          <h3>The Techies</h3>
+        </a>
+      </div>
+    </div>
   </section>
 
+  <section id="contact">
+    <h1>Contact</h1><br/><br/>
 
-  <img src="static/image/wave.png" width="100%">
+    <form method="POST" action="https://formspree.io/f/xdoyprne">
+      
+      <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-6">
+            <p>Name</p>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-6">
+            <input type="text" class="form-control" id="floatingInput" placeholder="Enter your name" name="Name" required>
+          </div>
+      </div>
+
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-6">
+            <p>Email</p>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-6">
+            <input type="email" class="form-control" id="floatingEmail" placeholder="Enter your email ID" name="Email" required>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-6">
+            <p>Message</p>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-6">
+            <textarea type="message" class="form-control" id="message" placeholder="Enter your message" name="Message"
+              required></textarea>
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-light" type="submit">Submit</button>
+    </form>
+  </section>
 
 </body>
 <script src="static/render/skills.js"></script>
