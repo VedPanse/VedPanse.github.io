@@ -46,6 +46,7 @@ div.hero a {
     display: inline-block;
     color: lightgray !important;
     text-decoration: none;
+    margin-bottom: 2px;
 }
 
 div.hero a:hover {
@@ -339,6 +340,16 @@ section#work-experience {
     grid-column: span 2;
 }
 
+@media (max-width: 768px) {
+    .blog-grid {
+        display: block;
+    }
+
+    .blog-card {
+        margin-bottom: 10px;
+    }
+}
+
 
 @media (max-width: 768px) {
     #skills {
@@ -357,12 +368,12 @@ section#work-experience {
 }
 
 #contact {
-  padding: 5%;
-  background-image: url('../image/wave.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100vh;
-  color: white;
+    padding: 5%;
+    background-image: url('../image/wave.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    color: white;
 }
 
 #contact .row {
@@ -371,7 +382,14 @@ section#work-experience {
     margin-bottom: 20px;
 }
 
-#contact input, #contact textarea {
+@media (max-width: 768px) {
+    #contact .row {
+        width: 95% !important;
+    }
+}
+
+#contact input,
+#contact textarea {
     background-color: transparent;
     border-radius: 0;
     color: white;
@@ -382,7 +400,8 @@ section#work-experience {
     border-bottom: 1px solid white;
 }
 
-#contact input::placeholder, #contact textarea::placeholder {
+#contact input::placeholder,
+#contact textarea::placeholder {
     color: rgb(195, 195, 195) !important;
 }
 
