@@ -368,12 +368,17 @@ section#work-experience {
 }
 
 #contact {
-    padding: 5%;
-    background-image: url('../image/wave.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
-    color: white;
+  width: 100%;
+  min-height: 100vh; /* allows image to expand if content grows */
+  padding: 5%;
+  background-image: url('../image/wave.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; /* ensures full image stays centered */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 #contact .row {
