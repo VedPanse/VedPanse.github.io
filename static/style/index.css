@@ -163,7 +163,8 @@ section#work-experience {
     padding-left: 5%;
 }
 
-.project-tabs {
+.project-tabs,
+.blogs-tabs {
     margin: 20px 0;
     display: flex;
     gap: 12px;
@@ -271,83 +272,22 @@ section#work-experience {
     text-decoration: none;
 }
 
-#blogs img {
-    width: 200px;
-}
-
-.blog-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 24px;
-    margin-top: 32px;
-}
-
-.blog-card {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 24px;
-    background: #282828;
-    backdrop-filter: blur(14px);
-    border-radius: 24px;
-    padding: 24px;
+#blogs h3 {
     color: white;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    border-bottom: 1px solid white;
 }
 
-.blog-card:hover {
-    transform: scale(1.02);
+.blogs-tab-content {
+  display: none;
 }
 
-.blog-card h3 {
-    margin-top: 0;
-    font-size: 1.2rem;
-}
-
-.blog-card p {
-    color: #ccc;
-    font-size: 0.95rem;
-}
-
-.blog-card img {
-    width: 160px;
-    height: auto;
-    border-radius: 16px;
-    object-fit: cover;
-}
-
-.blog-card .blog-text {
-    flex: 1;
-}
-
-.blog-card .credit {
-    font-size: 0.75rem;
-    color: #aaa;
-    margin-top: 12px;
-}
-
-.blog-card .credit a {
-    color: #46a0ff;
-    text-decoration: none;
-}
-
-.blog-card a {
-    color: white !important;
-}
-
-.featured {
-    grid-column: span 2;
-}
-
-@media (max-width: 768px) {
-    .blog-grid {
-        display: block;
-    }
-
-    .blog-card {
-        margin-bottom: 10px;
-    }
+.blogs-tab-content.active {
+  display: block;
 }
 
 
@@ -368,17 +308,19 @@ section#work-experience {
 }
 
 #contact {
-  width: 100%;
-  min-height: 100vh; /* allows image to expand if content grows */
-  padding: 5%;
-  background-image: url('../image/wave.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center; /* ensures full image stays centered */
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+    /* allows image to expand if content grows */
+    padding: 5%;
+    background-image: url('../image/wave.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    /* ensures full image stays centered */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 #contact .row {

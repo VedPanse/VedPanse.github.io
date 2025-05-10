@@ -97,12 +97,12 @@
   <section id="projects">
     <h1>Projects</h1>
     <div class="project-tabs">
-      <button class="tab-btn active" data-tab="ai">Artificial Intelligence</button>
-      <button class="tab-btn" data-tab="software">Software Development</button>
-      <button class="tab-btn" data-tab="embedded">Embedded Systems</button>
+      <button class="project-tab-btn tab-btn active" data-tab="ai">Artificial Intelligence</button>
+      <button class="project-tab-btn tab-btn" data-tab="software">Software Development</button>
+      <button class="project-tab-btn tab-btn" data-tab="embedded">Embedded Systems</button>
     </div>
     <br /><br />
-    <div class="tab-content" id="ai">
+    <div class="project-tab-content tab-content" id="ai">
       <div class="project">
         <h3>Orion</h3>
         <p>macOS virtual assistant capable of interacting online and locally with applications.</p>
@@ -122,7 +122,7 @@
       </div>
     </div>
 
-    <div class="tab-content" id="software" style="display: none;">
+    <div class="project-tab-content tab-content" id="software" style="display: none;">
       <div class="project">
         <h3>Cognitio</h3>
         <p>An AI quiz generator that integrates with Google Gemini API to generate personalized quizzes from uploaded
@@ -143,7 +143,7 @@
       </div>
     </div>
 
-    <div class="tab-content" id="embedded" style="display: none;">
+    <div class="project-tab-content tab-content" id="embedded" style="display: none;">
       <div class="project">
         <h3>NanoBot</h3>
         <p>Remote-controlled robot with video stream and directional control.</p>
@@ -166,128 +166,93 @@
   <section id="blogs">
     <h1>Blogs</h1>
 
-    <div class="blog-grid">
-      <!-- Featured Blog -->
-      <div class="blog-card featured">
-        <a href="templates/blogs/vim.html" target="_blank">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Vimlogo.svg" alt="Vim Editor Logo" />
-          <div class="blog-text">
-            <h3>Switching to the Vim editing mode altogether</h3>
-            <p>In this blog, I share my experience with the Vim editing technique.</p>
-            <span class="credit">
-              Image Credits:
-              <a href="https://commons.wikimedia.org/wiki/File:Vimlogo.svg" target="_blank">Wikimedia Commons</a>
-            </span>
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-0">
+        <img src="static/image/blogs.png" style="width: 100%; border-radius: 20px;">
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-12">
+        <div style="margin-top: 40px;">
+          <div class="blogs-tabs">
+            <button class="blogs-tab-btn tab-btn active" data-tab="casual">Casual</button>
+            <button class="blogs-tab-btn tab-btn" data-tab="publications">Publications</button>
           </div>
-        </a>
-      </div>
-
-      <!-- Other Blogs -->
-      <div class="blog-card">
-        <a href="templates/blogs/introductory-blog.html" target="_blank">
-          <h3>From Thousand Oaks to 10,000 Commits</h3>
-        </a>
-      </div>
-      <div class="blog-card">
-        <a href="templates/blogs/programming-dilemma.html" target="_blank">
-          <h3>Programming Dilemma - My recommendations to start programming</h3>
-        </a>
-      </div>
-      <div class="blog-card">
-        <a href="templates/blogs/on-cricket.html" target="_blank">
-          <h3>On Cricket - My Favorite Sport</h3>
-        </a>
-      </div>
-      <div class="blog-card">
-        <a href="templates/blogs/my-internship.html" target="_blank">
-          <h3>My Internship at Findability Sciences</h3>
-        </a>
-      </div>
-      <div class="blog-card">
-        <a href="templates/blogs/code-website.html" target="_blank">
-          <h3>Why do I code all of my websites without any tools?</h3>
-        </a>
-      </div>
-    </div>
-
-
-    <br /><br /><br />
-
-
-    <h1>Publications</h1>
-    <div class="blog-grid">
-      <!-- Featured Publication -->
-      <div class="blog-card featured">
-        <a href="https://www.lokmattimes.com/aurangabad/can-artificial-intelligence-be-used-to-detect-fake-news/" target="_blank">
-          <img src="https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg" alt="Social Media" />
-          <div class="blog-text">
-            <h3>Can Artificial Intelligence Be Used to Detect Fake News Online?</h3>
-            <p>In this blog, I share my experience with the Vim editing technique.</p>
-            <span class="credit">
-              Image Credits:
-              <a href="https://www.pexels.com/photo/close-up-photography-of-smartphone-icons-267350/"
-                target="_blank">Pixabay</a>
-            </span>
+          <div class="blogs-tab-content tab-content active" id="casual" style="display: block;">
+            <a href="templates/blogs/introductory-blog.html" target="_blank">
+              <h3>From Thousand Oaks to 10,000 Commits</h3>
+            </a>
+            <a href="templates/blogs/vim.html" target="_blank">
+              <h3>Switching to the Vim editing mode altogether</h3>
+            </a>
+            <a href="templates/blogs/programming-dilemma.html" target="_blank">
+              <h3>Programming Dilemma - My recommendations to start programming</h3>
+            </a>
+            <a href="templates/blogs/on-cricket.html" target="_blank">
+              <h3>On Cricket - My Favorite Sport</h3>
+            </a>
+            <a href="templates/blogs/my-internship.html" target="_blank">
+              <h3>My Internship at Findability Sciences</h3>
+            </a>
+            <a href="templates/blogs/code-website.html" target="_blank">
+              <h3>Why do I code all of my websites without any tools?</h3>
+            </a>
           </div>
-        </a>
-      </div>
 
-      <!-- Other Publications -->
-      <div class="blog-card">
-        <a href="templates/publications/machine-learning/index.html" target="_blank">
-          <h3>Machine Learning and Algorithms - Basic Tutorial</h3>
-        </a>
-      </div>
-      <div class="blog-card">
-        <a href="templates/publications/algorithms/index.html" target="_blank">
-          <h3>Algorithms Explained</h3>
-        </a>
-      </div>
-      <div class="blog-card">
-        <a href="templates/publications/plotly/index.html" target="_blank">
-          <h3>Plotly Tutorials</h3>
-        </a>
-      </div>
-      <div class="blog-card">
-        <a href="templates/publications/the-techies/index.html" target="_blank">
-          <h3>The Techies</h3>
-        </a>
+          <div class="blogs-tab-content tab-content" id="publications" style="display: none;">
+            <a href="https://www.lokmattimes.com/aurangabad/can-artificial-intelligence-be-used-to-detect-fake-news/"
+              target="_blank">
+              <h3>Can Artificial Intelligence Be Used to Detect Fake News Online?</h3>
+            </a>
+            <a href="templates/publications/machine-learning/index.html" target="_blank">
+              <h3>Machine Learning and Algorithms - Basic Tutorial</h3>
+            </a>
+            <a href="templates/publications/algorithms/index.html" target="_blank">
+              <h3>Algorithms Explained</h3>
+            </a>
+            <a href="templates/publications/plotly/index.html" target="_blank">
+              <h3>Plotly Tutorials</h3>
+            </a>
+            <a href="templates/publications/the-techies/index.html" target="_blank">
+              <h3>The Techies</h3>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <section id="contact">
-    <h1>Contact</h1><br/><br/>
+    <h1>Contact</h1><br /><br />
 
     <form method="POST" action="https://formspree.io/f/xdoyprne">
-      
+
       <div class="row">
-          <div class="col-lg-6 col-md-6 col-sm-6">
-            <p>Name</p>
-          </div>
-          <div class="col-lg-6 col-md-6 col-sm-6">
-            <input type="text" class="form-control" id="floatingInput" placeholder="Enter your name" name="Name" required>
-          </div>
+        <div class="col-lg-6 col-md-6 col-sm-6">
+          <p>Name</p>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6">
+          <input type="text" class="form-control" id="floatingInput" placeholder="Enter your name" name="Name" required>
+        </div>
       </div>
 
-        <div class="row">
-          <div class="col-lg-6 col-md-6 col-sm-6">
-            <p>Email</p>
-          </div>
-          <div class="col-lg-6 col-md-6 col-sm-6">
-            <input type="email" class="form-control" id="floatingEmail" placeholder="Enter your email ID" name="Email" required>
-          </div>
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6">
+          <p>Email</p>
         </div>
+        <div class="col-lg-6 col-md-6 col-sm-6">
+          <input type="email" class="form-control" id="floatingEmail" placeholder="Enter your email ID" name="Email"
+            required>
+        </div>
+      </div>
 
-        <div class="row">
-          <div class="col-lg-6 col-md-6 col-sm-6">
-            <p>Message</p>
-          </div>
-          <div class="col-lg-6 col-md-6 col-sm-6">
-            <textarea type="message" class="form-control" id="message" placeholder="Enter your message" name="Message"
-              required></textarea>
-          </div>
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6">
+          <p>Message</p>
         </div>
+        <div class="col-lg-6 col-md-6 col-sm-6">
+          <textarea type="message" class="form-control" id="message" placeholder="Enter your message" name="Message"
+            required></textarea>
+        </div>
+      </div>
       </div>
       <button class="btn btn-light" type="submit">Submit</button>
     </form>
@@ -296,5 +261,5 @@
 </body>
 <script src="static/render/skills.js"></script>
 <script src="static/render/projects.js"></script>
-
+<script src="static/render/blogs.js"></script>
 </html>

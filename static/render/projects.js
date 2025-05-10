@@ -1,5 +1,5 @@
-const tabButtons = document.querySelectorAll('.tab-btn');
-const tabContents = document.querySelectorAll('.tab-content');
+const tabButtons = document.querySelectorAll('.project-tab-btn');
+const tabContents = document.querySelectorAll('.project-tab-content');
 
 tabButtons.forEach(button => {
   button.addEventListener('click', () => {
