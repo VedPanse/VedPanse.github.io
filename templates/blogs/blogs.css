@@ -23,6 +23,11 @@ a {
     color: #7084ff;
 }
 
+a:hover {
+    color: #7084ff;
+    text-decoration: underline;
+}
+
 h1 {
     -webkit-text-fill-color: transparent;
     -moz-text-fill-color: transparent;
