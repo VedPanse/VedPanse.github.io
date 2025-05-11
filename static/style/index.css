@@ -367,6 +367,10 @@ section#work-experience {
     #blogs span {
         display: none;
     }
+
+    #project-army {
+        width: 90vw !important;
+    }
 }
 
 .project img.app-icons {
