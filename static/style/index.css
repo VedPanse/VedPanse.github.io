@@ -379,3 +379,15 @@ section#work-experience {
     border-radius: 14px;
     margin-bottom: 10px;
 }
+
+
+.skill-label {
+  margin-top: 6px;
+  font-size: 0.8rem;
+  color: white;
+  text-align: center;
+}
+
+.skill-wrapper {
+  text-align: center;
+}

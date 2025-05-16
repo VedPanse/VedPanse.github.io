@@ -19,9 +19,16 @@ const skillsHTML = skills.map((rawSkill, i) => {
     const x = xOffset + col * (spacing * 0.866); // horizontal spacing
     const y = yOffset + row * spacing + (col % 2 === 1 ? spacing / 2 : 0); // vertical offset
 
-    return `<div class="skill" style="position: absolute; left: ${x}%; top: ${y}%; transform: translate(-50%, -50%);">
-                <img src="static/image/icons/${skill}.png" alt="${rawSkill}" title="${rawSkill}" />
-            </div>`;
+return `
+  <div class="skill-wrapper" style="position: absolute; left: ${x}%; top: ${y}%; transform: translate(-50%, -50%); display: flex; flex-direction: column; align-items: center;">
+    <div class="skill">
+      <img src="static/image/icons/${skill}.png" alt="${rawSkill}" title="${rawSkill}" />
+    </div>
+    <p class="skill-label">${rawSkill}</p>
+  </div>
+`;
+
+
 
 }).join('');
 
