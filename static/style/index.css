@@ -136,9 +136,9 @@ section#work-experience {
     left: -27px;
     width: 12px;
     height: 12px;
-    background-color: #4f4f4f;
+    background-color: white;
     border-radius: 50%;
-    border: 2px solid royalblue;
+    border: 2px solid white;
 }
 
 .timeline-date {
