@@ -1,5 +1,26 @@
-const skills = ["Python", "C", "C++", "Swift", "C#", "Java", "Kotlin", "Javascript", "Typescript", "AWK",
-    "SED", "Bash", "HTML", "CSS", "Rust", "NextJS", "Raspberry Pi", "Firebase", "GitHub", "Arduino"];
+const skills = [
+    "Rust",
+    "C++",
+    "C",
+    "Kotlin",
+    "Swift",
+    "Python",
+    "Java",
+    "C#",
+    "Typescript",
+    "Javascript",
+    "NextJS",
+    "Firebase",
+    "Raspberry Pi",
+    "Arduino",
+    "GitHub",
+    "Bash",
+    "AWK",
+    "SED",
+    "HTML",
+    "CSS"
+];
+
 
 const isMobile = window.innerWidth < 768;
 const containerHeight = isMobile ? 700 : 400;
