@@ -1,5 +1,5 @@
 const skills = ["Python", "C", "C++", "Swift", "C#", "Java", "Kotlin", "Javascript", "Typescript", "AWK",
-    "SED", "Bash", "HTML", "CSS", "Rust", "NextJS", "Raspberry Pi", "Firebase", "GitHub"];
+    "SED", "Bash", "HTML", "CSS", "Rust", "NextJS", "Raspberry Pi", "Firebase", "GitHub", "Arduino"];
 
 const isMobile = window.innerWidth < 768;
 const containerHeight = isMobile ? 700 : 400;
