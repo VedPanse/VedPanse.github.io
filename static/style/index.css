@@ -110,10 +110,16 @@ section#work-experience {
     z-index: 0;
     /* Ensure it is under skills */
     margin-top: 75vh;
-    /* Add spacing to avoid overlap */
+}
+
+section#work-experience h1 {
     padding-left: 5%;
 }
 
+section#work-experience iframe {
+    width: 100vw;
+    height: 100vh;
+}
 
 .timeline {
     position: relative;

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="https://unpkg.com/splitting/dist/splitting.css" rel="stylesheet">
+  <script src="https://unpkg.com/scroll-out@2.2.2/dist/scroll-out.min.js"></script>
+  <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+  <link href="work.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      color: white;
+      overflow-x: hidden;
+    }
+  </style>
+</head>
+
+<body>
+  <section class="intro-section">
+    <h1>Work Experience</h1>
+  </section>
+
+  <div id="experience-container"></div>
+
+<script>
+  const experienceData = [
+    {
+      date: "Mar 2025 – Present",
+      company: "Spuddie.ai · Software Engineer Intern",
+      description: "Designed a vector-memory system that improved AI response relevance and user satisfaction for 500+ users.",
+      logo: "spuddie.jpeg"
+    },
+    {
+      date: "Jul 2024 – Dec 2024",
+      company: "Venture Shares · Software Developer Intern",
+      description: "Built and optimized a financial platform frontend with Next.js and React; delivered REST APIs for live market data.",
+      logo: "ventureshares.jpeg"
+    },
+    {
+      date: "Jun 2023 – Aug 2023",
+      company: "Rieom AI · Software Engineer Intern",
+      description: "Automated document classification using OCR and computer vision; reduced manual sorting time by 85%.",
+      logo: "rieom.jpg"
+    },
+    {
+      date: "Apr 2022 – May 2022",
+      company: "Findability Sciences · ML & Data Science Intern",
+      description: "Improved ML model accuracy by 18% through outlier handling on 10,000+ real estate records.",
+      logo: "findability.jpeg"
+    },
+    {
+      date: "Jun 2021 – Jul 2021",
+      company: "Xceed Imagination · Software Developer Intern",
+      description: "Built internal logging tools for Wells Fargo; modernized website to improve UX and page speed.",
+      logo: "xceed.jpeg"
+    },
+    {
+      date: "Mar 2018 – Jun 2019",
+      company: "BancBridge · Software Developer Intern",
+      description: "Created a Spring Boot web app for batch macro execution; reduced processing time by 60%.",
+      logo: "bancbridge.jpeg"
+    }
+  ];
+
+  const container = document.getElementById("experience-container");
+
+  experienceData.forEach(entry => {
+    container.innerHTML += `
+      <section class="content-section" data-scroll>
+        <figure class="figure">
+          <img src="../image/logos/${entry.logo}" alt="${entry.company}" />
+        </figure>
+        <div class="content">
+          <header class="header">
+            <div class="subheading">${entry.date}</div>
+            <h2 class="heading">${entry.company}</h2>
+          </header>
+          <p class="paragraph">${entry.description}</p>
+        </div>
+      </section>
+    `;
+  });
+
+  ScrollOut({
+    cssProps: {
+      visibleY: true,
+      viewportY: true
+    }
+  });
+
+  Splitting({ target: '.heading' });
+</script>
+
+</body>
+
+</html>
