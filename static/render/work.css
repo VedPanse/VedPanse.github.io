@@ -50,7 +50,7 @@ HTML CSS JSResult Skip Results Iframe
   grid-template-rows: 1fr 1fr;
   color: white;
   padding: 2em;
-  font-size: 2.5vmin;
+  font-size: 2.75vmin;
 }
 .content * {
   text-shadow: 0 0 4vmin rgba(0, 0, 0, 0.25);
@@ -133,6 +133,4 @@ body, html {
   padding: 0;
   line-height: 1.05;
   font-weight: 400;
-  letter-spacing: -0.015em;
-  font-family: "SF Pro Display", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }

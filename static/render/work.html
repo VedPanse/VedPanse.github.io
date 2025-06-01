@@ -17,89 +17,92 @@
 </head>
 
 <body>
-  <section class="intro-section">
-    <h1>Work Experience</h1>
-  </section>
-
   <div id="experience-container"></div>
     
-<script>
-  const experienceData = [
-    {
-      date: "Mar 2025 – Present",
-      company: "Spuddie.ai · Software Engineer Intern",
-      description: "Designed a vector-memory system that improved AI response relevance and user satisfaction for 500+ users.",
-      logo: "spuddie.jpeg"
-    },
-    {
-      date: "Jul 2024 – Dec 2024",
-      company: "Venture Shares · Software Developer Intern",
-      description: "Built and optimized a financial platform frontend with Next.js and React; delivered REST APIs for live market data.",
-      logo: "ventureshares.jpeg"
-    },
-    {
-      date: "Jun 2023 – Aug 2023",
-      company: "Rieom AI · Software Engineer Intern",
-      description: "Automated document classification using OCR and computer vision; reduced manual sorting time by 85%.",
-      logo: "rieom.jpg"
-    },
-    {
-      date: "Apr 2022 – May 2022",
-      company: "Findability Sciences · ML & Data Science Intern",
-      description: "Improved ML model accuracy by 18% through outlier handling on 10,000+ real estate records.",
-      logo: "findability.jpeg"
-    },
-    {
-      date: "Jun 2021 – Jul 2021",
-      company: "Xceed Imagination · Software Developer Intern",
-      description: "Built internal logging tools for Wells Fargo; modernized website to improve UX and page speed.",
-      logo: "xceed.jpeg"
-    },
-    {
-      date: "Mar 2018 – Jun 2019",
-      company: "BancBridge · Software Developer Intern",
-      description: "Created a Spring Boot web app for batch macro execution; reduced processing time by 60%.",
-      logo: "bancbridge.jpeg"
-    }
-  ];
+<script>const experienceData = [
+  {
+    date: "Mar 2025 – Present",
+    position: "Software Engineer Intern",
+    company: "Spuddie.ai",
+    description: "Engineered a memory-augmented retrieval system that enhanced AI conversation quality across 500+ users, improving emotional coherence and recall accuracy in user interactions.",
+    logo: "spuddie.jpeg"
+  },
+  {
+    date: "Jul 2024 – Dec 2024",
+    position: "Software Developer Intern",
+    company: "Venture Shares",
+    description: "Led the frontend modernization of a trading analytics platform using Next.js and React, while integrating RESTful APIs to deliver real-time equities and crypto market insights.",
+    logo: "ventureshares.jpeg"
+  },
+  {
+    date: "Jun 2023 – Aug 2023",
+    position: "Software Engineer Intern",
+    company: "Rieom AI",
+    description: "Developed an OCR-based document classification system using Python and OpenCV, reducing manual review time by 85% and improving internal audit workflows.",
+    logo: "rieom.jpg"
+  },
+  {
+    date: "Apr 2022 – May 2022",
+    position: "ML & Data Science Intern",
+    company: "Findability Sciences",
+    description: "Boosted real estate price prediction accuracy by 18% through advanced outlier detection and robust pre-processing across 10,000+ data points.",
+    logo: "findability.jpeg"
+  },
+  {
+    date: "Jun 2021 – Jul 2021",
+    position: "Software Developer Intern",
+    company: "Xceed Imagination",
+    description: "Improved internal tooling for Wells Fargo by building a custom logging framework in Python; also redesigned the company website for faster load times and accessibility.",
+    logo: "xceed.jpeg"
+  },
+  {
+    date: "Mar 2018 – Jun 2019",
+    position: "Software Developer Intern",
+    company: "BancBridge",
+    description: "Created a Spring Boot web platform to batch-run client macros, reducing financial reconciliation cycle time by 60% and automating key back-office tasks.",
+    logo: "bancbridge.jpeg"
+  }
+];
 
-  const container = document.getElementById("experience-container");
+const container = document.getElementById("experience-container");
 
-  experienceData.forEach(entry => {
-    const section = document.createElement("section");
-    section.className = "content-section";
-    section.setAttribute("data-scroll", "");
+experienceData.forEach(entry => {
+  const section = document.createElement("section");
+  section.className = "content-section";
+  section.setAttribute("data-scroll", "");
 
-    const figure = document.createElement("figure");
-    figure.className = "figure";
-    figure.style.background = `
-      linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9)),
-      url('../image/logos/${entry.logo}') center/cover no-repeat
-    `;
+  const figure = document.createElement("figure");
+  figure.className = "figure";
+  figure.style.background = `
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9)),
+    url('../image/logos/${entry.logo}') center/cover no-repeat
+  `;
 
-    const content = document.createElement("div");
-    content.className = "content";
-    content.innerHTML = `
-      <header class="header">
-        <div class="subheading">${entry.date}</div>
-        <h2 class="heading">${entry.company}</h2>
-      </header>
-      <p class="paragraph">${entry.description}</p>
-    `;
+  const content = document.createElement("div");
+  content.className = "content";
+  content.innerHTML = `
+    <header class="header">
+      <div class="subheading">${entry.date}</div>
+      <div class="subheading">${entry.position}</div>
+      <h2 class="heading">${entry.company}</h2>
+    </header>
+    <p class="paragraph">${entry.description}</p>
+  `;
 
-    section.appendChild(figure);
-    section.appendChild(content);
-    container.appendChild(section);
-  });
+  section.appendChild(figure);
+  section.appendChild(content);
+  container.appendChild(section);
+});
 
-  ScrollOut({
-    cssProps: {
-      visibleY: true,
-      viewportY: true
-    }
-  });
+ScrollOut({
+  cssProps: {
+    visibleY: true,
+    viewportY: true
+  }
+});
 
-  Splitting({ target: '.heading' });
+Splitting({ target: '.heading' });
+
 </script>
 
 
