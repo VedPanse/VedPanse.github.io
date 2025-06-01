@@ -22,7 +22,7 @@
   </section>
 
   <div id="experience-container"></div>
-
+    
 <script>
   const experienceData = [
     {
@@ -66,20 +66,30 @@
   const container = document.getElementById("experience-container");
 
   experienceData.forEach(entry => {
-    container.innerHTML += `
-      <section class="content-section" data-scroll>
-        <figure class="figure">
-          <img src="../image/logos/${entry.logo}" alt="${entry.company}" />
-        </figure>
-        <div class="content">
-          <header class="header">
-            <div class="subheading">${entry.date}</div>
-            <h2 class="heading">${entry.company}</h2>
-          </header>
-          <p class="paragraph">${entry.description}</p>
-        </div>
-      </section>
+    const section = document.createElement("section");
+    section.className = "content-section";
+    section.setAttribute("data-scroll", "");
+
+    const figure = document.createElement("figure");
+    figure.className = "figure";
+    figure.style.background = `
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9)),
+      url('../image/logos/${entry.logo}') center/cover no-repeat
     `;
+
+    const content = document.createElement("div");
+    content.className = "content";
+    content.innerHTML = `
+      <header class="header">
+        <div class="subheading">${entry.date}</div>
+        <h2 class="heading">${entry.company}</h2>
+      </header>
+      <p class="paragraph">${entry.description}</p>
+    `;
+
+    section.appendChild(figure);
+    section.appendChild(content);
+    container.appendChild(section);
   });
 
   ScrollOut({
@@ -91,6 +101,7 @@
 
   Splitting({ target: '.heading' });
 </script>
+
 
 </body>
 
