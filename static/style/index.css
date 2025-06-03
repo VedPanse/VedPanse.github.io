@@ -121,47 +121,9 @@ section#work-experience iframe {
     height: 100vh;
 }
 
-.timeline {
-    position: relative;
-    max-width: 800px;
-    margin: 40px auto;
-    padding-left: 20px;
-    border-left: 2px solid rgba(255, 255, 255, 0.2);
-}
-
-.timeline-item {
-    margin-bottom: 40px;
-    position: relative;
-    padding-left: 20px;
-}
-
-.timeline-item::before {
-    content: "";
-    position: absolute;
-    top: 4px;
-    left: -27px;
-    width: 12px;
-    height: 12px;
-    background-color: white;
-    border-radius: 50%;
-    border: 2px solid white;
-}
-
-.timeline-date {
-    font-size: 0.9rem;
-    color: #aaa;
-    margin-bottom: 6px;
-}
-
-.timeline-content h3 {
-    margin: 0;
-    font-size: 1.2rem;
-}
-
-.timeline-content p {
-    margin: 4px 0 0;
-    font-size: 0.95rem;
-    line-height: 1.4;
+#projects i {
+    margin-right: 5px;
+    font-size: 14px;
 }
 
 #project-overlook {
@@ -176,7 +138,12 @@ section#work-experience iframe {
 
 #project-container {
     background-image: url('../image/project-bg/primary.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
     padding: 5% 0;
+    position: relative;
+    z-index: 1;
 }
 
 .project-tabs,
@@ -204,7 +171,10 @@ section#work-experience iframe {
     cursor: pointer;
     transition: border .3s ease;
     font-size: 1.125rem;
-    margin-right: 5px
+    margin-right: 5px;
+    flex: 1 1 0;
+    min-width: 0;
+    text-align: center;
 }
 
 #projects {
@@ -215,20 +185,33 @@ section#work-experience iframe {
     color: white
 }
 
+
 .tab-btn.active.primary {
     border-bottom-color: #ff35a2;
+}
+.tab-btn.active.primary i {
+    color: #ff35a2;
 }
 
 .tab-btn.active.secondary {
     border-bottom-color: #3dd6f5;
 }
+.tab-btn.active.secondary i {
+    color: #3dd6f5;
+}
 
 .tab-btn.active.tertiary {
     border-bottom-color: #a9ff5e;
 }
+.tab-btn.active.tertiary i {
+    color: #a9ff5e;
+}
 
 .tab-btn.active.quaternary {
     border-bottom-color: #a34fde;
+}
+.tab-btn.active.quaternary i {
+    color: #a34fde;
 }
 
 .tab-content {
