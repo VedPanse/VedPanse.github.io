@@ -164,9 +164,19 @@ section#work-experience iframe {
     line-height: 1.4;
 }
 
+#project-overlook {
+    width: 75%;
+    margin: 0 auto;
+    background: linear-gradient(175deg,#191919 4%,rgba(25,25,25,.55));
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 2%;
+    border-radius: 20px;
+}
 
-#projects {
-    padding-left: 5%;
+#project-container {
+    background-image: url('../image/project-bg/primary.svg');
+    padding: 5% 0;
 }
 
 .project-tabs,
@@ -174,27 +184,52 @@ section#work-experience iframe {
     margin: 20px 0;
     display: flex;
     gap: 12px;
+}
+
+.project-tabs {
+    justify-content: space-between;
+}
+
+.blogs-tabs {
     justify-content: center;
 }
 
-
 .tab-btn {
     background-color: transparent;
-    color: white;
-    border: 1px solid white;
-    padding: 8px 20px;
-    border-radius: 999px;
+    color: #A7A9AC;
+    border: none;
+    border-bottom: 1px solid #414042;
+    padding: 8px 5px 16px;
     /* 👈 makes it rounded */
     cursor: pointer;
-    transition: background 0.3s, color 0.3s;
-    font-size: 0.95rem;
+    transition: border .3s ease;
+    font-size: 1.125rem;
+    margin-right: 5px
+}
+
+#projects {
+    padding-bottom: 5%;
 }
 
 .tab-btn.active {
-    background-color: white;
-    color: black;
+    color: white
 }
 
+.tab-btn.active.primary {
+    border-bottom-color: #ff35a2;
+}
+
+.tab-btn.active.secondary {
+    border-bottom-color: #3dd6f5;
+}
+
+.tab-btn.active.tertiary {
+    border-bottom-color: #a9ff5e;
+}
+
+.tab-btn.active.quaternary {
+    border-bottom-color: #a34fde;
+}
 
 .tab-content {
     margin-top: 20px;
@@ -222,10 +257,6 @@ section#work-experience iframe {
     min-width: 240px;
     padding: 16px 20px;
     border-radius: 20px;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     color: white;
 }
 

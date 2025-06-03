@@ -1,5 +1,6 @@
 const tabButtons = document.querySelectorAll('.project-tab-btn');
 const tabContents = document.querySelectorAll('.project-tab-content');
+const parentBgParent = document.querySelector('#project-container');
 
 tabButtons.forEach(button => {
   button.addEventListener('click', () => {
@@ -7,6 +8,9 @@ tabButtons.forEach(button => {
     if (button.classList.contains('active')) return;
 
     const targetId = button.getAttribute('data-tab');
+    const theme = button.getAttribute('data-theme');
+
+    parentBgParent.style.backgroundImage = `url(static/image/project-bg/${theme}.svg)`;
 
     // Toggle active class on buttons
     tabButtons.forEach(btn => btn.classList.remove('active'));
@@ -18,6 +22,7 @@ tabButtons.forEach(button => {
     });
   });
 });
+
 
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".lang").forEach(lang => {

@@ -47,80 +47,117 @@
     <h1>Projects</h1>
     <img src="static/image/ai_app_icon_army.png" style="width: 50%; display: block; margin: 20px auto;"
       id="project-army">
-    <div class="project-tabs">
-      <button class="project-tab-btn tab-btn active" data-tab="ai">Artificial Intelligence</button>
-      <button class="project-tab-btn tab-btn" data-tab="software">Software Development</button>
-      <button class="project-tab-btn tab-btn" data-tab="embedded">Embedded Systems</button>
-    </div>
-    <br /><br />
-    <div class="project-tab-content tab-content" id="ai">
-      <div class="project">
-        <img src="static/image/app-icons/orion.png" class="app-icons">
-        <h3>Orion</h3>
-        <p>macOS virtual assistant capable of interacting online and locally with applications.</p>
-        <span class="lang Swift Python Rust"></span>
-      </div>
-      <div class="project">
-        <img src="static/image/app-icons/ballhawk.png" class="app-icons">
-        <h3>BallHawk</h3>
-        <p>A sports analytics website for baseball fans that estimates the best seats in the stadium to catch a homerun.
-        </p>
-        <span class="lang Python NextJS"></span>
-      </div>
-      <div class="project">
-        <img src="static/image/app-icons/phishnet.png" class="app-icons">
-        <h3>PhishNet</h3>
-        <p>A phishing detection engine that flags suspicious content on X and Gmail to warn users against scam attempts.
-        </p>
-        <span class="lang Python Javascript CSS"></span>
-      </div>
-    </div>
 
-    <div class="project-tab-content tab-content" id="software" style="display: none;">
-      <div class="project">
-        <img src="static/image/app-icons/cognitio.png" class="app-icons">
-        <h3>Cognitio</h3>
-        <p>An AI quiz generator that integrates with Google Gemini API to generate personalized quizzes from uploaded
-          documents with instant feedback.</p>
-        <span class="lang Kotlin"></span>
-      </div>
-      <div class="project">
-        <img src="static/image/app-icons/text pirate.png" class="app-icons">
-        <h3>Text Pirate</h3>
-        <p>A chrome extension that helps users bookmark text instead of webpages, and provides updates when changes are
-          made to the bookmarked text.</p>
-        <span class="lang Javascript HTML CSS"></span>
-      </div>
-      <div class="project">
-        <img src="static/image/app-icons/javelinLang.png" class="app-icons">
-        <h3>javelinLang</h3>
-        <p>A Domain-Specific programming language with concise syntax to simplify GUI creation and file system
-          automation, enabling clean, minimal scripting.</p>
-        <span class="lang Python Kotlin Java"></span>
+    <div id="project-container">
+      <div id="project-overlook">
+        <div class="project-tabs">
+          <button class="project-tab-btn tab-btn active primary" data-theme="primary" data-tab="ai">Artificial
+            Intelligence</button>
+          <button class="project-tab-btn tab-btn secondary" data-theme="secondary" data-tab="web-dev">Web
+            Development</button>
+          <button class="project-tab-btn tab-btn tertiary" data-theme="tertiary" data-tab="app-dev">App
+            Development</button>
+          <button class="project-tab-btn tab-btn quaternary" data-theme="quaternary" data-tab="embedded">Embedded
+            Systems</button>
+        </div>
+        <br /><br />
+        <div class="project-tab-content tab-content" id="ai">
+          <div class="project">
+            <img src="static/image/app-icons/orion.png" class="app-icons">
+            <h3>Orion</h3>
+            <p>macOS virtual assistant capable of interacting online and locally with applications.</p>
+            <span class="lang Swift Python Rust"></span>
+          </div>
+          <div class="project">
+            <img src="static/image/app-icons/ballhawk.png" class="app-icons">
+            <h3>BallHawk</h3>
+            <p>A sports analytics website for baseball fans that estimates the best seats in the stadium to catch a
+              homerun.
+            </p>
+            <span class="lang Python NextJS"></span>
+          </div>
+          <div class="project">
+            <img src="static/image/app-icons/phishnet.png" class="app-icons">
+            <h3>PhishNet</h3>
+            <p>A phishing detection engine that flags suspicious content on X and Gmail to warn users against scam
+              attempts.
+            </p>
+            <span class="lang Python Javascript CSS"></span>
+          </div>
+        </div>
+
+        <div class="project-tab-content tab-content" id="web-dev" style="display: none;">
+          <div class="project">
+            <img src="static/image/app-icons/sentinel.png" class="app-icons">
+            <h3>Sentinel</h3>
+            <p>A cross-platform AI watchdog that monitors web content for semantic matches to
+              user-defined tasks, using sentence transformers.</p>
+            <span class="lang Java Python HTML CSS Javascript"></span>
+          </div>
+          <div class="project">
+            <img src="static/image/app-icons/text pirate.png" class="app-icons">
+            <h3>Text Pirate</h3>
+            <p>A chrome extension that helps users bookmark text instead of webpages, and provides updates when changes
+              are
+              made to the bookmarked text.</p>
+            <span class="lang Javascript HTML CSS"></span>
+          </div>
+          <div class="project">
+            <img src="static/image/app-icons/bikenav.png" class="app-icons">
+            <h3>BikeNav</h3>
+            <p>A Chrome extension that connects to Google Maps to help users quickly find optimized biking trails and
+              routes, tailored for cyclists navigating every environment.</p>
+            <span class="lang HTML CSS Javascript"></span>
+          </div>
+        </div>
+
+        <div class="project-tab-content tab-content" id="app-dev" style="display: none;">
+          <div class="project">
+            <img src="static/image/app-icons/cognitio.png" class="app-icons">
+            <h3>Cognitio</h3>
+            <p>An AI quiz generator that integrates with Google Gemini API to generate personalized quizzes from
+              uploaded
+              documents with instant feedback.</p>
+            <span class="lang Kotlin"></span>
+          </div>
+          <div class="project">
+            <img src="static/image/app-icons/netherite.png" class="app-icons">
+            <h3>Netherite</h3>
+            <p>A minimalist Markdown editor built with SwiftUI, offering seamless live preview, syntax highlighting, and
+              a distraction-free writing experience.</p>
+            <span class="lang Swift C"></span>
+          </div>
+          <div class="project">
+            <img src="static/image/app-icons/javelinLang.png" class="app-icons">
+            <h3>javelinLang</h3>
+            <p>A Domain-Specific programming language with concise syntax to simplify GUI creation and file system
+              automation, enabling clean, minimal scripting.</p>
+            <span class="lang Python Kotlin C++"></span>
+          </div>
+        </div>
+
+        <div class="project-tab-content tab-content" id="embedded" style="display: none;">
+          <div class="project">
+            <img src="static/image/app-icons/nanobot.png" class="app-icons">
+            <h3>NanoBot</h3>
+            <p>App controlled robot accessible from anywhere in the world, powered with video stream and directional control.</p>
+            <span class="lang CPP Kotlin RaspberryPi"></span>
+          </div>
+          <div class="project">
+            <img src="static/image/app-icons/avi.png" class="app-icons">
+            <h3>Avi</h3>
+            <p>Talking robot head with emotional rendering and cloud-based AI, capable of changing expressions to speech tone.</p>
+            <span class="lang Python CPP RaspberryPi"></span>
+          </div>
+          <div class="project">
+            <img src="static/image/app-icons/rpl.png" class="app-icons">
+            <h3>Rocket Avionics</h3>
+            <p>Custom data logger to measure acceleration, apogee, and velocity of a rocket, capable of flying 5000ft.</p>
+            <span class="lang C"></span>
+          </div>
+        </div>
       </div>
     </div>
-
-    <div class="project-tab-content tab-content" id="embedded" style="display: none;">
-      <div class="project">
-        <img src="static/image/app-icons/nanobot.png" class="app-icons">
-        <h3>NanoBot</h3>
-        <p>Remote-controlled robot with video stream and directional control.</p>
-        <span class="lang CPP Kotlin RaspberryPi"></span>
-      </div>
-      <div class="project">
-        <img src="static/image/app-icons/avi.png" class="app-icons">
-        <h3>Avi</h3>
-        <p>Talking robot head with emotional rendering and cloud-based AI.</p>
-        <span class="lang Python CPP RaspberryPi"></span>
-      </div>
-      <div class="project">
-        <img src="static/image/app-icons/rpl.png" class="app-icons">
-        <h3>Rocket Avionics</h3>
-        <p>Custom data logger to measure acceleration, apogee, and velocity.</p>
-        <span class="lang C"></span>
-      </div>
-    </div>
-
   </section>
 
   <section id="blogs">
@@ -128,13 +165,14 @@
 
     <div class="row">
       <div class="col-lg-6 col-md-6 col-sm-0">
-        <img src="static/image/blogs.png" style="border-radius: 20px; margin: auto; transform: rotate(0deg); height: 90%; width: 80%;">
+        <img src="static/image/blogs.png"
+          style="border-radius: 20px; margin: auto; transform: rotate(0deg); height: 90%; width: 80%;">
       </div>
       <div class="col-lg-6 col-md-6 col-sm-12">
         <div style="margin-top: 5%">
           <div class="blogs-tabs">
-            <button class="blogs-tab-btn tab-btn active" data-tab="casual">Casual</button>
-            <button class="blogs-tab-btn tab-btn" data-tab="publications">Publications</button>
+            <button class="blogs-tab-btn tab-btn active primary" data-tab="casual">Casual</button>
+            <button class="blogs-tab-btn tab-btn secondary" data-tab="publications">Publications</button>
           </div>
           <div class="blogs-tab-content tab-content active" id="casual" style="display: block;">
             <a href="templates/blogs/introductory-blog.html" target="_blank">
