@@ -1,5 +1,6 @@
 const skills = [
     "Rust",
+    "Tauri",
     "C++",
     "C",
     "Kotlin",
@@ -10,6 +11,7 @@ const skills = [
     "Typescript",
     "Javascript",
     "NextJS",
+    "ElectronJS",
     "Firebase",
     "Raspberry Pi",
     "Arduino",
@@ -25,7 +27,7 @@ const skills = [
 const isMobile = window.innerWidth < 768;
 const containerHeight = isMobile ? 700 : 400;
 const spacing = isMobile ? 15 : 45;
-const xOffset = isMobile ? 10 : -70; // Center x in %
+const xOffset = isMobile ? 10 : -90; // Center x in %
 const yOffset = 50;  // Center y in %
 
 const skillsHTML = skills.map((rawSkill, i) => {
