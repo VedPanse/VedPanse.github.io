@@ -192,12 +192,18 @@ section#work-experience iframe {
 .tab-btn.active.primary i {
     color: #ff35a2;
 }
+.tab-btn.active.primary:active {
+    background-color: rgba(255, 53, 162, 0.2);
+}
 
 .tab-btn.active.secondary {
     border-bottom-color: #3dd6f5;
 }
 .tab-btn.active.secondary i {
     color: #3dd6f5;
+}
+.tab-btn.active.secondary:active {
+    background-color: rgba(61, 214, 245, 0.2);
 }
 
 .tab-btn.active.tertiary {
@@ -206,12 +212,18 @@ section#work-experience iframe {
 .tab-btn.active.tertiary i {
     color: #a9ff5e;
 }
+.tab-btn.active.tertiary:active {
+    background-color: rgba(169, 255, 94, 0.2);
+}
 
 .tab-btn.active.quaternary {
     border-bottom-color: #a34fde;
 }
 .tab-btn.active.quaternary i {
     color: #a34fde;
+}
+.tab-btn.active.quaternary:active {
+    background-color: rgba(163, 79, 222, 0.2);
 }
 
 .tab-content {
