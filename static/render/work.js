@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
     workExperience.forEach(job => {
         const jobElement = document.createElement("div");
         const overlayContainer = document.createElement("div");
-        overlayContainer.classList.add("col-lg-3");
+        overlayContainer.classList.add("col-lg-3", "exp-net");
         jobElement.classList.add("job");
         jobElement.style.width = "100%";
         jobElement.style.aspectRatio = "1 / 1";
@@ -101,8 +101,6 @@ document.addEventListener("DOMContentLoaded", function () {
         overlayContainer.addEventListener("click", function () {
             window.open(job.link, "_blank");
         });
-        overlayContainer.style.cursor = "pointer";
-        overlayContainer.style.marginBottom = "21px";
 
         jobElement.appendChild(companyElement);
         jobElement.appendChild(jobDescription);

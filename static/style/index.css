@@ -88,6 +88,11 @@ div.hero a:hover {
     margin: auto;
 }
 
+#work-experience .exp-net {
+    cursor: pointer;
+    margin-bottom: 25px;
+}
+
 @media (max-width: 768px) {
     div.left-links {
         margin-bottom: 20px;
