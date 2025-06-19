@@ -14,7 +14,7 @@ Pioneered a user story retention architecture, scrutinizing 110+ user interactio
         position: "Avionics Engineering Intern",
         duration: "September 2024 - May 2025",
         imageUrl: "static/image/logos/rpl.png",
-        link: "https://rocketpropulsion.ca",
+        link: "https://www.rocketproplab.org/",
         description: `Engineered a robust avionics software system for a 3D-printed rocket, enhancing telemetry data transmission by 40% through the development of a custom communication protocol.
 Implemented a real-time data processing pipeline using Python and C++, enabling the rocket to transmit critical flight data at speeds exceeding 1 Mbps, significantly improving data accuracy and reliability during test flights.
 `    },
@@ -23,6 +23,7 @@ Implemented a real-time data processing pipeline using Python and C++, enabling 
         position: "Software Engineering Intern",
         duration: "September 2024 - May 2025",
         imageUrl: "static/image/logos/cses.png",
+        link: "https://csesucsd.com/",
         description: `Developed a comprehensive event management system using React.js and Node.js, streamlining the organization of 50+ events for 1,000+ students, resulting in a 30% increase in event participation.
         Implemented a real-time notification system using WebSockets, enhancing communication efficiency and engagement for over 1,000 students, leading to a 25% reduction in event-related inquiries.
         Spearheaded the integration of a user-friendly dashboard for event organizers, enabling real-time tracking of registrations and feedback, which improved event planning efficiency by 40%.
@@ -62,7 +63,7 @@ Improved machine learning model accuracy by 18% through the implementation of ou
         position: "Software Engineering Intern",
         duration: "June 2021 - July 2021",
         imageUrl: "static/image/logos/xceed.png",
-        link: "https://xceedimagination.com",
+        link: "https://xceedtech.in",
         description: `Developed a robust Spring Boot web platform that batch-ran client macros, reducing the financial reconciliation cycle time by 60%, enhancing operational efficiency for Magna International.
 Automated essential back-office tasks which streamlined workflows and contributed to significant time savings across the finance department, allowing teams to focus on strategic initiatives.`
     },
