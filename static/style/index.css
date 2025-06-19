@@ -386,6 +386,10 @@ section#work-experience iframe {
     #work-experience {
         margin-top: 0vh !important;
     }
+
+    .skill-label {
+        display: none;
+    }
 }
 
 #contact {
