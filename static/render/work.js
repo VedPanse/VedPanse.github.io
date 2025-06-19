@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
             window.open(job.link, "_blank");
         });
         overlayContainer.style.cursor = "pointer";
-        overlayContainer.style.marginBottom = "20px";
+        overlayContainer.style.marginBottom = "21px";
 
         jobElement.appendChild(companyElement);
         jobElement.appendChild(jobDescription);
