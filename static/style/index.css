@@ -209,6 +209,23 @@ section#work-experience iframe {
     text-align: center;
 }
 
+@media screen and (max-width: 768px) {
+    .tab-btn {
+        font-size: 1rem;
+        padding: 6px 5px 14px;
+        width: 100%;
+    }
+
+    .project-tabs {
+        display: block;
+    }
+    
+    #project-overlook {
+        width: 90vw;
+        margin: 0 auto;
+    }
+}
+
 #projects {
     padding-bottom: 5%;
 }
