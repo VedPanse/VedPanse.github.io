@@ -55,6 +55,38 @@ div.hero a:hover {
 }
 
 
+.job {
+    background-color: #252525;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.job-description {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: rgb(78, 78, 78);
+    padding: 5px 20px;
+}
+
+.job img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+    height: 250px;
+}
+
+#work-experience {
+    margin-bottom: 50px;
+}
+
+#work-experience .row {
+    width: 95%;
+    margin: auto;
+}
 
 @media (max-width: 768px) {
     div.left-links {
