@@ -58,4 +58,4 @@ return `
 // Set the container height and insert content
 const skillsSection = document.getElementById("skills");
 skillsSection.style.height = `${containerHeight}px`;
-skillsSection.innerHTML = `<h1 style="position: absolute; left: -130%;">Skills</h1>` + skillsHTML;
+skillsSection.innerHTML = `<h1 style="position: absolute; left: -100%;">Skills</h1>` + skillsHTML;
