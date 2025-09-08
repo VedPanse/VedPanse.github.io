@@ -12,7 +12,7 @@ body {
 }
 
 section#home {
-    background-image: url('../image/bg.png');
+    background-image: url('../image/bg-red.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center 32%;
