@@ -154,7 +154,9 @@
         <a class="link hover:text-white underline" href="https://github.com/VedPanse" target="_blank"
           rel="noreferrer">github.com/VedPanse</a>
         <span class="text-gray-600">•</span>
-        <a class="link hover:text-white underline" href="https://docs.google.com/document/d/1ZDx0G4urf-0tMZrS09Mm1j1v2rxYkVUnz44sVbKMg_E/edit?tab=t.0" target="_blank" rel="noreferrer">CV
+        <a class="link hover:text-white underline"
+          href="https://docs.google.com/document/d/1ZDx0G4urf-0tMZrS09Mm1j1v2rxYkVUnz44sVbKMg_E/edit?tab=t.0"
+          target="_blank" rel="noreferrer">CV
           (PDF)</a>
       </div>
       <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3 w-full">
@@ -164,7 +166,7 @@
         </div>
         <div class="rounded-xl border border-white/10 p-4">
           <div class="text-xs uppercase text-gray-500">Focus</div>
-          <div class="text-lg">LLM Memory • Assistants</div>
+          <div class="text-lg">LLM Memory • Virtual Assistants</div>
         </div>
         <div class="rounded-xl border border-white/10 p-4">
           <div class="text-xs uppercase text-gray-500">Status</div>
@@ -404,28 +406,69 @@
     <div class="my-10 border-t border-white/10"></div>
 
     <!-- Projects -->
+    <!-- Projects -->
     <section id="projects" aria-labelledby="projects-title">
       <h2 id="projects-title" class="uppercase text-[12px] text-gray-500">Projects</h2>
-      <div class="mt-3">
-        <div class="flex justify-between py-4 border-b border-white/10">
-          <div>
-            <div class="font-medium">Strata — Personal AI Assistant (Kotlin Multiplatform)</div>
-            <div class="text-gray-400 text-[15px]">Gateway + services + queues + caches + WebSockets; unified
-              Gmail/Calendar/Tasks.</div>
+      <div class="mt-3 space-y-4">
+
+        <article class="border-b border-white/10 pb-4">
+          <div class="flex items-center justify-between">
+            <h3 class="font-medium">Strata — Personal AI Assistant (Kotlin Multiplatform)</h3>
+            <span class="text-gray-500 text-sm">2025 – Present</span>
           </div>
-          <span class="text-gray-500 text-sm">2025 – Present</span>
-        </div>
-        <div class="flex justify-between py-4">
-          <div>
-            <div class="font-medium">ShardWise — Distributed Task Processing (Rust, Kafka)</div>
-            <div class="text-gray-400 text-[15px]">Leader election, replication, sharding; containerized for resilience.
-            </div>
+          <p class="mt-1 text-gray-400 text-[15px]">Gateway + services + queues + caches + WebSockets; unified
+            Gmail/Calendar/Tasks with low-latency sync and offline caching.</p>
+        </article>
+
+        <article class="border-b border-white/10 pb-4">
+          <div class="flex items-center justify-between">
+            <h3 class="font-medium">ShardWise — Distributed Task Processing (Rust, Kafka)</h3>
+            <span class="text-gray-500 text-sm">2025 – Present</span>
           </div>
-          <span class="text-gray-500 text-sm">2025 – Present</span>
-        </div>
+          <p class="mt-1 text-gray-400 text-[15px]">Leader election, replication, and sharding across nodes;
+            containerized with Docker + Kubernetes for resilience and scale.</p>
+        </article>
+
+        <article class="border-b border-white/10 pb-4">
+          <div class="flex items-center justify-between">
+            <h3 class="font-medium">Orion — macOS AI Virtual Assistant (Swift, Python, Rust)</h3>
+            <span class="text-gray-500 text-sm">2025 – Present</span>
+          </div>
+          <p class="mt-1 text-gray-400 text-[15px]">AI-powered desktop assistant capable of interacting locally with
+            macOS applications and online services. Focus on tool use, memory, and privacy-preserving design.</p>
+        </article>
+
+        <article class="border-b border-white/10 pb-4">
+          <div class="flex items-center justify-between">
+            <h3 class="font-medium">Sentinel — Semantic AI Web Watchdog (Java, Python)</h3>
+            <span class="text-gray-500 text-sm">2024 – 2025</span>
+          </div>
+          <p class="mt-1 text-gray-400 text-[15px]">AI system that monitors web content for semantic matches to
+            user-defined tasks using sentence-transformer embeddings. Alerts users only on meaningful changes, reducing
+            noise.</p>
+        </article>
+
+        <article class="border-b border-white/10 pb-4">
+          <div class="flex items-center justify-between">
+            <h3 class="font-medium">PhishNet — AI Phishing Detection for X & Gmail (Python, JavaScript)</h3>
+            <span class="text-gray-500 text-sm">2024</span>
+          </div>
+          <p class="mt-1 text-gray-400 text-[15px]">AI-driven phishing detection engine that flags suspicious posts and
+            emails in real time. Combines ML classifiers with heuristic rules to minimize false positives and provide
+            explainable warnings.</p>
+        </article>
+
+        <article>
+          <div class="flex items-center justify-between">
+            <h3 class="font-medium">javelinLang — DSL for UI & Filesystem Automation (Python, Kotlin, C++)</h3>
+            <span class="text-gray-500 text-sm">2023 – 2024</span>
+          </div>
+          <p class="mt-1 text-gray-400 text-[15px]">Domain-specific language designed to simplify GUI scripting and
+            filesystem automation. Features concise syntax and a minimal runtime for efficient automation workflows.</p>
+        </article>
+
       </div>
     </section>
-
     <div class="my-10 border-t border-white/10"></div>
 
     <!-- Honors & Awards -->
@@ -445,42 +488,105 @@
     <!-- Writing -->
     <section id="writing" aria-labelledby="writing-title">
       <h2 id="writing-title" class="uppercase text-[12px] text-gray-500">Writing</h2>
-      <div class="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-6">
-        <div>
-          <h3 class="text-sm text-gray-400">Publications</h3>
-          <ul class="mt-2 space-y-2 text-[15px] leading-7">
-            <li><a class="link underline hover:text-white"
-                href="https://www.lokmattimes.com/aurangabad/can-artificial-intelligence-be-used-to-detect-fake-news/"
-                target="_blank" rel="noreferrer">Can Artificial Intelligence Be Used to Detect Fake News Online?</a>
-            </li>
-            <li><a class="link underline hover:text-white" href="templates/publications/machine-learning/index.html"
-                target="_blank" rel="noreferrer">Machine Learning and Algorithms — Basic Tutorial</a></li>
-            <li><a class="link underline hover:text-white" href="templates/publications/algorithms/index.html"
-                target="_blank" rel="noreferrer">Algorithms Explained</a></li>
-            <li><a class="link underline hover:text-white" href="templates/publications/plotly/index.html"
-                target="_blank" rel="noreferrer">Plotly Tutorials</a></li>
-            <li><a class="link underline hover:text-white" href="templates/publications/the-techies/index.html"
-                target="_blank" rel="noreferrer">The Techies</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="text-sm text-gray-400">Selected Blog Posts</h3>
-          <ul class="mt-2 space-y-2 text-[15px] leading-7">
-            <li><a class="link underline hover:text-white" href="templates/blogs/introductory-blog.html" target="_blank"
-                rel="noreferrer">From Thousand Oaks to 10,000 Commits</a></li>
-            <li><a class="link underline hover:text-white" href="templates/blogs/vim.html" target="_blank"
-                rel="noreferrer">Switching to the Vim editing mode altogether</a></li>
-            <li><a class="link underline hover:text-white" href="templates/blogs/programming-dilemma.html"
-                target="_blank" rel="noreferrer">Programming Dilemma — How to Start</a></li>
-            <li><a class="link underline hover:text-white" href="templates/blogs/on-cricket.html" target="_blank"
-                rel="noreferrer">On Cricket — My Favorite Sport</a></li>
-            <li><a class="link underline hover:text-white" href="templates/blogs/my-internship.html" target="_blank"
-                rel="noreferrer">My Internship at Findability Sciences</a></li>
-            <li><a class="link underline hover:text-white" href="templates/blogs/code-website.html" target="_blank"
-                rel="noreferrer">Why I Code Websites without Tools</a></li>
-          </ul>
-        </div>
+
+
+      <!-- Filter buttons -->
+      <div class="mt-3 mb-4 flex flex-wrap gap-2 text-xs" role="tablist" aria-label="Writing filters">
+        <button type="button"
+          class="writing-filter px-2 py-1 rounded-full border border-white/20 hover:border-white/40 text-white"
+          data-filter="all" aria-pressed="true">All</button>
+        <button type="button"
+          class="writing-filter px-2 py-1 rounded-full border border-white/20 hover:border-white/40 text-gray-300"
+          data-filter="pub" aria-pressed="false">Publications</button>
+        <button type="button"
+          class="writing-filter px-2 py-1 rounded-full border border-white/20 hover:border-white/40 text-gray-300"
+          data-filter="blog" aria-pressed="false">Blog & Notes</button>
       </div>
+
+
+      <!-- Primary card grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4" id="writing-grid">
+        <!-- Publication -->
+        <a data-type="pub"
+          href="https://www.lokmattimes.com/aurangabad/can-artificial-intelligence-be-used-to-detect-fake-news/"
+          target="_blank" rel="noreferrer"
+          class="writing-card group rounded-2xl border border-white/10 p-4 hover:border-white/30 transition">
+          <div class="flex items-center justify-between">
+            <span class="text-[11px] uppercase text-gray-500">Publication</span>
+            <span class="text-[11px] text-gray-500">2024</span>
+          </div>
+          <h3 class="mt-2 font-medium group-hover:underline">Can Artificial Intelligence Be Used to Detect Fake News
+            Online?</h3>
+          <p class="mt-2 text-[14px] text-gray-400">Applied AI overview for misinformation detection with practical
+            examples.</p>
+        </a>
+
+
+        <!-- Publication -->
+        <a data-type="pub" href="templates/publications/machine-learning/index.html" target="_blank" rel="noreferrer"
+          class="writing-card group rounded-2xl border border-white/10 p-4 hover:border-white/30 transition">
+          <div class="flex items-center justify-between">
+            <span class="text-[11px] uppercase text-gray-500">Publication</span>
+            <span class="text-[11px] text-gray-500">2023</span>
+          </div>
+          <h3 class="mt-2 font-medium group-hover:underline">Machine Learning & Algorithms — A Primer</h3>
+          <p class="mt-2 text-[14px] text-gray-400">Concise tutorial covering core ML concepts and algorithmic
+            foundations.</p>
+        </a>
+
+
+        <!-- Blog -->
+        <a data-type="blog" href="templates/blogs/introductory-blog.html" target="_blank" rel="noreferrer"
+          class="writing-card group rounded-2xl border border-white/10 p-4 hover:border-white/30 transition">
+          <div class="flex items-center justify-between">
+            <span class="text-[11px] uppercase text-gray-500">Selected Blog</span>
+            <span class="text-[11px] text-gray-500">2024</span>
+          </div>
+          <h3 class="mt-2 font-medium group-hover:underline">From Thousand Oaks to 10,000 Commits</h3>
+          <p class="mt-2 text-[14px] text-gray-400">Personal trajectory + lessons from shipping production systems.</p>
+        </a>
+
+
+        <!-- Research Notes anchor (blog-type) -->
+        <a data-type="blog" href="#notes"
+          class="writing-card group rounded-2xl border border-white/10 p-4 hover:border-white/30 transition">
+          <div class="flex items-center justify-between">
+            <span class="text-[11px] uppercase text-gray-500">Research Notes</span>
+            <span class="text-[11px] text-gray-500">Ongoing</span>
+          </div>
+          <h3 class="mt-2 font-medium group-hover:underline">Memory Models — Updates & Ablations</h3>
+          <p class="mt-2 text-[14px] text-gray-400">Short technical updates on decay/merge policies, redundancy pruning,
+            and evaluation in multi‑session dialogue.</p>
+        </a>
+      </div>
+
+
+      <!-- Collapsible: more links as matching cards (same design) -->
+      <details class="mt-4 text-[14px]" id="writing-more">
+        <summary class="cursor-pointer text-gray-400 hover:text-gray-200">Show more links</summary>
+        <div class="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <a data-type="pub" href="templates/publications/algorithms/index.html" target="_blank" rel="noreferrer"
+            class="writing-card group rounded-2xl border border-white/10 p-4 hover:border-white/30 transition">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] uppercase text-gray-500">Publication</span>
+              <span class="text-[11px] text-gray-500">2023</span>
+            </div>
+            <h3 class="mt-2 font-medium group-hover:underline">Algorithms Explained</h3>
+            <p class="mt-2 text-[14px] text-gray-400">Accessible walkthroughs of algorithmic ideas and patterns.</p>
+          </a>
+
+
+          <a data-type="pub" href="templates/publications/plotly/index.html" target="_blank" rel="noreferrer"
+            class="writing-card group rounded-2xl border border-white/10 p-4 hover:border-white/30 transition">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] uppercase text-gray-500">Publication</span>
+              <span class="text-[11px] text-gray-500">2023</span>
+            </div>
+            <h3 class="mt-2 font-medium group-hover:underline">Plotly Tutorials</h3>
+            <p class="mt-2 text-[14px] text-gray-400">Interactive visualization techniques with practical examples.</p>
+          </a>
+
+
     </section>
 
     <div class="my-10 border-t border-white/10"></div>
@@ -533,11 +639,36 @@
   </main>
 
   <script>
+    // Year & Updated stamp
     const y = document.getElementById('year');
     if (y) y.textContent = new Date().getFullYear();
     const u = document.getElementById('updated');
     if (u) u.textContent = new Date().toLocaleDateString(undefined, { year: 'numeric', month: 'short' });
+
+    // Writing filters
+    (function () {
+      const filterBtns = document.querySelectorAll('#writing .writing-filter');
+      const cards = document.querySelectorAll('#writing .writing-card');
+
+      function applyFilter(kind) {
+        cards.forEach(c => {
+          const match = (kind === 'all') || (c.dataset.type === kind);
+          c.style.display = match ? '' : 'none';
+        });
+        filterBtns.forEach(b => {
+          const active = b.dataset.filter === kind;
+          b.setAttribute('aria-pressed', active);
+          b.classList.toggle('text-white', active);
+          b.classList.toggle('text-gray-300', !active);
+          b.classList.toggle('bg-white/10', active);
+        });
+      }
+
+      filterBtns.forEach(b => b.addEventListener('click', () => applyFilter(b.dataset.filter)));
+      applyFilter('all'); // default view
+    })();
   </script>
+
 </body>
 
 </html>
