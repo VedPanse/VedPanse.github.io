@@ -25,6 +25,35 @@
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <style>
+    /* Replacing Tailwind @apply (requires build) with plain CSS */
+    .mark {
+      padding-left: 0.625rem; /* px-2.5 */
+      padding-right: 0.625rem; /* px-2.5 */
+      padding-top: 0.25rem; /* py-1 */
+      padding-bottom: 0.25rem; /* py-1 */
+      font-size: 12px; /* text-[12px] */
+      text-transform: uppercase; /* uppercase */
+      margin: 0.25rem; /* m-1 */
+      display: inline-block; /* inline-block */
+      border-radius: 0.375rem; /* rounded-md */
+    }
+
+    .program {
+      color: #22d3ee; /* text-cyan-400 */
+      background-color: rgba(34, 211, 238, 0.1); /* bg-cyan-400/10 */
+    }
+
+    .ml {
+      color: #34d399; /* text-green-400 */
+      background-color: rgba(52, 211, 153, 0.1); /* bg-green-400/10 */
+    }
+
+    .alg {
+      color: #a78bfa; /* text-purple-400 */
+      background-color: rgba(167, 139, 250, 0.1); /* bg-purple-400/10 */
+    }
+  </style>
 
   <!-- TailwindCSS CDN (no build step) -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -178,24 +207,50 @@
     <div class="my-10 border-t border-white/10"></div>
 
     <!-- Skills (compact) -->
-    <section aria-labelledby="skills" class="space-y-3">
-      <h2 id="skills" class="uppercase text-[12px] text-gray-500">Skills</h2>
-      <ul class="flex flex-wrap gap-2 text-[12px]">
+    <section id="skills" class="space-y-3">
+      <h2 class="uppercase text-[12px] text-gray-500">Skills</h2>
+
+
+      <h3 class="mark program">Languages & Core</h3>
+      <ul class="flex flex-wrap gap-2 text-[12px] mt-1">
         <li class="px-2.5 py-1 rounded-md border border-white/10 text-gray-300">Python</li>
         <li class="px-2.5 py-1 rounded-md border border-white/10 text-gray-300">Rust</li>
-        <li class="px-2.5 py-1 rounded-md border border-white/10 text-gray-300">C/C++</li>
+        <li class="px-2.5 py-1 rounded-md border border-white/10 text-gray-300">C++</li>
+        <li class="px-2.5 py-1 rounded-md border border-white/10 text-gray-300">C</li>
         <li class="px-2.5 py-1 rounded-md border border-white/10 text-gray-300">Kotlin</li>
         <li class="px-2.5 py-1 rounded-md border border-white/10 text-gray-300">Swift</li>
-        <li class="px-2.5 py-1 rounded-md border border-white/10 text-gray-300">JavaScript / TypeScript</li>
-        <li class="px-2.5 py-1 rounded-md border border-white/10 text-gray-300">Next.js</li>
-        <li class="px-2.5 py-1 rounded-md border border-white/10 text-gray-300">OpenGL</li>
-        <li class="px-2.5 py-1 rounded-md border border-white/10 text-gray-300">Kafka</li>
-        <li class="px-2.5 py-1 rounded-md border border-white/10 text-gray-300">WebSockets</li>
+      </ul><br />
+
+
+      <h3 class="mark ml mt-5">Systems & Frameworks</h3>
+      <ul class="flex flex-wrap gap-2 text-[12px] mt-1">
         <li class="px-2.5 py-1 rounded-md border border-white/10 text-gray-300">Tauri</li>
-        <li class="px-2.5 py-1 rounded-md border border-white/10 text-gray-300">Bash</li>
+        <li class="px-2.5 py-1 rounded-md border border-white/10 text-gray-300">TypeScript</li>
+        <li class="px-2.5 py-1 rounded-md border border-white/10 text-gray-300">JavaScript</li>
+        <li class="px-2.5 py-1 rounded-md border border-white/10 text-gray-300">Next.js</li>
+        <li class="px-2.5 py-1 rounded-md border border-white/10 text-gray-300">Electron.js</li>
+        <li class="px-2.5 py-1 rounded-md border border-white/10 text-gray-300">Firebase</li>
+      </ul><br />
+
+
+      <h3 class="mark alg mt-5">Hardware & Embedded</h3>
+      <ul class="flex flex-wrap gap-2 text-[12px] mt-1">
         <li class="px-2.5 py-1 rounded-md border border-white/10 text-gray-300">Raspberry Pi</li>
+        <li class="px-2.5 py-1 rounded-md border border-white/10 text-gray-300">Arduino</li>
+      </ul><br />
+
+
+      <h3 class="mark program mt-5">Tools & Utilities</h3>
+      <ul class="flex flex-wrap gap-2 text-[12px] mt-1">
+        <li class="px-2.5 py-1 rounded-md border border-white/10 text-gray-300">GitHub</li>
+        <li class="px-2.5 py-1 rounded-md border border-white/10 text-gray-300">Bash</li>
+        <li class="px-2.5 py-1 rounded-md border border-white/10 text-gray-300">AWK</li>
+        <li class="px-2.5 py-1 rounded-md border border-white/10 text-gray-300">SED</li>
+        <li class="px-2.5 py-1 rounded-md border border-white/10 text-gray-300">HTML</li>
+        <li class="px-2.5 py-1 rounded-md border border-white/10 text-gray-300">CSS</li>
       </ul>
     </section>
+
 
     <div class="my-10 border-t border-white/10"></div>
 
