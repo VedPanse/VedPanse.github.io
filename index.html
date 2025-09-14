@@ -2,273 +2,810 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ved Panse</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="static/style/index.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ved Panse — Academic Portfolio</title>
+
+  <!-- Meta -->
+  <meta name="description"
+    content="Academic portfolio for Ved Panse — research, projects, awards, and contact. Focus: AI memory models & intelligent assistants." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://vedpanse.com/portfolio" />
+  <meta property="og:title" content="Ved Panse — Academic Portfolio" />
+  <meta property="og:description" content="Research & projects in AI memory models and intelligent assistants." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://vedpanse.com/portfolio.html" />
+  <meta property="og:image" content="https://vedpanse.com/images/og/ved-portfolio.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ved Panse — Academic Portfolio" />
+  <meta name="twitter:description" content="Research & projects in AI memory models and intelligent assistants." />
+  <meta name="twitter:image" content="https://vedpanse.com/images/og/ved-portfolio.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <style>
+    /* Replacing Tailwind @apply (requires build) with plain CSS */
+    .mark {
+      padding-left: 0.625rem;
+      /* px-2.5 */
+      padding-right: 0.625rem;
+      /* px-2.5 */
+      padding-top: 0.25rem;
+      /* py-1 */
+      padding-bottom: 0.25rem;
+      /* py-1 */
+      font-size: 12px;
+      /* text-[12px] */
+      text-transform: uppercase;
+      /* uppercase */
+      margin: 0.25rem;
+      /* m-1 */
+      display: inline-block;
+      /* inline-block */
+      border-radius: 0.375rem;
+      /* rounded-md */
+    }
+
+    .program {
+      color: #22d3ee;
+      /* text-cyan-400 */
+      background-color: rgba(34, 211, 238, 0.1);
+      /* bg-cyan-400/10 */
+    }
+
+    .ml {
+      color: #34d399;
+      /* text-green-400 */
+      background-color: rgba(52, 211, 153, 0.1);
+      /* bg-green-400/10 */
+    }
+
+    .alg {
+      color: #a78bfa;
+      /* text-purple-400 */
+      background-color: rgba(167, 139, 250, 0.1);
+      /* bg-purple-400/10 */
+    }
+  </style>
+
+  <!-- TailwindCSS CDN (no build step) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            canvas: {
+              DEFAULT: '#151515',
+              subtle: '#1A1A1A',
+              soft: '#202020'
+            }
+          },
+          fontFamily: {
+            sans: ["Inter", "ui-sans-serif", "system-ui", "-apple-system", "Segoe UI", "Roboto", "Helvetica", "Arial", "Noto Sans", "sans-serif"],
+          },
+          boxShadow: {
+            glow: '0 0 0 1px rgba(255,255,255,0.05), 0 10px 30px rgba(0,0,0,0.35)'
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* Subtle scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+      height: 10px
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #1f2430;
+      border-radius: 999px
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    .focus-ring:focus-visible {
+      outline: 2px solid #fff;
+      outline-offset: 2px
+    }
+
+    .link {
+      text-underline-offset: 4px;
+      text-decoration-thickness: 1px
+    }
+
+    /* Reusable utilities to trim repeated class lists */
+    .chip {
+      padding: 0.25rem 0.625rem;
+      /* py-1 px-2.5 */
+      border-radius: 0.375rem;
+      /* rounded-md */
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      /* border-white/10 */
+      color: #d1d5db;
+      /* text-gray-300 */
+    }
+
+    .writing-card {
+      border-radius: 1rem;
+      /* rounded-2xl */
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      /* border-white/10 */
+      padding: 1rem;
+      /* p-4 */
+      transition: all 150ms ease-in-out;
+      /* transition */
+    }
+
+    .writing-card:hover {
+      border-color: rgba(255, 255, 255, 0.3);
+      /* hover:border-white/30 */
+    }
+
+    .writing-filter {
+      padding: 0.25rem 0.5rem;
+      /* px-2 py-1 */
+      border-radius: 9999px;
+      /* rounded-full */
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      /* border-white/20 */
+      transition: border-color 150ms ease-in-out;
+    }
+
+    .writing-filter:hover {
+      border-color: rgba(255, 255, 255, 0.4);
+      /* hover:border-white/40 */
+    }
+
+    @media print {
+      body {
+        background: #fff !important;
+        color: #000 !important
+      }
+
+      a {
+        color: #000 !important;
+        text-decoration: underline
+      }
+
+      .no-print {
+        display: none !important
+      }
+
+      .print-only {
+        display: block !important
+      }
+    }
+  </style>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ved Panse",
+    "url": "https://vedpanse.com/portfolio.html",
+    "sameAs": ["https://github.com/VedPanse"],
+    "affiliation": {"@type": "CollegeOrUniversity", "name": "University of California, San Diego"},
+    "knowsAbout": ["Artificial Intelligence", "Memory models", "Intelligent virtual assistants", "Distributed systems"]
+  }
+  </script>
 </head>
 
-<body>
-  <section id="home">
-    <div class="content">
-      <h1>Ved Panse</h1>
+<body class="bg-[#151515] text-gray-200 font-sans selection:bg-white/20 selection:text-white">
+  <a href="#main"
+    class="sr-only focus:not-sr-only focus-ring fixed left-4 top-4 bg-black/70 text-white px-3 py-1 rounded-md">Skip to
+    content</a>
 
-      <div class="hero">
-        <div class="row">
-          <div class="col-lg-6 col-md-6 col-sm-12 left-links">
-            <a href="https://docs.google.com/document/d/1ZDx0G4urf-0tMZrS09Mm1j1v2rxYkVUnz44sVbKMg_E/edit?usp=sharing"
-              target="_blank">Download Resume</a>
-          </div>
-          <div class="col-lg-6 col-md-6 col-sm-12 right-links">
-            <a href="#skills">Skills</a><br />
-            <a href="#work-experience">Work Experience</a><br />
-            <a href="#projects">Projects</a><br />
-            <a href="#blogs">Blogs</a><br />
-            <a href="#contact">Contact</a>
-          </div>
-        </div>
+  <!-- Sticky Top Nav -->
+  <header
+    class="no-print fixed top-0 left-0 right-0 z-30 backdrop-blur supports-[backdrop-filter]:bg-black/30 bg-black/20 border-b border-white/10">
+    <nav class="mx-auto max-w-3xl px-6 sm:px-8 flex items-center justify-between h-14 text-sm">
+      <a href="#home" class="font-semibold tracking-tight hover:opacity-90">Ved Panse</a>
+      <ul class="hidden sm:flex items-center gap-5 text-gray-400">
+        <li><a class="link hover:text-white" href="#research">Research</a></li>
+        <li><a class="link hover:text-white" href="#projects">Projects</a></li>
+        <li><a class="link hover:text-white" href="#awards">Awards</a></li>
+        <li><a class="link hover:text-white" href="#contact">Contact</a></li>
+        <li><a class="ml-2 px-3 py-1 rounded-md border border-white/20 hover:border-white/40"
+            href="https://docs.google.com/document/d/1ZDx0G4urf-0tMZrS09Mm1j1v2rxYkVUnz44sVbKMg_E/edit?tab=t.0"
+            target="_blank" rel="noreferrer">Download CV</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" class="mx-auto max-w-3xl px-6 sm:px-8 pt-24 sm:pt-28">
+
+    <!-- Hero / Intro -->
+    <section id="home" class="mt-20 flex flex-col items-start text-left">
+      <img src="images/ved-avatar.png" alt="Portrait of Ved Panse" loading="eager" fetchpriority="high"
+        class="h-24 w-24 rounded-full ring-1 ring-white/10 object-cover mb-4" onerror="this.style.display='none'">
+      <h1 class="text-2xl sm:text-3xl font-semibold">Hi, I'm Ved Panse</h1>
+
+      <p class="mt-2 text-sm sm:text-base text-gray-400 max-w-xl">
+        Undergraduate at UC San Diego (<span class="text-gray-200">Mathematics-Computer Science</span> &
+        <span class="text-gray-200">Data Science</span>). I research
+        <span class="text-gray-200">AI memory models</span> and
+        <span class="text-gray-200">intelligent virtual assistants</span>, aiming to build systems that
+        remember and adapt over months, not minutes. Beyond research, I co-founded
+        <span class="text-gray-200">Falcon Eye</span> — a synthetic-vision platform for aircraft funded at
+        <span class="text-gray-200">$1.2M</span> — and I’ve shipped production systems used by
+        <span class="text-gray-200">hundreds of people</span>. I bring the mindset of a
+        <span class="text-gray-200">builder-researcher-entrepreneur</span> with a minimalist aesthetic and a focus on
+        real-world impact.
+        <span class="block mt-7 text-gray-500 text-sm">
+          Outside of work, you’ll usually find me reading or sketching ideas at
+          <span class="text-gray-300">Geisel Library, 2nd Floor</span>.
+        </span>
+      </p>
+
+
+      <div class="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-gray-400">
+        <a id="email-link" class="link hover:text-white underline">Email Me</a>
+<script>
+  document.getElementById('email-link').setAttribute(
+    'href',
+    'mailto:' + ['vpanse','ucsd.edu'].join('@')
+  );
+</script>
+
+
+        <span class="text-gray-600">•</span>
+        <a class="link hover:text-white underline" href="https://github.com/VedPanse" target="_blank"
+          rel="noreferrer">github.com/VedPanse</a>
+        <span class="text-gray-600">•</span>
+        <a class="link hover:text-white underline"
+          href="https://docs.google.com/document/d/1ZDx0G4urf-0tMZrS09Mm1j1v2rxYkVUnz44sVbKMg_E/edit?tab=t.0"
+          target="_blank" rel="noreferrer">CV (PDF)</a>
       </div>
-  </section>
+    </section>
 
-  <div id="skills"></div>
+    <div class="my-10 border-t border-white/10"></div>
 
-
-  <section id="work-experience">
-    <h1>Work Experience</h1>
-    <div class="row">
-    </div>
-  </section>
-  <img src="static/image/sep.png" width="100%">
-
-  <section id="projects">
-    <h1 style="padding-left: 5%;">Projects</h1>
-    <img src="static/image/ai_app_icon_army.png" style="width: 50%; display: block; margin: 20px auto;"
-      id="project-army">
-
-    <div id="project-container">
-      <div id="project-overlook">
-        <div class="project-tabs">
-          <button class="project-tab-btn tab-btn active primary" data-theme="primary" data-tab="ai">
-            <i class="fas fa-robot"></i> Artificial
-            Intelligence</button>
-          <button class="project-tab-btn tab-btn secondary" data-theme="secondary" data-tab="web-dev">
-            <i class="fas fa-code"></i>
-            Web
-            Development</button>
-          <button class="project-tab-btn tab-btn tertiary" data-theme="tertiary" data-tab="app-dev">
-            <i class="fas fa-mobile-alt"></i>
-            App
-            Development</button>
-          <button class="project-tab-btn tab-btn quaternary" data-theme="quaternary" data-tab="embedded">
-            <i class="fas fa-microchip"></i>
-            Embedded
-            Systems</button>
-        </div>
-        <br /><br />
-        <div class="project-tab-content tab-content" id="ai">
-          <div class="project">
-            <img src="static/image/app-icons/orion.png" class="app-icons">
-            <h3>Orion</h3>
-            <p>macOS virtual assistant capable of interacting online and locally with applications.</p>
-            <span class="lang Swift Python Rust"></span>
+    <!-- Recent News -->
+    <section id="news" aria-labelledby="news-title">
+      <h2 id="news-title" class="uppercase text-[12px] text-gray-500">RECENT NEWS</h2>
+      <div class="mt-3 space-y-4">
+        <article class="pb-4">
+          <div class="flex items-center justify-between">
+            <h3 class="font-medium">Falcon Eye — Synthetic Vision</h3>
           </div>
-          <div class="project">
-            <img src="static/image/app-icons/ballhawk.png" class="app-icons">
-            <h3>BallHawk</h3>
-            <p>A sports analytics website for baseball fans that estimates the best seats in the stadium to catch a
-              homerun.
-            </p>
-            <span class="lang Python NextJS"></span>
-          </div>
-          <div class="project">
-            <img src="static/image/app-icons/phishnet.png" class="app-icons">
-            <h3>PhishNet</h3>
-            <p>A phishing detection engine that flags suspicious content on X and Gmail to warn users against scam
-              attempts.
-            </p>
-            <span class="lang Python Javascript CSS"></span>
-          </div>
-        </div>
-
-        <div class="project-tab-content tab-content" id="web-dev" style="display: none;">
-          <div class="project">
-            <img src="static/image/app-icons/sentinel.png" class="app-icons">
-            <h3>Sentinel</h3>
-            <p>A cross-platform AI watchdog that monitors web content for semantic matches to
-              user-defined tasks, using sentence transformers.</p>
-            <span class="lang Java Python HTML CSS Javascript"></span>
-          </div>
-          <div class="project">
-            <img src="static/image/app-icons/text pirate.png" class="app-icons">
-            <h3>Text Pirate</h3>
-            <p>A chrome extension that helps users bookmark text instead of webpages, and provides updates when changes
-              are
-              made to the bookmarked text.</p>
-            <span class="lang Javascript HTML CSS"></span>
-          </div>
-          <div class="project">
-            <img src="static/image/app-icons/bikenav.png" class="app-icons">
-            <h3>BikeNav</h3>
-            <p>A Chrome extension that connects to Google Maps to help users quickly find optimized biking trails and
-              routes, tailored for cyclists navigating every environment.</p>
-            <span class="lang HTML CSS Javascript"></span>
-          </div>
-        </div>
-
-        <div class="project-tab-content tab-content" id="app-dev" style="display: none;">
-          <div class="project">
-            <img src="static/image/app-icons/cognitio.png" class="app-icons">
-            <h3>Cognitio</h3>
-            <p>An AI quiz generator that integrates with Google Gemini API to generate personalized quizzes from
-              uploaded
-              documents with instant feedback.</p>
-            <span class="lang Kotlin"></span>
-          </div>
-          <div class="project">
-            <img src="static/image/app-icons/netherite.png" class="app-icons">
-            <h3>Netherite</h3>
-            <p>A minimalist Markdown editor built with SwiftUI, offering seamless live preview, syntax highlighting, and
-              a distraction-free writing experience.</p>
-            <span class="lang Swift C"></span>
-          </div>
-          <div class="project">
-            <img src="static/image/app-icons/javelinLang.png" class="app-icons">
-            <h3>javelinLang</h3>
-            <p>A Domain-Specific programming language with concise syntax to simplify GUI creation and file system
-              automation, enabling clean, minimal scripting.</p>
-            <span class="lang Python Kotlin C++"></span>
-          </div>
-        </div>
-
-        <div class="project-tab-content tab-content" id="embedded" style="display: none;">
-          <div class="project">
-            <img src="static/image/app-icons/falconeye.png" class="app-icons">
-            <h3>FalconEye</h3>
-            <p>On-device synthetic vision system for aircraft, rendering real-time 3D terrain in low-visibility conditions.</p>
-            <span class="lang Tauri Rust Javascript Python Bash CSS HTML"></span>
-          </div>
-          <div class="project">
-            <img src="static/image/app-icons/nanobot.png" class="app-icons">
-            <h3>NanoBot</h3>
-            <p>App controlled robot accessible from anywhere in the world, powered with video stream and directional control.</p>
-            <span class="lang CPP Kotlin RaspberryPi"></span>
-          </div>
-          <div class="project">
-            <img src="static/image/app-icons/rpl.png" class="app-icons">
-            <h3>Rocket Avionics</h3>
-            <p>Custom data logger to measure acceleration, apogee, and velocity of a rocket, capable of flying 5000ft.</p>
-            <span class="lang C"></span>
-          </div>
-        </div>
+          <p class="mt-1 text-gray-400 text-[15px]">
+            A terrain-aware synthetic vision system built in C++/OpenGL, delivering real-time
+            <span class="text-gray-200">30 FPS</span> rendering on <span class="text-gray-200">&lt;$100 hardware</span>.
+            Designed for robustness and frame-rate stability with stitched elevation data and GPU acceleration.
+          </p>
+          <p class="mt-2 text-[15px] text-gray-400">
+            Recently secured <span class="text-white">$1.2M</span> in funding and
+            selected for potential integration into the
+            <span class="text-white">HAL Tejas 4.5-generation fighter jet</span>.
+            See more details in the
+            <a href="#experience" class="link underline hover:text-white text-white">Experience</a> section.
+          </p>
+        </article>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="blogs">
-    <h1>Blogs</h1>
+    <div class="my-10 border-t border-white/10"></div>
 
-    <div class="row">
-      <div class="col-lg-6 col-md-6 col-sm-0">
-        <img src="static/image/blogs.png"
-          style="border-radius: 20px; margin: auto; transform: rotate(0deg); height: 90%; width: 80%;">
-      </div>
-      <div class="col-lg-6 col-md-6 col-sm-12">
-        <div style="margin-top: 5%">
-          <div class="blogs-tabs">
-            <button class="blogs-tab-btn tab-btn active primary" data-tab="casual">Casual</button>
-            <button class="blogs-tab-btn tab-btn secondary" data-tab="publications">Publications</button>
-          </div>
-          <div class="blogs-tab-content tab-content active" id="casual" style="display: block;">
-            <a href="templates/blogs/introductory-blog.html" target="_blank">
-              <h3>From Thousand Oaks to 10,000 Commits</h3>
-            </a>
-            <a href="templates/blogs/vim.html" target="_blank">
-              <h3>Switching to the Vim editing mode altogether</h3>
-            </a>
-            <a href="templates/blogs/programming-dilemma.html" target="_blank">
-              <h3>Programming Dilemma - My recommendations to start programming</h3>
-            </a>
-            <a href="templates/blogs/on-cricket.html" target="_blank">
-              <h3>On Cricket - My Favorite Sport</h3>
-            </a>
-            <a href="templates/blogs/my-internship.html" target="_blank">
-              <h3>My Internship at Findability Sciences</h3>
-            </a>
-            <a href="templates/blogs/code-website.html" target="_blank">
-              <h3>Why do I code all of my websites without any tools?</h3>
-            </a>
-          </div>
+    <!-- Skills (compact) -->
+    <section id="skills" class="space-y-3">
+      <h2 class="uppercase text-[12px] text-gray-500">Skills</h2>
 
-          <div class="blogs-tab-content tab-content" id="publications" style="display: none;">
-            <a href="https://www.lokmattimes.com/aurangabad/can-artificial-intelligence-be-used-to-detect-fake-news/"
-              target="_blank">
-              <h3>Can Artificial Intelligence Be Used to Detect Fake News Online?</h3>
-            </a>
-            <a href="templates/publications/machine-learning/index.html" target="_blank">
-              <h3>Machine Learning and Algorithms - Basic Tutorial</h3>
-            </a>
-            <a href="templates/publications/algorithms/index.html" target="_blank">
-              <h3>Algorithms Explained</h3>
-            </a>
-            <a href="templates/publications/plotly/index.html" target="_blank">
-              <h3>Plotly Tutorials</h3>
-            </a>
-            <a href="templates/publications/the-techies/index.html" target="_blank">
-              <h3>The Techies</h3>
-            </a>
-          </div>
+
+      <h3 class="mark program">Languages & Core</h3>
+      <ul class="flex flex-wrap gap-2 text-[12px] mt-1">
+        <li class="chip">Python</li>
+        <li class="chip">Rust</li>
+        <li class="chip">C++</li>
+        <li class="chip">C</li>
+        <li class="chip">Kotlin</li>
+        <li class="chip">Swift</li>
+      </ul><br />
+
+
+      <h3 class="mark ml mt-5">Systems & Frameworks</h3>
+      <ul class="flex flex-wrap gap-2 text-[12px] mt-1">
+        <li class="chip">Tauri</li>
+        <li class="chip">TypeScript</li>
+        <li class="chip">JavaScript</li>
+        <li class="chip">Next.js</li>
+        <li class="chip">Electron.js</li>
+        <li class="chip">Firebase</li>
+      </ul><br />
+
+
+      <h3 class="mark alg mt-5">Hardware & Embedded</h3>
+      <ul class="flex flex-wrap gap-2 text-[12px] mt-1">
+        <li class="chip">Raspberry Pi</li>
+        <li class="chip">Arduino</li>
+      </ul><br />
+
+
+      <h3 class="mark program mt-5">Tools & Utilities</h3>
+      <ul class="flex flex-wrap gap-2 text-[12px] mt-1">
+        <li class="chip">GitHub</li>
+        <li class="chip">Bash</li>
+        <li class="chip">AWK</li>
+        <li class="chip">SED</li>
+        <li class="chip">HTML</li>
+        <li class="chip">CSS</li>
+      </ul>
+    </section>
+
+
+    <div class="my-10 border-t border-white/10"></div>
+
+    <!-- Research (new dedicated section) -->
+    <section id="research" aria-labelledby="research-title">
+      <h2 id="research-title" class="uppercase text-[12px] text-gray-500">Research</h2>
+
+      <a href="#research" class="block overflow-hidden rounded-2xl relative group">
+        <img src="images/featured-memory.png" alt="Cover for LLM Memory Engine" loading="lazy"
+          class="w-full h-60 object-cover rounded-2xl group-hover:scale-105 transition-transform duration-500" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
+        <div class="absolute bottom-0 left-4 right-4 pb-4">
+          <h3
+            class="text-white font-semibold text-lg transition-all duration-300 translate-y-0 group-hover:-translate-y-2">
+            LLM Memory Engine — Hybrid Retrieval & Update</h3>
+          <p class="text-gray-300 text-sm transition-all duration-300 group-hover:opacity-0 group-hover:-translate-y-1">
+            ACL 2026 Workshop (in preparation)</p>
+          <p
+            class="text-gray-300 text-sm opacity-0 translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
+            A memory layer for multi‑session dialogue that blends dense retrieval with heuristics and GPT‑based
+            enrichment. Implements decay, merge, and conflict‑resolution policies for stable long‑term context.</p>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <h1>Contact</h1><br /><br />
-
-    <form method="POST" action="https://formspree.io/f/xdoyprne">
-
-      <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-6">
-          <p>Name</p>
-        </div>
-        <div class="col-lg-6 col-md-6 col-sm-6">
-          <input type="text" class="form-control" id="floatingInput" placeholder="Enter your name" name="Name" required>
-        </div>
+      </a><br />
+      <div class="mt-3 space-y-4">
+        <article class="border-b border-white/10 pb-4">
+          <div class="flex items-center justify-between">
+            <h3 class="font-medium">Optimized Memory Model Pipeline for LLM Chatbots — UC San Diego</h3>
+            <span class="text-gray-400 text-sm">Apr 2025 – Present</span>
+          </div>
+          <p class="mt-1 text-gray-400 text-[15px]">Advisors: Julian McAuley, Yu Wang.</p>
+          <p class="mt-1 text-gray-400 text-[15px]">Designing and evaluating memory update algorithms for LLM-based chat
+            systems, focusing on balancing retention, redundancy elimination, and conflict resolution. Implemented the
+            LLM-Memory-Engine prototype integrating Redis, GPT enrichment, and retrieval strategies to simulate
+            long-term memory. Manuscript in preparation for ACL 2026 Workshop.</p>
+          <ul class="mt-2 text-[14px] text-gray-300 list-disc pl-5 space-y-1">
+            <li>Preprint: <span class="text-gray-400">coming soon</span></li>
+            <li>Code: <a href="#" class="link underline hover:text-white">(private repo)</a></li>
+            <li>Notes: <a href="#notes" class="link underline hover:text-white">Research Notes</a></li>
+          </ul>
+        </article>
       </div>
 
-      <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-6">
-          <p>Email</p>
-        </div>
-        <div class="col-lg-6 col-md-6 col-sm-6">
-          <input type="email" class="form-control" id="floatingEmail" placeholder="Enter your email ID" name="Email"
-            required>
-        </div>
+
+      <div class="mt-3 space-y-4">
+        <article class="border-b border-white/10 pb-4">
+          <div class="flex items-center justify-between">
+            <h3 class="font-medium">Applied Conversational Memory Systems at Scale — Spuddie (AI Companion Startup)</h3>
+            <span class="text-gray-400 text-sm">Apr 2025 – May 2025</span>
+          </div>
+          <p class="mt-1 text-gray-400 text-[15px]">Advisors: Emma Waldron Chen, Ross Ingram.</p>
+          <p class="mt-1 text-gray-400 text-[15px]">Developed a production-ready long-term memory system using vector
+            databases and heuristic scoring. Deployed internally across 500+ daily users, yielding a 30% improvement in
+            measured helpfulness. Research remained private and used within the team.</p>
+        </article>
       </div>
 
-      <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-6">
-          <p>Message</p>
+
+      <div class="mt-3 space-y-4">
+        <article class="border-b border-white/10 pb-4">
+          <div class="flex items-center justify-between">
+            <h3 class="font-medium">Ballhawk AI: Predictive Modeling for Baseball Home Run Trajectories</h3>
+            <span class="text-gray-400 text-sm">Jan 2025 – Mar 2025</span>
+          </div>
+          <p class="mt-1 text-gray-400 text-[15px]">Independent Research Project.</p>
+          <p class="mt-1 text-gray-400 text-[15px]">Modeled spatiotemporal trajectories of baseball home runs using
+            Statcast data. Built ML pipelines to predict landing zones and generate stadium heatmaps. Validated against
+            live MLB data; targeting submission to SABR Analytics Conference.</p>
+          <ul class="mt-2 text-[14px] text-gray-300 list-disc pl-5 space-y-1">
+            <li>Preprint: <span class="text-gray-400">coming soon</span></li>
+            <li>Code: <a href="#" class="link underline hover:text-white">(private repo)</a></li>
+            <li>Notes: <a href="#notes" class="link underline hover:text-white">Research Notes</a></li>
+          </ul>
+        </article>
+      </div>
+
+
+      <div class="mt-3 space-y-4">
+        <article class="pb-4">
+          <div class="flex items-center justify-between">
+            <h3 class="font-medium">Applied Anomaly Detection for Real Estate Valuation — Findability Sciences</h3>
+            <span class="text-gray-400 text-sm">Apr 2022 – May 2022</span>
+          </div>
+          <p class="mt-1 text-gray-400 text-[15px]">Advisors: Suresh Shakkarwar, Mandar Kulkarni.</p>
+          <p class="mt-1 text-gray-400 text-[15px]">Investigated outlier detection strategies for large-scale property
+            datasets (10,000+ U.S. records). Implemented Isolation Forest and statistical thresholding, improving model
+            accuracy by 18%. Work remained internal and was adopted within Diamond Realty Investment workflows.</p>
+        </article>
+      </div>
+    </section>
+
+    <div class="my-10 border-t border-white/10"></div>
+
+    <!-- Experience -->
+    <section aria-labelledby="experience">
+      <h2 id="experience" class="uppercase text-[12px] text-gray-500">Experience</h2>
+      <a href="https://github.com/VedPanse" target="_blank" rel="noreferrer" class="block overflow-hidden rounded-2xl relative group">
+        <img src="images/featured-falconeye.png" alt="Cover for Falcon Eye synthetic vision" loading="lazy"
+          class="w-full h-60 object-cover rounded-2xl group-hover:scale-105 transition-transform duration-500" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
+        <div class="absolute bottom-0 left-4 right-4 pb-4">
+          <h3
+            class="text-white font-semibold text-lg transition-all duration-300 translate-y-0 group-hover:-translate-y-2">
+            Falcon Eye — Synthetic Vision</h3>
+          <p class="text-gray-300 text-sm transition-all duration-300 group-hover:opacity-0 group-hover:-translate-y-1">
+            C++ / OpenGL flight assistance system</p>
+          <p
+            class="text-gray-300 text-sm opacity-0 translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
+            Terrain‑aware synthetic vision using GPU‑accelerated rendering and stitched elevation data. Emphasis on
+            robustness and frame‑rate stability.</p>
         </div>
-        <div class="col-lg-6 col-md-6 col-sm-6">
-          <textarea type="message" class="form-control" id="message" placeholder="Enter your message" name="Message"
-            required></textarea>
+      </a><br />
+
+      <div class="mt-3 space-y-4">
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between border-b border-white/10 pb-4">
+          <div>
+            <div class="font-medium">UC San Diego — Research (LLM Memory Models)</div>
+            <div class="text-gray-400 text-sm">Advisors: Julian McAuley, Yu Wang</div>
+          </div>
+          <div class="text-gray-400 text-sm whitespace-nowrap shrink-0">Apr 2025 – Present</div>
+        </div>
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between border-b border-white/10 pb-4">
+          <div>
+            <div class="font-medium">Spuddie — AI Research Intern</div>
+            <div class="text-gray-400 text-sm">Conversational memory engine for AI companion; improved long‑term recall
+              accuracy by 30%.</div>
+          </div>
+          <div class="text-gray-400 text-sm whitespace-nowrap shrink-0">Apr 2025 – May 2025</div>
+        </div>
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between border-b border-white/10 pb-4">
+          <div>
+            <div class="font-medium">Findability Sciences — Data Science Research Intern</div>
+            <div class="text-gray-400 text-sm">Built anomaly detection pipelines improving model accuracy by 18%;
+              streamlined deployment into client systems.</div>
+          </div>
+          <div class="text-gray-400 text-sm whitespace-nowrap shrink-0">Jun 2024 – Sep 2024</div>
+        </div>
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between border-b border-white/10 pb-4">
+          <div>
+            <div class="font-medium">Venture Shares — Software Engineering Intern</div>
+            <div class="text-gray-400 text-sm">Frontend architecture for market data platform (Next.js, React); built
+              reusable components for scaling.</div>
+          </div>
+          <div class="text-gray-400 text-sm whitespace-nowrap shrink-0">Jan 2024 – Apr 2024</div>
+        </div>
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <div class="font-medium">BancBridge — Software Engineering Intern</div>
+            <div class="text-gray-400 text-sm">Contributed to automation tools used by Bank of America, Wells Fargo, JP
+              Morgan; focused on secure integrations.</div>
+          </div>
+          <div class="text-gray-400 text-sm whitespace-nowrap shrink-0">Jun 2022 – Aug 2022</div>
         </div>
       </div>
+    </section>
+
+    <div class="my-10 border-t border-white/10"></div>
+
+    <!-- Research Notes -->
+    <section id="notes" aria-labelledby="notes-title">
+      <h2 id="notes-title" class="uppercase text-[12px] text-gray-500">Research Notes</h2>
+      <div class="mt-3 space-y-3">
+        <a href="#" class="block py-4 border-b border-white/10">
+          <div class="text-sm text-gray-400">June 2025</div>
+          <div class="mt-1 font-medium">Balancing Retention vs. Redundancy in Conversational Memory</div>
+          <p class="mt-1 text-gray-400 text-[15px]">Experiments with decay, merge policies, and conflict resolution
+            under noisy user histories.</p>
+        </a>
+        <a href="#" class="block py-4">
+          <div class="text-sm text-gray-400">May 2025</div>
+          <div class="mt-1 font-medium">Evaluating Memory Updates with Multi‑Session Dialogues</div>
+          <p class="mt-1 text-gray-400 text-[15px]">Early metrics and ablations for retrieval quality and downstream
+            task accuracy.</p>
+        </a>
       </div>
-      <button class="btn btn-light" type="submit">Submit</button>
-    </form>
-  </section>
+    </section>
+
+    <div class="my-10 border-t border-white/10"></div>
+
+    <!-- Projects -->
+    <section id="projects" aria-labelledby="projects-title">
+      <h2 id="projects-title" class="uppercase text-[12px] text-gray-500">Projects</h2>
+      <a href="#projects" class="block overflow-hidden rounded-2xl relative group">
+        <img src="images/featured-strata.png" alt="Cover for Strata personal assistant" loading="lazy"
+          class="w-full h-60 object-cover rounded-2xl group-hover:scale-105 transition-transform duration-500" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
+        <div class="absolute bottom-0 left-4 right-4 pb-4">
+          <h3
+            class="text-white font-semibold text-lg transition-all duration-300 translate-y-0 group-hover:-translate-y-2">
+            Strata — Personal AI Assistant</h3>
+          <p class="text-gray-300 text-sm transition-all duration-300 group-hover:opacity-0 group-hover:-translate-y-1">
+            Kotlin Multiplatform, systems design</p>
+          <p
+            class="text-gray-300 text-sm opacity-0 translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
+            Gateway, typed services, and event queues. Real‑time sync over WebSockets with offline caching and
+            conflict handling.</p>
+        </div>
+      </a>
+      <br />
+      <div class="mt-3 space-y-4">
+
+        <a href="https://github.com/VedPanse" target="_blank" rel="noreferrer" class="block">
+        <article class="border-b border-white/10 pb-4">
+          <div class="flex items-center justify-between">
+            <h3 class="font-medium">Strata — Personal AI Assistant (Kotlin Multiplatform)</h3>
+            <span class="text-gray-500 text-sm">2025 – Present</span>
+          </div>
+          <p class="mt-1 text-gray-400 text-[15px]">Gateway + services + queues + caches + WebSockets; unified
+            Gmail/Calendar/Tasks with low-latency sync and offline caching.</p>
+        </article>
+        </a>
+
+        <a href="https://github.com/VedPanse" target="_blank" rel="noreferrer" class="block">
+        <article class="border-b border-white/10 pb-4">
+          <div class="flex items-center justify-between">
+            <h3 class="font-medium">ShardWise — Distributed Task Processing (Rust, Kafka)</h3>
+            <span class="text-gray-500 text-sm">2025 – Present</span>
+          </div>
+          <p class="mt-1 text-gray-400 text-[15px]">Leader election, replication, and sharding across nodes;
+            containerized with Docker + Kubernetes for resilience and scale.</p>
+        </article>
+        </a>
+
+        <a href="https://github.com/VedPanse" target="_blank" rel="noreferrer" class="block">
+        <article class="border-b border-white/10 pb-4">
+          <div class="flex items-center justify-between">
+            <h3 class="font-medium">Orion — macOS AI Virtual Assistant (Swift, Python, Rust)</h3>
+            <span class="text-gray-500 text-sm">2025 – Present</span>
+          </div>
+          <p class="mt-1 text-gray-400 text-[15px]">AI-powered desktop assistant capable of interacting locally with
+            macOS applications and online services. Focus on tool use, memory, and privacy-preserving design.</p>
+        </article>
+        </a>
+
+        <a href="https://github.com/VedPanse/sentinel" target="_blank" rel="noreferrer" class="block">
+        <article class="border-b border-white/10 pb-4">
+          <div class="flex items-center justify-between">
+            <h3 class="font-medium">Sentinel — Semantic AI Web Watchdog (Java, Python)</h3>
+            <span class="text-gray-500 text-sm">2024 – 2025</span>
+          </div>
+          <p class="mt-1 text-gray-400 text-[15px]">AI system that monitors web content for semantic matches to
+            user-defined tasks using sentence-transformer embeddings. Alerts users only on meaningful changes, reducing
+            noise.</p>
+        </article>
+        </a>
+
+        <a href="https://chromewebstore.google.com/detail/phish-net/lllecpchjhllolknfecnhmjdjmlameog" target="_blank" rel="noreferrer" class="block">
+        <article class="border-b border-white/10 pb-4">
+          <div class="flex items-center justify-between">
+            <h3 class="font-medium">PhishNet — AI Phishing Detection for X & Gmail (Python, JavaScript)</h3>
+            <span class="text-gray-500 text-sm">2024</span>
+          </div>
+          <p class="mt-1 text-gray-400 text-[15px]">AI-driven phishing detection engine that flags suspicious posts and
+            emails in real time. Combines ML classifiers with heuristic rules to minimize false positives and provide
+            explainable warnings.</p>
+        </article>
+        </a>
+
+        <a href="https://github.com/VedPanse/javelinLang" target="_blank" rel="noreferrer" class="block">
+        <article>
+          <div class="flex items-center justify-between">
+            <h3 class="font-medium">javelinLang — DSL for UI & Filesystem Automation (Python, Kotlin, C++)</h3>
+            <span class="text-gray-500 text-sm">2023 – 2024</span>
+          </div>
+          <p class="mt-1 text-gray-400 text-[15px]">Domain-specific language designed to simplify GUI scripting and
+            filesystem automation. Features concise syntax and a minimal runtime for efficient automation workflows.</p>
+        </article>
+        </a>
+
+      </div>
+    </section>
+    <div class="my-10 border-t border-white/10"></div>
+
+    <!-- Honors & Awards -->
+    <section id="awards" aria-labelledby="awards-title">
+      <h2 id="awards-title" class="uppercase text-[12px] text-gray-500">Honors & Awards</h2>
+      <ul class="mt-3 space-y-2 text-[15px] leading-7 text-gray-300">
+        <li><span class="font-medium text-gray-200">International Rank 1</span> — United States Cybersecurity Challenge
+          (DHS & CIA) • 2024</li>
+        <li><span class="font-medium text-gray-200">International Rank 4</span> — Kotlin Multiplatform Contest (Kotlin
+          Foundation) • 2025</li>
+        <li>Provost’s Honors, UC San Diego — multiple quarters (GPA ≥ 3.8)</li>
+      </ul>
+    </section>
+
+    <div class="my-10 border-t border-white/10"></div>
+
+    <!-- Writing -->
+    <section id="writing" aria-labelledby="writing-title">
+      <h2 id="writing-title" class="uppercase text-[12px] text-gray-500">Writing</h2>
+
+
+      <!-- Filter buttons -->
+      <div class="mt-3 mb-4 flex flex-wrap gap-2 text-xs" role="tablist" aria-label="Writing filters">
+        <button type="button" class="writing-filter text-white" data-filter="all" aria-pressed="true">All</button>
+        <button type="button" class="writing-filter text-gray-300" data-filter="pub"
+          aria-pressed="false">Publications</button>
+        <button type="button" class="writing-filter text-gray-300" data-filter="blog" aria-pressed="false">Blog &
+          Notes</button>
+      </div>
+
+
+      <!-- Primary card grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4" id="writing-grid">
+        <!-- Publication -->
+        <a data-type="pub"
+          href="https://www.lokmattimes.com/aurangabad/can-artificial-intelligence-be-used-to-detect-fake-news/"
+          target="_blank" rel="noreferrer" class="writing-card group">
+          <div class="flex items-center justify-between">
+            <span class="text-[11px] uppercase text-gray-500">Publication</span>
+            <span class="text-[11px] text-gray-500">2024</span>
+          </div>
+          <h3 class="mt-2 font-medium group-hover:underline">Can Artificial Intelligence Be Used to Detect Fake News
+            Online?</h3>
+          <p class="mt-2 text-[14px] text-gray-400">Applied AI overview for misinformation detection with practical
+            examples.</p>
+        </a>
+
+
+        <!-- Publication -->
+        <a data-type="pub" href="templates/publications/machine-learning/index.html" target="_blank" rel="noreferrer"
+          class="writing-card group">
+          <div class="flex items-center justify-between">
+            <span class="text-[11px] uppercase text-gray-500">Publication</span>
+            <span class="text-[11px] text-gray-500">2023</span>
+          </div>
+          <h3 class="mt-2 font-medium group-hover:underline">Machine Learning & Algorithms — A Primer</h3>
+          <p class="mt-2 text-[14px] text-gray-400">Concise tutorial covering core ML concepts and algorithmic
+            foundations.</p>
+        </a>
+
+
+        <!-- Blog -->
+        <a data-type="blog" href="templates/blogs/introductory-blog.html" target="_blank" rel="noreferrer"
+          class="writing-card group">
+          <div class="flex items-center justify-between">
+            <span class="text-[11px] uppercase text-gray-500">Selected Blog</span>
+            <span class="text-[11px] text-gray-500">2024</span>
+          </div>
+          <h3 class="mt-2 font-medium group-hover:underline">From Thousand Oaks to 10,000 Commits</h3>
+          <p class="mt-2 text-[14px] text-gray-400">Personal trajectory + lessons from shipping production systems.</p>
+        </a>
+
+
+        <!-- Research Notes anchor (blog-type) -->
+        <a data-type="blog" href="#notes" class="writing-card group">
+          <div class="flex items-center justify-between">
+            <span class="text-[11px] uppercase text-gray-500">Research Notes</span>
+            <span class="text-[11px] text-gray-500">Ongoing</span>
+          </div>
+          <h3 class="mt-2 font-medium group-hover:underline">Memory Models — Updates & Ablations</h3>
+          <p class="mt-2 text-[14px] text-gray-400">Short technical updates on decay/merge policies, redundancy pruning,
+            and evaluation in multi‑session dialogue.</p>
+        </a>
+      </div>
+
+
+      <!-- Collapsible: more links as matching cards (same design) -->
+      <details class="mt-4 text-[14px]" id="writing-more">
+        <summary class="cursor-pointer text-gray-400 hover:text-gray-200">Show more links</summary>
+        <div class="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <a data-type="pub" href="templates/publications/algorithms/index.html" target="_blank" rel="noreferrer"
+            class="writing-card group">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] uppercase text-gray-500">Publication</span>
+              <span class="text-[11px] text-gray-500">2023</span>
+            </div>
+            <h3 class="mt-2 font-medium group-hover:underline">Algorithms Explained</h3>
+            <p class="mt-2 text-[14px] text-gray-400">Accessible walkthroughs of algorithmic ideas and patterns.</p>
+          </a>
+
+
+          <a data-type="pub" href="templates/publications/plotly/index.html" target="_blank" rel="noreferrer"
+            class="writing-card group">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] uppercase text-gray-500">Publication</span>
+              <span class="text-[11px] text-gray-500">2023</span>
+            </div>
+            <h3 class="mt-2 font-medium group-hover:underline">Plotly Tutorials</h3>
+            <p class="mt-2 text-[14px] text-gray-400">Interactive visualization techniques with practical examples.</p>
+          </a>
+
+
+    </section>
+
+    <div class="my-10 border-t border-white/10"></div>
+
+    <!-- Contact -->
+    <section id="contact" aria-labelledby="contact-title" class="mt-12">
+      <h2 id="contact-title" class="uppercase text-[12px] text-gray-500">Contact</h2>
+      <form method="POST" action="https://formspree.io/f/xdoyprne" class="mt-6 space-y-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <label class="block">
+            <span class="sr-only">Your name</span>
+            <input id="name" name="name" type="text" required placeholder="Your name"
+              class="w-full bg-transparent border-b border-white/20 focus:border-white/40 placeholder-gray-500 text-gray-200 px-1 py-2 focus:outline-none transition" />
+          </label>
+          <label class="block">
+            <span class="sr-only">Email</span>
+            <input id="email" name="email" type="email" required placeholder="you@example.com"
+              class="w-full bg-transparent border-b border-white/20 focus:border-white/40 placeholder-gray-500 text-gray-200 px-1 py-2 focus:outline-none transition" />
+          </label>
+        </div>
+        <label class="block">
+          <span class="sr-only">Message</span>
+          <textarea id="message" name="message" rows="5" required placeholder="Say hello or ask about my work…"
+            class="w-full bg-transparent border-b border-white/20 focus:border-white/40 placeholder-gray-500 text-gray-200 px-1 py-2 focus:outline-none transition"></textarea>
+        </label>
+        <input type="hidden" name="_subject" value="New message from vedpanse.com/portfolio" />
+        <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" />
+        <div class="flex justify-end">
+          <button type="submit"
+            class="px-6 py-2 rounded-md text-sm font-medium text-white border border-white/20 hover:border-white/40 transition">Send</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="my-16 sm:my-20">
+      <div class="h-px w-full bg-white/10 mb-6"></div>
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-sm text-gray-400">
+        <div>© <span id="year"></span> Ved Panse <span class="text-gray-600">•</span> <span
+            class="text-gray-500">Updated <time id="updated"></time></span></div>
+        <nav class="flex items-center gap-4">
+          <a class="link hover:text-white underline" href="mailto:vpanse@ucsd.edu">Email</a>
+          <a class="link hover:text-white underline" href="https://vedpanse.com" target="_blank"
+            rel="noreferrer">Website</a>
+          <a class="link hover:text-white underline" href="https://github.com/VedPanse" target="_blank"
+            rel="noreferrer">GitHub</a>
+        </nav>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // Year & Updated stamp
+    const y = document.getElementById('year');
+    if (y) y.textContent = new Date().getFullYear();
+    const u = document.getElementById('updated');
+    if (u) u.textContent = new Date().toLocaleDateString(undefined, { year: 'numeric', month: 'short' });
+
+    // Writing filters
+    (function () {
+      const filterBtns = document.querySelectorAll('#writing .writing-filter');
+      const cards = document.querySelectorAll('#writing .writing-card');
+
+      function applyFilter(kind) {
+        cards.forEach(c => {
+          const match = (kind === 'all') || (c.dataset.type === kind);
+          c.style.display = match ? '' : 'none';
+        });
+        filterBtns.forEach(b => {
+          const active = b.dataset.filter === kind;
+          b.setAttribute('aria-pressed', active);
+          b.classList.toggle('text-white', active);
+          b.classList.toggle('text-gray-300', !active);
+          b.classList.toggle('bg-white/10', active);
+        });
+      }
+
+      filterBtns.forEach(b => b.addEventListener('click', () => applyFilter(b.dataset.filter)));
+      applyFilter('all'); // default view
+    })();
+  </script>
 
 </body>
-<script src="static/render/skills.js"></script>
-<script src="static/render/projects.js"></script>
-<script src="static/render/blogs.js"></script>
-<script src="static/render/work.js"></script>
 
 </html>
