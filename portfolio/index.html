@@ -108,6 +108,30 @@
       text-decoration-thickness: 1px
     }
 
+    /* Reusable utilities to trim repeated class lists */
+    .chip {
+      padding: 0.25rem 0.625rem; /* py-1 px-2.5 */
+      border-radius: 0.375rem; /* rounded-md */
+      border: 1px solid rgba(255, 255, 255, 0.1); /* border-white/10 */
+      color: #d1d5db; /* text-gray-300 */
+    }
+
+    .writing-card {
+      border-radius: 1rem; /* rounded-2xl */
+      border: 1px solid rgba(255, 255, 255, 0.1); /* border-white/10 */
+      padding: 1rem; /* p-4 */
+      transition: all 150ms ease-in-out; /* transition */
+    }
+    .writing-card:hover { border-color: rgba(255, 255, 255, 0.3); /* hover:border-white/30 */ }
+
+    .writing-filter {
+      padding: 0.25rem 0.5rem; /* px-2 py-1 */
+      border-radius: 9999px; /* rounded-full */
+      border: 1px solid rgba(255, 255, 255, 0.2); /* border-white/20 */
+      transition: border-color 150ms ease-in-out;
+    }
+    .writing-filter:hover { border-color: rgba(255, 255, 255, 0.4); /* hover:border-white/40 */ }
+
     @media print {
       body {
         background: #fff !important;
@@ -213,41 +237,41 @@
 
       <h3 class="mark program">Languages & Core</h3>
       <ul class="flex flex-wrap gap-2 text-[12px] mt-1">
-        <li class="px-2.5 py-1 rounded-md border border-white/10 text-gray-300">Python</li>
-        <li class="px-2.5 py-1 rounded-md border border-white/10 text-gray-300">Rust</li>
-        <li class="px-2.5 py-1 rounded-md border border-white/10 text-gray-300">C++</li>
-        <li class="px-2.5 py-1 rounded-md border border-white/10 text-gray-300">C</li>
-        <li class="px-2.5 py-1 rounded-md border border-white/10 text-gray-300">Kotlin</li>
-        <li class="px-2.5 py-1 rounded-md border border-white/10 text-gray-300">Swift</li>
+        <li class="chip">Python</li>
+        <li class="chip">Rust</li>
+        <li class="chip">C++</li>
+        <li class="chip">C</li>
+        <li class="chip">Kotlin</li>
+        <li class="chip">Swift</li>
       </ul><br />
 
 
       <h3 class="mark ml mt-5">Systems & Frameworks</h3>
       <ul class="flex flex-wrap gap-2 text-[12px] mt-1">
-        <li class="px-2.5 py-1 rounded-md border border-white/10 text-gray-300">Tauri</li>
-        <li class="px-2.5 py-1 rounded-md border border-white/10 text-gray-300">TypeScript</li>
-        <li class="px-2.5 py-1 rounded-md border border-white/10 text-gray-300">JavaScript</li>
-        <li class="px-2.5 py-1 rounded-md border border-white/10 text-gray-300">Next.js</li>
-        <li class="px-2.5 py-1 rounded-md border border-white/10 text-gray-300">Electron.js</li>
-        <li class="px-2.5 py-1 rounded-md border border-white/10 text-gray-300">Firebase</li>
+        <li class="chip">Tauri</li>
+        <li class="chip">TypeScript</li>
+        <li class="chip">JavaScript</li>
+        <li class="chip">Next.js</li>
+        <li class="chip">Electron.js</li>
+        <li class="chip">Firebase</li>
       </ul><br />
 
 
       <h3 class="mark alg mt-5">Hardware & Embedded</h3>
       <ul class="flex flex-wrap gap-2 text-[12px] mt-1">
-        <li class="px-2.5 py-1 rounded-md border border-white/10 text-gray-300">Raspberry Pi</li>
-        <li class="px-2.5 py-1 rounded-md border border-white/10 text-gray-300">Arduino</li>
+        <li class="chip">Raspberry Pi</li>
+        <li class="chip">Arduino</li>
       </ul><br />
 
 
       <h3 class="mark program mt-5">Tools & Utilities</h3>
       <ul class="flex flex-wrap gap-2 text-[12px] mt-1">
-        <li class="px-2.5 py-1 rounded-md border border-white/10 text-gray-300">GitHub</li>
-        <li class="px-2.5 py-1 rounded-md border border-white/10 text-gray-300">Bash</li>
-        <li class="px-2.5 py-1 rounded-md border border-white/10 text-gray-300">AWK</li>
-        <li class="px-2.5 py-1 rounded-md border border-white/10 text-gray-300">SED</li>
-        <li class="px-2.5 py-1 rounded-md border border-white/10 text-gray-300">HTML</li>
-        <li class="px-2.5 py-1 rounded-md border border-white/10 text-gray-300">CSS</li>
+        <li class="chip">GitHub</li>
+        <li class="chip">Bash</li>
+        <li class="chip">AWK</li>
+        <li class="chip">SED</li>
+        <li class="chip">HTML</li>
+        <li class="chip">CSS</li>
       </ul>
     </section>
 
@@ -461,7 +485,6 @@
     <div class="my-10 border-t border-white/10"></div>
 
     <!-- Projects -->
-    <!-- Projects -->
     <section id="projects" aria-labelledby="projects-title">
       <h2 id="projects-title" class="uppercase text-[12px] text-gray-500">Projects</h2>
       <div class="mt-3 space-y-4">
@@ -547,15 +570,9 @@
 
       <!-- Filter buttons -->
       <div class="mt-3 mb-4 flex flex-wrap gap-2 text-xs" role="tablist" aria-label="Writing filters">
-        <button type="button"
-          class="writing-filter px-2 py-1 rounded-full border border-white/20 hover:border-white/40 text-white"
-          data-filter="all" aria-pressed="true">All</button>
-        <button type="button"
-          class="writing-filter px-2 py-1 rounded-full border border-white/20 hover:border-white/40 text-gray-300"
-          data-filter="pub" aria-pressed="false">Publications</button>
-        <button type="button"
-          class="writing-filter px-2 py-1 rounded-full border border-white/20 hover:border-white/40 text-gray-300"
-          data-filter="blog" aria-pressed="false">Blog & Notes</button>
+        <button type="button" class="writing-filter text-white" data-filter="all" aria-pressed="true">All</button>
+        <button type="button" class="writing-filter text-gray-300" data-filter="pub" aria-pressed="false">Publications</button>
+        <button type="button" class="writing-filter text-gray-300" data-filter="blog" aria-pressed="false">Blog & Notes</button>
       </div>
 
 
@@ -564,8 +581,7 @@
         <!-- Publication -->
         <a data-type="pub"
           href="https://www.lokmattimes.com/aurangabad/can-artificial-intelligence-be-used-to-detect-fake-news/"
-          target="_blank" rel="noreferrer"
-          class="writing-card group rounded-2xl border border-white/10 p-4 hover:border-white/30 transition">
+          target="_blank" rel="noreferrer" class="writing-card group">
           <div class="flex items-center justify-between">
             <span class="text-[11px] uppercase text-gray-500">Publication</span>
             <span class="text-[11px] text-gray-500">2024</span>
@@ -578,8 +594,7 @@
 
 
         <!-- Publication -->
-        <a data-type="pub" href="templates/publications/machine-learning/index.html" target="_blank" rel="noreferrer"
-          class="writing-card group rounded-2xl border border-white/10 p-4 hover:border-white/30 transition">
+        <a data-type="pub" href="templates/publications/machine-learning/index.html" target="_blank" rel="noreferrer" class="writing-card group">
           <div class="flex items-center justify-between">
             <span class="text-[11px] uppercase text-gray-500">Publication</span>
             <span class="text-[11px] text-gray-500">2023</span>
@@ -591,8 +606,7 @@
 
 
         <!-- Blog -->
-        <a data-type="blog" href="templates/blogs/introductory-blog.html" target="_blank" rel="noreferrer"
-          class="writing-card group rounded-2xl border border-white/10 p-4 hover:border-white/30 transition">
+        <a data-type="blog" href="templates/blogs/introductory-blog.html" target="_blank" rel="noreferrer" class="writing-card group">
           <div class="flex items-center justify-between">
             <span class="text-[11px] uppercase text-gray-500">Selected Blog</span>
             <span class="text-[11px] text-gray-500">2024</span>
@@ -603,8 +617,7 @@
 
 
         <!-- Research Notes anchor (blog-type) -->
-        <a data-type="blog" href="#notes"
-          class="writing-card group rounded-2xl border border-white/10 p-4 hover:border-white/30 transition">
+        <a data-type="blog" href="#notes" class="writing-card group">
           <div class="flex items-center justify-between">
             <span class="text-[11px] uppercase text-gray-500">Research Notes</span>
             <span class="text-[11px] text-gray-500">Ongoing</span>
@@ -620,8 +633,7 @@
       <details class="mt-4 text-[14px]" id="writing-more">
         <summary class="cursor-pointer text-gray-400 hover:text-gray-200">Show more links</summary>
         <div class="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <a data-type="pub" href="templates/publications/algorithms/index.html" target="_blank" rel="noreferrer"
-            class="writing-card group rounded-2xl border border-white/10 p-4 hover:border-white/30 transition">
+          <a data-type="pub" href="templates/publications/algorithms/index.html" target="_blank" rel="noreferrer" class="writing-card group">
             <div class="flex items-center justify-between">
               <span class="text-[11px] uppercase text-gray-500">Publication</span>
               <span class="text-[11px] text-gray-500">2023</span>
@@ -631,8 +643,7 @@
           </a>
 
 
-          <a data-type="pub" href="templates/publications/plotly/index.html" target="_blank" rel="noreferrer"
-            class="writing-card group rounded-2xl border border-white/10 p-4 hover:border-white/30 transition">
+          <a data-type="pub" href="templates/publications/plotly/index.html" target="_blank" rel="noreferrer" class="writing-card group">
             <div class="flex items-center justify-between">
               <span class="text-[11px] uppercase text-gray-500">Publication</span>
               <span class="text-[11px] text-gray-500">2023</span>
