@@ -7,12 +7,23 @@
   <title>Ved Panse — Academic Portfolio</title>
 
   <!-- Meta -->
-  <meta name="description"
-    content="Academic portfolio for Ved Panse — research, projects, awards, and contact. Focus: AI memory models & intelligent assistants." />
+  <meta name="description" content="Academic portfolio for Ved Panse — research, projects, awards, and contact. Focus: AI memory models & intelligent assistants." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://vedpanse.com/portfolio.html" />
   <meta property="og:title" content="Ved Panse — Academic Portfolio" />
   <meta property="og:description" content="Research & projects in AI memory models and intelligent assistants." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://vedpanse.com/portfolio.html" />
+  <meta property="og:image" content="https://vedpanse.com/images/og/ved-portfolio.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ved Panse — Academic Portfolio" />
+  <meta name="twitter:description" content="Research & projects in AI memory models and intelligent assistants." />
+  <meta name="twitter:image" content="https://vedpanse.com/images/og/ved-portfolio.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
   <!-- TailwindCSS CDN (no build step) -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -46,43 +57,81 @@
     ::-webkit-scrollbar { width: 10px; height: 10px }
     ::-webkit-scrollbar-thumb { background: #1f2430; border-radius: 999px }
     html { scroll-behavior: smooth }
+    .focus-ring:focus-visible { outline: 2px solid #fff; outline-offset: 2px }
+    .link { text-underline-offset: 4px; text-decoration-thickness: 1px }
+    @media print {
+      body { background: #fff !important; color: #000 !important }
+      a { color: #000 !important; text-decoration: underline }
+      .no-print { display: none !important }
+      .print-only { display: block !important }
+    }
   </style>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ved Panse",
+    "url": "https://vedpanse.com/portfolio.html",
+    "sameAs": ["https://github.com/VedPanse"],
+    "affiliation": {"@type": "CollegeOrUniversity", "name": "University of California, San Diego"},
+    "knowsAbout": ["Artificial Intelligence", "Memory models", "Intelligent virtual assistants", "Distributed systems"]
+  }
+  </script>
 </head>
 
 <body class="bg-[#151515] text-gray-200 font-sans selection:bg-white/20 selection:text-white">
-  <main class="mx-auto max-w-3xl px-6 sm:px-8">
+  <a href="#main" class="sr-only focus:not-sr-only focus-ring fixed left-4 top-4 bg-black/70 text-white px-3 py-1 rounded-md">Skip to content</a>
 
-    <!-- Header / Intro -->
-    <header class="mt-[20vh] flex flex-col items-start text-left">
-      <img src="images/ved-avatar.png" alt="Ved Panse portrait"
-        class="h-24 w-24 rounded-full ring-1 ring-white/10 object-cover mb-4" onerror="this.style.display='none'">
-      <h3>Hi, I'm Ved Panse</h3>
-      <p class="mt-1 text-sm sm:text-base text-gray-400 max-w-xl">Undergraduate at UC San Diego (Data Science &
-        Math-CS). Researching <span class="text-gray-200">AI memory models</span> and <span class="text-gray-200">intelligent virtual assistants</span>. Building production systems with a minimalist aesthetic.</p>
-      <div class="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-gray-400">
-        <a class="hover:text-white underline underline-offset-4" href="mailto:vpanse@ucsd.edu">vpanse@ucsd.edu</a>
-        <span class="text-gray-600">•</span>
-        <a class="hover:text-white underline underline-offset-4" href="https://github.com/VedPanse" target="_blank" rel="noreferrer">github.com/VedPanse</a>
-        <span class="text-gray-600">•</span>
-        <a class="hover:text-white underline underline-offset-4" href="/Ved_Panse_CV_UCSD.pdf" target="_blank" rel="noreferrer">CV (PDF)</a>
-      </div>
-    </header>
-
-    <div class="my-8 border-t border-white/10"></div>
-
-    <!-- Quick Facts -->
-    <section aria-labelledby="facts" class="space-y-2">
-      <h2 id="facts" class="uppercase text-[12px] text-gray-500">At a glance</h2>
-      <ul class="text-gray-300 text-[15px] leading-7">
-        <li>UCSD, GPA ~3.94 • Provost Honors</li>
-        <li>Research: LLM Memory Engine (with Julian McAuley & Yu Wang)</li>
-        <li>Awards: Intl Rank 1 — US Cybersecurity Challenge; Intl Rank 4 — Kotlin Multiplatform Contest</li>
+  <!-- Sticky Top Nav -->
+  <header class="no-print fixed top-0 left-0 right-0 z-30 backdrop-blur supports-[backdrop-filter]:bg-black/30 bg-black/20 border-b border-white/10">
+    <nav class="mx-auto max-w-3xl px-6 sm:px-8 flex items-center justify-between h-14 text-sm">
+      <a href="#home" class="font-semibold tracking-tight hover:opacity-90">Ved Panse</a>
+      <ul class="hidden sm:flex items-center gap-5 text-gray-400">
+        <li><a class="link hover:text-white" href="#research">Research</a></li>
+        <li><a class="link hover:text-white" href="#featured">Featured</a></li>
+        <li><a class="link hover:text-white" href="#projects">Projects</a></li>
+        <li><a class="link hover:text-white" href="#awards">Awards</a></li>
+        <li><a class="link hover:text-white" href="#contact">Contact</a></li>
+        <li><a class="ml-2 px-3 py-1 rounded-md border border-white/20 hover:border-white/40" href="/Ved_Panse_CV_UCSD.pdf" target="_blank" rel="noreferrer">Download CV</a></li>
       </ul>
+    </nav>
+  </header>
+
+  <main id="main" class="mx-auto max-w-3xl px-6 sm:px-8 pt-24 sm:pt-28">
+
+    <!-- Hero / Intro -->
+    <section id="home" class="mt-20 flex flex-col items-start text-left">
+      <img src="images/ved-avatar.png" alt="Portrait of Ved Panse" loading="eager" fetchpriority="high" class="h-24 w-24 rounded-full ring-1 ring-white/10 object-cover mb-4" onerror="this.style.display='none'">
+      <h1 class="text-2xl sm:text-3xl font-semibold">Hi, I'm Ved Panse</h1>
+      <p class="mt-2 text-sm sm:text-base text-gray-400 max-w-xl">Undergraduate at UC San Diego (Data Science & Math‑CS). Researching <span class="text-gray-200">AI memory models</span> and <span class="text-gray-200">intelligent virtual assistants</span>. I build production systems with a minimalist aesthetic.</p>
+      <div class="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-gray-400">
+        <a class="link hover:text-white underline" href="mailto:vpanse@ucsd.edu">vpanse@ucsd.edu</a>
+        <span class="text-gray-600">•</span>
+        <a class="link hover:text-white underline" href="https://github.com/VedPanse" target="_blank" rel="noreferrer">github.com/VedPanse</a>
+        <span class="text-gray-600">•</span>
+        <a class="link hover:text-white underline" href="/Ved_Panse_CV_UCSD.pdf" target="_blank" rel="noreferrer">CV (PDF)</a>
+      </div>
+      <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3 w-full">
+        <div class="rounded-xl border border-white/10 p-4">
+          <div class="text-xs uppercase text-gray-500">GPA</div>
+          <div class="text-lg">~3.94 • Provost Honors</div>
+        </div>
+        <div class="rounded-xl border border-white/10 p-4">
+          <div class="text-xs uppercase text-gray-500">Focus</div>
+          <div class="text-lg">LLM Memory • Assistants</div>
+        </div>
+        <div class="rounded-xl border border-white/10 p-4">
+          <div class="text-xs uppercase text-gray-500">Status</div>
+          <div class="text-lg">Seeking MS‑CS (Fall 2026)</div>
+        </div>
+      </div>
     </section>
 
-    <div class="my-8 border-t border-white/10"></div>
+    <div class="my-10 border-t border-white/10"></div>
 
-    <!-- Skills -->
+    <!-- Skills (compact) -->
     <section aria-labelledby="skills" class="space-y-3">
       <h2 id="skills" class="uppercase text-[12px] text-gray-500">Skills</h2>
       <ul class="flex flex-wrap gap-2 text-[12px]">
@@ -102,7 +151,28 @@
       </ul>
     </section>
 
-    <div class="my-8 border-t border-white/10"></div>
+    <div class="my-10 border-t border-white/10"></div>
+
+    <!-- Research (new dedicated section) -->
+    <section id="research" aria-labelledby="research-title">
+      <h2 id="research-title" class="uppercase text-[12px] text-gray-500">Research</h2>
+      <div class="mt-3 space-y-4">
+        <article class="border-b border-white/10 pb-4">
+          <div class="flex items-center justify-between">
+            <h3 class="font-medium">LLM Memory Models — UC San Diego</h3>
+            <span class="text-gray-400 text-sm">Apr 2025 – Present</span>
+          </div>
+          <p class="mt-1 text-gray-400 text-[15px]">Advisors: Julian McAuley, Yu Wang. Building a hybrid memory layer for multi‑session dialogue with decay/merge policies and GPT‑based enrichment; evaluated on retrieval quality and downstream task accuracy.</p>
+          <ul class="mt-2 text-[14px] text-gray-300 list-disc pl-5 space-y-1">
+            <li>Preprint: <span class="text-gray-400">coming soon</span></li>
+            <li>Code: <a href="#" class="link underline hover:text-white">(private repo)</a></li>
+            <li>Notes: <a href="#notes" class="link underline hover:text-white">Research Notes</a></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <div class="my-10 border-t border-white/10"></div>
 
     <!-- Experience -->
     <section aria-labelledby="experience">
@@ -153,49 +223,46 @@
       </div>
     </section>
 
-    <div class="my-8 border-t border-white/10"></div>
+    <div class="my-10 border-t border-white/10"></div>
 
     <!-- Featured -->
-    <section aria-labelledby="featured">
-      <h2 id="featured" class="uppercase text-[12px] text-gray-500">Featured</h2>
+    <section id="featured" aria-labelledby="featured-title">
+      <h2 id="featured-title" class="uppercase text-[12px] text-gray-500">Featured</h2>
       <div class="mt-3 grid gap-6">
         <!-- Item 1 -->
-        <a href="#" class="block overflow-hidden rounded-2xl relative group">
-          <img src="images/featured-memory.png" alt="LLM Memory Engine cover"
-            class="w-full h-60 object-cover rounded-2xl group-hover:scale-105 transition-transform duration-500" />
+        <a href="#research" class="block overflow-hidden rounded-2xl relative group">
+          <img src="images/featured-memory.png" alt="Cover for LLM Memory Engine" loading="lazy" class="w-full h-60 object-cover rounded-2xl group-hover:scale-105 transition-transform duration-500" />
           <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
           <div class="absolute bottom-0 left-4 right-4 pb-4">
             <h3 class="text-white font-semibold text-lg transition-all duration-300 translate-y-0 group-hover:-translate-y-2">LLM Memory Engine — Hybrid Retrieval & Update</h3>
             <p class="text-gray-300 text-sm transition-all duration-300 group-hover:opacity-0 group-hover:-translate-y-1">ACL 2026 Workshop (in preparation)</p>
-            <p class="text-gray-300 text-sm opacity-0 translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">A memory layer for multi‑session dialogue that blends dense retrieval with lightweight heuristics and GPT‑based enrichment. Implements decay, merge, and conflict resolution policies for stable long‑term context. Benchmarked on multi‑turn datasets with ablations on update frequency and redundancy. Designed for reproducibility and clean APIs.</p>
+            <p class="text-gray-300 text-sm opacity-0 translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">A memory layer for multi‑session dialogue that blends dense retrieval with heuristics and GPT‑based enrichment. Implements decay, merge, and conflict‑resolution policies for stable long‑term context.</p>
           </div>
         </a>
         <!-- Item 2 -->
-        <a href="#" class="block overflow-hidden rounded-2xl relative group">
-          <img src="images/featured-strata.png" alt="Strata project cover"
-            class="w-full h-60 object-cover rounded-2xl group-hover:scale-105 transition-transform duration-500" />
+        <a href="#projects" class="block overflow-hidden rounded-2xl relative group">
+          <img src="images/featured-strata.png" alt="Cover for Strata personal assistant" loading="lazy" class="w-full h-60 object-cover rounded-2xl group-hover:scale-105 transition-transform duration-500" />
           <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
           <div class="absolute bottom-0 left-4 right-4 pb-4">
             <h3 class="text-white font-semibold text-lg transition-all duration-300 translate-y-0 group-hover:-translate-y-2">Strata — Personal AI Assistant</h3>
             <p class="text-gray-300 text-sm transition-all duration-300 group-hover:opacity-0 group-hover:-translate-y-1">Kotlin Multiplatform, systems design</p>
-            <p class="text-gray-300 text-sm opacity-0 translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">Cross‑platform assistant built with a gateway, typed services, and event queues. Real‑time sync over WebSockets with offline caching and conflict handling. Unified Gmail/Calendar/Tasks connectors with granular permissions. Focused on reliability, testability, and low‑latency UX.</p>
+            <p class="text-gray-300 text-sm opacity-0 translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">Gateway, typed services, and event queues. Real‑time sync over WebSockets with offline caching and conflict handling.</p>
           </div>
         </a>
         <!-- Item 3 -->
-        <a href="#" class="block overflow-hidden rounded-2xl relative group">
-          <img src="images/featured-falconeye.png" alt="Falcon Eye project cover"
-            class="w-full h-60 object-cover rounded-2xl group-hover:scale-105 transition-transform duration-500" />
+        <a href="#projects" class="block overflow-hidden rounded-2xl relative group">
+          <img src="images/featured-falconeye.png" alt="Cover for Falcon Eye synthetic vision" loading="lazy" class="w-full h-60 object-cover rounded-2xl group-hover:scale-105 transition-transform duration-500" />
           <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
           <div class="absolute bottom-0 left-4 right-4 pb-4">
             <h3 class="text-white font-semibold text-lg transition-all duration-300 translate-y-0 group-hover:-translate-y-2">Falcon Eye — Synthetic Vision</h3>
             <p class="text-gray-300 text-sm transition-all duration-300 group-hover:opacity-0 group-hover:-translate-y-1">C++ / OpenGL flight assistance system</p>
-            <p class="text-gray-300 text-sm opacity-0 translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">Terrain‑aware synthetic vision using GPU‑accelerated rendering and stitched elevation data. Integrates sensor models and attitude to generate stabilized guidance overlays. Emphasis on numerical robustness, framerate stability, and low‑level profiling.</p>
+            <p class="text-gray-300 text-sm opacity-0 translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">Terrain‑aware synthetic vision using GPU‑accelerated rendering and stitched elevation data. Emphasis on robustness and frame‑rate stability.</p>
           </div>
         </a>
       </div>
     </section>
 
-    <div class="my-8 border-t border-white/10"></div>
+    <div class="my-10 border-t border-white/10"></div>
 
     <!-- Research Notes -->
     <section id="notes" aria-labelledby="notes-title">
@@ -208,17 +275,17 @@
         </a>
         <a href="#" class="block py-4">
           <div class="text-sm text-gray-400">May 2025</div>
-          <div class="mt-1 font-medium">Evaluating Memory Updates with Multi-Session Dialogues</div>
+          <div class="mt-1 font-medium">Evaluating Memory Updates with Multi‑Session Dialogues</div>
           <p class="mt-1 text-gray-400 text-[15px]">Early metrics and ablations for retrieval quality and downstream task accuracy.</p>
         </a>
       </div>
     </section>
 
-    <div class="my-8 border-t border-white/10"></div>
+    <div class="my-10 border-t border-white/10"></div>
 
     <!-- Projects -->
-    <section aria-labelledby="projects">
-      <h2 id="projects" class="uppercase text-[12px] text-gray-500">Projects</h2>
+    <section id="projects" aria-labelledby="projects-title">
+      <h2 id="projects-title" class="uppercase text-[12px] text-gray-500">Projects</h2>
       <div class="mt-3">
         <div class="flex justify-between py-4 border-b border-white/10">
           <div>
@@ -237,11 +304,11 @@
       </div>
     </section>
 
-    <div class="my-8 border-t border-white/10"></div>
+    <div class="my-10 border-t border-white/10"></div>
 
     <!-- Honors & Awards -->
-    <section aria-labelledby="awards">
-      <h2 id="awards" class="uppercase text-[12px] text-gray-500">Honors & Awards</h2>
+    <section id="awards" aria-labelledby="awards-title">
+      <h2 id="awards-title" class="uppercase text-[12px] text-gray-500">Honors & Awards</h2>
       <ul class="mt-3 space-y-2 text-[15px] leading-7 text-gray-300">
         <li><span class="font-medium text-gray-200">International Rank 1</span> — United States Cybersecurity Challenge (DHS & CIA) • 2024</li>
         <li><span class="font-medium text-gray-200">International Rank 4</span> — Kotlin Multiplatform Contest (Kotlin Foundation) • 2025</li>
@@ -249,47 +316,56 @@
       </ul>
     </section>
 
-    <div class="my-8 border-t border-white/10"></div>
+    <div class="my-10 border-t border-white/10"></div>
 
     <!-- Writing -->
-    <section aria-labelledby="writing">
-      <h2 id="writing" class="uppercase text-[12px] text-gray-500">Writing</h2>
+    <section id="writing" aria-labelledby="writing-title">
+      <h2 id="writing-title" class="uppercase text-[12px] text-gray-500">Writing</h2>
       <div class="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-6">
         <div>
           <h3 class="text-sm text-gray-400">Publications</h3>
           <ul class="mt-2 space-y-2 text-[15px] leading-7">
-            <li><a class="underline underline-offset-4 hover:text-white" href="https://www.lokmattimes.com/aurangabad/can-artificial-intelligence-be-used-to-detect-fake-news/" target="_blank" rel="noreferrer">Can Artificial Intelligence Be Used to Detect Fake News Online?</a></li>
-            <li><a class="underline underline-offset-4 hover:text-white" href="templates/publications/machine-learning/index.html" target="_blank" rel="noreferrer">Machine Learning and Algorithms — Basic Tutorial</a></li>
-            <li><a class="underline underline-offset-4 hover:text-white" href="templates/publications/algorithms/index.html" target="_blank" rel="noreferrer">Algorithms Explained</a></li>
-            <li><a class="underline underline-offset-4 hover:text-white" href="templates/publications/plotly/index.html" target="_blank" rel="noreferrer">Plotly Tutorials</a></li>
-            <li><a class="underline underline-offset-4 hover:text-white" href="templates/publications/the-techies/index.html" target="_blank" rel="noreferrer">The Techies</a></li>
+            <li><a class="link underline hover:text-white" href="https://www.lokmattimes.com/aurangabad/can-artificial-intelligence-be-used-to-detect-fake-news/" target="_blank" rel="noreferrer">Can Artificial Intelligence Be Used to Detect Fake News Online?</a></li>
+            <li><a class="link underline hover:text-white" href="templates/publications/machine-learning/index.html" target="_blank" rel="noreferrer">Machine Learning and Algorithms — Basic Tutorial</a></li>
+            <li><a class="link underline hover:text-white" href="templates/publications/algorithms/index.html" target="_blank" rel="noreferrer">Algorithms Explained</a></li>
+            <li><a class="link underline hover:text-white" href="templates/publications/plotly/index.html" target="_blank" rel="noreferrer">Plotly Tutorials</a></li>
+            <li><a class="link underline hover:text-white" href="templates/publications/the-techies/index.html" target="_blank" rel="noreferrer">The Techies</a></li>
           </ul>
         </div>
         <div>
           <h3 class="text-sm text-gray-400">Selected Blog Posts</h3>
           <ul class="mt-2 space-y-2 text-[15px] leading-7">
-            <li><a class="underline underline-offset-4 hover:text-white" href="templates/blogs/introductory-blog.html" target="_blank" rel="noreferrer">From Thousand Oaks to 10,000 Commits</a></li>
-            <li><a class="underline underline-offset-4 hover:text-white" href="templates/blogs/vim.html" target="_blank" rel="noreferrer">Switching to the Vim editing mode altogether</a></li>
-            <li><a class="underline underline-offset-4 hover:text-white" href="templates/blogs/programming-dilemma.html" target="_blank" rel="noreferrer">Programming Dilemma — How to Start</a></li>
-            <li><a class="underline underline-offset-4 hover:text-white" href="templates/blogs/on-cricket.html" target="_blank" rel="noreferrer">On Cricket — My Favorite Sport</a></li>
-            <li><a class="underline underline-offset-4 hover:text-white" href="templates/blogs/my-internship.html" target="_blank" rel="noreferrer">My Internship at Findability Sciences</a></li>
-            <li><a class="underline underline-offset-4 hover:text-white" href="templates/blogs/code-website.html" target="_blank" rel="noreferrer">Why I Code Websites without Tools</a></li>
+            <li><a class="link underline hover:text-white" href="templates/blogs/introductory-blog.html" target="_blank" rel="noreferrer">From Thousand Oaks to 10,000 Commits</a></li>
+            <li><a class="link underline hover:text-white" href="templates/blogs/vim.html" target="_blank" rel="noreferrer">Switching to the Vim editing mode altogether</a></li>
+            <li><a class="link underline hover:text-white" href="templates/blogs/programming-dilemma.html" target="_blank" rel="noreferrer">Programming Dilemma — How to Start</a></li>
+            <li><a class="link underline hover:text-white" href="templates/blogs/on-cricket.html" target="_blank" rel="noreferrer">On Cricket — My Favorite Sport</a></li>
+            <li><a class="link underline hover:text-white" href="templates/blogs/my-internship.html" target="_blank" rel="noreferrer">My Internship at Findability Sciences</a></li>
+            <li><a class="link underline hover:text-white" href="templates/blogs/code-website.html" target="_blank" rel="noreferrer">Why I Code Websites without Tools</a></li>
           </ul>
         </div>
       </div>
     </section>
 
-    <div class="my-8 border-t border-white/10"></div>
+    <div class="my-10 border-t border-white/10"></div>
 
     <!-- Contact -->
-    <section aria-labelledby="contact" class="mt-12">
-      <h2 id="contact" class="uppercase text-[12px] text-gray-500">Contact</h2>
+    <section id="contact" aria-labelledby="contact-title" class="mt-12">
+      <h2 id="contact-title" class="uppercase text-[12px] text-gray-500">Contact</h2>
       <form method="POST" action="https://formspree.io/f/xdoyprne" class="mt-6 space-y-6">
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          <input id="name" name="name" type="text" required placeholder="Your name" class="w-full bg-transparent border-b border-white/20 focus:border-white/40 placeholder-gray-500 text-gray-200 px-1 py-2 focus:outline-none transition" />
-          <input id="email" name="email" type="email" required placeholder="you@example.com" class="w-full bg-transparent border-b border-white/20 focus:border-white/40 placeholder-gray-500 text-gray-200 px-1 py-2 focus:outline-none transition" />
+          <label class="block">
+            <span class="sr-only">Your name</span>
+            <input id="name" name="name" type="text" required placeholder="Your name" class="w-full bg-transparent border-b border-white/20 focus:border-white/40 placeholder-gray-500 text-gray-200 px-1 py-2 focus:outline-none transition" />
+          </label>
+          <label class="block">
+            <span class="sr-only">Email</span>
+            <input id="email" name="email" type="email" required placeholder="you@example.com" class="w-full bg-transparent border-b border-white/20 focus:border-white/40 placeholder-gray-500 text-gray-200 px-1 py-2 focus:outline-none transition" />
+          </label>
         </div>
-        <textarea id="message" name="message" rows="5" required placeholder="Say hello or ask about my work…" class="w-full bg-transparent border-b border-white/20 focus:border-white/40 placeholder-gray-500 text-gray-200 px-1 py-2 focus:outline-none transition"></textarea>
+        <label class="block">
+          <span class="sr-only">Message</span>
+          <textarea id="message" name="message" rows="5" required placeholder="Say hello or ask about my work…" class="w-full bg-transparent border-b border-white/20 focus:border-white/40 placeholder-gray-500 text-gray-200 px-1 py-2 focus:outline-none transition"></textarea>
+        </label>
         <input type="hidden" name="_subject" value="New message from vedpanse.com/portfolio" />
         <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" />
         <div class="flex justify-end">
@@ -302,18 +378,21 @@
     <footer class="my-16 sm:my-20">
       <div class="h-px w-full bg-white/10 mb-6"></div>
       <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-sm text-gray-400">
-        <div>© <span id="year"></span> Ved Panse</div>
+        <div>© <span id="year"></span> Ved Panse <span class="text-gray-600">•</span> <span class="text-gray-500">Updated <time id="updated"></time></span></div>
         <nav class="flex items-center gap-4">
-          <a class="hover:text-white underline underline-offset-4" href="mailto:vpanse@ucsd.edu">Email</a>
-          <a class="hover:text-white underline underline-offset-4" href="https://vedpanse.com" target="_blank" rel="noreferrer">Website</a>
-          <a class="hover:text-white underline underline-offset-4" href="https://github.com/VedPanse" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="link hover:text-white underline" href="mailto:vpanse@ucsd.edu">Email</a>
+          <a class="link hover:text-white underline" href="https://vedpanse.com" target="_blank" rel="noreferrer">Website</a>
+          <a class="link hover:text-white underline" href="https://github.com/VedPanse" target="_blank" rel="noreferrer">GitHub</a>
         </nav>
       </div>
     </footer>
   </main>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    const y = document.getElementById('year');
+    if (y) y.textContent = new Date().getFullYear();
+    const u = document.getElementById('updated');
+    if (u) u.textContent = new Date().toLocaleDateString(undefined, { year: 'numeric', month: 'short' });
   </script>
 </body>
 
