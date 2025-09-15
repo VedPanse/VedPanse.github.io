@@ -213,7 +213,7 @@
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Ved Panse",
-    "url": "https://vedpanse.com/portfolio.html",
+    "url": "https://vedpanse.com",
     "sameAs": ["https://github.com/VedPanse"],
     "affiliation": {"@type": "CollegeOrUniversity", "name": "University of California, San Diego"},
     "knowsAbout": ["Artificial Intelligence", "Memory models", "Intelligent virtual assistants", "Distributed systems"]
@@ -253,19 +253,17 @@
       <h1 class="text-2xl sm:text-3xl font-semibold">Hi, I'm Ved Panse</h1>
 
       <p class="mt-2 text-sm sm:text-base text-gray-400 max-w-xl">
-        Undergraduate at UC San Diego (<span class="text-gray-200">Mathematics-Computer Science</span> &
-        <span class="text-gray-200">Data Science</span>). I research
-        <span class="text-gray-200">AI memory models</span> and
-        <span class="text-gray-200">intelligent virtual assistants</span>, aiming to build systems that
-        remember and adapt over months, not minutes. Beyond research, I co-founded
-        <span class="text-gray-200">Falcon Eye</span> — a synthetic-vision platform for aircraft funded at
-        <span class="text-gray-200">$1.2M</span> — and I’ve shipped production systems used by
-        <span class="text-gray-200">hundreds of people</span>. I bring the mindset of a
-        <span class="text-gray-200">builder-researcher-entrepreneur</span> with a minimalist aesthetic and a focus on
-        real-world impact.
+        Undergraduate at the University of California, San Diego, double majoring in Mathematics–Computer Science & Data
+        Science.
+        I research <span class="text-gray-200">AI memory models</span> and <span class="text-gray-200">intelligent
+          virtual assistants</span>,
+        aiming to build systems that remember and adapt over months, not minutes. Beyond research, I co-founded
+        <span class="text-gray-200">Falcon Eye</span> — a synthetic-vision platform for aircraft that raised
+        <span class="text-gray-200">$1.2M</span> and is being evaluated for integration into the
+        <span class="text-gray-200">HAL Tejas</span>, India’s flagship 4.5-generation fighter jet.
+        I bring the mindset of a builder-researcher-entrepreneur with a focus on real-world impact.
         <span class="block mt-7 text-gray-500 text-sm">
-          Outside of work, you’ll usually find me reading or sketching ideas at
-          <span class="text-gray-300">Geisel Library, 2nd Floor</span>.
+          Outside of work, you’ll usually find me reading or sketching ideas at Geisel Library, 2nd Floor.
         </span>
       </p>
 
@@ -293,62 +291,67 @@
     <div class="my-10 border-t border-white/10"></div>
 
     <!-- Recent News -->
-<section id="news" aria-labelledby="news-title">
-  <h2 id="news-title" class="uppercase text-[12px] text-gray-500">RECENT NEWS</h2>
-  <div class="mt-3 space-y-4">
+    <section id="news" aria-labelledby="news-title">
+      <h2 id="news-title" class="uppercase text-[12px] text-gray-500">RECENT NEWS</h2>
+      <div class="mt-3 space-y-4">
 
-    <!-- Falcon Eye -->
-    <article class="pb-4 border-b border-white/10">
-      <div class="flex items-center justify-between">
-        <h3 class="font-medium">Falcon Eye — Synthetic Vision</h3>
+        <!-- Falcon Eye -->
+        <article class="pb-4 border-b border-white/10">
+          <div class="flex items-center justify-between">
+            <h3 class="font-medium">Falcon Eye — Synthetic Vision</h3>
+          </div>
+          <p class="mt-1 text-gray-400 text-[15px]">
+            A terrain-aware synthetic vision system built in C++/OpenGL, delivering real-time
+            30 FPS rendering on &lt;$100 hardware. Designed for robustness and frame-rate stability with stitched
+            elevation data and GPU acceleration.
+          </p>
+          <p class="mt-2 text-[15px] text-gray-400">
+            Recently secured <span class="text-white">$1.2M</span> in funding and
+            selected for potential integration into the
+            <span class="text-white">HAL Tejas 4.5-generation fighter jet</span>.
+            See more details in the
+            <a href="#experience" class="link underline hover:text-white text-white">Experience</a> section.
+          </p>
+        </article>
+
+        <!-- Research with Julian McAuley -->
+        <article class="pb-4 border-b border-white/10">
+          <div class="flex items-center justify-between">
+            <h3 class="font-medium">LLM Memory Models — Research at UC San Diego</h3>
+          </div>
+          <p class="mt-1 text-gray-400 text-[15px]">
+            Ongoing research with Prof. Julian McAuley and Yu Wang on how large language models can maintain long-term
+            conversational memory.
+            We are experimenting with memory update algorithms that balance retention, eliminate redundancy, and resolve
+            conflicts.
+            The prototype integrates Redis, hybrid retrieval, and GPT-based enrichment, and is being prepared for an ACL
+            2026 workshop submission.
+          </p>
+          <p class="mt-2 text-[15px] text-gray-400">
+            See more details in the
+            <a href="#research" class="link underline hover:text-white text-white">Research</a> section.
+          </p>
+        </article>
+
+        <!-- Strata -->
+        <article class="pb-4">
+          <div class="flex items-center justify-between">
+            <h3 class="font-medium">Strata — Personal AI Assistant</h3>
+          </div>
+          <p class="mt-1 text-gray-400 text-[15px]">
+            Strata is my YC-ready productivity assistant that brings Gmail, Calendar, and Tasks together into one
+            unified experience.
+            It’s built to handle everyday workflows with offline support and conflict-free sync across devices.
+          </p>
+          <p class="mt-2 text-[15px] text-gray-400">
+            The project is currently under active development and is being shaped into a startup application.
+            See more in the
+            <a href="#projects" class="link underline hover:text-white text-white">Projects</a> section.
+          </p>
+        </article>
+
       </div>
-      <p class="mt-1 text-gray-400 text-[15px]">
-        A terrain-aware synthetic vision system built in C++/OpenGL, delivering real-time
-        30 FPS rendering on &lt;$100 hardware. Designed for robustness and frame-rate stability with stitched elevation data and GPU acceleration.
-      </p>
-      <p class="mt-2 text-[15px] text-gray-400">
-        Recently secured <span class="text-white">$1.2M</span> in funding and
-        selected for potential integration into the
-        <span class="text-white">HAL Tejas 4.5-generation fighter jet</span>.
-        See more details in the
-        <a href="#experience" class="link underline hover:text-white text-white">Experience</a> section.
-      </p>
-    </article>
-
-    <!-- Research with Julian McAuley -->
-    <article class="pb-4 border-b border-white/10">
-      <div class="flex items-center justify-between">
-        <h3 class="font-medium">LLM Memory Models — Research at UC San Diego</h3>
-      </div>
-      <p class="mt-1 text-gray-400 text-[15px]">
-        Ongoing research with Prof. Julian McAuley and Yu Wang on how large language models can maintain long-term conversational memory.
-        We are experimenting with memory update algorithms that balance retention, eliminate redundancy, and resolve conflicts. 
-        The prototype integrates Redis, hybrid retrieval, and GPT-based enrichment, and is being prepared for an ACL 2026 workshop submission.
-      </p>
-      <p class="mt-2 text-[15px] text-gray-400">
-        See more details in the
-        <a href="#research" class="link underline hover:text-white text-white">Research</a> section.
-      </p>
-    </article>
-
-    <!-- Strata -->
-    <article class="pb-4">
-      <div class="flex items-center justify-between">
-        <h3 class="font-medium">Strata — Personal AI Assistant</h3>
-      </div>
-      <p class="mt-1 text-gray-400 text-[15px]">
-        Strata is my YC-ready productivity assistant that brings Gmail, Calendar, and Tasks together into one unified experience.
-        It’s built to handle everyday workflows with offline support and conflict-free sync across devices.
-      </p>
-      <p class="mt-2 text-[15px] text-gray-400">
-        The project is currently under active development and is being shaped into a startup application.
-        See more in the
-        <a href="#projects" class="link underline hover:text-white text-white">Projects</a> section.
-      </p>
-    </article>
-
-  </div>
-</section>
+    </section>
 
 
     <div class="my-10 border-t border-white/10"></div>
@@ -801,8 +804,9 @@
             <span class="text-[11px] text-gray-500">2024</span>
           </div>
           <h3 class="mt-2 font-medium group-hover:underline">Notes from Geisel 2nd Floor</h3>
-          <p class="mt-2 text-[14px] text-gray-400">A personal intro: what I study, what I’m building, and how I think — from late nights at Geisel to
-    research on AI memory and assistants, plus the projects that keep me honest.</p>
+          <p class="mt-2 text-[14px] text-gray-400">A personal intro: what I study, what I’m building, and how I think —
+            from late nights at Geisel to
+            research on AI memory and assistants, plus the projects that keep me honest.</p>
         </a>
 
 
@@ -870,7 +874,7 @@
           <textarea id="message" name="message" rows="5" required placeholder="Say hello or ask about my work…"
             class="w-full bg-transparent border-b border-white/20 focus:border-white/40 placeholder-gray-500 text-gray-200 px-1 py-2 focus:outline-none transition"></textarea>
         </label>
-        <input type="hidden" name="_subject" value="New message from vedpanse.com/portfolio" />
+        <input type="hidden" name="_subject" value="New message from vedpanse.com" />
         <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" />
         <div class="flex justify-end">
           <button type="submit"
