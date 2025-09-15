@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /contact
+Disallow: /index.html#contact
+Allow: /
+
+Sitemap: https://vedpanse.com/sitemap.xml
