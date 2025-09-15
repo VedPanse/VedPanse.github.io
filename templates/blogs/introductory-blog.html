@@ -1,87 +1,159 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Notes from Geisel 2nd Floor — Ved Panse</title>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!-- Meta -->
+  <meta name="description" content="Notes from Geisel 2nd Floor — an intro post by Ved Panse on AI memory, assistants, and life outside research." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://vedpanse.com/blog/notes-from-geisel" />
 
-    <!-- CUSTOM STYLE -->
-    <link rel="stylesheet" href="blogs.css">
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Notes from Geisel 2nd Floor — Ved Panse" />
+  <meta property="og:description" content="An intro post by Ved Panse: AI memory models, assistants, startups, and what happens on Geisel’s 2nd floor." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://vedpanse.com/blog/notes-from-geisel" />
+  <meta property="og:image" content="https://vedpanse.com/images/og/ved-portfolio.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Notes from Geisel 2nd Floor — Ved Panse" />
+  <meta name="twitter:description" content="AI memory models, assistants, startups, and life outside research." />
+  <meta name="twitter:image" content="https://vedpanse.com/images/og/ved-portfolio.png" />
 
-    <!-- CUSTOM FONT -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Martel+Sans&display=swap" rel="stylesheet">
+  <!-- Favicon & Touch Icon -->
+  <link rel="icon" type="image/png" href="../../images/icon.png" sizes="any" />
+  <link rel="apple-touch-icon" href="../../images/icon.png" />
 
-    <!-- ICONS::FONTAWESOME -->
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <!-- TailwindCSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { canvas: { DEFAULT: '#151515', subtle: '#1A1A1A', soft: '#202020' } },
+          fontFamily: {
+            sans: ["Inter","ui-sans-serif","system-ui","-apple-system","Segoe UI","Roboto","Helvetica","Arial","Noto Sans","sans-serif"]
+          },
+          boxShadow: {
+            glow: '0 0 0 1px rgba(255,255,255,0.05), 0 10px 30px rgba(0,0,0,0.35)'
+          }
+        }
+      }
+    }
+  </script>
 
-    <title>Ved Panse</title>
+  <style>
+    /* Portfolio utilities */
+    .link { text-underline-offset: 4px; text-decoration-thickness: 1px }
+    .chip { padding: .25rem .625rem; border-radius: .375rem; border: 1px solid rgba(255,255,255,.1); color: #d1d5db; }
+    ::-webkit-scrollbar { width: 10px; height: 10px }
+    ::-webkit-scrollbar-thumb { background: #1f2430; border-radius: 999px }
+    html { scroll-behavior: smooth }
+    .focus-ring:focus-visible { outline: 2px solid #fff; outline-offset: 2px }
+    .title-gradient {
+      background-color: #9eadf1;
+      background-image: linear-gradient(90deg, #EAECC6, #2BC0E4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+    }
+    @media print {
+      body { background: #fff !important; color: #000 !important }
+      a { color: #000 !important; text-decoration: underline }
+      .no-print { display: none !important }
+      .print-only { display: block !important }
+    }
+  </style>
 </head>
 
-<body>
-    <section id="blog-content">
-        <h1>From Thousand Oaks to 10,000 Commits</h1>
-        <div id="about-monger">
-            <p>Ved Panse • 2 June, 2023</p>
-        </div>
+<body class="bg-[#151515] text-gray-200 font-sans selection:bg-white/20 selection:text-white">
+  <a href="#main" class="sr-only focus:not-sr-only focus-ring fixed left-4 top-4 bg-black/70 text-white px-3 py-1 rounded-md">Skip to content</a>
 
-        <p>
-            If you're reading this, you're either extremely bored or impressively curious — either way, welcome.
-            I’m Ved Panse, a sophomore at UC San Diego, double majoring in Mathematics–Computer Science and Data
-            Science.
-            Most days, I oscillate between abstract problem solving and building real systems — a duality that keeps
-            things interesting and occasionally causes harmless existential spirals at 2 AM.
-        </p>
+  <!-- Sticky Top Nav (consistent with index.html) -->
+  <header class="no-print fixed top-0 left-0 right-0 z-30 backdrop-blur supports-[backdrop-filter]:bg-black/30 bg-black/20 border-b border-white/10">
+    <nav class="mx-auto max-w-3xl px-6 sm:px-8 flex items-center justify-between h-14 text-sm">
+      <a href="../../index.html" class="font-semibold tracking-tight hover:opacity-90">Ved Panse</a>
+      <ul class="hidden sm:flex items-center gap-5 text-gray-400">
+        <li><a class="link hover:text-white" href="../../index.html#research">Research</a></li>
+        <li><a class="link hover:text-white" href="../../index.html#experience">Experience</a></li>
+        <li><a class="link hover:text-white" href="../../index.html#projects">Projects</a></li>
+        <li><a class="link hover:text-white" href="../../index.html#writing">Writing</a></li>
+      </ul>
+    </nav>
+  </header>
 
-        <p>
-            I was born in Thousand Oaks, California, and raised in Aurangabad, India — which means my syntax is mostly
-            clean, but my food is unapologetically spicy. Growing up across cultures gave me a unique lens on the world:
-            structured when needed, creative when possible, and always asking “what if we built this better?”
-        </p>
-
-        <p>
-            My interests lie at the intersection of artificial intelligence, system design, and human experience. I’ve
-            worked on projects ranging from memory-driven conversational bots to real-time avionics simulations to web
-            platforms that make complex data approachable. Whether I’m designing an interface or fine-tuning a model,
-            I’m drawn to systems that are both technically sound and intuitively usable.
-        </p>
-
-        <p>
-            This blog isn’t a polished portfolio — it’s more of a working journal. A place to document what I’ve learned
-            (and unlearned), where I’ve succeeded, where I’ve hit walls, and occasionally, where I’ve been pleasantly
-            surprised. I might share thoughts on building multi-modal assistants, lessons from debugging strange edge
-            cases, or why certain problems just feel more elegant when solved recursively.
-        </p>
-
-        <p>
-            If you’re into clean design, clever engineering, or just want a peek into how a young developer thinks in a
-            world of LLMs and infinite Git branches — you’re in the right place. And if something here sparks a thought
-            or a question, feel free to <a href="../../index.html#contact" target="_blank">drop me a message</a>.
-            I promise not to respond with an auto-generated reply (unless I'm prototyping that too).
-        </p>
+  <main id="main" class="mx-auto max-w-3xl px-6 sm:px-8 pt-24 sm:pt-28">
+    <!-- Post Header -->
+    <section class="mt-6">
+      <p class="text-[11px] uppercase text-gray-500">Blog</p>
+      <h1 class="mt-2 text-2xl sm:text-3xl font-semibold title-gradient">Notes from Geisel 2nd Floor</h1>
+      <div class="mt-2 text-sm text-gray-400">Ved Panse • September 2025</div>
     </section>
 
+    <div class="my-6 border-t border-white/10"></div>
 
+    <!-- Post Body -->
+    <article class="space-y-4 text-[15px] leading-7 text-gray-300">
+      <p>Hey, I’m Ved. If you’ve ever wandered through Geisel Library’s 2nd floor late at night, you’ve probably seen me with headphones on, surrounded by empty coffee cups, telling myself I’m “studying” while actually debugging some side project that has nothing to do with tomorrow’s assignment.</p>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-    <script src="../../js/navbar.js"></script>
+      <p>I’m a junior at UC San Diego, double majoring in Math-CS and Data Science. On the academic side, I’m into AI memory models and intelligent assistants — basically, how we can get machines to not just respond in the moment but to actually remember, adapt, and feel a little less like a reset button. I like problems that sit at the intersection of algorithms and human experience: systems that are rigorous under the hood but feel natural when you use them.</p>
+
+      <p>Outside of research, I build things that sometimes spiral into startups. I co-founded Falcon Eye, a synthetic vision system for pilots that raised $1.2M and is being considered for integration into the HAL Tejas fighter jet (which is just as wild to me as it sounds typed out). I’m also working on Strata, a personal AI assistant I hope to take to Y Combinator. In both cases, the draw for me isn’t just “tech for tech’s sake” — it’s the thrill of turning abstract ideas into real systems that people can rely on.</p>
+
+      <p>But life isn’t only commits and conferences. In my free time, I like reading, sketching ideas, and following baseball (which inspired Ballhawk AI, my attempt at predicting home run landing zones). When I need to clear my head, I’ll usually head back to Geisel with a sci-fi novel, reminding myself why I got into building futuristic systems in the first place.</p>
+
+      <p>This blog isn’t meant to be a polished résumé — think of it more as an ongoing journal. I’ll share updates on my research, notes from projects that either worked or blew up spectacularly, and the occasional tangent about books, design, or random thoughts I can’t stop chewing on. If you’re here to see how a student-builder-researcher-entrepreneur is stumbling, experimenting, and occasionally finding clarity — welcome, you’re in the right place.</p>
+    </article>
+
+    <!-- Share / Navigation -->
+    <div class="mt-10 flex items-center justify-between">
+      <a href="../../index.html#writing" class="link text-gray-400 hover:text-white">← Back to Writing</a>
+      <a href="../next/index.html" class="link text-gray-400 hover:text-white">Next Post →</a>
+    </div>
+
+    <div class="my-10 border-t border-white/10"></div>
+
+    <!-- Author Box -->
+    <section class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <img src="/images/ved-avatar.png" alt="Ved Panse" class="h-10 w-10 rounded-full ring-1 ring-white/10 object-cover" onerror="this.style.display='none'">
+        <div>
+          <div class="text-sm text-gray-200">Written by Ved Panse</div>
+          <div class="text-xs text-gray-500">UC San Diego — Junior, Math-CS & Data Science</div>
+        </div>
+      </div>
+      <ul class="flex flex-wrap gap-2 text-[12px]">
+        <li class="chip">Introduction</li>
+        <li class="chip">Student Life</li>
+        <li class="chip">Personal Journey</li>
+        <li class="chip">Interests</li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="my-16 sm:my-20">
+    <div class="h-px w-full bg-white/10 mb-6"></div>
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-sm text-gray-400 mx-auto max-w-3xl px-6 sm:px-8">
+      <div>© <span id="year"></span> Ved Panse <span class="text-gray-600">•</span> <span class="text-gray-500">Updated <time id="updated"></time></span></div>
+      <nav class="flex items-center gap-4">
+        <a id="email-link" class="link hover:text-white underline">Email</a>
+        <a class="link hover:text-white underline" href="https://vedpanse.com" target="_blank" rel="noreferrer">Website</a>
+        <a class="link hover:text-white underline" href="https://github.com/VedPanse" target="_blank" rel="noreferrer">GitHub</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    // Footer stamps
+    const y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
+    const u = document.getElementById('updated'); if (u) u.textContent = new Date().toLocaleDateString(undefined, { year: 'numeric', month: 'short' });
+
+    // Email obfuscation
+    const e = document.getElementById('email-link');
+    if (e) e.setAttribute('href', 'mailto:' + ['vpanse', 'ucsd.edu'].join('@'));
+  </script>
 </body>
-
 </html>
