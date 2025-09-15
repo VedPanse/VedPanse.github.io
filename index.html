@@ -6,25 +6,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ved Panse — Academic Portfolio</title>
 
-  <!-- Meta -->
   <meta name="description"
     content="Academic portfolio for Ved Panse — research, projects, awards, and contact. Focus: AI memory models & intelligent assistants." />
   <meta name="robots" content="index,follow" />
-  <link rel="canonical" href="https://vedpanse.com/portfolio" />
+  <link rel="canonical" href="https://vedpanse.com/" />
+
+  <!-- Open Graph (used for rich previews on LinkedIn, Slack, etc.) -->
   <meta property="og:title" content="Ved Panse — Academic Portfolio" />
   <meta property="og:description" content="Research & projects in AI memory models and intelligent assistants." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://vedpanse.com/portfolio.html" />
+  <meta property="og:url" content="https://vedpanse.com/" />
   <meta property="og:image" content="https://vedpanse.com/images/og/ved-portfolio.png" />
+  <!-- 
+  ved-portfolio.png → This should be a 1200x630px image representing your home page.
+  Typically includes a professional headshot or a clean banner with your name & tagline.
+-->
+
+  <!-- Twitter Card (used for Twitter/X link previews) -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Ved Panse — Academic Portfolio" />
   <meta name="twitter:description" content="Research & projects in AI memory models and intelligent assistants." />
   <meta name="twitter:image" content="https://vedpanse.com/images/og/ved-portfolio.png" />
+  <!--
+  Same as above. Twitter prefers a 2:1 aspect ratio (e.g., 1200x600px).
+  Can be identical to og:image or slightly optimized for Twitter previews.
+-->
 
-  <!-- Favicon -->
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" href="/icon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <!-- Favicon & Touch Icons -->
+  <link rel="icon" type="image/png" href="images/icon.png" sizes="any">
+  <!-- 
+  images/icon.png → Your new site icon.
+  Recommended: generate 16x16 and 32x32 versions for crisp browser tab rendering.
+-->
+  <link rel="apple-touch-icon" href="images/icon.png" />
+  <!-- 
+  Used when someone saves your site to their iPhone/iPad home screen.
+  Should ideally be 180x180px with a transparent background.
+-->
+
+
   <style>
     /* Replacing Tailwind @apply (requires build) with plain CSS */
     .mark {
@@ -539,6 +559,15 @@
             class="text-gray-300 text-sm opacity-0 translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
             Gateway, typed services, and event queues. Real‑time sync over WebSockets with offline caching and
             conflict handling.</p>
+        </div>
+      </a>
+      <a href="#projects" class="mt-5 block overflow-hidden rounded-2xl relative group">
+        <img src="/Users/vedpanse/Downloads/JetBrains Academy_1280x789.png" alt="Cover for Strata personal assistant" loading="lazy"
+          class="w-full h-60 object-cover rounded-2xl group-hover:scale-105 transition-transform duration-500" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
+        <div class="absolute bottom-0 left-4 right-4 pb-4">
+          <h1
+            class="text-white text-3xl font-semibold transition-all duration-300 translate-y-0 group-hover:-translate-y-2">Ved Panse - Academic Portfolio</h1>
         </div>
       </a>
       <br />
