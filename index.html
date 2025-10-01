@@ -301,9 +301,9 @@
             LLM-Memory-Engine prototype integrating Redis, GPT enrichment, and retrieval strategies to simulate
             long-term memory. Manuscript in preparation for ACL 2026 Workshop.</p>
           <ul class="mt-2 text-[14px] text-gray-300 list-disc pl-5 space-y-1">
-            <li>Preprint: <span class="text-gray-400">coming soon</span></li>
+            <!-- <li>Preprint: <span class="text-gray-400">coming soon</span></li>
             <li>Code: <a href="#" class="link underline hover:text-white">(private repo)</a></li>
-            <li>Notes: <a href="#notes" class="link underline hover:text-white">Research Notes</a></li>
+            <li>Notes: <a href="#notes" class="link underline hover:text-white">Research Notes</a></li> -->
           </ul>
         </article>
       </div>
@@ -335,8 +335,9 @@
             live MLB data; targeting submission to SABR Analytics Conference.</p>
           <ul class="mt-2 text-[14px] text-gray-300 list-disc pl-5 space-y-1">
             <li>Preprint: <span class="text-gray-400">coming soon</span></li>
-            <li>Code: <a href="#" class="link underline hover:text-white">(private repo)</a></li>
-            <li>Notes: <a href="#notes" class="link underline hover:text-white">Research Notes</a></li>
+            <li>Code: <a href="https://github.com/VedPanse/Ballhawk" target="_blank"
+                class="link underline hover:text-white">(public repo)</a></li>
+            <!-- <li>Notes: <a href="#notes" class="link underline hover:text-white">Research Notes</a></li> -->
           </ul>
         </article>
       </div>
@@ -360,7 +361,7 @@
     <div class="my-10 border-t border-white/10"></div>
 
     <!-- Research Notes -->
-    <section id="notes" aria-labelledby="notes-title">
+    <!-- <section id="notes" aria-labelledby="notes-title">
       <h2 id="notes-title" class="uppercase text-[12px] text-gray-500">Research Notes</h2>
       <div class="mt-3 space-y-3">
         <a href="#" class="block py-4 border-b border-white/10">
@@ -376,7 +377,7 @@
             task accuracy.</p>
         </a>
       </div>
-    </section>
+    </section> -->
 
     <div class="my-10 border-t border-white/10"></div>
     <!-- Experience -->
@@ -384,8 +385,7 @@
       <h2 id="experience" class="uppercase text-[12px] text-gray-500">Experience</h2>
 
       <!-- Featured Experience: Falcon Eye -->
-      <a href="https://github.com/VedPanse" target="_blank" rel="noreferrer"
-        class="mt-5 block overflow-hidden rounded-2xl relative group">
+      <a href="#experience" rel="noreferrer" class="mt-5 block overflow-hidden rounded-2xl relative group">
         <img src="images/featured-falconeye.png" alt="Cover for Falcon Eye synthetic vision" loading="lazy"
           class="w-full h-60 object-cover rounded-2xl group-hover:scale-105 transition-transform duration-500" />
         <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
@@ -494,7 +494,7 @@
       <div class="mt-3 space-y-6">
 
         <!-- Strata -->
-        <a href="https://github.com/VedPanse" target="_blank" rel="noreferrer" class="block">
+        <a target="_blank" rel="noreferrer" class="block">
           <article class="border-b border-white/10 pb-4">
             <div class="flex items-center justify-between">
               <h3 class="font-medium">Strata — Personal AI Assistant</h3>
@@ -516,7 +516,7 @@
         </a>
 
         <!-- ShardWise -->
-        <a href="https://github.com/VedPanse" target="_blank" rel="noreferrer" class="block">
+        <a target="_blank" rel="noreferrer" class="block">
           <article class="border-b border-white/10 pb-4">
             <div class="flex items-center justify-between">
               <h3 class="font-medium">ShardWise — Distributed Task Processing</h3>
@@ -537,7 +537,7 @@
         </a>
 
         <!-- Orion -->
-        <a href="https://github.com/VedPanse" target="_blank" rel="noreferrer" class="block">
+        <a target="_blank" rel="noreferrer" class="block">
           <article class="border-b border-white/10 pb-4">
             <div class="flex items-center justify-between">
               <h3 class="font-medium">Orion — macOS AI Virtual Assistant</h3>
@@ -676,14 +676,14 @@
 
 
         <!-- Research Notes anchor (blog-type) -->
-        <a data-type="blog" href="#notes" class="writing-card group">
+        <a data-type="pub" href="templates/publications/algorithms/index.html" target="_blank" rel="noreferrer"
+          class="writing-card group">
           <div class="flex items-center justify-between">
-            <span class="text-[11px] uppercase text-gray-500">Research Notes</span>
-            <span class="text-[11px] text-gray-500">Ongoing</span>
+            <span class="text-[11px] uppercase text-gray-500">Publication</span>
+            <span class="text-[11px] text-gray-500">2023</span>
           </div>
-          <h3 class="mt-2 font-medium group-hover:underline">Memory Models — Updates & Ablations</h3>
-          <p class="mt-2 text-[14px] text-gray-400">Short technical updates on decay/merge policies, redundancy pruning,
-            and evaluation in multi‑session dialogue.</p>
+          <h3 class="mt-2 font-medium group-hover:underline">Algorithms Explained</h3>
+          <p class="mt-2 text-[14px] text-gray-400">Accessible walkthroughs of algorithmic ideas and patterns.</p>
         </a>
       </div>
 
@@ -692,14 +692,15 @@
       <details class="mt-4 text-[14px]" id="writing-more">
         <summary class="cursor-pointer text-gray-400 hover:text-gray-200">Show more links</summary>
         <div class="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <a data-type="pub" href="templates/publications/algorithms/index.html" target="_blank" rel="noreferrer"
-            class="writing-card group">
+          <a data-type="blog" href="#notes" class="writing-card group">
             <div class="flex items-center justify-between">
-              <span class="text-[11px] uppercase text-gray-500">Publication</span>
-              <span class="text-[11px] text-gray-500">2023</span>
+              <span class="text-[11px] uppercase text-gray-500">Research Notes</span>
+              <span class="text-[11px] text-gray-500">Ongoing</span>
             </div>
-            <h3 class="mt-2 font-medium group-hover:underline">Algorithms Explained</h3>
-            <p class="mt-2 text-[14px] text-gray-400">Accessible walkthroughs of algorithmic ideas and patterns.</p>
+            <h3 class="mt-2 font-medium group-hover:underline">Memory Models — Updates & Ablations</h3>
+            <p class="mt-2 text-[14px] text-gray-400">Short technical updates on decay/merge policies, redundancy
+              pruning,
+              and evaluation in multi‑session dialogue.</p>
           </a>
 
 
