@@ -722,7 +722,7 @@
     <!-- Contact -->
     <section id="contact" aria-labelledby="contact-title" class="mt-12">
       <h2 id="contact-title" class="uppercase text-[12px] text-gray-500">Contact</h2>
-      <form method="POST" action="https://formspree.io/f/xdoyprne" class="mt-6 space-y-6">
+      <form method="POST" action="https://formspree.io/f/xdoyprne" enctype="text/plain" class="mt-6 space-y-6">
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <label class="block">
             <span class="sr-only">Your name</span>
@@ -736,10 +736,17 @@
           </label>
         </div>
         <label class="block">
+          <span class="sr-only">Subject</span>
+          <input id="subject" name="subject" type="text" required placeholder="Subject"
+            class="w-full bg-transparent border-b border-white/20 focus:border-white/40 placeholder-gray-500 text-gray-200 px-1 py-2 focus:outline-none transition" />
+        </label>
+
+        <label class="block">
           <span class="sr-only">Message</span>
-          <textarea id="message" name="message" rows="5" required placeholder="Say hello or ask about my work…"
+          <textarea id="body" name="body" rows="5" required placeholder="Say hello or ask about my work…"
             class="w-full bg-transparent border-b border-white/20 focus:border-white/40 placeholder-gray-500 text-gray-200 px-1 py-2 focus:outline-none transition"></textarea>
         </label>
+
         <input type="hidden" name="_subject" value="New message from vedpanse.com" />
         <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" />
         <div class="flex justify-end">
