@@ -1,12 +1,4 @@
-/* =========================================================
-   project-style.css — DSC 106 Lab 2 (Projects page)
-   Covers Step 4.1–4.4 with subgrid alignment + finishing touches
-   Also includes light base styles so the page looks consistent.
-   ========================================================= */
-
-/* ---------- Design tokens ---------- */
 :root {
-  /* Accent color used elsewhere in the lab */
   --color-accent: oklch(64.392% 0.15409 257.177);
   --color-text: oklch(20% 0% 200);
   --color-muted: oklch(80% 3% 200);
@@ -14,7 +6,6 @@
   accent-color: var(--color-accent);
 }
 
-/* ---------- Base / document ---------- */
 *,
 *::before,
 *::after { box-sizing: border-box; }
@@ -25,45 +16,38 @@ body {
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
   line-height: 1.6;
   color: var(--color-text);
-  /* Step 1-style width treatment so long lines are readable */
   max-width: 100ch;
   margin-inline: max(1em, (100% - 100ch) / 2);
   padding-block: 1.25rem;
   background: white;
 }
 
-/* Headings hierarchy — Step 4.4 */
 h1 { font-size: 400%; }
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.1;
-  text-wrap: balance; /* improves raggedness for multi-line headings */
+  text-wrap: balance;
   margin-block: 0.5em;
 }
 
 img { max-width: 100%; height: auto; display: block; }
 
-/* ---------- Projects grid (Step 4) ---------- */
-/* 4.2 Responsive columns */
 .projects {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
-  /* 4.3 needs explicit row tracks at the parent for subgrid to inherit */
   grid-template-rows: auto auto 1fr; /* h2 / img / p */
   gap: var(--gap);
-  align-items: start; /* avoid stretched rows */
-  margin-block: 1rem; /* video demo looks better with some breathing room */
+  align-items: start;
+  margin-block: 1rem;
 }
 
-/* 4.3 Subgrid alignment across cards */
 .projects article {
   display: grid;
-  grid-template-rows: subgrid; /* inherit the 3 tracks from .projects */
-  grid-row: span 3;            /* each card consumes 3 parent rows */
+  grid-template-rows: subgrid;
+  grid-row: span 3;
   margin: 0;
 }
 
-/* Tidy internals */
 .projects h2 { margin: 0; }
 
 .projects img {
@@ -71,7 +55,6 @@ img { max-width: 100%; height: auto; display: block; }
   height: auto;
   border: 1px solid var(--color-muted);
   border-radius: 0.5rem;
-  /* Optional: maintain aspect ratio footprint for alignment smoothness */
   aspect-ratio: 4 / 3;
   object-fit: cover;
   background: oklch(98% 0% 200);
@@ -82,7 +65,6 @@ img { max-width: 100%; height: auto; display: block; }
   color: oklch(35% 0% 200);
 }
 
-/* ---------- Nice-but-optional polish ---------- */
 .projects article {
   padding: 0.75rem;
   border: 1px solid oklch(92% 1% 200);
@@ -97,7 +79,6 @@ img { max-width: 100%; height: auto; display: block; }
   border-color: oklch(88% 3% 200);
 }
 
-/* Optional accent underline for headings on hover */
 .projects article:hover h2 {
   text-decoration: underline;
   text-decoration-color: var(--color-accent);
@@ -105,16 +86,11 @@ img { max-width: 100%; height: auto; display: block; }
   text-underline-offset: 0.15em;
 }
 
-/* ---------- Subgrid fallback (if needed) ----------
-   In case a very old browser lacks subgrid, this keeps things usable.
-   Modern Chrome/Firefox/Safari support subgrid; this is defensive.
-*/
 @supports not (grid-template-rows: subgrid) {
   .projects {
-    /* Keep responsive columns; rows will auto-size */
-    grid-template-rows: masonry; /* ignored by most, harmless */
+    grid-template-rows: masonry;
   }
   .projects article {
-    grid-template-rows: auto auto 1fr; /* approximate the 3 tracks */
+    grid-template-rows: auto auto 1fr;
   }
 }
