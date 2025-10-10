@@ -1,7 +1,12 @@
+:root {
+    --color-accent: white;
+    accent-color: var(--color-accent);
+}
+
 body {
     font: 100%/1.5 system-ui;
     max-width: 100vw;
-    margin: auto;
+    margin-inline: max(1em, (100% - 100ch) / 2);
 }
 
 /* Navigation */
@@ -38,6 +43,8 @@ body {
 .site-nav__brand:hover,
 .site-nav__brand:focus-visible {
     opacity: 0.9;
+    border-bottom: 0.4em solid var(--color-accent);
+    background-color: oklch(from var(--color-accent) 95% 5% h);
 }
 
 .site-nav__list {
