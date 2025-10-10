@@ -40,13 +40,6 @@ body {
     transition: opacity 150ms ease-in-out;
 }
 
-.site-nav__brand:hover,
-.site-nav__brand:focus-visible {
-    opacity: 0.9;
-    border-bottom: 0.4em solid var(--color-accent);
-    background-color: oklch(from var(--color-accent) 95% 5% h);
-}
-
 .site-nav__list {
     display: none;
     list-style: none;
@@ -161,6 +154,62 @@ html {
 .writing-filter:hover {
     border-color: rgba(255, 255, 255, 0.4);
     /* hover:border-white/40 */
+}
+
+/* Align contact form fields with CSS Grid */
+#contact .contact-form {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1em;
+}
+
+#contact .contact-form__field {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-template-columns: subgrid;
+    column-gap: 1em;
+    align-items: start;
+}
+
+#contact .contact-form__label {
+    font-size: 0.875rem;
+    color: #9ca3af;
+    text-align: right;
+}
+
+#contact .contact-form__field input,
+#contact .contact-form__field textarea {
+    width: 100%;
+}
+
+#contact .contact-form__field textarea {
+    min-height: 8rem;
+    align-self: stretch;
+    resize: vertical;
+}
+
+#contact .contact-form__submit {
+    grid-column: 1 / -1;
+    justify-self: end;
+}
+
+@media (max-width: 40rem) {
+    #contact .contact-form {
+        grid-template-columns: 1fr;
+    }
+
+    #contact .contact-form__field {
+        grid-template-columns: 1fr;
+        row-gap: 0.5em;
+    }
+
+    #contact .contact-form__label {
+        text-align: left;
+    }
+
+    #contact .contact-form__submit {
+        justify-self: stretch;
+    }
 }
 
 @media print {
