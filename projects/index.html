@@ -1,13 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ved Panse – Projects</title>
   <link rel="stylesheet" href="project-style.css" />
+  <link rel="stylesheet" href="../style.css" />
 </head>
 
 <body>
+  <header
+    class="no-print fixed top-0 left-0 right-0 z-30 backdrop-blur supports-[backdrop-filter]:bg-black/30 bg-black/20 border-b border-white/10">
+    <nav class="site-nav">
+      <a href="#home" class="site-nav__brand">Ved Panse</a>
+      <ul class="site-nav__list">
+        <li class="site-nav__item"><a class="link site-nav__link" target="_blank" href="../index.html#research">Research</a></li>
+        <li class="site-nav__item"><a class="link site-nav__link" target="_blank" href="../index.html#experience">Experience</a></li>
+        <li class="site-nav__item"><a class="link site-nav__link" target="_blank" href="index.html">Projects</a></li>
+        <li class="site-nav__item"><a class="link site-nav__link" target="_blank" href="../index.html#awards">Awards</a></li>
+        <li class="site-nav__item"><a class="link site-nav__link" target="_blank" href="../index.html#writing">Writing</a></li>
+        <li class="site-nav__item"><a class="link site-nav__link" target="_blank" href="../index.html#contact">Contact</a></li>
+        <li class="site-nav__item"><a class="site-nav__link site-nav__cta"
+            href="https://docs.google.com/document/d/1ZDx0G4urf-0tMZrS09Mm1j1v2rxYkVUnz44sVbKMg_E/edit?tab=t.0"
+            target="_blank" rel="noreferrer">Download CV</a></li>
+      </ul>
+    </nav>
+  </header>
   <h1>Projects</h1>
 
   <div class="projects">
@@ -15,89 +34,92 @@
     <article>
       <h2>Falcon Eye: Synthetic Vision System</h2>
       <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="Falcon Eye interface mockup" />
-      <p>Low-cost 3D synthetic-vision and terrain-aware flight assistance system for low-visibility conditions. 
-        Built in C++ / OpenGL / STM32, it achieves 30 FPS on $100 hardware, replacing $100k avionics displays. 
+      <p>Low-cost 3D synthetic-vision and terrain-aware flight assistance system for low-visibility conditions.
+        Built in C++ / OpenGL / STM32, it achieves 30 FPS on $100 hardware, replacing $100k avionics displays.
         Raised $1.2 M in funding; pending FAA review.</p>
     </article>
 
     <article>
       <h2>GhostPIN: Visual-Nonce MFA for Payments</h2>
       <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="GhostPIN checkout preview" />
-      <p>Browser-level SDK that embeds invisible visual nonces into checkout buttons to prevent phishing 
-        and fake payment pages. Combines WebAuthn, OTP, and device proofs to bind user ↔ merchant ↔ gateway 
+      <p>Browser-level SDK that embeds invisible visual nonces into checkout buttons to prevent phishing
+        and fake payment pages. Combines WebAuthn, OTP, and device proofs to bind user ↔ merchant ↔ gateway
         intents — like “TLS for commerce.”</p>
     </article>
 
     <article>
       <h2>Strata: AI Productivity Assistant</h2>
       <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="Strata app UI" />
-      <p>Kotlin Multiplatform + Compose-based assistant unifying Gmail, Calendar, Tasks, Health, and Finance data 
+      <p>Kotlin Multiplatform + Compose-based assistant unifying Gmail, Calendar, Tasks, Health, and Finance data
         through GraphQL + Redis + Gemini AI memory. Built ChatAI and long-term semantic recall pipeline.</p>
     </article>
 
     <article>
       <h2>Cross-Language Semantic Task Observer</h2>
       <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="Semantic matching dashboard" />
-      <p>Java + Python NLP matcher reducing cross-lingual misclassification by 15%. 
+      <p>Java + Python NLP matcher reducing cross-lingual misclassification by 15%.
         Combines transformer embeddings with sentence-transformers and Redis for semantic retrieval.</p>
     </article>
 
     <article>
       <h2>Voice-Responsive Expressive Robot</h2>
       <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="Expressive robot prototype" />
-      <p>Raspberry Pi 4 robotic head with synchronized speech and facial expression mapping. 
+      <p>Raspberry Pi 4 robotic head with synchronized speech and facial expression mapping.
         Integrates speech-to-text, emotion detection, and servo animation for realistic interactions.</p>
     </article>
 
     <article>
       <h2>Global Remote-Control Nanobot</h2>
       <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="Nanobot control interface" />
-      <p>ESP32 + WebSockets system for real-time global control of miniature robots. 
+      <p>ESP32 + WebSockets system for real-time global control of miniature robots.
         Reduced latency < 20 ms and improved responsiveness 60% via adaptive buffering and compression.</p>
     </article>
 
     <article>
       <h2>Calltender: Voice-Driven Call Assistant</h2>
       <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="Calltender voice assistant" />
-      <p>Built with Gemini API + 11 Labs + Twilio, Calltender makes phone calls for hearing-impaired users. 
+      <p>Built with Gemini API + 11 Labs + Twilio, Calltender makes phone calls for hearing-impaired users.
         Handles IVR menus autonomously using speech synthesis and intent recognition.</p>
     </article>
 
     <article>
       <h2>PhishNet: AI-Driven Phishing Detection</h2>
       <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="PhishNet dashboard" />
-      <p>Hacklytics @ Georgia Tech 2025 project. 
-        Real-time dashboard visualizing phishing campaigns with >90% detection accuracy using NLP + BERT classifiers.</p>
+      <p>Hacklytics @ Georgia Tech 2025 project.
+        Real-time dashboard visualizing phishing campaigns with >90% detection accuracy using NLP + BERT classifiers.
+      </p>
     </article>
 
     <article>
       <h2>BikeNav: Safer Cycling Routes</h2>
       <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="BikeNav app" />
-      <p>Mobile app for cyclists combining GPS navigation and crowd-sourced safety data to map the safest routes 
+      <p>Mobile app for cyclists combining GPS navigation and crowd-sourced safety data to map the safest routes
         in real time. Built with Mapbox API + Firebase backend.</p>
     </article>
 
     <article>
       <h2>Shardwise: Distributed Task Engine</h2>
       <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="Shardwise diagram" />
-      <p>Lightweight distributed processing system inspired by serverless frameworks. 
+      <p>Lightweight distributed processing system inspired by serverless frameworks.
         Uses adaptive load-balancing and Redis-based scheduling for parallel execution of micro-tasks.</p>
     </article>
 
     <article>
       <h2>Spuddie: AI Companion Memory System</h2>
       <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="Spuddie memory UI" />
-      <p>Developed long-term memory architecture for a conversational AI companion, improving contextual recall 
+      <p>Developed long-term memory architecture for a conversational AI companion, improving contextual recall
         and response helpfulness by 30%. Integrated hybrid vector + symbolic memory model.</p>
     </article>
 
     <article>
       <h2>Rocket Propulsion Lab Avionics</h2>
       <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="Rocket telemetry module" />
-      <p>Designed Arduino-based telemetry and data-acquisition system achieving 99.99% capture rate. 
+      <p>Designed Arduino-based telemetry and data-acquisition system achieving 99.99% capture rate.
         Optimized PCB circuits and firmware for 20% reliability boost under vibration stress testing.</p>
     </article>
 
   </div>
+  <script type="module" src="../global.js"></script>
 </body>
+
 </html>
