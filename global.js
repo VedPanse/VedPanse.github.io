@@ -42,6 +42,47 @@ const NAV_ITEMS = [
   },
 ];
 
+const COLOR_SCHEMES = [
+  { label: 'Automatic', value: 'light dark' },
+  { label: 'Light', value: 'light' },
+  { label: 'Dark', value: 'dark' },
+];
+
+const COLOR_SCHEME_STORAGE_KEY = 'colorScheme';
+const DEFAULT_COLOR_SCHEME = COLOR_SCHEMES[0].value;
+
+const isValidColorScheme = (value) =>
+  COLOR_SCHEMES.some((scheme) => scheme.value === value);
+
+const getStoredColorScheme = () => {
+  try {
+    const stored = localStorage.getItem(COLOR_SCHEME_STORAGE_KEY);
+    return stored && isValidColorScheme(stored) ? stored : null;
+  } catch (error) {
+    console.warn('Unable to read saved color scheme preference.', error);
+    return null;
+  }
+};
+
+const storeColorScheme = (value) => {
+  try {
+    localStorage.setItem(COLOR_SCHEME_STORAGE_KEY, value);
+  } catch (error) {
+    console.warn('Unable to save color scheme preference.', error);
+  }
+};
+
+const applyColorScheme = (value) => {
+  const root = document.documentElement;
+  if (value === DEFAULT_COLOR_SCHEME) {
+    root.style.removeProperty('color-scheme');
+  } else {
+    root.style.setProperty('color-scheme', value);
+  }
+  const datasetValue = value === DEFAULT_COLOR_SCHEME ? 'auto' : value;
+  root.dataset.colorScheme = datasetValue;
+};
+
 const normalizePathname = (pathname) => {
   if (pathname === '/') return '/index.html';
   if (pathname.endsWith('/')) return `${pathname}index.html`;
@@ -178,8 +219,60 @@ const setupNavigation = () => {
   window.addEventListener('popstate', handleUpdate, { passive: true });
 };
 
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', setupNavigation, { once: true });
-} else {
+const buildColorSchemeSwitcher = () => {
+  let label = document.querySelector('.color-scheme');
+  let select = label?.querySelector('select');
+
+  if (!label) {
+    label = document.createElement('label');
+    label.className = 'color-scheme';
+    label.textContent = 'Theme:';
+  }
+
+  if (!select) {
+    select = document.createElement('select');
+    for (const optionData of COLOR_SCHEMES) {
+      const option = document.createElement('option');
+      option.value = optionData.value;
+      option.textContent = optionData.label;
+      select.append(option);
+    }
+    label.append(select);
+  }
+
+  if (!label.isConnected) {
+    document.body.insertAdjacentElement('afterbegin', label);
+  }
+
+  return { label, select };
+};
+
+const setupColorSchemeSwitcher = () => {
+  const switcher = buildColorSchemeSwitcher();
+  if (!switcher) return;
+
+  const select = switcher.select;
+  const initialValue = getStoredColorScheme() ?? DEFAULT_COLOR_SCHEME;
+
+  applyColorScheme(initialValue);
+  select.value = initialValue;
+
+  select.addEventListener('input', (event) => {
+    const { value } = event.target;
+    if (!isValidColorScheme(value)) return;
+
+    applyColorScheme(value);
+    storeColorScheme(value);
+  });
+};
+
+const runOnReady = () => {
   setupNavigation();
+  setupColorSchemeSwitcher();
+};
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', runOnReady, { once: true });
+} else {
+  runOnReady();
 }

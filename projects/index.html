@@ -5,103 +5,175 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ved Panse – Projects</title>
-  <link rel="stylesheet" href="project-style.css" />
   <link rel="stylesheet" href="../style.css" />
 </head>
 
-<body data-base-path="/">
-  <h1>Projects</h1>
+<body data-base-path="/" class="font-sans">
+  <a href="#main"
+    class="sr-only focus:not-sr-only focus-ring fixed left-4 top-4 bg-black/70 text-white px-3 py-1 rounded-md">Skip to
+    content</a>
 
-  <div class="projects">
-
-    <article>
-      <h2>Falcon Eye: Synthetic Vision System</h2>
-      <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="Falcon Eye interface mockup" />
-      <p>Low-cost 3D synthetic-vision and terrain-aware flight assistance system for low-visibility conditions.
-        Built in C++ / OpenGL / STM32, it achieves 30 FPS on $100 hardware, replacing $100k avionics displays.
-        Raised $1.2 M in funding; pending FAA review.</p>
-    </article>
-
-    <article>
-      <h2>GhostPIN: Visual-Nonce MFA for Payments</h2>
-      <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="GhostPIN checkout preview" />
-      <p>Browser-level SDK that embeds invisible visual nonces into checkout buttons to prevent phishing
-        and fake payment pages. Combines WebAuthn, OTP, and device proofs to bind user ↔ merchant ↔ gateway
-        intents — like “TLS for commerce.”</p>
-    </article>
-
-    <article>
-      <h2>Strata: AI Productivity Assistant</h2>
-      <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="Strata app UI" />
-      <p>Kotlin Multiplatform + Compose-based assistant unifying Gmail, Calendar, Tasks, Health, and Finance data
-        through GraphQL + Redis + Gemini AI memory. Built ChatAI and long-term semantic recall pipeline.</p>
-    </article>
-
-    <article>
-      <h2>Cross-Language Semantic Task Observer</h2>
-      <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="Semantic matching dashboard" />
-      <p>Java + Python NLP matcher reducing cross-lingual misclassification by 15%.
-        Combines transformer embeddings with sentence-transformers and Redis for semantic retrieval.</p>
-    </article>
-
-    <article>
-      <h2>Voice-Responsive Expressive Robot</h2>
-      <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="Expressive robot prototype" />
-      <p>Raspberry Pi 4 robotic head with synchronized speech and facial expression mapping.
-        Integrates speech-to-text, emotion detection, and servo animation for realistic interactions.</p>
-    </article>
-
-    <article>
-      <h2>Global Remote-Control Nanobot</h2>
-      <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="Nanobot control interface" />
-      <p>ESP32 + WebSockets system for real-time global control of miniature robots.
-        Reduced latency < 20 ms and improved responsiveness 60% via adaptive buffering and compression.</p>
-    </article>
-
-    <article>
-      <h2>Calltender: Voice-Driven Call Assistant</h2>
-      <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="Calltender voice assistant" />
-      <p>Built with Gemini API + 11 Labs + Twilio, Calltender makes phone calls for hearing-impaired users.
-        Handles IVR menus autonomously using speech synthesis and intent recognition.</p>
-    </article>
-
-    <article>
-      <h2>PhishNet: AI-Driven Phishing Detection</h2>
-      <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="PhishNet dashboard" />
-      <p>Hacklytics @ Georgia Tech 2025 project.
-        Real-time dashboard visualizing phishing campaigns with >90% detection accuracy using NLP + BERT classifiers.
+  <main id="main" class="mx-auto max-w-3xl px-6 sm:px-8 pt-24 sm:pt-28 pb-20">
+    <section class="mt-20 text-left space-y-4">
+      <h1 class="text-2xl sm:text-3xl font-semibold title-gradient">Projects</h1>
+      <p class="text-sm sm:text-base text-gray-400 max-w-2xl">
+        A snapshot of systems I’ve shipped—from synthetic vision and memory engines to assistants, robotics, and
+        real-time tooling.
       </p>
-    </article>
+    </section>
 
-    <article>
-      <h2>BikeNav: Safer Cycling Routes</h2>
-      <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="BikeNav app" />
-      <p>Mobile app for cyclists combining GPS navigation and crowd-sourced safety data to map the safest routes
-        in real time. Built with Mapbox API + Firebase backend.</p>
-    </article>
+    <section class="mt-12">
+      <div class="project-grid">
 
-    <article>
-      <h2>Shardwise: Distributed Task Engine</h2>
-      <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="Shardwise diagram" />
-      <p>Lightweight distributed processing system inspired by serverless frameworks.
-        Uses adaptive load-balancing and Redis-based scheduling for parallel execution of micro-tasks.</p>
-    </article>
+        <article class="project-card">
+          <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="Falcon Eye interface mockup"
+            class="project-card__image" />
+          <div class="project-card__content">
+            <h2 class="project-card__title">Falcon Eye: Synthetic Vision System</h2>
+            <p class="project-card__description">
+              Low-cost 3D synthetic-vision and terrain-aware flight assistance for low-visibility conditions. Built in
+              C++ / OpenGL / STM32, delivering 30 FPS on &lt;$100 hardware as a drop-in replacement for $100k avionics
+              displays. Raised $1.2M in funding; pending FAA review.
+            </p>
+          </div>
+        </article>
 
-    <article>
-      <h2>Spuddie: AI Companion Memory System</h2>
-      <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="Spuddie memory UI" />
-      <p>Developed long-term memory architecture for a conversational AI companion, improving contextual recall
-        and response helpfulness by 30%. Integrated hybrid vector + symbolic memory model.</p>
-    </article>
+        <article class="project-card">
+          <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="GhostPIN checkout preview"
+            class="project-card__image" />
+          <div class="project-card__content">
+            <h2 class="project-card__title">GhostPIN: Visual-Nonce MFA for Payments</h2>
+            <p class="project-card__description">
+              Browser SDK that embeds invisible visual nonces into checkout flows to prevent phishing and fake payment
+              pages. Blends WebAuthn, OTP, and device proofs to bind user ↔ merchant ↔ gateway intent—like “TLS for
+              commerce.”
+            </p>
+          </div>
+        </article>
 
-    <article>
-      <h2>Rocket Propulsion Lab Avionics</h2>
-      <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="Rocket telemetry module" />
-      <p>Designed Arduino-based telemetry and data-acquisition system achieving 99.99% capture rate.
-        Optimized PCB circuits and firmware for 20% reliability boost under vibration stress testing.</p>
-    </article>
+        <article class="project-card">
+          <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="Strata app UI"
+            class="project-card__image" />
+          <div class="project-card__content">
+            <h2 class="project-card__title">Strata: AI Productivity Assistant</h2>
+            <p class="project-card__description">
+              Kotlin Multiplatform + Compose assistant unifying Gmail, Calendar, Tasks, Health, and Finance data through
+              GraphQL, Redis, and Gemini AI memory. Includes ChatAI workflows and a long-term semantic recall pipeline.
+            </p>
+          </div>
+        </article>
 
-  </div>
+        <article class="project-card">
+          <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="Semantic matching dashboard"
+            class="project-card__image" />
+          <div class="project-card__content">
+            <h2 class="project-card__title">Cross-Language Semantic Task Observer</h2>
+            <p class="project-card__description">
+              Hybrid Java/Python NLP system reducing cross-lingual misclassification by 15%. Combines transformer
+              embeddings with sentence-transformers and Redis for semantic retrieval and task reconciliation.
+            </p>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="Expressive robot prototype"
+            class="project-card__image" />
+          <div class="project-card__content">
+            <h2 class="project-card__title">Voice-Responsive Expressive Robot</h2>
+            <p class="project-card__description">
+              Raspberry Pi 4 robotic head with synchronized speech and facial expression mapping. Integrates
+              speech-to-text, emotion detection, and servo animation for lifelike interactions.
+            </p>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="Nanobot control interface"
+            class="project-card__image" />
+          <div class="project-card__content">
+            <h2 class="project-card__title">Global Remote-Control Nanobot</h2>
+            <p class="project-card__description">
+              ESP32 + WebSockets stack for real-time global control of miniature robots. Cut latency below 20 ms and
+              boosted responsiveness 60% via adaptive buffering, QoS strategies, and compression.
+            </p>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="Calltender voice assistant"
+            class="project-card__image" />
+          <div class="project-card__content">
+            <h2 class="project-card__title">Calltender: Voice-Driven Call Assistant</h2>
+            <p class="project-card__description">
+              Gemini API + ElevenLabs + Twilio assistant that places calls for hearing-impaired users. Navigates IVR
+              menus autonomously using speech synthesis, intent recognition, and contextual memory.
+            </p>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="PhishNet dashboard"
+            class="project-card__image" />
+          <div class="project-card__content">
+            <h2 class="project-card__title">PhishNet: AI-Driven Phishing Detection</h2>
+            <p class="project-card__description">
+              Hacklytics @ Georgia Tech 2025 project. Real-time dashboard visualizing phishing campaigns with 90%+
+              detection accuracy via NLP classifiers, BERT embeddings, and streaming analytics.
+            </p>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="BikeNav app" class="project-card__image" />
+          <div class="project-card__content">
+            <h2 class="project-card__title">BikeNav: Safer Cycling Routes</h2>
+            <p class="project-card__description">
+              Mobile app combining GPS navigation with crowd-sourced safety data to map safer cycling routes in real
+              time. Built with Mapbox API, Firebase, and on-device caching for offline support.
+            </p>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="Shardwise architecture diagram"
+            class="project-card__image" />
+          <div class="project-card__content">
+            <h2 class="project-card__title">ShardWise: Distributed Task Engine</h2>
+            <p class="project-card__description">
+              Lightweight distributed processing framework inspired by serverless systems. Uses adaptive load balancing
+              and Redis-backed scheduling to orchestrate micro-tasks with high availability.
+            </p>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="Spuddie memory UI"
+            class="project-card__image" />
+          <div class="project-card__content">
+            <h2 class="project-card__title">Spuddie: AI Companion Memory System</h2>
+            <p class="project-card__description">
+              Long-term memory architecture for an AI companion, improving contextual recall and response helpfulness by
+              30%. Combines hybrid vector + symbolic memory, scoring heuristics, and reinforcement feedback.
+            </p>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="Rocket telemetry module"
+            class="project-card__image" />
+          <div class="project-card__content">
+            <h2 class="project-card__title">Rocket Propulsion Lab Avionics</h2>
+            <p class="project-card__description">
+              Arduino-based telemetry and data-acquisition system achieving 99.99% capture rate. Optimized PCB design
+              and firmware for a 20% reliability boost under vibration stress testing.
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
   <script type="module" src="../global.js"></script>
 </body>
 
