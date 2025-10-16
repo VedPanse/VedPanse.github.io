@@ -51,67 +51,6 @@ html[data-color-scheme="light"] {
     }
 }
 
-.project-card {
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    border-radius: 1rem;
-    border: 1px solid color-mix(in oklch, canvastext 18%, canvas 82%);
-    background: color-mix(in oklch, canvas 90%, canvastext 10%);
-    transition: transform 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
-    min-height: 100%;
-}
-
-.project-card:hover {
-    transform: translateY(-4px);
-    border-color: color-mix(in oklch, canvastext 32%, canvas 68%);
-    box-shadow: 0 18px 35px color-mix(in oklch, canvastext 12%, transparent);
-}
-
-.project-card__image {
-    width: 100%;
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
-}
-
-.project-card__content {
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    flex: 1;
-}
-
-.project-card__title {
-    margin: 0;
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--text-strong);
-    letter-spacing: -0.01em;
-}
-
-.project-card__description {
-    margin: 0;
-    color: var(--text-muted);
-    line-height: 1.65;
-}
-
-.project-grid {
-    display: grid;
-    gap: 1.75rem;
-}
-
-@media (min-width: 44rem) {
-    .project-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-
-@supports not (aspect-ratio: 4 / 3) {
-    .project-card__image {
-        height: 220px;
-    }
-}
 
 body {
     font: 100%/1.5 system-ui;
@@ -430,6 +369,16 @@ header[data-generated-nav="true"] {
     box-shadow: 0 12px 32px color-mix(in oklch, canvastext 10%, transparent);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
+}
+
+.projects-page main {
+    width: min(50vw, 56rem);
+}
+
+@media (max-width: 1024px) {
+    .projects-page main {
+        width: min(90vw, 48rem);
+    }
 }
 
 input,

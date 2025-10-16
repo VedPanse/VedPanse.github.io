@@ -8,166 +8,205 @@
   <link rel="stylesheet" href="../style.css" />
 </head>
 
-<body data-base-path="/" class="font-sans">
-  <a href="#main"
-    class="sr-only focus:not-sr-only focus-ring fixed left-4 top-4 bg-black/70 text-white px-3 py-1 rounded-md">Skip to
-    content</a>
-
-  <main id="main" class="mx-auto max-w-3xl px-6 sm:px-8 pt-24 sm:pt-28 pb-20">
+<body data-base-path="/" class="font-sans projects-page">
+  <main id="main" class="mx-auto w-full max-w-3xl px-6 sm:px-8 pt-24 sm:pt-28 pb-20">
     <section class="mt-20 text-left space-y-4">
-      <h1 class="text-2xl sm:text-3xl font-semibold title-gradient">Projects</h1>
+      <p class="text-[12px] uppercase text-gray-500 tracking-[0.3em]">Projects</p>
+      <h1 class="text-2xl sm:text-3xl font-semibold title-gradient">Systems that shipped</h1>
       <p class="text-sm sm:text-base text-gray-400 max-w-2xl">
-        A snapshot of systems I’ve shipped—from synthetic vision and memory engines to assistants, robotics, and
-        real-time tooling.
+        A cross-section of the tools, platforms, and experiments I’ve built—from avionics and robotics to assistants and
+        developer infrastructure. Most of them came out of high-stakes problems where reliability and polish mattered
+        just as much as raw capability.
       </p>
     </section>
 
-    <section class="mt-12">
-      <div class="project-grid">
+    <div class="my-10 border-t border-white/10"></div>
 
-        <article class="project-card">
-          <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="Falcon Eye interface mockup"
-            class="project-card__image" />
-          <div class="project-card__content">
-            <h2 class="project-card__title">Falcon Eye: Synthetic Vision System</h2>
-            <p class="project-card__description">
-              Low-cost 3D synthetic-vision and terrain-aware flight assistance for low-visibility conditions. Built in
-              C++ / OpenGL / STM32, delivering 30 FPS on &lt;$100 hardware as a drop-in replacement for $100k avionics
-              displays. Raised $1.2M in funding; pending FAA review.
-            </p>
+    <section aria-labelledby="active-builds">
+      <h2 id="active-builds" class="uppercase text-[12px] text-gray-500">Active Builds</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+
+        <article class="writing-card group">
+          <div class="flex items-center justify-between">
+            <span class="text-[11px] uppercase text-gray-500">Defense Avionics</span>
+            <span class="text-[11px] text-gray-500">In Test</span>
           </div>
+          <h3 class="mt-2 font-medium group-hover:underline">Falcon Eye — Synthetic Vision</h3>
+          <p class="mt-2 text-[14px] text-gray-400">
+            Low-cost 3D synthetic-vision for fighter aircraft. Real-time OpenGL rendering, stitched terrain tiles, and
+            deterministic failover on <$100 hardware.
+          </p>
+          <p class="mt-3 text-[12px] text-gray-500">Stack: C++, OpenGL, STM32</p>
         </article>
 
-        <article class="project-card">
-          <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="GhostPIN checkout preview"
-            class="project-card__image" />
-          <div class="project-card__content">
-            <h2 class="project-card__title">GhostPIN: Visual-Nonce MFA for Payments</h2>
-            <p class="project-card__description">
-              Browser SDK that embeds invisible visual nonces into checkout flows to prevent phishing and fake payment
-              pages. Blends WebAuthn, OTP, and device proofs to bind user ↔ merchant ↔ gateway intent—like “TLS for
-              commerce.”
-            </p>
+        <article class="writing-card group">
+          <div class="flex items-center justify-between">
+            <span class="text-[11px] uppercase text-gray-500">Productivity</span>
+            <span class="text-[11px] text-gray-500">2025 – Present</span>
           </div>
+          <h3 class="mt-2 font-medium group-hover:underline">Strata — Personal AI Assistant</h3>
+          <p class="mt-2 text-[14px] text-gray-400">
+            YC-ready assistant unifying Gmail, Calendar, and Tasks with offline sync, long-horizon memory, and daily
+            workflows that actually stick.
+          </p>
+          <p class="mt-3 text-[12px] text-gray-500">Stack: Kotlin, Redis, Gemini API</p>
         </article>
 
-        <article class="project-card">
-          <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="Strata app UI"
-            class="project-card__image" />
-          <div class="project-card__content">
-            <h2 class="project-card__title">Strata: AI Productivity Assistant</h2>
-            <p class="project-card__description">
-              Kotlin Multiplatform + Compose assistant unifying Gmail, Calendar, Tasks, Health, and Finance data through
-              GraphQL, Redis, and Gemini AI memory. Includes ChatAI workflows and a long-term semantic recall pipeline.
-            </p>
+        <article class="writing-card group">
+          <div class="flex items-center justify-between">
+            <span class="text-[11px] uppercase text-gray-500">Commerce Security</span>
+            <span class="text-[11px] text-gray-500">Private Beta</span>
           </div>
+          <h3 class="mt-2 font-medium group-hover:underline">GhostPIN — Visual-Nonce MFA</h3>
+          <p class="mt-2 text-[14px] text-gray-400">
+            Browser SDK that anchors WebAuthn, OTP, and device proofs to a visual nonce layered on checkout flows to
+            prevent phishing and fake payment pages.
+          </p>
+          <p class="mt-3 text-[12px] text-gray-500">Stack: TypeScript, WebAuthn, Cloudflare Workers</p>
         </article>
 
-        <article class="project-card">
-          <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="Semantic matching dashboard"
-            class="project-card__image" />
-          <div class="project-card__content">
-            <h2 class="project-card__title">Cross-Language Semantic Task Observer</h2>
-            <p class="project-card__description">
-              Hybrid Java/Python NLP system reducing cross-lingual misclassification by 15%. Combines transformer
-              embeddings with sentence-transformers and Redis for semantic retrieval and task reconciliation.
-            </p>
+      </div>
+    </section>
+
+    <div class="my-10 border-t border-white/10"></div>
+
+    <section aria-labelledby="systems-lab">
+      <h2 id="systems-lab" class="uppercase text-[12px] text-gray-500">Systems Lab</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+
+        <article class="writing-card group">
+          <div class="flex items-center justify-between">
+            <span class="text-[11px] uppercase text-gray-500">Distributed Systems</span>
+            <span class="text-[11px] text-gray-500">2024 – Present</span>
           </div>
+          <h3 class="mt-2 font-medium group-hover:underline">ShardWise — Distributed Task Engine</h3>
+          <p class="mt-2 text-[14px] text-gray-400">
+            Lightweight orchestration framework that keeps research pipelines alive via adaptive sharding, leader
+            election, and replication across nodes.
+          </p>
+          <p class="mt-3 text-[12px] text-gray-500">Stack: Rust, Kafka, Redis</p>
         </article>
 
-        <article class="project-card">
-          <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="Expressive robot prototype"
-            class="project-card__image" />
-          <div class="project-card__content">
-            <h2 class="project-card__title">Voice-Responsive Expressive Robot</h2>
-            <p class="project-card__description">
-              Raspberry Pi 4 robotic head with synchronized speech and facial expression mapping. Integrates
-              speech-to-text, emotion detection, and servo animation for lifelike interactions.
-            </p>
+        <article class="writing-card group">
+          <div class="flex items-center justify-between">
+            <span class="text-[11px] uppercase text-gray-500">Enterprise NLP</span>
+            <span class="text-[11px] text-gray-500">2024</span>
           </div>
+          <h3 class="mt-2 font-medium group-hover:underline">Semantic Task Observer</h3>
+          <p class="mt-2 text-[14px] text-gray-400">
+            Multilingual reconciliation engine pairing transformer embeddings with Redis retrieval so global teams avoid
+            mismatched assignments.
+          </p>
+          <p class="mt-3 text-[12px] text-gray-500">Stack: Java, Python, sentence-transformers</p>
         </article>
 
-        <article class="project-card">
-          <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="Nanobot control interface"
-            class="project-card__image" />
-          <div class="project-card__content">
-            <h2 class="project-card__title">Global Remote-Control Nanobot</h2>
-            <p class="project-card__description">
-              ESP32 + WebSockets stack for real-time global control of miniature robots. Cut latency below 20 ms and
-              boosted responsiveness 60% via adaptive buffering, QoS strategies, and compression.
-            </p>
+        <article class="writing-card group">
+          <div class="flex items-center justify-between">
+            <span class="text-[11px] uppercase text-gray-500">Conversational AI</span>
+            <span class="text-[11px] text-gray-500">In Production</span>
           </div>
+          <h3 class="mt-2 font-medium group-hover:underline">Spuddie Memory System</h3>
+          <p class="mt-2 text-[14px] text-gray-400">
+            Long-term memory layer for a conversational companion, blending vector databases, heuristic scoring, and
+            reinforcement feedback for recall.
+          </p>
+          <p class="mt-3 text-[12px] text-gray-500">Stack: PostgreSQL, Pinecone, Python</p>
         </article>
 
-        <article class="project-card">
-          <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="Calltender voice assistant"
-            class="project-card__image" />
-          <div class="project-card__content">
-            <h2 class="project-card__title">Calltender: Voice-Driven Call Assistant</h2>
-            <p class="project-card__description">
-              Gemini API + ElevenLabs + Twilio assistant that places calls for hearing-impaired users. Navigates IVR
-              menus autonomously using speech synthesis, intent recognition, and contextual memory.
-            </p>
+      </div>
+    </section>
+
+    <div class="my-10 border-t border-white/10"></div>
+
+    <section aria-labelledby="experiments">
+      <h2 id="experiments" class="uppercase text-[12px] text-gray-500">Experiments & Robotics</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+
+        <article class="writing-card group">
+          <div class="flex items-center justify-between">
+            <span class="text-[11px] uppercase text-gray-500">Robotics</span>
+            <span class="text-[11px] text-gray-500">2023</span>
           </div>
+          <h3 class="mt-2 font-medium group-hover:underline">Expressive Voice Robot</h3>
+          <p class="mt-2 text-[14px] text-gray-400">
+            Raspberry Pi 4 robotic head with synchronized speech, emotion detection, and servo choreography for
+            convincing in-person interactions.
+          </p>
+          <p class="mt-3 text-[12px] text-gray-500">Stack: Raspberry Pi, TensorFlow Lite, PWM servo bus</p>
         </article>
 
-        <article class="project-card">
-          <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="PhishNet dashboard"
-            class="project-card__image" />
-          <div class="project-card__content">
-            <h2 class="project-card__title">PhishNet: AI-Driven Phishing Detection</h2>
-            <p class="project-card__description">
-              Hacklytics @ Georgia Tech 2025 project. Real-time dashboard visualizing phishing campaigns with 90%+
-              detection accuracy via NLP classifiers, BERT embeddings, and streaming analytics.
-            </p>
+        <article class="writing-card group">
+          <div class="flex items-center justify-between">
+            <span class="text-[11px] uppercase text-gray-500">Realtime Control</span>
+            <span class="text-[11px] text-gray-500">2022</span>
           </div>
+          <h3 class="mt-2 font-medium group-hover:underline">Global Nanobot Control</h3>
+          <p class="mt-2 text-[14px] text-gray-400">
+            ESP32 + WebSockets stack for worldwide teleoperation. Adaptive buffering keeps command latency < 20 ms while
+            preserving reliability.
+          </p>
+          <p class="mt-3 text-[12px] text-gray-500">Stack: ESP32, WebSockets, Rust backend</p>
         </article>
 
-        <article class="project-card">
-          <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="BikeNav app" class="project-card__image" />
-          <div class="project-card__content">
-            <h2 class="project-card__title">BikeNav: Safer Cycling Routes</h2>
-            <p class="project-card__description">
-              Mobile app combining GPS navigation with crowd-sourced safety data to map safer cycling routes in real
-              time. Built with Mapbox API, Firebase, and on-device caching for offline support.
-            </p>
+        <article class="writing-card group">
+          <div class="flex items-center justify-between">
+            <span class="text-[11px] uppercase text-gray-500">Avionics</span>
+            <span class="text-[11px] text-gray-500">2021</span>
           </div>
+          <h3 class="mt-2 font-medium group-hover:underline">Rocket Lab Avionics</h3>
+          <p class="mt-2 text-[14px] text-gray-400">
+            Arduino-based telemetry capturing 99.99% of flight data even under extreme vibration thanks to custom PCB
+            layouts and fault-tolerant firmware.
+          </p>
+          <p class="mt-3 text-[12px] text-gray-500">Stack: Arduino, CAN bus, custom PCB</p>
         </article>
 
-        <article class="project-card">
-          <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="Shardwise architecture diagram"
-            class="project-card__image" />
-          <div class="project-card__content">
-            <h2 class="project-card__title">ShardWise: Distributed Task Engine</h2>
-            <p class="project-card__description">
-              Lightweight distributed processing framework inspired by serverless systems. Uses adaptive load balancing
-              and Redis-backed scheduling to orchestrate micro-tasks with high availability.
-            </p>
+      </div>
+    </section>
+
+    <div class="my-10 border-t border-white/10"></div>
+
+    <section aria-labelledby="ai-safety">
+      <h2 id="ai-safety" class="uppercase text-[12px] text-gray-500">AI & Safety</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+
+        <article class="writing-card group">
+          <div class="flex items-center justify-between">
+            <span class="text-[11px] uppercase text-gray-500">Accessibility</span>
+            <span class="text-[11px] text-gray-500">2024</span>
           </div>
+          <h3 class="mt-2 font-medium group-hover:underline">Calltender — Voice Calls for Accessibility</h3>
+          <p class="mt-2 text-[14px] text-gray-400">
+            Gemini + ElevenLabs + Twilio agent that handles phone menus for hearing-impaired users, delivering natural
+            assistance over standard lines.
+          </p>
+          <p class="mt-3 text-[12px] text-gray-500">Stack: Twilio, ElevenLabs, TypeScript</p>
         </article>
 
-        <article class="project-card">
-          <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="Spuddie memory UI"
-            class="project-card__image" />
-          <div class="project-card__content">
-            <h2 class="project-card__title">Spuddie: AI Companion Memory System</h2>
-            <p class="project-card__description">
-              Long-term memory architecture for an AI companion, improving contextual recall and response helpfulness by
-              30%. Combines hybrid vector + symbolic memory, scoring heuristics, and reinforcement feedback.
-            </p>
+        <article class="writing-card group">
+          <div class="flex items-center justify-between">
+            <span class="text-[11px] uppercase text-gray-500">Security Analytics</span>
+            <span class="text-[11px] text-gray-500">Hacklytics ‘25</span>
           </div>
+          <h3 class="mt-2 font-medium group-hover:underline">PhishNet — Threat Visualization</h3>
+          <p class="mt-2 text-[14px] text-gray-400">
+            Real-time dashboard for phishing detection using BERT classifiers, streaming ingest, and alerting for rapid
+            incident response.
+          </p>
+          <p class="mt-3 text-[12px] text-gray-500">Stack: Python, BERT, Plotly</p>
         </article>
 
-        <article class="project-card">
-          <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="Rocket telemetry module"
-            class="project-card__image" />
-          <div class="project-card__content">
-            <h2 class="project-card__title">Rocket Propulsion Lab Avionics</h2>
-            <p class="project-card__description">
-              Arduino-based telemetry and data-acquisition system achieving 99.99% capture rate. Optimized PCB design
-              and firmware for a 20% reliability boost under vibration stress testing.
-            </p>
+        <article class="writing-card group">
+          <div class="flex items-center justify-between">
+            <span class="text-[11px] uppercase text-gray-500">Civic Tech</span>
+            <span class="text-[11px] text-gray-500">2022</span>
           </div>
+          <h3 class="mt-2 font-medium group-hover:underline">BikeNav — Safer Cycling Routes</h3>
+          <p class="mt-2 text-[14px] text-gray-400">
+            Mobile app combining GPS, Mapbox, and crowd-sourced safety data to chart safer urban cycling routes with
+            offline caching.
+          </p>
+          <p class="mt-3 text-[12px] text-gray-500">Stack: Mapbox, Firebase, SwiftUI</p>
         </article>
 
       </div>
