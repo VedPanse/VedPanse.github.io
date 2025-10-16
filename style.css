@@ -62,6 +62,13 @@ body {
     color: #ffffff;
 }
 
+.site-nav__link.current {
+    color: #ffffff;
+    text-decoration: underline;
+    text-decoration-thickness: 0.15em;
+    text-underline-offset: 0.35em;
+}
+
 .site-nav__cta {
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 0.375rem;
