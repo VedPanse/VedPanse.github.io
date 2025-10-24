@@ -269,9 +269,10 @@ const setupColorSchemeSwitcher = () => {
 export async function fetchJSON(url) {
   try {
     const response = await fetch(url);
-    console.debug('fetchJSON response:', response);
+    console.debug('fetchJSON response:', { url, status: response.status });
     if (!response.ok) {
-      throw new Error(`Failed to fetch projects: ${response.status} ${response.statusText}`);
+      const resolvedUrl = response.url || url;
+      throw new Error(`Failed to fetch ${resolvedUrl}: ${response.status} ${response.statusText}`);
     }
     return await response.json();
   } catch (error) {
@@ -361,6 +362,14 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
   }
 
   containerElement.append(fragment);
+}
+
+export function fetchGitHubData(username) {
+  if (!username) {
+    return Promise.reject(new Error('fetchGitHubData requires a username.'));
+  }
+
+  return fetchJSON(`https://api.github.com/users/${encodeURIComponent(username)}`);
 }
 
 const runOnReady = () => {

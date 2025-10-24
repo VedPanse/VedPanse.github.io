@@ -331,6 +331,43 @@ html {
     border-radius: 0.75rem;
 }
 
+.github-stats__content {
+    width: 100%;
+}
+
+.github-stats__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+    grid-auto-flow: column;
+    gap: 0.75rem 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.github-stats__list dt,
+.github-stats__list dd {
+    margin: 0;
+}
+
+.github-stats__list dt {
+    text-transform: uppercase;
+    letter-spacing: 0.28em;
+    font-size: 0.68rem;
+    color: var(--text-muted);
+    grid-row: 1;
+}
+
+.github-stats__list dd {
+    grid-row: 2;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-strong);
+}
+
+.github-stats__updated {
+    color: var(--text-muted);
+}
+
 /* Align contact form fields with CSS Grid */
 #contact .contact-form {
     display: grid;
