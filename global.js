@@ -266,6 +266,103 @@ const setupColorSchemeSwitcher = () => {
   });
 };
 
+export async function fetchJSON(url) {
+  try {
+    const response = await fetch(url);
+    console.debug('fetchJSON response:', response);
+    if (!response.ok) {
+      throw new Error(`Failed to fetch projects: ${response.status} ${response.statusText}`);
+    }
+    return await response.json();
+  } catch (error) {
+    console.error('Error fetching or parsing JSON data:', error);
+    throw error;
+  }
+}
+
+export function renderProjects(projects, containerElement, headingLevel = 'h2') {
+  if (!containerElement || !(containerElement instanceof Element)) {
+    console.warn('renderProjects received an invalid container element.');
+    return;
+  }
+
+  const headingTag = /^h[1-6]$/i.test(headingLevel) ? headingLevel.toLowerCase() : 'h2';
+  containerElement.innerHTML = '';
+
+  if (!Array.isArray(projects) || !projects.length) {
+    const emptyMessage = document.createElement('p');
+    emptyMessage.className = 'text-sm text-gray-400';
+    emptyMessage.textContent = 'No projects to display right now. Check back soon.';
+    containerElement.append(emptyMessage);
+    return;
+  }
+
+  const fragment = document.createDocumentFragment();
+
+  for (const project of projects) {
+    const column = document.createElement('div');
+    column.className = 'col-12 col-lg-6 d-flex align-items-stretch';
+
+    const article = document.createElement('article');
+    article.className = 'writing-card group project-card w-100 h-100';
+
+    if (project?.group) {
+      article.dataset.group = project.group;
+
+      const groupLabel = document.createElement('p');
+      groupLabel.className = 'project-card__group text-uppercase text-[11px] text-gray-500 mb-2';
+      groupLabel.textContent = project.group;
+      article.append(groupLabel);
+    }
+
+    const headerRow = document.createElement('div');
+    headerRow.className = 'd-flex justify-content-between align-items-center gap-2 project-card__meta';
+
+    const domainSpan = document.createElement('span');
+    domainSpan.className = 'text-[11px] uppercase text-gray-500';
+    domainSpan.textContent = project?.domain ?? 'Project';
+    headerRow.append(domainSpan);
+
+    const statusSpan = document.createElement('span');
+    statusSpan.className = 'text-[11px] text-gray-500';
+    statusSpan.textContent = project?.status ?? '';
+    headerRow.append(statusSpan);
+
+    article.append(headerRow);
+
+    const titleEl = document.createElement(headingTag);
+    titleEl.className = 'mt-2 font-medium group-hover:underline';
+    titleEl.textContent = project?.title ?? 'Untitled Project';
+    article.append(titleEl);
+
+    if (project?.image) {
+      const imageEl = document.createElement('img');
+      imageEl.src = project.image;
+      imageEl.alt = project?.title ?? 'Project image';
+      imageEl.loading = 'lazy';
+      imageEl.className = 'mt-2 w-full rounded-md';
+      article.append(imageEl);
+    }
+
+    const description = document.createElement('p');
+    description.className = 'mt-2 text-[14px] text-gray-400';
+    description.textContent = project?.description ?? '';
+    article.append(description);
+
+    if (project?.stack) {
+      const stack = document.createElement('p');
+      stack.className = 'mt-3 text-[12px] text-gray-500';
+      stack.textContent = `Stack: ${project.stack}`;
+      article.append(stack);
+    }
+
+    column.append(article);
+    fragment.append(column);
+  }
+
+  containerElement.append(fragment);
+}
+
 const runOnReady = () => {
   setupNavigation();
   setupColorSchemeSwitcher();

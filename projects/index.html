@@ -5,215 +5,81 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ved Panse – Projects</title>
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous" />
   <link rel="stylesheet" href="../style.css" />
 </head>
 
 <body data-base-path="/" class="font-sans projects-page">
-  <main id="main" class="mx-auto w-full max-w-3xl px-6 sm:px-8 pt-24 sm:pt-28 pb-20">
-    <section class="mt-20 text-left space-y-4">
-      <p class="text-[12px] uppercase text-gray-500 tracking-[0.3em]">Projects</p>
-      <h1 class="text-2xl sm:text-3xl font-semibold title-gradient">Systems that shipped</h1>
-      <p class="text-sm sm:text-base text-gray-400 max-w-2xl">
-        A cross-section of the tools, platforms, and experiments I’ve built—from avionics and robotics to assistants and
-        developer infrastructure. Most of them came out of high-stakes problems where reliability and polish mattered
-        just as much as raw capability.
-      </p>
-    </section>
-
-    <div class="my-10 border-t border-white/10"></div>
-
-    <section aria-labelledby="active-builds">
-      <h2 id="active-builds" class="uppercase text-[12px] text-gray-500">Active Builds</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-
-        <article class="writing-card group">
-          <div class="flex items-center justify-between">
-            <span class="text-[11px] uppercase text-gray-500">Defense Avionics</span>
-            <span class="text-[11px] text-gray-500">In Test</span>
-          </div>
-          <h3 class="mt-2 font-medium group-hover:underline">Falcon Eye — Synthetic Vision</h3>
-          <p class="mt-2 text-[14px] text-gray-400">
-            Low-cost 3D synthetic-vision for fighter aircraft. Real-time OpenGL rendering, stitched terrain tiles, and
-            deterministic failover on <$100 hardware.
+  <main id="main" class="container-xl project-main px-4 px-lg-5 pt-5 pb-5 pb-lg-5">
+    <section class="project-hero pt-5 pb-5">
+      <div class="row gy-4 align-items-end">
+        <div class="col-lg-6">
+          <p class="project-eyebrow text-uppercase text-gray-500 mb-2">Projects</p>
+          <h1 class="projects-title display-5 fw-semibold title-gradient mb-3">Systems that ship with conviction</h1>
+          <p class="project-intro lead text-gray-300 mb-4">
+            Each build is tuned for real-world pressure—airborne avionics, commercial AI assistants, robotics, and threat
+            detection. The through-line: resilient platforms that feel effortless to operate.
           </p>
-          <p class="mt-3 text-[12px] text-gray-500">Stack: C++, OpenGL, STM32</p>
-        </article>
-
-        <article class="writing-card group">
-          <div class="flex items-center justify-between">
-            <span class="text-[11px] uppercase text-gray-500">Productivity</span>
-            <span class="text-[11px] text-gray-500">2025 – Present</span>
-          </div>
-          <h3 class="mt-2 font-medium group-hover:underline">Strata — Personal AI Assistant</h3>
-          <p class="mt-2 text-[14px] text-gray-400">
-            YC-ready assistant unifying Gmail, Calendar, and Tasks with offline sync, long-horizon memory, and daily
-            workflows that actually stick.
+          <p class="text-gray-500 small mb-0">
+            Updates roll in from a single JSON source, so the catalog stays current as soon as the work does.
           </p>
-          <p class="mt-3 text-[12px] text-gray-500">Stack: Kotlin, Redis, Gemini API</p>
-        </article>
-
-        <article class="writing-card group">
-          <div class="flex items-center justify-between">
-            <span class="text-[11px] uppercase text-gray-500">Commerce Security</span>
-            <span class="text-[11px] text-gray-500">Private Beta</span>
+        </div>
+        <div class="col-lg-6">
+          <div class="project-summary h-100 d-flex flex-column justify-content-between">
+            <div>
+              <p class="text-uppercase text-gray-500 small fw-semibold mb-3">Design Notes</p>
+              <ul class="list-unstyled m-0">
+                <li class="project-summary__item">
+                  <span class="project-summary__bullet"></span>
+                  <div>
+                    <p class="project-summary__title mb-1">Reliability-first builds</p>
+                    <p class="text-gray-500 mb-0">Deterministic failover and diagnostics for production deployment.</p>
+                  </div>
+                </li>
+                <li class="project-summary__item">
+                  <span class="project-summary__bullet"></span>
+                  <div>
+                    <p class="project-summary__title mb-1">Human-centered tooling</p>
+                    <p class="text-gray-500 mb-0">Interfaces that give operators clarity without adding ceremony.</p>
+                  </div>
+                </li>
+                <li class="project-summary__item">
+                  <span class="project-summary__bullet"></span>
+                  <div>
+                    <p class="project-summary__title mb-1">Scalable ingredients</p>
+                    <p class="text-gray-500 mb-0">Shared primitives in C++, Rust, TypeScript, and Python for reuse.</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="project-summary__footer text-gray-500 small mt-4">
+              Auto-generated from `lib/projects.json` so the presentation adapts with the data.
+            </div>
           </div>
-          <h3 class="mt-2 font-medium group-hover:underline">GhostPIN — Visual-Nonce MFA</h3>
-          <p class="mt-2 text-[14px] text-gray-400">
-            Browser SDK that anchors WebAuthn, OTP, and device proofs to a visual nonce layered on checkout flows to
-            prevent phishing and fake payment pages.
-          </p>
-          <p class="mt-3 text-[12px] text-gray-500">Stack: TypeScript, WebAuthn, Cloudflare Workers</p>
-        </article>
-
+        </div>
       </div>
     </section>
 
-    <div class="my-10 border-t border-white/10"></div>
-
-    <section aria-labelledby="systems-lab">
-      <h2 id="systems-lab" class="uppercase text-[12px] text-gray-500">Systems Lab</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-
-        <article class="writing-card group">
-          <div class="flex items-center justify-between">
-            <span class="text-[11px] uppercase text-gray-500">Distributed Systems</span>
-            <span class="text-[11px] text-gray-500">2024 – Present</span>
-          </div>
-          <h3 class="mt-2 font-medium group-hover:underline">ShardWise — Distributed Task Engine</h3>
-          <p class="mt-2 text-[14px] text-gray-400">
-            Lightweight orchestration framework that keeps research pipelines alive via adaptive sharding, leader
-            election, and replication across nodes.
-          </p>
-          <p class="mt-3 text-[12px] text-gray-500">Stack: Rust, Kafka, Redis</p>
-        </article>
-
-        <article class="writing-card group">
-          <div class="flex items-center justify-between">
-            <span class="text-[11px] uppercase text-gray-500">Enterprise NLP</span>
-            <span class="text-[11px] text-gray-500">2024</span>
-          </div>
-          <h3 class="mt-2 font-medium group-hover:underline">Semantic Task Observer</h3>
-          <p class="mt-2 text-[14px] text-gray-400">
-            Multilingual reconciliation engine pairing transformer embeddings with Redis retrieval so global teams avoid
-            mismatched assignments.
-          </p>
-          <p class="mt-3 text-[12px] text-gray-500">Stack: Java, Python, sentence-transformers</p>
-        </article>
-
-        <article class="writing-card group">
-          <div class="flex items-center justify-between">
-            <span class="text-[11px] uppercase text-gray-500">Conversational AI</span>
-            <span class="text-[11px] text-gray-500">In Production</span>
-          </div>
-          <h3 class="mt-2 font-medium group-hover:underline">Spuddie Memory System</h3>
-          <p class="mt-2 text-[14px] text-gray-400">
-            Long-term memory layer for a conversational companion, blending vector databases, heuristic scoring, and
-            reinforcement feedback for recall.
-          </p>
-          <p class="mt-3 text-[12px] text-gray-500">Stack: PostgreSQL, Pinecone, Python</p>
-        </article>
-
+    <section aria-labelledby="projects-list" class="project-catalog pt-5">
+      <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-4">
+        <div>
+          <h2 id="projects-list" class="text-uppercase text-gray-500 fs-6 letter-spaced">All Projects</h2>
+          <p class="catalog-subtitle text-gray-500 mb-0">Filtered, grouped, and rendered on demand.</p>
+        </div>
+        <div class="text-gray-400 small">
+          Rendered via `renderProjects()` with Bootstrap alignment.
+        </div>
       </div>
-    </section>
 
-    <div class="my-10 border-t border-white/10"></div>
-
-    <section aria-labelledby="experiments">
-      <h2 id="experiments" class="uppercase text-[12px] text-gray-500">Experiments & Robotics</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-
-        <article class="writing-card group">
-          <div class="flex items-center justify-between">
-            <span class="text-[11px] uppercase text-gray-500">Robotics</span>
-            <span class="text-[11px] text-gray-500">2023</span>
-          </div>
-          <h3 class="mt-2 font-medium group-hover:underline">Expressive Voice Robot</h3>
-          <p class="mt-2 text-[14px] text-gray-400">
-            Raspberry Pi 4 robotic head with synchronized speech, emotion detection, and servo choreography for
-            convincing in-person interactions.
-          </p>
-          <p class="mt-3 text-[12px] text-gray-500">Stack: Raspberry Pi, TensorFlow Lite, PWM servo bus</p>
-        </article>
-
-        <article class="writing-card group">
-          <div class="flex items-center justify-between">
-            <span class="text-[11px] uppercase text-gray-500">Realtime Control</span>
-            <span class="text-[11px] text-gray-500">2022</span>
-          </div>
-          <h3 class="mt-2 font-medium group-hover:underline">Global Nanobot Control</h3>
-          <p class="mt-2 text-[14px] text-gray-400">
-            ESP32 + WebSockets stack for worldwide teleoperation. Adaptive buffering keeps command latency < 20 ms while
-            preserving reliability.
-          </p>
-          <p class="mt-3 text-[12px] text-gray-500">Stack: ESP32, WebSockets, Rust backend</p>
-        </article>
-
-        <article class="writing-card group">
-          <div class="flex items-center justify-between">
-            <span class="text-[11px] uppercase text-gray-500">Avionics</span>
-            <span class="text-[11px] text-gray-500">2021</span>
-          </div>
-          <h3 class="mt-2 font-medium group-hover:underline">Rocket Lab Avionics</h3>
-          <p class="mt-2 text-[14px] text-gray-400">
-            Arduino-based telemetry capturing 99.99% of flight data even under extreme vibration thanks to custom PCB
-            layouts and fault-tolerant firmware.
-          </p>
-          <p class="mt-3 text-[12px] text-gray-500">Stack: Arduino, CAN bus, custom PCB</p>
-        </article>
-
-      </div>
-    </section>
-
-    <div class="my-10 border-t border-white/10"></div>
-
-    <section aria-labelledby="ai-safety">
-      <h2 id="ai-safety" class="uppercase text-[12px] text-gray-500">AI & Safety</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-
-        <article class="writing-card group">
-          <div class="flex items-center justify-between">
-            <span class="text-[11px] uppercase text-gray-500">Accessibility</span>
-            <span class="text-[11px] text-gray-500">2024</span>
-          </div>
-          <h3 class="mt-2 font-medium group-hover:underline">Calltender — Voice Calls for Accessibility</h3>
-          <p class="mt-2 text-[14px] text-gray-400">
-            Gemini + ElevenLabs + Twilio agent that handles phone menus for hearing-impaired users, delivering natural
-            assistance over standard lines.
-          </p>
-          <p class="mt-3 text-[12px] text-gray-500">Stack: Twilio, ElevenLabs, TypeScript</p>
-        </article>
-
-        <article class="writing-card group">
-          <div class="flex items-center justify-between">
-            <span class="text-[11px] uppercase text-gray-500">Security Analytics</span>
-            <span class="text-[11px] text-gray-500">Hacklytics ‘25</span>
-          </div>
-          <h3 class="mt-2 font-medium group-hover:underline">PhishNet — Threat Visualization</h3>
-          <p class="mt-2 text-[14px] text-gray-400">
-            Real-time dashboard for phishing detection using BERT classifiers, streaming ingest, and alerting for rapid
-            incident response.
-          </p>
-          <p class="mt-3 text-[12px] text-gray-500">Stack: Python, BERT, Plotly</p>
-        </article>
-
-        <article class="writing-card group">
-          <div class="flex items-center justify-between">
-            <span class="text-[11px] uppercase text-gray-500">Civic Tech</span>
-            <span class="text-[11px] text-gray-500">2022</span>
-          </div>
-          <h3 class="mt-2 font-medium group-hover:underline">BikeNav — Safer Cycling Routes</h3>
-          <p class="mt-2 text-[14px] text-gray-400">
-            Mobile app combining GPS, Mapbox, and crowd-sourced safety data to chart safer urban cycling routes with
-            offline caching.
-          </p>
-          <p class="mt-3 text-[12px] text-gray-500">Stack: Mapbox, Firebase, SwiftUI</p>
-        </article>
-
-      </div>
+      <div class="projects row g-4 g-lg-5"></div>
     </section>
   </main>
 
   <script type="module" src="../global.js"></script>
+  <script type="module" src="projects.js"></script>
 </body>
 
 </html>
