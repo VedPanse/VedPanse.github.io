@@ -16,6 +16,7 @@
     --nav-cta-border-color: color-mix(in oklch, canvastext 22%, canvas 78%);
     --nav-cta-border-hover-color: color-mix(in oklch, canvastext 36%, canvas 64%);
     --nav-bg-tint: var(--nav-bg);
+    --pie-selected-color: oklch(0.6 0.45 0);
 }
 
 html {
@@ -199,6 +200,95 @@ html {
     /* transition */
 }
 
+#projects-pie-plot {
+    max-width: 20em;
+    margin-block: 2em;
+    overflow: visible;
+}
+
+#projects-pie-plot path {
+    transition: opacity 240ms ease, fill 240ms ease;
+    cursor: pointer;
+}
+
+#projects-pie-plot:has(path:hover) path:not(:hover) {
+    opacity: 0.45;
+}
+
+#projects-pie-plot path.selected {
+    fill: var(--pie-selected-color);
+}
+
+.project-pie-chart {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .project-pie-chart {
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+}
+
+.legend {
+    list-style: none;
+    margin: 0;
+    padding: 1rem;
+    border: 1px solid color-mix(in oklch, canvastext 18%, canvas 82%);
+    border-radius: 0.75rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
+    gap: 1rem;
+    flex: 1;
+    min-width: min(22rem, 100%);
+}
+
+.legend__item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-muted);
+    cursor: pointer;
+    border-radius: 0.75rem;
+    border: 1px solid transparent;
+    padding: 0.5rem 0.75rem;
+    transition: border-color 160ms ease, background-color 160ms ease, color 160ms ease;
+}
+
+.legend__swatch {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 0.25rem;
+    background-color: var(--color);
+    flex-shrink: 0;
+}
+
+.legend__item em {
+    font-style: normal;
+    color: var(--text-subtle);
+}
+
+.legend__item.selected {
+    --color: var(--pie-selected-color);
+    color: var(--text-strong);
+    border-color: color-mix(in oklch, var(--pie-selected-color) 40%, transparent 60%);
+    background-color: color-mix(in oklch, var(--pie-selected-color) 16%, transparent 84%);
+}
+
+.legend__item:hover {
+    border-color: color-mix(in oklch, var(--pie-selected-color) 25%, transparent 75%);
+}
+
+.legend__item:focus-visible {
+    outline: 2px solid color-mix(in oklch, var(--pie-selected-color) 45%, transparent 55%);
+    outline-offset: 2px;
+}
+
 .writing-card:hover {
     border-color: color-mix(in oklch, canvastext 32%, canvas 68%);
     /* hover border */
@@ -220,7 +310,7 @@ html {
 }
 
 .project-main {
-    max-width: 72rem;
+    max-width: 84rem;
 }
 
 .project-hero {
@@ -279,6 +369,54 @@ html {
     padding-top: 1.25rem;
     margin-top: 1.5rem;
     color: var(--text-muted);
+}
+
+.project-hero__intro {
+    max-width: clamp(38rem, 70%, 56rem);
+}
+
+.project-hero__aside {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.project-search {
+    margin-top: 0;
+    width: 100%;
+}
+
+.project-search__input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: 0.85rem;
+    border: 1px solid color-mix(in oklch, canvastext 16%, canvas 84%);
+    background-color: color-mix(in oklch, canvas 94%, transparent 6%);
+    color: var(--text-default);
+    transition: border-color 150ms ease-in-out, box-shadow 150ms ease-in-out;
+}
+
+.project-search__input::placeholder {
+    color: var(--text-muted);
+}
+
+.project-search__input:focus-visible {
+    outline: none;
+    border-color: color-mix(in oklch, canvastext 36%, canvas 64%);
+    box-shadow: 0 0 0 0.2rem color-mix(in oklch, canvastext 12%, transparent 88%);
+}
+
+@media (min-width: 992px) {
+    .project-hero__aside {
+        margin-top: 0;
+    }
+}
+
+@media (min-width: 1200px) {
+    .project-hero__aside {
+        padding-left: 1.5rem;
+    }
 }
 
 .letter-spaced {
