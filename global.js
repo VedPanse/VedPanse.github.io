@@ -81,6 +81,11 @@ const applyColorScheme = (value) => {
   }
   const datasetValue = value === DEFAULT_COLOR_SCHEME ? 'auto' : value;
   root.dataset.colorScheme = datasetValue;
+  document.dispatchEvent(
+    new CustomEvent('color-scheme:change', {
+      detail: { value: datasetValue },
+    })
+  );
 };
 
 const normalizePathname = (pathname) => {
