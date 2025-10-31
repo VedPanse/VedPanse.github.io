@@ -423,7 +423,6 @@ html {
 }
 
 .project-catalog {
-    border-top: 1px solid color-mix(in oklch, canvastext 12%, canvas 88%);
     padding-top: 3rem;
     margin-top: 3rem;
 }
