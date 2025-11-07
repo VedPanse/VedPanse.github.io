@@ -227,6 +227,109 @@ body :is(p, li, span) {
     fill-opacity: 0.7;
 }
 
+.dots circle {
+    transition: 200ms;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+
+.dots circle:hover {
+    transform: scale(1.5);
+}
+
+.dots circle.selected {
+    fill: #ff6b6b;
+    fill-opacity: 0.9;
+}
+
+dl.info {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 0.35rem 1rem;
+    margin: 0;
+    padding: 1rem 1.25rem;
+    border-radius: 0.75rem;
+    background: rgba(15, 15, 15, 0.9);
+    color: #f3f4f6;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    font-size: 0.9rem;
+    transition-duration: 500ms;
+    transition-property: opacity, visibility;
+    backdrop-filter: blur(10px);
+}
+
+dl.info dt {
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 0.65rem;
+    color: #9ca3af;
+}
+
+dl.info dd {
+    margin: 0;
+    font-weight: 600;
+}
+
+.tooltip {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: rgba(20, 20, 20, 0.9);
+    color: #f9fafb;
+    border-radius: 0.75rem;
+    padding: 0.9rem 1.1rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(6px);
+    pointer-events: auto;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.tooltip[hidden] {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-4px);
+}
+
+.tooltip:hover {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.tooltip dt {
+    font-size: 0.7rem;
+    color: #a1a1aa;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-top: 0.25rem;
+}
+
+.tooltip dd {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin: 0 0 0.4rem 0;
+}
+
+.tooltip a {
+    color: #66b3ff;
+    text-decoration: underline;
+}
+
+@keyframes marching-ants {
+    to {
+        stroke-dashoffset: -8;
+    }
+}
+
+.selection {
+    fill-opacity: 0.1;
+    stroke: rgba(0, 0, 0, 0.7);
+    stroke-dasharray: 5 3;
+    animation: marching-ants 2s linear infinite;
+}
+
 /* Subtle scrollbar */
 ::-webkit-scrollbar {
     width: 10px;

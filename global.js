@@ -32,6 +32,7 @@ const NAV_ITEMS = [
   { title: 'Research', url: 'index.html#research' },
   { title: 'Experience', url: 'index.html#experience' },
   { title: 'Projects', url: 'projects/' },
+  { title: 'Meta Analysis', url: 'meta/' },
   { title: 'Awards', url: 'index.html#awards' },
   { title: 'Writing', url: 'index.html#writing' },
   { title: 'Contact', url: 'index.html#contact' },
