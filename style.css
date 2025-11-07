@@ -103,6 +103,7 @@ body :is(p, li, span) {
     color: var(--nav-brand-color);
     text-decoration: none;
     transition: opacity 150ms ease-in-out;
+    white-space: nowrap;
 }
 
 .site-nav__list {
@@ -120,6 +121,7 @@ body :is(p, li, span) {
     color: var(--nav-link-color);
     text-decoration: none;
     transition: color 150ms ease-in-out;
+    white-space: nowrap;
 }
 
 .site-nav__link:hover,
@@ -159,6 +161,70 @@ body :is(p, li, span) {
     .site-nav__cta {
         margin-left: 0.5rem;
     }
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+    gap: 1.25rem;
+}
+
+.stats__card {
+    padding: 1.25rem;
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.stats__label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: #9ca3af;
+}
+
+.stats__value {
+    margin-top: 0.35rem;
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #f9fafb;
+    line-height: 1.2;
+}
+
+.stats__detail {
+    margin-top: 0.35rem;
+    font-size: 0.85rem;
+    color: #d1d5db;
+}
+
+#chart svg {
+    width: 100%;
+    height: auto;
+}
+
+#chart .axis text {
+    fill: #d1d5db;
+    font-size: 0.85rem;
+}
+
+#chart .axis path,
+#chart .axis line {
+    stroke: rgba(255, 255, 255, 0.35);
+}
+
+.gridlines line {
+    stroke: #dddddd;
+    stroke-width: 0.5;
+    opacity: 0.5;
+}
+
+.gridlines path {
+    display: none;
+}
+
+.dots circle {
+    fill: steelblue;
+    fill-opacity: 0.7;
 }
 
 /* Subtle scrollbar */
