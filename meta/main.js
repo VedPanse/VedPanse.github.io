@@ -8,6 +8,22 @@ const LANGUAGE_LABELS = {
   html: 'HTML',
 };
 
+const REPO_URL = 'https://github.com/VedPanse/VedPanse.github.io';
+
+const tooltipElement = document.getElementById('commit-tooltip');
+let tooltipHovered = false;
+
+if (tooltipElement) {
+  tooltipElement.addEventListener('mouseenter', () => {
+    tooltipHovered = true;
+  });
+
+  tooltipElement.addEventListener('mouseleave', () => {
+    tooltipHovered = false;
+    updateTooltipVisibility(false);
+  });
+}
+
 async function loadData() {
   const data = await d3.csv('loc.csv', (row) => ({
     ...row,
@@ -26,9 +42,13 @@ function processCommits(data) {
     .map(([commit, lines]) => {
       let first = lines[0];
       let { author, date, time, timezone, datetime } = first;
+      const fullHash = commit;
+      const shortHash =
+        typeof commit === 'string' && commit.length > 7 ? commit.slice(0, 7) : commit;
       let ret = {
-        id: commit,
-        url: 'https://github.com/YOUR_REPO/commit/' + commit,
+        id: shortHash,
+        fullHash,
+        url: `${REPO_URL}/commit/${fullHash}`,
         author,
         date,
         time,
@@ -75,14 +95,14 @@ function renderTooltipContent(commit) {
 }
 
 function updateTooltipVisibility(isVisible) {
-  const tooltip = document.getElementById('commit-tooltip');
-  tooltip.hidden = !isVisible;
+  if (!tooltipElement) return;
+  tooltipElement.hidden = !isVisible;
 }
 
 function updateTooltipPosition(event) {
-  const tooltip = document.getElementById('commit-tooltip');
-  tooltip.style.left = `${event.clientX + 15}px`;
-  tooltip.style.top = `${event.clientY + 15}px`;
+  if (!tooltipElement) return;
+  tooltipElement.style.left = `${event.clientX + 15}px`;
+  tooltipElement.style.top = `${event.clientY + 15}px`;
 }
 
 function renderScatterPlot(data, commits) {
@@ -108,13 +128,20 @@ function renderScatterPlot(data, commits) {
   yScale = d3.scaleLinear().domain([0, 24]).range([usableArea.bottom, usableArea.top]);
 
   // Gridlines
+  const yGridlines = d3
+    .axisLeft(yScale)
+    .tickFormat(() => '')
+    .tickSize(-usableArea.width)
+    .ticks(12);
+
   svg
     .append('g')
     .attr('class', 'gridlines')
     .attr('transform', `translate(${usableArea.left},0)`)
-    .call(d3.axisLeft(yScale).tickFormat('').tickSize(-usableArea.width));
+    .call(yGridlines)
+    .call((g) => g.select('.domain').remove());
 
-  const xAxis = d3.axisBottom(xScale);
+  const xAxis = d3.axisBottom(xScale).tickFormat(d3.timeFormat('%b %d'));
   const yAxis = d3.axisLeft(yScale).tickFormat((d) => String(d % 24).padStart(2, '0') + ':00');
 
   svg.append('g').attr('transform', `translate(0,${usableArea.bottom})`).call(xAxis);
@@ -126,6 +153,24 @@ function renderScatterPlot(data, commits) {
   const dots = svg.append('g').attr('class', 'dots');
 
   const sortedCommits = d3.sort(commits, (d) => -d.totalLines);
+
+  let hideTooltipTimeout;
+
+  const cancelPendingHide = () => {
+    if (hideTooltipTimeout) {
+      clearTimeout(hideTooltipTimeout);
+      hideTooltipTimeout = null;
+    }
+  };
+
+  const scheduleTooltipHide = () => {
+    cancelPendingHide();
+    hideTooltipTimeout = window.setTimeout(() => {
+      if (!tooltipHovered) {
+        updateTooltipVisibility(false);
+      }
+    }, 80);
+  };
 
   dots
     .selectAll('circle')
@@ -141,21 +186,12 @@ function renderScatterPlot(data, commits) {
       renderTooltipContent(commit);
       updateTooltipVisibility(true);
       updateTooltipPosition(event);
-      window.addEventListener('mousemove', trackTooltip);
+      cancelPendingHide();
     })
     .on('mouseleave', (event) => {
       d3.select(event.currentTarget).style('fill-opacity', 0.7);
-      updateTooltipVisibility(false);
-      window.removeEventListener('mousemove', trackTooltip);
+      scheduleTooltipHide();
     });
-
-  function trackTooltip(e) {
-    const tooltip = document.getElementById('commit-tooltip');
-    const withinTooltip = tooltip.matches(':hover');
-    if (!withinTooltip) {
-      updateTooltipPosition(e);
-    }
-  }
 
   // Brush setup
   const brush = d3.brush().on('start brush end', brushed);

@@ -51,7 +51,6 @@
       min-width: 640px;
       height: auto;
       border-radius: 1.25rem;
-      background: color-mix(in oklch, canvas 92%, canvastext 8%);
       box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
     }
 
@@ -70,32 +69,36 @@
     }
 
     .gridlines line {
-      stroke: color-mix(in oklch, canvastext 15%, canvas 85%);
-      stroke-opacity: 0.6;
+      stroke: color-mix(in oklch, canvastext 28%, canvas 72%);
+      stroke-opacity: 0.75;
+      stroke-width: 1;
+      shape-rendering: crispEdges;
     }
 
     .meta-tooltip {
       position: fixed;
       top: 6rem;
       left: 2rem;
-      backdrop-filter: blur(12px);
-      background: color-mix(in oklch, canvas 70%, canvastext 30%);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(18px);
+      background: rgba(13, 13, 13, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.12);
       border-radius: 1rem;
-      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
-      padding: 1rem 1.25rem;
-      width: min(320px, calc(100vw - 2rem));
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.55);
+      padding: 1.25rem 1.4rem;
+      width: min(360px, calc(100vw - 2rem));
       z-index: 40;
-      transition: opacity 200ms ease, visibility 200ms ease;
+      transition: opacity 200ms ease, visibility 200ms ease, transform 200ms ease;
+      transform-origin: top left;
     }
 
     .meta-tooltip[hidden] {
       opacity: 0;
       visibility: hidden;
+      transform: translateY(-4px);
     }
 
     .meta-tooltip dt {
-      font-size: 0.7rem;
+      font-size: 0.65rem;
       text-transform: uppercase;
       letter-spacing: 0.25em;
       color: var(--text-muted, #9ca3af);
@@ -103,8 +106,15 @@
 
     .meta-tooltip dd {
       font-size: 0.95rem;
-      color: var(--text-default, #e5e7eb);
+      color: var(--text-default, #f8fafc);
       margin-bottom: 0.65rem;
+    }
+
+    .meta-tooltip a {
+      color: #60a5fa;
+      text-decoration-line: underline;
+      text-decoration-style: dotted;
+      text-underline-offset: 0.2em;
     }
 
     .meta-breakdown {
