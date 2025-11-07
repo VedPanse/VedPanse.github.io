@@ -2,6 +2,12 @@ import * as d3 from 'https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm';
 
 let xScale, yScale;
 
+const LANGUAGE_LABELS = {
+  js: 'JavaScript',
+  css: 'CSS',
+  html: 'HTML',
+};
+
 async function loadData() {
   const data = await d3.csv('loc.csv', (row) => ({
     ...row,
@@ -206,8 +212,18 @@ function renderLanguageBreakdown(selection, commits) {
   for (const [language, count] of breakdown) {
     const proportion = count / lines.length;
     const formatted = d3.format('.1~%')(proportion);
-    container.innerHTML += `<dt>${language}</dt><dd>${count} lines (${formatted})</dd>`;
+    const label = formatLanguageLabel(language);
+    container.innerHTML += `<dt>${label}</dt><dd>${count} lines (${formatted})</dd>`;
   }
+}
+
+function formatLanguageLabel(raw) {
+  if (!raw) return 'Unknown';
+  const normalized = raw.toLowerCase();
+  if (normalized in LANGUAGE_LABELS) {
+    return LANGUAGE_LABELS[normalized];
+  }
+  return normalized.replace(/(^|\s|-)\w/g, (match) => match.toUpperCase());
 }
 
 (async function init() {

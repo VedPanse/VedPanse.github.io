@@ -4,108 +4,205 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Meta Analysis - Lab 6</title>
-  <script type="module" src="./main.js" defer></script>
+  <title>Ved Panse – Meta Analysis</title>
+  <meta name="description"
+    content="Interactive telemetry for Ved Panse’s repositories — commit density, brushing, and language level insights." />
+  <link rel="icon" type="image/png" href="../images/icon.png" sizes="any" />
+
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            canvas: {
+              DEFAULT: '#151515',
+              subtle: '#1A1A1A',
+              soft: '#202020'
+            }
+          },
+          fontFamily: {
+            sans: ["Inter", "ui-sans-serif", "system-ui", "-apple-system", "Segoe UI", "Roboto", "Helvetica", "Arial", "Noto Sans", "sans-serif"],
+          },
+          boxShadow: {
+            glow: '0 0 0 1px rgba(255,255,255,0.05), 0 10px 30px rgba(0,0,0,0.35)'
+          }
+        }
+      }
+    }
+  </script>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 2em;
-      background-color: #fafafa;
+    #chart {
+      overflow-x: auto;
     }
 
-    h1,
-    h2 {
-      color: #333;
+    #chart svg {
+      width: 100%;
+      min-width: 640px;
+      height: auto;
+      border-radius: 1.25rem;
+      background: color-mix(in oklch, canvas 92%, canvastext 8%);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
     }
 
-    .stats,
-    .info {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 0.5em 1em;
-      margin-bottom: 1.5em;
-      background: #fff;
-      padding: 1em;
-      border-radius: 0.5em;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-
-    .tooltip {
-      position: fixed;
-      top: 1em;
-      left: 1em;
-      background-color: rgba(255, 255, 255, 0.9);
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-      border-radius: 0.5em;
-      padding: 1em;
-      z-index: 10;
-      transition-duration: 500ms;
-      transition-property: opacity, visibility;
-    }
-
-    .tooltip[hidden] {
-      opacity: 0;
-      visibility: hidden;
-    }
-
-    svg {
-      background: white;
-      border-radius: 0.5em;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    circle {
-      transition: 200ms;
+    #chart circle {
+      transition: transform 200ms ease, opacity 200ms ease;
       transform-origin: center;
       transform-box: fill-box;
     }
 
-    circle:hover {
-      transform: scale(1.5);
+    #chart circle:hover {
+      transform: scale(1.35);
     }
 
-    circle.selected {
-      fill: #ff6b6b;
+    #chart circle.selected {
+      fill: #f97316;
     }
 
     .gridlines line {
-      stroke: #ddd;
+      stroke: color-mix(in oklch, canvastext 15%, canvas 85%);
       stroke-opacity: 0.6;
     }
 
+    .meta-tooltip {
+      position: fixed;
+      top: 6rem;
+      left: 2rem;
+      backdrop-filter: blur(12px);
+      background: color-mix(in oklch, canvas 70%, canvastext 30%);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 1rem;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+      padding: 1rem 1.25rem;
+      width: min(320px, calc(100vw - 2rem));
+      z-index: 40;
+      transition: opacity 200ms ease, visibility 200ms ease;
+    }
+
+    .meta-tooltip[hidden] {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .meta-tooltip dt {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      color: var(--text-muted, #9ca3af);
+    }
+
+    .meta-tooltip dd {
+      font-size: 0.95rem;
+      color: var(--text-default, #e5e7eb);
+      margin-bottom: 0.65rem;
+    }
+
+    .meta-breakdown {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 0.35rem 1rem;
+    }
+
+    .meta-breakdown dt {
+      font-size: 0.85rem;
+      color: var(--text-muted, #9ca3af);
+    }
+
+    .meta-breakdown dd {
+      font-size: 0.95rem;
+      color: var(--text-default, #f3f4f6);
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+
     .selection {
-      fill-opacity: 0.1;
-      stroke: black;
-      stroke-opacity: 0.7;
-      stroke-dasharray: 5 3;
+      fill-opacity: 0.08;
+      stroke: color-mix(in oklch, canvastext 75%, canvas 25%);
+      stroke-dasharray: 6 4;
       animation: marching-ants 2s linear infinite;
     }
 
     @keyframes marching-ants {
       to {
-        stroke-dashoffset: -8;
+        stroke-dashoffset: -10;
       }
     }
   </style>
 </head>
 
-<body>
-  <h1>Meta Analysis Dashboard</h1>
-  <p>
-    Quantitative data visualization using D3 — displaying commit statistics,
-    scatterplots, tooltips, and brushing interactions.
-  </p>
+<body data-base-path="/" class="font-sans">
+  <a href="#main"
+    class="sr-only focus:not-sr-only focus-ring fixed left-4 top-4 bg-black/70 text-white px-3 py-1 rounded-md">Skip to
+    content</a>
 
-  <h2>Summary Statistics</h2>
-  <div id="stats"></div>
+  <main id="main" class="mx-auto max-w-5xl px-6 sm:px-8 pt-28 pb-20 space-y-10">
+    <section class="space-y-4">
+      <p class="text-[12px] uppercase tracking-[0.35em] text-gray-500">Meta Analysis</p>
+      <h1 class="text-3xl sm:text-4xl font-semibold title-gradient">Commit telemetry & language coverage</h1>
+      <p class="text-sm sm:text-base text-gray-400 leading-relaxed max-w-3xl">
+        A D3-powered dashboard that pulls directly from the <code>loc.csv</code> log. Track when large pushes land,
+        quantify author activity, and slice language churn by brushing over the scatterplot.
+      </p>
+      <div class="flex flex-wrap gap-3 text-[12px] uppercase tracking-[0.2em] text-gray-500">
+        <span class="chip text-gray-300 uppercase tracking-tight">D3.js</span>
+        <span class="chip text-gray-300 uppercase tracking-tight">Telemetry</span>
+        <span class="chip text-gray-300 uppercase tracking-tight">Interactive</span>
+      </div>
+    </section>
 
-  <h2>Commits by Time of Day</h2>
-  <div id="chart"></div>
+    <section>
+      <article class="writing-card space-y-4">
+        <div>
+          <p class="text-[12px] uppercase tracking-[0.35em] text-gray-500">Overview</p>
+          <h2 class="text-2xl font-semibold text-white title-gradient mt-1">Summary statistics</h2>
+          <p class="text-sm text-gray-500 mt-1">Live counts from the structured LOC feed.</p>
+        </div>
+        <div id="stats" class="mt-4"></div>
+      </article>
+    </section>
 
-  <h2>Tooltip</h2>
-  <dl id="commit-tooltip" class="info tooltip" hidden>
+    <section>
+      <article class="writing-card space-y-4">
+        <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <p class="text-[12px] uppercase tracking-[0.35em] text-gray-500">Temporal spread</p>
+            <h2 class="text-2xl font-semibold text-white title-gradient mt-1">Commits by time of day</h2>
+          </div>
+          <p class="text-sm text-gray-500 max-w-sm">
+            Hover for commit context, then brush to isolate dense clusters and power the cards below.
+          </p>
+        </div>
+        <div id="chart" aria-live="polite"></div>
+      </article>
+    </section>
+
+    <section>
+      <article class="writing-card space-y-4">
+        <div>
+          <p class="text-[12px] uppercase tracking-[0.35em] text-gray-500">Selection</p>
+          <h2 class="text-2xl font-semibold text-white title-gradient mt-1">Language breakdown</h2>
+        </div>
+        <p id="selection-count" class="text-lg font-medium text-white">No commits selected</p>
+        <p class="text-sm text-gray-500">Drag a window on the scatterplot to focus on the commits that matter.</p>
+        <dl id="language-breakdown" class="meta-breakdown"></dl>
+        <p class="text-sm text-gray-500">Language mix populates as soon as a selection is active.</p>
+      </article>
+    </section>
+  </main>
+
+  <dl id="commit-tooltip" class="meta-tooltip" hidden>
     <dt>Commit</dt>
-    <dd><a href="" id="commit-link" target="_blank"></a></dd>
+    <dd><a href="" id="commit-link" target="_blank" rel="noreferrer" class="link underline"></a></dd>
     <dt>Date</dt>
     <dd id="commit-date"></dd>
     <dt>Author</dt>
@@ -114,9 +211,8 @@
     <dd id="commit-lines"></dd>
   </dl>
 
-  <h2>Brushing Summary</h2>
-  <p id="selection-count">No commits selected</p>
-  <dl id="language-breakdown" class="stats"></dl>
+  <script type="module" src="../global.js"></script>
+  <script type="module" src="./main.js"></script>
 </body>
 
 </html>
