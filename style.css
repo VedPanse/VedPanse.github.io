@@ -367,6 +367,12 @@ html {
     /* adaptive text color */
 }
 
+.project-card__link {
+    text-decoration: none;
+    display: block;
+    color: inherit;
+}
+
 .writing-card {
     border-radius: 1rem;
     /* rounded-2xl */

@@ -363,7 +363,16 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
       article.append(stack);
     }
 
-    column.append(article);
+    const wrapper = project?.url ? document.createElement('a') : document.createElement('div');
+    wrapper.className = 'h-100 w-100';
+    if (project?.url) {
+      wrapper.href = resolveUrl(project.url);
+      wrapper.target = '_blank';
+      wrapper.rel = 'noreferrer noopener';
+      wrapper.classList.add('project-card__link');
+    }
+    wrapper.append(article);
+    column.append(wrapper);
     fragment.append(column);
   }
 
