@@ -7,7 +7,8 @@
     "title": "Falcon Eye - Synthetic Vision",
     "description": "Low-cost 3D synthetic vision for fighter aircraft. Real-time OpenGL rendering, stitched terrain tiles, and deterministic failover on sub-$100 hardware.",
     "stack": "C++, OpenGL, STM32",
-    "image": null
+    "image": null,
+    "url": null
   },
   {
     "group": "Active Builds",
@@ -17,7 +18,8 @@
     "title": "Strata - Personal AI Assistant",
     "description": "YC-ready assistant unifying Gmail, Calendar, and Tasks with offline sync, long-horizon memory, and daily workflows that actually stick.",
     "stack": "Kotlin, Redis, Gemini API",
-    "image": null
+    "image": null,
+    "url": null
   },
   {
     "group": "Active Builds",
@@ -27,7 +29,8 @@
     "title": "GhostPIN - Visual-Nonce MFA",
     "description": "Browser SDK that anchors WebAuthn, OTP, and device proofs to a visual nonce layered on checkout flows to prevent phishing and fake payment pages.",
     "stack": "TypeScript, WebAuthn, Cloudflare Workers",
-    "image": null
+    "image": null,
+    "url": "https://github.com/dannypeelen/ghostpin/"
   },
   {
     "group": "Systems Lab",
@@ -37,7 +40,8 @@
     "title": "ShardWise - Distributed Task Engine",
     "description": "Lightweight orchestration framework that keeps research pipelines alive via adaptive sharding, leader election, and replication across nodes.",
     "stack": "Rust, Kafka, Redis",
-    "image": null
+    "image": null,
+    "url": null
   },
   {
     "group": "Systems Lab",
@@ -47,7 +51,8 @@
     "title": "Semantic Task Observer",
     "description": "Multilingual reconciliation engine pairing transformer embeddings with Redis retrieval to help global teams avoid mismatched assignments.",
     "stack": "Java, Python, sentence-transformers",
-    "image": null
+    "image": null,
+    "url": "https://github.com/VedPanse/sentinel"
   },
   {
     "group": "Systems Lab",
@@ -57,7 +62,8 @@
     "title": "Spuddie Memory System",
     "description": "Long-term memory layer for a conversational companion, blending vector databases, heuristic scoring, and reinforcement feedback for recall.",
     "stack": "PostgreSQL, Pinecone, Python",
-    "image": null
+    "image": null,
+    "url": null
   },
   {
     "group": "Experiments & Robotics",
@@ -67,7 +73,8 @@
     "title": "Expressive Voice Robot",
     "description": "Raspberry Pi 4 robotic head with synchronized speech, emotion detection, and servo choreography for convincing in-person interactions.",
     "stack": "Raspberry Pi, TensorFlow Lite, PWM servo bus",
-    "image": null
+    "image": null,
+    "url": null
   },
   {
     "group": "Experiments & Robotics",
@@ -77,7 +84,8 @@
     "title": "Global Nanobot Control",
     "description": "ESP32 and WebSockets stack for worldwide teleoperation. Adaptive buffering keeps command latency under 20 ms while preserving reliability.",
     "stack": "ESP32, WebSockets, Rust backend",
-    "image": null
+    "image": null,
+    "url": null
   },
   {
     "group": "Experiments & Robotics",
@@ -87,17 +95,8 @@
     "title": "Rocket Lab Avionics",
     "description": "Arduino-based telemetry capturing 99.99% of flight data even under extreme vibration thanks to custom PCB layouts and fault-tolerant firmware.",
     "stack": "Arduino, CAN bus, custom PCB",
-    "image": null
-  },
-  {
-    "group": "AI & Safety",
-    "domain": "Accessibility",
-    "status": "2024",
-    "year": "2024",
-    "title": "Calltender - Voice Calls for Accessibility",
-    "description": "Gemini, ElevenLabs, and Twilio agent that handles phone menus for hearing-impaired users, delivering natural assistance over standard lines.",
-    "stack": "Twilio, ElevenLabs, TypeScript",
-    "image": null
+    "image": null,
+    "url": null
   },
   {
     "group": "AI & Safety",
@@ -107,7 +106,8 @@
     "title": "PhishNet - Threat Visualization",
     "description": "Real-time dashboard for phishing detection using BERT classifiers, streaming ingest, and alerting for rapid incident response.",
     "stack": "Python, BERT, Plotly",
-    "image": null
+    "image": null,
+    "url": "https://chromewebstore.google.com/detail/phish-net/lllecpchjhllolknfecnhmjdjmlameog"
   },
   {
     "group": "AI & Safety",
@@ -117,6 +117,18 @@
     "title": "BikeNav - Safer Cycling Routes",
     "description": "Mobile app combining GPS, Mapbox, and crowd-sourced safety data to chart safer urban cycling routes with offline caching.",
     "stack": "Mapbox, Firebase, SwiftUI",
-    "image": null
+    "image": null,
+    "url": "https://github.com/VedPanse/BikeNav"
+  },
+  {
+    "group": "Experiments & Robotics",
+    "domain": "Civic Tech",
+    "status": "2025",
+    "year": "2025",
+    "title": "Blue Bike Traffic Visualization",
+    "description": "Interactive Mapbox+D3 visualization of Boston and Cambridge bike lanes, Bluebikes stations, and March 2024 traffic flows with tooltip-driven insights.",
+    "stack": "Mapbox GL JS, D3, GeoJSON, JavaScript",
+    "image": "../images/blue-bike-ss.png",
+    "url": "https://vedpanse.com/blue-bike/"
   }
 ]
