@@ -87,6 +87,10 @@ a {
   color: #ffffff;
 }
 
+.nav-links a.is-active {
+  color: #ffffff;
+}
+
 .nav-icons {
   display: flex;
   align-items: center;
@@ -514,44 +518,30 @@ main {
   width: 120px;
   height: 120px;
   border-radius: 28px;
-  background: #141416;
+  background: #ffffff;
   display: grid;
   place-items: center;
-  color: #ffffff;
-  font-weight: 600;
-  font-size: 28px;
-  letter-spacing: 0.04em;
 }
 
 .research-media--icon {
-  background: #0f0f12;
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .research-media--poster {
-  background: linear-gradient(135deg, #1a1c23 0%, #2c1a22 100%);
-  position: relative;
-}
-
-.research-media--poster::after {
-  content: "";
-  position: absolute;
-  inset: 18px;
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.08);
+  background: #ffffff;
 }
 
 .research-media--photo {
-  background: linear-gradient(135deg, #1c1c22 0%, #1a2b22 100%);
-  position: relative;
+  background: #ffffff;
 }
 
-.research-media--photo::after {
-  content: "";
-  position: absolute;
-  inset: 12px;
-  border-radius: 22px;
-  background: rgba(255, 255, 255, 0.12);
+.research-media img {
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.35));
 }
 
 .research-content {
@@ -575,6 +565,35 @@ main {
 .research-date {
   color: rgba(255, 255, 255, 0.55);
   font-size: 14px;
+}
+
+.focus-section {
+  background: #000000;
+  padding: 120px 0 140px;
+  text-align: center;
+}
+
+.focus-inner {
+  width: min(980px, 90vw);
+  margin: 0 auto;
+  display: grid;
+  gap: 24px;
+}
+
+.focus-inner h2 {
+  font-size: clamp(34px, 6vw, 64px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+}
+
+.focus-subtitle {
+  font-size: clamp(18px, 2.4vw, 26px);
+  line-height: 1.5;
+  color: #ffffff;
+  font-weight: 600;
+  max-width: 760px;
+  margin: 0 auto;
 }
 
 .projects-toggle {
@@ -618,6 +637,7 @@ main {
   width: 100vw;
   margin-left: 0;
   padding: 8px 0;
+  will-change: transform;
 }
 
 .icon-column {
@@ -629,6 +649,19 @@ main {
 
 .icon-column:nth-child(even) {
   padding-top: var(--col-offset);
+}
+
+.icon-columns.icon-marquee {
+  animation: icon-marquee var(--marquee-duration, 10s) ease-out 1 forwards;
+}
+
+@keyframes icon-marquee {
+  from {
+    transform: translateX(calc(-1 * var(--marquee-distance)));
+  }
+  to {
+    transform: translateX(0);
+  }
 }
 
 .app-icon {
@@ -767,6 +800,14 @@ main {
     width: 88px;
     height: 88px;
     border-radius: 22px;
+  }
+
+  .focus-section {
+    padding: 96px 0 120px;
+  }
+
+  .focus-inner h2 {
+    font-size: clamp(30px, 10vw, 46px);
   }
 
 }

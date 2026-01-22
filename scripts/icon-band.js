@@ -102,6 +102,24 @@ const renderColumns = (columns, icons, metrics) => {
   }
 };
 
+const applyMarquee = (columns) => {
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  columns.classList.remove("icon-marquee");
+  columns.style.removeProperty("--marquee-distance");
+  columns.style.removeProperty("--marquee-duration");
+  if (prefersReducedMotion) return;
+
+  const clones = Array.from(columns.children).map((node) => node.cloneNode(true));
+  clones.forEach((node) => columns.appendChild(node));
+
+  const baseDistance = columns.scrollWidth / 2;
+  const distance = baseDistance * 0.25;
+  const duration = 4;
+  columns.style.setProperty("--marquee-distance", `${distance.toFixed(2)}px`);
+  columns.style.setProperty("--marquee-duration", `${duration.toFixed(2)}s`);
+  columns.classList.add("icon-marquee");
+};
+
 const loadIcons = async () => {
   const response = await fetch(ICONS_URL);
   if (!response.ok) {
@@ -130,7 +148,10 @@ export const initIconBand = async () => {
   const icons = await loadIcons();
   if (!icons.length) return;
 
-  const render = () => renderColumns(columns, icons, getLayoutMetrics(band));
+  const render = () => {
+    renderColumns(columns, icons, getLayoutMetrics(band));
+    applyMarquee(columns);
+  };
   render();
   window.addEventListener("resize", throttle(render, 150));
 };
