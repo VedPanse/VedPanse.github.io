@@ -57,8 +57,16 @@
       "label": "Langchain"
     },
     {
+      "src": "assets/react.png",
+      "label": "React"
+    },
+    {
       "src": "assets/python.png",
       "label": "Python"
+    },
+    {
+      "src": "assets/electron",
+      "label": "Electron"
     },
     {
       "src": "assets/ruby.png",
@@ -75,6 +83,10 @@
     {
       "src": "assets/ts.webp",
       "label": "TypeScript"
+    },
+    {
+      "src": "assets/tauri.svg",
+      "label": "Tauri"
     }
   ]
 }

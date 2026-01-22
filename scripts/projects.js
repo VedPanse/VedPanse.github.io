@@ -109,6 +109,7 @@ export const initProjectsCarousel = async () => {
   let scrollTimeout = 0;
   let startTime = performance.now();
   let progressValue = 0;
+  let activeCard = cards[0];
 
   const setProgress = (value) => {
     progressValue = clamp(value, 0, 1);
@@ -144,6 +145,7 @@ export const initProjectsCarousel = async () => {
 
     if (closestIndex !== activeIndex) {
       activeIndex = closestIndex;
+      activeCard = cards[activeIndex];
       updateDots(activeIndex);
       setProgress(0);
       startTime = performance.now();
@@ -165,11 +167,22 @@ export const initProjectsCarousel = async () => {
     });
   };
 
+  const updateControlsOffset = () => {
+    if (!activeCard) return;
+    const rect = activeCard.getBoundingClientRect();
+    const viewportHeight = window.innerHeight;
+    const desiredBottom = 10;
+    const targetBottom = rect.bottom + 15;
+    const delta = Math.min(0, targetBottom - (viewportHeight - desiredBottom));
+    controls.style.transform = `translateX(-50%) translateY(${delta.toFixed(1)}px)`;
+  };
+
   const onScroll = () => {
     if (scrollTimeout) window.clearTimeout(scrollTimeout);
     isUserScrolling = true;
     updateActiveFromScroll();
     updateCardTransforms();
+    updateControlsOffset();
     scrollTimeout = window.setTimeout(() => {
       isUserScrolling = false;
       startTime = performance.now();
@@ -178,7 +191,8 @@ export const initProjectsCarousel = async () => {
 
   const goNext = () => {
     const nextIndex = (activeIndex + 1) % cards.length;
-    scrollToCard(nextIndex);
+    const behavior = nextIndex === 0 ? "auto" : "smooth";
+    scrollToCard(nextIndex, behavior);
   };
 
   const goToIndex = (index) => {
@@ -224,6 +238,10 @@ export const initProjectsCarousel = async () => {
     requestAnimationFrame(onScroll);
   }, { passive: true });
 
+  window.addEventListener("resize", () => {
+    updateControlsOffset();
+  });
+
   toggle.addEventListener("click", toggleAutoPlay);
 
   dots.forEach((dot, index) => {
@@ -236,6 +254,7 @@ export const initProjectsCarousel = async () => {
   updateCardTransforms();
   setProgress(0);
   scrollToCard(activeIndex, "auto");
+  updateControlsOffset();
 
   if (!prefersReducedMotion) {
     requestAnimationFrame(tick);

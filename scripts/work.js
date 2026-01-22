@@ -23,7 +23,17 @@ export const initWorkSection = () => {
     const total = rect.height - window.innerHeight;
     const rawProgress = total > 0 ? -rect.top / total : 0;
     const progress = clamp(rawProgress, 0, 1);
-    const inOut = progress <= 0.5 ? progress * 2 : (1 - progress) * 2;
+    const holdStart = 0.4;
+    const holdEnd = 0.7;
+    let inOut = 0;
+    if (progress <= holdStart) {
+      inOut = progress / holdStart;
+    } else if (progress <= holdEnd) {
+      inOut = 1;
+    } else {
+      inOut = (1 - progress) / (1 - holdEnd);
+    }
+    inOut = clamp(inOut, 0, 1);
 
     const scale = 1 + (targetScale - 1) * inOut;
     const radius = (1 - inOut) * 36;
