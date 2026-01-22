@@ -1,0 +1,80 @@
+{
+  "icons": [
+    {
+      "src": "assets/android-tech.png",
+      "label": "Android Tech"
+    },
+    {
+      "src": "assets/c.png",
+      "label": "C"
+    },
+    {
+      "src": "assets/cpp.png",
+      "label": "C++"
+    },
+    {
+      "src": "assets/cs.png",
+      "label": "CS"
+    },
+    {
+      "src": "assets/css.png",
+      "label": "CSS"
+    },
+    {
+      "src": "assets/dart.png",
+      "label": "Dart"
+    },
+    {
+      "src": "assets/flutter-tech.png",
+      "label": "Flutter Tech"
+    },
+    {
+      "src": "assets/github-tech.svg",
+      "label": "GitHub Tech"
+    },
+    {
+      "src": "assets/go.png",
+      "label": "Go"
+    },
+    {
+      "src": "assets/html.png",
+      "label": "Html"
+    },
+    {
+      "src": "assets/java.png",
+      "label": "Java"
+    },
+    {
+      "src": "assets/js.png",
+      "label": "JavaScript"
+    },
+    {
+      "src": "assets/kotlin.jpeg",
+      "label": "Kotlin"
+    },
+    {
+      "src": "assets/langchain.png",
+      "label": "Langchain"
+    },
+    {
+      "src": "assets/python.png",
+      "label": "Python"
+    },
+    {
+      "src": "assets/ruby.png",
+      "label": "Ruby"
+    },
+    {
+      "src": "assets/rust.png",
+      "label": "Rust"
+    },
+    {
+      "src": "assets/swift.jpg",
+      "label": "Swift"
+    },
+    {
+      "src": "assets/ts.webp",
+      "label": "TypeScript"
+    }
+  ]
+}
