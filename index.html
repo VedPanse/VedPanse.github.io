@@ -125,6 +125,25 @@
         </p>
       </div>
     </section>
+
+    <section id="contact" class="contact-section" aria-labelledby="contact-title">
+      <div class="contact-inner">
+        <h2 id="contact-title">Contact</h2>
+        <form class="contact-card" aria-label="Contact form" data-contact-form novalidate>
+          <label class="contact-field">
+            <span class="contact-label">Email Address</span>
+            <input type="email" name="email" placeholder="you@example.com" autocomplete="email" required />
+          </label>
+          <label class="contact-field contact-field--submit">
+            <span class="contact-label">Message</span>
+            <textarea name="message" placeholder="Tell me about your project." rows="3" required></textarea>
+            <button class="contact-submit" type="submit" aria-label="Send message">
+              <span class="contact-arrow" aria-hidden="true"></span>
+            </button>
+          </label>
+        </form>
+      </div>
+    </section>
   </main>
   <script type="module" src="scripts/main.js"></script>
 </body>

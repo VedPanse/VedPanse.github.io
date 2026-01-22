@@ -4,6 +4,7 @@ import { initWorkSection } from "./work.js";
 import { initProjectsCarousel } from "./projects.js";
 import { initNavHighlight } from "./nav.js";
 import { initResearch } from "./research.js";
+import { initContactForm } from "./contact.js";
 
 const bootstrap = () => {
   initContent();
@@ -12,6 +13,7 @@ const bootstrap = () => {
   initProjectsCarousel();
   initNavHighlight();
   initResearch();
+  initContactForm();
 };
 
 bootstrap();
