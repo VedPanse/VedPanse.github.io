@@ -859,6 +859,7 @@ main {
   background: transparent;
   color: #f5f5f7;
   font-weight: 500;
+  font-family: inherit;
 }
 
 .contact-field textarea {
@@ -868,9 +869,16 @@ main {
   background: transparent;
   color: #f5f5f7;
   font-weight: 500;
+  font-family: inherit;
   resize: vertical;
   min-height: 80px;
   line-height: 1.4;
+}
+
+.contact-field input::placeholder,
+.contact-field textarea::placeholder {
+  color: rgba(245, 245, 247, 0.6);
+  font-family: inherit;
 }
 
 .contact-field--submit {
