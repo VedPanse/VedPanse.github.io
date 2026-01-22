@@ -23,10 +23,11 @@ export const initWorkSection = () => {
     const total = rect.height - window.innerHeight;
     const rawProgress = total > 0 ? -rect.top / total : 0;
     const progress = clamp(rawProgress, 0, 1);
+    const inOut = progress <= 0.5 ? progress * 2 : (1 - progress) * 2;
 
-    const scale = 1 + (targetScale - 1) * progress;
-    const radius = (1 - progress) * 36;
-    const textProgress = clamp((progress - 0.6) / 0.4, 0, 1);
+    const scale = 1 + (targetScale - 1) * inOut;
+    const radius = (1 - inOut) * 36;
+    const textProgress = clamp((inOut - 0.6) / 0.4, 0, 1);
 
     section.style.setProperty("--work-progress", progress.toFixed(4));
     section.style.setProperty("--work-scale", scale.toFixed(4));
