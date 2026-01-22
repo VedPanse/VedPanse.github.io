@@ -38,12 +38,42 @@ const buildSequence = (icons, totalNeeded) => {
 const createIconCard = (icon) => {
   const card = document.createElement("div");
   card.className = "app-icon";
+  card.style.setProperty("--tile-bg", pickTileBackground(icon));
   const img = document.createElement("img");
   img.src = icon.src;
   img.alt = icon.label || "Language icon";
   img.loading = "lazy";
   card.appendChild(img);
   return card;
+};
+
+const PALETTE = [
+  ["#f9f9fb", "#eceff6"],
+  ["#f8fafc", "#eef2f8"],
+  ["#f9f6ff", "#eee7ff"],
+  ["#fff7f2", "#ffe8dd"],
+  ["#f4fbff", "#e5f2ff"],
+  ["#f7fff5", "#e8f7ee"],
+  ["#fffdf3", "#f7f0d8"],
+  ["#fef6fb", "#f4e7f1"],
+  ["#f3fbf8", "#e4f3ee"],
+  ["#f7f7f7", "#ededed"],
+];
+
+const hashString = (value) => {
+  let hash = 0;
+  for (let i = 0; i < value.length; i += 1) {
+    hash = (hash << 5) - hash + value.charCodeAt(i);
+    hash |= 0;
+  }
+  return Math.abs(hash);
+};
+
+const pickTileBackground = (icon) => {
+  const key = icon.label || icon.src || "icon";
+  const index = hashString(key) % PALETTE.length;
+  const [from, to] = PALETTE[index];
+  return `linear-gradient(180deg, ${from} 0%, ${to} 100%)`;
 };
 
 const getLayoutMetrics = (band) => {

@@ -213,7 +213,7 @@ main {
   width: var(--icon-size);
   height: var(--icon-size);
   border-radius: 22px;
-  background: linear-gradient(180deg, #ffffff 0%, #f5f5f7 100%);
+  background: var(--tile-bg, linear-gradient(180deg, #ffffff 0%, #f5f5f7 100%));
   border: 1px solid rgba(0, 0, 0, 0.08);
   box-shadow:
     0 16px 28px rgba(0, 0, 0, 0.35),
