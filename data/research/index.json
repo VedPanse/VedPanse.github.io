@@ -1,6 +1,6 @@
 [
-  "human-centered-eval.md",
-  "multimodal-agents.md",
-  "realtime-copilot.md",
-  "system-reliability.md"
+  "eval-is-unsolved.md",
+  "memory-is-fall.md",
+  "tool-use.md",
+  "where-multimodal-agents-actually-break.md"
 ]

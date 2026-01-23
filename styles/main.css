@@ -417,16 +417,22 @@ main {
 .blogs-media {
   width: 150px;
   height: 150px;
-  border-radius: 28px;
+  border-radius: var(--media-radius);
   display: grid;
   place-items: center;
   background: transparent;
+  overflow: hidden;
 }
 
 .research-media--icon,
 .blogs-media--icon {
   background: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.research-media--icon {
+  background: transparent;
+  border: none;
 }
 
 .blogs-media--icon {
@@ -451,7 +457,7 @@ main {
   object-fit: contain;
   display: block;
   filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.35));
-  border-radius: 20px;
+  border-radius: var(--media-image-radius);
 }
 
 .research-content,
