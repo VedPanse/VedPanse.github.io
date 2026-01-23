@@ -43,14 +43,38 @@
                 d="M15.5 4.5c-3.9 0-7 3.1-7 7 0 3.3 2.2 6.1 5.3 6.8 3.4.7 6.8-1 8.2-4.1-2.8.7-5.7-.1-7.4-2-1.7-1.9-2-4.7-.8-6.7-.6-.1-1.1-.2-1.7-.2z" />
             </svg>
           </button>
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            <circle cx="11" cy="11" r="6.5" />
-            <line x1="16" y1="16" x2="21" y2="21" />
-          </svg>
+          <button class="nav-search" type="button" data-search-toggle aria-label="Open search">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <circle cx="11" cy="11" r="6.5" />
+              <line x1="16" y1="16" x2="21" y2="21" />
+            </svg>
+          </button>
         </div>
       </div>
     </nav>
   </header>
+
+  <div class="search-overlay" data-search-overlay aria-hidden="true">
+    <div class="search-panel" role="dialog" aria-modal="true" aria-label="Site search">
+      <div class="search-input-row">
+        <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <circle cx="11" cy="11" r="6.5" />
+          <line x1="16" y1="16" x2="21" y2="21" />
+        </svg>
+        <input type="search" placeholder="Search vedpanse.com" data-search-input />
+      </div>
+      <div class="search-recommendations">
+        <p class="search-kicker">Quick Links</p>
+        <ul>
+          <li><a href="index.html#work">Selected Work</a></li>
+          <li><a href="index.html#projects">Project Archive</a></li>
+          <li><a href="index.html#research">Research Updates</a></li>
+          <li><a href="index.html#blogs">Blog Posts</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
 
   <nav class="blog-subnav" aria-label="Research navigation">
     <div class="blog-subnav-inner">

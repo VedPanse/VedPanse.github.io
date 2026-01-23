@@ -6,6 +6,7 @@ import { initNavHighlight } from "./nav.js";
 import { initResearch } from "./research.js";
 import { initBlogs } from "./blogs.js";
 import { initContactForm } from "./contact.js";
+import { initSearchOverlay } from "./search.js";
 
 const initThemeToggle = () => {
   const toggle = document.querySelector("[data-theme-toggle]");
@@ -45,6 +46,7 @@ const bootstrap = () => {
   initBlogs();
   initContactForm();
   initThemeToggle();
+  initSearchOverlay();
 };
 
 bootstrap();
