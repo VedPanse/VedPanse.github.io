@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog Post | Ved Panse</title>
+  <meta name="description" content="Blog post from Ved Panse." />
+  <meta name="theme-color" content="#000000" />
+  <link rel="icon" href="img.png" />
+  <link rel="stylesheet" href="styles/app.css" />
+  <link rel="stylesheet" href="styles/blog.css" />
+</head>
+
+<body class="blog-view">
+  <header class="site-header">
+    <nav class="global-nav" aria-label="Primary">
+      <div class="nav-inner">
+        <a class="nav-logo" href="index.html" aria-label="Home" data-content="name">Ved Panse</a>
+        <div class="nav-links">
+          <a href="index.html#icon-columns">About</a>
+          <a href="index.html#work">Work</a>
+          <a href="index.html#research">Research</a>
+          <a href="index.html#current-focus">Current Focus</a>
+          <a href="index.html#blogs">Blogs</a>
+          <a href="index.html#contact">Contact</a>
+        </div>
+        <div class="nav-icons">
+          <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to light theme">
+            <svg class="theme-icon theme-icon--sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <circle cx="12" cy="12" r="4.5" />
+              <line x1="12" y1="1.5" x2="12" y2="4" />
+              <line x1="12" y1="20" x2="12" y2="22.5" />
+              <line x1="1.5" y1="12" x2="4" y2="12" />
+              <line x1="20" y1="12" x2="22.5" y2="12" />
+              <line x1="4.2" y1="4.2" x2="6.1" y2="6.1" />
+              <line x1="17.9" y1="17.9" x2="19.8" y2="19.8" />
+              <line x1="4.2" y1="19.8" x2="6.1" y2="17.9" />
+              <line x1="17.9" y1="6.1" x2="19.8" y2="4.2" />
+            </svg>
+            <svg class="theme-icon theme-icon--moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path
+                d="M15.5 4.5c-3.9 0-7 3.1-7 7 0 3.3 2.2 6.1 5.3 6.8 3.4.7 6.8-1 8.2-4.1-2.8.7-5.7-.1-7.4-2-1.7-1.9-2-4.7-.8-6.7-.6-.1-1.1-.2-1.7-.2z" />
+            </svg>
+          </button>
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <circle cx="11" cy="11" r="6.5" />
+            <line x1="16" y1="16" x2="21" y2="21" />
+          </svg>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <nav class="blog-subnav" aria-label="Blog navigation">
+    <div class="blog-subnav-inner">
+      <span class="blog-subnav-title">Blogs</span>
+      <div class="blog-subnav-links">
+        <a href="index.html#blogs">All Posts</a>
+        <a href="index.html#blogs">Deep Dives</a>
+        <a href="index.html#blogs">Build Logs</a>
+        <span class="blog-subnav-search">Search Blogs</span>
+      </div>
+    </div>
+  </nav>
+
+  <main class="blog-page" aria-live="polite">
+    <section class="blog-hero" aria-labelledby="blog-title">
+      <div class="blog-hero-inner">
+        <p class="blog-label" data-blog-label></p>
+        <p class="blog-date" data-blog-date></p>
+        <h1 id="blog-title" class="blog-title" data-blog-title></h1>
+        <p class="blog-dek" data-blog-excerpt></p>
+      </div>
+    </section>
+
+    <section class="blog-body" aria-label="Blog content">
+      <div class="blog-content" data-blog-content></div>
+    </section>
+  </main>
+
+  <script type="module" src="scripts/blog-post.js"></script>
+  <script type="module" src="scripts/main.js"></script>
+</body>
+
+</html>

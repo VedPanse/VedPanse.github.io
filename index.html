@@ -16,7 +16,7 @@
   />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#000000" />
-  <meta name="color-scheme" content="dark" />
+  <meta name="color-scheme" content="light dark" />
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Ved Panse | Product Engineer & AI Builder" />
@@ -33,6 +33,8 @@
     content="Product engineer and AI builder crafting high-quality software and intelligent systems."
   />
   <meta name="twitter:image" content="img.png" />
+  <link rel="icon" href="img.png" />
+  <link rel="stylesheet" href="styles/app.css" />
   <link rel="stylesheet" href="styles/main.css" />
 </head>
 
@@ -46,9 +48,26 @@
           <a href="#work">Work</a>
           <a href="#research">Research</a>
           <a href="#current-focus">Current Focus</a>
+          <a href="#blogs">Blogs</a>
           <a href="#contact">Contact</a>
         </div>
-        <div class="nav-icons" aria-hidden="true">
+        <div class="nav-icons">
+          <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to light theme">
+            <svg class="theme-icon theme-icon--sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <circle cx="12" cy="12" r="4.5" />
+              <line x1="12" y1="1.5" x2="12" y2="4" />
+              <line x1="12" y1="20" x2="12" y2="22.5" />
+              <line x1="1.5" y1="12" x2="4" y2="12" />
+              <line x1="20" y1="12" x2="22.5" y2="12" />
+              <line x1="4.2" y1="4.2" x2="6.1" y2="6.1" />
+              <line x1="17.9" y1="17.9" x2="19.8" y2="19.8" />
+              <line x1="4.2" y1="19.8" x2="6.1" y2="17.9" />
+              <line x1="17.9" y1="6.1" x2="19.8" y2="4.2" />
+            </svg>
+            <svg class="theme-icon theme-icon--moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M15.5 4.5c-3.9 0-7 3.1-7 7 0 3.3 2.2 6.1 5.3 6.8 3.4.7 6.8-1 8.2-4.1-2.8.7-5.7-.1-7.4-2-1.7-1.9-2-4.7-.8-6.7-.6-.1-1.1-.2-1.7-.2z" />
+            </svg>
+          </button>
           <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
             <circle cx="11" cy="11" r="6.5" />
             <line x1="16" y1="16" x2="21" y2="21" />
@@ -126,10 +145,17 @@
       </div>
     </section>
 
+    <section id="blogs" class="blogs-section" aria-labelledby="blogs-title">
+      <div class="blogs-inner">
+        <h2 id="blogs-title">Blogs</h2>
+        <div class="blogs-grid" data-blogs-grid></div>
+      </div>
+    </section>
+
     <section id="contact" class="contact-section" aria-labelledby="contact-title">
       <div class="contact-inner">
         <h2 id="contact-title">Contact</h2>
-        <form class="contact-card" aria-label="Contact form" data-contact-form novalidate>
+        <form class="contact-card" aria-label="Contact form" data-contact-form novalidate method="POST" action="https://formspree.io/f/xdoyprne">
           <label class="contact-field">
             <span class="contact-label">Email Address</span>
             <input type="email" name="email" placeholder="you@example.com" autocomplete="email" required />
