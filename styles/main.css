@@ -480,6 +480,22 @@ main {
   font-size: 14px;
 }
 
+.research-item-link {
+  display: block;
+  color: inherit;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.research-item-link:hover {
+  transform: translateY(-2px);
+}
+
+.research-item-link:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.7);
+  outline-offset: 6px;
+  border-radius: 28px;
+}
+
 .blogs-item-link {
   display: block;
   color: inherit;
@@ -903,6 +919,10 @@ html[data-theme="light"] .blogs-divider {
 }
 
 html[data-theme="light"] .blogs-item-link:focus-visible {
+  outline: 2px solid rgba(0, 0, 0, 0.5);
+}
+
+html[data-theme="light"] .research-item-link:focus-visible {
   outline: 2px solid rgba(0, 0, 0, 0.5);
 }
 
