@@ -221,13 +221,13 @@ html[data-theme="light"] .theme-icon--moon {
   top: var(--nav-height);
   left: 0;
   right: 0;
-  height: 55vh;
   background: var(--nav-bg);
   backdrop-filter: blur(24px);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.2s ease;
   z-index: 9;
+  padding-bottom: 55px;
 }
 
 .search-overlay.is-open {
@@ -317,11 +317,23 @@ html[data-theme="light"] .theme-icon--moon {
   gap: 10px;
   font-size: 16px;
   color: var(--text);
+  cursor: pointer;
 }
 
 .search-recommendations a::before {
   content: "→";
   color: color-mix(in srgb, var(--text) 60%, transparent);
+}
+
+.search-tag {
+  margin-left: 10px;
+  font-size: 12px;
+  color: color-mix(in srgb, var(--text) 55%, transparent);
+}
+
+.search-empty {
+  font-size: 14px;
+  color: color-mix(in srgb, var(--text) 55%, transparent);
 }
 
 .is-search-open {
