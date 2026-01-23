@@ -6,7 +6,7 @@ excerpt: Most agents fail not because they can’t use tools, but because they d
 ---
 # Tool use isn’t the hard part — knowing when not to is
 
-![Minimal pixel UI elements branching and looping on a dark grid](assets/banners/tools.png)
+![](assets/banners/tools.png)
 
 Tool use looks impressive in demos.
 

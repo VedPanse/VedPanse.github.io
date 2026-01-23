@@ -6,7 +6,7 @@ excerpt: We know how to build capable agents. We still don’t know how to tell 
 ---
 # Evaluation is the real unsolved problem
 
-![Minimal pixel gradient fading from blue to red, breaking into scattered blocks](assets/banners/evaluation.png)
+![](assets/banners/evaluation.png)
 
 Most conversations about agentic systems focus on capability.
 

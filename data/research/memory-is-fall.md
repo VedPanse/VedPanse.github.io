@@ -6,7 +6,7 @@ excerpt: Most long-horizon failures I’ve seen don’t come from forgetting. Th
 ---
 # Memory is where agents quietly fall apart
 
-![Minimal pixel blocks drifting on a dark background, some fading, some repeating](assets/banners/memory.png)
+![](assets/banners/memory.png)
 
 When agents fail, it’s usually not in a way that draws attention.
 
