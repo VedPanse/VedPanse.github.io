@@ -1,9 +1,5 @@
-const RESEARCH_FILES = [
-  "data/research/multimodal-agents.md",
-  "data/research/realtime-copilot.md",
-  "data/research/system-reliability.md",
-  "data/research/human-centered-eval.md",
-];
+const RESEARCH_DIR = "data/research";
+const RESEARCH_INDEX_URL = `${RESEARCH_DIR}/index.json`;
 
 const createElement = (tag, className) => {
   const element = document.createElement(tag);
@@ -52,9 +48,29 @@ const parseDateValue = (value) => {
   return Number.isNaN(parsed) ? 0 : parsed;
 };
 
+const listResearchFiles = async () => {
+  const indexResponse = await fetch(RESEARCH_INDEX_URL);
+  if (indexResponse.ok) {
+    const indexData = await indexResponse.json();
+    if (Array.isArray(indexData)) {
+      return indexData.map((file) => (file.startsWith(RESEARCH_DIR) ? file : `${RESEARCH_DIR}/${file}`));
+    }
+  }
+
+  const dirResponse = await fetch(`${RESEARCH_DIR}/`);
+  if (!dirResponse.ok) return [];
+  const html = await dirResponse.text();
+  const doc = new DOMParser().parseFromString(html, "text/html");
+  return Array.from(doc.querySelectorAll("a"))
+    .map((link) => link.getAttribute("href"))
+    .filter((href) => href && href.endsWith(".md"))
+    .map((href) => (href.startsWith(RESEARCH_DIR) ? href : `${RESEARCH_DIR}/${href}`));
+};
+
 const loadResearch = async () => {
+  const files = await listResearchFiles();
   const items = await Promise.all(
-    RESEARCH_FILES.map(async (file) => {
+    files.map(async (file) => {
       const response = await fetch(file);
       if (!response.ok) return null;
       const markdown = await response.text();

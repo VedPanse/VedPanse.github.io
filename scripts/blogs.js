@@ -1,9 +1,5 @@
-const BLOG_FILES = [
-  "data/blogs/real-time-eval.md",
-  "data/blogs/design-system.md",
-  "data/blogs/field-deployments.md",
-  "data/blogs/performance-budgets.md",
-];
+const BLOGS_DIR = "data/blogs";
+const BLOG_INDEX_URL = `${BLOGS_DIR}/index.json`;
 
 const createElement = (tag, className) => {
   const element = document.createElement(tag);
@@ -52,9 +48,29 @@ const parseDateValue = (value) => {
   return Number.isNaN(parsed) ? 0 : parsed;
 };
 
+const listBlogFiles = async () => {
+  const indexResponse = await fetch(BLOG_INDEX_URL);
+  if (indexResponse.ok) {
+    const indexData = await indexResponse.json();
+    if (Array.isArray(indexData)) {
+      return indexData.map((file) => (file.startsWith(BLOGS_DIR) ? file : `${BLOGS_DIR}/${file}`));
+    }
+  }
+
+  const dirResponse = await fetch(`${BLOGS_DIR}/`);
+  if (!dirResponse.ok) return [];
+  const html = await dirResponse.text();
+  const doc = new DOMParser().parseFromString(html, "text/html");
+  return Array.from(doc.querySelectorAll("a"))
+    .map((link) => link.getAttribute("href"))
+    .filter((href) => href && href.endsWith(".md"))
+    .map((href) => (href.startsWith(BLOGS_DIR) ? href : `${BLOGS_DIR}/${href}`));
+};
+
 const loadBlogs = async () => {
+  const files = await listBlogFiles();
   const items = await Promise.all(
-    BLOG_FILES.map(async (file) => {
+    files.map(async (file) => {
       const response = await fetch(file);
       if (!response.ok) return null;
       const markdown = await response.text();

@@ -1,42 +1,53 @@
 {
   "projects": [
     {
-      "name": "Pixelmator Pro",
-      "accent": "#ff2d55",
-      "description": "lets everyone edit images and create striking graphics using powerful intelligence.",
+      "name": "Falcon Eye",
+      "accent": "#ff9f0a",
+      "description": "is synthetic vision and terrain-aware flight assistance system delivering real-time 3D perception for low-visibility aviation.",
+      "stack": [
+        { "src": "assets/cpp.png", "label": "C++" },
+        { "src": "assets/rust.png", "label": "Rust" },
+        { "src": "assets/python.png", "label": "Python" }
+      ]
+    },
+    {
+      "name": "Ion",
+      "accent": "#0a84ff",
+      "description": "is AI-powered 3D hardware blueprinting system that auto-detects components, renders wiring in real time, and generates safe starter code.",
+      "stack": [
+        { "src": "assets/rust.png", "label": "Rust" },
+        { "src": "assets/tauri.svg", "label": "Tauri" },
+        { "src": "assets/python.png", "label": "Python" }
+      ]
+    },
+    {
+      "name": "Siri++",
+      "accent": "#bf5af2",
+      "description": "is a multimodal, agentic personal assistant that orchestrates real workflows across apps, voice, images, and system context.",
       "stack": [
         { "src": "assets/swift.png", "label": "Swift" },
-        { "src": "assets/cpp.png", "label": "C++" },
-        { "src": "assets/python.png", "label": "Python" },
-        { "src": "assets/rust.png", "label": "Rust" },
-        { "src": "assets/c.png", "label": "C" },
-        { "src": "assets/go.png", "label": "Go" }
+        { "src": "assets/langchain.png", "label": "LangChain" },
+        { "src": "assets/python.png", "label": "Python" }
       ]
     },
     {
-      "name": "Atlas Field Notes",
+      "name": "Halo",
       "accent": "#34c759",
-      "description": "keeps research teams synced with offline-first collaboration.",
+      "description": "is disaster-resilient mesh-network and survivor-localization system designed to operate entirely offline under extreme conditions.",
       "stack": [
+        { "src": "assets/swift.png", "label": "Swift" },
         { "src": "assets/kotlin.png", "label": "Kotlin" },
-        { "src": "assets/java.png", "label": "Java" },
-        { "src": "assets/dart.png", "label": "Dart" },
-        { "src": "assets/flutter-tech.png", "label": "Flutter" },
-        { "src": "assets/android-tech.png", "label": "Android" },
-        { "src": "assets/github-tech.svg", "label": "GitHub" }
+        { "src": "assets/langchain.png", "label": "LangChain" }
       ]
     },
     {
-      "name": "Nova Desk",
-      "accent": "#5ac8fa",
-      "description": "is a realtime productivity cockpit for AI-native teams.",
+      "name": "Shardwise",
+      "accent": "#ff375f",
+      "description": "is a distributed sharding and execution layer that decomposes complex workloads into coordinated, scalable execution units.",
       "stack": [
-        { "src": "assets/html.png", "label": "HTML" },
-        { "src": "assets/css.png", "label": "CSS" },
-        { "src": "assets/js.png", "label": "JavaScript" },
-        { "src": "assets/ts.webp", "label": "TypeScript" },
+        { "src": "assets/go.png", "label": "Go" },
         { "src": "assets/rust.png", "label": "Rust" },
-        { "src": "assets/go.png", "label": "Go" }
+        { "src": "assets/python.png", "label": "Python" }
       ]
     }
   ]

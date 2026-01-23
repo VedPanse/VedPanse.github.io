@@ -415,8 +415,8 @@ main {
 
 .research-media,
 .blogs-media {
-  width: 120px;
-  height: 120px;
+  width: 150px;
+  height: 150px;
   border-radius: 28px;
   display: grid;
   place-items: center;
@@ -446,11 +446,12 @@ main {
 
 .research-media img,
 .blogs-media img {
-  width: 70%;
-  height: 70%;
+  width: 78%;
+  height: 78%;
   object-fit: contain;
   display: block;
   filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.35));
+  border-radius: 20px;
 }
 
 .research-content,
