@@ -221,8 +221,7 @@ html[data-theme="light"] .theme-icon--moon {
   top: var(--nav-height);
   left: 0;
   right: 0;
-  height: auto;
-  padding-bottom: 55px;
+  height: 55vh;
   background: var(--nav-bg);
   backdrop-filter: blur(24px);
   opacity: 0;
