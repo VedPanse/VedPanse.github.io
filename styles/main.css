@@ -196,10 +196,10 @@ main {
   grid-auto-columns: 100%;
   gap: 32px;
   overflow-x: auto;
-  padding: 24px 0 60px;
+  padding: 24px 2.5vw 60px;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-  scroll-padding: 0;
+  scroll-padding: 0 2.5vw;
   overscroll-behavior-x: contain;
   touch-action: pan-y;
   scrollbar-width: none;
@@ -218,7 +218,7 @@ main {
   display: flex;
   justify-content: center;
   width: 95vw;
-  background: linear-gradient(180deg, #222225 0%, #1a1a1d 100%);
+  background: #262626;
   border-radius: 36px;
   padding: clamp(32px, 6vw, 64px);
   min-height: min(78vh, 720px);
@@ -228,10 +228,46 @@ main {
   display: grid;
   grid-template-rows: auto 1fr;
   gap: 36px;
+  position: relative;
+}
+
+.project-card::after {
+  content: "";
+  position: absolute;
+  right: 28px;
+  bottom: 28px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  right: 28px;
+  bottom: 28px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background:
+    linear-gradient(#000000, #000000) center/16px 2px no-repeat,
+    linear-gradient(#000000, #000000) center/2px 16px no-repeat;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.project-card:hover {
+  cursor: pointer;
 }
 
 .project-card-inner {
   width: 100%;
+  position: relative;
+  z-index: 1;
 }
 
 .project-stack {
@@ -864,7 +900,7 @@ html[data-theme="light"] .work-section {
 }
 
 html[data-theme="light"] .project-card {
-  background: linear-gradient(180deg, #ffffff 0%, #f0f0f4 100%);
+  background: #333333;
   box-shadow:
     0 20px 60px rgba(15, 15, 16, 0.12),
     inset 0 1px 0 rgba(255, 255, 255, 0.9);

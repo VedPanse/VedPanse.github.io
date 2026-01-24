@@ -26,6 +26,11 @@ const buildStackColumns = (stack) => {
 const renderCard = (project) => {
   const card = createElement("article", "project-card");
   card.setAttribute("data-project", "");
+  if (project.url) {
+    card.setAttribute("tabindex", "0");
+    card.setAttribute("role", "link");
+    card.setAttribute("data-project-url", project.url);
+  }
 
   const inner = createElement("div", "project-card-inner");
   if (project.accent) {
@@ -247,6 +252,27 @@ export const initProjectsCarousel = async () => {
   dots.forEach((dot, index) => {
     dot.addEventListener("click", () => {
       goToIndex(index);
+    });
+  });
+
+  cards.forEach((card, index) => {
+    const project = projects[index];
+    const url = project && project.url ? project.url : "";
+    if (!url) return;
+    const openLink = () => {
+      window.open(url, "_blank", "noopener");
+    };
+
+    card.addEventListener("click", () => {
+      if (isUserScrolling) return;
+      openLink();
+    });
+
+    card.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        openLink();
+      }
     });
   });
 

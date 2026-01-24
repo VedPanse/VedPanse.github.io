@@ -4,6 +4,7 @@
       "name": "Falcon Eye",
       "accent": "#ff9f0a",
       "description": "is synthetic vision and terrain-aware flight assistance system delivering real-time 3D perception for low-visibility aviation.",
+      "url": "",
       "stack": [
         { "src": "assets/cpp.png", "label": "C++" },
         { "src": "assets/rust.png", "label": "Rust" },
@@ -14,6 +15,7 @@
       "name": "Ion",
       "accent": "#0a84ff",
       "description": "is AI-powered 3D hardware blueprinting system that auto-detects components, renders wiring in real time, and generates safe starter code.",
+      "url": "https://youtu.be/sX_8WW7cI7I",
       "stack": [
         { "src": "assets/rust.png", "label": "Rust" },
         { "src": "assets/tauri.svg", "label": "Tauri" },
@@ -24,6 +26,7 @@
       "name": "Siri++",
       "accent": "#bf5af2",
       "description": "is a multimodal, agentic personal assistant that orchestrates real workflows across apps, voice, images, and system context.",
+      "url": "https://github.com/VedPanse/SiriPlusPlus",
       "stack": [
         { "src": "assets/swift.png", "label": "Swift" },
         { "src": "assets/langchain.png", "label": "LangChain" },
@@ -31,9 +34,10 @@
       ]
     },
     {
-      "name": "Halo",
+      "name": "Pulse",
       "accent": "#34c759",
       "description": "is disaster-resilient mesh-network and survivor-localization system designed to operate entirely offline under extreme conditions.",
+      "url": "https://github.com/VedPanse/Pulse",
       "stack": [
         { "src": "assets/swift.png", "label": "Swift" },
         { "src": "assets/kotlin.png", "label": "Kotlin" },
@@ -44,6 +48,7 @@
       "name": "Shardwise",
       "accent": "#ff375f",
       "description": "is a distributed sharding and execution layer that decomposes complex workloads into coordinated, scalable execution units.",
+      "url": "",
       "stack": [
         { "src": "assets/go.png", "label": "Go" },
         { "src": "assets/rust.png", "label": "Rust" },
