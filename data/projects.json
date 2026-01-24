@@ -71,7 +71,7 @@
       "description": "is a page-bound MFA system that prevents phishing and fake checkouts during online payments.",
       "longTitle": "GhostPIN cryptographically binds payments to real merchant pages.",
       "details": "GhostPIN secures online payments by binding user authentication to the actual merchant page rather than just the session. It combines server-signed visual nonces with adaptive MFA so transactions cannot be replayed on phishing or injected checkout pages, acting as a missing trust layer for web commerce.",
-      "url": "",
+      "url": "https://github.com/dannypeelen/ghostpin",
       "stack": [
         { "src": "assets/js.png", "label": "JavaScript" },
         { "src": "assets/ts.webp", "label": "TypeScript" },
@@ -85,7 +85,6 @@
       "longTitle": "Flux optimizes payment decisions to maximize rewards and minimize lost value.",
       "details": "Flux evaluates purchase context against card rewards, caps, expirations, and offer rules to recommend the highest-value payment method in real time. It focuses on decision optimization rather than dashboards, helping users quantify value gained versus value left on the table.",
       "url": "",
-      "status": "Coming Soon",
       "stack": [
         { "src": "assets/kotlin.png", "label": "Kotlin" },
         { "src": "assets/ts.webp", "label": "TypeScript" },
