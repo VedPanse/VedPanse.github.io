@@ -3,22 +3,22 @@
     {
       "name": "Falcon Eye",
       "accent": "#ff9f0a",
-      "description": "is synthetic vision and terrain-aware flight assistance system delivering real-time 3D perception for low-visibility aviation.",
-      "longTitle": "Falcon Eye delivers synthetic vision with terrain-aware guidance for low-visibility aviation.",
-      "details": "Falcon Eye fuses onboard sensors with 3D terrain models to reconstruct the flight corridor in real time. It prioritizes latency, clarity, and robust failover to keep pilots oriented when traditional visibility breaks down.",
+      "description": "is a synthetic vision and terrain-aware flight assistance system delivering real-time 3D perception for low-visibility aviation.",
+      "longTitle": "Falcon Eye delivers real-time synthetic vision for safe low-visibility flight.",
+      "details": "Falcon Eye reconstructs surrounding terrain and obstacles into a real-time 3D flight corridor, helping pilots maintain spatial awareness when visual cues are lost. The system is optimized for low-latency rendering on constrained hardware and prioritizes robustness, clarity, and pilot-first situational awareness.",
       "url": "",
       "stack": [
         { "src": "assets/cpp.png", "label": "C++" },
-        { "src": "assets/rust.png", "label": "Rust" },
+        { "src": "assets/c.png", "label": "C" },
         { "src": "assets/python.png", "label": "Python" }
       ]
     },
     {
       "name": "Ion",
       "accent": "#0a84ff",
-      "description": "is AI-powered 3D hardware blueprinting system that auto-detects components, renders wiring in real time, and generates safe starter code.",
-      "longTitle": "Ion maps real hardware into a live 3D blueprint with instant wiring and code generation.",
-      "details": "Ion detects parts, infers connectivity, and visualizes electrical paths in a spatial model as you build. It outputs safe starter firmware and a structured BOM, helping teams move from bench prototypes to production-ready schematics.",
+      "description": "is an AI-powered 3D hardware blueprinting system that auto-detects components, renders wiring in real time, and generates safe starter code.",
+      "longTitle": "Ion converts physical hardware into a live 3D blueprint with wiring and code generation.",
+      "details": "Ion detects microcontrollers and peripherals, infers connectivity, and renders a live wiring blueprint as hardware is assembled. It produces structured connection graphs, flags unsafe wiring patterns, and generates starter firmware—bridging the gap between bench prototypes and production-ready schematics.",
       "url": "https://youtu.be/sX_8WW7cI7I",
       "stack": [
         { "src": "assets/rust.png", "label": "Rust" },
@@ -29,40 +29,67 @@
     {
       "name": "Siri++",
       "accent": "#bf5af2",
-      "description": "is a multimodal, agentic personal assistant that orchestrates real workflows across apps, voice, images, and system context.",
-      "longTitle": "Siri++ orchestrates multimodal workflows across apps, voice, and visual context.",
-      "details": "Siri++ chains intent, memory, and tool-use across desktop and mobile contexts. It can reason over images, execute multi-step actions, and maintain continuity across tasks without breaking flow.",
+      "description": "is a multimodal, agentic personal assistant that orchestrates workflows across apps using voice, images, and system context.",
+      "longTitle": "Siri++ executes real workflows using multimodal understanding and persistent context.",
+      "details": "Siri++ combines multimodal input (text, voice, images) with structured memory and tool execution to complete multi-step tasks across apps. It maintains continuity across sessions and focuses on end-to-end workflow completion rather than single-turn commands.",
       "url": "https://github.com/VedPanse/SiriPlusPlus",
       "stack": [
         { "src": "assets/swift.png", "label": "Swift" },
-        { "src": "assets/langchain.png", "label": "LangChain" },
-        { "src": "assets/python.png", "label": "Python" }
+        { "src": "assets/python.png", "label": "Python" },
+        { "src": "assets/langchain.png", "label": "LangChain" }
       ]
     },
     {
       "name": "Pulse",
       "accent": "#34c759",
-      "description": "is disaster-resilient mesh-network and survivor-localization system designed to operate entirely offline under extreme conditions.",
-      "longTitle": "Pulse builds an offline-first mesh for disaster response and survivor localization.",
-      "details": "Pulse forms a resilient ad-hoc network that keeps critical messaging and location data flowing when infrastructure collapses. It balances power efficiency, hop-by-hop reliability, and survivability across hostile environments.",
+      "description": "is a disaster-resilient mesh-network and survivor-localization system designed to operate entirely offline.",
+      "longTitle": "Pulse enables offline mesh communication and survivor localization during disasters.",
+      "details": "Pulse forms an ad-hoc, offline-first mesh network that supports SOS messaging and location sharing when infrastructure fails. It prioritizes low-power operation, hop-by-hop reliability, and graceful degradation under extreme conditions.",
       "url": "https://github.com/VedPanse/Pulse",
       "stack": [
-        { "src": "assets/swift.png", "label": "Swift" },
         { "src": "assets/kotlin.png", "label": "Kotlin" },
-        { "src": "assets/langchain.png", "label": "LangChain" }
+        { "src": "assets/swift.png", "label": "Swift" },
+        { "src": "assets/android-tech.png", "label": "Android" }
       ]
     },
     {
       "name": "Shardwise",
       "accent": "#ff375f",
-      "description": "is a distributed sharding and execution layer that decomposes complex workloads into coordinated, scalable execution units.",
-      "longTitle": "Shardwise decomposes large workloads into coordinated, scalable execution shards.",
-      "details": "Shardwise partitions compute into deterministic shards with built-in coordination and retry semantics. It targets predictable throughput under heavy load, with observability hooks that surface shard health and latency hotspots.",
+      "description": "is a distributed sharding and execution layer that decomposes large workloads into coordinated execution units.",
+      "longTitle": "Shardwise breaks large workloads into coordinated, scalable execution shards.",
+      "details": "Shardwise partitions compute into deterministic shards with explicit coordination and retry semantics. It is designed for predictable throughput under load, with visibility into shard-level latency and failure behavior.",
       "url": "",
       "stack": [
         { "src": "assets/go.png", "label": "Go" },
         { "src": "assets/rust.png", "label": "Rust" },
         { "src": "assets/python.png", "label": "Python" }
+      ]
+    },
+    {
+      "name": "GhostPIN",
+      "accent": "#ff9f0a",
+      "description": "is a page-bound MFA system that prevents phishing and fake checkouts during online payments.",
+      "longTitle": "GhostPIN cryptographically binds payments to real merchant pages.",
+      "details": "GhostPIN secures online payments by binding user authentication to the actual merchant page rather than just the session. It combines server-signed visual nonces with adaptive MFA so transactions cannot be replayed on phishing or injected checkout pages, acting as a missing trust layer for web commerce.",
+      "url": "",
+      "stack": [
+        { "src": "assets/js.png", "label": "JavaScript" },
+        { "src": "assets/ts.webp", "label": "TypeScript" },
+        { "src": "assets/go.png", "label": "Go" }
+      ]
+    },
+    {
+      "name": "Flux",
+      "accent": "#0a84ff",
+      "description": "is a real-time decision engine that recommends the optimal credit card or payment method for each purchase.",
+      "longTitle": "Flux optimizes payment decisions to maximize rewards and minimize lost value.",
+      "details": "Flux evaluates purchase context against card rewards, caps, expirations, and offer rules to recommend the highest-value payment method in real time. It focuses on decision optimization rather than dashboards, helping users quantify value gained versus value left on the table.",
+      "url": "",
+      "status": "Coming Soon",
+      "stack": [
+        { "src": "assets/kotlin.png", "label": "Kotlin" },
+        { "src": "assets/ts.webp", "label": "TypeScript" },
+        { "src": "assets/go.png", "label": "Go" }
       ]
     }
   ]
