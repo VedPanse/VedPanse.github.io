@@ -193,13 +193,14 @@ main {
 .projects-carousel {
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: 100%;
+  --project-card-width: min(980px, 90vw);
+  grid-auto-columns: var(--project-card-width);
   gap: 32px;
   overflow-x: auto;
-  padding: 24px 2.5vw 60px;
+  padding: 24px max(24px, calc((100vw - var(--project-card-width)) / 2)) 60px;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-  scroll-padding: 0 2.5vw;
+  scroll-padding: 0 max(24px, calc((100vw - var(--project-card-width)) / 2));
   overscroll-behavior-x: contain;
   touch-action: pan-y;
   scrollbar-width: none;
@@ -217,18 +218,19 @@ main {
   opacity: var(--card-opacity, 0.82);
   display: flex;
   justify-content: center;
-  width: 95vw;
-  background: #262626;
+  width: 100%;
+  background: transparent;
   border-radius: 36px;
-  padding: clamp(32px, 6vw, 64px);
+  padding: 0;
   min-height: min(78vh, 720px);
-  box-shadow:
-    0 20px 60px rgba(0, 0, 0, 0.45),
-    inset 0 1px 0 rgba(255, 255, 255, 0.05);
-  display: grid;
-  grid-template-rows: auto 1fr;
-  gap: 36px;
   position: relative;
+  perspective: 1800px;
+}
+
+@media (max-width: 1068px) {
+  .projects-carousel {
+    --project-card-width: min(692px, 92vw);
+  }
 }
 
 .project-card::after {
@@ -243,6 +245,7 @@ main {
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
   pointer-events: none;
   z-index: 2;
+  transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
 .project-card::before {
@@ -258,16 +261,205 @@ main {
     linear-gradient(#000000, #000000) center/2px 16px no-repeat;
   pointer-events: none;
   z-index: 3;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.project-card.is-flipped::before,
+.project-card.is-flipped::after {
+  opacity: 0;
+  transform: scale(0.9);
 }
 
 .project-card:hover {
   cursor: pointer;
 }
 
+.project-card-rotator {
+  position: relative;
+  width: 100%;
+  min-height: min(78vh, 720px);
+  transform-style: preserve-3d;
+  transition: transform 0.75s ease;
+}
+
+.project-card.is-flipped .project-card-rotator {
+  transform: rotateY(180deg);
+}
+
+.project-card.is-flipped .project-card-face--front {
+  pointer-events: none;
+}
+
+.project-card:not(.is-flipped) .project-card-face--back {
+  pointer-events: none;
+}
+
+.project-card-face {
+  position: absolute;
+  inset: 0;
+  border-radius: 36px;
+  backface-visibility: hidden;
+  background: #262626;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  padding: clamp(32px, 6vw, 64px);
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 36px;
+}
+
+.project-card-face--back {
+  transform: rotateY(180deg);
+  background: rgb(255, 255, 255);
+  color: rgb(29, 29, 31);
+  grid-template-rows: 1fr;
+  place-items: center;
+  text-align: left;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
 .project-card-inner {
   width: 100%;
   position: relative;
   z-index: 1;
+}
+
+.project-card-back {
+  width: 40%;
+  max-width: 40%;
+  display: grid;
+  gap: 16px;
+  justify-items: start;
+}
+
+.project-card-face--back p {
+  font-size: 17px;
+  line-height: 1.47059;
+  font-weight: 400;
+  letter-spacing: -0.022em;
+  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: rgb(255, 255, 255);
+  color: rgb(29, 29, 31);
+  font-style: normal;
+}
+
+.project-back-title {
+  font-size: 21px;
+  line-height: 1.19048;
+  font-weight: 600;
+  letter-spacing: 0.011em;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  color: rgb(29, 29, 31);
+  margin: 0;
+}
+
+.project-back-description {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.47059;
+  font-weight: 400;
+  letter-spacing: -0.022em;
+  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: rgb(255, 255, 255);
+  color: rgb(29, 29, 31);
+  font-style: normal;
+  max-width: 640px;
+}
+
+.project-back-stack {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.47059;
+  font-weight: 400;
+  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: rgb(255, 255, 255);
+  color: #1d1d1f;
+  font-style: normal;
+}
+
+.project-back-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.project-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: #0071e3;
+  font-size: 17px;
+  line-height: 1.47059;
+  font-weight: 400;
+  letter-spacing: -0.022em;
+  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.project-back-link::after {
+  content: ">";
+  font-size: 18px;
+  line-height: 1;
+}
+
+.project-back-link:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+.project-back-link:focus-visible {
+  outline: 2px solid rgba(15, 15, 16, 0.5);
+  outline-offset: 3px;
+}
+
+.project-back-link.is-disabled {
+  color: rgba(29, 29, 31, 0.4);
+  text-decoration: none;
+  cursor: not-allowed;
+}
+
+.project-back-close {
+  position: absolute;
+  right: 32px;
+  bottom: 32px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(28, 28, 30, 0.6);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.18);
+  cursor: pointer;
+}
+
+.project-back-close::before,
+.project-back-close::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 2px;
+  background: #ffffff;
+  transform-origin: center;
+}
+
+.project-back-close::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.project-back-close::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.project-back-close:focus-visible {
+  outline: 2px solid rgba(15, 15, 16, 0.4);
+  outline-offset: 4px;
 }
 
 .project-stack {
@@ -301,6 +493,30 @@ main {
   width: clamp(70px, 8vw, 110px);
   height: clamp(70px, 8vw, 110px);
   border-radius: 24px;
+}
+
+.project-card-face--front .project-icon-columns {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 16px;
+}
+
+.project-card-face--front .project-icon-column {
+  flex-direction: row;
+  gap: 16px;
+  padding-top: 0;
+}
+
+.project-card-face--front .project-icon-band .app-icon {
+  width: 100px;
+  height: 100px;
+  border-radius: 18px;
+}
+
+.project-card-face--front .project-stack {
+  justify-content: flex-start;
+  padding-bottom: 0;
 }
 
 .project-meta h3 {
@@ -643,6 +859,14 @@ main {
   animation: icon-marquee var(--marquee-duration, 10s) ease-out 1 forwards;
 }
 
+html.is-card-flipped .icon-columns.icon-marquee {
+  animation-play-state: paused;
+}
+
+html:not(.is-projects-in-view) .icon-columns.icon-marquee {
+  animation-play-state: paused;
+}
+
 @keyframes icon-marquee {
   from {
     transform: translateX(calc(-1 * var(--marquee-distance)));
@@ -729,7 +953,7 @@ main {
     padding: 16px 0 40px;
   }
 
-  .project-card-inner {
+  .project-card-face {
     padding: 24px;
     min-height: 560px;
   }
@@ -899,7 +1123,7 @@ html[data-theme="light"] .work-section {
     var(--bg);
 }
 
-html[data-theme="light"] .project-card {
+html[data-theme="light"] .project-card-face--front {
   background: #333333;
   box-shadow:
     0 20px 60px rgba(15, 15, 16, 0.12),

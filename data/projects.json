@@ -4,6 +4,8 @@
       "name": "Falcon Eye",
       "accent": "#ff9f0a",
       "description": "is synthetic vision and terrain-aware flight assistance system delivering real-time 3D perception for low-visibility aviation.",
+      "longTitle": "Falcon Eye delivers synthetic vision with terrain-aware guidance for low-visibility aviation.",
+      "details": "Falcon Eye fuses onboard sensors with 3D terrain models to reconstruct the flight corridor in real time. It prioritizes latency, clarity, and robust failover to keep pilots oriented when traditional visibility breaks down.",
       "url": "",
       "stack": [
         { "src": "assets/cpp.png", "label": "C++" },
@@ -15,6 +17,8 @@
       "name": "Ion",
       "accent": "#0a84ff",
       "description": "is AI-powered 3D hardware blueprinting system that auto-detects components, renders wiring in real time, and generates safe starter code.",
+      "longTitle": "Ion maps real hardware into a live 3D blueprint with instant wiring and code generation.",
+      "details": "Ion detects parts, infers connectivity, and visualizes electrical paths in a spatial model as you build. It outputs safe starter firmware and a structured BOM, helping teams move from bench prototypes to production-ready schematics.",
       "url": "https://youtu.be/sX_8WW7cI7I",
       "stack": [
         { "src": "assets/rust.png", "label": "Rust" },
@@ -26,6 +30,8 @@
       "name": "Siri++",
       "accent": "#bf5af2",
       "description": "is a multimodal, agentic personal assistant that orchestrates real workflows across apps, voice, images, and system context.",
+      "longTitle": "Siri++ orchestrates multimodal workflows across apps, voice, and visual context.",
+      "details": "Siri++ chains intent, memory, and tool-use across desktop and mobile contexts. It can reason over images, execute multi-step actions, and maintain continuity across tasks without breaking flow.",
       "url": "https://github.com/VedPanse/SiriPlusPlus",
       "stack": [
         { "src": "assets/swift.png", "label": "Swift" },
@@ -37,6 +43,8 @@
       "name": "Pulse",
       "accent": "#34c759",
       "description": "is disaster-resilient mesh-network and survivor-localization system designed to operate entirely offline under extreme conditions.",
+      "longTitle": "Pulse builds an offline-first mesh for disaster response and survivor localization.",
+      "details": "Pulse forms a resilient ad-hoc network that keeps critical messaging and location data flowing when infrastructure collapses. It balances power efficiency, hop-by-hop reliability, and survivability across hostile environments.",
       "url": "https://github.com/VedPanse/Pulse",
       "stack": [
         { "src": "assets/swift.png", "label": "Swift" },
@@ -48,6 +56,8 @@
       "name": "Shardwise",
       "accent": "#ff375f",
       "description": "is a distributed sharding and execution layer that decomposes complex workloads into coordinated, scalable execution units.",
+      "longTitle": "Shardwise decomposes large workloads into coordinated, scalable execution shards.",
+      "details": "Shardwise partitions compute into deterministic shards with built-in coordination and retry semantics. It targets predictable throughput under heavy load, with observability hooks that surface shard health and latency hotspots.",
       "url": "",
       "stack": [
         { "src": "assets/go.png", "label": "Go" },

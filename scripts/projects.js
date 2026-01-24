@@ -26,11 +26,13 @@ const buildStackColumns = (stack) => {
 const renderCard = (project) => {
   const card = createElement("article", "project-card");
   card.setAttribute("data-project", "");
-  if (project.url) {
-    card.setAttribute("tabindex", "0");
-    card.setAttribute("role", "link");
-    card.setAttribute("data-project-url", project.url);
-  }
+  card.setAttribute("tabindex", "0");
+  card.setAttribute("role", "button");
+  card.setAttribute("aria-expanded", "false");
+
+  const rotator = createElement("div", "project-card-rotator");
+  const front = createElement("div", "project-card-face project-card-face--front");
+  const back = createElement("div", "project-card-face project-card-face--back");
 
   const inner = createElement("div", "project-card-inner");
   if (project.accent) {
@@ -69,7 +71,64 @@ const renderCard = (project) => {
   stack.appendChild(band);
   inner.appendChild(meta);
   inner.appendChild(stack);
-  card.appendChild(inner);
+  front.appendChild(inner);
+
+  const backContent = createElement("div", "project-card-back");
+  const backTitle = createElement("h3", "project-back-title");
+  const fallbackTitle = project.name
+    ? `${project.name} delivers a full-stack, production-ready experience.`
+    : "Project details";
+  backTitle.textContent = project.longTitle || fallbackTitle;
+
+  const backDescription = createElement("p", "project-back-description");
+  backDescription.textContent = project.details
+    ? project.details
+    : project.description || "Project details are coming soon.";
+
+  const stackLabels = (project.stack || [])
+    .map((item) => item.label)
+    .filter(Boolean);
+
+  const backStack = createElement("p", "project-back-stack");
+  backStack.textContent = stackLabels.length
+    ? `Stack: ${stackLabels.join(", ")}.`
+    : "Stack details are coming soon.";
+
+  const backActions = createElement("div", "project-back-actions");
+  let backLink;
+
+  if (project.url) {
+    backLink = document.createElement("a");
+    backLink.href = project.url;
+    backLink.target = "_blank";
+    backLink.rel = "noopener";
+    backLink.className = "project-back-link";
+    backLink.textContent = "View project";
+  } else {
+    backLink = document.createElement("button");
+    backLink.type = "button";
+    backLink.className = "project-back-link is-disabled";
+    backLink.textContent = "Coming soon";
+    backLink.disabled = true;
+  }
+
+  backActions.appendChild(backLink);
+  backContent.appendChild(backTitle);
+  backContent.appendChild(backDescription);
+  backContent.appendChild(backStack);
+  backContent.appendChild(backActions);
+
+  const closeButton = document.createElement("button");
+  closeButton.type = "button";
+  closeButton.className = "project-back-close";
+  closeButton.setAttribute("aria-label", "Close project details");
+
+  back.appendChild(backContent);
+  back.appendChild(closeButton);
+
+  rotator.appendChild(front);
+  rotator.appendChild(back);
+  card.appendChild(rotator);
   return card;
 };
 
@@ -115,6 +174,7 @@ export const initProjectsCarousel = async () => {
   let startTime = performance.now();
   let progressValue = 0;
   let activeCard = cards[0];
+  let autoPlayBeforeFlip = autoPlay;
 
   const setProgress = (value) => {
     progressValue = clamp(value, 0, 1);
@@ -239,6 +299,20 @@ export const initProjectsCarousel = async () => {
     startTime = performance.now() - progressValue * duration;
   };
 
+  const updateGlobalFlipState = () => {
+    const anyFlipped = section.querySelector(".project-card.is-flipped");
+    const isFlipped = Boolean(anyFlipped);
+    document.documentElement.classList.toggle("is-card-flipped", isFlipped);
+    if (isFlipped) {
+      autoPlayBeforeFlip = autoPlay;
+      autoPlay = false;
+    } else {
+      autoPlay = autoPlayBeforeFlip;
+    }
+    updateToggleState();
+    startTime = performance.now() - progressValue * duration;
+  };
+
   carousel.addEventListener("scroll", () => {
     requestAnimationFrame(onScroll);
   }, { passive: true });
@@ -255,23 +329,55 @@ export const initProjectsCarousel = async () => {
     });
   });
 
-  cards.forEach((card, index) => {
-    const project = projects[index];
-    const url = project && project.url ? project.url : "";
-    if (!url) return;
-    const openLink = () => {
-      window.open(url, "_blank", "noopener");
+  cards.forEach((card) => {
+    const closeButton = card.querySelector(".project-back-close");
+    const backLink = card.querySelector(".project-back-link");
+
+    const setCardState = (shouldFlip, focusClose = false) => {
+      card.classList.toggle("is-flipped", shouldFlip);
+      card.setAttribute("aria-expanded", String(shouldFlip));
+      if (shouldFlip && focusClose && closeButton) {
+        closeButton.focus();
+      }
+      updateGlobalFlipState();
     };
 
-    card.addEventListener("click", () => {
+    const openCard = () => setCardState(true, true);
+    const closeCard = () => setCardState(false);
+
+    if (closeButton) {
+      closeButton.addEventListener("click", (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        closeCard();
+      });
+    }
+
+    if (backLink && backLink.tagName === "A") {
+      backLink.addEventListener("click", (event) => {
+        event.stopPropagation();
+      });
+    }
+
+    card.addEventListener("click", (event) => {
       if (isUserScrolling) return;
-      openLink();
+      if (event.target.closest(".project-back-link")) return;
+      if (event.target.closest(".project-back-close")) return;
+      if (card.classList.contains("is-flipped")) return;
+      openCard();
     });
 
     card.addEventListener("keydown", (event) => {
+      if (event.target !== card) return;
+      if (event.key === "Escape") {
+        event.preventDefault();
+        closeCard();
+        return;
+      }
       if (event.key === "Enter" || event.key === " ") {
         event.preventDefault();
-        openLink();
+        const shouldOpen = !card.classList.contains("is-flipped");
+        setCardState(shouldOpen, shouldOpen);
       }
     });
   });
@@ -298,4 +404,12 @@ export const initProjectsCarousel = async () => {
     { threshold: 0.25 }
   );
   observer.observe(section);
+
+  const marqueeObserver = new IntersectionObserver(
+    ([entry]) => {
+      document.documentElement.classList.toggle("is-projects-in-view", entry.isIntersecting);
+    },
+    { threshold: 0.25 }
+  );
+  marqueeObserver.observe(section);
 };
