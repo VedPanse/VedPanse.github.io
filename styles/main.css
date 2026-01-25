@@ -856,16 +856,13 @@ main {
 }
 
 .icon-columns.icon-marquee {
-  animation: icon-marquee var(--marquee-duration, 10s) ease-out 1 forwards;
+  animation: icon-marquee var(--marquee-duration, 3s) ease-out 1 forwards;
 }
 
 html.is-card-flipped .icon-columns.icon-marquee {
   animation-play-state: paused;
 }
 
-html:not(.is-projects-in-view) .icon-columns.icon-marquee {
-  animation-play-state: paused;
-}
 
 @keyframes icon-marquee {
   from {

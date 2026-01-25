@@ -114,7 +114,7 @@ const applyMarquee = (columns) => {
 
   const baseDistance = columns.scrollWidth / 2;
   const distance = baseDistance * 0.25;
-  const duration = 4;
+  const duration = 2.8;
   columns.style.setProperty("--marquee-distance", `${distance.toFixed(2)}px`);
   columns.style.setProperty("--marquee-duration", `${duration.toFixed(2)}s`);
   columns.classList.add("icon-marquee");
