@@ -8,14 +8,16 @@ excerpt: A personal note on why I build, and why I write about it.
 
 ![Notes from building systems that have to work in the real world](assets/banners/intro.png)
 
-I’ve always been drawn to the moment when an idea stops being abstract and starts running into reality. When something that looked clean on paper suddenly has to deal with performance limits, edge cases, users who do unexpected things, and environments that don’t behave the way you hoped they would.
+Hi. I’m Ved.
 
-That moment is usually uncomfortable. It’s also where I’ve learned the most.
+I’m a student at UC San Diego. I study computer science and data science, but what I really like is building things and then watching them break in ways I did not predict.
 
-Over the years, I’ve built across a lot of different settings — classes, competitions, research projects, internships, and startups. Each of them teaches you something different. Competitions teach you speed and focus. Research teaches you how easily assumptions break. Shipping real products teaches you humility. Things fail for reasons you didn’t anticipate, and fixing them often has less to do with cleverness and more to do with judgment.
+I’m interested in systems that have to deal with real constraints — speed, memory, users clicking the wrong button, hardware doing something weird, or code that works perfectly until it suddenly doesn’t. I enjoy the part where an idea stops sounding smart and starts demanding actual effort.
 
-I started this blog because I wanted a place to slow down and reflect on those experiences. Not to document achievements, but to capture the decisions that actually shaped the work. The moments where tradeoffs became real, where constraints forced better design, or where something “working” clearly wasn’t good enough.
+Most of my time is split between classes, hackathons, research, startups, and side projects that probably started as “small ideas.” I like developer tools, aviation systems, and anything that sits awkwardly between software and the real world. If something has edge cases, tradeoffs, or the potential to fail quietly at 2 a.m., I tend to gravitate toward it.
 
-Some posts here will be about travel — being in rooms I didn’t expect to be in yet, meeting people who operate at a different scale, and seeing how serious systems are built and evaluated. Others will be about rejection, iteration, and the long stretches where progress is quiet and uncertain. Many will be about building: taking systems apart, stress-testing them, and learning what it actually takes to make them reliable.
+I also travel more than I expect to. Projects and competitions have a way of putting me in new cities, new rooms, and conversations that make me realize how much I still don’t know. Those moments are exciting and slightly uncomfortable, which usually means they’re worth writing about.
 
-This isn’t a tutorial blog, and it’s not a highlight reel. It’s closer to a set of field notes — written while moving between ideas, systems, and real-world constraints. If you’re interested in how software grows from an idea into something people can depend on, these notes are for you.
+This blog is where I keep notes. Not tutorials, not announcements, and definitely not a highlight reel. Just thoughts from building things, fixing them, breaking them again, and slowly getting better at it.
+
+I don’t have a grand plan for this blog. I’m just writing as I go. If you’re into building, learning the hard way, and watching ideas turn into real products, you might enjoy it here.
