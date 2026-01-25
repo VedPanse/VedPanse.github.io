@@ -136,13 +136,15 @@ a {
 }
 
 .nav-search:hover {
-  border-color: rgba(255, 255, 255, 0.2);
-  background: rgba(255, 255, 255, 0.06);
+  border-color: transparent;
+  background: transparent;
+  color: #ffffff;
 }
 
 html[data-theme="light"] .nav-search:hover {
-  border-color: rgba(0, 0, 0, 0.12);
-  background: rgba(0, 0, 0, 0.05);
+  border-color: transparent;
+  background: transparent;
+  color: #000000;
 }
 
 .nav-icons svg {
@@ -171,8 +173,9 @@ html[data-theme="light"] .nav-search:hover {
 }
 
 .theme-toggle:hover {
-  border-color: rgba(255, 255, 255, 0.2);
-  background: rgba(255, 255, 255, 0.06);
+  border-color: transparent;
+  background: transparent;
+  color: #ffffff;
 }
 
 .theme-toggle:focus-visible {
@@ -181,8 +184,9 @@ html[data-theme="light"] .nav-search:hover {
 }
 
 html[data-theme="light"] .theme-toggle:hover {
-  border-color: rgba(0, 0, 0, 0.12);
-  background: rgba(0, 0, 0, 0.05);
+  border-color: transparent;
+  background: transparent;
+  color: #000000;
 }
 
 html[data-theme="light"] .theme-toggle:focus-visible {
