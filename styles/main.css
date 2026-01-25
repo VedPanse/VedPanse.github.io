@@ -694,12 +694,12 @@ main {
 
 .research-media--poster,
 .blogs-media--poster {
-  background: #ffffff;
+  background: transparent;
 }
 
 .research-media--photo,
 .blogs-media--photo {
-  background: #ffffff;
+  background: transparent;
 }
 
 .research-media img,
@@ -1121,15 +1121,16 @@ html[data-theme="light"] .work-section {
 }
 
 html[data-theme="light"] .project-card-face--front {
-  background: #333333;
+  background: #ffffff;
+  color: #0f0f10;
   box-shadow:
-    0 20px 60px rgba(15, 15, 16, 0.12),
+    0 24px 60px rgba(15, 15, 16, 0.14),
     inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
 html[data-theme="light"] .hero-icon {
   box-shadow: none;
-  background: transparent;
+  background: #ffffff;
 }
 
 html[data-theme="light"] .app-icon {
