@@ -629,22 +629,117 @@ main {
 }
 
 .research-section,
-.blogs-section {
+.blogs-section,
+.work-archive-section {
   background: var(--bg);
   padding: 120px 0;
 }
 
 .research-inner,
-.blogs-inner {
+.blogs-inner,
+.work-archive-inner {
   width: min(1100px, 90vw);
   margin: 0 auto;
 }
 
 .research-inner h2,
-.blogs-inner h2 {
+.blogs-inner h2,
+.work-archive-inner h2 {
   font-size: clamp(32px, 4vw, 48px);
   margin-bottom: 40px;
   letter-spacing: -0.02em;
+}
+
+.work-archive-subtitle {
+  margin: -16px 0 48px;
+  max-width: 720px;
+  font-size: clamp(18px, 2.4vw, 24px);
+  color: color-mix(in srgb, var(--text) 78%, transparent);
+}
+
+.work-archive-grid {
+  display: grid;
+  gap: 36px 48px;
+}
+
+.work-card {
+  position: relative;
+}
+
+.work-card-frame {
+  position: relative;
+  border-radius: 32px;
+  overflow: hidden;
+  background: #060607;
+  min-height: clamp(300px, 44vw, 520px);
+  display: flex;
+  align-items: flex-end;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
+}
+
+.work-card-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center top;
+  transform: scale(2);
+}
+
+.work-card-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0) 18%,
+    rgba(0, 0, 0, 0.35) 30%,
+    rgba(0, 0, 0, 0.75) 45%,
+    rgba(0, 0, 0, 0.9) 58%,
+    rgb(0, 0, 0) 100%
+  );
+}
+
+.work-card-content {
+  position: relative;
+  width: min(1200px, 92vw);
+  margin: 0 auto;
+  padding: clamp(28px, 6vw, 64px);
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(24px, 4vw, 64px);
+  align-items: end;
+  color: #f5f5f7;
+  z-index: 1;
+}
+
+.work-card-left,
+.work-card-right {
+  border-top: 1px solid #424245;
+  padding-top: 22px;
+  align-self: stretch;
+}
+
+.work-card-title {
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #f5f5f7;
+}
+
+.work-card-as {
+  display: inline-block;
+  margin: 0 0.2em;
+  font-weight: 500;
+  color: color-mix(in srgb, #ffffff 78%, transparent);
+}
+
+.work-card-description {
+  font-size: 21px;
+  line-height: 1.5;
+  color: #d2d2d7;
+  font-weight: 600;
 }
 
 .research-grid,
@@ -1045,13 +1140,25 @@ html.is-card-flipped .icon-columns.icon-marquee {
   }
 
   .research-section,
-  .blogs-section {
+  .blogs-section,
+  .work-archive-section {
     padding: 96px 0;
   }
 
   .research-grid,
-  .blogs-grid {
+  .blogs-grid,
+  .work-archive-grid {
     grid-template-columns: 1fr;
+  }
+
+  .work-card-frame {
+    border-radius: 24px;
+  }
+
+  .work-card-content {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 28px;
   }
 
   .research-item,

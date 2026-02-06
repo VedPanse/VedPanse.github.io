@@ -1,5 +1,13 @@
 const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
 
+const WORK_DATA_URL = "data/work.json";
+
+const createElement = (tag, className) => {
+  const element = document.createElement(tag);
+  if (className) element.className = className;
+  return element;
+};
+
 export const initWorkSection = () => {
   const section = document.querySelector(".work-section");
   if (!section) return;
@@ -64,4 +72,55 @@ export const initWorkSection = () => {
   update();
   window.addEventListener("scroll", onScroll, { passive: true });
   window.addEventListener("resize", onResize);
+};
+
+const renderWorkItem = (item) => {
+  const article = createElement("article", "work-card");
+
+  const frame = createElement("div", "work-card-frame");
+  const img = document.createElement("img");
+  img.className = "work-card-image";
+  img.src = item.image || "";
+  img.alt = item.imageAlt || "";
+  img.loading = "lazy";
+
+  const gradient = createElement("div", "work-card-gradient");
+
+  const content = createElement("div", "work-card-content");
+  const left = createElement("div", "work-card-left");
+  const right = createElement("div", "work-card-right");
+
+  const title = createElement("p", "work-card-title");
+  const company = item.company || "";
+  const role = item.role || "";
+  title.innerHTML = `${company} <span class="work-card-as">as a</span> ${role}`;
+
+  const description = createElement("p", "work-card-description");
+  description.textContent = item.description || "";
+
+  left.appendChild(title);
+  right.appendChild(description);
+  content.appendChild(left);
+  content.appendChild(right);
+
+  frame.appendChild(img);
+  frame.appendChild(gradient);
+  frame.appendChild(content);
+  article.appendChild(frame);
+  return article;
+};
+
+export const initWorkExperience = async () => {
+  const grid = document.querySelector("[data-work-grid]");
+  if (!grid) return;
+
+  const response = await fetch(WORK_DATA_URL);
+  if (!response.ok) return;
+  const items = await response.json();
+  if (!Array.isArray(items) || !items.length) return;
+
+  grid.innerHTML = "";
+  items.forEach((item) => {
+    grid.appendChild(renderWorkItem(item));
+  });
 };

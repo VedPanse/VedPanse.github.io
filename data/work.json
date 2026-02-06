@@ -1,0 +1,30 @@
+[
+  {
+    "company": "Falcon Eye",
+    "role": "Co-Founder & Engineering Lead",
+    "description": "Led development of a real-time synthetic vision system for aircraft, delivering game-style 3D situational awareness on low-power hardware for low-visibility flight conditions; secured $1.2M in funding to advance toward production and certification.",
+    "image": "assets/work/falcon.png",
+    "imageAlt": "Abstract avionics-style visualization"
+  },
+  {
+    "company": "Spuddie",
+    "role": "Software / AI Engineering Intern",
+    "description": "Built core backend systems for an AI companion, including a long-term memory module that improved response relevance and contextual continuity across conversations.",
+    "image": "assets/work/spuddie.png",
+    "imageAlt": "Gradient spotlight with glassy surface"
+  },
+  {
+    "company": "Findability Sciences",
+    "role": "Machine Learning Intern",
+    "description": "Worked on applied machine learning pipelines, improving model performance through data quality analysis and outlier detection in real-world enterprise datasets.",
+    "image": "assets/work/findability.png",
+    "imageAlt": "Abstract mesh with soft lighting"
+  },
+  {
+    "company": "Venture Shares",
+    "role": "Software Engineering Intern",
+    "description": "Developed frontend features for a market analytics platform, collaborating with product and backend teams to ship data-driven dashboards and internal tooling.",
+    "image": "assets/work/venture.png",
+    "imageAlt": "Dark grid with neon lines"
+  }
+]

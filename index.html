@@ -37,6 +37,7 @@
         <a class="nav-logo" href="#" aria-label="Home" data-content="name">Ved Panse</a>
         <div class="nav-links">
           <a href="#icon-columns">About</a>
+          <a href="#projects">Projects</a>
           <a href="#work">Work</a>
           <a href="#research">Research</a>
           <a href="#blogs">Blogs</a>
@@ -78,6 +79,7 @@
     <div class="nav-drawer" data-nav-drawer aria-hidden="true">
       <div class="nav-drawer-inner nav-drawer-links" aria-label="Mobile">
         <a href="#icon-columns">About</a>
+        <a href="#projects">Projects</a>
         <a href="#work">Work</a>
         <a href="#research">Research</a>
         <a href="#blogs">Blogs</a>
@@ -99,8 +101,9 @@
       <div class="search-recommendations" data-search-results>
         <p class="search-kicker" data-search-kicker>Quick Links</p>
         <ul data-search-list>
-          <li><a href="#work" data-search-item>Selected Work</a></li>
+          <li><a href="#projects" data-search-item>Selected Projects</a></li>
           <li><a href="#projects" data-search-item>Project Archive</a></li>
+          <li><a href="#work" data-search-item>Work</a></li>
           <li><a href="#research" data-search-item>Research Updates</a></li>
           <li><a href="#blogs" data-search-item>Blog Posts</a></li>
           <li><a href="#contact" data-search-item>Contact</a></li>
@@ -133,14 +136,14 @@
       </div>
     </section>
 
-    <section id="work" class="work-section" aria-labelledby="work-title">
+    <section id="projects" class="work-section" aria-labelledby="projects-title">
       <div class="work-sticky">
         <div class="work-stage">
           <div class="work-visual" aria-hidden="true">
             <img src="assets/banners/projects-banner.png" alt="" />
           </div>
           <div class="work-text">
-            <h2 id="work-title">
+            <h2 id="projects-title">
               <span class="work-kicker">Selected Projects</span>
               <span>Product launches, intelligent systems, and high-craft interfaces.</span>
             </h2>
@@ -158,6 +161,16 @@
         </div>
         <button class="projects-toggle" type="button" data-carousel-toggle aria-pressed="true"
           aria-label="Pause autoplay"></button>
+      </div>
+    </section>
+
+    <section id="work" class="work-archive-section" aria-labelledby="work-title">
+      <div class="work-archive-inner">
+        <h2 id="work-title">Work</h2>
+        <p class="work-archive-subtitle">
+          Roles, collaborations, and build-to-launch engagements across product engineering and AI systems.
+        </p>
+        <div class="work-archive-grid" data-work-grid></div>
       </div>
     </section>
 
