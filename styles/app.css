@@ -48,6 +48,7 @@ body {
   color: var(--text);
   line-height: 1.4;
   scroll-behavior: smooth;
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -62,6 +63,7 @@ a {
   top: 0;
   z-index: 10;
   backdrop-filter: blur(20px);
+  color: rebeccapurple;
 }
 
 .global-nav {
@@ -116,9 +118,43 @@ a {
 .nav-icons {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 16px;
   color: var(--nav-text);
   justify-self: end;
+}
+
+.nav-toggle {
+  width: 30px;
+  height: 18px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: inherit;
+  display: none;
+  place-items: center;
+  gap: 1px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.nav-toggle-line {
+  width: 14px;
+  height: 1px;
+  border-radius: 999px;
+  background: currentColor;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.is-nav-open .nav-toggle-line:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.is-nav-open .nav-toggle-line:nth-child(2) {
+  opacity: 0;
+}
+
+.is-nav-open .nav-toggle-line:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
 }
 
 .nav-search {
@@ -239,6 +275,45 @@ html[data-theme="light"] .theme-icon--moon {
   pointer-events: auto;
 }
 
+.nav-drawer {
+  position: fixed;
+  top: var(--nav-height);
+  left: 0;
+  right: 0;
+  background: var(--nav-bg);
+  backdrop-filter: blur(24px) !important;
+  -webkit-backdrop-filter: blur(24px) !important;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-8px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 9;
+  padding: 20px 0 28px;
+}
+
+.nav-drawer-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  gap: 14px;
+  font-size: 16px;
+  color: var(--nav-text-strong);
+}
+
+.is-nav-open .nav-drawer {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+  background: var(--nav-bg);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+.is-nav-open {
+  overflow: hidden;
+}
+
 .search-panel {
   max-width: 720px;
   margin: 48px auto 0;
@@ -355,13 +430,25 @@ html[data-theme="light"] .theme-icon--moon {
 }
 
 @media (max-width: 840px) {
+  .nav-inner {
+    grid-template-columns: auto 1fr auto;
+  }
+
   .nav-links {
     display: none;
+  }
+
+  .nav-toggle {
+    display: grid;
   }
 }
 
 @media (max-width: 560px) {
   .nav-inner {
     padding: 0 16px;
+  }
+
+  .nav-icons {
+    gap: 12px;
   }
 }

@@ -2,7 +2,7 @@ import { initIconBand } from "./icon-band.js";
 import { initContent } from "./content.js";
 import { initWorkSection } from "./work.js";
 import { initProjectsCarousel } from "./projects.js";
-import { initNavHighlight } from "./nav.js";
+import { initNavHighlight, initNavMenu } from "./nav.js";
 import { initResearch } from "./research.js";
 import { initBlogs } from "./blogs.js";
 import { initContactForm } from "./contact.js";
@@ -42,6 +42,7 @@ const bootstrap = () => {
   initWorkSection();
   initProjectsCarousel();
   initNavHighlight();
+  initNavMenu();
   initResearch();
   initBlogs();
   initContactForm();
