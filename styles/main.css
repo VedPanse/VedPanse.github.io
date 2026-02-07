@@ -659,7 +659,9 @@ main {
 
 .work-archive-grid {
   display: grid;
-  gap: 36px 48px;
+  gap: 84px 48px;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
 }
 
 .work-card {
@@ -671,7 +673,7 @@ main {
   border-radius: 32px;
   overflow: hidden;
   background: #060607;
-  min-height: clamp(300px, 44vw, 520px);
+  min-height: 100vh;
   display: flex;
   align-items: flex-end;
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
@@ -1149,6 +1151,11 @@ html.is-card-flipped .icon-columns.icon-marquee {
   .blogs-grid,
   .work-archive-grid {
     grid-template-columns: 1fr;
+  }
+  .work-archive-grid {
+    gap: 64px;
+    width: 100%;
+    margin-left: 0;
   }
 
   .work-card-frame {
