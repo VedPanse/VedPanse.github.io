@@ -22,6 +22,7 @@ export const initSearchOverlay = () => {
 
   const BLOG_INDEX_URL = "data/blogs/index.json";
   const RESEARCH_INDEX_URL = "data/research/index.json";
+  const WORK_BLOG_INDEX_URL = "data/work-blogs/index.json";
 
   const normalize = (text) =>
     text
@@ -85,13 +86,22 @@ export const initSearchOverlay = () => {
   const buildDocs = async () => {
     if (indexLoaded) return;
     indexLoaded = true;
-    const [blogs, research] = await Promise.all([loadIndex(BLOG_INDEX_URL), loadIndex(RESEARCH_INDEX_URL)]);
+    const [blogs, research, workBlogs] = await Promise.all([
+      loadIndex(BLOG_INDEX_URL),
+      loadIndex(RESEARCH_INDEX_URL),
+      loadIndex(WORK_BLOG_INDEX_URL),
+    ]);
     const items = [
       ...blogs.map((file) => ({ file: `data/blogs/${file}`, type: "Blog", url: `blog.html?post=${file.replace(/\.md$/i, "")}` })),
       ...research.map((file) => ({
         file: `data/research/${file}`,
         type: "Research",
         url: `research.html?post=${file.replace(/\.md$/i, "")}`,
+      })),
+      ...workBlogs.map((file) => ({
+        file: `data/work-blogs/${file}`,
+        type: "Work Blog",
+        url: `work-blog.html?post=${file.replace(/\.md$/i, "")}`,
       })),
     ];
 

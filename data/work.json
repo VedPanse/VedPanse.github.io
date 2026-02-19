@@ -13,8 +13,8 @@
         "label": "low-latency 3D rendering on low-power hardware"
       }
     ],
+    "workPostSlug": "falcon-eye-synthetic-vision",
     "ctaText": "See how Falcon Eye turned simulation-grade rendering into certifiable flight software",
-    "ctaUrl": "#contact",
     "visual": {
       "label": "Falcon Eye",
       "meta": "Synthetic Vision / Avionics Systems"
@@ -34,8 +34,8 @@
         "label": "memory graph + retrieval pipeline"
       }
     ],
+    "workPostSlug": "spuddie-memory-architecture",
     "ctaText": "Explore the memory architecture behind persistent AI companions",
-    "ctaUrl": "#contact",
     "visual": {
       "label": "Spuddie",
       "meta": "Agent Memory Systems"
@@ -55,8 +55,8 @@
         "label": "ML pipeline hardening"
       }
     ],
+    "workPostSlug": "findability-ml-reliability",
     "ctaText": "See how production ML pipelines were stabilized under noisy data conditions",
-    "ctaUrl": "#contact",
     "visual": {
       "label": "Findability",
       "meta": "Enterprise Machine Learning"
@@ -76,8 +76,8 @@
         "label": "data-driven analytics workflows"
       }
     ],
+    "workPostSlug": "venture-shares-realtime-dashboards",
     "ctaText": "Read how production-grade financial dashboards were architected and shipped",
-    "ctaUrl": "#contact",
     "visual": {
       "label": "Venture Shares",
       "meta": "Financial Systems Engineering"

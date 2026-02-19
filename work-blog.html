@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Work Blog | Ved Panse</title>
+  <meta name="description" content="Work case study from Ved Panse." />
+  <meta name="theme-color" content="#000000" />
+  <link rel="icon" href="img.png" />
+  <link rel="stylesheet" href="styles/app.css" />
+  <link rel="stylesheet" href="styles/blog.css" />
+</head>
+
+<body class="blog-view">
+  <header class="site-header">
+    <nav class="global-nav" aria-label="Primary">
+      <div class="nav-inner">
+        <a class="nav-logo" href="index.html" aria-label="Home" data-content="name">Ved Panse</a>
+        <div class="nav-links">
+          <a href="index.html#icon-columns">About</a>
+          <a href="index.html#projects">Projects</a>
+          <a href="index.html#work" class="is-active">Work</a>
+          <a href="index.html#research">Research</a>
+          <a href="index.html#blogs">Blogs</a>
+          <a href="index.html#current-focus">Current Focus</a>
+          <a href="index.html#contact">Contact</a>
+        </div>
+        <div class="nav-icons">
+          <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to light theme">
+            <svg class="theme-icon theme-icon--sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <circle cx="12" cy="12" r="4.5" />
+              <line x1="12" y1="1.5" x2="12" y2="4" />
+              <line x1="12" y1="20" x2="12" y2="22.5" />
+              <line x1="1.5" y1="12" x2="4" y2="12" />
+              <line x1="20" y1="12" x2="22.5" y2="12" />
+              <line x1="4.2" y1="4.2" x2="6.1" y2="6.1" />
+              <line x1="17.9" y1="17.9" x2="19.8" y2="19.8" />
+              <line x1="4.2" y1="19.8" x2="6.1" y2="17.9" />
+              <line x1="17.9" y1="6.1" x2="19.8" y2="4.2" />
+            </svg>
+            <svg class="theme-icon theme-icon--moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path
+                d="M15.5 4.5c-3.9 0-7 3.1-7 7 0 3.3 2.2 6.1 5.3 6.8 3.4.7 6.8-1 8.2-4.1-2.8.7-5.7-.1-7.4-2-1.7-1.9-2-4.7-.8-6.7-.6-.1-1.1-.2-1.7-.2z" />
+            </svg>
+          </button>
+          <button class="nav-search" type="button" data-search-toggle aria-label="Open search">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <circle cx="11" cy="11" r="6.5" />
+              <line x1="16" y1="16" x2="21" y2="21" />
+            </svg>
+          </button>
+          <button class="nav-toggle" type="button" data-nav-toggle aria-label="Open menu" aria-expanded="false">
+            <span class="nav-toggle-line"></span>
+            <span class="nav-toggle-line"></span>
+            <span class="nav-toggle-line"></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+    <div class="nav-drawer" data-nav-drawer aria-hidden="true">
+      <div class="nav-drawer-inner nav-drawer-links" aria-label="Mobile">
+        <a href="index.html#icon-columns">About</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#work">Work</a>
+        <a href="index.html#research">Research</a>
+        <a href="index.html#blogs">Blogs</a>
+        <a href="index.html#current-focus">Current Focus</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="blog-layout" aria-live="polite">
+    <aside class="blog-sidebar blog-sidebar--left" aria-label="Work blog navigation">
+      <a class="blog-all-posts" href="index.html#work">All work</a>
+
+      <section class="blog-side-group" aria-labelledby="work-recent-heading">
+        <h2 id="work-recent-heading">Recent</h2>
+        <nav class="blog-recent-list" aria-label="Recent work posts" data-blog-recent></nav>
+      </section>
+
+      <section class="blog-side-group" aria-labelledby="work-topics-heading">
+        <h2 id="work-topics-heading">Topics</h2>
+        <div class="blog-topics-list" data-blog-topics></div>
+      </section>
+    </aside>
+
+    <section class="blog-main" aria-label="Work post">
+      <header class="blog-main-header">
+        <p class="blog-meta-row">
+          <span data-blog-date></span>
+          <span data-blog-label></span>
+        </p>
+        <h1 class="blog-title" data-blog-title></h1>
+        <p class="blog-dek" data-blog-excerpt></p>
+        <p class="blog-author" data-blog-author></p>
+      </header>
+
+      <article class="blog-content" data-blog-content></article>
+    </section>
+
+    <aside class="blog-sidebar blog-sidebar--right" aria-label="Table of contents">
+      <nav class="blog-toc" data-blog-toc></nav>
+    </aside>
+  </main>
+
+  <div class="search-overlay" data-search-overlay aria-hidden="true">
+    <div class="search-panel" role="dialog" aria-modal="true" aria-label="Site search">
+      <div class="search-input-row">
+        <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <circle cx="11" cy="11" r="6.5" />
+          <line x1="16" y1="16" x2="21" y2="21" />
+        </svg>
+        <input type="search" placeholder="Search vedpanse.com" data-search-input />
+      </div>
+      <div class="search-recommendations" data-search-results>
+        <p class="search-kicker" data-search-kicker>Quick Links</p>
+        <ul data-search-list>
+          <li><a href="index.html#work" data-search-item>Selected Work</a></li>
+          <li><a href="index.html#projects" data-search-item>Project Archive</a></li>
+          <li><a href="index.html#research" data-search-item>Research Updates</a></li>
+          <li><a href="index.html#blogs" data-search-item>Blog Posts</a></li>
+          <li><a href="index.html#contact" data-search-item>Contact</a></li>
+        </ul>
+        <p class="search-empty" data-search-empty hidden>No results found.</p>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="scripts/work-blog-post.js"></script>
+</body>
+
+</html>

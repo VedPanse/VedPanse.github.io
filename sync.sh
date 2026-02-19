@@ -35,7 +35,7 @@ write_index_json() {
   printf "Updated %s\n" "$index_file"
 }
 
-for section in blogs research; do
+for section in blogs research work-blogs; do
   dir_path="$ROOT_DIR/data/$section"
   if [ ! -d "$dir_path" ]; then
     printf "Missing directory: %s\n" "$dir_path" >&2

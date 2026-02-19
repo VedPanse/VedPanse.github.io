@@ -176,14 +176,16 @@ const normalizeItems = (items) =>
     const fallbackTitle = item.title || item.company || `Work ${index + 1}`;
     const visual = item.visual || {};
     const colorSeed = item.company || fallbackTitle;
+    const workPostSlug = (item.workPostSlug || item.postSlug || item.slug || "").trim();
+    const workPostUrl = workPostSlug ? `work-blog.html?post=${encodeURIComponent(workPostSlug)}` : "";
 
     return {
       tabLabel: item.tabLabel || fallbackTitle,
       title: fallbackTitle,
       description: item.description || "",
       stats: normalizeStats(item),
-      ctaText: item.ctaText || `Learn more about ${fallbackTitle}`,
-      ctaUrl: item.ctaUrl || "#contact",
+      ctaText: item.ctaText || `Read ${fallbackTitle} work blog`,
+      ctaUrl: workPostUrl || item.ctaUrl || "#contact",
       visualImage: item.visualImage || "",
       visualAlt: item.visualAlt || `${fallbackTitle} showcase visual`,
       visual: {

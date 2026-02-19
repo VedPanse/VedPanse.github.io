@@ -37,3 +37,4 @@ write_index() {
 
 write_index "$ROOT_DIR/data/blogs" "$ROOT_DIR/data/blogs/index.json"
 write_index "$ROOT_DIR/data/research" "$ROOT_DIR/data/research/index.json"
+write_index "$ROOT_DIR/data/work-blogs" "$ROOT_DIR/data/work-blogs/index.json"
