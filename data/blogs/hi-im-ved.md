@@ -1,7 +1,7 @@
 ---
 label: Introduction
 date: January 22, 2026
-title: From ideas to real products
+title: Hi, I'm Ved.
 excerpt: A personal note on why I build, and why I write about it.
 ---
 # From ideas to real products
