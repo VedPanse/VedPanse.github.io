@@ -8,6 +8,53 @@ const createElement = (tag, className) => {
   return element;
 };
 
+const VIBRANT_HUE_BANDS = [
+  [8, 38],
+  [44, 76],
+  [84, 150],
+  [172, 212],
+  [224, 262],
+  [272, 320],
+  [330, 356],
+];
+
+const hashString = (value) => {
+  let hash = 2166136261;
+  for (let index = 0; index < value.length; index += 1) {
+    hash ^= value.charCodeAt(index);
+    hash = Math.imul(hash, 16777619);
+  }
+  return hash >>> 0;
+};
+
+const ratioFromHash = (hash, shift = 0) => ((hash >>> shift) & 0xffff) / 65535;
+
+const accentFromCompanyName = (name) => {
+  const seed = (name || "work").trim().toLowerCase();
+  const baseHash = hashString(seed);
+  const hueHash = hashString(`${seed}:hue`);
+  const toneHash = hashString(`${seed}:tone`);
+  const [minHue, maxHue] = VIBRANT_HUE_BANDS[baseHash % VIBRANT_HUE_BANDS.length];
+
+  let hue = minHue + (maxHue - minHue) * ratioFromHash(hueHash);
+  hue = (hue + ((toneHash >>> 20) % 9) - 4 + 360) % 360;
+
+  let saturation = 72 + Math.round(ratioFromHash(baseHash, 8) * 16);
+  let lightness = 52 + Math.round(ratioFromHash(toneHash, 2) * 10);
+
+  if (hue >= 48 && hue <= 80) {
+    lightness = clamp(lightness - 7, 45, 58);
+  }
+  if (hue >= 172 && hue <= 212) {
+    saturation = clamp(saturation - 6, 66, 86);
+  }
+  if (hue >= 272 && hue <= 320) {
+    saturation = clamp(saturation + 4, 72, 90);
+  }
+
+  return `hsl(${Math.round(hue)}, ${saturation}%, ${lightness}%)`;
+};
+
 export const initWorkSection = () => {
   const section = document.querySelector(".work-section");
   if (!section) return;
@@ -98,6 +145,7 @@ const normalizeItems = (items) =>
   items.map((item, index) => {
     const fallbackTitle = item.title || item.company || `Work ${index + 1}`;
     const visual = item.visual || {};
+    const colorSeed = item.company || fallbackTitle;
 
     return {
       tabLabel: item.tabLabel || fallbackTitle,
@@ -109,9 +157,7 @@ const normalizeItems = (items) =>
       visualImage: item.visualImage || "",
       visualAlt: item.visualAlt || `${fallbackTitle} showcase visual`,
       visual: {
-        start: visual.start || "#101319",
-        end: visual.end || "#06080d",
-        accent: visual.accent || "#0f62fe",
+        accent: accentFromCompanyName(colorSeed),
         label: visual.label || fallbackTitle,
         meta: visual.meta || "Case Study",
       },
@@ -164,6 +210,7 @@ const renderPanel = (panel, item, tabId) => {
   content.appendChild(cta);
 
   const media = createElement("div", "work-showcase-media");
+  media.style.setProperty("--work-visual-accent", item.visual.accent);
 
   if (item.visualImage) {
     const image = document.createElement("img");
@@ -173,10 +220,6 @@ const renderPanel = (panel, item, tabId) => {
     image.loading = "lazy";
     media.appendChild(image);
   } else {
-    media.style.setProperty("--work-visual-start", item.visual.start);
-    media.style.setProperty("--work-visual-end", item.visual.end);
-    media.style.setProperty("--work-visual-accent", item.visual.accent);
-
     const fallback = createElement("div", "work-showcase-media-fallback");
 
     const meta = createElement("p", "work-showcase-media-meta");

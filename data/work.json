@@ -16,9 +16,6 @@
     "ctaText": "Learn how Falcon Eye turned simulation-grade visuals into pilot-ready software",
     "ctaUrl": "#contact",
     "visual": {
-      "start": "#0b101d",
-      "end": "#05070d",
-      "accent": "#2f6eff",
       "label": "Falcon Eye",
       "meta": "Synthetic Vision"
     }
@@ -40,9 +37,6 @@
     "ctaText": "See how Spuddie moved from short replies to persistent context",
     "ctaUrl": "#contact",
     "visual": {
-      "start": "#16120b",
-      "end": "#090704",
-      "accent": "#ff9f2f",
       "label": "Spuddie",
       "meta": "AI Companion"
     }
@@ -64,9 +58,6 @@
     "ctaText": "Explore how better data hygiene improved production model behavior",
     "ctaUrl": "#contact",
     "visual": {
-      "start": "#111118",
-      "end": "#050509",
-      "accent": "#48a3ff",
       "label": "Findability",
       "meta": "Enterprise ML"
     }
@@ -88,9 +79,6 @@
     "ctaText": "Read how Venture Shares scaled dashboard delivery with cleaner tooling",
     "ctaUrl": "#contact",
     "visual": {
-      "start": "#0c1312",
-      "end": "#060909",
-      "accent": "#22c18c",
       "label": "Venture Shares",
       "meta": "Market Analytics"
     }
