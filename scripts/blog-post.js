@@ -1,4 +1,7 @@
+import { initSearchOverlay } from "./search.js";
+
 const BLOGS_DIR = "data/blogs";
+const BLOG_INDEX_URL = `${BLOGS_DIR}/index.json`;
 
 const escapeHtml = (value) =>
   value
@@ -7,6 +10,29 @@ const escapeHtml = (value) =>
     .replace(/>/g, "&gt;")
     .replace(/\"/g, "&quot;")
     .replace(/'/g, "&#39;");
+
+const parseDateValue = (value) => {
+  const parsed = Date.parse(value || "");
+  return Number.isNaN(parsed) ? 0 : parsed;
+};
+
+const slugify = (value) =>
+  value
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9\s-]/g, "")
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-");
+
+const initTheme = () => {
+  const root = document.documentElement;
+  const metaTheme = document.querySelector('meta[name="theme-color"]');
+  const storedTheme = localStorage.getItem("theme") || "dark";
+  root.dataset.theme = storedTheme;
+  if (metaTheme) {
+    metaTheme.setAttribute("content", storedTheme === "light" ? "#f5f5f7" : "#000000");
+  }
+};
 
 const renderInline = (text) => {
   const segments = text.split(/(`[^`]+`)/g);
@@ -241,16 +267,21 @@ const extractExcerpt = (markdown) => {
   return firstParagraph || "";
 };
 
-const renderMeta = (item) => {
-  const label = document.querySelector("[data-blog-label]");
-  const date = document.querySelector("[data-blog-date]");
-  const title = document.querySelector("[data-blog-title]");
-  const excerpt = document.querySelector("[data-blog-excerpt]");
+const setText = (selector, value) => {
+  const element = document.querySelector(selector);
+  if (element) element.textContent = value;
+};
 
-  if (label) label.textContent = item?.label || "Blog";
-  if (date) date.textContent = item?.date || "";
-  if (title) title.textContent = item?.title || "Blog Post";
-  if (excerpt) excerpt.textContent = item?.excerpt || "";
+const renderMeta = (item) => {
+  setText("[data-blog-label]", item?.label || "Blog");
+  setText("[data-blog-date]", item?.date || "");
+  setText("[data-blog-title]", item?.title || "Blog Post");
+  setText("[data-blog-excerpt]", item?.excerpt || "");
+  const author = document.querySelector("[data-blog-author]");
+  if (author) {
+    const name = escapeHtml(item?.author || "Ved Panse");
+    author.innerHTML = `Author: <span class="blog-author-name">${name}</span>`;
+  }
   document.title = item?.title ? `${item.title} | Ved Panse` : "Blog Post | Ved Panse";
 };
 
@@ -261,11 +292,159 @@ const renderContent = (html) => {
 };
 
 const renderError = (message) => {
-  renderMeta({ label: "Blog", title: "Post not found", date: "", excerpt: message });
+  renderMeta({ label: "Blog", title: "Post not found", date: "", excerpt: message, author: "Ved Panse" });
   renderContent(`<p>${escapeHtml(message)}</p>`);
 };
 
+const listBlogFiles = async () => {
+  const response = await fetch(BLOG_INDEX_URL);
+  if (!response.ok) return [];
+  const indexData = await response.json();
+  if (!Array.isArray(indexData)) return [];
+  return indexData.map((file) => (file.startsWith(BLOGS_DIR) ? file : `${BLOGS_DIR}/${file}`));
+};
+
+const loadBlogSummaries = async () => {
+  const files = await listBlogFiles();
+  const items = await Promise.all(
+    files.map(async (file) => {
+      const response = await fetch(file);
+      if (!response.ok) return null;
+      const markdown = await response.text();
+      const { meta, body } = parseFrontMatter(markdown);
+      const slug = file.split("/").pop().replace(/\.md$/i, "");
+      return {
+        slug,
+        title: meta.title || extractTitle(body) || "Untitled",
+        label: meta.label || "General",
+        date: meta.date || "",
+      };
+    })
+  );
+
+  return items.filter(Boolean).sort((a, b) => parseDateValue(b.date) - parseDateValue(a.date));
+};
+
+const renderLeftRail = (items, activeSlug) => {
+  const recentRoot = document.querySelector("[data-blog-recent]");
+  const topicsRoot = document.querySelector("[data-blog-topics]");
+  if (!recentRoot || !topicsRoot) return;
+
+  recentRoot.innerHTML = "";
+  items.slice(0, 6).forEach((item) => {
+    const link = document.createElement("a");
+    link.className = "blog-recent-link";
+    if (item.slug === activeSlug) link.classList.add("is-active");
+    link.href = `blog.html?post=${encodeURIComponent(item.slug)}`;
+    link.textContent = item.title;
+    link.setAttribute("aria-label", `Read ${item.title}`);
+    recentRoot.appendChild(link);
+  });
+
+  const uniqueTopics = Array.from(new Set(items.map((item) => item.label).filter(Boolean))).slice(0, 6);
+  topicsRoot.innerHTML = "";
+  uniqueTopics.forEach((topic) => {
+    const link = document.createElement("a");
+    link.className = "blog-topic-link";
+    link.href = "index.html#blogs";
+    link.textContent = topic;
+    link.setAttribute("aria-label", `Browse ${topic} posts`);
+    topicsRoot.appendChild(link);
+  });
+};
+
+const buildToc = () => {
+  const tocRoot = document.querySelector("[data-blog-toc]");
+  const content = document.querySelector("[data-blog-content]");
+  if (!tocRoot || !content) return;
+
+  const headings = Array.from(content.querySelectorAll("h2, h3"));
+  if (!headings.length) {
+    tocRoot.innerHTML = "";
+    return;
+  }
+
+  const usedIds = new Set();
+  headings.forEach((heading, index) => {
+    const base = slugify(heading.textContent || `section-${index + 1}`) || `section-${index + 1}`;
+    let id = base;
+    let suffix = 2;
+    while (usedIds.has(id)) {
+      id = `${base}-${suffix}`;
+      suffix += 1;
+    }
+    usedIds.add(id);
+    heading.id = id;
+  });
+
+  tocRoot.innerHTML = "";
+  const links = headings.map((heading) => {
+    const link = document.createElement("a");
+    link.className = "blog-toc-link";
+    link.href = `#${heading.id}`;
+    link.textContent = heading.textContent || "Section";
+    if (heading.tagName === "H3") {
+      link.style.paddingLeft = "20px";
+      link.style.fontSize = "16px";
+    }
+    tocRoot.appendChild(link);
+    return { heading, link };
+  });
+
+  const setActiveLink = (id) => {
+    links.forEach(({ link, heading }) => {
+      link.classList.toggle("is-active", heading.id === id);
+    });
+  };
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      const visible = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+      if (!visible.length) return;
+      setActiveLink(visible[0].target.id);
+    },
+    {
+      rootMargin: "-20% 0px -68% 0px",
+      threshold: [0.1, 0.25, 0.45, 0.65],
+    }
+  );
+
+  links.forEach(({ heading }) => observer.observe(heading));
+  setActiveLink(links[0].heading.id);
+};
+
+const initCopyPage = () => {
+  const button = document.querySelector("[data-copy-page]");
+  if (!button) return;
+
+  const fallbackCopy = () => {
+    const textArea = document.createElement("textarea");
+    textArea.value = window.location.href;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand("copy");
+    document.body.removeChild(textArea);
+  };
+
+  button.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+    } catch {
+      fallbackCopy();
+    }
+    button.textContent = "Copied";
+    setTimeout(() => {
+      button.textContent = "Copy Page";
+    }, 1300);
+  });
+};
+
 const initBlogPost = async () => {
+  initTheme();
+  initSearchOverlay();
+
   const params = new URLSearchParams(window.location.search);
   const slug = params.get("post");
   if (!slug) {
@@ -274,10 +453,19 @@ const initBlogPost = async () => {
   }
 
   const response = await fetch(`${BLOGS_DIR}/${slug}.md`);
+  let summaries = [];
+  try {
+    summaries = await loadBlogSummaries();
+  } catch {
+    summaries = [];
+  }
+
   if (!response.ok) {
     renderError("The blog content couldn't be loaded.");
     return;
   }
+
+  renderLeftRail(summaries, slug);
 
   const markdown = await response.text();
   const { meta, body } = parseFrontMatter(markdown);
@@ -287,10 +475,13 @@ const initBlogPost = async () => {
     title,
     date: meta.date || "",
     excerpt: meta.excerpt || extractExcerpt(body),
+    author: meta.author || "Ved Panse",
   });
 
   const html = parseMarkdown(body);
   renderContent(html);
+  buildToc();
+  initCopyPage();
 };
 
 initBlogPost();
