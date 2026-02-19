@@ -8,18 +8,14 @@ excerpt: Some context before I start writing about broken systems and the things
 
 ![Notes from building systems that have to work in the real world](assets/banners/intro.png)
 
-Hi.
+Hi! I’m Ved — a math–computer science and data science student at UC San Diego who was born in the U.S. but mostly grew up in India. If that sounds like two very different operating systems, it kind of is.
 
-I’m Ved. I study math–computer science and data science at UC San Diego, which is the formal way of saying I spend a lot of time staring at code, proofs, and diagrams that looked much cleaner before I tried to make them real.
+I picked up a cricket bat around the same time I figured out how walking worked. I’m still not sure which came first. A lot of my childhood was split between dusty cricket grounds, noisy family gatherings, and the slow realization that I really liked understanding how things worked — not just *that* they worked. At some point that curiosity shifted from “why does this ball swing?” to “why did this program just crash?”
 
-If you’ve met me before, it might have been because I was talking about synthetic vision in aviation, overthinking agent memory architectures, or arguing that determinism is more interesting than “AI magic.” If you haven’t, that’s fine too — this is mostly a notebook that happens to be public.
+Now I spend most of my time somewhere between proofs, code, and systems that refuse to behave politely. I like building things that have constraints — memory ceilings, latency budgets, hardware quirks, users who click the wrong button. I’ve worked on aviation software, agent systems with memory, and tools that sit awkwardly between software and the physical world. If something works perfectly on a whiteboard but starts wobbling in production, that’s usually where I lean in.
 
-I like systems that stop cooperating the second you assume they will. Rendering pipelines that jitter under load. Models that forget the one thing they shouldn’t. Hardware that behaves differently than the spec sheet implied. That moment where something technically works but doesn’t feel trustworthy — that’s usually where I get invested.
+Outside of that, I have a tendency to fall into rabbit holes. I’ve booted an IBM-7094 simulator just to run ELIZA. I’ve tried learning COBOL for no strategic reason. I’ve rewritten code that technically worked because it felt structurally dishonest. None of this is efficient. All of it makes sense in my head.
 
-Outside of actual obligations, I tend to fall into slightly unnecessary rabbit holes. I’ve booted an IBM-7094 simulator just to run ELIZA. I’ve tried learning COBOL for no strategic reason. I’ve rewritten parts of projects that were technically fine but structurally wrong. None of this is efficient. It is, however, satisfying.
+This blog is where I write about building things, breaking them, and occasionally understanding them. It will probably oscillate between technical deep dives and whatever I’m currently overthinking.
 
-This blog isn’t a highlight reel. It’s mostly notes from building things that had to survive contact with reality. Some posts will be about systems. Some will probably be about mistakes. A few might age poorly. That’s fine.
-
-I’m writing as I go.
-
-(# of future rewrites of this intro: probably more than I think)
+This bio will almost certainly be rewritten at some point when I reread it and decide I sounded either too serious or not serious enough. That’s fine.
