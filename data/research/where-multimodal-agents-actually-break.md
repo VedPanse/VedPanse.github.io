@@ -8,7 +8,7 @@ excerpt: Early failures in multimodal systems rarely come from models — they c
 
 ![Abstract pixel diagram of signals diverging across systems](assets/banners/multimodal-breaks.png)
 
-Multimodal agents tend to fail in places that don’t show up in demos.
+Multimodal agents tend to fail in places that don't show up in demos.
 
 In controlled settings, combining text, vision, and tools looks straightforward. Each modality performs well in isolation, and early integrations feel surprisingly capable. But once these systems are pushed into longer-running workflows — especially ones that involve uncertainty, retries, or partial failure — a different set of problems emerges.
 
@@ -32,26 +32,26 @@ What looks like intelligence at small scale turns into fragility at larger ones.
 
 ## Failure mode 1: orchestration drift
 
-The most common failure I’ve observed is **orchestration drift**.
+The most common failure I've observed is **orchestration drift**.
 
-As agents make decisions across multiple modalities, the control logic that coordinates them slowly loses alignment with the original task. The agent isn’t “confused” in a human sense — it’s following its incentives too literally.
+As agents make decisions across multiple modalities, the control logic that coordinates them slowly loses alignment with the original task. The agent isn't “confused” in a human sense — it's following its incentives too literally.
 
 Symptoms include:
 - repeated calls to the same tool with slightly different parameters  
 - over-weighting one modality (often text) when signals disagree  
 - escalating complexity instead of converging  
 
-This isn’t a reasoning failure. It’s a coordination failure.
+This isn't a reasoning failure. It's a coordination failure.
 
 ## Failure mode 2: latency compounds into behavior
 
-Latency is not just a performance issue — it’s a behavioral one.
+Latency is not just a performance issue — it's a behavioral one.
 
 In multimodal systems, delays between perception, reasoning, and action change how agents behave. Vision outputs arrive late. Tool calls block. Retries stack. The agent begins making decisions based on stale or partial state.
 
 At that point, even a strong model will appear unreliable.
 
-What’s interesting is that these failures don’t show up in unit tests. They only emerge when systems run continuously, under load, with real delays.
+What's interesting is that these failures don't show up in unit tests. They only emerge when systems run continuously, under load, with real delays.
 
 ## Failure mode 3: brittle assumptions between modalities
 
@@ -64,15 +64,15 @@ When those assumptions collide, the agent has no natural way to arbitrate. Most 
 
 That choice is rarely correct.
 
-The agent doesn’t need more intelligence here — it needs better rules.
+The agent doesn't need more intelligence here — it needs better rules.
 
-## What this suggests (and what it doesn’t)
+## What this suggests (and what it doesn't)
 
-These failures don’t suggest that multimodal agents are fundamentally flawed. They suggest that we’ve been over-attributing success to models and under-investing in orchestration.
+These failures don't suggest that multimodal agents are fundamentally flawed. They suggest that we've been over-attributing success to models and under-investing in orchestration.
 
-Better prompts won’t fix this.
-Larger models won’t fix this.
-More data won’t fix this.
+Better prompts won't fix this.
+Larger models won't fix this.
+More data won't fix this.
 
 What will help:
 - explicit control layers  
@@ -81,7 +81,7 @@ What will help:
 
 ## Open questions
 
-There are still things I don’t understand yet:
+There are still things I don't understand yet:
 - How to detect orchestration drift early, before behavior degrades  
 - Whether some modalities should be intentionally weakened to stabilize the whole  
 - How to evaluate long-horizon multimodal behavior without oversimplifying it  
@@ -89,4 +89,4 @@ There are still things I don’t understand yet:
 This is ongoing work. These notes reflect where my thinking is *now*, not where it will end up.
 
 For now, the main lesson is simple:  
-**multimodal agents don’t break because models are weak — they break because systems are brittle.**
+**multimodal agents don't break because models are weak — they break because systems are brittle.**
