@@ -6,7 +6,7 @@
       "description": "AI-native firmware-to-agent bridge that compiles device capabilities into structured, learnable command interfaces.",
       "longTitle": "Daemon: compiling embedded firmware into an agent-controllable substrate for embodied intelligence.",
       "details": "Daemon transforms low-level firmware into a structured semantic interface that autonomous agents can safely reason over and execute. A build step generates a machine-readable command schema and a C-level dispatcher that maps tokens to hardware functions, enabling adaptive device control as sensors and actuators evolve. The core goal is embodiment: treating physical systems as extensible, composable APIs that agents can learn, audit, and orchestrate.",
-      "url": "",
+      "url": "https://github.com/Sachin-dot-py/Daemon",
       "stack": [
         { "src": "assets/c.png", "label": "C" },
         { "src": "assets/rust.png", "label": "Rust" },

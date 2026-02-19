@@ -2,85 +2,85 @@
   {
     "tabLabel": "Falcon Eye",
     "title": "Falcon Eye",
-    "description": "Built a real-time synthetic vision stack for low-visibility flight with game-style 3D awareness on constrained avionics hardware.",
+    "description": "Architected and optimized a real-time synthetic vision stack for low-visibility flight, delivering deterministic 3D terrain reconstruction on constrained avionics hardware.",
     "stats": [
       {
         "value": "$1.2M",
-        "label": "in funding secured"
+        "label": "funding secured"
       },
       {
-        "value": "Real-time",
-        "label": "3D situational rendering"
+        "value": "30 FPS",
+        "label": "low-latency 3D rendering on low-power hardware"
       }
     ],
-    "ctaText": "Learn how Falcon Eye turned simulation-grade visuals into pilot-ready software",
+    "ctaText": "See how Falcon Eye turned simulation-grade rendering into certifiable flight software",
     "ctaUrl": "#contact",
     "visual": {
       "label": "Falcon Eye",
-      "meta": "Synthetic Vision"
+      "meta": "Synthetic Vision / Avionics Systems"
     }
   },
   {
     "tabLabel": "Spuddie",
     "title": "Spuddie",
-    "description": "Designed and shipped backend memory systems for an AI companion, improving continuity and relevance across long-running user conversations.",
+    "description": "Designed and implemented a long-term memory architecture for an AI companion, enabling structured context retention and cross-session continuity.",
     "stats": [
       {
-        "value": "Long-term",
-        "label": "memory module deployed"
+        "value": "+30%",
+        "label": "increase in perceived response relevance"
       },
       {
-        "value": "Higher",
-        "label": "context carryover quality"
+        "value": "Persistent",
+        "label": "memory graph + retrieval pipeline"
       }
     ],
-    "ctaText": "See how Spuddie moved from short replies to persistent context",
+    "ctaText": "Explore the memory architecture behind persistent AI companions",
     "ctaUrl": "#contact",
     "visual": {
       "label": "Spuddie",
-      "meta": "AI Companion"
+      "meta": "Agent Memory Systems"
     }
   },
   {
     "tabLabel": "Findability",
     "title": "Findability Sciences",
-    "description": "Improved enterprise ML pipelines through data quality analysis and outlier handling, increasing model consistency on noisy business datasets.",
+    "description": "Improved enterprise ML reliability by engineering outlier detection and data validation layers across production training pipelines.",
     "stats": [
       {
-        "value": "Applied ML",
-        "label": "pipeline optimization"
+        "value": "+18%",
+        "label": "increase in model accuracy"
       },
       {
-        "value": "Improved",
-        "label": "model reliability in production"
+        "value": "Production",
+        "label": "ML pipeline hardening"
       }
     ],
-    "ctaText": "Explore how better data hygiene improved production model behavior",
+    "ctaText": "See how production ML pipelines were stabilized under noisy data conditions",
     "ctaUrl": "#contact",
     "visual": {
       "label": "Findability",
-      "meta": "Enterprise ML"
+      "meta": "Enterprise Machine Learning"
     }
   },
   {
     "tabLabel": "Venture Shares",
     "title": "Venture Shares",
-    "description": "Built frontend dashboard workflows and shipping-grade internal tools for a market analytics platform in close product and backend collaboration.",
+    "description": "Led frontend architecture for a market analytics platform, designing scalable dashboard systems integrated with real-time financial data streams.",
     "stats": [
       {
-        "value": "Faster",
-        "label": "dashboard delivery cycles"
+        "value": "Scalable",
+        "label": "componentized dashboard architecture"
       },
       {
-        "value": "Production",
-        "label": "analytics workflows shipped"
+        "value": "Realtime",
+        "label": "data-driven analytics workflows"
       }
     ],
-    "ctaText": "Read how Venture Shares scaled dashboard delivery with cleaner tooling",
+    "ctaText": "Read how production-grade financial dashboards were architected and shipped",
     "ctaUrl": "#contact",
     "visual": {
       "label": "Venture Shares",
-      "meta": "Market Analytics"
+      "meta": "Financial Systems Engineering"
     }
   }
 ]
