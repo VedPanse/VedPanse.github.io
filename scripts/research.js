@@ -33,38 +33,28 @@ const extractFirstImage = (markdown) => {
   return { alt: match[1].trim(), src: match[2].trim() };
 };
 
-const extractExcerpt = (markdown) => {
-  const lines = markdown
-    .replace(/\r\n/g, "\n")
-    .split("\n")
-    .map((line) => line.trim())
-    .filter(Boolean);
-  const firstParagraph = lines.find((line) => !line.startsWith("#") && !line.startsWith("!") && !line.startsWith(">"));
-  return firstParagraph || "";
-};
-
 const parseDateValue = (value) => {
   const parsed = Date.parse(value || "");
   return Number.isNaN(parsed) ? 0 : parsed;
 };
 
-const listResearchFiles = async () => {
-  const indexResponse = await fetch(RESEARCH_INDEX_URL);
-  if (indexResponse.ok) {
-    const indexData = await indexResponse.json();
-    if (Array.isArray(indexData)) {
-      return indexData.map((file) => (file.startsWith(RESEARCH_DIR) ? file : `${RESEARCH_DIR}/${file}`));
-    }
+const parseTags = (meta, fallback) => {
+  if (meta.tags) {
+    return meta.tags
+      .split(",")
+      .map((tag) => tag.trim())
+      .filter(Boolean)
+      .slice(0, 4);
   }
+  return [fallback].filter(Boolean);
+};
 
-  const dirResponse = await fetch(`${RESEARCH_DIR}/`);
-  if (!dirResponse.ok) return [];
-  const html = await dirResponse.text();
-  const doc = new DOMParser().parseFromString(html, "text/html");
-  return Array.from(doc.querySelectorAll("a"))
-    .map((link) => link.getAttribute("href"))
-    .filter((href) => href && href.endsWith(".md"))
-    .map((href) => (href.startsWith(RESEARCH_DIR) ? href : `${RESEARCH_DIR}/${href}`));
+const listResearchFiles = async () => {
+  const response = await fetch(RESEARCH_INDEX_URL);
+  if (!response.ok) return [];
+  const indexData = await response.json();
+  if (!Array.isArray(indexData)) return [];
+  return indexData.map((file) => (file.startsWith(RESEARCH_DIR) ? file : `${RESEARCH_DIR}/${file}`));
 };
 
 const loadResearch = async () => {
@@ -77,57 +67,73 @@ const loadResearch = async () => {
       const { meta, body } = parseFrontMatter(markdown);
       const title = meta.title || extractTitle(body);
       const { alt, src } = extractFirstImage(body);
-      const date = meta.date || "";
+      const label = meta.label || "Research";
       return {
-        label: meta.label || "Research",
+        kind: label,
         title,
-        date,
+        date: meta.date || "",
+        author: meta.author || "Ved Panse",
+        tags: parseTags(meta, label),
         image: src,
         imageAlt: alt,
         slug: file.split("/").pop().replace(/\.md$/i, ""),
-        excerpt: meta.excerpt || extractExcerpt(body),
       };
     })
   );
 
-  return items
-    .filter(Boolean)
-    .sort((a, b) => parseDateValue(b.date) - parseDateValue(a.date));
+  return items.filter(Boolean).sort((a, b) => parseDateValue(b.date) - parseDateValue(a.date));
 };
 
-const renderItem = (item) => {
-  const link = createElement("a", "research-item-link");
-  const slug = item.slug || "";
-  link.href = slug ? `research.html?post=${encodeURIComponent(slug)}` : "#";
+const buildCard = (item, variant = "default") => {
+  const link = createElement("a", `editorial-card editorial-card--${variant}`);
+  link.href = `research.html?post=${encodeURIComponent(item.slug || "")}`;
   link.target = "_blank";
   link.rel = "noopener noreferrer";
-  link.setAttribute("aria-label", item.title ? `Open research post: ${item.title}` : "Open research post");
 
-  const article = createElement("article", "research-item");
+  const copy = createElement("div", "editorial-card-copy");
 
-  const media = createElement("div", "research-media research-media--icon");
-  media.setAttribute("aria-hidden", "true");
-  const img = document.createElement("img");
-  img.src = item.image || "";
-  img.alt = item.imageAlt || "";
-  img.loading = "lazy";
-  media.appendChild(img);
+  const kicker = createElement("p", "editorial-card-kicker");
+  kicker.textContent = item.kind || "Research";
 
-  const content = createElement("div", "research-content");
-  const label = createElement("span", "research-label");
-  label.textContent = item.label || "";
-  const title = document.createElement("h3");
-  title.textContent = item.title || "";
-  const date = createElement("p", "research-date");
+  const title = createElement("h3", "editorial-card-title");
+  title.textContent = item.title || "Untitled";
+
+  const meta = createElement("div", "editorial-card-meta");
+  const author = createElement("p", "editorial-card-author");
+  author.textContent = item.author || "Ved Panse";
+  const date = createElement("p", "editorial-card-date");
   date.textContent = item.date || "";
 
-  content.appendChild(label);
-  content.appendChild(title);
-  content.appendChild(date);
+  const tags = createElement("div", "editorial-card-tags");
+  (item.tags || []).forEach((tag) => {
+    const chip = createElement("span", "editorial-card-tag");
+    chip.textContent = tag;
+    tags.appendChild(chip);
+  });
 
-  article.appendChild(media);
-  article.appendChild(content);
-  link.appendChild(article);
+  meta.appendChild(author);
+  meta.appendChild(date);
+  meta.appendChild(tags);
+
+  copy.appendChild(kicker);
+  copy.appendChild(title);
+  copy.appendChild(meta);
+
+  const media = createElement("div", "editorial-card-media");
+  if (item.image) {
+    const img = document.createElement("img");
+    img.src = item.image;
+    img.alt = item.imageAlt || "";
+    img.loading = "lazy";
+    media.appendChild(img);
+  }
+
+  if (variant === "text-only") {
+    link.classList.add("editorial-card--text-only");
+  }
+
+  link.appendChild(copy);
+  link.appendChild(media);
   return link;
 };
 
@@ -139,10 +145,11 @@ export const initResearch = async () => {
   if (!items.length) return;
 
   grid.innerHTML = "";
-  items.slice(0, 4).forEach((item, index) => {
-    grid.appendChild(renderItem(item));
-    if (index === 1 && items.length > 2) {
-      grid.appendChild(createElement("div", "research-divider"));
-    }
-  });
+
+  const [featured, second, third, fourth, ...rest] = items;
+  if (featured) grid.appendChild(buildCard(featured, "featured"));
+  if (second) grid.appendChild(buildCard(second, "default"));
+  if (third) grid.appendChild(buildCard(third, "default"));
+  if (fourth) grid.appendChild(buildCard(fourth, "text-only"));
+  rest.slice(0, 2).forEach((item) => grid.appendChild(buildCard(item, "default")));
 };
