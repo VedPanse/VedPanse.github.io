@@ -13,20 +13,66 @@
 </head>
 
 <body class="blog-view">
+  <header class="site-header">
+    <nav class="global-nav" aria-label="Primary">
+      <div class="nav-inner">
+        <a class="nav-logo" href="index.html" aria-label="Home" data-content="name">Ved Panse</a>
+        <div class="nav-links">
+          <a href="index.html#icon-columns">About</a>
+          <a href="index.html#projects">Projects</a>
+          <a href="index.html#work">Work</a>
+          <a href="index.html#research">Research</a>
+          <a href="index.html#blogs" class="is-active">Blogs</a>
+          <a href="index.html#current-focus">Current Focus</a>
+          <a href="index.html#contact">Contact</a>
+        </div>
+        <div class="nav-icons">
+          <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to light theme">
+            <svg class="theme-icon theme-icon--sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <circle cx="12" cy="12" r="4.5" />
+              <line x1="12" y1="1.5" x2="12" y2="4" />
+              <line x1="12" y1="20" x2="12" y2="22.5" />
+              <line x1="1.5" y1="12" x2="4" y2="12" />
+              <line x1="20" y1="12" x2="22.5" y2="12" />
+              <line x1="4.2" y1="4.2" x2="6.1" y2="6.1" />
+              <line x1="17.9" y1="17.9" x2="19.8" y2="19.8" />
+              <line x1="4.2" y1="19.8" x2="6.1" y2="17.9" />
+              <line x1="17.9" y1="6.1" x2="19.8" y2="4.2" />
+            </svg>
+            <svg class="theme-icon theme-icon--moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path
+                d="M15.5 4.5c-3.9 0-7 3.1-7 7 0 3.3 2.2 6.1 5.3 6.8 3.4.7 6.8-1 8.2-4.1-2.8.7-5.7-.1-7.4-2-1.7-1.9-2-4.7-.8-6.7-.6-.1-1.1-.2-1.7-.2z" />
+            </svg>
+          </button>
+          <button class="nav-search" type="button" data-search-toggle aria-label="Open search">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <circle cx="11" cy="11" r="6.5" />
+              <line x1="16" y1="16" x2="21" y2="21" />
+            </svg>
+          </button>
+          <button class="nav-toggle" type="button" data-nav-toggle aria-label="Open menu" aria-expanded="false">
+            <span class="nav-toggle-line"></span>
+            <span class="nav-toggle-line"></span>
+            <span class="nav-toggle-line"></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+    <div class="nav-drawer" data-nav-drawer aria-hidden="true">
+      <div class="nav-drawer-inner nav-drawer-links" aria-label="Mobile">
+        <a href="index.html#icon-columns">About</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#work">Work</a>
+        <a href="index.html#research">Research</a>
+        <a href="index.html#blogs">Blogs</a>
+        <a href="index.html#current-focus">Current Focus</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+    </div>
+  </header>
+
   <main class="blog-layout" aria-live="polite">
     <aside class="blog-sidebar blog-sidebar--left" aria-label="Blog navigation">
-      <button class="blog-search-trigger" type="button" data-search-toggle aria-label="Open search">
-        <span class="blog-search-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
-            <circle cx="11" cy="11" r="6.5" />
-            <line x1="16" y1="16" x2="21" y2="21" />
-          </svg>
-        </span>
-        <span class="blog-search-text">Search</span>
-        <span class="blog-search-key">&#8984;</span>
-        <span class="blog-search-key">K</span>
-      </button>
-
       <a class="blog-all-posts" href="index.html#blogs">All posts</a>
 
       <section class="blog-side-group" aria-labelledby="blog-recent-heading">
@@ -56,7 +102,6 @@
 
     <aside class="blog-sidebar blog-sidebar--right" aria-label="Table of contents">
       <nav class="blog-toc" data-blog-toc></nav>
-      <button class="blog-copy-page" type="button" data-copy-page>Copy Page</button>
     </aside>
   </main>
 

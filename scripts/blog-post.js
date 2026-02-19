@@ -397,6 +397,12 @@ const buildToc = () => {
     });
   };
 
+  links.forEach(({ heading, link }) => {
+    link.addEventListener("click", () => {
+      setActiveLink(heading.id);
+    });
+  });
+
   const observer = new IntersectionObserver(
     (entries) => {
       const visible = entries
