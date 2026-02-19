@@ -1,94 +1,73 @@
 {
   "projects": [
     {
-      "name": "Falcon Eye",
-      "accent": "#ff9f0a",
-      "description": "is a synthetic vision and terrain-aware flight assistance system delivering real-time 3D perception for low-visibility aviation.",
-      "longTitle": "Falcon Eye delivers real-time synthetic vision for safe low-visibility flight.",
-      "details": "Falcon Eye reconstructs surrounding terrain and obstacles into a real-time 3D flight corridor, helping pilots maintain spatial awareness when visual cues are lost. The system is optimized for low-latency rendering on constrained hardware and prioritizes robustness, clarity, and pilot-first situational awareness.",
+      "name": "Daemon",
+      "accent": "#34c759",
+      "description": "AI-native firmware-to-agent bridge that compiles device capabilities into structured, learnable command interfaces.",
+      "longTitle": "Daemon: compiling embedded firmware into an agent-controllable substrate for embodied intelligence.",
+      "details": "Daemon transforms low-level firmware into a structured semantic interface that autonomous agents can safely reason over and execute. A build step generates a machine-readable command schema and a C-level dispatcher that maps tokens to hardware functions, enabling adaptive device control as sensors and actuators evolve. The core goal is embodiment: treating physical systems as extensible, composable APIs that agents can learn, audit, and orchestrate.",
       "url": "",
       "stack": [
-        { "src": "assets/cpp.png", "label": "C++" },
         { "src": "assets/c.png", "label": "C" },
-        { "src": "assets/python.png", "label": "Python" }
-      ]
-    },
-    {
-      "name": "Ion",
-      "accent": "#0a84ff",
-      "description": "is an AI-powered 3D hardware blueprinting system that auto-detects components, renders wiring in real time, and generates safe starter code.",
-      "longTitle": "Ion converts physical hardware into a live 3D blueprint with wiring and code generation.",
-      "details": "Ion detects microcontrollers and peripherals, infers connectivity, and renders a live wiring blueprint as hardware is assembled. It produces structured connection graphs, flags unsafe wiring patterns, and generates starter firmware—bridging the gap between bench prototypes and production-ready schematics.",
-      "url": "https://youtu.be/sX_8WW7cI7I",
-      "stack": [
         { "src": "assets/rust.png", "label": "Rust" },
-        { "src": "assets/tauri.svg", "label": "Tauri" },
         { "src": "assets/python.png", "label": "Python" }
+      ],
+      "focus": [
+        "Embodied agents",
+        "Compiler-style interface generation",
+        "Safe hardware actuation"
       ]
     },
     {
       "name": "Siri++",
       "accent": "#bf5af2",
-      "description": "is a multimodal, agentic personal assistant that orchestrates workflows across apps using voice, images, and system context.",
-      "longTitle": "Siri++ executes real workflows using multimodal understanding and persistent context.",
-      "details": "Siri++ combines multimodal input (text, voice, images) with structured memory and tool execution to complete multi-step tasks across apps. It maintains continuity across sessions and focuses on end-to-end workflow completion rather than single-turn commands.",
+      "description": "Multimodal agent orchestration system focused on persistent memory, tool execution, and workflow completion.",
+      "longTitle": "Siri++: structured multimodal agent orchestration with persistent context and cross-tool execution.",
+      "details": "Siri++ explores the gap between single-turn LLM responses and sustained autonomous workflows. It integrates multimodal inputs (text, voice, images), structured memory, and tool invocation under explicit orchestration loops. Rather than wrapping APIs, the system models long-horizon task decomposition, state persistence, and recovery from execution failure—treating agent behavior as a systems problem, not a prompt problem.",
       "url": "https://github.com/VedPanse/SiriPlusPlus",
       "stack": [
         { "src": "assets/swift.png", "label": "Swift" },
-        { "src": "assets/python.png", "label": "Python" },
-        { "src": "assets/langchain.png", "label": "LangChain" }
+        { "src": "assets/python.png", "label": "Python" }
+      ],
+      "focus": [
+        "Agent control loops",
+        "Persistent memory systems",
+        "Long-horizon task execution"
       ]
     },
     {
-      "name": "Pulse",
-      "accent": "#34c759",
-      "description": "is a disaster-resilient mesh-network and survivor-localization system designed to operate entirely offline.",
-      "longTitle": "Pulse enables offline mesh communication and survivor localization during disasters.",
-      "details": "Pulse forms an ad-hoc, offline-first mesh network that supports SOS messaging and location sharing when infrastructure fails. It prioritizes low-power operation, hop-by-hop reliability, and graceful degradation under extreme conditions.",
-      "url": "https://github.com/VedPanse/Pulse",
+      "name": "Ion",
+      "accent": "#0a84ff",
+      "description": "Real-time hardware blueprinting system that infers connectivity graphs and renders live 3D wiring models.",
+      "longTitle": "Ion: inference-driven hardware graph construction and real-time 3D visualization under correctness constraints.",
+      "details": "Ion detects microcontrollers and peripherals, constructs structured connection graphs, and renders live 3D wiring blueprints as hardware is assembled. It enforces safety constraints and generates starter firmware based on inferred topology. The system reframes hardware assembly as a graph inference and validation problem, bridging physical systems with machine reasoning and IDE-grade feedback loops.",
+      "url": "https://youtu.be/sX_8WW7cI7I",
       "stack": [
-        { "src": "assets/kotlin.png", "label": "Kotlin" },
-        { "src": "assets/swift.png", "label": "Swift" },
-        { "src": "assets/android-tech.png", "label": "Android" }
+        { "src": "assets/rust.png", "label": "Rust" },
+        { "src": "assets/tauri.svg", "label": "Tauri" },
+        { "src": "assets/python.png", "label": "Python" }
+      ],
+      "focus": [
+        "Graph inference",
+        "Real-time 3D systems",
+        "Hardware-software co-design"
       ]
     },
     {
       "name": "Shardwise",
       "accent": "#ff375f",
-      "description": "is a distributed sharding and execution layer that decomposes large workloads into coordinated execution units.",
-      "longTitle": "Shardwise breaks large workloads into coordinated, scalable execution shards.",
-      "details": "Shardwise partitions compute into deterministic shards with explicit coordination and retry semantics. It is designed for predictable throughput under load, with visibility into shard-level latency and failure behavior.",
+      "description": "Deterministic sharding and execution engine for scalable, coordinated agent workloads.",
+      "longTitle": "Shardwise: deterministic workload decomposition and coordinated execution for large-scale agent systems.",
+      "details": "Shardwise partitions complex workloads into explicit, deterministic shards with defined coordination and retry semantics. It exposes shard-level observability, latency tracking, and failure recovery mechanisms to ensure predictable behavior under load. Designed to support agentic systems that require controlled parallelism rather than opportunistic concurrency.",
       "url": "",
       "stack": [
         { "src": "assets/go.png", "label": "Go" },
-        { "src": "assets/rust.png", "label": "Rust" },
-        { "src": "assets/python.png", "label": "Python" }
-      ]
-    },
-    {
-      "name": "GhostPIN",
-      "accent": "#ff9f0a",
-      "description": "is a page-bound MFA system that prevents phishing and fake checkouts during online payments.",
-      "longTitle": "GhostPIN cryptographically binds payments to real merchant pages.",
-      "details": "GhostPIN secures online payments by binding user authentication to the actual merchant page rather than just the session. It combines server-signed visual nonces with adaptive MFA so transactions cannot be replayed on phishing or injected checkout pages, acting as a missing trust layer for web commerce.",
-      "url": "https://github.com/dannypeelen/ghostpin",
-      "stack": [
-        { "src": "assets/js.png", "label": "JavaScript" },
-        { "src": "assets/ts.webp", "label": "TypeScript" },
-        { "src": "assets/go.png", "label": "Go" }
-      ]
-    },
-    {
-      "name": "Flux",
-      "accent": "#0a84ff",
-      "description": "is a real-time decision engine that recommends the optimal credit card or payment method for each purchase.",
-      "longTitle": "Flux optimizes payment decisions to maximize rewards and minimize lost value.",
-      "details": "Flux evaluates purchase context against card rewards, caps, expirations, and offer rules to recommend the highest-value payment method in real time. It focuses on decision optimization rather than dashboards, helping users quantify value gained versus value left on the table.",
-      "url": "",
-      "stack": [
-        { "src": "assets/kotlin.png", "label": "Kotlin" },
-        { "src": "assets/ts.webp", "label": "TypeScript" },
-        { "src": "assets/go.png", "label": "Go" }
+        { "src": "assets/rust.png", "label": "Rust" }
+      ],
+      "focus": [
+        "Deterministic concurrency",
+        "Distributed execution",
+        "Predictable scaling"
       ]
     }
   ]
