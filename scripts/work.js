@@ -8,15 +8,9 @@ const createElement = (tag, className) => {
   return element;
 };
 
-const VIBRANT_HUE_BANDS = [
-  [8, 38],
-  [44, 76],
-  [84, 150],
-  [172, 212],
-  [224, 262],
-  [272, 320],
-  [330, 356],
-];
+const TAU = Math.PI * 2;
+const GOLDEN_RATIO_CONJUGATE = 0.6180339887498949;
+const fract = (value) => value - Math.floor(value);
 
 const hashString = (value) => {
   let hash = 2166136261;
@@ -27,30 +21,66 @@ const hashString = (value) => {
   return hash >>> 0;
 };
 
-const ratioFromHash = (hash, shift = 0) => ((hash >>> shift) & 0xffff) / 65535;
+const createSeededRng = (seed) => {
+  let state = seed >>> 0;
+  return () => {
+    state = (state + 0x9e3779b9) >>> 0;
+    let mixed = state;
+    mixed = Math.imul(mixed ^ (mixed >>> 16), 0x21f0aaad);
+    mixed = Math.imul(mixed ^ (mixed >>> 15), 0x735a2d97);
+    mixed ^= mixed >>> 15;
+    return (mixed >>> 0) / 4294967296;
+  };
+};
+
+const gaussianInfluence = (value, center, spread) => {
+  const delta = value - center;
+  return Math.exp(-(delta * delta) / (2 * spread * spread));
+};
+
+const harmonicHueWarp = (position, phaseA, phaseB) => {
+  const waveA = Math.sin(TAU * (position + phaseA));
+  const waveB = 0.56 * Math.sin(TAU * (2 * position + phaseB));
+  const waveC = 0.28 * Math.sin(TAU * (3 * position + phaseA * 0.6 + phaseB * 0.4));
+  return 0.11 * waveA + 0.07 * waveB + 0.04 * waveC;
+};
 
 const accentFromCompanyName = (name) => {
   const seed = (name || "work").trim().toLowerCase();
-  const baseHash = hashString(seed);
-  const hueHash = hashString(`${seed}:hue`);
-  const toneHash = hashString(`${seed}:tone`);
-  const [minHue, maxHue] = VIBRANT_HUE_BANDS[baseHash % VIBRANT_HUE_BANDS.length];
+  const baseHash = hashString(seed) ^ hashString(`${seed}:accent`);
+  const random = createSeededRng(baseHash);
+  const primary = random();
+  const secondary = random();
+  const phaseA = random();
+  const phaseB = random();
+  const chromaNoise = random();
+  const lightNoise = random();
 
-  let hue = minHue + (maxHue - minHue) * ratioFromHash(hueHash);
-  hue = (hue + ((toneHash >>> 20) % 9) - 4 + 360) % 360;
+  // Low-discrepancy base + harmonic warp gives broad hue coverage with deterministic uniqueness.
+  const hueSeed = fract(primary + GOLDEN_RATIO_CONJUGATE * secondary);
+  const warpedHue = fract(hueSeed + harmonicHueWarp(hueSeed, phaseA, phaseB) + (random() - 0.5) * 0.03);
+  const hue = warpedHue * 360;
+  const hueRadians = (hue * Math.PI) / 180;
 
-  let saturation = 72 + Math.round(ratioFromHash(baseHash, 8) * 16);
-  let lightness = 52 + Math.round(ratioFromHash(toneHash, 2) * 10);
+  const warmPenalty = gaussianInfluence(hue, 62, 17);
+  const cyanPenalty = gaussianInfluence(hue, 192, 22);
+  const coolBoost = gaussianInfluence(hue, 292, 30);
 
-  if (hue >= 48 && hue <= 80) {
-    lightness = clamp(lightness - 7, 45, 58);
-  }
-  if (hue >= 172 && hue <= 212) {
-    saturation = clamp(saturation - 6, 66, 86);
-  }
-  if (hue >= 272 && hue <= 320) {
-    saturation = clamp(saturation + 4, 72, 90);
-  }
+  let saturation =
+    76 +
+    Math.round(chromaNoise * 12) +
+    Math.round(6 * Math.cos(hueRadians - 0.4)) -
+    Math.round(8 * cyanPenalty) +
+    Math.round(5 * coolBoost);
+
+  let lightness =
+    54 +
+    Math.round((lightNoise - 0.5) * 8) +
+    Math.round(5 * Math.sin(hueRadians + 0.2)) -
+    Math.round(7 * warmPenalty);
+
+  saturation = clamp(saturation, 68, 92);
+  lightness = clamp(lightness, 45, 62);
 
   return `hsl(${Math.round(hue)}, ${saturation}%, ${lightness}%)`;
 };
