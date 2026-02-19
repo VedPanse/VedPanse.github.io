@@ -2,22 +2,24 @@
 label: Introduction
 date: January 22, 2026
 title: Hi, I'm Ved.
-excerpt: A personal note on why I build, and why I write about it.
+excerpt: Some context before I start writing about broken systems and the things I’m trying to build.
 ---
-# From ideas to real products
+# Hi, I'm Ved.
 
 ![Notes from building systems that have to work in the real world](assets/banners/intro.png)
 
-Hi. I'm Ved.
+Hi.
 
-I'm a student at UC San Diego. I study computer science and data science, but what I really like is building things and then watching them break in ways I did not predict.
+I’m Ved. I study math–computer science and data science at UC San Diego, which is the formal way of saying I spend a lot of time staring at code, proofs, and diagrams that looked much cleaner before I tried to make them real.
 
-I'm interested in systems that have to deal with real constraints — speed, memory, users clicking the wrong button, hardware doing something weird, or code that works perfectly until it suddenly doesn't. I enjoy the part where an idea stops sounding smart and starts demanding actual effort.
+If you’ve met me before, it might have been because I was talking about synthetic vision in aviation, overthinking agent memory architectures, or arguing that determinism is more interesting than “AI magic.” If you haven’t, that’s fine too — this is mostly a notebook that happens to be public.
 
-Most of my time is split between classes, hackathons, research, startups, and side projects that probably started as “small ideas.” I like developer tools, aviation systems, and anything that sits awkwardly between software and the real world. If something has edge cases, tradeoffs, or the potential to fail quietly at 2 a.m., I tend to gravitate toward it.
+I like systems that stop cooperating the second you assume they will. Rendering pipelines that jitter under load. Models that forget the one thing they shouldn’t. Hardware that behaves differently than the spec sheet implied. That moment where something technically works but doesn’t feel trustworthy — that’s usually where I get invested.
 
-I also travel more than I expect to. Projects and competitions have a way of putting me in new cities, new rooms, and conversations that make me realize how much I still don't know. Those moments are exciting and slightly uncomfortable, which usually means they're worth writing about.
+Outside of actual obligations, I tend to fall into slightly unnecessary rabbit holes. I’ve booted an IBM-7094 simulator just to run ELIZA. I’ve tried learning COBOL for no strategic reason. I’ve rewritten parts of projects that were technically fine but structurally wrong. None of this is efficient. It is, however, satisfying.
 
-This blog is where I keep notes. Not tutorials, not announcements, and definitely not a highlight reel. Just thoughts from building things, fixing them, breaking them again, and slowly getting better at it.
+This blog isn’t a highlight reel. It’s mostly notes from building things that had to survive contact with reality. Some posts will be about systems. Some will probably be about mistakes. A few might age poorly. That’s fine.
 
-I don't have a grand plan for this blog. I'm just writing as I go. If you're into building, learning the hard way, and watching ideas turn into real products, you might enjoy it here.
+I’m writing as I go.
+
+(# of future rewrites of this intro: probably more than I think)
