@@ -6,26 +6,34 @@ excerpt: Building a scalable frontend dashboard architecture that stayed respons
 ---
 # Venture Shares - Architecting realtime financial dashboards
 
-The platform needed to ingest realtime data while keeping the UI responsive and readable for high-frequency interactions.
+![Venture Shares logo](assets/work/venture-shares/logo.png)
 
-## Core constraints
+Financial dashboards look calm on the surface. Numbers tick. Charts move. Tables refresh. Underneath, there’s constant motion. Market feeds update frequently, state changes ripple through multiple views, and users expect everything to feel instantaneous even when the data isn’t.
 
-- frequent update events from market feeds
-- complex dashboard state shared across multiple views
-- need for composable components that could evolve quickly
+At Venture Shares, the challenge wasn’t just rendering data. It was rendering it in a way that could survive growth. New modules, new analytics, new views — all without turning the UI into a fragile web of side effects.
 
-## Implementation choices
+## The constraints that actually mattered
 
-- componentized dashboard modules with clear state boundaries
-- normalized data flow between ingestion, transform, and presentation layers
-- rendering optimizations to avoid full-view redraw under fast updates
+Realtime updates meant frequent event streams from market feeds. If every update triggered a full re-render, performance would collapse quickly. At the same time, dashboards shared state across multiple views — filters, time ranges, selected assets — so isolating everything wasn’t an option either.
 
-## Outcomes
+The system had to be composable enough that new modules could be introduced without rewriting core plumbing, but strict enough that state didn’t leak unpredictably across components.
 
-- scalable dashboard architecture for new modules
-- stable performance under realtime update load
-- faster iteration for product and analytics feature work
+It wasn’t just about speed. It was about control.
 
-## Lesson learned
+## How we structured it
 
-In data-heavy frontend systems, architecture quality determines feature velocity. The cleanest UI is the one whose state model can survive growth.
+The architecture leaned heavily on componentized dashboard modules with clear state boundaries. Each module owned what it needed and subscribed only to relevant slices of shared state. Instead of letting ingestion logic bleed into presentation layers, we normalized the data flow: ingestion → transform → presentation.
+
+That separation made it easier to reason about updates. Rendering optimizations focused on avoiding full-view redraws under fast update cycles. Instead of “refresh everything,” we targeted only the components that actually changed.
+
+The UI became less magical and more explicit, which in a realtime environment is a good trade.
+
+## What shifted
+
+Performance stabilized under continuous update load. Adding new dashboard modules stopped feeling risky. Product and analytics teams could iterate faster because the foundation didn’t wobble every time something new was introduced.
+
+The visible outcome was a responsive interface. The invisible outcome was velocity.
+
+## The lesson
+
+In data-heavy frontend systems, architecture quality determines feature velocity. The cleanest UI isn’t the one with the nicest animations — it’s the one whose state model can survive growth without collapsing into complexity.
