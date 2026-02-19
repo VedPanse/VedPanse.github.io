@@ -1,3 +1,5 @@
+import { createEditorialSearcher, markdownToSearchText } from "./editorial-search.js";
+
 const RESEARCH_DIR = "data/research";
 const RESEARCH_INDEX_URL = `${RESEARCH_DIR}/index.json`;
 
@@ -68,12 +70,16 @@ const loadResearch = async () => {
       const title = meta.title || extractTitle(body);
       const { alt, src } = extractFirstImage(body);
       const label = meta.label || "Research";
+      const excerpt = meta.excerpt || "";
+      const content = markdownToSearchText(body);
       return {
         kind: label,
         title,
         date: meta.date || "",
         author: meta.author || "Ved Panse",
         tags: parseTags(meta, label),
+        excerpt,
+        content,
         image: src,
         imageAlt: alt,
         slug: file.split("/").pop().replace(/\.md$/i, ""),
@@ -137,14 +143,21 @@ const buildCard = (item, variant = "default") => {
   return link;
 };
 
-export const initResearch = async () => {
-  const grid = document.querySelector("[data-research-grid]");
-  if (!grid) return;
-
-  const items = await loadResearch();
-  if (!items.length) return;
-
+const renderItems = (grid, items, filtered = false) => {
   grid.innerHTML = "";
+  if (!items.length) {
+    const empty = createElement("p", "editorial-empty");
+    empty.textContent = "No research posts matched this search.";
+    grid.appendChild(empty);
+    return;
+  }
+
+  if (filtered) {
+    const [top, ...rest] = items;
+    if (top) grid.appendChild(buildCard(top, "featured"));
+    rest.forEach((item) => grid.appendChild(buildCard(item, "default")));
+    return;
+  }
 
   const [featured, second, third, fourth, ...rest] = items;
   if (featured) grid.appendChild(buildCard(featured, "featured"));
@@ -152,4 +165,47 @@ export const initResearch = async () => {
   if (third) grid.appendChild(buildCard(third, "default"));
   if (fourth) grid.appendChild(buildCard(fourth, "text-only"));
   rest.slice(0, 2).forEach((item) => grid.appendChild(buildCard(item, "default")));
+};
+
+export const initResearch = async () => {
+  const section = document.querySelector("#research");
+  const grid = document.querySelector("[data-research-grid]");
+  if (!grid || !section) return;
+
+  const items = await loadResearch();
+  if (!items.length) return;
+
+  const searchInput = section.querySelector('[data-editorial-search-input="research"]');
+  const searchStatus = section.querySelector('[data-editorial-search-status="research"]');
+  const search = createEditorialSearcher(items);
+
+  const updateStatus = (count, query) => {
+    if (!searchStatus) return;
+    if (!query) {
+      searchStatus.textContent = `${items.length} posts`;
+      return;
+    }
+    searchStatus.textContent = `${count} result${count === 1 ? "" : "s"}`;
+  };
+
+  const applySearch = () => {
+    const query = (searchInput?.value || "").trim();
+    if (!query) {
+      renderItems(grid, items, false);
+      updateStatus(items.length, "");
+      return;
+    }
+
+    const results = search(query);
+    renderItems(grid, results, true);
+    updateStatus(results.length, query);
+  };
+
+  renderItems(grid, items, false);
+  updateStatus(items.length, "");
+
+  if (searchInput) {
+    searchInput.addEventListener("input", applySearch);
+    searchInput.addEventListener("search", applySearch);
+  }
 };

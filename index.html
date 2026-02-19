@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ved Panse | Software Engineer</title>
+  <title>Ved Panse</title>
   <meta name="description"
     content="Ved Panse is a product engineer and AI builder creating polished software experiences across web, mobile, and intelligent systems." />
   <meta name="author" content="Ved Panse" />
@@ -176,12 +176,14 @@
       <div class="research-inner">
         <h2 id="research-title">Research</h2>
         <div class="editorial-feed">
-          <div class="editorial-search" aria-hidden="true">
+          <div class="editorial-search">
             <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
               <circle cx="11" cy="11" r="6.5"></circle>
               <line x1="16" y1="16" x2="21" y2="21"></line>
             </svg>
-            <span>Search topics, titles and authors</span>
+            <input class="editorial-search-input" type="search" placeholder="Search research topics, titles and authors"
+              data-editorial-search-input="research" aria-label="Search research posts" />
+            <p class="editorial-search-status" data-editorial-search-status="research" aria-live="polite"></p>
           </div>
           <div class="editorial-grid" data-research-grid></div>
         </div>
@@ -192,12 +194,14 @@
       <div class="blogs-inner">
         <h2 id="blogs-title">Blogs</h2>
         <div class="editorial-feed">
-          <div class="editorial-search" aria-hidden="true">
+          <div class="editorial-search">
             <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
               <circle cx="11" cy="11" r="6.5"></circle>
               <line x1="16" y1="16" x2="21" y2="21"></line>
             </svg>
-            <span>Search topics, titles and authors</span>
+            <input class="editorial-search-input" type="search" placeholder="Search blog topics, titles and authors"
+              data-editorial-search-input="blogs" aria-label="Search blog posts" />
+            <p class="editorial-search-status" data-editorial-search-status="blogs" aria-live="polite"></p>
           </div>
           <div class="editorial-grid" data-blogs-grid></div>
         </div>
