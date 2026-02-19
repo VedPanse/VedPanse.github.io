@@ -656,8 +656,8 @@ main {
   --work-showcase-tab-border: rgba(255, 255, 255, 0.14);
   --work-showcase-tab-text: #7f8390;
   --work-showcase-tab-hover: #000000;
-  --work-showcase-tab-active-bg: #ffffff;
-  --work-showcase-tab-active-text: #111216;
+  --work-showcase-tab-active-bg: transparent;
+  --work-showcase-tab-active-text: #f2f4f8;
   --work-showcase-accent: #4da3ff;
   --work-showcase-link-hover: #89c3ff;
   --work-showcase-focus: #4da3ff;
@@ -1554,7 +1554,7 @@ html[data-theme="light"] .work-archive-section {
   --work-showcase-tab-border: rgba(32, 33, 38, 0.14);
   --work-showcase-tab-text: #8d8f97;
   --work-showcase-tab-hover: rgba(255, 255, 255, 0.35);
-  --work-showcase-tab-active-bg: #ffffff;
+  --work-showcase-tab-active-bg: transparent;
   --work-showcase-tab-active-text: #22232a;
   --work-showcase-accent: #0f62fe;
   --work-showcase-link-hover: #0043ce;
