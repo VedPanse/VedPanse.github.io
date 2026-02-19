@@ -74,53 +74,204 @@ export const initWorkSection = () => {
   window.addEventListener("resize", onResize);
 };
 
-const renderWorkItem = (item) => {
-  const article = createElement("article", "work-card");
+const normalizeStats = (item) => {
+  if (Array.isArray(item.stats) && item.stats.length) {
+    return item.stats.slice(0, 2).map((stat) => ({
+      value: stat?.value || "",
+      label: stat?.label || "",
+    }));
+  }
 
-  const frame = createElement("div", "work-card-frame");
-  const img = document.createElement("img");
-  img.className = "work-card-image";
-  img.src = item.image || "";
-  img.alt = item.imageAlt || "";
-  img.loading = "lazy";
+  return [
+    {
+      value: item.role || "Role",
+      label: "engagement focus",
+    },
+    {
+      value: "Delivered",
+      label: "product and engineering outcomes",
+    },
+  ];
+};
 
-  const gradient = createElement("div", "work-card-gradient");
+const normalizeItems = (items) =>
+  items.map((item, index) => {
+    const fallbackTitle = item.title || item.company || `Work ${index + 1}`;
+    const visual = item.visual || {};
 
-  const content = createElement("div", "work-card-content");
-  const left = createElement("div", "work-card-left");
-  const right = createElement("div", "work-card-right");
+    return {
+      tabLabel: item.tabLabel || fallbackTitle,
+      title: fallbackTitle,
+      description: item.description || "",
+      stats: normalizeStats(item),
+      ctaText: item.ctaText || `Learn more about ${fallbackTitle}`,
+      ctaUrl: item.ctaUrl || "#contact",
+      visualImage: item.visualImage || "",
+      visualAlt: item.visualAlt || `${fallbackTitle} showcase visual`,
+      visual: {
+        start: visual.start || "#101319",
+        end: visual.end || "#06080d",
+        accent: visual.accent || "#0f62fe",
+        label: visual.label || fallbackTitle,
+        meta: visual.meta || "Case Study",
+      },
+    };
+  });
 
-  const title = createElement("p", "work-card-title");
-  const company = item.company || "";
-  const role = item.role || "";
-  title.innerHTML = `${company} <span class="work-card-as">as a</span> ${role}`;
+const renderPanel = (panel, item, tabId) => {
+  panel.innerHTML = "";
+  panel.setAttribute("role", "tabpanel");
+  panel.setAttribute("aria-labelledby", tabId);
 
-  const description = createElement("p", "work-card-description");
-  description.textContent = item.description || "";
+  const body = createElement("div", "work-showcase-body");
 
-  left.appendChild(title);
-  right.appendChild(description);
-  content.appendChild(left);
-  content.appendChild(right);
+  const content = createElement("div", "work-showcase-content");
+  const title = createElement("h3", "work-showcase-company");
+  title.textContent = item.title;
 
-  frame.appendChild(img);
-  frame.appendChild(gradient);
-  frame.appendChild(content);
-  article.appendChild(frame);
-  return article;
+  const description = createElement("p", "work-showcase-description");
+  description.textContent = item.description;
+
+  const stats = createElement("div", "work-showcase-stats");
+  item.stats.forEach((stat) => {
+    const statCard = createElement("div", "work-showcase-stat");
+
+    const value = createElement("p", "work-showcase-stat-value");
+    value.textContent = stat.value;
+
+    const label = createElement("p", "work-showcase-stat-label");
+    label.textContent = stat.label;
+
+    statCard.appendChild(value);
+    statCard.appendChild(label);
+    stats.appendChild(statCard);
+  });
+
+  const cta = createElement("a", "work-showcase-link");
+  cta.href = item.ctaUrl;
+  cta.textContent = item.ctaText;
+  cta.setAttribute("aria-label", item.ctaText);
+
+  const arrow = createElement("span", "work-showcase-link-arrow");
+  arrow.textContent = "\u2192";
+  arrow.setAttribute("aria-hidden", "true");
+
+  cta.appendChild(arrow);
+
+  content.appendChild(title);
+  content.appendChild(description);
+  content.appendChild(stats);
+  content.appendChild(cta);
+
+  const media = createElement("div", "work-showcase-media");
+
+  if (item.visualImage) {
+    const image = document.createElement("img");
+    image.className = "work-showcase-media-image";
+    image.src = item.visualImage;
+    image.alt = item.visualAlt;
+    image.loading = "lazy";
+    media.appendChild(image);
+  } else {
+    media.style.setProperty("--work-visual-start", item.visual.start);
+    media.style.setProperty("--work-visual-end", item.visual.end);
+    media.style.setProperty("--work-visual-accent", item.visual.accent);
+
+    const fallback = createElement("div", "work-showcase-media-fallback");
+
+    const meta = createElement("p", "work-showcase-media-meta");
+    meta.textContent = item.visual.meta;
+
+    const label = createElement("p", "work-showcase-media-label");
+    label.textContent = item.visual.label;
+
+    fallback.appendChild(meta);
+    fallback.appendChild(label);
+    media.appendChild(fallback);
+  }
+
+  body.appendChild(content);
+  body.appendChild(media);
+  panel.appendChild(body);
 };
 
 export const initWorkExperience = async () => {
-  const grid = document.querySelector("[data-work-grid]");
-  if (!grid) return;
+  const tabs = document.querySelector("[data-work-tabs]");
+  const panel = document.querySelector("[data-work-panel]");
+  if (!tabs || !panel) return;
 
-  const response = await fetch(WORK_DATA_URL);
-  if (!response.ok) return;
-  const items = await response.json();
-  if (!Array.isArray(items) || !items.length) return;
+  let items = [];
+  try {
+    const response = await fetch(WORK_DATA_URL);
+    if (!response.ok) return;
+    const data = await response.json();
+    if (!Array.isArray(data) || !data.length) return;
+    items = normalizeItems(data);
+  } catch {
+    return;
+  }
 
-  grid.innerHTML = "";
-  items.forEach((item) => {
-    grid.appendChild(renderWorkItem(item));
+  tabs.innerHTML = "";
+  panel.id = "work-panel";
+  tabs.style.setProperty("--work-tab-count", String(items.length));
+
+  let activeIndex = 0;
+  const tabButtons = [];
+
+  const setActive = (nextIndex, focus = false) => {
+    activeIndex = nextIndex;
+
+    tabButtons.forEach((button, index) => {
+      const isActive = index === activeIndex;
+      button.classList.toggle("is-active", isActive);
+      button.setAttribute("aria-selected", String(isActive));
+      button.tabIndex = isActive ? 0 : -1;
+      if (focus && isActive) button.focus();
+    });
+
+    renderPanel(panel, items[activeIndex], tabButtons[activeIndex].id);
+  };
+
+  items.forEach((item, index) => {
+    const tab = createElement("button", "work-showcase-tab");
+    tab.type = "button";
+    tab.id = `work-tab-${index}`;
+    tab.setAttribute("role", "tab");
+    tab.setAttribute("aria-controls", "work-panel");
+    tab.setAttribute("aria-selected", "false");
+    tab.tabIndex = -1;
+
+    const label = createElement("span", "work-showcase-tab-label");
+    label.textContent = item.tabLabel;
+    tab.appendChild(label);
+
+    tab.addEventListener("click", () => {
+      setActive(index);
+    });
+
+    tab.addEventListener("keydown", (event) => {
+      if (!["ArrowRight", "ArrowLeft", "Home", "End"].includes(event.key)) return;
+
+      event.preventDefault();
+
+      if (event.key === "Home") {
+        setActive(0, true);
+        return;
+      }
+
+      if (event.key === "End") {
+        setActive(items.length - 1, true);
+        return;
+      }
+
+      const delta = event.key === "ArrowRight" ? 1 : -1;
+      const next = (activeIndex + delta + items.length) % items.length;
+      setActive(next, true);
+    });
+
+    tabs.appendChild(tab);
+    tabButtons.push(tab);
   });
+
+  setActive(0);
 };
