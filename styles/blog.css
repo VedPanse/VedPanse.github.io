@@ -31,6 +31,55 @@ html[data-theme="light"] .blog-view {
   --blog-divider: rgba(0, 0, 0, 0.12);
 }
 
+html[data-theme="light"] .blog-title {
+  color: #17181d;
+}
+
+html[data-theme="light"] .blog-dek {
+  color: #4a4f58;
+}
+
+html[data-theme="light"] .blog-author {
+  color: #17181d;
+}
+
+html[data-theme="light"] .blog-content {
+  color: #3f444d;
+}
+
+html[data-theme="light"] .blog-content p,
+html[data-theme="light"] .blog-content li {
+  color: #3f444d;
+}
+
+html[data-theme="light"] .blog-content h2,
+html[data-theme="light"] .blog-content h3 {
+  color: #20242b;
+}
+
+html[data-theme="light"] .blog-recent-link.is-active {
+  background: rgba(0, 0, 0, 0.08);
+  color: #17181d;
+}
+
+html[data-theme="light"] .blog-all-posts,
+html[data-theme="light"] .blog-side-group h2 {
+  color: #17181d;
+}
+
+html[data-theme="light"] .blog-recent-link,
+html[data-theme="light"] .blog-topic-link {
+  color: #383d46;
+}
+
+html[data-theme="light"] .blog-toc-link.is-active {
+  color: #17181d;
+}
+
+html[data-theme="light"] .blog-toc-link.is-active::before {
+  background: #17181d;
+}
+
 .blog-layout {
   width: min(1880px, 98vw);
   margin: 0 auto;

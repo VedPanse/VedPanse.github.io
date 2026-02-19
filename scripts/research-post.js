@@ -1,12 +1,106 @@
+import { initSearchOverlay } from "./search.js";
+
 const RESEARCH_DIR = "data/research";
+const RESEARCH_INDEX_URL = `${RESEARCH_DIR}/index.json`;
 
 const escapeHtml = (value) =>
   value
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
+    .replace(/\"/g, "&quot;")
     .replace(/'/g, "&#39;");
+
+const parseDateValue = (value) => {
+  const parsed = Date.parse(value || "");
+  return Number.isNaN(parsed) ? 0 : parsed;
+};
+
+const slugify = (value) =>
+  value
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9\s-]/g, "")
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-");
+
+const initTheme = () => {
+  const root = document.documentElement;
+  const metaTheme = document.querySelector('meta[name="theme-color"]');
+  const storedTheme = localStorage.getItem("theme") || "dark";
+  root.dataset.theme = storedTheme;
+  if (metaTheme) {
+    metaTheme.setAttribute("content", storedTheme === "light" ? "#f5f5f7" : "#000000");
+  }
+};
+
+const initThemeToggle = () => {
+  const toggle = document.querySelector("[data-theme-toggle]");
+  if (!toggle) return;
+
+  const root = document.documentElement;
+  const metaTheme = document.querySelector('meta[name="theme-color"]');
+
+  const applyTheme = (theme) => {
+    root.dataset.theme = theme;
+    localStorage.setItem("theme", theme);
+    const isLight = theme === "light";
+    toggle.setAttribute("aria-pressed", String(isLight));
+    toggle.setAttribute("aria-label", isLight ? "Switch to dark theme" : "Switch to light theme");
+    if (metaTheme) {
+      metaTheme.setAttribute("content", isLight ? "#f5f5f7" : "#000000");
+    }
+  };
+
+  applyTheme(root.dataset.theme || localStorage.getItem("theme") || "dark");
+
+  toggle.addEventListener("click", () => {
+    const nextTheme = root.dataset.theme === "light" ? "dark" : "light";
+    applyTheme(nextTheme);
+  });
+};
+
+const initNavMenu = () => {
+  const toggle = document.querySelector("[data-nav-toggle]");
+  const drawer = document.querySelector("[data-nav-drawer]");
+  if (!toggle || !drawer) return;
+
+  const root = document.documentElement;
+
+  const closeMenu = () => {
+    root.classList.remove("is-nav-open");
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.setAttribute("aria-label", "Open menu");
+    drawer.setAttribute("aria-hidden", "true");
+  };
+
+  const openMenu = () => {
+    root.classList.add("is-nav-open");
+    toggle.setAttribute("aria-expanded", "true");
+    toggle.setAttribute("aria-label", "Close menu");
+    drawer.setAttribute("aria-hidden", "false");
+  };
+
+  toggle.addEventListener("click", () => {
+    if (root.classList.contains("is-nav-open")) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
+
+  drawer.addEventListener("click", (event) => {
+    if (event.target.closest("a")) closeMenu();
+  });
+
+  window.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeMenu();
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 840) closeMenu();
+  });
+};
 
 const renderInline = (text) => {
   const segments = text.split(/(`[^`]+`)/g);
@@ -241,16 +335,21 @@ const extractExcerpt = (markdown) => {
   return firstParagraph || "";
 };
 
-const renderMeta = (item) => {
-  const label = document.querySelector("[data-blog-label]");
-  const date = document.querySelector("[data-blog-date]");
-  const title = document.querySelector("[data-blog-title]");
-  const excerpt = document.querySelector("[data-blog-excerpt]");
+const setText = (selector, value) => {
+  const element = document.querySelector(selector);
+  if (element) element.textContent = value;
+};
 
-  if (label) label.textContent = item?.label || "Research";
-  if (date) date.textContent = item?.date || "";
-  if (title) title.textContent = item?.title || "Research Post";
-  if (excerpt) excerpt.textContent = item?.excerpt || "";
+const renderMeta = (item) => {
+  setText("[data-blog-label]", item?.label || "Research");
+  setText("[data-blog-date]", item?.date || "");
+  setText("[data-blog-title]", item?.title || "Research Post");
+  setText("[data-blog-excerpt]", item?.excerpt || "");
+  const author = document.querySelector("[data-blog-author]");
+  if (author) {
+    const name = escapeHtml(item?.author || "Ved Panse");
+    author.innerHTML = `Author: <span class="blog-author-name">${name}</span>`;
+  }
   document.title = item?.title ? `${item.title} | Ved Panse` : "Research Post | Ved Panse";
 };
 
@@ -261,11 +360,141 @@ const renderContent = (html) => {
 };
 
 const renderError = (message) => {
-  renderMeta({ label: "Research", title: "Post not found", date: "", excerpt: message });
+  renderMeta({ label: "Research", title: "Post not found", date: "", excerpt: message, author: "Ved Panse" });
   renderContent(`<p>${escapeHtml(message)}</p>`);
 };
 
+const listResearchFiles = async () => {
+  const response = await fetch(RESEARCH_INDEX_URL);
+  if (!response.ok) return [];
+  const indexData = await response.json();
+  if (!Array.isArray(indexData)) return [];
+  return indexData.map((file) => (file.startsWith(RESEARCH_DIR) ? file : `${RESEARCH_DIR}/${file}`));
+};
+
+const loadResearchSummaries = async () => {
+  const files = await listResearchFiles();
+  const items = await Promise.all(
+    files.map(async (file) => {
+      const response = await fetch(file);
+      if (!response.ok) return null;
+      const markdown = await response.text();
+      const { meta, body } = parseFrontMatter(markdown);
+      const slug = file.split("/").pop().replace(/\.md$/i, "");
+      return {
+        slug,
+        title: meta.title || extractTitle(body) || "Untitled",
+        label: meta.label || "Research",
+        date: meta.date || "",
+      };
+    })
+  );
+
+  return items.filter(Boolean).sort((a, b) => parseDateValue(b.date) - parseDateValue(a.date));
+};
+
+const renderLeftRail = (items, activeSlug) => {
+  const recentRoot = document.querySelector("[data-blog-recent]");
+  const topicsRoot = document.querySelector("[data-blog-topics]");
+  if (!recentRoot || !topicsRoot) return;
+
+  recentRoot.innerHTML = "";
+  items.slice(0, 6).forEach((item) => {
+    const link = document.createElement("a");
+    link.className = "blog-recent-link";
+    if (item.slug === activeSlug) link.classList.add("is-active");
+    link.href = `research.html?post=${encodeURIComponent(item.slug)}`;
+    link.textContent = item.title;
+    link.setAttribute("aria-label", `Read ${item.title}`);
+    recentRoot.appendChild(link);
+  });
+
+  const uniqueTopics = Array.from(new Set(items.map((item) => item.label).filter(Boolean))).slice(0, 6);
+  topicsRoot.innerHTML = "";
+  uniqueTopics.forEach((topic) => {
+    const link = document.createElement("a");
+    link.className = "blog-topic-link";
+    link.href = "index.html#research";
+    link.textContent = topic;
+    link.setAttribute("aria-label", `Browse ${topic} research posts`);
+    topicsRoot.appendChild(link);
+  });
+};
+
+const buildToc = () => {
+  const tocRoot = document.querySelector("[data-blog-toc]");
+  const content = document.querySelector("[data-blog-content]");
+  if (!tocRoot || !content) return;
+
+  const headings = Array.from(content.querySelectorAll("h2, h3"));
+  if (!headings.length) {
+    tocRoot.innerHTML = "";
+    return;
+  }
+
+  const usedIds = new Set();
+  headings.forEach((heading, index) => {
+    const base = slugify(heading.textContent || `section-${index + 1}`) || `section-${index + 1}`;
+    let id = base;
+    let suffix = 2;
+    while (usedIds.has(id)) {
+      id = `${base}-${suffix}`;
+      suffix += 1;
+    }
+    usedIds.add(id);
+    heading.id = id;
+  });
+
+  tocRoot.innerHTML = "";
+  const links = headings.map((heading) => {
+    const link = document.createElement("a");
+    link.className = "blog-toc-link";
+    link.href = `#${heading.id}`;
+    link.textContent = heading.textContent || "Section";
+    if (heading.tagName === "H3") {
+      link.style.paddingLeft = "20px";
+      link.style.fontSize = "16px";
+    }
+    tocRoot.appendChild(link);
+    return { heading, link };
+  });
+
+  const setActiveLink = (id) => {
+    links.forEach(({ link, heading }) => {
+      link.classList.toggle("is-active", heading.id === id);
+    });
+  };
+
+  links.forEach(({ heading, link }) => {
+    link.addEventListener("click", () => {
+      setActiveLink(heading.id);
+    });
+  });
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      const visible = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+      if (!visible.length) return;
+      setActiveLink(visible[0].target.id);
+    },
+    {
+      rootMargin: "-20% 0px -68% 0px",
+      threshold: [0.1, 0.25, 0.45, 0.65],
+    }
+  );
+
+  links.forEach(({ heading }) => observer.observe(heading));
+  setActiveLink(links[0].heading.id);
+};
+
 const initResearchPost = async () => {
+  initTheme();
+  initThemeToggle();
+  initNavMenu();
+  initSearchOverlay();
+
   const params = new URLSearchParams(window.location.search);
   const slug = params.get("post");
   if (!slug) {
@@ -274,10 +503,19 @@ const initResearchPost = async () => {
   }
 
   const response = await fetch(`${RESEARCH_DIR}/${slug}.md`);
+  let summaries = [];
+  try {
+    summaries = await loadResearchSummaries();
+  } catch {
+    summaries = [];
+  }
+
   if (!response.ok) {
     renderError("The research content couldn't be loaded.");
     return;
   }
+
+  renderLeftRail(summaries, slug);
 
   const markdown = await response.text();
   const { meta, body } = parseFrontMatter(markdown);
@@ -287,10 +525,12 @@ const initResearchPost = async () => {
     title,
     date: meta.date || "",
     excerpt: meta.excerpt || extractExcerpt(body),
+    author: meta.author || "Ved Panse",
   });
 
   const html = parseMarkdown(body);
   renderContent(html);
+  buildToc();
 };
 
 initResearchPost();

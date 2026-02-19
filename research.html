@@ -19,10 +19,11 @@
         <a class="nav-logo" href="index.html" aria-label="Home" data-content="name">Ved Panse</a>
         <div class="nav-links">
           <a href="index.html#icon-columns">About</a>
+          <a href="index.html#projects">Projects</a>
           <a href="index.html#work">Work</a>
-          <a href="index.html#research">Research</a>
-          <a href="index.html#current-focus">Current Focus</a>
+          <a href="index.html#research" class="is-active">Research</a>
           <a href="index.html#blogs">Blogs</a>
+          <a href="index.html#current-focus">Current Focus</a>
           <a href="index.html#contact">Contact</a>
         </div>
         <div class="nav-icons">
@@ -49,10 +50,60 @@
               <line x1="16" y1="16" x2="21" y2="21" />
             </svg>
           </button>
+          <button class="nav-toggle" type="button" data-nav-toggle aria-label="Open menu" aria-expanded="false">
+            <span class="nav-toggle-line"></span>
+            <span class="nav-toggle-line"></span>
+            <span class="nav-toggle-line"></span>
+          </button>
         </div>
       </div>
     </nav>
+    <div class="nav-drawer" data-nav-drawer aria-hidden="true">
+      <div class="nav-drawer-inner nav-drawer-links" aria-label="Mobile">
+        <a href="index.html#icon-columns">About</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#work">Work</a>
+        <a href="index.html#research">Research</a>
+        <a href="index.html#blogs">Blogs</a>
+        <a href="index.html#current-focus">Current Focus</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+    </div>
   </header>
+
+  <main class="blog-layout" aria-live="polite">
+    <aside class="blog-sidebar blog-sidebar--left" aria-label="Research navigation">
+      <a class="blog-all-posts" href="index.html#research">All research</a>
+
+      <section class="blog-side-group" aria-labelledby="research-recent-heading">
+        <h2 id="research-recent-heading">Recent</h2>
+        <nav class="blog-recent-list" aria-label="Recent research posts" data-blog-recent></nav>
+      </section>
+
+      <section class="blog-side-group" aria-labelledby="research-topics-heading">
+        <h2 id="research-topics-heading">Topics</h2>
+        <div class="blog-topics-list" data-blog-topics></div>
+      </section>
+    </aside>
+
+    <section class="blog-main" aria-label="Research post">
+      <header class="blog-main-header">
+        <p class="blog-meta-row">
+          <span data-blog-date></span>
+          <span data-blog-label></span>
+        </p>
+        <h1 class="blog-title" data-blog-title></h1>
+        <p class="blog-dek" data-blog-excerpt></p>
+        <p class="blog-author" data-blog-author></p>
+      </header>
+
+      <article class="blog-content" data-blog-content></article>
+    </section>
+
+    <aside class="blog-sidebar blog-sidebar--right" aria-label="Table of contents">
+      <nav class="blog-toc" data-blog-toc></nav>
+    </aside>
+  </main>
 
   <div class="search-overlay" data-search-overlay aria-hidden="true">
     <div class="search-panel" role="dialog" aria-modal="true" aria-label="Site search">
@@ -77,35 +128,7 @@
     </div>
   </div>
 
-  <nav class="blog-subnav" aria-label="Research navigation">
-    <div class="blog-subnav-inner">
-      <span class="blog-subnav-title">Research</span>
-      <div class="blog-subnav-links">
-        <a href="index.html#research">All Research</a>
-        <a href="index.html#research">Quick Reads</a>
-        <a href="index.html#research">Updates</a>
-        <span class="blog-subnav-search">Search Research</span>
-      </div>
-    </div>
-  </nav>
-
-  <main class="blog-page" aria-live="polite">
-    <section class="blog-hero" aria-labelledby="research-title">
-      <div class="blog-hero-inner">
-        <p class="blog-label" data-blog-label></p>
-        <p class="blog-date" data-blog-date></p>
-        <h1 id="research-title" class="blog-title" data-blog-title></h1>
-        <p class="blog-dek" data-blog-excerpt></p>
-      </div>
-    </section>
-
-    <section class="blog-body" aria-label="Research content">
-      <div class="blog-content" data-blog-content></div>
-    </section>
-  </main>
-
   <script type="module" src="scripts/research-post.js"></script>
-  <script type="module" src="scripts/main.js"></script>
 </body>
 
 </html>

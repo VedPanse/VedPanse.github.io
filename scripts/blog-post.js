@@ -34,6 +34,74 @@ const initTheme = () => {
   }
 };
 
+const initThemeToggle = () => {
+  const toggle = document.querySelector("[data-theme-toggle]");
+  if (!toggle) return;
+
+  const root = document.documentElement;
+  const metaTheme = document.querySelector('meta[name="theme-color"]');
+
+  const applyTheme = (theme) => {
+    root.dataset.theme = theme;
+    localStorage.setItem("theme", theme);
+    const isLight = theme === "light";
+    toggle.setAttribute("aria-pressed", String(isLight));
+    toggle.setAttribute("aria-label", isLight ? "Switch to dark theme" : "Switch to light theme");
+    if (metaTheme) {
+      metaTheme.setAttribute("content", isLight ? "#f5f5f7" : "#000000");
+    }
+  };
+
+  applyTheme(root.dataset.theme || localStorage.getItem("theme") || "dark");
+
+  toggle.addEventListener("click", () => {
+    const nextTheme = root.dataset.theme === "light" ? "dark" : "light";
+    applyTheme(nextTheme);
+  });
+};
+
+const initNavMenu = () => {
+  const toggle = document.querySelector("[data-nav-toggle]");
+  const drawer = document.querySelector("[data-nav-drawer]");
+  if (!toggle || !drawer) return;
+
+  const root = document.documentElement;
+
+  const closeMenu = () => {
+    root.classList.remove("is-nav-open");
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.setAttribute("aria-label", "Open menu");
+    drawer.setAttribute("aria-hidden", "true");
+  };
+
+  const openMenu = () => {
+    root.classList.add("is-nav-open");
+    toggle.setAttribute("aria-expanded", "true");
+    toggle.setAttribute("aria-label", "Close menu");
+    drawer.setAttribute("aria-hidden", "false");
+  };
+
+  toggle.addEventListener("click", () => {
+    if (root.classList.contains("is-nav-open")) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
+
+  drawer.addEventListener("click", (event) => {
+    if (event.target.closest("a")) closeMenu();
+  });
+
+  window.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeMenu();
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 840) closeMenu();
+  });
+};
+
 const renderInline = (text) => {
   const segments = text.split(/(`[^`]+`)/g);
   return segments
@@ -449,6 +517,8 @@ const initCopyPage = () => {
 
 const initBlogPost = async () => {
   initTheme();
+  initThemeToggle();
+  initNavMenu();
   initSearchOverlay();
 
   const params = new URLSearchParams(window.location.search);
