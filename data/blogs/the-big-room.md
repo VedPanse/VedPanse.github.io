@@ -1,62 +1,71 @@
 ---
 label: Life
-date: October 30, 2024
-title: The time I met the CIA Director in shorts
-excerpt: A story about cybersecurity, Washington D.C., and a catastrophic misunderstanding of dress code.
+date: February 18, 2026
+title: I met the CIA Director in shorts
+excerpt: I flew to D.C. after placing first internationally at USCC and accidentally dressed like I was going to Chipotle.
 ---
-# The time I met the CIA Director in shorts
+# I met the CIA Director in shorts
 
-![Me in Washington D.C., blissfully unaware of the dress code](assets/blog/uscc/cia.jpg)
+![A cool room](assets/blog/uscc/hero.jpg)
 
-So I went to Washington D.C. for the United States Cybersecurity Challenge.
+So I placed first internationally at the United States Cybersecurity Challenge.
 
-Which already sounds fake when I say it out loud.
+Which sounds impressive until you remember I also once forgot my laptop charger at a hackathon and had to sit next to a wall like a plant.
 
-For context: I had somehow placed first internationally in the competition, which meant I got flown out to D.C. to meet a lot of very serious people who care about cybersecurity in a very serious way. This is the part of the story where you’d expect me to say I packed carefully and behaved like a responsible adult.
+Anyway.
 
-You would be wrong.
+They flew me to Washington D.C. I’m feeling important. I’m like, “Wow. Cybersecurity. National stuff. I should probably stand straighter.” Everyone’s wearing badges. People are speaking in calm, low tones. The kind of tone where you assume they know things you absolutely do not.
 
-The day itself felt surreal. Briefings. Technical conversations. People discussing national-scale systems like they were normal Tuesday problems. I was trying very hard to look like I belonged and not like someone who still googles “what is threat modeling” five minutes before meetings.
+The day goes well. Briefings. Conversations. I nod like I fully understand everything. Internally I’m thinking, “Okay yes yes adversarial models yes infrastructure yes I totally knew that.”
 
-Then came dinner.
+Then comes dinner.
 
-Nobody told me it was formal.
+Nobody tells me it’s formal.
 
-And when I say nobody told me, I mean I had fully convinced myself this was going to be a “casual networking dinner.” You know. Polite. Maybe business casual. Something survivable.
+Now when I pack for trips, I pack based on vibes. And the vibe in my head was “technical event.” Technical events mean hoodie. Technical events mean comfortable. Technical events do NOT mean pressed slacks and polished shoes.
 
-I showed up in shorts.
+So I show up in shorts.
 
-Not cool minimalist European shorts. Not “intentionally rebellious tech founder” shorts. Just regular, this-is-what-I-packed-because-I-assumed-we-were-eating-pizza shorts.
+Just regular shorts. Not cool shorts. Not ironic shorts. Just “this man thought this was casual” shorts.
 
-I walked into the room and immediately realized two things:
+I walk into the room.
 
-1. Everyone else looked ironed.
-2. I did not.
+Everyone looks like they were assembled by a committee.
 
-And then someone casually mentioned that the Director of the CIA was there.
+Blazers. Dresses. Shoes that make confident sounds on the floor.
 
-There is a very specific moment when your brain replays the last six hours of your life and asks, “Was there a branch where we made better decisions?”
+And I’m standing there with my knees out.
 
-I considered leaving. I considered hiding behind a decorative plant. I considered inventing a fictional ankle injury that required ventilation.
+That’s when someone casually mentions, “Oh yeah, the Director of the CIA is here.”
 
-Instead, I stayed.
+You ever feel your soul leave your body but politely?
 
-And here’s the strange part: once the initial panic faded, it was… normal. People were talking about systems. Risk. Infrastructure. Security at scale. The conversation wasn’t theatrical. It wasn’t cinematic. It was thoughtful and technical and grounded.
+I considered turning around. I considered pretending I was staff. I considered starting a small fire alarm incident so everyone evacuates and no one notices my legs.
 
-Underneath the titles and the security clearances, it was still just people who think deeply about how things break — and how to prevent that.
+But no.
 
-Which, honestly, is my favorite genre of conversation.
+I stayed.
 
-I flew back from D.C. thinking about two things:
+And here’s the weird part: once I got past the fact that my calves were visible in a federal building, the conversations were just… conversations. People talking about systems. Real systems. Infrastructure. Risk. The kind of stuff where if you mess up, it’s not a bug report — it’s a headline.
 
-First: always ask about the dress code.
+And I realized something.
 
-Second: competence travels better than outfits. Placing first internationally felt huge at the time, but sitting in that room, what mattered wasn’t the ranking. It was whether you could engage seriously with the problems being discussed. Titles fade fast. Preparation doesn’t.
+Nobody cared that I was in shorts.
 
-(That said, I now own at least one pair of formal pants.)
+Okay, maybe they noticed.
 
-USCC was surreal. Not because of the ranking or the location, but because it was the first time cybersecurity felt heavy in a real way. Not puzzles. Not competitions. Infrastructure. Responsibility. Consequences.
+But what mattered was whether I could hold a conversation. Whether I understood the material. Whether I could think clearly about security at scale.
 
-And apparently, dress codes.
+Ranking first internationally got me on the plane.
 
-(# of times I will double-check “formal” in the future: many)
+Knowing what I was talking about kept me in the room.
+
+Still. I now own formal pants.
+
+I even tried them on once.
+
+USCC was wild. Not because of the titles. Not because of D.C. But because it was the first time cybersecurity stopped feeling like puzzles and started feeling heavy. Like real-world heavy.
+
+Also because I learned that “formal dinner” is not a metaphor.
+
+(# of times I will now ask about dress code: aggressively many)

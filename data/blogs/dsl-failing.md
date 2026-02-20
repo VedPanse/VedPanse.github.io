@@ -1,101 +1,94 @@
 ---
-label: Reflection
-date: February 18, 2026
-title: What a DSL taught me about failing slowly
-excerpt: I started this project in grade 8 out of curiosity. It still isn't done. That's the point.
+label: Build Log
+date: July 14, 2019
+title: I tried to invent my own UI language
+excerpt: 2019 me decided multiplatform UI frameworks were not enough and attempted to fix that.
 ---
-# What a DSL taught me about failing slowly
+# I tried to invent my own UI language
 
-![Failing continuously](assets/banners/dsl.png)
+![Early notebook sketches of JavelinLang syntax](assets/blog/javelin/javelin.png)
 
-I started building my DSL in grade 8, back when LLMs were not a thing.
+In 2019, I decided that existing UI frameworks were inconvenient.
 
-There was no roadmap. No grand vision. I didn't even know the term “DSL” yet. I just wanted an easier way to express something I found annoying to write over and over again. So I started hacking.
+This is the kind of sentence that only makes sense if you are 16 and have just learned enough programming to be dangerous.
 
-That project is still alive today.
+I had been building small apps and tools, and every time I switched platforms — Android, web, desktop — I felt personally offended that I had to rewrite everything. Same layout. Same components. Same logic. Different syntax. It felt inefficient in a way that bothered me more than it probably should have.
 
-It's also failed more times than anything else I've worked on.
+So naturally, I did what any rational teenager would do.
 
-## Early failure looked like progress
+I tried to design my own language.
 
-At first, everything felt like momentum.
+I called it JavelinLang.
 
-I'd invent syntax.
-Then rewrite it.
-Then scrap it.
-Then build a parser.
-Then throw it away.
-Then start again.
+## The original delusion
 
-Each version felt smarter than the last. More elegant. More powerful. I told myself that this was iteration — that every rewrite was a step forward.
+The idea was simple: describe UI once, target everywhere.
 
-In reality, I was mostly circling.
+Instead of writing platform-specific UI code, you’d write a structured layout definition in JavelinLang. Components, state bindings, layout constraints — all declared in a platform-agnostic way. Then a compiler layer would translate it into native UI code for each target.
 
-What I didn't understand back then is that **rewriting is the easiest form of optimism**. You get all the emotional reward of progress without having to live with consequences.
+In my head, this was obvious. Why should layout logic be rewritten just because the rendering engine changes?
 
-## The first hard lesson: expressiveness is a trap
+In practice, I quickly learned that “UI” is not just layout. It’s event handling. It’s lifecycle. It’s state synchronization. It’s rendering pipelines. It’s subtle platform conventions you don’t notice until they break.
 
-My earliest versions of the language tried to do too much.
+But I was committed.
 
-Every new annoyance turned into a new feature. Every edge case deserved syntax. Every limitation felt like a flaw instead of a boundary.
+## What it actually looked like
 
-The language became expressive, clever, and completely unusable.
+The syntax was declarative. Component trees. Explicit state bindings. Minimal imperative logic in the view layer. I was trying to separate “what the UI is” from “how the platform renders it.”
 
-What I learned the hard way is that expressiveness feels like power — but power without constraint is noise. A DSL isn't successful when it can say everything. It's successful when it refuses to say most things.
+Something like:
+```kt
+Screen {
+    Column {
+        Text("Hello World")
+        Button("Click Me") {
+            onClick: incrementCounter
+        }
+    }
+}
+```
 
-Saying “no” in language design is harder than saying “yes.”
-I avoided that for years.
 
-## Failure forced me to think about users — even when the user was me
+Very original, I know.
 
-Eventually, something uncomfortable happened.
+The compiler would parse the tree and emit equivalent UI code in the target platform’s framework. I remember spending hours debugging the transpiler because indentation bugs in your own language feel especially embarrassing.
 
-I stopped wanting to use my own language.
+## What I did not understand in 2019
 
-Not because it was broken — but because it was mentally expensive. I had to *remember* rules. I had to think about syntax instead of intent. I had built something impressive that made me slower.
+I did not understand how deep platform integration goes.
 
-That was a turning point.
+I did not understand performance tradeoffs.
 
-It taught me that usability isn't about elegance or cleverness. It's about cognitive load. If a tool doesn't disappear while you're using it, it's failing — no matter how technically correct it is.
+I did not understand why native toolkits behave differently for reasons that have nothing to do with syntax.
 
-## Long-running projects expose your blind spots
+I especially did not understand how hard it is to design a language that doesn’t slowly become a second, worse version of something that already exists.
 
-Most projects end before they can teach you this.
+But I learned a lot.
 
-Hackathons end.
-Assignments ship.
-Startups pivot.
-Repos get archived.
+## Why it mattered anyway
 
-This one didn't.
+JavelinLang didn’t become a real product. It didn’t replace anything. It barely escaped my laptop.
 
-Because it stuck around, it kept exposing the same weaknesses in my thinking:
-- I over-designed early  
-- I chased flexibility instead of clarity  
-- I optimized syntax before semantics  
-- I rewrote instead of stabilizing  
+But it forced me to think about:
 
-Each failure wasn't dramatic. It was quiet. Accumulative. The kind you only notice after years.
+- parsing and AST construction  
+- code generation  
+- abstraction boundaries  
+- the difference between declarative and imperative systems  
+- why constraints exist in the first place  
 
-## The project didn't fail — my mental model did
+It was the first time I stopped just *using* tools and started asking why they were shaped the way they were.
 
-The biggest shift wasn't technical.
+Looking back, it was wildly overambitious.
 
-It was realizing that the project wasn't “behind” or “unfinished.” It was doing exactly what it was supposed to do: teach me how my instincts break down over time.
+I still think that’s fine.
 
-The DSL became less about shipping a language and more about learning restraint:
-- committing to bad decisions long enough to feel their cost  
-- resisting rewrites unless they fixed something real  
-- designing around use, not possibility  
+There’s something useful about building things that are slightly too big for you at the time. Even if the language never leaves your GitHub, the mental model does.
 
-Ironically, progress only started once I stopped trying to make it perfect.
+JavelinLang taught me that abstractions are expensive. And that designing one is much harder than complaining about one.
 
-## Why I'm still working on it
+I still occasionally find old files from that project.
 
-This project outlived my attention span, my skill level at multiple stages, and several identities I had as a programmer.
+They’re chaotic.
 
-That's why I keep it.
-
-I started this DSL out of curiosity in grade 8.
-
-I'm still working on it because it refuses to let me lie to myself about how I build things.
+I’m weirdly proud of them.

@@ -696,11 +696,11 @@ main {
 }
 
 .work-showcase-inner h2 {
-  font-size: clamp(40px, 5.5vw, 76px);
-  line-height: 1.03;
-  letter-spacing: -0.03em;
-  font-weight: 400;
-  margin-bottom: 54px;
+  font-size: clamp(30px, 3vw, 44px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-weight: 500;
+  margin-bottom: 24px;
   color: var(--work-showcase-title);
 }
 
@@ -721,13 +721,13 @@ main {
   border: 0;
   background: transparent;
   border-radius: 999px;
-  min-height: clamp(58px, 5.8vw, 76px);
+  min-height: clamp(44px, 4.2vw, 54px);
   display: grid;
   place-items: center;
-  padding: 8px 14px;
+  padding: 6px 12px;
   cursor: pointer;
   color: var(--work-showcase-tab-text);
-  font-size: clamp(14px, 1.2vw, 20px);
+  font-size: clamp(13px, 1vw, 16px);
   font-weight: 500;
   line-height: 1;
   letter-spacing: -0.01em;
@@ -1248,12 +1248,12 @@ html.is-card-flipped .icon-columns.icon-marquee {
   }
 
   .work-showcase-inner h2 {
-    margin-bottom: 34px;
+    margin-bottom: 20px;
   }
 
   .work-showcase-tab {
-    min-height: 64px;
-    font-size: clamp(14px, 2.1vw, 20px);
+    min-height: 52px;
+    font-size: clamp(13px, 1.9vw, 16px);
   }
 
   .work-showcase-body {
@@ -1416,8 +1416,8 @@ html.is-card-flipped .icon-columns.icon-marquee {
   }
 
   .work-showcase-inner h2 {
-    font-size: clamp(34px, 11vw, 52px);
-    margin-bottom: 28px;
+    font-size: clamp(30px, 8vw, 44px);
+    margin-bottom: 18px;
   }
 
   .work-showcase-tabs {
@@ -1428,8 +1428,8 @@ html.is-card-flipped .icon-columns.icon-marquee {
   }
 
   .work-showcase-tab {
-    min-height: 58px;
-    font-size: clamp(14px, 3.6vw, 18px);
+    min-height: 48px;
+    font-size: clamp(13px, 3.2vw, 15px);
   }
 
   .work-showcase-panel {
