@@ -980,8 +980,17 @@ main {
   border-bottom: 1px solid var(--editorial-border);
   padding: 14px;
   color: inherit;
+  cursor: pointer;
   transition: background 0.2s ease;
   min-height: 320px;
+}
+
+.editorial-card * {
+  cursor: inherit;
+}
+
+.editorial-card > * {
+  pointer-events: none;
 }
 
 .editorial-card:hover {
