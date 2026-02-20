@@ -1,91 +1,91 @@
 {
   "icons": [
     {
-      "src": "assets/android-tech.png",
+      "src": "assets/tech/android-tech.png",
       "label": "Android Tech"
     },
     {
-      "src": "assets/c.png",
+      "src": "assets/tech/c.png",
       "label": "C"
     },
     {
-      "src": "assets/cpp.png",
+      "src": "assets/tech/cpp.png",
       "label": "C++"
     },
     {
-      "src": "assets/cs.png",
+      "src": "assets/tech/cs.png",
       "label": "CS"
     },
     {
-      "src": "assets/css.png",
+      "src": "assets/tech/css.png",
       "label": "CSS"
     },
     {
-      "src": "assets/dart.png",
+      "src": "assets/tech/dart.png",
       "label": "Dart"
     },
     {
-      "src": "assets/flutter-tech.png",
+      "src": "assets/tech/flutter-tech.png",
       "label": "Flutter Tech"
     },
     {
-      "src": "assets/github-tech.svg",
+      "src": "assets/tech/github-tech.svg",
       "label": "GitHub Tech"
     },
     {
-      "src": "assets/go.png",
+      "src": "assets/tech/go.png",
       "label": "Go"
     },
     {
-      "src": "assets/html.png",
+      "src": "assets/tech/html.png",
       "label": "Html"
     },
     {
-      "src": "assets/java.png",
+      "src": "assets/tech/java.png",
       "label": "Java"
     },
     {
-      "src": "assets/js.png",
+      "src": "assets/tech/js.png",
       "label": "JavaScript"
     },
     {
-      "src": "assets/kotlin.png",
+      "src": "assets/tech/kotlin.png",
       "label": "Kotlin"
     },
     {
-      "src": "assets/langchain.png",
+      "src": "assets/tech/langchain.png",
       "label": "Langchain"
     },
     {
-      "src": "assets/react.png",
+      "src": "assets/tech/react.png",
       "label": "React"
     },
     {
-      "src": "assets/python.png",
+      "src": "assets/tech/python.png",
       "label": "Python"
     },
     {
-      "src": "assets/electron.png",
+      "src": "assets/tech/electron.png",
       "label": "Electron"
     },
     {
-      "src": "assets/ruby.png",
+      "src": "assets/tech/ruby.png",
       "label": "Ruby"
     },
     {
-      "src": "assets/rust.png",
+      "src": "assets/tech/rust.png",
       "label": "Rust"
     },
     {
-      "src": "assets/swift.png",
+      "src": "assets/tech/swift.png",
       "label": "Swift"
     },
     {
-      "src": "assets/ts.webp",
+      "src": "assets/tech/ts.webp",
       "label": "TypeScript"
     },
     {
-      "src": "assets/tauri.svg",
+      "src": "assets/tech/tauri.svg",
       "label": "Tauri"
     }
   ]

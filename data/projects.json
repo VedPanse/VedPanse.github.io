@@ -8,9 +8,9 @@
       "details": "Daemon transforms low-level firmware into a structured semantic interface that autonomous agents can safely reason over and execute. A build step generates a machine-readable command schema and a C-level dispatcher that maps tokens to hardware functions, enabling adaptive device control as sensors and actuators evolve. The core goal is embodiment: treating physical systems as extensible, composable APIs that agents can learn, audit, and orchestrate.",
       "url": "https://github.com/Sachin-dot-py/Daemon",
       "stack": [
-        { "src": "assets/c.png", "label": "C" },
-        { "src": "assets/rust.png", "label": "Rust" },
-        { "src": "assets/python.png", "label": "Python" }
+        { "src": "assets/tech/c.png", "label": "C" },
+        { "src": "assets/tech/rust.png", "label": "Rust" },
+        { "src": "assets/tech/python.png", "label": "Python" }
       ],
       "focus": [
         "Embodied agents",
@@ -26,8 +26,8 @@
       "details": "Siri++ explores the gap between single-turn LLM responses and sustained autonomous workflows. It integrates multimodal inputs (text, voice, images), structured memory, and tool invocation under explicit orchestration loops. Rather than wrapping APIs, the system models long-horizon task decomposition, state persistence, and recovery from execution failure—treating agent behavior as a systems problem, not a prompt problem.",
       "url": "https://github.com/VedPanse/SiriPlusPlus",
       "stack": [
-        { "src": "assets/swift.png", "label": "Swift" },
-        { "src": "assets/python.png", "label": "Python" }
+        { "src": "assets/tech/swift.png", "label": "Swift" },
+        { "src": "assets/tech/python.png", "label": "Python" }
       ],
       "focus": [
         "Agent control loops",
@@ -43,9 +43,9 @@
       "details": "Ion detects microcontrollers and peripherals, constructs structured connection graphs, and renders live 3D wiring blueprints as hardware is assembled. It enforces safety constraints and generates starter firmware based on inferred topology. The system reframes hardware assembly as a graph inference and validation problem, bridging physical systems with machine reasoning and IDE-grade feedback loops.",
       "url": "https://youtu.be/sX_8WW7cI7I",
       "stack": [
-        { "src": "assets/rust.png", "label": "Rust" },
-        { "src": "assets/tauri.svg", "label": "Tauri" },
-        { "src": "assets/python.png", "label": "Python" }
+        { "src": "assets/tech/rust.png", "label": "Rust" },
+        { "src": "assets/tech/tauri.svg", "label": "Tauri" },
+        { "src": "assets/tech/python.png", "label": "Python" }
       ],
       "focus": [
         "Graph inference",
@@ -61,8 +61,8 @@
       "details": "Shardwise partitions complex workloads into explicit, deterministic shards with defined coordination and retry semantics. It exposes shard-level observability, latency tracking, and failure recovery mechanisms to ensure predictable behavior under load. Designed to support agentic systems that require controlled parallelism rather than opportunistic concurrency.",
       "url": "",
       "stack": [
-        { "src": "assets/go.png", "label": "Go" },
-        { "src": "assets/rust.png", "label": "Rust" }
+        { "src": "assets/tech/go.png", "label": "Go" },
+        { "src": "assets/tech/rust.png", "label": "Rust" }
       ],
       "focus": [
         "Deterministic concurrency",
