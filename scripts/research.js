@@ -41,15 +41,16 @@ const parseDateValue = (value) => {
   return Number.isNaN(parsed) ? 0 : parsed;
 };
 
-const parseTags = (meta, fallback) => {
-  if (meta.tags) {
-    return meta.tags
-      .split(",")
-      .map((tag) => tag.trim())
-      .filter(Boolean)
-      .slice(0, 4);
-  }
-  return [fallback].filter(Boolean);
+const parseCommaValues = (value) =>
+  (value || "")
+    .split(",")
+    .map((entry) => entry.trim())
+    .filter(Boolean);
+
+const parseTags = (meta, labels, fallback) => {
+  const explicitTags = parseCommaValues(meta.tags);
+  const labelTags = labels.length ? labels : [fallback].filter(Boolean);
+  return Array.from(new Set([...explicitTags, ...labelTags])).slice(0, 4);
 };
 
 const listResearchFiles = async () => {
@@ -70,7 +71,8 @@ const loadResearch = async () => {
       const { meta, body } = parseFrontMatter(markdown);
       const title = meta.title || extractTitle(body);
       const { alt, src } = extractFirstImage(body);
-      const label = meta.label || "Research";
+      const labels = parseCommaValues(meta.label);
+      const label = labels[0] || "Research";
       const excerpt = meta.excerpt || "";
       const content = markdownToSearchText(body);
       return {
@@ -78,7 +80,7 @@ const loadResearch = async () => {
         title,
         date: meta.date || "",
         author: meta.author || "Ved Panse",
-        tags: parseTags(meta, label),
+        tags: parseTags(meta, labels, label),
         excerpt,
         content,
         image: src,
@@ -94,14 +96,16 @@ const loadResearch = async () => {
 const buildCard = (item, variant = "default") => {
   const link = createElement("a", `editorial-card editorial-card--${variant}`);
   link.href = `research.html?post=${encodeURIComponent(item.slug || "")}`;
-  link.target = "_blank";
-  link.rel = "noopener noreferrer";
 
   const copy = createElement("div", "editorial-card-copy");
-
-  const kicker = createElement("p", "editorial-card-kicker");
-  kicker.textContent = item.kind || "Research";
-  applyLabelColor(kicker, item.kind || "Research");
+  const topTags = createElement("div", "editorial-card-tags editorial-card-tags--top");
+  const chips = (item.tags && item.tags.length ? item.tags : [item.kind || "Research"]).slice(0, 4);
+  chips.forEach((tag) => {
+    const chip = createElement("span", "editorial-card-tag");
+    chip.textContent = tag;
+    applyLabelColor(chip, tag);
+    topTags.appendChild(chip);
+  });
 
   const title = createElement("h3", "editorial-card-title");
   title.textContent = item.title || "Untitled";
@@ -112,19 +116,10 @@ const buildCard = (item, variant = "default") => {
   const date = createElement("p", "editorial-card-date");
   date.textContent = item.date || "";
 
-  const tags = createElement("div", "editorial-card-tags");
-  (item.tags || []).forEach((tag) => {
-    const chip = createElement("span", "editorial-card-tag");
-    chip.textContent = tag;
-    applyLabelColor(chip, tag);
-    tags.appendChild(chip);
-  });
-
   meta.appendChild(author);
   meta.appendChild(date);
-  meta.appendChild(tags);
 
-  copy.appendChild(kicker);
+  copy.appendChild(topTags);
   copy.appendChild(title);
   copy.appendChild(meta);
 

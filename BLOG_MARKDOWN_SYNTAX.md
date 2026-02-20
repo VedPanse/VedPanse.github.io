@@ -6,7 +6,7 @@ Use this format for every file in `data/blogs/`.
 
 ```yaml
 ---
-label: Build Log
+label: Build Log, Systems
 date: January 4, 2026
 title: How we shipped a multi-surface design system in six weeks
 excerpt: A tight, repeatable playbook for shipping a shared system quickly.
@@ -14,6 +14,7 @@ excerpt: A tight, repeatable playbook for shipping a shared system quickly.
 ```
 
 - `label` shows above the title.
+- `label` can contain multiple comma-separated values (example: `Build Log, Systems`).
 - `date` must be parseable (e.g., `January 4, 2026`).
 - `title` must match the first `#` heading in the file.
 - `excerpt` appears under the title on the post page and can be used for cards.
@@ -76,7 +77,7 @@ const example = true;
 
 ```md
 ---
-label: Deep Dive
+label: Deep Dive, Architecture
 date: January 12, 2026
 title: Example blog post title
 excerpt: One-line summary for the hero area.

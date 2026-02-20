@@ -6,7 +6,7 @@ Use this format for every file in `data/research/`.
 
 ```yaml
 ---
-label: Quick Read
+label: Quick Read, Multimodal
 date: December 8, 2025
 title: Multimodal agents reach production with a new orchestration layer.
 excerpt: A concise update on the tooling that made production-grade multimodal workflows possible.
@@ -14,6 +14,7 @@ excerpt: A concise update on the tooling that made production-grade multimodal w
 ```
 
 - `label` shows above the title.
+- `label` can contain multiple comma-separated values (example: `Quick Read, Multimodal`).
 - `date` must be parseable (e.g., `December 8, 2025`).
 - `title` must match the first `#` heading in the file.
 - `excerpt` appears under the title on the post page and can be used for cards.
@@ -76,7 +77,7 @@ const example = true;
 
 ```md
 ---
-label: Update
+label: Update, Experiments
 date: January 15, 2026
 title: Example research update title
 excerpt: One-line summary for the hero area.
