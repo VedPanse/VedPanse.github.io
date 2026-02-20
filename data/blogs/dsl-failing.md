@@ -1,6 +1,6 @@
 ---
 label: Build Log
-date: July 14, 2019
+date: July 14, 2018
 title: I tried to invent my own UI language
 excerpt: 2019 me decided multiplatform UI frameworks were not enough and attempted to fix that.
 ---
