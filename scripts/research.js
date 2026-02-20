@@ -90,7 +90,7 @@ const loadResearch = async () => {
     })
   );
 
-  return items.filter(Boolean).sort((a, b) => parseDateValue(a.date) - parseDateValue(b.date));
+  return items.filter(Boolean).sort((a, b) => parseDateValue(b.date) - parseDateValue(a.date));
 };
 
 const buildCard = (item, variant = "default") => {

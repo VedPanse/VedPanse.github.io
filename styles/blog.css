@@ -434,7 +434,7 @@ html[data-theme="light"] .blog-content img {
   background: transparent;
   border-color: transparent;
   text-decoration: underline;
-  text-underline-offset: 3px;
+  text-underline-offset: 7px;
 }
 
 .blog-pagination-link--previous {
