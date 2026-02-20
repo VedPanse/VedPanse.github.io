@@ -226,6 +226,7 @@ main {
   min-height: min(78vh, 720px);
   position: relative;
   perspective: 1800px;
+  -webkit-perspective: 1800px;
 }
 
 @media (max-width: 1068px) {
@@ -280,7 +281,9 @@ main {
   width: 100%;
   min-height: min(78vh, 720px);
   transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
   transition: transform 0.75s ease;
+  will-change: transform;
 }
 
 .project-card.is-flipped .project-card-rotator {
@@ -289,10 +292,20 @@ main {
 
 .project-card.is-flipped .project-card-face--front {
   pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
 }
 
 .project-card:not(.is-flipped) .project-card-face--back {
   pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.project-card:not(.is-flipped) .project-card-face--front,
+.project-card.is-flipped .project-card-face--back {
+  opacity: 1;
+  visibility: visible;
 }
 
 .project-card-face {
@@ -300,6 +313,7 @@ main {
   inset: 0;
   border-radius: 36px;
   backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   background: #262626;
   box-shadow:
     0 20px 60px rgba(0, 0, 0, 0.45),
@@ -308,10 +322,18 @@ main {
   display: grid;
   grid-template-rows: auto 1fr;
   gap: 36px;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.project-card-face--front {
+  transform: rotateY(0deg) translateZ(1px);
 }
 
 .project-card-face--back {
-  transform: rotateY(180deg);
+  transform: rotateY(180deg) translateZ(1px);
   background: rgb(255, 255, 255);
   color: rgb(29, 29, 31);
   grid-template-rows: 1fr;
@@ -505,37 +527,55 @@ main {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
-  gap: 16px;
+  gap: clamp(10px, 1.8vw, 16px);
+  max-width: 100%;
 }
 
 .project-card-face--front .project-icon-column {
   flex-direction: row;
   gap: 16px;
   padding-top: 0;
+  max-width: 100%;
 }
 
 .project-card-face--front .project-icon-band .app-icon {
-  width: 100px;
-  height: 100px;
+  width: clamp(58px, 9vw, 100px);
+  height: clamp(58px, 9vw, 100px);
   border-radius: 18px;
 }
 
 .project-card-face--front .project-stack {
   justify-content: flex-start;
   padding-bottom: 0;
+  overflow: hidden;
+}
+
+.project-card-face--front .project-icon-band {
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .project-meta h3 {
-  font-size: clamp(26px, 3vw, 40px);
+  font-size: clamp(24px, 2.6vw, 36px);
   line-height: 1.2;
-  margin-bottom: 16px;
-  max-width: 560px;
+  margin: 0 0 14px;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  hyphens: auto;
 }
 
 .project-meta p {
+  margin: 0;
+  max-width: 62ch;
   color: color-mix(in srgb, var(--text) 72%, transparent);
   font-size: clamp(15px, 2vw, 19px);
   line-height: 1.5;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  line-clamp: 4;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
 }
 
 .project-highlight {
@@ -1331,6 +1371,16 @@ html.is-card-flipped .icon-columns.icon-marquee {
     padding: 28px;
   }
 
+  .project-meta h3 {
+    font-size: clamp(22px, 4.8vw, 30px);
+    margin-bottom: 10px;
+  }
+
+  .project-meta p {
+    font-size: 15px;
+    line-height: 1.45;
+  }
+
   .project-card-face--front .project-icon-columns {
     gap: 12px;
   }
@@ -1397,6 +1447,11 @@ html.is-card-flipped .icon-columns.icon-marquee {
     min-height: 560px;
   }
 
+  .project-meta h3 {
+    font-size: clamp(20px, 7vw, 26px);
+    line-height: 1.18;
+  }
+
   .project-card-face--back {
     place-items: start;
   }
@@ -1414,10 +1469,20 @@ html.is-card-flipped .icon-columns.icon-marquee {
     gap: 16px;
   }
 
+  .project-card-face--front .project-icon-columns {
+    gap: 10px;
+  }
+
   .project-icon-band .app-icon {
     width: 64px;
     height: 64px;
     border-radius: 18px;
+  }
+
+  .project-card-face--front .project-icon-band .app-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
   }
 
   .projects-indicator {
@@ -1533,6 +1598,34 @@ html.is-card-flipped .icon-columns.icon-marquee {
     font-size: clamp(30px, 10vw, 46px);
   }
 
+}
+
+@media (max-width: 420px) {
+  .project-card-face {
+    padding: 20px;
+    min-height: 520px;
+  }
+
+  .project-meta h3 {
+    font-size: clamp(19px, 7.4vw, 23px);
+    margin-bottom: 8px;
+  }
+
+  .project-meta p {
+    font-size: 14px;
+    line-clamp: 3;
+    -webkit-line-clamp: 3;
+  }
+
+  .project-card-face--front .project-icon-columns {
+    gap: 8px;
+  }
+
+  .project-card-face--front .project-icon-band .app-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+  }
 }
 
 .contact-section {

@@ -1,5 +1,5 @@
 ---
-label: Research Notes,Web Spiders
+label: Research Notes,Web Spiders,Siri++
 date: February 19, 2026
 title: Multi-modal agents with faster browser automation
 excerpt: Existing AI agents which rely on browser automation are slow. We can augment these technologies by using simple graph theory algorithms.

@@ -44,8 +44,11 @@ const renderCard = (project) => {
   const highlight = createElement("span", "project-highlight");
   highlight.textContent = project.name || "Project";
   heading.appendChild(highlight);
-  heading.appendChild(document.createTextNode(` ${project.description || ""}`));
   meta.appendChild(heading);
+
+  const summary = createElement("p");
+  summary.textContent = project.description || "Project details are coming soon.";
+  meta.appendChild(summary);
 
   const stack = createElement("div", "project-stack");
   stack.setAttribute("aria-label", "Tech stack");
