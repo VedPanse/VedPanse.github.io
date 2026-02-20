@@ -466,17 +466,16 @@ html[data-theme="light"] .blog-content img {
     padding-top: 14px;
   }
 
+  .blog-sidebar--left {
+    display: none;
+  }
+
   .blog-sidebar {
     position: static;
     max-height: none;
     overflow: visible;
     border: 0;
     padding: 0;
-  }
-
-  .blog-sidebar--left {
-    border-bottom: 1px solid var(--blog-border);
-    padding-bottom: 18px;
   }
 
   .blog-side-group {
