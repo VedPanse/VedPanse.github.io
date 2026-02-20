@@ -678,12 +678,12 @@ main {
 
 .research-inner,
 .blogs-inner {
-  width: min(1820px, 98vw);
+  width: min(1820px, 80%);
   margin: 0 auto;
 }
 
 .work-showcase-inner {
-  width: min(1720px, 96vw);
+  width: min(1720px, 80%);
   margin: 0 auto;
 }
 
