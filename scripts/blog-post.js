@@ -1,4 +1,5 @@
 import { initSearchOverlay } from "./search.js";
+import { applyLabelColor } from "./label-color.js";
 
 const BLOGS_DIR = "data/blogs";
 const BLOG_INDEX_URL = `${BLOGS_DIR}/index.json`;
@@ -341,7 +342,9 @@ const setText = (selector, value) => {
 };
 
 const renderMeta = (item) => {
-  setText("[data-blog-label]", item?.label || "Blog");
+  const label = item?.label || "Blog";
+  setText("[data-blog-label]", label);
+  applyLabelColor(document.querySelector("[data-blog-label]"), label);
   setText("[data-blog-date]", item?.date || "");
   setText("[data-blog-title]", item?.title || "Blog Post");
   setText("[data-blog-excerpt]", item?.excerpt || "");

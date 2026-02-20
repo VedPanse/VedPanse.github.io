@@ -1,4 +1,5 @@
 import { createEditorialSearcher, markdownToSearchText } from "./editorial-search.js";
+import { applyLabelColor } from "./label-color.js";
 
 const RESEARCH_DIR = "data/research";
 const RESEARCH_INDEX_URL = `${RESEARCH_DIR}/index.json`;
@@ -100,6 +101,7 @@ const buildCard = (item, variant = "default") => {
 
   const kicker = createElement("p", "editorial-card-kicker");
   kicker.textContent = item.kind || "Research";
+  applyLabelColor(kicker, item.kind || "Research");
 
   const title = createElement("h3", "editorial-card-title");
   title.textContent = item.title || "Untitled";
@@ -114,6 +116,7 @@ const buildCard = (item, variant = "default") => {
   (item.tags || []).forEach((tag) => {
     const chip = createElement("span", "editorial-card-tag");
     chip.textContent = tag;
+    applyLabelColor(chip, tag);
     tags.appendChild(chip);
   });
 

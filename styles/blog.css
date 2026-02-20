@@ -227,6 +227,32 @@ html[data-theme="light"] .blog-toc-link.is-active::before {
   font-size: 18px;
 }
 
+.blog-meta-row [data-blog-label] {
+  --label-hue: 145;
+  --label-sat: 54%;
+  --label-dark-bg-light: 20%;
+  --label-dark-text-light: 78%;
+  --label-light-bg-light: 94%;
+  --label-light-text-light: 32%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 28px;
+  padding: 0 11px;
+  white-space: nowrap;
+  line-height: 1;
+  border: 1px solid hsl(var(--label-hue) calc(var(--label-sat) * 0.7) 42% / 0.45);
+  background: hsl(var(--label-hue) var(--label-sat) var(--label-dark-bg-light) / 0.42);
+  color: hsl(var(--label-hue) calc(var(--label-sat) * 1.1) var(--label-dark-text-light));
+  border-radius: 999px;
+}
+
+html[data-theme="light"] .blog-meta-row [data-blog-label] {
+  border-color: hsl(var(--label-hue) calc(var(--label-sat) * 0.65) 68% / 0.6);
+  background: hsl(var(--label-hue) calc(var(--label-sat) * 0.75) var(--label-light-bg-light));
+  color: hsl(var(--label-hue) calc(var(--label-sat) * 0.8) var(--label-light-text-light));
+}
+
 .blog-title {
   font-size: 30px;
   line-height: 1.2;

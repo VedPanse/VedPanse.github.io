@@ -1,5 +1,5 @@
 ---
-label: Introduction
+label: Life
 date: January 22, 2018
 title: Hi, I'm Ved.
 excerpt: Some context before I start writing about broken systems and the things I’m trying to build.
