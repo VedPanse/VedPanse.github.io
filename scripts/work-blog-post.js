@@ -17,6 +17,23 @@ const parseDateValue = (value) => {
   return Number.isNaN(parsed) ? 0 : parsed;
 };
 
+const parseCommaValues = (value) =>
+  (value || "")
+    .split(",")
+    .map((entry) => entry.trim())
+    .filter(Boolean);
+
+const parseLabels = (value, fallback) => {
+  const labels = parseCommaValues(value);
+  return labels.length ? labels : [fallback];
+};
+
+const createElement = (tag, className) => {
+  const element = document.createElement(tag);
+  if (className) element.className = className;
+  return element;
+};
+
 const slugify = (value) =>
   value
     .toLowerCase()
@@ -342,9 +359,19 @@ const setText = (selector, value) => {
 };
 
 const renderMeta = (item) => {
-  const label = item?.label || "Work Blog";
-  setText("[data-blog-label]", label);
-  applyLabelColor(document.querySelector("[data-blog-label]"), label);
+  const labels = Array.isArray(item?.labels) ? item.labels.filter(Boolean) : [];
+  const normalizedLabels = labels.length ? labels : [item?.label || "Work Blog"];
+  const labelRoot = document.querySelector("[data-blog-label]");
+  if (labelRoot) {
+    labelRoot.innerHTML = "";
+    normalizedLabels.forEach((labelValue) => {
+      const chip = document.createElement("span");
+      chip.className = "blog-label-chip";
+      chip.textContent = labelValue;
+      applyLabelColor(chip, labelValue);
+      labelRoot.appendChild(chip);
+    });
+  }
   setText("[data-blog-date]", item?.date || "");
   setText("[data-blog-title]", item?.title || "Work Blog Post");
   setText("[data-blog-excerpt]", item?.excerpt || "");
@@ -384,16 +411,18 @@ const loadWorkBlogSummaries = async () => {
       const markdown = await response.text();
       const { meta, body } = parseFrontMatter(markdown);
       const slug = file.split("/").pop().replace(/\.md$/i, "");
+      const labels = parseLabels(meta.label, "Work Blog");
       return {
         slug,
         title: meta.title || extractTitle(body) || "Untitled",
-        label: meta.label || "Work Blog",
+        label: labels[0],
+        labels,
         date: meta.date || "",
       };
     })
   );
 
-  return items.filter(Boolean).sort((a, b) => parseDateValue(b.date) - parseDateValue(a.date));
+  return items.filter(Boolean).sort((a, b) => parseDateValue(a.date) - parseDateValue(b.date));
 };
 
 const renderLeftRail = (items, activeSlug) => {
@@ -412,7 +441,13 @@ const renderLeftRail = (items, activeSlug) => {
     recentRoot.appendChild(link);
   });
 
-  const uniqueTopics = Array.from(new Set(items.map((item) => item.label).filter(Boolean))).slice(0, 6);
+  const uniqueTopics = Array.from(
+    new Set(
+      items.flatMap((item) =>
+        (Array.isArray(item.labels) && item.labels.length ? item.labels : [item.label]).filter(Boolean)
+      )
+    )
+  ).slice(0, 6);
   topicsRoot.innerHTML = "";
   uniqueTopics.forEach((topic) => {
     const link = document.createElement("a");
@@ -422,6 +457,40 @@ const renderLeftRail = (items, activeSlug) => {
     link.setAttribute("aria-label", `Browse ${topic} work blog posts`);
     topicsRoot.appendChild(link);
   });
+};
+
+const renderPostNavigation = (items, activeSlug) => {
+  const navRoot = document.querySelector("[data-blog-pagination]");
+  if (!navRoot) return;
+
+  navRoot.innerHTML = "";
+  const activeIndex = items.findIndex((item) => item.slug === activeSlug);
+  if (activeIndex === -1) {
+    navRoot.hidden = true;
+    return;
+  }
+
+  const previous = items[activeIndex - 1] || null;
+  const next = items[activeIndex + 1] || null;
+  if (!previous && !next) {
+    navRoot.hidden = true;
+    return;
+  }
+
+  const buildLink = (item, direction) => {
+    const link = createElement("a", `blog-pagination-link blog-pagination-link--${direction}`);
+    link.href = `work-blog.html?post=${encodeURIComponent(item.slug)}`;
+    link.textContent = direction === "previous" ? "← Previous" : "Next →";
+    link.setAttribute(
+      "aria-label",
+      `${direction === "previous" ? "Previous" : "Next"}: ${item.title || "Untitled"}`
+    );
+    return link;
+  };
+
+  if (previous) navRoot.appendChild(buildLink(previous, "previous"));
+  if (next) navRoot.appendChild(buildLink(next, "next"));
+  navRoot.hidden = false;
 };
 
 const buildToc = () => {
@@ -523,8 +592,10 @@ const initWorkBlogPost = async () => {
   const markdown = await response.text();
   const { meta, body } = parseFrontMatter(markdown);
   const title = meta.title || extractTitle(body) || "Work Blog Post";
+  const labels = parseLabels(meta.label, "Work Blog");
   renderMeta({
-    label: meta.label || "Work Blog",
+    label: labels[0],
+    labels,
     title,
     date: meta.date || "",
     excerpt: meta.excerpt || extractExcerpt(body),
@@ -533,6 +604,7 @@ const initWorkBlogPost = async () => {
 
   const html = parseMarkdown(body);
   renderContent(html);
+  renderPostNavigation(summaries, slug);
   buildToc();
 };
 

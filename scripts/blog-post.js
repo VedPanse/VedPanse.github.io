@@ -422,7 +422,7 @@ const loadBlogSummaries = async () => {
     })
   );
 
-  return items.filter(Boolean).sort((a, b) => parseDateValue(b.date) - parseDateValue(a.date));
+  return items.filter(Boolean).sort((a, b) => parseDateValue(a.date) - parseDateValue(b.date));
 };
 
 const renderLeftRail = (items, activeSlug) => {
