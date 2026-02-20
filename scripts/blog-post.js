@@ -430,8 +430,10 @@ const renderLeftRail = (items, activeSlug) => {
   const topicsRoot = document.querySelector("[data-blog-topics]");
   if (!recentRoot || !topicsRoot) return;
 
+  const recentItems = [...items].sort((a, b) => parseDateValue(b.date) - parseDateValue(a.date));
+
   recentRoot.innerHTML = "";
-  items.slice(0, 6).forEach((item) => {
+  recentItems.slice(0, 6).forEach((item) => {
     const link = document.createElement("a");
     link.className = "blog-recent-link";
     if (item.slug === activeSlug) link.classList.add("is-active");
