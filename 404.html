@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>404 | Ved Panse</title>
+  <meta name="description" content="The page you requested could not be found." />
+  <meta name="theme-color" content="#000000" />
+  <meta name="color-scheme" content="dark" />
+  <link rel="icon" href="img.png" />
+  <link rel="stylesheet" href="styles/app.css" />
+  <style>
+    :root {
+      color-scheme: dark;
+    }
+
+    body {
+      min-height: 100dvh;
+      height: 100dvh;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 50% -12%, rgba(10, 132, 255, 0.2), transparent 45%),
+        radial-gradient(circle at 80% 8%, rgba(36, 142, 255, 0.16), transparent 40%),
+        var(--bg);
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .global-nav {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .nav-inner {
+      grid-template-columns: 1fr auto;
+    }
+
+    .nav-links {
+      justify-self: end;
+      gap: 18px;
+      font-size: 12px;
+    }
+
+    .error-shell {
+      min-height: calc(100dvh - var(--nav-height));
+      height: calc(100dvh - var(--nav-height));
+      padding: clamp(10px, 2vw, 20px) 20px 16px;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+    }
+
+    .error-inner {
+      width: min(940px, 100%);
+      margin: 0 auto;
+      display: grid;
+      justify-items: center;
+      text-align: center;
+      gap: clamp(8px, 1.2vw, 12px);
+    }
+
+    .illustration {
+      width: min(700px, 90vw);
+      max-height: min(52dvh, 430px);
+      height: auto;
+      overflow: visible;
+      filter: drop-shadow(0 24px 48px rgba(0, 0, 0, 0.38));
+    }
+
+    .line {
+      fill: none;
+      stroke: #4f78ff;
+      stroke-width: 2.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .fill-soft {
+      fill: color-mix(in srgb, #4f78ff 24%, transparent);
+    }
+
+    .beam-shape {
+      fill: #56f0b7;
+      opacity: 0.88;
+      transform-origin: 50% 0%;
+      animation: beamPulse 2.9s ease-in-out infinite;
+    }
+
+    .ufo {
+      transform-origin: 50% 18%;
+      animation: ufoFloat 2.7s ease-in-out infinite;
+    }
+
+    .spark {
+      fill: none;
+      stroke: #6f92ff;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      animation: twinkle 2.8s ease-in-out infinite;
+    }
+
+    .spark:nth-of-type(2) {
+      animation-delay: 0.38s;
+    }
+
+    .spark:nth-of-type(3) {
+      animation-delay: 0.92s;
+    }
+
+    .error-title {
+      margin: 0;
+      font-size: clamp(30px, 4.4vw, 56px);
+      font-weight: 600;
+      line-height: 1.03;
+      letter-spacing: -0.01em;
+      color: var(--text);
+    }
+
+    .error-description {
+      margin: 0;
+      max-width: 42ch;
+      font-size: clamp(16px, 1.7vw, 22px);
+      font-weight: 500;
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+      color: color-mix(in srgb, var(--text) 82%, transparent);
+    }
+
+    .actions {
+      margin-top: 4px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .button {
+      border: 0;
+      border-radius: 999px;
+      padding: 11px 18px;
+      font: inherit;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
+    }
+
+    .button-primary {
+      background: var(--accent);
+      color: #ffffff;
+      box-shadow: 0 10px 24px rgba(10, 132, 255, 0.34);
+    }
+
+    .button-primary:hover,
+    .button-primary:focus-visible {
+      background: var(--accent-dark);
+      transform: translateY(-1px);
+      outline: none;
+    }
+
+    .button-secondary {
+      background: #1b1b1d;
+      color: var(--text);
+      border: 1px solid #2a2a2d;
+    }
+
+    .button-secondary:hover,
+    .button-secondary:focus-visible {
+      transform: translateY(-1px);
+      border-color: #3a3a3d;
+      outline: none;
+    }
+
+    @media (max-width: 720px) {
+      .nav-inner {
+        padding: 0 16px;
+      }
+
+      .nav-logo {
+        font-size: 18px;
+      }
+
+      .nav-links {
+        gap: 12px;
+      }
+
+      .error-description {
+        max-width: 30ch;
+      }
+    }
+
+    @media (max-width: 540px) {
+      .nav-links a:nth-child(n + 3) {
+        display: none;
+      }
+
+      .actions {
+        width: min(320px, 100%);
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .illustration {
+        width: min(520px, 90vw);
+        max-height: 42dvh;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+      }
+    }
+
+    @keyframes beamPulse {
+      0%,
+      100% {
+        opacity: 0.84;
+        transform: scaleY(1);
+      }
+
+      50% {
+        opacity: 0.96;
+        transform: scaleY(1.05);
+      }
+    }
+
+    @keyframes ufoFloat {
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-5px);
+      }
+    }
+
+    @keyframes twinkle {
+      0%,
+      100% {
+        opacity: 0.55;
+      }
+
+      50% {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="global-nav" aria-label="Primary">
+      <div class="nav-inner">
+        <a class="nav-logo" href="/" aria-label="Home">Ved Panse</a>
+        <div class="nav-links">
+          <a href="/">Home</a>
+          <a href="/#projects">Projects</a>
+          <a href="/#work">Work</a>
+          <a href="/#research">Research</a>
+          <a href="/#blogs">Blogs</a>
+          <a href="/#contact">Contact</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="error-shell">
+    <section class="error-inner" aria-labelledby="error-title">
+      <svg class="illustration" viewBox="0 0 760 430" role="img" aria-label="UFO lifting the middle digit in a 404 illustration">
+        <path class="line" d="M118 350h524" />
+        <path class="beam-shape" d="M378 92l-52 258h114l-50-258z" />
+
+        <g class="ufo">
+          <ellipse class="fill-soft line" cx="382" cy="72" rx="34" ry="24" />
+          <path class="fill-soft line" d="M304 92h156c4 0 8 4 8 8v16H296v-16c0-4 4-8 8-8z" />
+          <path class="line" d="M296 116h172" />
+          <path class="line" d="M334 92v24M382 92v24M430 92v24" />
+          <circle class="line" cx="382" cy="42" r="6" />
+          <circle class="line" cx="312" cy="108" r="2.2" />
+          <circle class="line" cx="342" cy="110" r="2.2" />
+          <circle class="line" cx="382" cy="110" r="2.2" />
+          <circle class="line" cx="412" cy="110" r="2.2" />
+          <circle class="line" cx="448" cy="108" r="2.2" />
+        </g>
+
+        <g>
+          <path class="fill-soft line" d="M174 294l66-80h26v120h24c5 0 8 3 8 8v10h-32v31h-22v-31h-70v-22z" />
+          <path class="line" d="M222 272v62h-48z" />
+        </g>
+
+        <g>
+          <path class="fill-soft line" d="M468 294l66-80h26v120h24c5 0 8 3 8 8v10h-32v31h-22v-31h-70v-22z" />
+          <path class="line" d="M516 272v62h-48z" />
+        </g>
+
+        <g>
+          <path class="line" d="M330 352v-42" />
+          <circle class="line" cx="330" cy="304" r="15" />
+          <path class="line" d="M320 304c0-8 7-15 15-15M330 319c8 0 15-7 15-15" />
+        </g>
+        <g>
+          <path class="line" d="M568 352v-42" />
+          <circle class="line" cx="568" cy="304" r="15" />
+          <path class="line" d="M558 304c0-8 7-15 15-15M568 319c8 0 15-7 15-15" />
+        </g>
+
+        <path class="spark" d="M182 126l10 10m0-10l-10 10" />
+        <path class="spark" d="M550 88l6 6m0-6l-6 6" />
+        <circle class="spark" cx="602" cy="140" r="4" />
+      </svg>
+
+      <h1 class="error-title" id="error-title">Whoops.</h1>
+      <p class="error-description">We can’t seem to find the page you’re looking for.</p>
+
+      <div class="actions">
+        <a class="button button-primary" href="/">Go back home</a>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    (() => {
+      const goBack = document.getElementById("go-back");
+      if (!goBack) return;
+
+      goBack.addEventListener("click", () => {
+        if (window.history.length > 1) {
+          window.history.back();
+          return;
+        }
+        window.location.href = "/";
+      });
+    })();
+  </script>
+</body>
+
+</html>

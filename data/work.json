@@ -1,5 +1,26 @@
 [
   {
+    "tabLabel": "IBM",
+    "title": "IBM",
+    "description": "Incoming AI/ML Engineering Intern at IBM Silicon Valley Lab, working on real-world AI systems used in production.",
+    "stats": [
+      {
+        "value": "Large-Scale",
+        "label": "models running in live systems"
+      },
+      {
+        "value": "SVL",
+        "label": "Silicon Valley Lab"
+      }
+    ],
+    "workPostSlug": "ibm-ai-ml-engineering-svl",
+    "ctaText": "See how AI systems are built for real production use",
+    "visual": {
+      "label": "IBM",
+      "meta": "AI / ML Systems"
+    }
+  },
+  {
     "tabLabel": "Falcon Eye",
     "title": "Falcon Eye",
     "description": "Architected and optimized a real-time synthetic vision stack for low-visibility flight, delivering deterministic 3D terrain reconstruction on constrained avionics hardware.",

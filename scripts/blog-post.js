@@ -3,6 +3,7 @@ import { applyLabelColor } from "./label-color.js";
 
 const BLOGS_DIR = "data/blogs";
 const BLOG_INDEX_URL = `${BLOGS_DIR}/index.json`;
+const NOT_FOUND_URL = "/404.html";
 
 const escapeHtml = (value) =>
   value
@@ -389,10 +390,11 @@ const renderContent = (html) => {
   container.innerHTML = html;
 };
 
-const renderError = (message) => {
-  renderMeta({ label: "Blog", title: "Post not found", date: "", excerpt: message, author: "Ved Panse" });
-  renderContent(`<p>${escapeHtml(message)}</p>`);
+const redirectToNotFound = () => {
+  window.location.replace(NOT_FOUND_URL);
 };
+
+const isValidSlug = (value) => /^[a-z0-9-]+$/i.test(value || "");
 
 const listBlogFiles = async () => {
   const response = await fetch(BLOG_INDEX_URL);
@@ -597,8 +599,8 @@ const initBlogPost = async () => {
 
   const params = new URLSearchParams(window.location.search);
   const slug = params.get("post");
-  if (!slug) {
-    renderError("Missing blog post slug.");
+  if (!slug || !isValidSlug(slug)) {
+    redirectToNotFound();
     return;
   }
 
@@ -611,7 +613,7 @@ const initBlogPost = async () => {
   }
 
   if (!response.ok) {
-    renderError("The blog content couldn't be loaded.");
+    redirectToNotFound();
     return;
   }
 

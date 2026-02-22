@@ -3,6 +3,7 @@ import { applyLabelColor } from "./label-color.js";
 
 const WORK_BLOGS_DIR = "data/work-blogs";
 const WORK_BLOG_INDEX_URL = `${WORK_BLOGS_DIR}/index.json`;
+const NOT_FOUND_URL = "/404.html";
 
 const escapeHtml = (value) =>
   value
@@ -389,10 +390,11 @@ const renderContent = (html) => {
   container.innerHTML = html;
 };
 
-const renderError = (message) => {
-  renderMeta({ label: "Work Blog", title: "Post not found", date: "", excerpt: message, author: "Ved Panse" });
-  renderContent(`<p>${escapeHtml(message)}</p>`);
+const redirectToNotFound = () => {
+  window.location.replace(NOT_FOUND_URL);
 };
+
+const isValidSlug = (value) => /^[a-z0-9-]+$/i.test(value || "");
 
 const listWorkBlogFiles = async () => {
   const response = await fetch(WORK_BLOG_INDEX_URL);
@@ -569,8 +571,8 @@ const initWorkBlogPost = async () => {
 
   const params = new URLSearchParams(window.location.search);
   const slug = params.get("post");
-  if (!slug) {
-    renderError("Missing work blog post slug.");
+  if (!slug || !isValidSlug(slug)) {
+    redirectToNotFound();
     return;
   }
 
@@ -583,7 +585,7 @@ const initWorkBlogPost = async () => {
   }
 
   if (!response.ok) {
-    renderError("The work blog content couldn't be loaded.");
+    redirectToNotFound();
     return;
   }
 

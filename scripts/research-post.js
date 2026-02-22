@@ -3,6 +3,7 @@ import { applyLabelColor } from "./label-color.js";
 
 const RESEARCH_DIR = "data/research";
 const RESEARCH_INDEX_URL = `${RESEARCH_DIR}/index.json`;
+const NOT_FOUND_URL = "/404.html";
 
 const escapeHtml = (value) =>
   value
@@ -389,10 +390,11 @@ const renderContent = (html) => {
   container.innerHTML = html;
 };
 
-const renderError = (message) => {
-  renderMeta({ label: "Research", title: "Post not found", date: "", excerpt: message, author: "Ved Panse" });
-  renderContent(`<p>${escapeHtml(message)}</p>`);
+const redirectToNotFound = () => {
+  window.location.replace(NOT_FOUND_URL);
 };
+
+const isValidSlug = (value) => /^[a-z0-9-]+$/i.test(value || "");
 
 const listResearchFiles = async () => {
   const response = await fetch(RESEARCH_INDEX_URL);
@@ -571,8 +573,8 @@ const initResearchPost = async () => {
 
   const params = new URLSearchParams(window.location.search);
   const slug = params.get("post");
-  if (!slug) {
-    renderError("Missing research post slug.");
+  if (!slug || !isValidSlug(slug)) {
+    redirectToNotFound();
     return;
   }
 
@@ -585,7 +587,7 @@ const initResearchPost = async () => {
   }
 
   if (!response.ok) {
-    renderError("The research content couldn't be loaded.");
+    redirectToNotFound();
     return;
   }
 
