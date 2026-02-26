@@ -123,6 +123,69 @@ a {
   justify-self: end;
 }
 
+.nav-resume-button {
+  --sk-button-color: rgb(255, 255, 255);
+  --sk-button-color-hover: var(--sk-button-color);
+  --sk-button-color-active: var(--sk-button-color-hover);
+  --sk-button-disabled-opacity: var(--sk-link-disabled-opacity, 0.42);
+  --sk-button-border-color: transparent;
+  --sk-button-border-radius: 980px;
+  --sk-button-margin-horizontal: 10px;
+  --sk-button-margin-vertical: 10px;
+  --sk-button-min-width-basis: 45px;
+  --sk-button-padding-horizontal: 11px;
+  --sk-button-padding-vertical: 4px;
+  --sk-button-border-width: 1px;
+  --sk-button-box-sizing: content-box;
+  --sk-button-width: auto;
+  --sk-button-display: inline-block;
+  --sk-button-background: rgb(0, 113, 227);
+  --sk-button-background-hover: #0076df;
+  --sk-button-background-active: #006edb;
+  font-size: 12px;
+  line-height: 1.3333733333;
+  font-weight: 400;
+  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  background: var(--sk-button-background);
+  color: var(--sk-button-color);
+  border-color: var(--sk-button-border-color);
+  padding-block: calc(var(--sk-button-padding-vertical) - var(--sk-button-border-width));
+  padding-inline: calc(var(--sk-button-padding-horizontal) - var(--sk-button-border-width));
+  border-radius: var(--sk-button-border-radius);
+  border-style: solid;
+  border-width: var(--sk-button-border-width);
+  width: var(--sk-button-width);
+  min-width: calc(var(--sk-button-min-width-basis) - var(--sk-button-padding-horizontal) * 2);
+  cursor: pointer;
+  display: var(--sk-button-display);
+  -webkit-box-sizing: var(--sk-button-box-sizing);
+  box-sizing: var(--sk-button-box-sizing);
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nav-resume-button:hover {
+  background: var(--sk-button-background-hover);
+  color: var(--sk-button-color-hover);
+}
+
+.nav-resume-button:active {
+  background: var(--sk-button-background-active);
+  color: var(--sk-button-color-active);
+}
+
+.nav-resume-button:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.7);
+  outline-offset: 2px;
+}
+
+html[data-theme="light"] .nav-resume-button:focus-visible {
+  outline: 2px solid rgba(0, 0, 0, 0.45);
+}
+
 .nav-toggle {
   width: 30px;
   height: 18px;
