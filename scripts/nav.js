@@ -67,10 +67,12 @@ export const initNavMenu = () => {
   const drawer = document.querySelector("[data-nav-drawer]");
   if (!toggle || !drawer) return;
 
-  const root = document.documentElement;
+  const root = document.body;
+  const html = document.documentElement;
 
   const closeMenu = () => {
     root.classList.remove("is-nav-open");
+    html.classList.remove("is-nav-open");
     toggle.setAttribute("aria-expanded", "false");
     toggle.setAttribute("aria-label", "Open menu");
     drawer.setAttribute("aria-hidden", "true");
@@ -95,6 +97,12 @@ export const initNavMenu = () => {
     if (event.target.closest("a")) closeMenu();
   });
 
+  document.addEventListener("click", (event) => {
+    if (!root.classList.contains("is-nav-open")) return;
+    if (toggle.contains(event.target) || drawer.contains(event.target)) return;
+    closeMenu();
+  });
+
   window.addEventListener("keydown", (event) => {
     if (event.key === "Escape") closeMenu();
   });
@@ -102,4 +110,8 @@ export const initNavMenu = () => {
   window.addEventListener("resize", () => {
     if (window.innerWidth > 840) closeMenu();
   });
+
+  window.addEventListener("pageshow", closeMenu);
+
+  closeMenu();
 };
