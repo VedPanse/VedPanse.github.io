@@ -233,6 +233,12 @@
         <h2 id="contact-title">Contact</h2>
         <form class="contact-card" aria-label="Contact form" data-contact-form novalidate method="POST"
           action="https://formspree.io/f/xdoyprne">
+          <input type="hidden" name="_subject" value="New message from vedpanse.com" />
+          <input type="hidden" name="form_started_at" data-contact-started-at value="" />
+          <label class="contact-honeypot" aria-hidden="true">
+            <span>Leave this field empty</span>
+            <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
+          </label>
           <label class="contact-field">
             <span class="contact-label">Email Address</span>
             <input type="email" name="email" placeholder="you@example.com" autocomplete="email" required />

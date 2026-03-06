@@ -1640,10 +1640,21 @@ html.is-card-flipped .icon-columns.icon-marquee {
 }
 
 .contact-card {
+  position: relative;
   border: 1px solid rgba(255, 255, 255, 0.28);
   border-radius: 22px;
   overflow: hidden;
   background: rgba(16, 16, 18, 0.85);
+}
+
+.contact-honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .contact-field {

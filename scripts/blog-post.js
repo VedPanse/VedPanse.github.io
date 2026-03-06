@@ -1,5 +1,6 @@
 import { initSearchOverlay } from "./search.js";
 import { applyLabelColor } from "./label-color.js";
+import "./footer.js";
 
 const BLOGS_DIR = "data/blogs";
 const BLOG_INDEX_URL = `${BLOGS_DIR}/index.json`;

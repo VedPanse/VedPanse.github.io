@@ -7,6 +7,7 @@ import { initResearch } from "./research.js";
 import { initBlogs } from "./blogs.js";
 import { initContactForm } from "./contact.js";
 import { initSearchOverlay } from "./search.js";
+import "./footer.js";
 
 const initThemeToggle = () => {
   const toggle = document.querySelector("[data-theme-toggle]");
