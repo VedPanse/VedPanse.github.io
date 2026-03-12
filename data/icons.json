@@ -1,8 +1,16 @@
 {
   "icons": [
     {
+      "src": "assets/tech/awk.png",
+      "label": "AWK"
+    },
+    {
       "src": "assets/tech/android-tech.png",
       "label": "Android Tech"
+    },
+    {
+      "src": "assets/tech/bash.png",
+      "label": "Bash"
     },
     {
       "src": "assets/tech/c.png",
