@@ -557,6 +557,10 @@ html[data-theme="light"] .nav-drawer::before {
   border-top: 1px solid var(--footer-line);
 }
 
+html[data-theme="light"] .site-footer {
+  background: #f5f5f7;
+}
+
 .site-footer-inner {
   width: min(1100px, calc(100% - 32px));
   margin: 0 auto;
