@@ -1,4 +1,12 @@
 [
+  "agent-evals-under-interrupts.md",
+  "desktop-agents-state-machines.md",
   "making-multimodal-agents.md",
+  "memory-compression-for-assistants.md",
+  "multistep-grounding-on-the-open-web.md",
+  "planning-with-latency-constraints.md",
+  "retrieval-latency-budgeting.md",
+  "self-healing-tool-graphs.md",
+  "tool-permission-boundaries.md",
   "workflow-automation-api-calling.md"
 ]

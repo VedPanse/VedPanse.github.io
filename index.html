@@ -28,30 +28,6 @@
   <link rel="icon" href="img.png" />
   <link rel="stylesheet" href="styles/app.css" />
   <link rel="stylesheet" href="styles/main.css" />
-  <style>
-    #research .editorial-card-media,
-    #blogs .editorial-card-media {
-      display: none;
-    }
-
-    #research .editorial-card--featured,
-    #blogs .editorial-card--featured {
-      min-height: 420px;
-    }
-
-    .research-inner,
-    .blogs-inner {
-      width: min(1240px, 72%);
-    }
-
-    @media (max-width: 768px) {
-
-      .research-inner,
-      .blogs-inner {
-        width: min(1820px, 90%);
-      }
-    }
-  </style>
 </head>
 
 <body>
@@ -217,16 +193,8 @@
       <div class="research-inner">
         <h2 id="research-title">Research</h2>
         <div class="editorial-feed">
-          <div class="editorial-search">
-            <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
-              <circle cx="11" cy="11" r="6.5"></circle>
-              <line x1="16" y1="16" x2="21" y2="21"></line>
-            </svg>
-            <input class="editorial-search-input" type="search" placeholder="Search research topics, titles and authors"
-              data-editorial-search-input="research" aria-label="Search research posts" />
-            <p class="editorial-search-status" data-editorial-search-status="research" aria-live="polite"></p>
-          </div>
-          <div class="editorial-grid" data-research-grid></div>
+          <div class="editorial-hero-rail" data-research-hero></div>
+          <div class="editorial-mini-grid" data-research-grid></div>
         </div>
         <button class="editorial-load-more" type="button" data-research-load-more>
           <span class="editorial-load-more-label">Load more</span>
@@ -243,16 +211,8 @@
       <div class="blogs-inner">
         <h2 id="blogs-title">Blogs</h2>
         <div class="editorial-feed">
-          <div class="editorial-search">
-            <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
-              <circle cx="11" cy="11" r="6.5"></circle>
-              <line x1="16" y1="16" x2="21" y2="21"></line>
-            </svg>
-            <input class="editorial-search-input" type="search" placeholder="Search blog topics, titles and authors"
-              data-editorial-search-input="blogs" aria-label="Search blog posts" />
-            <p class="editorial-search-status" data-editorial-search-status="blogs" aria-live="polite"></p>
-          </div>
-          <div class="editorial-grid" data-blogs-grid></div>
+          <div class="editorial-hero-rail" data-blogs-hero></div>
+          <div class="editorial-mini-grid" data-blogs-grid></div>
         </div>
         <button class="editorial-load-more" type="button" data-blogs-load-more>
           <span class="editorial-load-more-label">Load more</span>

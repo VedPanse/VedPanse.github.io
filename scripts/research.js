@@ -1,9 +1,13 @@
-import { createEditorialSearcher, markdownToSearchText } from "./editorial-search.js";
-import { applyLabelColor } from "./label-color.js";
-
 const RESEARCH_DIR = "data/research";
 const RESEARCH_INDEX_URL = `${RESEARCH_DIR}/index.json`;
 const PAGE_SIZE = 4;
+const WORK_BANNERS = [
+  "assets/banners/work/Aqua_1280x789.png",
+  "assets/banners/work/RubyMine_1280x789.png",
+  "assets/banners/work/dotCover_1280x789.png",
+  "assets/banners/work/jetbrains.png",
+  "assets/banners/work/webstorm.png",
+];
 
 const createElement = (tag, className) => {
   const element = document.createElement(tag);
@@ -31,12 +35,6 @@ const extractTitle = (markdown) => {
   return match ? match[1].trim() : "";
 };
 
-const extractFirstImage = (markdown) => {
-  const match = markdown.match(/!\[([^\]]*)\]\(([^)]+)\)/);
-  if (!match) return { alt: "", src: "" };
-  return { alt: match[1].trim(), src: match[2].trim() };
-};
-
 const parseDateValue = (value) => {
   const parsed = Date.parse(value || "");
   return Number.isNaN(parsed) ? 0 : parsed;
@@ -47,12 +45,6 @@ const parseCommaValues = (value) =>
     .split(",")
     .map((entry) => entry.trim())
     .filter(Boolean);
-
-const parseTags = (meta, labels, fallback) => {
-  const explicitTags = parseCommaValues(meta.tags);
-  const labelTags = labels.length ? labels : [fallback].filter(Boolean);
-  return Array.from(new Set([...explicitTags, ...labelTags])).slice(0, 4);
-};
 
 const listResearchFiles = async () => {
   const response = await fetch(RESEARCH_INDEX_URL);
@@ -71,21 +63,16 @@ const loadResearch = async () => {
       const markdown = await response.text();
       const { meta, body } = parseFrontMatter(markdown);
       const title = meta.title || extractTitle(body);
-      const { alt, src } = extractFirstImage(body);
       const labels = parseCommaValues(meta.label);
-      const label = labels[0] || "Research";
-      const excerpt = meta.excerpt || "";
-      const content = markdownToSearchText(body);
+      const banner = WORK_BANNERS[files.indexOf(file) % WORK_BANNERS.length];
       return {
-        kind: label,
+        kind: labels[0] || "Research",
         title,
         date: meta.date || "",
         author: meta.author || "Ved Panse",
-        tags: parseTags(meta, labels, label),
-        excerpt,
-        content,
-        image: src,
-        imageAlt: alt,
+        excerpt: meta.excerpt || "",
+        image: banner,
+        imageAlt: title,
         slug: file.split("/").pop().replace(/\.md$/i, ""),
       };
     })
@@ -94,135 +81,190 @@ const loadResearch = async () => {
   return items.filter(Boolean).sort((a, b) => parseDateValue(b.date) - parseDateValue(a.date));
 };
 
-const buildCard = (item, variant = "default") => {
-  const link = createElement("a", `editorial-card editorial-card--${variant}`);
+const buildHeroCard = (item) => {
+  const link = createElement("a", "editorial-hero-card");
   link.href = `research.html?post=${encodeURIComponent(item.slug || "")}`;
 
-  const copy = createElement("div", "editorial-card-copy");
-  const topTags = createElement("div", "editorial-card-tags editorial-card-tags--top");
-  const chips = (item.tags && item.tags.length ? item.tags : [item.kind || "Research"]).slice(0, 4);
-  chips.forEach((tag) => {
-    const chip = createElement("span", "editorial-card-tag");
-    chip.textContent = tag;
-    applyLabelColor(chip, tag);
-    topTags.appendChild(chip);
-  });
-
-  const title = createElement("h3", "editorial-card-title");
-  title.textContent = item.title || "Untitled";
-
-  const meta = createElement("div", "editorial-card-meta");
-  const author = createElement("p", "editorial-card-author");
-  author.textContent = item.author || "Ved Panse";
-  const date = createElement("p", "editorial-card-date");
-  date.textContent = item.date || "";
-
-  meta.appendChild(author);
-  meta.appendChild(date);
-
-  copy.appendChild(topTags);
-  copy.appendChild(title);
-  copy.appendChild(meta);
-
-  const media = createElement("div", "editorial-card-media");
+  const imageWrap = createElement("div", "editorial-hero-media");
   if (item.image) {
     const img = document.createElement("img");
     img.src = item.image;
     img.alt = item.imageAlt || "";
     img.loading = "lazy";
-    media.appendChild(img);
+    imageWrap.appendChild(img);
   }
 
-  if (variant === "text-only") {
-    link.classList.add("editorial-card--text-only");
-  }
+  const overlay = createElement("div", "editorial-hero-overlay");
+  const eyebrow = createElement("p", "editorial-hero-eyebrow");
+  eyebrow.textContent = item.kind || "Research";
 
-  link.appendChild(copy);
-  link.appendChild(media);
+  const title = createElement("h3", "editorial-hero-title");
+  title.textContent = item.title || "Untitled";
+
+  const footer = createElement("div", "editorial-hero-footer");
+  const button = createElement("span", "editorial-hero-pill");
+  button.textContent = "Read now";
+
+  const summary = createElement("p", "editorial-hero-summary");
+  const strong = createElement("span", "editorial-hero-summary-strong");
+  strong.textContent = `${item.author || "Ved Panse"} \u2022 `;
+  const text = createElement("span", "editorial-hero-summary-text");
+  text.textContent = item.excerpt || item.date || "";
+
+  summary.appendChild(strong);
+  summary.appendChild(text);
+
+  footer.appendChild(button);
+  footer.appendChild(summary);
+
+  overlay.appendChild(eyebrow);
+  overlay.appendChild(title);
+  overlay.appendChild(footer);
+
+  link.appendChild(imageWrap);
+  link.appendChild(overlay);
   return link;
 };
 
-const renderItems = (grid, items, filtered = false, limit = items.length) => {
-  grid.innerHTML = "";
-  if (!items.length) {
-    const empty = createElement("p", "editorial-empty");
-    empty.textContent = "No research posts matched this search.";
-    grid.appendChild(empty);
-    return;
+const buildMiniCard = (item) => {
+  const link = createElement("a", "editorial-mini-card");
+  link.href = `research.html?post=${encodeURIComponent(item.slug || "")}`;
+
+  const media = createElement("div", "editorial-mini-media");
+  if (item.image) {
+    const image = document.createElement("img");
+    image.src = item.image;
+    image.alt = item.imageAlt || "";
+    image.loading = "lazy";
+    media.appendChild(image);
   }
+
+  const overlay = createElement("div", "editorial-mini-overlay");
+  const kicker = createElement("p", "editorial-mini-kicker");
+  kicker.textContent = item.kind || "Research";
+
+  const title = createElement("h3", "editorial-mini-title");
+  title.textContent = item.title || "Untitled";
+
+  overlay.appendChild(kicker);
+  overlay.appendChild(title);
+  link.appendChild(media);
+  link.appendChild(overlay);
+  return link;
+};
+
+const renderLoopingBand = (container, items, buildItem, copies = 2) => {
+  container.innerHTML = "";
+  if (!items.length) return;
+
+  const sequence =
+    items.length > 1 ? [items[items.length - 1], ...items, items[0]] : items.slice();
+  container.dataset.loopLead = items.length > 1 ? "1" : "0";
+
+  for (let index = 0; index < copies; index += 1) {
+    sequence.forEach((item) => {
+      container.appendChild(buildItem(item));
+    });
+  }
+};
+
+const getLoopLeadOffset = (container) => {
+  const leadCount = Number(container.dataset.loopLead || "0");
+  if (!leadCount) return 0;
+  const firstCard = container.firstElementChild;
+  if (!firstCard) return 0;
+  const styles = window.getComputedStyle(container);
+  const gap = parseFloat(styles.columnGap || styles.gap || "0");
+  return (firstCard.getBoundingClientRect().width + gap) * leadCount;
+};
+
+const initLoopingBand = (container, speed = 0.35) => {
+  if (!container) return;
+  if (container.dataset.loopBound === "true") return;
+  container.dataset.loopBound = "true";
+
+  let frameId = 0;
+  let lastTime = 0;
+  let isPaused = false;
+
+  const tick = (time) => {
+    if (!lastTime) lastTime = time;
+    const delta = time - lastTime;
+    lastTime = time;
+
+    if (!isPaused) {
+      container.scrollLeft += speed * delta;
+      const halfway = container.scrollWidth / 2;
+      const leadOffset = getLoopLeadOffset(container);
+      if (container.scrollLeft >= halfway + leadOffset) {
+        container.scrollLeft -= halfway;
+      }
+    }
+
+    frameId = window.requestAnimationFrame(tick);
+  };
+
+  const pause = () => {
+    isPaused = true;
+  };
+
+  const resume = () => {
+    isPaused = false;
+  };
+
+  container.addEventListener("mouseenter", pause);
+  container.addEventListener("mouseleave", resume);
+  container.addEventListener("focusin", pause);
+  container.addEventListener("focusout", resume);
+
+  frameId = window.requestAnimationFrame(tick);
+  container.dataset.loopFrame = String(frameId);
+};
+
+const renderItems = (heroRail, miniGrid, items, limit = items.length) => {
+  heroRail.innerHTML = "";
+  miniGrid.innerHTML = "";
 
   const visibleItems = items.slice(0, limit);
+  const heroCount = Math.ceil(visibleItems.length / 2);
+  const heroItems = visibleItems.slice(0, heroCount);
+  const miniItems = visibleItems.slice(heroCount);
 
-  if (filtered) {
-    const [top, ...rest] = visibleItems;
-    if (top) grid.appendChild(buildCard(top, "featured"));
-    rest.forEach((item) => grid.appendChild(buildCard(item, "default")));
-    return;
-  }
-
-  const [featured, second, third, fourth, ...rest] = visibleItems;
-  if (featured) grid.appendChild(buildCard(featured, "featured"));
-  if (second) grid.appendChild(buildCard(second, "default"));
-  if (third) grid.appendChild(buildCard(third, "default"));
-  if (fourth) grid.appendChild(buildCard(fourth, "text-only"));
-  rest.forEach((item) => grid.appendChild(buildCard(item, "default")));
+  renderLoopingBand(heroRail, heroItems, buildHeroCard);
+  renderLoopingBand(miniGrid, miniItems, buildMiniCard);
+  heroRail.scrollLeft = getLoopLeadOffset(heroRail);
+  miniGrid.scrollLeft = getLoopLeadOffset(miniGrid);
 };
 
 export const initResearch = async () => {
-  const section = document.querySelector("#research");
-  const grid = document.querySelector("[data-research-grid]");
+  const heroRail = document.querySelector("[data-research-hero]");
+  const miniGrid = document.querySelector("[data-research-grid]");
   const loadMoreButton = document.querySelector("[data-research-load-more]");
-  if (!grid || !section || !loadMoreButton) return;
+  if (!heroRail || !miniGrid || !loadMoreButton) return;
 
   const items = await loadResearch();
-  if (!items.length) return;
+  if (!items.length) {
+    loadMoreButton.hidden = true;
+    return;
+  }
 
-  const searchInput = section.querySelector('[data-editorial-search-input="research"]');
-  const searchStatus = section.querySelector('[data-editorial-search-status="research"]');
-  const search = createEditorialSearcher(items);
   let visibleCount = PAGE_SIZE;
 
-  const updateLoadMore = (count) => {
-    const hasMore = count > visibleCount;
-    loadMoreButton.hidden = !hasMore;
-    loadMoreButton.disabled = !hasMore;
+  const updateLoadMore = () => {
+    loadMoreButton.hidden = items.length <= visibleCount;
+    loadMoreButton.disabled = items.length <= visibleCount;
   };
 
-  const updateStatus = (count, query) => {
-    if (!searchStatus) return;
-    if (!query) {
-      searchStatus.textContent = `${items.length} posts`;
-      return;
-    }
-    searchStatus.textContent = `${count} result${count === 1 ? "" : "s"}`;
+  const render = () => {
+    renderItems(heroRail, miniGrid, items, visibleCount);
+    updateLoadMore();
   };
 
-  const applySearch = () => {
-    const query = (searchInput?.value || "").trim();
-    if (!query) {
-      renderItems(grid, items, false, visibleCount);
-      updateLoadMore(items.length);
-      updateStatus(items.length, "");
-      return;
-    }
-
-    const results = search(query);
-    renderItems(grid, results, true, visibleCount);
-    updateLoadMore(results.length);
-    updateStatus(results.length, query);
-  };
-
-  renderItems(grid, items, false, visibleCount);
-  updateLoadMore(items.length);
-  updateStatus(items.length, "");
-
-  if (searchInput) {
-    searchInput.addEventListener("input", applySearch);
-    searchInput.addEventListener("search", applySearch);
-  }
+  render();
+  initLoopingBand(heroRail, 0.18);
 
   loadMoreButton.addEventListener("click", () => {
     visibleCount += PAGE_SIZE;
-    applySearch();
+    render();
   });
 };
