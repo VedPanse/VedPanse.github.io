@@ -3,6 +3,7 @@ import { applyLabelColor } from "./label-color.js";
 
 const BLOGS_DIR = "data/blogs";
 const BLOG_INDEX_URL = `${BLOGS_DIR}/index.json`;
+const PAGE_SIZE = 4;
 
 const createElement = (tag, className) => {
   const element = document.createElement(tag);
@@ -141,7 +142,7 @@ const buildCard = (item, variant = "default") => {
   return link;
 };
 
-const renderItems = (grid, items, filtered = false) => {
+const renderItems = (grid, items, filtered = false, limit = items.length) => {
   grid.innerHTML = "";
   if (!items.length) {
     const empty = createElement("p", "editorial-empty");
@@ -150,25 +151,28 @@ const renderItems = (grid, items, filtered = false) => {
     return;
   }
 
+  const visibleItems = items.slice(0, limit);
+
   if (filtered) {
-    const [top, ...rest] = items;
+    const [top, ...rest] = visibleItems;
     if (top) grid.appendChild(buildCard(top, "featured"));
     rest.forEach((item) => grid.appendChild(buildCard(item, "default")));
     return;
   }
 
-  const [featured, second, third, fourth, ...rest] = items;
+  const [featured, second, third, fourth, ...rest] = visibleItems;
   if (featured) grid.appendChild(buildCard(featured, "featured"));
   if (second) grid.appendChild(buildCard(second, "default"));
   if (third) grid.appendChild(buildCard(third, "default"));
   if (fourth) grid.appendChild(buildCard(fourth, "text-only"));
-  rest.slice(0, 2).forEach((item) => grid.appendChild(buildCard(item, "default")));
+  rest.forEach((item) => grid.appendChild(buildCard(item, "default")));
 };
 
 export const initBlogs = async () => {
   const section = document.querySelector("#blogs");
   const grid = document.querySelector("[data-blogs-grid]");
-  if (!grid || !section) return;
+  const loadMoreButton = document.querySelector("[data-blogs-load-more]");
+  if (!grid || !section || !loadMoreButton) return;
 
   const items = await loadBlogs();
   if (!items.length) return;
@@ -176,6 +180,13 @@ export const initBlogs = async () => {
   const searchInput = section.querySelector('[data-editorial-search-input="blogs"]');
   const searchStatus = section.querySelector('[data-editorial-search-status="blogs"]');
   const search = createEditorialSearcher(items);
+  let visibleCount = PAGE_SIZE;
+
+  const updateLoadMore = (count) => {
+    const hasMore = count > visibleCount;
+    loadMoreButton.hidden = !hasMore;
+    loadMoreButton.disabled = !hasMore;
+  };
 
   const updateStatus = (count, query) => {
     if (!searchStatus) return;
@@ -189,21 +200,29 @@ export const initBlogs = async () => {
   const applySearch = () => {
     const query = (searchInput?.value || "").trim();
     if (!query) {
-      renderItems(grid, items, false);
+      renderItems(grid, items, false, visibleCount);
+      updateLoadMore(items.length);
       updateStatus(items.length, "");
       return;
     }
 
     const results = search(query);
-    renderItems(grid, results, true);
+    renderItems(grid, results, true, visibleCount);
+    updateLoadMore(results.length);
     updateStatus(results.length, query);
   };
 
-  renderItems(grid, items, false);
+  renderItems(grid, items, false, visibleCount);
+  updateLoadMore(items.length);
   updateStatus(items.length, "");
 
   if (searchInput) {
     searchInput.addEventListener("input", applySearch);
     searchInput.addEventListener("search", applySearch);
   }
+
+  loadMoreButton.addEventListener("click", () => {
+    visibleCount += PAGE_SIZE;
+    applySearch();
+  });
 };
