@@ -317,6 +317,34 @@ const renderWorkCard = (item) => {
   return article;
 };
 
+const renderLoopingWorkBand = (rail, items) => {
+  rail.innerHTML = "";
+  if (!items.length) return;
+
+  const sequence =
+    items.length > 1 ? [items[items.length - 1], ...items, items[0]] : items.slice();
+  rail.dataset.loopLead = items.length > 1 ? "1" : "0";
+
+  sequence.forEach((item) => {
+    rail.appendChild(renderWorkCard(item));
+  });
+};
+
+const getRailLeadOffset = (rail) => {
+  const leadCount = Number(rail.dataset.loopLead || "0");
+  if (!leadCount) return 0;
+  const firstCard = rail.querySelector(".work-rail-card");
+  if (!firstCard) return 0;
+  const styles = window.getComputedStyle(rail);
+  const gap = parseFloat(styles.columnGap || styles.gap || "0");
+  return (firstCard.getBoundingClientRect().width + gap) * leadCount;
+};
+
+const getRailPeekOffset = (rail) => {
+  const styles = window.getComputedStyle(rail);
+  return parseFloat(styles.paddingLeft || "0");
+};
+
 export const initWorkExperience = async () => {
   const rail = document.querySelector("[data-work-rail]");
   const previousButton = document.querySelector("[data-work-prev]");
@@ -335,9 +363,8 @@ export const initWorkExperience = async () => {
   }
 
   rail.innerHTML = "";
-  items.forEach((item) => {
-    rail.appendChild(renderWorkCard(item));
-  });
+  renderLoopingWorkBand(rail, items);
+  rail.scrollLeft = Math.max(0, getRailLeadOffset(rail) - getRailPeekOffset(rail));
 
   const getScrollAmount = () => {
     const firstCard = rail.querySelector(".work-rail-card");
@@ -348,9 +375,8 @@ export const initWorkExperience = async () => {
   };
 
   const updateControls = () => {
-    const maxScrollLeft = rail.scrollWidth - rail.clientWidth - 2;
-    previousButton.disabled = rail.scrollLeft <= 2;
-    nextButton.disabled = rail.scrollLeft >= maxScrollLeft;
+    previousButton.disabled = false;
+    nextButton.disabled = false;
   };
 
   const scrollRail = (direction) => {
