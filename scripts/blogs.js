@@ -1,11 +1,14 @@
 const BLOGS_DIR = "data/blogs";
 const BLOG_INDEX_URL = `${BLOGS_DIR}/index.json`;
-const PAGE_SIZE = 4;
 const WORK_BANNERS = [
   "assets/banners/work/Aqua_1280x789.png",
-  "assets/banners/work/RubyMine_1280x789.png",
+  "assets/banners/work/Client_1280x789.png",
+  "assets/banners/work/Code With Me_1280x789.png",
+  "assets/banners/work/DataSpell_1280x789.png",
   "assets/banners/work/dotCover_1280x789.png",
+  "assets/banners/work/GoLand_1280x789.png",
   "assets/banners/work/jetbrains.png",
+  "assets/banners/work/RubyMine_1280x789.png",
   "assets/banners/work/webstorm.png",
 ];
 
@@ -153,19 +156,18 @@ const buildMiniCard = (item) => {
   return link;
 };
 
-const renderLoopingBand = (container, items, buildItem, copies = 2) => {
+const renderLoopingBand = (container, items, buildItem) => {
   container.innerHTML = "";
   if (!items.length) return;
 
   const sequence =
     items.length > 1 ? [items[items.length - 1], ...items, items[0]] : items.slice();
   container.dataset.loopLead = items.length > 1 ? "1" : "0";
+  container.dataset.loopItems = String(items.length);
 
-  for (let index = 0; index < copies; index += 1) {
-    sequence.forEach((item) => {
-      container.appendChild(buildItem(item));
-    });
-  }
+  sequence.forEach((item) => {
+    container.appendChild(buildItem(item));
+  });
 };
 
 const getLoopLeadOffset = (container) => {
@@ -176,6 +178,45 @@ const getLoopLeadOffset = (container) => {
   const styles = window.getComputedStyle(container);
   const gap = parseFloat(styles.columnGap || styles.gap || "0");
   return (firstCard.getBoundingClientRect().width + gap) * leadCount;
+};
+
+const getBandPeekOffset = (container) => {
+  const styles = window.getComputedStyle(container);
+  return parseFloat(styles.paddingLeft || "0");
+};
+
+const getLoopCycleWidth = (container) => {
+  const itemCount = Number(container.dataset.loopItems || "0");
+  if (!itemCount) return 0;
+  const firstCard = container.firstElementChild;
+  if (!firstCard) return 0;
+  const styles = window.getComputedStyle(container);
+  const gap = parseFloat(styles.columnGap || styles.gap || "0");
+  return (firstCard.getBoundingClientRect().width + gap) * itemCount;
+};
+
+const getLoopStartOffset = (container) =>
+  Math.max(0, getLoopLeadOffset(container) - getBandPeekOffset(container));
+
+const resetBandPosition = (container) => {
+  container.scrollLeft = getLoopStartOffset(container);
+};
+
+const bindLoopReset = (container) => {
+  if (container.dataset.loopResetBound === "true") return;
+  container.dataset.loopResetBound = "true";
+
+  container.addEventListener(
+    "scroll",
+    () => {
+      const cycleWidth = getLoopCycleWidth(container);
+      const startOffset = getLoopStartOffset(container);
+      if (cycleWidth && container.scrollLeft >= startOffset + cycleWidth) {
+        container.scrollLeft = startOffset;
+      }
+    },
+    { passive: true }
+  );
 };
 
 const initLoopingBand = (container, speed = 0.35) => {
@@ -194,10 +235,10 @@ const initLoopingBand = (container, speed = 0.35) => {
 
     if (!isPaused) {
       container.scrollLeft += speed * delta;
-      const halfway = container.scrollWidth / 2;
-      const leadOffset = getLoopLeadOffset(container);
-      if (container.scrollLeft >= halfway + leadOffset) {
-        container.scrollLeft -= halfway;
+      const cycleWidth = getLoopCycleWidth(container);
+      const startOffset = getLoopStartOffset(container);
+      if (cycleWidth && container.scrollLeft >= startOffset + cycleWidth) {
+        container.scrollLeft = startOffset;
       }
     }
 
@@ -232,8 +273,8 @@ const renderItems = (heroRail, miniGrid, items, limit = items.length) => {
 
   renderLoopingBand(heroRail, heroItems, buildHeroCard);
   renderLoopingBand(miniGrid, miniItems, buildMiniCard);
-  heroRail.scrollLeft = getLoopLeadOffset(heroRail);
-  miniGrid.scrollLeft = getLoopLeadOffset(miniGrid);
+  resetBandPosition(heroRail);
+  resetBandPosition(miniGrid);
 };
 
 export const initBlogs = async () => {
@@ -248,23 +289,11 @@ export const initBlogs = async () => {
     return;
   }
 
-  let visibleCount = PAGE_SIZE;
-
-  const updateLoadMore = () => {
-    loadMoreButton.hidden = items.length <= visibleCount;
-    loadMoreButton.disabled = items.length <= visibleCount;
-  };
-
   const render = () => {
-    renderItems(heroRail, miniGrid, items, visibleCount);
-    updateLoadMore();
+    renderItems(heroRail, miniGrid, items, items.length);
   };
 
   render();
-  initLoopingBand(heroRail, 0.18);
-
-  loadMoreButton.addEventListener("click", () => {
-    visibleCount += PAGE_SIZE;
-    render();
-  });
+  loadMoreButton.hidden = true;
+  loadMoreButton.disabled = true;
 };
