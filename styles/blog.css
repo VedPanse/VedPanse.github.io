@@ -3,7 +3,7 @@
   --blog-panel: #111214;
   --blog-border: rgba(255, 255, 255, 0.14);
   --blog-muted: #9ea0a6;
-  --blog-text: #ffffff;
+  --blog-text: #e8e8ed;
   --blog-link: #d6d7dc;
   --blog-link-active-bg: #1f2024;
   --blog-link-active: #f6f6f8;
@@ -81,12 +81,12 @@ html[data-theme="light"] .blog-toc-link.is-active::before {
 }
 
 .blog-layout {
-  width: min(1880px, 98vw);
+  width: min(980px, 94vw);
   margin: 0 auto;
   padding: 18px 0 64px;
   display: grid;
-  grid-template-columns: minmax(230px, 290px) minmax(560px, 920px) minmax(220px, 290px);
-  gap: clamp(20px, 2.2vw, 42px);
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0;
   align-items: start;
 }
 
@@ -101,10 +101,6 @@ html[data-theme="light"] .blog-toc-link.is-active::before {
 
 .blog-sidebar--left {
   padding-right: 18px;
-}
-
-.blog-sidebar--right {
-  padding-left: 24px;
 }
 
 .blog-search-trigger {
@@ -212,7 +208,7 @@ html[data-theme="light"] .blog-toc-link.is-active::before {
 }
 
 .blog-main-header {
-  width: min(572px, 100%);
+  width: min(640px, 100%);
   margin: 56px auto 38px;
   text-align: center;
   display: grid;
@@ -289,11 +285,13 @@ html[data-theme="light"] .blog-meta-row .blog-label-chip {
 }
 
 .blog-content {
-  width: min(598px, 100%);
+  width: min(640px, 100%);
   margin: 0 auto;
-  font-size: 16px;
-  line-height: 1.65;
-  letter-spacing: -0.01em;
+  font-size: 17px;
+  line-height: 1.4211026316;
+  font-weight: 400;
+  letter-spacing: 0.012em;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   display: grid;
   gap: 12px;
   color: var(--blog-text);
@@ -305,6 +303,11 @@ html[data-theme="light"] .blog-meta-row .blog-label-chip {
 
 .blog-content p {
   color: inherit;
+}
+
+.blog-content strong,
+.blog-content b {
+  color: #ffffff;
 }
 
 .blog-content h2 {
@@ -496,17 +499,13 @@ html[data-theme="light"] .blog-content img {
 
 @media (max-width: 1320px) {
   .blog-layout {
-    grid-template-columns: minmax(220px, 270px) minmax(0, 1fr);
-    width: min(1200px, 96vw);
-  }
-
-  .blog-sidebar--right {
-    display: none;
+    grid-template-columns: minmax(0, 1fr);
+    width: min(980px, 94vw);
   }
 
   .blog-main-header,
   .blog-content {
-    width: min(598px, 100%);
+    width: min(640px, 100%);
   }
 }
 
@@ -564,9 +563,5 @@ html[data-theme="light"] .blog-content img {
   .blog-meta-row {
     font-size: 15px;
     gap: 16px;
-  }
-
-  .blog-content {
-    line-height: 1.6;
   }
 }

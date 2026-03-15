@@ -9,47 +9,73 @@ import { initContactForm } from "./contact.js";
 import { initSearchOverlay } from "./search.js";
 import "./footer.js";
 
-const initThemeToggle = () => {
-  const toggle = document.querySelector("[data-theme-toggle]");
-  if (!toggle) return;
+class ThemeController {
+  constructor() {
+    this.toggle_ = document.querySelector("[data-theme-toggle]");
+    this.root_ = document.documentElement;
+    this.metaTheme_ = document.querySelector('meta[name="theme-color"]');
+  }
 
-  const root = document.documentElement;
-  const metaTheme = document.querySelector('meta[name="theme-color"]');
-  const storedTheme = localStorage.getItem("theme");
-  const initialTheme = storedTheme || "dark";
+  initialize() {
+    if (!this.toggle_) {
+      return;
+    }
 
-  const applyTheme = (theme) => {
-    root.dataset.theme = theme;
+    const storedTheme = localStorage.getItem("theme");
+    const initialTheme = storedTheme || "dark";
+    this.applyTheme_(initialTheme);
+    this.toggle_.addEventListener("click", () => {
+      const nextTheme = this.root_.dataset.theme === "light" ? "dark" : "light";
+      this.applyTheme_(nextTheme);
+    });
+  }
+
+  /**
+   * @param {string} theme
+   */
+  applyTheme_(theme) {
+    if (!this.toggle_) {
+      return;
+    }
+
+    this.root_.dataset.theme = theme;
     localStorage.setItem("theme", theme);
     const isLight = theme === "light";
-    toggle.setAttribute("aria-pressed", String(isLight));
-    toggle.setAttribute("aria-label", isLight ? "Switch to dark theme" : "Switch to light theme");
-    if (metaTheme) {
-      metaTheme.setAttribute("content", isLight ? "#f5f5f7" : "#000000");
+    this.toggle_.setAttribute("aria-pressed", String(isLight));
+    this.toggle_.setAttribute(
+      "aria-label",
+      isLight ? "Switch to dark theme" : "Switch to light theme"
+    );
+    if (this.metaTheme_) {
+      this.metaTheme_.setAttribute("content", isLight ? "#f5f5f7" : "#000000");
     }
-  };
+  }
+}
 
-  applyTheme(initialTheme);
+class PortfolioApplication {
+  constructor() {
+    this.initializers_ = [
+      initContent,
+      initIconBand,
+      initWorkSection,
+      initWorkExperience,
+      initProjectsCarousel,
+      initNavHighlight,
+      initNavMenu,
+      initResearch,
+      initBlogs,
+      initContactForm,
+      () => new ThemeController().initialize(),
+      initSearchOverlay,
+    ];
+  }
 
-  toggle.addEventListener("click", () => {
-    const nextTheme = root.dataset.theme === "light" ? "dark" : "light";
-    applyTheme(nextTheme);
-  });
-};
+  async bootstrap() {
+    for (const initialize of this.initializers_) {
+      await initialize();
+    }
+  }
+}
 
-const bootstrap = () => {
-  initContent();
-  initIconBand();
-  initWorkSection();
-  initWorkExperience();
-  initProjectsCarousel();
-  initNavHighlight();
-  initNavMenu();
-  initResearch();
-  initBlogs();
-  initContactForm();
-  initThemeToggle();
-  initSearchOverlay();
-};
-
-bootstrap();
+const application = new PortfolioApplication();
+application.bootstrap();
