@@ -196,84 +196,132 @@ const normalizeItems = (items) =>
     };
   });
 
-const renderPanel = (panel, item, tabId) => {
-  panel.innerHTML = "";
-  panel.setAttribute("role", "tabpanel");
-  panel.setAttribute("aria-labelledby", tabId);
+const WORK_GRADIENT_MAP = {
+  IBM: {
+    primary: "#3b82f6",
+    secondary: "#02030a",
+    tertiary: "#6ea8ff",
+  },
+  "Falcon Eye": {
+    primary: "#ef4444",
+    secondary: "#040207",
+    tertiary: "#fb7185",
+  },
+  Spuddie: {
+    primary: "#8b5cf6",
+    secondary: "#03020a",
+    tertiary: "#a78bfa",
+  },
+  "Findability Sciences": {
+    primary: "#10b981",
+    secondary: "#010706",
+    tertiary: "#6ee7b7",
+  },
+  "Venture Shares": {
+    primary: "#f59e0b",
+    secondary: "#080402",
+    tertiary: "#fcd34d",
+  },
+};
 
-  const body = createElement("div", "work-showcase-body");
+const resolveGradient = (item) => {
+  const palette = WORK_GRADIENT_MAP[item.title];
+  if (palette) return palette;
 
-  const content = createElement("div", "work-showcase-content");
-  const title = createElement("h3", "work-showcase-company");
-  title.textContent = item.title;
+  return {
+    primary: item.visual.accent,
+    secondary: "#050816",
+    tertiary: "#7dd3fc",
+  };
+};
 
-  const description = createElement("p", "work-showcase-description");
-  description.textContent = item.description;
+const renderWorkCard = (item) => {
+  const article = createElement("article", "work-rail-card");
+  const gradient = resolveGradient(item);
+  article.style.setProperty("--work-visual-accent", gradient.primary);
+  article.style.setProperty("--work-visual-base", gradient.secondary);
+  article.style.setProperty("--work-visual-glow", gradient.tertiary);
+  article.setAttribute("aria-label", `${item.title} work experience`);
+  article.tabIndex = 0;
 
-  const stats = createElement("div", "work-showcase-stats");
+  const mediaLink = createElement("a", "work-rail-media");
+  mediaLink.href = item.ctaUrl;
+  mediaLink.setAttribute("aria-label", "Learn more");
+
+  const layerBack = createElement("span", "work-rail-media-layer work-rail-media-layer--back");
+  const layerMiddle = createElement("span", "work-rail-media-layer work-rail-media-layer--middle");
+  const layerFront = createElement("span", "work-rail-media-layer work-rail-media-layer--front");
+  const fallback = createElement("div", "work-rail-media-fallback");
+
+  const meta = createElement("p", "work-rail-media-meta");
+  meta.textContent = item.visual.meta;
+
+  const label = createElement("p", "work-rail-media-label");
+  label.textContent = item.visual.label;
+
+  mediaLink.appendChild(layerBack);
+  mediaLink.appendChild(layerMiddle);
+  mediaLink.appendChild(layerFront);
+  fallback.appendChild(meta);
+  fallback.appendChild(label);
+  mediaLink.appendChild(fallback);
+
+  const copy = createElement("div", "work-rail-copy");
+
+  const description = createElement("p", "work-rail-description");
+
+  const title = createElement("span", "work-rail-title");
+  title.textContent = `${item.title}. `;
+
+  const summary = createElement("span", "work-rail-summary");
+  summary.textContent = item.description;
+
+  description.appendChild(title);
+  description.appendChild(summary);
+
+  const stats = createElement("div", "work-rail-stats");
   item.stats.forEach((stat) => {
-    const statCard = createElement("div", "work-showcase-stat");
+    const statLine = createElement("p", "work-rail-stat");
 
-    const value = createElement("p", "work-showcase-stat-value");
-    value.textContent = stat.value;
+    const value = createElement("span", "work-rail-stat-value");
+    value.textContent = `${stat.value} `;
 
-    const label = createElement("p", "work-showcase-stat-label");
+    const label = createElement("span", "work-rail-stat-label");
     label.textContent = stat.label;
 
-    statCard.appendChild(value);
-    statCard.appendChild(label);
-    stats.appendChild(statCard);
+    statLine.appendChild(value);
+    statLine.appendChild(label);
+    stats.appendChild(statLine);
   });
 
-  const cta = createElement("a", "work-showcase-link");
+  const cta = createElement("a", "work-rail-link");
   cta.href = item.ctaUrl;
-  cta.textContent = item.ctaText;
-  cta.setAttribute("aria-label", item.ctaText);
+  cta.setAttribute("aria-label", "Learn more");
 
-  const arrow = createElement("span", "work-showcase-link-arrow");
-  arrow.textContent = "\u2192";
-  arrow.setAttribute("aria-hidden", "true");
+  const ctaLabel = createElement("span", "work-rail-link-label");
+  ctaLabel.textContent = "Learn more";
 
-  cta.appendChild(arrow);
+  const ctaArrow = createElement("span", "work-rail-link-arrow");
+  ctaArrow.textContent = "\u203a";
+  ctaArrow.setAttribute("aria-hidden", "true");
 
-  content.appendChild(title);
-  content.appendChild(description);
-  content.appendChild(stats);
-  content.appendChild(cta);
+  cta.appendChild(ctaLabel);
+  cta.appendChild(ctaArrow);
 
-  const media = createElement("div", "work-showcase-media");
-  media.style.setProperty("--work-visual-accent", item.visual.accent);
+  copy.appendChild(description);
+  copy.appendChild(stats);
+  copy.appendChild(cta);
 
-  if (item.visualImage) {
-    const image = document.createElement("img");
-    image.className = "work-showcase-media-image";
-    image.src = item.visualImage;
-    image.alt = item.visualAlt;
-    image.loading = "lazy";
-    media.appendChild(image);
-  } else {
-    const fallback = createElement("div", "work-showcase-media-fallback");
-
-    const meta = createElement("p", "work-showcase-media-meta");
-    meta.textContent = item.visual.meta;
-
-    const label = createElement("p", "work-showcase-media-label");
-    label.textContent = item.visual.label;
-
-    fallback.appendChild(meta);
-    fallback.appendChild(label);
-    media.appendChild(fallback);
-  }
-
-  body.appendChild(content);
-  body.appendChild(media);
-  panel.appendChild(body);
+  article.appendChild(mediaLink);
+  article.appendChild(copy);
+  return article;
 };
 
 export const initWorkExperience = async () => {
-  const tabs = document.querySelector("[data-work-tabs]");
-  const panel = document.querySelector("[data-work-panel]");
-  if (!tabs || !panel) return;
+  const rail = document.querySelector("[data-work-rail]");
+  const previousButton = document.querySelector("[data-work-prev]");
+  const nextButton = document.querySelector("[data-work-next]");
+  if (!rail || !previousButton || !nextButton) return;
 
   let items = [];
   try {
@@ -286,67 +334,51 @@ export const initWorkExperience = async () => {
     return;
   }
 
-  tabs.innerHTML = "";
-  panel.id = "work-panel";
-  tabs.style.setProperty("--work-tab-count", String(items.length));
-
-  let activeIndex = 0;
-  const tabButtons = [];
-
-  const setActive = (nextIndex, focus = false) => {
-    activeIndex = nextIndex;
-
-    tabButtons.forEach((button, index) => {
-      const isActive = index === activeIndex;
-      button.classList.toggle("is-active", isActive);
-      button.setAttribute("aria-selected", String(isActive));
-      button.tabIndex = isActive ? 0 : -1;
-      if (focus && isActive) button.focus();
-    });
-
-    renderPanel(panel, items[activeIndex], tabButtons[activeIndex].id);
-  };
-
-  items.forEach((item, index) => {
-    const tab = createElement("button", "work-showcase-tab");
-    tab.type = "button";
-    tab.id = `work-tab-${index}`;
-    tab.setAttribute("role", "tab");
-    tab.setAttribute("aria-controls", "work-panel");
-    tab.setAttribute("aria-selected", "false");
-    tab.tabIndex = -1;
-
-    const label = createElement("span", "work-showcase-tab-label");
-    label.textContent = item.tabLabel;
-    tab.appendChild(label);
-
-    tab.addEventListener("click", () => {
-      setActive(index);
-    });
-
-    tab.addEventListener("keydown", (event) => {
-      if (!["ArrowRight", "ArrowLeft", "Home", "End"].includes(event.key)) return;
-
-      event.preventDefault();
-
-      if (event.key === "Home") {
-        setActive(0, true);
-        return;
-      }
-
-      if (event.key === "End") {
-        setActive(items.length - 1, true);
-        return;
-      }
-
-      const delta = event.key === "ArrowRight" ? 1 : -1;
-      const next = (activeIndex + delta + items.length) % items.length;
-      setActive(next, true);
-    });
-
-    tabs.appendChild(tab);
-    tabButtons.push(tab);
+  rail.innerHTML = "";
+  items.forEach((item) => {
+    rail.appendChild(renderWorkCard(item));
   });
 
-  setActive(0);
+  const getScrollAmount = () => {
+    const firstCard = rail.querySelector(".work-rail-card");
+    if (!firstCard) return rail.clientWidth;
+    const styles = window.getComputedStyle(rail);
+    const gap = parseFloat(styles.columnGap || styles.gap || "0");
+    return firstCard.getBoundingClientRect().width + gap;
+  };
+
+  const updateControls = () => {
+    const maxScrollLeft = rail.scrollWidth - rail.clientWidth - 2;
+    previousButton.disabled = rail.scrollLeft <= 2;
+    nextButton.disabled = rail.scrollLeft >= maxScrollLeft;
+  };
+
+  const scrollRail = (direction) => {
+    rail.scrollBy({
+      left: getScrollAmount() * direction,
+      behavior: "smooth",
+    });
+  };
+
+  previousButton.addEventListener("click", () => scrollRail(-1));
+  nextButton.addEventListener("click", () => scrollRail(1));
+
+  rail.addEventListener("scroll", () => {
+    window.requestAnimationFrame(updateControls);
+  }, { passive: true });
+
+  rail.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowRight") {
+      event.preventDefault();
+      scrollRail(1);
+    }
+
+    if (event.key === "ArrowLeft") {
+      event.preventDefault();
+      scrollRail(-1);
+    }
+  });
+
+  window.addEventListener("resize", updateControls);
+  updateControls();
 };

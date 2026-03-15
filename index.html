@@ -38,6 +38,19 @@
     #blogs .editorial-card--featured {
       min-height: 420px;
     }
+
+    .research-inner,
+    .blogs-inner {
+      width: min(1240px, 72%);
+    }
+
+    @media (max-width: 768px) {
+
+      .research-inner,
+      .blogs-inner {
+        width: min(1820px, 90%);
+      }
+    }
   </style>
 </head>
 
@@ -185,9 +198,18 @@
 
     <section id="work" class="work-archive-section" aria-labelledby="work-title">
       <div class="work-showcase-inner">
-        <h2 id="work-title">Work Experience. Real impact.</h2>
-        <div class="work-showcase-tabs" role="tablist" aria-label="Work companies" data-work-tabs></div>
-        <div class="work-showcase-panel" data-work-panel></div>
+        <div class="work-showcase-header">
+          <h2 id="work-title">Work Experience. Real impact.</h2>
+          <div class="work-showcase-controls" role="group" aria-label="Work experience carousel controls">
+            <button class="work-showcase-control" type="button" data-work-prev aria-label="Scroll work cards left">
+              <span aria-hidden="true">&#8592;</span>
+            </button>
+            <button class="work-showcase-control" type="button" data-work-next aria-label="Scroll work cards right">
+              <span aria-hidden="true">&#8594;</span>
+            </button>
+          </div>
+        </div>
+        <div class="work-showcase-rail" aria-label="Work experience cards" data-work-rail></div>
       </div>
     </section>
 
