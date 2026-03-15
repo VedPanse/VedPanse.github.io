@@ -104,11 +104,8 @@ const buildHeroCard = (item) => {
   const button = createElement("span", "editorial-hero-pill");
   button.textContent = "Read now";
   const summary = createElement("p", "editorial-hero-summary");
-  const strong = createElement("span", "editorial-hero-summary-strong");
-  strong.textContent = `${item.author || "Ved Panse"} \u2022 `;
   const text = createElement("span", "editorial-hero-summary-text");
   text.textContent = item.excerpt || item.date || "";
-  summary.appendChild(strong);
   summary.appendChild(text);
   footer.appendChild(button);
   footer.appendChild(summary);
