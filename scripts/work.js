@@ -1,6 +1,17 @@
 const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
 
 const WORK_DATA_URL = "data/work.json";
+const WORK_BANNERS = [
+  "assets/banners/work/Aqua_1280x789.png",
+  "assets/banners/work/Client_1280x789.png",
+  "assets/banners/work/Code With Me_1280x789.png",
+  "assets/banners/work/DataSpell_1280x789.png",
+  "assets/banners/work/dotCover_1280x789.png",
+  "assets/banners/work/GoLand_1280x789.png",
+  "assets/banners/work/jetbrains.png",
+  "assets/banners/work/RubyMine_1280x789.png",
+  "assets/banners/work/webstorm.png",
+];
 
 const createElement = (tag, className) => {
   const element = document.createElement(tag);
@@ -186,7 +197,7 @@ const normalizeItems = (items) =>
       stats: normalizeStats(item),
       ctaText: item.ctaText || `Read ${fallbackTitle} work blog`,
       ctaUrl: workPostUrl || item.ctaUrl || "#contact",
-      visualImage: item.visualImage || "",
+      visualImage: item.visualImage || WORK_BANNERS[index % WORK_BANNERS.length],
       visualAlt: item.visualAlt || `${fallbackTitle} showcase visual`,
       visual: {
         accent: accentFromCompanyName(colorSeed),
@@ -247,24 +258,12 @@ const renderWorkCard = (item) => {
   const mediaLink = createElement("a", "work-rail-media");
   mediaLink.href = item.ctaUrl;
   mediaLink.setAttribute("aria-label", "Learn more");
-
-  const layerBack = createElement("span", "work-rail-media-layer work-rail-media-layer--back");
-  const layerMiddle = createElement("span", "work-rail-media-layer work-rail-media-layer--middle");
-  const layerFront = createElement("span", "work-rail-media-layer work-rail-media-layer--front");
-  const fallback = createElement("div", "work-rail-media-fallback");
-
-  const meta = createElement("p", "work-rail-media-meta");
-  meta.textContent = item.visual.meta;
-
-  const label = createElement("p", "work-rail-media-label");
-  label.textContent = item.visual.label;
-
-  mediaLink.appendChild(layerBack);
-  mediaLink.appendChild(layerMiddle);
-  mediaLink.appendChild(layerFront);
-  fallback.appendChild(meta);
-  fallback.appendChild(label);
-  mediaLink.appendChild(fallback);
+  const image = document.createElement("img");
+  image.className = "work-rail-media-image";
+  image.src = item.visualImage;
+  image.alt = item.visualAlt;
+  image.loading = "lazy";
+  mediaLink.appendChild(image);
 
   const copy = createElement("div", "work-rail-copy");
 
@@ -317,34 +316,6 @@ const renderWorkCard = (item) => {
   return article;
 };
 
-const renderLoopingWorkBand = (rail, items) => {
-  rail.innerHTML = "";
-  if (!items.length) return;
-
-  const sequence =
-    items.length > 1 ? [items[items.length - 1], ...items, items[0]] : items.slice();
-  rail.dataset.loopLead = items.length > 1 ? "1" : "0";
-
-  sequence.forEach((item) => {
-    rail.appendChild(renderWorkCard(item));
-  });
-};
-
-const getRailLeadOffset = (rail) => {
-  const leadCount = Number(rail.dataset.loopLead || "0");
-  if (!leadCount) return 0;
-  const firstCard = rail.querySelector(".work-rail-card");
-  if (!firstCard) return 0;
-  const styles = window.getComputedStyle(rail);
-  const gap = parseFloat(styles.columnGap || styles.gap || "0");
-  return (firstCard.getBoundingClientRect().width + gap) * leadCount;
-};
-
-const getRailPeekOffset = (rail) => {
-  const styles = window.getComputedStyle(rail);
-  return parseFloat(styles.paddingLeft || "0");
-};
-
 export const initWorkExperience = async () => {
   const rail = document.querySelector("[data-work-rail]");
   const previousButton = document.querySelector("[data-work-prev]");
@@ -363,8 +334,10 @@ export const initWorkExperience = async () => {
   }
 
   rail.innerHTML = "";
-  renderLoopingWorkBand(rail, items);
-  rail.scrollLeft = Math.max(0, getRailLeadOffset(rail) - getRailPeekOffset(rail));
+  items.forEach((item) => {
+    rail.appendChild(renderWorkCard(item));
+  });
+  rail.scrollLeft = 0;
 
   const getScrollAmount = () => {
     const firstCard = rail.querySelector(".work-rail-card");
@@ -375,8 +348,9 @@ export const initWorkExperience = async () => {
   };
 
   const updateControls = () => {
-    previousButton.disabled = false;
-    nextButton.disabled = false;
+    const maxScrollLeft = rail.scrollWidth - rail.clientWidth - 2;
+    previousButton.disabled = rail.scrollLeft <= 2;
+    nextButton.disabled = rail.scrollLeft >= maxScrollLeft;
   };
 
   const scrollRail = (direction) => {
