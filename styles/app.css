@@ -360,6 +360,10 @@ html[data-theme="light"] .theme-icon--moon {
   color: var(--text);
 }
 
+.nav-drawer-links a {
+  font-weight: 700;
+}
+
 .is-nav-open .nav-drawer {
   opacity: 1;
   pointer-events: auto;
