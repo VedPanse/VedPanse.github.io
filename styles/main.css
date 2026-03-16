@@ -770,10 +770,10 @@ main {
   grid-auto-columns: calc((100% - (var(--work-rail-peek) * 2) - var(--work-card-gap)) / 2);
   gap: var(--work-card-gap);
   overflow-x: auto;
-  padding: 4px var(--work-rail-peek) 18px;
+  padding: 4px var(--work-rail-peek) 18px 0;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-  scroll-padding-inline: var(--work-rail-peek);
+  scroll-padding: 0 var(--work-rail-peek) 0 0;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
 }

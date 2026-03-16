@@ -1,7 +1,8 @@
 const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
 
 const easeOutCubic = (value) => 1 - ((1 - value) ** 3);
-const SCROLL_TRAVEL_FACTOR = 0.42;
+const HERO_SCROLL_TRAVEL_FACTOR = 0.42;
+const MINI_SCROLL_TRAVEL_FACTOR = 0.58;
 
 export const initEditorialScroll = (section, heroRail, miniGrid) => {
   if (!section || !heroRail || !miniGrid) return () => {};
@@ -33,8 +34,8 @@ export const initEditorialScroll = (section, heroRail, miniGrid) => {
     const rawProgress = (startOffset - rect.top) / totalTravel;
     const progress = easeOutCubic(clamp(rawProgress, 0, 1));
 
-    heroRail.scrollLeft = heroMax * progress * SCROLL_TRAVEL_FACTOR;
-    miniGrid.scrollLeft = miniMax * (1 - progress * SCROLL_TRAVEL_FACTOR);
+    heroRail.scrollLeft = heroMax * progress * HERO_SCROLL_TRAVEL_FACTOR;
+    miniGrid.scrollLeft = miniMax * (1 - progress * MINI_SCROLL_TRAVEL_FACTOR);
   };
 
   const requestApplyScroll = () => {
