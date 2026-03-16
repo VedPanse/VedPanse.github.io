@@ -1833,6 +1833,10 @@ html[data-theme="light"] .work-visual {
   box-shadow: 0 30px 80px rgba(15, 15, 16, 0.18);
 }
 
+html[data-theme="light"] #projects-title .work-kicker {
+  color: rgba(255, 255, 255, 0.72);
+}
+
 html[data-theme="light"] .projects-indicator,
 html[data-theme="light"] .projects-toggle {
   background: rgba(255, 255, 255, 0.82);
