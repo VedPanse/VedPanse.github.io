@@ -45,6 +45,10 @@
       "label": "Go"
     },
     {
+      "src": "assets/tech/haskell.png",
+      "label": "Haskell"
+    },
+    {
       "src": "assets/tech/html.png",
       "label": "Html"
     },
@@ -55,6 +59,10 @@
     {
       "src": "assets/tech/js.png",
       "label": "JavaScript"
+    },
+    {
+      "src": "assets/tech/jetpack-compose.png",
+      "label": "Jetpack Compose"
     },
     {
       "src": "assets/tech/kotlin.png",
