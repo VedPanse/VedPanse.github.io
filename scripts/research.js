@@ -1,16 +1,7 @@
 const RESEARCH_DIR = "data/research";
 const RESEARCH_INDEX_URL = `${RESEARCH_DIR}/index.json`;
-const WORK_BANNERS = [
-  "assets/banners/work/Aqua_1280x789.png",
-  "assets/banners/work/Client_1280x789.png",
-  "assets/banners/work/Code With Me_1280x789.png",
-  "assets/banners/work/DataSpell_1280x789.png",
-  "assets/banners/work/dotCover_1280x789.png",
-  "assets/banners/work/GoLand_1280x789.png",
-  "assets/banners/work/jetbrains.png",
-  "assets/banners/work/RubyMine_1280x789.png",
-  "assets/banners/work/webstorm.png",
-];
+const WORK_BANNERS_DIR = "assets/banners/work";
+const WORK_BANNERS_INDEX_URL = `${WORK_BANNERS_DIR}/index.json`;
 
 const createElement = (tag, className) => {
   const element = document.createElement(tag);
@@ -56,8 +47,18 @@ const listResearchFiles = async () => {
   return indexData.map((file) => (file.startsWith(RESEARCH_DIR) ? file : `${RESEARCH_DIR}/${file}`));
 };
 
+const listWorkBanners = async () => {
+  const response = await fetch(WORK_BANNERS_INDEX_URL);
+  if (!response.ok) return [];
+  const indexData = await response.json();
+  if (!Array.isArray(indexData)) return [];
+  return indexData.map((file) =>
+    file.startsWith(WORK_BANNERS_DIR) ? file : `${WORK_BANNERS_DIR}/${file}`
+  );
+};
+
 const loadResearch = async () => {
-  const files = await listResearchFiles();
+  const [files, bannerImages] = await Promise.all([listResearchFiles(), listWorkBanners()]);
   const items = await Promise.all(
     files.map(async (file, index) => {
       const response = await fetch(file);
@@ -72,7 +73,7 @@ const loadResearch = async () => {
         date: meta.date || "",
         author: meta.author || "Ved Panse",
         excerpt: meta.excerpt || "",
-        image: WORK_BANNERS[index % WORK_BANNERS.length],
+        image: bannerImages.length ? bannerImages[index % bannerImages.length] : "",
         imageAlt: title,
         slug: file.split("/").pop().replace(/\.md$/i, ""),
       };

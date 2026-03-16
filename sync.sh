@@ -5,11 +5,12 @@ ROOT_DIR="$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)"
 
 write_index_json() {
   content_dir="$1"
+  file_pattern="$2"
   index_file="$content_dir/index.json"
   list_file="$(mktemp "${TMPDIR:-/tmp}/sync-list.XXXXXX")"
   json_file="$(mktemp "${TMPDIR:-/tmp}/sync-json.XXXXXX")"
 
-  find "$content_dir" -maxdepth 1 -type f -name "*.md" -exec basename {} \; | LC_ALL=C sort > "$list_file"
+  find "$content_dir" -maxdepth 1 -type f -name "$file_pattern" ! -name "index.json" -exec basename {} \; | LC_ALL=C sort > "$list_file"
 
   {
     printf "[\n"
@@ -41,5 +42,12 @@ for section in blogs research work-blogs; do
     printf "Missing directory: %s\n" "$dir_path" >&2
     exit 1
   fi
-  write_index_json "$dir_path"
+  write_index_json "$dir_path" "*.md"
 done
+
+work_banners_dir="$ROOT_DIR/assets/banners/work"
+if [ ! -d "$work_banners_dir" ]; then
+  printf "Missing directory: %s\n" "$work_banners_dir" >&2
+  exit 1
+fi
+write_index_json "$work_banners_dir" "*"

@@ -6,13 +6,15 @@ ROOT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 write_index() {
   target_dir="$1"
   output_file="$2"
+  mode="$3"
 
   if [ ! -d "$target_dir" ]; then
     echo "Missing directory: $target_dir" >&2
     return 1
   fi
 
-  find "$target_dir" -maxdepth 1 -type f -name "*.md" ! -name "index.json" 2>/dev/null | sort | awk -F/ '
+  if [ "$mode" = "markdown" ]; then
+    find "$target_dir" -maxdepth 1 -type f -name "*.md" ! -name "index.json" 2>/dev/null | sort | awk -F/ '
     BEGIN {
       print "[";
       first = 1;
@@ -31,10 +33,32 @@ write_index() {
       print "]";
     }
   ' > "$output_file"
+  else
+    find "$target_dir" -maxdepth 1 -type f ! -name "index.json" 2>/dev/null | sort | awk -F/ '
+    BEGIN {
+      print "[";
+      first = 1;
+    }
+    {
+      file = $NF;
+      if (file == "") next;
+      if (!first) {
+        printf ",\n";
+      }
+      first = 0;
+      printf "  \"%s\"", file;
+    }
+    END {
+      print "";
+      print "]";
+    }
+  ' > "$output_file"
+  fi
 
   echo "Wrote $output_file"
 }
 
-write_index "$ROOT_DIR/data/blogs" "$ROOT_DIR/data/blogs/index.json"
-write_index "$ROOT_DIR/data/research" "$ROOT_DIR/data/research/index.json"
-write_index "$ROOT_DIR/data/work-blogs" "$ROOT_DIR/data/work-blogs/index.json"
+write_index "$ROOT_DIR/data/blogs" "$ROOT_DIR/data/blogs/index.json" "markdown"
+write_index "$ROOT_DIR/data/research" "$ROOT_DIR/data/research/index.json" "markdown"
+write_index "$ROOT_DIR/data/work-blogs" "$ROOT_DIR/data/work-blogs/index.json" "markdown"
+write_index "$ROOT_DIR/assets/banners/work" "$ROOT_DIR/assets/banners/work/index.json" "all-files"
