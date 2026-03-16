@@ -1,6 +1,5 @@
 const RESEARCH_DIR = "data/research";
 const RESEARCH_INDEX_URL = `${RESEARCH_DIR}/index.json`;
-const PAGE_SIZE = 4;
 const WORK_BANNERS = [
   "assets/banners/work/Aqua_1280x789.png",
   "assets/banners/work/Client_1280x789.png",
@@ -152,7 +151,7 @@ const renderBand = (container, items, buildItem) => {
 
 const renderItems = (heroRail, miniGrid, items, limit = items.length) => {
   const visibleItems = items.slice(0, limit);
-  const heroCount = Math.ceil(visibleItems.length / 2);
+  const heroCount = Math.floor(visibleItems.length / 2);
   renderBand(heroRail, visibleItems.slice(0, heroCount), buildHeroCard);
   renderBand(miniGrid, visibleItems.slice(heroCount), buildMiniCard);
 };
@@ -169,7 +168,7 @@ export const initResearch = async () => {
     return;
   }
 
-  let visibleCount = PAGE_SIZE;
+  const visibleCount = items.length;
 
   const render = () => {
     renderItems(heroRail, miniGrid, items, visibleCount);
