@@ -1,3 +1,5 @@
+import { initEditorialScroll } from "./editorial-scroll.js";
+
 const RESEARCH_DIR = "data/research";
 const RESEARCH_INDEX_URL = `${RESEARCH_DIR}/index.json`;
 const WORK_BANNERS_DIR = "assets/banners/work";
@@ -158,10 +160,11 @@ const renderItems = (heroRail, miniGrid, items, limit = items.length) => {
 };
 
 export const initResearch = async () => {
+  const section = document.querySelector(".research-section");
   const heroRail = document.querySelector("[data-research-hero]");
   const miniGrid = document.querySelector("[data-research-grid]");
   const loadMoreButton = document.querySelector("[data-research-load-more]");
-  if (!heroRail || !miniGrid || !loadMoreButton) return;
+  if (!section || !heroRail || !miniGrid || !loadMoreButton) return;
 
   const items = await loadResearch();
   if (!items.length) {
@@ -173,6 +176,7 @@ export const initResearch = async () => {
 
   const render = () => {
     renderItems(heroRail, miniGrid, items, visibleCount);
+    initEditorialScroll(section, heroRail, miniGrid);
     loadMoreButton.hidden = true;
     loadMoreButton.disabled = true;
   };

@@ -1,17 +1,8 @@
 const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
 
 const WORK_DATA_URL = "data/work.json";
-const WORK_BANNERS = [
-  "assets/banners/work/Aqua_1280x789.png",
-  "assets/banners/work/Client_1280x789.png",
-  "assets/banners/work/Code With Me_1280x789.png",
-  "assets/banners/work/DataSpell_1280x789.png",
-  "assets/banners/work/dotCover_1280x789.png",
-  "assets/banners/work/GoLand_1280x789.png",
-  "assets/banners/work/jetbrains.png",
-  "assets/banners/work/RubyMine_1280x789.png",
-  "assets/banners/work/webstorm.png",
-];
+const WORK_ASSETS_DIR = "assets/work";
+const WORK_ASSETS_INDEX_URL = `${WORK_ASSETS_DIR}/index.json`;
 
 const createElement = (tag, className) => {
   const element = document.createElement(tag);
@@ -189,7 +180,7 @@ const normalizeStats = (item) => {
   ];
 };
 
-const normalizeItems = (items) =>
+const normalizeItems = (items, workImages) =>
   items.map((item, index) => {
     const fallbackTitle = item.title || item.company || `Work ${index + 1}`;
     const visual = item.visual || {};
@@ -204,7 +195,7 @@ const normalizeItems = (items) =>
       stats: normalizeStats(item),
       ctaText: item.ctaText || `Read ${fallbackTitle} work blog`,
       ctaUrl: workPostUrl || item.ctaUrl || "#contact",
-      visualImage: item.visualImage || WORK_BANNERS[index % WORK_BANNERS.length],
+      visualImage: item.visualImage || (workImages.length ? workImages[index % workImages.length] : ""),
       visualAlt: item.visualAlt || `${fallbackTitle} showcase visual`,
       visual: {
         accent: accentFromCompanyName(colorSeed),
@@ -251,6 +242,14 @@ const resolveGradient = (item) => {
     secondary: "#050816",
     tertiary: "#7dd3fc",
   };
+};
+
+const listWorkImages = async () => {
+  const response = await fetch(WORK_ASSETS_INDEX_URL);
+  if (!response.ok) return [];
+  const indexData = await response.json();
+  if (!Array.isArray(indexData)) return [];
+  return indexData.map((file) => (file.startsWith(WORK_ASSETS_DIR) ? file : `${WORK_ASSETS_DIR}/${file}`));
 };
 
 const renderWorkCard = (item) => {
@@ -331,11 +330,11 @@ export const initWorkExperience = async () => {
 
   let items = [];
   try {
-    const response = await fetch(WORK_DATA_URL);
+    const [response, workImages] = await Promise.all([fetch(WORK_DATA_URL), listWorkImages()]);
     if (!response.ok) return;
     const data = await response.json();
     if (!Array.isArray(data) || !data.length) return;
-    items = normalizeItems(data);
+    items = normalizeItems(data, workImages);
   } catch {
     return;
   }

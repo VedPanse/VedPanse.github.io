@@ -1,3 +1,5 @@
+import { initEditorialScroll } from "./editorial-scroll.js";
+
 const BLOGS_DIR = "data/blogs";
 const BLOG_INDEX_URL = `${BLOGS_DIR}/index.json`;
 const WORK_BANNERS_DIR = "assets/banners/work";
@@ -158,10 +160,11 @@ const renderItems = (heroRail, miniGrid, items, limit = items.length) => {
 };
 
 export const initBlogs = async () => {
+  const section = document.querySelector(".blogs-section");
   const heroRail = document.querySelector("[data-blogs-hero]");
   const miniGrid = document.querySelector("[data-blogs-grid]");
   const loadMoreButton = document.querySelector("[data-blogs-load-more]");
-  if (!heroRail || !miniGrid || !loadMoreButton) return;
+  if (!section || !heroRail || !miniGrid || !loadMoreButton) return;
 
   const items = await loadBlogs();
   if (!items.length) {
@@ -173,6 +176,7 @@ export const initBlogs = async () => {
 
   const render = () => {
     renderItems(heroRail, miniGrid, items, visibleCount);
+    initEditorialScroll(section, heroRail, miniGrid);
     loadMoreButton.hidden = true;
     loadMoreButton.disabled = true;
   };
