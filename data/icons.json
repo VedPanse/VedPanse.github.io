@@ -73,6 +73,10 @@
       "label": "Langchain"
     },
     {
+      "src": "assets/tech/LLVM.png",
+      "label": "LLVM"
+    },
+    {
       "src": "assets/tech/react.png",
       "label": "React"
     },
