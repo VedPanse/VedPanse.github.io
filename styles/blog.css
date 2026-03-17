@@ -80,6 +80,11 @@ html[data-theme="light"] .blog-toc-link.is-active::before {
   background: #17181d;
 }
 
+html[data-theme="light"] .blog-view .site-footer {
+  background: #f5f5f7;
+  border-top-color: rgba(0, 0, 0, 0.1);
+}
+
 .blog-layout {
   width: min(980px, 94vw);
   margin: 0 auto;
