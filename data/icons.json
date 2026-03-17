@@ -1,12 +1,24 @@
 {
   "icons": [
     {
-      "src": "assets/tech/awk.png",
-      "label": "AWK"
+      "src": "assets/tech/aws.png",
+      "label": "Amazon Web Services"
+    },
+    {
+      "src": "assets/tech/gcp.png",
+      "label": "Google Cloud Platform"
     },
     {
       "src": "assets/tech/android-tech.png",
       "label": "Android Tech"
+    },
+    {
+      "src": "assets/tech/awk.png",
+      "label": "AWK"
+    },
+    {
+      "src": "assets/tech/azure.png",
+      "label": "Microsoft Azure"
     },
     {
       "src": "assets/tech/bash.png",
