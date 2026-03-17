@@ -307,11 +307,11 @@ html[data-theme="light"] .blog-meta-row .blog-label-chip {
 
 .blog-content strong,
 .blog-content b {
-  font-size: 21px;
-  line-height: 1.1904761905;
   font-weight: 700;
-  letter-spacing: 0.011em;
-  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  font-family: inherit;
   color: inherit;
 }
 
