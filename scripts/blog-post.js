@@ -36,14 +36,6 @@ const createElement = (tag, className) => {
   return element;
 };
 
-const slugify = (value) =>
-  value
-    .toLowerCase()
-    .trim()
-    .replace(/[^a-z0-9\s-]/g, "")
-    .replace(/\s+/g, "-")
-    .replace(/-+/g, "-");
-
 const initTheme = () => {
   const root = document.documentElement;
   const metaTheme = document.querySelector('meta[name="theme-color"]');
@@ -510,74 +502,6 @@ const renderPostNavigation = (items, activeSlug) => {
   navRoot.hidden = false;
 };
 
-const buildToc = () => {
-  const tocRoot = document.querySelector("[data-blog-toc]");
-  const content = document.querySelector("[data-blog-content]");
-  if (!tocRoot || !content) return;
-
-  const headings = Array.from(content.querySelectorAll("h2, h3"));
-  if (!headings.length) {
-    tocRoot.innerHTML = "";
-    return;
-  }
-
-  const usedIds = new Set();
-  headings.forEach((heading, index) => {
-    const base = slugify(heading.textContent || `section-${index + 1}`) || `section-${index + 1}`;
-    let id = base;
-    let suffix = 2;
-    while (usedIds.has(id)) {
-      id = `${base}-${suffix}`;
-      suffix += 1;
-    }
-    usedIds.add(id);
-    heading.id = id;
-  });
-
-  tocRoot.innerHTML = "";
-  const links = headings.map((heading) => {
-    const link = document.createElement("a");
-    link.className = "blog-toc-link";
-    link.href = `#${heading.id}`;
-    link.textContent = heading.textContent || "Section";
-    if (heading.tagName === "H3") {
-      link.style.paddingLeft = "20px";
-      link.style.fontSize = "16px";
-    }
-    tocRoot.appendChild(link);
-    return { heading, link };
-  });
-
-  const setActiveLink = (id) => {
-    links.forEach(({ link, heading }) => {
-      link.classList.toggle("is-active", heading.id === id);
-    });
-  };
-
-  links.forEach(({ heading, link }) => {
-    link.addEventListener("click", () => {
-      setActiveLink(heading.id);
-    });
-  });
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      const visible = entries
-        .filter((entry) => entry.isIntersecting)
-        .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
-      if (!visible.length) return;
-      setActiveLink(visible[0].target.id);
-    },
-    {
-      rootMargin: "-20% 0px -68% 0px",
-      threshold: [0.1, 0.25, 0.45, 0.65],
-    }
-  );
-
-  links.forEach(({ heading }) => observer.observe(heading));
-  setActiveLink(links[0].heading.id);
-};
-
 const initCopyPage = () => {
   const button = document.querySelector("[data-copy-page]");
   if (!button) return;
@@ -648,7 +572,6 @@ const initBlogPost = async () => {
   const html = parseMarkdown(body);
   renderContent(html);
   renderPostNavigation(summaries, slug);
-  buildToc();
   initCopyPage();
 };
 
