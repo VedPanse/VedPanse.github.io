@@ -28,7 +28,11 @@ class ProjectsRepository extends JsonRepository {
    * @return {Promise<Array<Project>>}
    */
   async loadProjects() {
-    const data = await this.load();
+    const response = await fetch(PROJECTS_URL, { cache: "no-store" });
+    if (!response.ok) {
+      return [];
+    }
+    const data = await response.json();
     if (!data || typeof data !== "object" || !Array.isArray(data.projects)) {
       return [];
     }
@@ -47,6 +51,24 @@ class ProjectCardRenderer {
       columns[index % STACK_COLUMNS].push(item);
     });
     return columns;
+  }
+
+  /**
+   * @param {Array<{label?: string, src: string}>} stack
+   * @return {HTMLElement}
+   */
+  createBackStackIcons_(stack) {
+    const wrap = DomFactory.createElement("div", "project-back-stack-icons");
+    stack.forEach((item) => {
+      const icon = DomFactory.createElement("div", "app-icon");
+      const image = document.createElement("img");
+      image.src = item.src;
+      image.alt = item.label || "Technology icon";
+      image.loading = "lazy";
+      icon.appendChild(image);
+      wrap.appendChild(icon);
+    });
+    return wrap;
   }
 
   /**
@@ -114,18 +136,14 @@ class ProjectCardRenderer {
     backDescription.textContent =
       project.details || project.description || "Project details are coming soon.";
 
-    const stackLabels = (project.stack || []).map((item) => item.label).filter(Boolean);
-    const backStack = DomFactory.createElement("p", "project-back-stack");
-    backStack.textContent = stackLabels.length
-      ? `Stack: ${stackLabels.join(", ")}.`
-      : "Stack details are coming soon.";
+    const backStack = this.createBackStackIcons_(project.stack || []);
 
     const backActions = DomFactory.createElement("div", "project-back-actions");
     const backLink = this.createBackLink_(project);
     backActions.appendChild(backLink);
+    backContent.appendChild(backStack);
     backContent.appendChild(backTitle);
     backContent.appendChild(backDescription);
-    backContent.appendChild(backStack);
     backContent.appendChild(backActions);
 
     const closeButton = document.createElement("button");
