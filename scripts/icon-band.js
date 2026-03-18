@@ -3,6 +3,8 @@ const PROJECTS_URL = "data/projects.json";
 const CARDS_PER_COLUMN = 3;
 const DEFAULT_ICON_SIZE = 96;
 const DEFAULT_GAP = 20;
+const LOOP_SEGMENTS = 3;
+const DRAG_THRESHOLD_PX = 8;
 
 const readCssNumber = (value) => {
   const parsed = parseFloat(value);
@@ -97,12 +99,12 @@ const getLayoutMetrics = (band) => {
   };
 };
 
-const renderColumns = (columns, icons, metrics) => {
+const buildColumnsFragment = (icons, metrics) => {
   const { iconSize, gap } = metrics;
   const columnsNeeded = Math.ceil(window.innerWidth / (iconSize + gap)) + 2;
   const totalNeeded = columnsNeeded * CARDS_PER_COLUMN;
   const sequence = buildSequence(icons, totalNeeded);
-  columns.innerHTML = "";
+  const fragment = document.createDocumentFragment();
 
   for (let i = 0; i < columnsNeeded; i += 1) {
     const column = document.createElement("div");
@@ -111,26 +113,26 @@ const renderColumns = (columns, icons, metrics) => {
     sequence.slice(start, start + CARDS_PER_COLUMN).forEach((icon) => {
       column.appendChild(createIconCard(icon));
     });
-    columns.appendChild(column);
+    fragment.appendChild(column);
   }
+
+  return fragment;
 };
 
-const applyMarquee = (columns) => {
-  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  columns.classList.remove("icon-marquee");
-  columns.style.removeProperty("--marquee-distance");
-  columns.style.removeProperty("--marquee-duration");
-  if (prefersReducedMotion) return;
+const renderLoopingColumns = (band, columns, icons, metrics) => {
+  columns.innerHTML = "";
+  const baseFragment = buildColumnsFragment(icons, metrics);
+  const baseColumns = Array.from(baseFragment.childNodes);
 
-  const clones = Array.from(columns.children).map((node) => node.cloneNode(true));
-  clones.forEach((node) => columns.appendChild(node));
+  for (let segment = 0; segment < LOOP_SEGMENTS; segment += 1) {
+    baseColumns.forEach((node) => {
+      columns.appendChild(node.cloneNode(true));
+    });
+  }
 
-  const baseDistance = columns.scrollWidth / 2;
-  const distance = baseDistance * 0.25;
-  const duration = 2.8;
-  columns.style.setProperty("--marquee-distance", `${distance.toFixed(2)}px`);
-  columns.style.setProperty("--marquee-duration", `${duration.toFixed(2)}s`);
-  columns.classList.add("icon-marquee");
+  const cycleWidth = columns.scrollWidth / LOOP_SEGMENTS;
+  band.scrollLeft = cycleWidth;
+  return cycleWidth;
 };
 
 const loadIcons = async () => {
@@ -202,10 +204,6 @@ const renderTechProjects = (container, projects) => {
   container.innerHTML = "";
 
   if (!projects.length) {
-    const empty = document.createElement("p");
-    empty.className = "project-back-stack";
-    empty.textContent = "No featured projects currently list this technology.";
-    container.appendChild(empty);
     return;
   }
 
@@ -309,6 +307,12 @@ export const initIconBand = async () => {
 
   const usageIndex = buildTechUsageIndex(projects);
   let activeButton = null;
+  let cycleWidth = 0;
+  let isAdjustingScroll = false;
+  let isPointerDown = false;
+  let isDragging = false;
+  let dragStartX = 0;
+  let dragStartScrollLeft = 0;
 
   const setActiveButton = (button) => {
     if (activeButton) {
@@ -349,8 +353,7 @@ export const initIconBand = async () => {
   };
 
   const render = () => {
-    renderColumns(columns, icons, getLayoutMetrics(band));
-    applyMarquee(columns);
+    cycleWidth = renderLoopingColumns(band, columns, icons, getLayoutMetrics(band));
     if (activeButton) {
       const labelSelector = activeButton.dataset.techLabel
         ? `[data-tech-label="${CSS.escape(activeButton.dataset.techLabel)}"]`
@@ -369,6 +372,76 @@ export const initIconBand = async () => {
   };
 
   render();
+
+  band.addEventListener(
+    "scroll",
+    () => {
+      if (isAdjustingScroll || !cycleWidth) {
+        return;
+      }
+
+      const lowerBound = cycleWidth * 0.5;
+      const upperBound = cycleWidth * 1.5;
+
+      if (band.scrollLeft < lowerBound) {
+        isAdjustingScroll = true;
+        band.scrollLeft += cycleWidth;
+        isAdjustingScroll = false;
+      } else if (band.scrollLeft > upperBound) {
+        isAdjustingScroll = true;
+        band.scrollLeft -= cycleWidth;
+        isAdjustingScroll = false;
+      }
+    },
+    { passive: true }
+  );
+
+  band.addEventListener("pointerdown", (event) => {
+    if (event.pointerType === "mouse" && event.button !== 0) {
+      return;
+    }
+    isPointerDown = true;
+    isDragging = false;
+    dragStartX = event.clientX;
+    dragStartScrollLeft = band.scrollLeft;
+  });
+
+  band.addEventListener("pointermove", (event) => {
+    if (!isPointerDown) {
+      return;
+    }
+    const deltaX = event.clientX - dragStartX;
+    if (!isDragging) {
+      if (Math.abs(deltaX) < DRAG_THRESHOLD_PX) {
+        return;
+      }
+      isDragging = true;
+      band.classList.add("is-dragging");
+      band.setPointerCapture?.(event.pointerId);
+    }
+    band.scrollLeft = dragStartScrollLeft - deltaX;
+  });
+
+  const endDrag = (event) => {
+    if (!isPointerDown) {
+      return;
+    }
+    isPointerDown = false;
+    isDragging = false;
+    band.classList.remove("is-dragging");
+    if (event && typeof event.pointerId === "number" && band.hasPointerCapture?.(event.pointerId)) {
+      band.releasePointerCapture(event.pointerId);
+    }
+  };
+
+  band.addEventListener("pointerup", endDrag);
+  band.addEventListener("pointercancel", endDrag);
+  band.addEventListener("pointerleave", (event) => {
+    if (event.pointerType !== "mouse") {
+      return;
+    }
+    endDrag(event);
+  });
 
   columns.addEventListener("click", (event) => {
     const button = event.target.closest(".app-icon--interactive");

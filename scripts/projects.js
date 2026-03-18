@@ -258,6 +258,14 @@ class ProjectsCarousel {
       this.updateControlsOffset_();
     });
 
+    window.addEventListener(
+      "scroll",
+      () => {
+        requestAnimationFrame(() => this.updateControlsOffset_());
+      },
+      { passive: true }
+    );
+
     this.toggle_.addEventListener("click", () => this.toggleAutoPlay_());
     this.dots_.forEach((dot, index) => {
       dot.addEventListener("click", () => this.goToIndex_(index));
@@ -384,14 +392,17 @@ class ProjectsCarousel {
 
   updateControlsOffset_() {
     if (!this.activeCard_) {
+      this.controls_.classList.remove("is-pinned");
       return;
     }
-    const rect = this.activeCard_.getBoundingClientRect();
-    const viewportHeight = window.innerHeight;
-    const desiredBottom = 10;
-    const targetBottom = rect.bottom + 15;
-    const delta = Math.min(0, targetBottom - (viewportHeight - desiredBottom));
-    this.controls_.style.transform = `translateX(-50%) translateY(${delta.toFixed(1)}px)`;
+
+    this.controls_.style.removeProperty("transform");
+    const carouselRect = this.carousel_.getBoundingClientRect();
+    const sectionRect = this.section_.getBoundingClientRect();
+    const pinOffset = 24;
+    const shouldPin = carouselRect.top + carouselRect.height * 0.5 <= 0;
+    const canRemainInSection = sectionRect.bottom > window.innerHeight - pinOffset;
+    this.controls_.classList.toggle("is-pinned", shouldPin && canRemainInSection);
   }
 
   /**

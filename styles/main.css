@@ -70,7 +70,21 @@ main {
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
   padding: 5px 0 0;
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+  cursor: grab;
+}
+
+.icon-band::-webkit-scrollbar {
+  display: none;
+}
+
+.icon-band.is-dragging {
+  cursor: grabbing;
+  user-select: none;
 }
 
 .tech-detail-shell {
@@ -812,39 +826,49 @@ body.is-tech-detail-open {
 
 
 .projects-controls {
-  position: fixed;
-  left: 50%;
-  bottom: 10px;
-  transform: translateX(-50%);
-  width: min(560px, 90vw);
-  margin: 0;
+  position: relative;
+  width: min(520px, 90vw);
+  margin: -12px auto 0;
   padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
+  gap: 12px;
   border-radius: 999px;
   background: transparent;
   box-shadow: none;
   backdrop-filter: none;
   z-index: 2;
-  --control-size: 72px;
+  --control-size: 64px;
   transition: opacity 0.3s ease, transform 0.3s ease;
   opacity: 1;
 }
 
+.projects-controls.is-pinned {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%);
+  z-index: 3;
+  margin-top: 0;
+}
+
 .projects-controls.is-hidden {
   opacity: 0;
-  transform: translateX(-50%) scale(0);
+  transform: scale(0.96);
   pointer-events: none;
+}
+
+.projects-controls.is-pinned.is-hidden {
+  transform: translateX(-50%) scale(0.96);
 }
 
 .projects-indicator {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 16px;
   height: var(--control-size);
-  padding: 0 26px;
+  padding: 0 22px;
   border-radius: 999px;
   background: rgba(28, 28, 30, 0.72);
   box-shadow: 0 18px 50px rgba(0, 0, 0, 0.5);
@@ -1483,10 +1507,10 @@ body.is-tech-detail-open {
   display: flex;
   gap: var(--icon-gap);
   align-items: flex-start;
-  width: 100vw;
+  width: max-content;
   margin-left: 0;
   padding: 8px 0;
-  will-change: transform;
+  will-change: scroll-position;
 }
 
 .icon-column {
@@ -1498,24 +1522,6 @@ body.is-tech-detail-open {
 
 .icon-column:nth-child(even) {
   padding-top: var(--col-offset);
-}
-
-.icon-columns.icon-marquee {
-  animation: icon-marquee var(--marquee-duration, 3s) ease-out 1 forwards;
-}
-
-html.is-card-flipped .icon-columns.icon-marquee {
-  animation-play-state: paused;
-}
-
-
-@keyframes icon-marquee {
-  from {
-    transform: translateX(calc(-1 * var(--marquee-distance)));
-  }
-  to {
-    transform: translateX(0);
-  }
 }
 
 .app-icon {
@@ -1794,17 +1800,17 @@ html.is-card-flipped .icon-columns.icon-marquee {
   }
 
   .projects-indicator {
-    padding: 0 18px;
-    gap: 14px;
+    padding: 0 16px;
+    gap: 12px;
   }
 
   .projects-toggle {
-    width: 60px;
-    height: 60px;
+    width: 56px;
+    height: 56px;
   }
 
   .projects-controls {
-    --control-size: 60px;
+    --control-size: 56px;
   }
 
   .research-section,
