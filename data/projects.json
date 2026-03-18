@@ -16,6 +16,10 @@
           "src": "assets/tech/rust.png",
           "label": "Rust"
         },
+                {
+          "src": "assets/tech/tauri.png",
+          "label": "Tauri"
+        },
         {
           "src": "assets/tech/python.png",
           "label": "Python"
