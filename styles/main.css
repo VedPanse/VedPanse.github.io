@@ -73,6 +73,248 @@ main {
   overflow: hidden;
 }
 
+.tech-detail-shell {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(12, 12, 14, 0.34);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+.tech-detail-shell[hidden] {
+  display: none;
+}
+
+body.is-tech-detail-open {
+  overflow: hidden;
+}
+
+.tech-detail-card {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: min(1110px, 88vw);
+  max-height: min(82vh, 760px);
+  border-radius: 40px;
+  background: #ffffff;
+  color: #1d1d1f;
+  box-shadow:
+    0 28px 90px rgba(0, 0, 0, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  padding: clamp(38px, 5vw, 56px);
+  overflow-y: auto;
+}
+
+.tech-detail-card__content {
+  width: min(100%, 1040px);
+  display: grid;
+  gap: 28px;
+  margin: 0 auto;
+}
+
+.tech-detail-card__header {
+  display: grid;
+  justify-items: start;
+  gap: 18px;
+}
+
+.tech-detail-card__title {
+  margin: 0;
+  font-size: 56px;
+  line-height: 1.0714285714;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  text-align: left;
+}
+
+.tech-detail-card__icon {
+  width: 48px;
+  height: 48px;
+  display: block;
+}
+
+.tech-detail-card__icon img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  display: block;
+}
+
+.tech-detail-card__description {
+  margin: 0;
+  font-size: 19px;
+  line-height: 1.4211026316;
+  font-weight: 600;
+  letter-spacing: 0.012em;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  color: #1d1d1f;
+  max-width: 720px;
+  justify-self: start;
+  text-align: left;
+}
+
+.tech-detail-card__projects {
+  display: grid;
+  gap: 18px;
+  width: 99%;
+  margin: 0 auto;
+}
+
+.tech-detail-project {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr);
+  gap: 36px;
+  align-items: center;
+  padding: 34px 36px;
+  border-radius: 34px;
+  background: linear-gradient(180deg, #f5f5f7 0%, #eff0f4 100%);
+  overflow: hidden;
+  min-height: 320px;
+}
+
+.tech-detail-project__meta {
+  margin-top: 0;
+  font-size: 28px;
+  line-height: 1.1428571429;
+  color: #6e6e73;
+  max-width: 560px;
+  letter-spacing: 0.007em;
+  font-weight: 600;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+.tech-detail-project__lead {
+  color: #1d1d1f;
+  font-weight: 700;
+}
+
+.tech-detail-project__body {
+  align-self: center;
+  text-align: left;
+}
+
+.tech-detail-project__visual {
+  min-height: 100%;
+  align-self: stretch;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+
+.tech-detail-project__visual-shell {
+  width: min(100%, 360px);
+  aspect-ratio: 0.9;
+  border-radius: 42px;
+  background:
+    radial-gradient(circle at 20% 18%, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0) 34%),
+    linear-gradient(180deg, color-mix(in srgb, var(--panel-accent, #0a84ff) 18%, white) 0%, #ffffff 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.95),
+    0 18px 38px rgba(15, 15, 16, 0.08);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  padding: 22px;
+}
+
+.tech-detail-project__stack {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
+.tech-detail-project__stack-icon {
+  width: 78px;
+  height: 78px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.95),
+    0 10px 24px rgba(15, 15, 16, 0.07);
+  display: grid;
+  place-items: center;
+}
+
+.tech-detail-project__stack-icon img {
+  width: 72%;
+  height: 72%;
+  object-fit: contain;
+  display: block;
+}
+
+.tech-detail-project__actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.tech-detail-project__focus {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 0 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.8);
+  color: rgba(29, 29, 31, 0.78);
+  font-size: 13px;
+  line-height: 1;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.tech-detail-project__link {
+  flex-shrink: 0;
+  font-size: 17px;
+  line-height: 1.4705882353;
+  font-weight: 400;
+  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+.tech-detail-project__link::after {
+  content: "›";
+}
+
+.tech-detail-card__close {
+  right: 24px;
+  top: 24px;
+  bottom: auto;
+}
+
+.app-icon.app-icon--interactive {
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.app-icon.app-icon--interactive:hover,
+.app-icon.app-icon--interactive:focus-visible {
+  transform: translateY(-3px);
+  box-shadow:
+    0 22px 34px rgba(0, 0, 0, 0.38),
+    inset 0 1px 0 rgba(255, 255, 255, 0.92);
+}
+
+.app-icon.app-icon--interactive:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.7);
+  outline-offset: 3px;
+}
+
+.app-icon.app-icon--interactive.is-active {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow:
+    0 24px 36px rgba(0, 0, 0, 0.42),
+    0 0 0 2px rgba(255, 255, 255, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+}
+
 .about-paragraph {
   max-width: 900px;
   margin: 36px auto 0;
@@ -1395,6 +1637,62 @@ html.is-card-flipped .icon-columns.icon-marquee {
     --col-offset: calc(var(--icon-size) / 2);
   }
 
+  .tech-detail-shell {
+    padding: 16px;
+  }
+
+  .tech-detail-card {
+    border-radius: 28px;
+    width: min(100%, 94vw);
+    max-height: 88vh;
+    padding: 24px 20px 88px;
+  }
+
+  .tech-detail-card__content {
+    width: 100%;
+    gap: 22px;
+  }
+
+  .tech-detail-card__projects {
+    width: 100%;
+  }
+
+  .tech-detail-card__title {
+    font-size: clamp(34px, 9vw, 56px);
+  }
+
+  .tech-detail-card__icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .tech-detail-project {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 22px;
+    padding: 24px 22px;
+    min-height: 0;
+  }
+
+  .tech-detail-project__visual-shell {
+    width: 100%;
+    max-width: 320px;
+    aspect-ratio: 1.08;
+  }
+
+  .tech-detail-project__meta {
+    font-size: clamp(20px, 5vw, 28px);
+    line-height: 1.1428571429;
+  }
+
+  .tech-detail-project__stack-icon {
+    width: 64px;
+    height: 64px;
+  }
+
+  .tech-detail-project__actions {
+    flex-wrap: wrap;
+  }
+
   .about-paragraph {
     margin-top: 28px;
     font-size: 16px;
@@ -1865,6 +2163,10 @@ html[data-theme="light"] .projects-dot-fill {
 
 html[data-theme="light"] .projects-dot:focus-visible {
   outline: 2px solid rgba(0, 0, 0, 0.5);
+}
+
+html[data-theme="light"] .app-icon.app-icon--interactive:focus-visible {
+  outline-color: rgba(15, 15, 16, 0.42);
 }
 
 html[data-theme="light"] .research-section,

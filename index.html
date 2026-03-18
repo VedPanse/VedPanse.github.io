@@ -131,6 +131,25 @@
         <div class="icon-band" aria-label="Languages">
           <div class="icon-columns" id="icon-columns"></div>
         </div>
+        <div class="tech-detail-shell" data-tech-detail-shell hidden>
+          <article class="tech-detail-card" data-tech-detail-card aria-live="polite" role="dialog"
+            aria-modal="true" aria-label="Technology details">
+            <div class="tech-detail-card__content">
+              <div class="tech-detail-card__header">
+                <div class="tech-detail-card__icon" aria-hidden="true">
+                  <img data-tech-icon alt="" />
+                </div>
+                <h3 class="tech-detail-card__title" data-tech-title>Select a technology</h3>
+              </div>
+              <p class="tech-detail-card__description" data-tech-description>
+                Click a tech icon to see which featured projects use it.
+              </p>
+              <div class="tech-detail-card__projects" data-tech-projects></div>
+            </div>
+            <button class="project-back-close tech-detail-card__close" type="button" data-tech-close
+              aria-label="Close technology details"></button>
+          </article>
+        </div>
         <p class="about-paragraph" data-content="about">
           I build systems because I'm genuinely obsessed with how computers work.
 
