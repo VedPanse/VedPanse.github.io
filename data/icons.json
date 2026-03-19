@@ -45,6 +45,10 @@
       "label": "Dart"
     },
     {
+      "src": "assets/tech/flask.png",
+      "label": "Flask"
+    },
+    {
       "src": "assets/tech/flutter-tech.png",
       "label": "Flutter Tech"
     },
@@ -62,7 +66,7 @@
     },
     {
       "src": "assets/tech/html.png",
-      "label": "Html"
+      "label": "HTML"
     },
     {
       "src": "assets/tech/java.png",
@@ -107,6 +111,14 @@
     {
       "src": "assets/tech/rust.png",
       "label": "Rust"
+    },
+    {
+      "src": "assets/tech/springboot.png",
+      "label": "Java Springboot"
+    },
+    {
+      "src": "assets/tech/sql.png",
+      "label": "SQL"
     },
     {
       "src": "assets/tech/swift.png",

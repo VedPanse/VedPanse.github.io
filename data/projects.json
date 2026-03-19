@@ -8,10 +8,34 @@
       "details": "Daemon transforms low-level firmware into a structured semantic interface that autonomous agents can safely reason over and execute. A build step generates a machine-readable command schema and a C-level dispatcher that maps tokens to hardware functions, enabling adaptive device control as sensors and actuators evolve. The core goal is embodiment: treating physical systems as extensible, composable APIs that agents can learn, audit, and orchestrate.",
       "url": "https://github.com/Sachin-dot-py/Daemon",
       "stack": [
-        { "src": "assets/tech/c.png", "label": "C" },
-        { "src": "assets/tech/rust.png", "label": "Rust" },
-        { "src": "assets/tech/tauri.svg", "label": "Tauri" },
-        { "src": "assets/tech/python.png", "label": "Python" }
+        {
+          "src": "assets/tech/c.png",
+          "label": "C"
+        },
+        {
+          "src": "assets/tech/rust.png",
+          "label": "Rust"
+        },
+        {
+          "src": "assets/tech/tauri.svg",
+          "label": "Tauri"
+        },
+        {
+          "src": "assets/tech/react.png",
+          "label": "React"
+        },
+        {
+          "src": "assets/tech/python.png",
+          "label": "Python"
+        },
+        {
+          "src": "assets/tech/html.png",
+          "label": "HTML"
+        },
+        {
+          "src": "assets/tech/css.png",
+          "label": "CSS"
+        }
       ],
       "focus": [
         "Embodied agents",
@@ -27,9 +51,18 @@
       "details": "Siri++ explores the gap between single-turn LLM responses and sustained autonomous workflows. It integrates multimodal inputs (text, voice, images), structured memory, and tool invocation under explicit orchestration loops. Rather than wrapping APIs, the system models long-horizon task decomposition, state persistence, and recovery from execution failure—treating agent behavior as a systems problem, not a prompt problem.",
       "url": "https://github.com/VedPanse/SiriPlusPlus",
       "stack": [
-        { "src": "assets/tech/swift.png", "label": "Swift" },
-        { "src": "assets/tech/python.png", "label": "Python" },
-        { "src": "assets/tech/gcp.png", "label": "Google Cloud Platform" }
+        {
+          "src": "assets/tech/swift.png",
+          "label": "Swift"
+        },
+        {
+          "src": "assets/tech/python.png",
+          "label": "Python"
+        },
+        {
+          "src": "assets/tech/gcp.png",
+          "label": "Google Cloud Platform"
+        }
       ],
       "focus": [
         "Agent control loops",
@@ -45,9 +78,30 @@
       "details": "Ion detects microcontrollers and peripherals, constructs structured connection graphs, and renders live 3D wiring blueprints as hardware is assembled. It enforces safety constraints and generates starter firmware based on inferred topology. The system reframes hardware assembly as a graph inference and validation problem, bridging physical systems with machine reasoning and IDE-grade feedback loops.",
       "url": "https://youtu.be/sX_8WW7cI7I",
       "stack": [
-        { "src": "assets/tech/rust.png", "label": "Rust" },
-        { "src": "assets/tech/tauri.svg", "label": "Tauri" },
-        { "src": "assets/tech/azure.png", "label": "Microsoft Azure" }
+        {
+          "src": "assets/tech/rust.png",
+          "label": "Rust"
+        },
+        {
+          "src": "assets/tech/tauri.svg",
+          "label": "Tauri"
+        },
+        {
+          "src": "assets/tech/react.png",
+          "label": "React"
+        },
+        {
+          "src": "assets/tech/html.png",
+          "label": "HTML"
+        },
+        {
+          "src": "assets/tech/css.png",
+          "label": "CSS"
+        },
+        {
+          "src": "assets/tech/azure.png",
+          "label": "Microsoft Azure"
+        }
       ],
       "focus": [
         "Graph inference",
@@ -61,10 +115,16 @@
       "description": "is a deterministic sharding and execution engine for scalable, coordinated agent workloads.",
       "longTitle": "Shardwise: deterministic workload decomposition and coordinated execution for large-scale agent systems.",
       "details": "Shardwise partitions complex workloads into explicit, deterministic shards with defined coordination and retry semantics. It exposes shard-level observability, latency tracking, and failure recovery mechanisms to ensure predictable behavior under load. Designed to support agentic systems that require controlled parallelism rather than opportunistic concurrency.",
-      "url": "",
+      "url": "https://github.com/VedPanse/shardwise",
       "stack": [
-        { "src": "assets/tech/go.png", "label": "Go" },
-        { "src": "assets/tech/rust.png", "label": "Rust" }
+        {
+          "src": "assets/tech/go.png",
+          "label": "Go"
+        },
+        {
+          "src": "assets/tech/rust.png",
+          "label": "Rust"
+        }
       ],
       "focus": [
         "Deterministic concurrency",
@@ -80,10 +140,22 @@
       "details": "Pulse enables devices to communicate and localize without internet connectivity by forming dynamic mesh networks. It combines signal-based proximity estimation with distributed coordination to support emergency response and navigation scenarios. The system explores how spatial awareness and communication can emerge from decentralized device interactions.",
       "url": "https://github.com/VedPanse/Pulse",
       "stack": [
-        { "src": "assets/tech/kotlin.png", "label": "Kotlin Multiplatform" },
-        { "src": "assets/tech/jetpack-compose.png", "label": "Jetpack Compose" },
-        { "src": "assets/tech/android-tech.png", "label": "Android" },
-        { "src": "assets/tech/swift.png", "label": "Swift" }
+        {
+          "src": "assets/tech/kotlin.png",
+          "label": "Kotlin Multiplatform"
+        },
+        {
+          "src": "assets/tech/jetpack-compose.png",
+          "label": "Jetpack Compose"
+        },
+        {
+          "src": "assets/tech/android-tech.png",
+          "label": "Android"
+        },
+        {
+          "src": "assets/tech/swift.png",
+          "label": "Swift"
+        }
       ],
       "focus": [
         "Mesh networking",
@@ -99,14 +171,151 @@
       "details": "Strata consolidates data from fragmented ecosystems into a unified, structured representation that agents can query and act upon. It focuses on building a consistent user context layer across services, enabling personalized automation and long-term memory. The system reframes personal data as a queryable substrate for intelligent systems.",
       "url": "https://github.com/VedPanse/Strata",
       "stack": [
-        { "src": "assets/tech/kotlin.png", "label": "Kotlin Multiplatform" },
-        { "src": "assets/tech/python.png", "label": "Python" },
-        { "src": "assets/tech/jetpack-compose.png", "label": "Jetpack Compose" }
+        {
+          "src": "assets/tech/kotlin.png",
+          "label": "Kotlin Multiplatform"
+        },
+        {
+          "src": "assets/tech/python.png",
+          "label": "Python"
+        },
+        {
+          "src": "assets/tech/android-tech.png",
+          "label": "Android"
+        },
+        {
+          "src": "assets/tech/jetpack-compose.png",
+          "label": "Jetpack Compose"
+        }
       ],
       "focus": [
         "Data modeling",
         "Personal context systems",
         "Cross-platform integration"
+      ]
+    },
+    {
+      "name": "Balance",
+      "accent": "#ffb020",
+      "description": "is a financial optimization engine that computes optimal payment strategies across credit cards to maximize rewards and minimize cost.",
+      "longTitle": "Balance: a cross-platform optimization engine for credit card rewards, cost minimization, and intelligent payment routing.",
+      "details": "Balance models personal finance as an optimization problem, selecting the best combination of payment instruments to maximize rewards while respecting constraints such as credit limits, fees, and user preferences. It integrates rule-based reward structures with dynamic evaluation of transactions to compute optimal payment strategies in real time. Built with Kotlin Multiplatform, the system runs seamlessly across mobile platforms while maintaining a shared core logic layer. The project explores how financial decision-making can be formalized, optimized, and automated through structured computation.",
+      "url": "https://github.com/VedPanse/balance",
+      "stack": [
+        {
+          "src": "assets/tech/kotlin.png",
+          "label": "Kotlin Multiplatform"
+        },
+        {
+          "src": "assets/tech/jetpack-compose.png",
+          "label": "Jetpack Compose"
+        },
+        {
+          "src": "assets/tech/swift.png",
+          "label": "Swift"
+        },
+        {
+          "src": "assets/tech/android-tech.png",
+          "label": "Android"
+        }
+      ],
+      "focus": [
+        "Optimization systems",
+        "Financial modeling",
+        "Cross-platform architecture"
+      ]
+    },
+    {
+      "name": "OrbitFM",
+      "accent": "#5e5ce6",
+      "description": "is a local-first desktop system for real-time ISS tracking, pass prediction, and audio capture of amateur radio downlinks.",
+      "longTitle": "OrbitFM: a real-time orbital tracking and radio capture system for ISS pass prediction and listen-only signal recording.",
+      "details": "OrbitFM is a local-first desktop application that combines orbital mechanics, real-time tracking, and audio processing into a unified system for monitoring the International Space Station. It computes ISS position using TLE data and SGP4 propagation, predicts overhead passes based on user location, and manages live audio capture during pass windows. The system is designed with strict separation between tracking, scheduling, and audio pipelines, enabling reliable operation and future integration with SDR hardware. Features such as pre-roll audio buffering, deterministic pass prediction, and offline-first operation reflect a focus on correctness, robustness, and systems-level design.",
+      "url": "https://github.com/VedPanse/orbitfm",
+      "stack": [
+        {
+          "src": "assets/tech/rust.png",
+          "label": "Rust"
+        },
+        {
+          "src": "assets/tech/tauri.svg",
+          "label": "Tauri"
+        },
+        {
+          "src": "assets/tech/react.png",
+          "label": "React"
+        },
+        {
+          "src": "assets/tech/ts.webp",
+          "label": "TypeScript"
+        },
+        {
+          "src": "assets/tech/sql.png",
+          "label": "sql"
+        }
+      ],
+      "focus": [
+        "Orbital mechanics systems",
+        "Real-time signal processing",
+        "Local-first architecture"
+      ]
+    },
+    {
+      "name": "Sentinel",
+      "accent": "#ff453a",
+      "description": "is an intelligent task observer that monitors web content and automatically completes tasks using semantic similarity matching.",
+      "longTitle": "Sentinel: an AI-powered web monitoring system that detects meaningful content changes and triggers task completion via semantic matching.",
+      "details": "Sentinel is a cross-language system that continuously monitors web pages and detects meaningful content changes using semantic similarity rather than keyword matching. A Java-based scheduler manages task execution and persistence, while a Python service leverages Sentence Transformers to evaluate query–content alignment. Tasks are automatically marked complete when relevant information appears, even under varied phrasing. The system emphasizes robustness, extensibility, and clean separation between orchestration and inference, enabling reliable monitoring workflows and future integrations such as APIs, webhooks, or real-time dashboards.",
+      "url": "https://github.com/VedPanse/sentinel",
+      "stack": [
+        {
+          "src": "assets/tech/java.png",
+          "label": "Java"
+        },
+        {
+          "src": "assets/tech/springboot.png",
+          "label": "Spring Boot"
+        },
+        {
+          "src": "assets/tech/python.png",
+          "label": "Python"
+        },
+        {
+          "src": "assets/tech/flask.png",
+          "label": "Flask"
+        }
+      ],
+      "focus": [
+        "Semantic search systems",
+        "Task automation",
+        "Web monitoring"
+      ]
+    },
+    {
+      "name": "JavelinLang",
+      "accent": "#bf5af2",
+      "description": "is a declarative GUI programming language that compiles Python-based UI definitions into native applications using LLVM.",
+      "longTitle": "JavelinLang: a declarative Python DSL for building native GUIs, compiled via LLVM for performance and control.",
+      "details": "JavelinLang is a declarative GUI language that enables developers to define user interfaces using a Python-based DSL, which is then compiled into native applications through LLVM. Inspired by frameworks like SwiftUI and React, it replaces imperative UI logic with composable, state-driven constructs while retaining the performance benefits of compiled systems. The architecture separates high-level UI intent from low-level rendering, allowing the language to generate efficient native code while preserving developer ergonomics. JavelinLang explores how modern declarative UI paradigms can be combined with compiler-driven execution for predictable performance, portability, and control.",
+      "url": "",
+      "stack": [
+        {
+          "src": "assets/tech/python.png",
+          "label": "Python DSL"
+        },
+        {
+          "src": "assets/tech/llvm.png",
+          "label": "LLVM"
+        },
+        {
+          "src": "assets/tech/rust.png",
+          "label": "Rust"
+        }
+      ],
+      "focus": [
+        "Declarative UI systems",
+        "Compiler-driven frameworks",
+        "Native application generation"
       ]
     }
   ]
