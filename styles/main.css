@@ -305,15 +305,12 @@ body.is-tech-detail-open {
 .app-icon.app-icon--interactive {
   border: none;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease;
 }
 
 .app-icon.app-icon--interactive:hover,
 .app-icon.app-icon--interactive:focus-visible {
   transform: translateY(-3px);
-  box-shadow:
-    0 22px 34px rgba(0, 0, 0, 0.38),
-    inset 0 1px 0 rgba(255, 255, 255, 0.92);
 }
 
 .app-icon.app-icon--interactive:focus-visible {
@@ -323,10 +320,8 @@ body.is-tech-detail-open {
 
 .app-icon.app-icon--interactive.is-active {
   transform: translateY(-4px) scale(1.02);
-  box-shadow:
-    0 24px 36px rgba(0, 0, 0, 0.42),
-    0 0 0 2px rgba(255, 255, 255, 0.4),
-    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+  outline: 2px solid rgba(255, 255, 255, 0.4);
+  outline-offset: 3px;
 }
 
 .about-paragraph {

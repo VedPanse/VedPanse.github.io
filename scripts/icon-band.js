@@ -5,6 +5,8 @@ const DEFAULT_ICON_SIZE = 96;
 const DEFAULT_GAP = 20;
 const LOOP_SEGMENTS = 3;
 const DRAG_THRESHOLD_PX = 8;
+const INTRO_MARQUEE_DURATION_MS = 4200;
+const INTRO_MARQUEE_DISTANCE_RATIO = 0.42;
 
 const readCssNumber = (value) => {
   const parsed = parseFloat(value);
@@ -313,6 +315,9 @@ export const initIconBand = async () => {
   let isDragging = false;
   let dragStartX = 0;
   let dragStartScrollLeft = 0;
+  let introAnimationFrame = 0;
+  let hasPlayedIntro = false;
+  let userInterruptedIntro = false;
 
   const setActiveButton = (button) => {
     if (activeButton) {
@@ -371,7 +376,52 @@ export const initIconBand = async () => {
     }
   };
 
+  const stopIntroMarquee = () => {
+    if (introAnimationFrame) {
+      window.cancelAnimationFrame(introAnimationFrame);
+      introAnimationFrame = 0;
+    }
+  };
+
+  const playIntroMarquee = () => {
+    if (hasPlayedIntro || userInterruptedIntro || !cycleWidth) {
+      return;
+    }
+
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduceMotion) {
+      hasPlayedIntro = true;
+      return;
+    }
+
+    hasPlayedIntro = true;
+    const startScrollLeft = band.scrollLeft;
+    const targetScrollLeft = startScrollLeft + cycleWidth * INTRO_MARQUEE_DISTANCE_RATIO;
+    const startTime = performance.now();
+
+    const step = (now) => {
+      if (userInterruptedIntro) {
+        stopIntroMarquee();
+        return;
+      }
+
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / INTRO_MARQUEE_DURATION_MS, 1);
+      const eased = 1 - ((1 - progress) ** 3);
+      band.scrollLeft = startScrollLeft + ((targetScrollLeft - startScrollLeft) * eased);
+
+      if (progress < 1) {
+        introAnimationFrame = window.requestAnimationFrame(step);
+      } else {
+        stopIntroMarquee();
+      }
+    };
+
+    introAnimationFrame = window.requestAnimationFrame(step);
+  };
+
   render();
+  window.requestAnimationFrame(playIntroMarquee);
 
   band.addEventListener(
     "scroll",
@@ -401,6 +451,8 @@ export const initIconBand = async () => {
       return;
     }
     isPointerDown = true;
+    userInterruptedIntro = true;
+    stopIntroMarquee();
     isDragging = false;
     dragStartX = event.clientX;
     dragStartScrollLeft = band.scrollLeft;
@@ -444,6 +496,8 @@ export const initIconBand = async () => {
   });
 
   columns.addEventListener("click", (event) => {
+    userInterruptedIntro = true;
+    stopIntroMarquee();
     const button = event.target.closest(".app-icon--interactive");
     if (!(button instanceof HTMLButtonElement)) {
       return;
