@@ -317,6 +317,25 @@
         "Compiler-driven frameworks",
         "Native application generation"
       ]
+    },
+    {
+      "name": "Rocket Avionics",
+      "accent": "#0a84ff",
+      "description": "is a flight software system for real-time telemetry, control, and data acquisition developed for the Rocket Propulsion Laboratory.",
+      "longTitle": "Rocket Avionics: a real-time C++ flight software system for telemetry, control, and onboard data processing in high-performance rocket systems.",
+      "details": "Rocket Avionics is a C++-based flight software system developed for the Rocket Propulsion Laboratory, designed to operate under strict real-time and reliability constraints. It handles telemetry acquisition, sensor integration, and onboard data processing while maintaining deterministic execution during flight. The system emphasizes robustness, low-latency communication, and fault-tolerant design, ensuring reliable operation in high-performance aerospace environments. By treating avionics as a tightly coupled hardware–software system, the project focuses on correctness, efficiency, and safety-critical execution.",
+      "url": "",
+      "stack": [
+        {
+          "src": "assets/tech/cpp.png",
+          "label": "C++"
+        }
+      ],
+      "focus": [
+        "Embedded systems",
+        "Real-time software",
+        "Aerospace systems"
+      ]
     }
   ]
 }
