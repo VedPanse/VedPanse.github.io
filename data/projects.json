@@ -81,6 +81,7 @@
       "url": "https://github.com/VedPanse/Pulse",
       "stack": [
         { "src": "assets/tech/kotlin.png", "label": "Kotlin Multiplatform" },
+        { "src": "assets/tech/jetpack-compose.png", "label": "Jetpack Compose" },
         { "src": "assets/tech/android-tech.png", "label": "Android" },
         { "src": "assets/tech/swift.png", "label": "Swift" }
       ],
@@ -99,7 +100,8 @@
       "url": "https://github.com/VedPanse/Strata",
       "stack": [
         { "src": "assets/tech/kotlin.png", "label": "Kotlin Multiplatform" },
-        { "src": "assets/tech/python.png", "label": "Python" }
+        { "src": "assets/tech/python.png", "label": "Python" },
+        { "src": "assets/tech/jetpack-compose.png", "label": "Jetpack Compose" }
       ],
       "focus": [
         "Data modeling",
