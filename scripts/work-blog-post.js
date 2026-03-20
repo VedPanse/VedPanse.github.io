@@ -39,7 +39,7 @@ const createElement = (tag, className) => {
 const initTheme = () => {
   const root = document.documentElement;
   const metaTheme = document.querySelector('meta[name="theme-color"]');
-  const storedTheme = localStorage.getItem("theme") || "dark";
+  const storedTheme = localStorage.getItem("theme") || "light";
   root.dataset.theme = storedTheme;
   if (metaTheme) {
     metaTheme.setAttribute("content", storedTheme === "light" ? "#f5f5f7" : "#000000");
@@ -64,7 +64,7 @@ const initThemeToggle = () => {
     }
   };
 
-  applyTheme(root.dataset.theme || localStorage.getItem("theme") || "dark");
+  applyTheme(root.dataset.theme || localStorage.getItem("theme") || "light");
 
   toggle.addEventListener("click", () => {
     const nextTheme = root.dataset.theme === "light" ? "dark" : "light";

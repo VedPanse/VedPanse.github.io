@@ -22,7 +22,7 @@ class ThemeController {
     }
 
     const storedTheme = localStorage.getItem("theme");
-    const initialTheme = storedTheme || "dark";
+    const initialTheme = storedTheme || "light";
     this.applyTheme_(initialTheme);
     this.toggle_.addEventListener("click", () => {
       const nextTheme = this.root_.dataset.theme === "light" ? "dark" : "light";

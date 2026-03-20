@@ -6,7 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Research Post | Ved Panse</title>
   <meta name="description" content="Research update from Ved Panse." />
-  <meta name="theme-color" content="#000000" />
+  <meta name="theme-color" content="#f5f5f7" />
+  <meta name="color-scheme" content="light dark" />
+  <script>
+    try {
+      document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    } catch (error) {
+      document.documentElement.dataset.theme = "light";
+    }
+  </script>
   <link rel="icon" href="img.png" />
   <link rel="stylesheet" href="styles/app.css" />
   <link rel="stylesheet" href="styles/blog.css" />
