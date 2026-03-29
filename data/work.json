@@ -1,23 +1,23 @@
 [
   {
-    "tabLabel": "IBM",
-    "title": "IBM",
-    "description": "Incoming AI/ML Engineering Intern at IBM Silicon Valley Lab, working on real-world AI systems used in production.",
+    "tabLabel": "Apple",
+    "title": "Apple",
+    "description": "Incoming Software Engineering Intern on the Keyboard Infrastructure team at Apple, focused on building low-latency systems for typing and input experiences.",
     "stats": [
       {
-        "value": "Large-Scale",
-        "label": "models running in live systems"
+        "value": "Real-Time",
+        "label": "input systems"
       },
       {
-        "value": "SVL",
-        "label": "Silicon Valley Lab"
+        "value": "At Scale",
+        "label": "global user experiences"
       }
     ],
-    "workPostSlug": "ibm-ai-ml-engineering-svl",
-    "ctaText": "See how AI systems are built for real production use",
+    "workPostSlug": "apple-keyboard-infrastructure",
+    "ctaText": "Exploring how real-time systems power everyday typing",
     "visual": {
-      "label": "IBM",
-      "meta": "AI / ML Systems"
+      "label": "Apple",
+      "meta": "Systems / Input / Real-Time"
     }
   },
   {

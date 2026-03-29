@@ -1,3 +1,5 @@
+import { extractExcerpt, extractTitle, parseFrontMatter, stripMarkdown } from "./markdown.js";
+
 const toggleOverlay = (overlay, open) => {
   overlay.classList.toggle("is-open", open);
   overlay.setAttribute("aria-hidden", String(!open));
@@ -30,51 +32,6 @@ export const initSearchOverlay = () => {
       .replace(/[`~!@#$%^&*()_+={}\[\]|\\:;"'<>,.?/]/g, " ")
       .replace(/\s+/g, " ")
       .trim();
-
-  const stripMarkdown = (markdown) =>
-    markdown
-      .replace(/```[\s\S]*?```/g, " ")
-      .replace(/`[^`]*`/g, " ")
-      .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, " $1 ")
-      .replace(/\[([^\]]+)\]\(([^)]+)\)/g, " $1 ")
-      .replace(/^#{1,6}\s+/gm, "")
-      .replace(/^>\s+/gm, "")
-      .replace(/\|/g, " ")
-      .replace(/[-*_]{3,}/g, " ")
-      .replace(/\s+/g, " ")
-      .trim();
-
-  const parseFrontMatter = (markdown) => {
-    if (!markdown.startsWith("---")) return { meta: {}, body: markdown };
-    const end = markdown.indexOf("\n---", 3);
-    if (end === -1) return { meta: {}, body: markdown };
-    const raw = markdown.slice(3, end).trim();
-    const meta = {};
-    raw.split("\n").forEach((line) => {
-      const [key, ...rest] = line.split(":");
-      if (!key || !rest.length) return;
-      meta[key.trim()] = rest.join(":").trim();
-    });
-    const body = markdown.slice(end + 4);
-    return { meta, body };
-  };
-
-  const extractTitle = (markdown) => {
-    const match = markdown.match(/^#\s+(.+)$/m);
-    return match ? match[1].trim() : "";
-  };
-
-  const extractExcerpt = (markdown) => {
-    const lines = markdown
-      .replace(/\r\n/g, "\n")
-      .split("\n")
-      .map((line) => line.trim())
-      .filter(Boolean);
-    const firstParagraph = lines.find(
-      (line) => !line.startsWith("#") && !line.startsWith("!") && !line.startsWith(">") && !line.startsWith("|")
-    );
-    return firstParagraph || "";
-  };
 
   const loadIndex = async (url) => {
     const response = await fetch(url);
