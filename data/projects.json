@@ -1,6 +1,44 @@
 {
   "projects": [
     {
+      "name": "Arc",
+      "accent": "#ff375f",
+      "description": "is an AI-native task understanding and orchestration layer that converts natural language into structured, executable plans.",
+      "longTitle": "Arc: translating human intent into structured task graphs for intelligent execution.",
+      "details": "Arc interprets user prompts and transforms them into structured task representations that can be rendered, scheduled, and executed across interfaces. It separates conversational reasoning from task planning, using classification pipelines to determine intent and generate optimized task graphs. Designed for real-world productivity, Arc supports flexible time constraints, partial ordering, and adaptive rescheduling, enabling users to fluidly manage complex daily workflows through natural language.",
+      "url": "",
+      "stack": [
+        {
+          "src": "assets/tech/kotlin.png",
+          "label": "Kotlin Multiplatform"
+        }, {
+          "src": "assets/tech/jetpack-compose.png",
+          "label": "Jetpack Compose"
+        },
+        {
+          "src": "assets/tech/android-tech.png",
+          "label": "Android"
+        },
+        {
+          "src": "assets/tech/gcp.png",
+          "label": "Google Cloud Platform"
+        },
+        {
+          "src": "assets/tech/go.png",
+          "label": "Go"
+        },
+        {
+          "src": "assets/tech/sql.png",
+          "label": "SQL"
+        }
+      ],
+      "focus": [
+        "Natural language task parsing",
+        "Structured task graph generation",
+        "Adaptive scheduling and planning"
+      ]
+    },
+    {
       "name": "Daemon",
       "accent": "#34c759",
       "description": "is an AI-native firmware-to-agent bridge that compiles device capabilities into structured, learnable command interfaces.",
