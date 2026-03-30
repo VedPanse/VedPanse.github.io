@@ -11,7 +11,8 @@
         {
           "src": "assets/tech/kotlin.png",
           "label": "Kotlin Multiplatform"
-        }, {
+        },
+        {
           "src": "assets/tech/jetpack-compose.png",
           "label": "Jetpack Compose"
         },
@@ -36,6 +37,41 @@
         "Natural language task parsing",
         "Structured task graph generation",
         "Adaptive scheduling and planning"
+      ]
+    },
+    {
+      "name": "Tool Registry",
+      "accent": "#ff9f0a",
+      "description": "is a structured capability index that enables agents to discover, reason about, and reliably invoke external tools.",
+      "longTitle": "Tool Registry: a semantic index of executable capabilities for efficient agent tool use.",
+      "details": "Tool Registry is a centralized system for describing and retrieving executable tools through structured, machine-readable schemas. Each tool is defined with intent, input/output contracts, constraints, and minimal examples, enabling agents to efficiently select and invoke the right capability without excessive reasoning overhead. By separating capability discovery from generation, Tool Registry reduces LLM noise, improves reliability, and enables scalable tool ecosystems where APIs, services, and device functions can be dynamically integrated and orchestrated.",
+      "url": "",
+      "stack": [
+        {
+          "src": "assets/tech/go.png",
+          "label": "Go"
+        },
+        {
+          "src": "assets/tech/springboot.png",
+          "label": "Spring Boot"
+        },
+        {
+          "src": "assets/tech/java.png",
+          "label": "Java"
+        },
+        {
+          "src": "assets/tech/aws.png",
+          "label": "Amazon Web Services"
+        },
+        {
+          "src": "assets/tech/sql.png",
+          "label": "SQL"
+        }
+      ],
+      "focus": [
+        "Semantic tool discovery",
+        "Schema-driven capability representation",
+        "Efficient and reliable tool invocation"
       ]
     },
     {
