@@ -1,311 +1,567 @@
 <!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Ved Panse</title>
+        <meta
+            name="description"
+            content="Ved Panse is a product engineer and AI builder creating polished software experiences across web, mobile, and intelligent systems."
+        />
+        <meta name="author" content="Ved Panse" />
+        <meta
+            name="keywords"
+            content="Ved Panse, product engineer, AI builder, software engineer, app developer, UX, product design, machine learning"
+        />
+        <meta name="robots" content="index, follow" />
+        <meta name="theme-color" content="#f5f5f7" />
+        <meta name="color-scheme" content="light dark" />
+        <script>
+            try {
+                document.documentElement.dataset.theme =
+                    localStorage.getItem("theme") || "light";
+            } catch (error) {
+                document.documentElement.dataset.theme = "light";
+            }
+        </script>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ved Panse</title>
-  <meta name="description"
-    content="Ved Panse is a product engineer and AI builder creating polished software experiences across web, mobile, and intelligent systems." />
-  <meta name="author" content="Ved Panse" />
-  <meta name="keywords"
-    content="Ved Panse, product engineer, AI builder, software engineer, app developer, UX, product design, machine learning" />
-  <meta name="robots" content="index, follow" />
-  <meta name="theme-color" content="#f5f5f7" />
-  <meta name="color-scheme" content="light dark" />
-  <script>
-    try {
-      document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
-    } catch (error) {
-      document.documentElement.dataset.theme = "light";
-    }
-  </script>
+        <meta property="og:type" content="website" />
+        <meta
+            property="og:title"
+            content="Ved Panse | Product Engineer & AI Builder"
+        />
+        <meta
+            property="og:description"
+            content="Product engineer and AI builder crafting high-quality software and intelligent systems."
+        />
+        <meta property="og:image" content="img.png" />
 
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Ved Panse | Product Engineer & AI Builder" />
-  <meta property="og:description"
-    content="Product engineer and AI builder crafting high-quality software and intelligent systems." />
-  <meta property="og:image" content="img.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+            name="twitter:title"
+            content="Ved Panse | Product Engineer & AI Builder"
+        />
+        <meta
+            name="twitter:description"
+            content="Product engineer and AI builder crafting high-quality software and intelligent systems."
+        />
+        <meta name="twitter:image" content="img.png" />
+        <link rel="icon" href="img.png" />
+        <link rel="stylesheet" href="styles/app.css" />
+        <link rel="stylesheet" href="styles/main.css" />
+    </head>
 
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Ved Panse | Product Engineer & AI Builder" />
-  <meta name="twitter:description"
-    content="Product engineer and AI builder crafting high-quality software and intelligent systems." />
-  <meta name="twitter:image" content="img.png" />
-  <link rel="icon" href="img.png" />
-  <link rel="stylesheet" href="styles/app.css" />
-  <link rel="stylesheet" href="styles/main.css" />
-</head>
-
-<body>
-  <header class="site-header">
-    <nav class="global-nav" aria-label="Primary">
-      <div class="nav-inner">
-        <a class="nav-logo" href="#" aria-label="Home" data-content="name">Ved Panse</a>
-        <div class="nav-links">
-          <a href="#icon-columns">About</a>
-          <a href="#projects">Projects</a>
-          <a href="#work">Work</a>
-          <a href="#research">Research</a>
-          <a href="#blogs">Blogs</a>
-          <a href="#current-focus">Current Focus</a>
-          <a href="#contact">Contact</a>
-        </div>
-        <div class="nav-icons">
-          <a class="nav-resume-button"
-            href="https://docs.google.com/document/d/1ZDx0G4urf-0tMZrS09Mm1j1v2rxYkVUnz44sVbKMg_E/edit?tab=t.0"
-            target="_blank" rel="noopener noreferrer" aria-label="Resume">Resume</a>
-          <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to light theme">
-            <svg class="theme-icon theme-icon--sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-              <circle cx="12" cy="12" r="4.5" />
-              <line x1="12" y1="1.5" x2="12" y2="4" />
-              <line x1="12" y1="20" x2="12" y2="22.5" />
-              <line x1="1.5" y1="12" x2="4" y2="12" />
-              <line x1="20" y1="12" x2="22.5" y2="12" />
-              <line x1="4.2" y1="4.2" x2="6.1" y2="6.1" />
-              <line x1="17.9" y1="17.9" x2="19.8" y2="19.8" />
-              <line x1="4.2" y1="19.8" x2="6.1" y2="17.9" />
-              <line x1="17.9" y1="6.1" x2="19.8" y2="4.2" />
-            </svg>
-            <svg class="theme-icon theme-icon--moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-              <path
-                d="M15.5 4.5c-3.9 0-7 3.1-7 7 0 3.3 2.2 6.1 5.3 6.8 3.4.7 6.8-1 8.2-4.1-2.8.7-5.7-.1-7.4-2-1.7-1.9-2-4.7-.8-6.7-.6-.1-1.1-.2-1.7-.2z" />
-            </svg>
-          </button>
-          <button class="nav-search" type="button" data-search-toggle aria-label="Open search">
-            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-              <circle cx="11" cy="11" r="6.5" />
-              <line x1="16" y1="16" x2="21" y2="21" />
-            </svg>
-          </button>
-          <button class="nav-toggle" type="button" data-nav-toggle aria-label="Open menu" aria-expanded="false">
-            <span class="nav-toggle-line"></span>
-            <span class="nav-toggle-line"></span>
-            <span class="nav-toggle-line"></span>
-          </button>
-        </div>
-      </div>
-    </nav>
-  </header>
-
-  <div class="nav-drawer" data-nav-drawer aria-hidden="true">
-    <div class="nav-drawer-inner nav-drawer-links" aria-label="Mobile">
-      <a href="#icon-columns">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#work">Work</a>
-      <a href="#research">Research</a>
-      <a href="#blogs">Blogs</a>
-      <a href="#current-focus">Current Focus</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </div>
-
-  <div class="search-overlay" data-search-overlay aria-hidden="true">
-    <div class="search-panel" role="dialog" aria-modal="true" aria-label="Site search">
-      <div class="search-input-row">
-        <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-          <circle cx="11" cy="11" r="6.5" />
-          <line x1="16" y1="16" x2="21" y2="21" />
-        </svg>
-        <input type="search" placeholder="Search vedpanse.com" data-search-input />
-      </div>
-      <div class="search-recommendations" data-search-results>
-        <p class="search-kicker" data-search-kicker>Quick Links</p>
-        <ul data-search-list>
-          <li><a href="#projects" data-search-item>Selected Projects</a></li>
-          <li><a href="#projects" data-search-item>Project Archive</a></li>
-          <li><a href="#work" data-search-item>Work</a></li>
-          <li><a href="#research" data-search-item>Research Updates</a></li>
-          <li><a href="#blogs" data-search-item>Blog Posts</a></li>
-          <li><a href="#contact" data-search-item>Contact</a></li>
-        </ul>
-        <p class="search-empty" data-search-empty hidden>No results found.</p>
-      </div>
-    </div>
-  </div>
-
-  <main>
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-inner">
-        <div class="hero-icon" aria-hidden="true">
-          <img src="img.png" alt="" />
-        </div>
-        <p class="hero-eyebrow" data-content="name">Ved Panse</p>
-        <h2 id="hero-title">
-          <span data-content="headline">I build ideas all the</span>
-          <span data-content="headlineAccent">way to production.</span>
-        </h2>
-        <div class="icon-band" aria-label="Languages">
-          <div class="icon-columns" id="icon-columns"></div>
-        </div>
-        <div class="tech-detail-shell" data-tech-detail-shell hidden>
-          <article class="tech-detail-card" data-tech-detail-card aria-live="polite" role="dialog"
-            aria-modal="true" aria-label="Technology details">
-            <div class="tech-detail-card__content">
-              <div class="tech-detail-card__header">
-                <div class="tech-detail-card__icon" aria-hidden="true">
-                  <img data-tech-icon alt="" />
+    <body>
+        <header class="site-header">
+            <nav class="global-nav" aria-label="Primary">
+                <div class="nav-inner">
+                    <a
+                        class="nav-logo"
+                        href="#"
+                        aria-label="Home"
+                        data-content="name"
+                        >Ved Panse</a
+                    >
+                    <div class="nav-links">
+                        <a href="#icon-columns">About</a>
+                        <a href="#projects">Projects</a>
+                        <a href="#work">Work</a>
+                        <a href="#research">Research</a>
+                        <a href="#blogs">Blogs</a>
+                        <a href="#current-focus">Current Focus</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                    <div class="nav-icons">
+                        <a
+                            class="nav-resume-button"
+                            href="https://docs.google.com/document/d/1ZDx0G4urf-0tMZrS09Mm1j1v2rxYkVUnz44sVbKMg_E/edit?tab=t.0"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Resume"
+                            >Resume</a
+                        >
+                        <button
+                            class="theme-toggle"
+                            type="button"
+                            data-theme-toggle
+                            aria-label="Switch to light theme"
+                        >
+                            <svg
+                                class="theme-icon theme-icon--sun"
+                                viewBox="0 0 24 24"
+                                aria-hidden="true"
+                                focusable="false"
+                            >
+                                <circle cx="12" cy="12" r="4.5" />
+                                <line x1="12" y1="1.5" x2="12" y2="4" />
+                                <line x1="12" y1="20" x2="12" y2="22.5" />
+                                <line x1="1.5" y1="12" x2="4" y2="12" />
+                                <line x1="20" y1="12" x2="22.5" y2="12" />
+                                <line x1="4.2" y1="4.2" x2="6.1" y2="6.1" />
+                                <line x1="17.9" y1="17.9" x2="19.8" y2="19.8" />
+                                <line x1="4.2" y1="19.8" x2="6.1" y2="17.9" />
+                                <line x1="17.9" y1="6.1" x2="19.8" y2="4.2" />
+                            </svg>
+                            <svg
+                                class="theme-icon theme-icon--moon"
+                                viewBox="0 0 24 24"
+                                aria-hidden="true"
+                                focusable="false"
+                            >
+                                <path
+                                    d="M15.5 4.5c-3.9 0-7 3.1-7 7 0 3.3 2.2 6.1 5.3 6.8 3.4.7 6.8-1 8.2-4.1-2.8.7-5.7-.1-7.4-2-1.7-1.9-2-4.7-.8-6.7-.6-.1-1.1-.2-1.7-.2z"
+                                />
+                            </svg>
+                        </button>
+                        <button
+                            class="nav-search"
+                            type="button"
+                            data-search-toggle
+                            aria-label="Open search"
+                        >
+                            <svg
+                                viewBox="0 0 24 24"
+                                aria-hidden="true"
+                                focusable="false"
+                            >
+                                <circle cx="11" cy="11" r="6.5" />
+                                <line x1="16" y1="16" x2="21" y2="21" />
+                            </svg>
+                        </button>
+                        <button
+                            class="nav-toggle"
+                            type="button"
+                            data-nav-toggle
+                            aria-label="Open menu"
+                            aria-expanded="false"
+                        >
+                            <span class="nav-toggle-line"></span>
+                            <span class="nav-toggle-line"></span>
+                            <span class="nav-toggle-line"></span>
+                        </button>
+                    </div>
                 </div>
-                <h3 class="tech-detail-card__title" data-tech-title>Select a technology</h3>
-              </div>
-              <p class="tech-detail-card__description" data-tech-description>
-                Click a tech icon to see which featured projects use it.
-              </p>
-              <div class="tech-detail-card__projects" data-tech-projects></div>
+            </nav>
+        </header>
+
+        <div class="nav-drawer" data-nav-drawer aria-hidden="true">
+            <div class="nav-drawer-inner nav-drawer-links" aria-label="Mobile">
+                <a href="#icon-columns">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#work">Work</a>
+                <a href="#research">Research</a>
+                <a href="#blogs">Blogs</a>
+                <a href="#current-focus">Current Focus</a>
+                <a href="#contact">Contact</a>
             </div>
-            <button class="project-back-close tech-detail-card__close" type="button" data-tech-close
-              aria-label="Close technology details"></button>
-          </article>
         </div>
-        <p class="about-paragraph" data-content="about">
-          I build systems because I'm genuinely obsessed with how computers work.
 
-          My work focuses on agentic AI systems — not wrappers, but the underlying orchestration, control loops, and
-          world models that make intelligent behavior possible. I'm particularly interested in embodied agents and
-          high-leverage workflows that turn models into real systems.
-
-          I've been drawn to AI since middle school, but my curiosity goes deeper than models. In my free time, you'll
-          usually find me in Wong Avery Library booting a simulated IBM-7094, experimenting with ELIZA, or learning
-          COBOL for no practical reason
-        </p>
-      </div>
-    </section>
-
-    <section id="projects" class="work-section scroll-transition-section" aria-labelledby="projects-title">
-      <div class="work-sticky">
-        <div class="work-stage">
-          <div class="work-visual" aria-hidden="true">
-            <img src="assets/banners/projects-banner.png" alt="" />
-          </div>
-          <div class="work-text">
-            <h2 id="projects-title">
-              <span class="work-kicker">Selected Projects</span>
-              <span>Product launches, intelligent systems, and high-craft interfaces.</span>
-            </h2>
-          </div>
+        <div class="search-overlay" data-search-overlay aria-hidden="true">
+            <div
+                class="search-panel"
+                role="dialog"
+                aria-modal="true"
+                aria-label="Site search"
+            >
+                <div class="search-input-row">
+                    <svg
+                        class="search-icon"
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                        focusable="false"
+                    >
+                        <circle cx="11" cy="11" r="6.5" />
+                        <line x1="16" y1="16" x2="21" y2="21" />
+                    </svg>
+                    <input
+                        type="search"
+                        placeholder="Search vedpanse.com"
+                        data-search-input
+                    />
+                </div>
+                <div class="search-recommendations" data-search-results>
+                    <p class="search-kicker" data-search-kicker>Quick Links</p>
+                    <ul data-search-list>
+                        <li>
+                            <a href="#projects" data-search-item
+                                >Selected Projects</a
+                            >
+                        </li>
+                        <li>
+                            <a href="#projects" data-search-item
+                                >Project Archive</a
+                            >
+                        </li>
+                        <li><a href="#work" data-search-item>Work</a></li>
+                        <li>
+                            <a href="#research" data-search-item
+                                >Research Updates</a
+                            >
+                        </li>
+                        <li>
+                            <a href="#blogs" data-search-item>Blog Posts</a>
+                        </li>
+                        <li><a href="#contact" data-search-item>Contact</a></li>
+                    </ul>
+                    <p class="search-empty" data-search-empty hidden>
+                        No results found.
+                    </p>
+                </div>
+            </div>
         </div>
-      </div>
-    </section>
 
-    <section id="projects" class="projects-section" aria-label="Projects">
-      <div class="projects-carousel" aria-label="Project carousel">
-      </div>
-      <div class="projects-controls" role="group" aria-label="Project carousel controls">
-        <div class="projects-indicator" aria-hidden="true">
-          <div class="projects-dots"></div>
-        </div>
-        <button class="projects-toggle" type="button" data-carousel-toggle aria-pressed="true"
-          aria-label="Pause autoplay"></button>
-      </div>
-    </section>
+        <main>
+            <section class="hero" aria-labelledby="hero-title">
+                <div class="hero-inner">
+                    <div class="hero-icon" aria-hidden="true">
+                        <img src="img.png" alt="" />
+                    </div>
+                    <p class="hero-eyebrow" data-content="name">Ved Panse</p>
+                    <h2 id="hero-title">
+                        <span data-content="headline"
+                            >I build ideas all the</span
+                        >
+                        <span data-content="headlineAccent"
+                            >way to production.</span
+                        >
+                    </h2>
+                    <div class="icon-band" aria-label="Languages">
+                        <div class="icon-columns" id="icon-columns"></div>
+                    </div>
+                    <div
+                        class="tech-detail-shell"
+                        data-tech-detail-shell
+                        hidden
+                    >
+                        <article
+                            class="tech-detail-card"
+                            data-tech-detail-card
+                            aria-live="polite"
+                            role="dialog"
+                            aria-modal="true"
+                            aria-label="Technology details"
+                        >
+                            <div class="tech-detail-card__content">
+                                <div class="tech-detail-card__header">
+                                    <div
+                                        class="tech-detail-card__icon"
+                                        aria-hidden="true"
+                                    >
+                                        <img data-tech-icon alt="" />
+                                    </div>
+                                    <h3
+                                        class="tech-detail-card__title"
+                                        data-tech-title
+                                    >
+                                        Select a technology
+                                    </h3>
+                                </div>
+                                <p
+                                    class="tech-detail-card__description"
+                                    data-tech-description
+                                >
+                                    Click a tech icon to see which featured
+                                    projects use it.
+                                </p>
+                                <div
+                                    class="tech-detail-card__projects"
+                                    data-tech-projects
+                                ></div>
+                            </div>
+                            <button
+                                class="project-back-close tech-detail-card__close"
+                                type="button"
+                                data-tech-close
+                                aria-label="Close technology details"
+                            ></button>
+                        </article>
+                    </div>
+                    <p class="about-paragraph" data-content="about">
+                        I build systems because I'm genuinely obsessed with how
+                        computers work. My work focuses on agentic AI systems —
+                        not wrappers, but the underlying orchestration, control
+                        loops, and world models that make intelligent behavior
+                        possible. I'm particularly interested in embodied agents
+                        and high-leverage workflows that turn models into real
+                        systems. I've been drawn to AI since middle school, but
+                        my curiosity goes deeper than models. In my free time,
+                        you'll usually find me in Wong Avery Library booting a
+                        simulated IBM-7094, experimenting with ELIZA, or
+                        learning COBOL for no practical reason
+                    </p>
+                </div>
+            </section>
 
-    <section id="work" class="work-archive-section" aria-labelledby="work-title">
-      <div class="work-showcase-inner">
-        <div class="work-showcase-header">
-          <h2 id="work-title">Work Experience. Real impact.</h2>
-          <div class="work-showcase-controls" role="group" aria-label="Work experience carousel controls">
-            <button class="work-showcase-control" type="button" data-work-prev aria-label="Scroll work cards left">
-              <span aria-hidden="true">&#8592;</span>
-            </button>
-            <button class="work-showcase-control" type="button" data-work-next aria-label="Scroll work cards right">
-              <span aria-hidden="true">&#8594;</span>
-            </button>
-          </div>
-        </div>
-        <div class="work-showcase-rail" aria-label="Work experience cards" data-work-rail></div>
-      </div>
-    </section>
+            <section
+                id="projects"
+                class="work-section scroll-transition-section"
+                aria-labelledby="projects-title"
+            >
+                <div class="work-sticky">
+                    <div class="work-stage">
+                        <div class="work-visual" aria-hidden="true">
+                            <img
+                                src="assets/banners/projects-banner.png"
+                                alt=""
+                            />
+                        </div>
+                        <div class="work-text">
+                            <h2 id="projects-title">
+                                <span class="work-kicker"
+                                    >Selected Projects</span
+                                >
+                                <span
+                                    >Product launches, intelligent systems, and
+                                    high-craft interfaces.</span
+                                >
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-    <section id="writing" class="work-section writing-section scroll-transition-section" aria-labelledby="writing-title">
-      <div class="work-sticky">
-        <div class="work-stage">
-          <div class="work-visual" aria-hidden="true">
-            <img src="assets/banners/work/jetbrains.png" alt="" />
-          </div>
-          <div class="work-text">
-            <h2 id="writing-title">
-              <span>Ideas, experiments, and stories from building intelligent systems</span>
-            </h2>
-          </div>
-        </div>
-      </div>
-    </section>
+            <section
+                id="projects"
+                class="projects-section"
+                aria-label="Projects"
+            >
+                <div
+                    class="projects-carousel"
+                    aria-label="Project carousel"
+                ></div>
+                <div
+                    class="projects-controls"
+                    role="group"
+                    aria-label="Project carousel controls"
+                >
+                    <div class="projects-indicator" aria-hidden="true">
+                        <div class="projects-dots"></div>
+                    </div>
+                    <button
+                        class="projects-toggle"
+                        type="button"
+                        data-carousel-toggle
+                        aria-pressed="true"
+                        aria-label="Pause autoplay"
+                    ></button>
+                </div>
+            </section>
 
-    <section id="research" class="research-section" aria-labelledby="research-title">
-      <div class="research-inner">
-        <h2 id="research-title">Research</h2>
-        <div class="editorial-feed">
-          <div class="editorial-hero-rail" data-research-hero></div>
-          <div class="editorial-mini-grid" data-research-grid></div>
-        </div>
-        <button class="editorial-load-more" type="button" data-research-load-more>
-          <span class="editorial-load-more-label">Load more</span>
-          <span class="editorial-load-more-icon" aria-hidden="true">
-            <svg viewBox="0 0 14 14" focusable="false">
-              <path d="M4.25 2.5 8.75 7l-4.5 4.5" />
-            </svg>
-          </span>
-        </button>
-      </div>
-    </section>
+            <section
+                id="work"
+                class="work-archive-section"
+                aria-labelledby="work-title"
+            >
+                <div class="work-showcase-inner">
+                    <div class="work-showcase-header">
+                        <h2 id="work-title">Work Experience. Real impact.</h2>
+                        <div
+                            class="work-showcase-controls"
+                            role="group"
+                            aria-label="Work experience carousel controls"
+                        >
+                            <button
+                                class="work-showcase-control"
+                                type="button"
+                                data-work-prev
+                                aria-label="Scroll work cards left"
+                            >
+                                <span aria-hidden="true">&#8592;</span>
+                            </button>
+                            <button
+                                class="work-showcase-control"
+                                type="button"
+                                data-work-next
+                                aria-label="Scroll work cards right"
+                            >
+                                <span aria-hidden="true">&#8594;</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div
+                        class="work-showcase-rail"
+                        aria-label="Work experience cards"
+                        data-work-rail
+                    ></div>
+                </div>
+            </section>
 
-    <section id="blogs" class="blogs-section" aria-labelledby="blogs-title">
-      <div class="blogs-inner">
-        <h2 id="blogs-title">Blogs</h2>
-        <div class="editorial-feed">
-          <div class="editorial-hero-rail" data-blogs-hero></div>
-          <div class="editorial-mini-grid" data-blogs-grid></div>
-        </div>
-        <button class="editorial-load-more" type="button" data-blogs-load-more>
-          <span class="editorial-load-more-label">Load more</span>
-          <span class="editorial-load-more-icon" aria-hidden="true">
-            <svg viewBox="0 0 14 14" focusable="false">
-              <path d="M4.25 2.5 8.75 7l-4.5 4.5" />
-            </svg>
-          </span>
-        </button>
-      </div>
-    </section>
+            <section
+                id="writing"
+                class="work-section writing-section scroll-transition-section"
+                aria-labelledby="writing-title"
+            >
+                <div class="work-sticky">
+                    <div class="work-stage">
+                        <div class="work-visual" aria-hidden="true">
+                            <img
+                                src="assets/banners/work/jetbrains.png"
+                                alt=""
+                            />
+                        </div>
+                        <div class="work-text">
+                            <h2 id="writing-title">
+                                <span
+                                    >Ideas, experiments, and stories from
+                                    building intelligent systems</span
+                                >
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-    <section id="current-focus" class="focus-section" aria-labelledby="focus-title">
-      <div class="focus-inner">
-        <h2 id="focus-title">Current Focus</h2>
-        <p class="focus-subtitle">
-          Right now I'm tightening Ion and pushing deeper into embodied systems. I'm replacing parts of Ion's model
-          stack with a more deterministic pipeline built around structured datasheet fine-tuning, while refining control
-          loops and state handling for physical agents. I'll be in the Bay Area this summer for an internship, which
-          should be a good place to test these ideas under real constraints.
-        </p>
-      </div>
-    </section>
+            <section
+                id="research"
+                class="research-section"
+                aria-labelledby="research-title"
+            >
+                <div class="research-inner">
+                    <h2 id="research-title">Research</h2>
+                    <div class="editorial-feed">
+                        <div
+                            class="editorial-hero-rail"
+                            data-research-hero
+                        ></div>
+                        <div
+                            class="editorial-mini-grid"
+                            data-research-grid
+                        ></div>
+                    </div>
+                    <button
+                        class="editorial-load-more"
+                        type="button"
+                        data-research-load-more
+                    >
+                        <span class="editorial-load-more-label">Load more</span>
+                        <span
+                            class="editorial-load-more-icon"
+                            aria-hidden="true"
+                        >
+                            <svg viewBox="0 0 14 14" focusable="false">
+                                <path d="M4.25 2.5 8.75 7l-4.5 4.5" />
+                            </svg>
+                        </span>
+                    </button>
+                </div>
+            </section>
 
-    <section id="contact" class="contact-section" aria-labelledby="contact-title">
-      <div class="contact-inner">
-        <h2 id="contact-title">Contact</h2>
-        <form class="contact-card" aria-label="Contact form" data-contact-form novalidate method="POST"
-          action="https://formspree.io/f/xdoyprne">
-          <input type="hidden" name="_subject" value="New message from vedpanse.com" />
-          <input type="hidden" name="form_started_at" data-contact-started-at value="" />
-          <label class="contact-honeypot" aria-hidden="true">
-            <span>Leave this field empty</span>
-            <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
-          </label>
-          <label class="contact-field">
-            <span class="contact-label">Email Address</span>
-            <input type="email" name="email" placeholder="you@example.com" autocomplete="email" required />
-          </label>
-          <label class="contact-field contact-field--submit">
-            <span class="contact-label">Message</span>
-            <textarea name="message" placeholder="Tell me about your project." rows="3" required></textarea>
-            <button class="contact-submit" type="submit" aria-label="Send message">
-              <span class="contact-arrow" aria-hidden="true"></span>
-            </button>
-          </label>
-        </form>
-      </div>
-    </section>
-  </main>
-  <script type="module" src="scripts/main.js"></script>
-</body>
+            <section
+                id="blogs"
+                class="blogs-section"
+                aria-labelledby="blogs-title"
+            >
+                <div class="blogs-inner">
+                    <h2 id="blogs-title">Blogs</h2>
+                    <div class="editorial-feed">
+                        <div class="editorial-hero-rail" data-blogs-hero></div>
+                        <div class="editorial-mini-grid" data-blogs-grid></div>
+                    </div>
+                    <button
+                        class="editorial-load-more"
+                        type="button"
+                        data-blogs-load-more
+                    >
+                        <span class="editorial-load-more-label">Load more</span>
+                        <span
+                            class="editorial-load-more-icon"
+                            aria-hidden="true"
+                        >
+                            <svg viewBox="0 0 14 14" focusable="false">
+                                <path d="M4.25 2.5 8.75 7l-4.5 4.5" />
+                            </svg>
+                        </span>
+                    </button>
+                </div>
+            </section>
 
+            <section
+                id="current-focus"
+                class="focus-section"
+                aria-labelledby="focus-title"
+            >
+                <div class="focus-inner">
+                    <h2 id="focus-title">Current Focus</h2>
+                    <p class="focus-subtitle">
+                        I am currently pursuing my university classes and
+                        pursuing research with
+                        <a href="https://simworld.org">SimWorld</a> where my job
+                        is to evaluate AI agents for scene generation. In my
+                        freetime, I build Arc, a task optimization service, and
+                        concurrently polish my coding skills in Swift for my
+                        upcoming internship at Apple.
+                    </p>
+                </div>
+            </section>
+
+            <section
+                id="contact"
+                class="contact-section"
+                aria-labelledby="contact-title"
+            >
+                <div class="contact-inner">
+                    <h2 id="contact-title">Contact</h2>
+                    <form
+                        class="contact-card"
+                        aria-label="Contact form"
+                        data-contact-form
+                        novalidate
+                        method="POST"
+                        action="https://formspree.io/f/xdoyprne"
+                    >
+                        <input
+                            type="hidden"
+                            name="_subject"
+                            value="New message from vedpanse.com"
+                        />
+                        <input
+                            type="hidden"
+                            name="form_started_at"
+                            data-contact-started-at
+                            value=""
+                        />
+                        <label class="contact-honeypot" aria-hidden="true">
+                            <span>Leave this field empty</span>
+                            <input
+                                type="text"
+                                name="_gotcha"
+                                tabindex="-1"
+                                autocomplete="off"
+                            />
+                        </label>
+                        <label class="contact-field">
+                            <span class="contact-label">Email Address</span>
+                            <input
+                                type="email"
+                                name="email"
+                                placeholder="you@example.com"
+                                autocomplete="email"
+                                required
+                            />
+                        </label>
+                        <label class="contact-field contact-field--submit">
+                            <span class="contact-label">Message</span>
+                            <textarea
+                                name="message"
+                                placeholder="Tell me about your project."
+                                rows="3"
+                                required
+                            ></textarea>
+                            <button
+                                class="contact-submit"
+                                type="submit"
+                                aria-label="Send message"
+                            >
+                                <span
+                                    class="contact-arrow"
+                                    aria-hidden="true"
+                                ></span>
+                            </button>
+                        </label>
+                    </form>
+                </div>
+            </section>
+        </main>
+        <script type="module" src="scripts/main.js"></script>
+    </body>
 </html>
