@@ -1,6 +1,25 @@
 {
   "projects": [
     {
+      "name": "Veditor",
+      "accent": "#bf5af2",
+      "description": "is the fastest code editor I have built: a keyboard-first terminal IDE with an embedded editor, shell, AI workflow pane, rendered previews, and live project awareness.",
+      "longTitle": "Veditor: a brutally fast terminal-native code editor with embedded shell, AI execution, README rendering, theming, and project-aware workflows.",
+      "details": "Veditor is a terminal-native code editor designed for speed, directness, and systems-level control. It combines an embedded Neovim editor, an integrated shell, a project tree, Codex-driven editing, rendered README previews, markdown-aware chat rendering, persistent session restore, accent and neon mood theming, and live project updates when files change. The goal is not to imitate a browser IDE, but to make code navigation, execution, editing, and AI-assisted iteration feel immediate inside a single low-latency interface.",
+      "url": "https://github.com/VedPanse/veditor",
+      "stack": [
+        {
+          "src": "assets/tech/rust.png",
+          "label": "Rust"
+        }
+      ],
+      "focus": [
+        "Terminal-native editing speed",
+        "Embedded AI-assisted coding",
+        "Integrated shell, previews, and project navigation"
+      ]
+    },
+    {
       "name": "Arc",
       "accent": "#ff375f",
       "description": "is an AI-native task understanding and orchestration layer that converts natural language into structured, executable plans.",
