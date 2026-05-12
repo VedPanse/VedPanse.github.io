@@ -1,9 +1,12 @@
 import { DomFactory } from "./core/dom-factory.js";
 import { JsonRepository } from "./core/json-repository.js";
+import { createTechIconIndex, loadTechIcons, resolveTechStack } from "./core/tech-icons.js";
 
 const PROJECTS_URL = "data/projects.json";
 const STACK_COLUMNS = 3;
 const AUTOPLAY_DURATION_MS = 10000;
+const WHEEL_NAVIGATION_THRESHOLD_PX = 180;
+const WHEEL_NAVIGATION_COOLDOWN_MS = 760;
 
 const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
 
@@ -14,7 +17,7 @@ const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
  *   details?: string,
  *   longTitle?: string,
  *   name?: string,
- *   stack?: Array<{label?: string, src: string}>,
+ *   stack?: Array<string>,
  *   url?: string
  * }} Project
  */
@@ -41,6 +44,21 @@ class ProjectsRepository extends JsonRepository {
 }
 
 class ProjectCardRenderer {
+  /**
+   * @param {Map<string, {label?: string, src: string}>} iconIndex
+   */
+  constructor(iconIndex = new Map()) {
+    this.iconIndex_ = iconIndex;
+  }
+
+  /**
+   * @param {Array<string|{label?: string, src: string}>} stack
+   * @return {Array<{label?: string, src: string}>}
+   */
+  resolveStack_(stack) {
+    return resolveTechStack(stack, this.iconIndex_);
+  }
+
   /**
    * @param {Array<{label?: string, src: string}>} stack
    * @return {Array<Array<{label?: string, src: string}>>}
@@ -76,6 +94,7 @@ class ProjectCardRenderer {
    * @return {HTMLElement}
    */
   render(project) {
+    const resolvedStack = this.resolveStack_(project.stack || []);
     const card = DomFactory.createElement("article", "project-card");
     card.setAttribute("data-project", "");
     card.setAttribute("tabindex", "0");
@@ -103,7 +122,7 @@ class ProjectCardRenderer {
     stack.setAttribute("aria-label", "Tech stack");
     const band = DomFactory.createElement("div", "project-icon-band");
     const columnsWrap = DomFactory.createElement("div", "project-icon-columns");
-    const columns = this.buildStackColumns_(project.stack || []);
+    const columns = this.buildStackColumns_(resolvedStack);
 
     columns.forEach((columnItems) => {
       const column = DomFactory.createElement("div", "project-icon-column");
@@ -136,7 +155,7 @@ class ProjectCardRenderer {
     backDescription.textContent =
       project.details || project.description || "Project details are coming soon.";
 
-    const backStack = this.createBackStackIcons_(project.stack || []);
+    const backStack = this.createBackStackIcons_(resolvedStack);
 
     const backActions = DomFactory.createElement("div", "project-back-actions");
     const backLink = this.createBackLink_(project);
@@ -197,6 +216,8 @@ class ProjectsCarousel {
     this.dotsContainer_ = section.querySelector(".projects-dots");
     this.toggle_ = section.querySelector("[data-carousel-toggle]");
     this.controls_ = section.querySelector(".projects-controls");
+    this.prevButton_ = section.querySelector("[data-project-prev]");
+    this.nextButton_ = section.querySelector("[data-project-next]");
     this.prefersReducedMotion_ = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     this.activeIndex_ = 0;
     this.autoPlay_ = !this.prefersReducedMotion_;
@@ -205,6 +226,10 @@ class ProjectsCarousel {
     this.startTime_ = performance.now();
     this.progressValue_ = 0;
     this.autoPlayBeforeFlip_ = this.autoPlay_;
+    this.isProjectsVisible_ = false;
+    this.wheelNavigationTimeout_ = 0;
+    this.wheelNavigationDelta_ = 0;
+    this.navigationSettleTimeout_ = 0;
     this.cards_ = [];
     this.dots_ = [];
     this.activeCard_ = null;
@@ -272,6 +297,10 @@ class ProjectsCarousel {
       { passive: true }
     );
 
+    this.section_.addEventListener("wheel", (event) => this.onWheel_(event), {
+      passive: false,
+    });
+
     window.addEventListener("resize", () => {
       this.updateControlsOffset_();
     });
@@ -285,10 +314,82 @@ class ProjectsCarousel {
     );
 
     this.toggle_.addEventListener("click", () => this.toggleAutoPlay_());
+    if (this.prevButton_) {
+      this.prevButton_.addEventListener("click", () => this.goPrevious_());
+    }
+    if (this.nextButton_) {
+      this.nextButton_.addEventListener("click", () => this.goNext_());
+    }
     this.dots_.forEach((dot, index) => {
       dot.addEventListener("click", () => this.goToIndex_(index));
     });
     this.cards_.forEach((card) => this.bindCardEvents_(card));
+  }
+
+  /**
+   * @param {WheelEvent} event
+   */
+  onWheel_(event) {
+    const absX = Math.abs(event.deltaX);
+    const absY = Math.abs(event.deltaY);
+    const horizontalDelta = event.shiftKey ? event.deltaY : event.deltaX;
+    const hasHorizontalIntent = event.shiftKey
+      ? absY > 0
+      : absX > 0 && absX > absY * 2;
+
+    if (!hasHorizontalIntent) {
+      const scrollFace = event.target instanceof Element
+        ? event.target.closest(".project-card-face--front, .project-card-face--back")
+        : null;
+      const canScrollFaceDown =
+        scrollFace &&
+        event.deltaY > 0 &&
+        scrollFace.scrollTop + scrollFace.clientHeight < scrollFace.scrollHeight - 1;
+      const canScrollFaceUp = scrollFace && event.deltaY < 0 && scrollFace.scrollTop > 0;
+
+      if (canScrollFaceDown || canScrollFaceUp) {
+        return;
+      }
+
+      if (
+        absY > 0 &&
+        event.target instanceof Element &&
+        event.target.closest(".projects-section")
+      ) {
+        event.preventDefault();
+        window.scrollBy({ top: event.deltaY, behavior: "auto" });
+      }
+      return;
+    }
+
+    event.preventDefault();
+    if (this.wheelNavigationTimeout_) {
+      return;
+    }
+
+    if (
+      this.wheelNavigationDelta_ &&
+      Math.sign(this.wheelNavigationDelta_) !== Math.sign(horizontalDelta)
+    ) {
+      this.wheelNavigationDelta_ = 0;
+    }
+
+    this.wheelNavigationDelta_ += horizontalDelta;
+    if (Math.abs(this.wheelNavigationDelta_) < WHEEL_NAVIGATION_THRESHOLD_PX) {
+      return;
+    }
+
+    this.updateActiveFromScroll_();
+    if (this.wheelNavigationDelta_ > 0) {
+      this.goNext_();
+    } else {
+      this.goPrevious_();
+    }
+    this.wheelNavigationDelta_ = 0;
+
+    this.wheelNavigationTimeout_ = window.setTimeout(() => {
+      this.wheelNavigationTimeout_ = 0;
+    }, WHEEL_NAVIGATION_COOLDOWN_MS);
   }
 
   /**
@@ -411,16 +512,36 @@ class ProjectsCarousel {
   updateControlsOffset_() {
     if (!this.activeCard_) {
       this.controls_.classList.remove("is-pinned");
+      this.controls_.classList.remove("is-at-end");
       return;
     }
 
     this.controls_.style.removeProperty("transform");
     const carouselRect = this.carousel_.getBoundingClientRect();
-    const sectionRect = this.section_.getBoundingClientRect();
-    const pinOffset = 24;
-    const shouldPin = carouselRect.top + carouselRect.height * 0.5 <= 0;
-    const canRemainInSection = sectionRect.bottom > window.innerHeight - pinOffset;
-    this.controls_.classList.toggle("is-pinned", shouldPin && canRemainInSection);
+    const activeCardRect = this.activeCard_.getBoundingClientRect();
+    const visibleCardHeight = Math.max(
+      0,
+      Math.min(activeCardRect.bottom, window.innerHeight) - Math.max(activeCardRect.top, 0)
+    );
+    const isActiveCardHalfVisible = visibleCardHeight >= activeCardRect.height * 0.5;
+    const fixedBottomOffset = 24;
+    const naturalControlsTop = carouselRect.bottom + 4;
+    const fixedControlsTop = window.innerHeight - fixedBottomOffset - this.controls_.offsetHeight;
+    const isViewingProjects = carouselRect.top < window.innerHeight && carouselRect.bottom > 0;
+    const shouldPinControls =
+      isActiveCardHalfVisible &&
+      carouselRect.top < fixedControlsTop &&
+      naturalControlsTop > fixedControlsTop;
+    const isAtPinnedEnd =
+      isViewingProjects &&
+      carouselRect.top < fixedControlsTop &&
+      naturalControlsTop <= fixedControlsTop;
+    this.isProjectsVisible_ = isViewingProjects;
+    this.controls_.classList.toggle("is-pinned", shouldPinControls);
+    this.controls_.classList.toggle("is-at-end", isAtPinnedEnd);
+    if (!isViewingProjects) {
+      this.startTime_ = performance.now() - this.progressValue_ * AUTOPLAY_DURATION_MS;
+    }
   }
 
   /**
@@ -434,23 +555,41 @@ class ProjectsCarousel {
     }
     const left = card.offsetLeft - (this.carousel_.clientWidth - card.clientWidth) / 2;
     this.carousel_.scrollTo({ left, behavior });
+    return left;
   }
 
   goNext_() {
     const nextIndex = (this.activeIndex_ + 1) % this.cards_.length;
-    this.scrollToCard_(nextIndex, nextIndex === 0 ? "auto" : "smooth");
+    this.goToIndex_(nextIndex, nextIndex === 0 ? "auto" : "smooth");
+  }
+
+  goPrevious_() {
+    const previousIndex = (this.activeIndex_ - 1 + this.cards_.length) % this.cards_.length;
+    this.goToIndex_(previousIndex, previousIndex === this.cards_.length - 1 ? "auto" : "smooth");
   }
 
   /**
    * @param {number} index
+   * @param {ScrollBehavior} behavior
    */
-  goToIndex_(index) {
+  goToIndex_(index, behavior = "smooth") {
     this.activeIndex_ = clamp(index, 0, this.cards_.length - 1);
     this.activeCard_ = this.cards_[this.activeIndex_] || null;
     this.updateDots_(this.activeIndex_);
     this.setProgress_(0);
     this.startTime_ = performance.now();
-    this.scrollToCard_(this.activeIndex_, "smooth");
+    const targetLeft = this.scrollToCard_(this.activeIndex_, behavior);
+    if (this.navigationSettleTimeout_) {
+      window.clearTimeout(this.navigationSettleTimeout_);
+    }
+    this.navigationSettleTimeout_ = window.setTimeout(() => {
+      if (typeof targetLeft === "number") {
+        this.carousel_.scrollTo({ left: targetLeft, behavior: "auto" });
+        this.updateCardTransforms_();
+        this.updateDots_(this.activeIndex_);
+      }
+      this.navigationSettleTimeout_ = 0;
+    }, behavior === "smooth" ? 520 : 0);
   }
 
   /**
@@ -503,7 +642,7 @@ class ProjectsCarousel {
    * @param {number} time
    */
   tick_(time) {
-    if (this.autoPlay_ && !this.isUserScrolling_) {
+    if (this.autoPlay_ && this.isProjectsVisible_ && !this.isUserScrolling_) {
       const elapsed = time - this.startTime_;
       const nextProgress = elapsed / AUTOPLAY_DURATION_MS;
       if (nextProgress >= 1) {
@@ -523,10 +662,11 @@ class ProjectsCarousel {
 
   observeVisibility_() {
     const controlsObserver = new IntersectionObserver(
-      ([entry]) => {
-        this.controls_.classList.toggle("is-hidden", !entry.isIntersecting);
+      () => {
+        this.updateControlsOffset_();
+        this.startTime_ = performance.now() - this.progressValue_ * AUTOPLAY_DURATION_MS;
       },
-      { threshold: 0.25 }
+      { threshold: 0 }
     );
     controlsObserver.observe(this.section_);
 
@@ -547,7 +687,15 @@ export const initProjectsCarousel = async () => {
   }
 
   const repository = new ProjectsRepository();
-  const projects = await repository.loadProjects();
-  const carousel = new ProjectsCarousel(section, projects, new ProjectCardRenderer());
+  const [rawProjects, icons] = await Promise.all([
+    repository.loadProjects(),
+    loadTechIcons(),
+  ]);
+  const iconIndex = createTechIconIndex(icons);
+  const projects = rawProjects.map((project) => ({
+    ...project,
+    stack: resolveTechStack(project.stack, iconIndex),
+  }));
+  const carousel = new ProjectsCarousel(section, projects, new ProjectCardRenderer(iconIndex));
   carousel.initialize();
 };

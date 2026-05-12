@@ -1,4 +1,3 @@
-import { initEditorialScroll } from "./editorial-scroll.js";
 import { extractTitle, parseFrontMatter } from "./markdown.js";
 
 const WORK_BANNERS_DIR = "assets/banners/work";
@@ -112,6 +111,18 @@ const renderBand = (container, items, buildItem) => {
   container.scrollLeft = 0;
 };
 
+const centerSecondItem = (container) => {
+  const secondItem = container.children[1];
+  if (!(secondItem instanceof HTMLElement)) {
+    return;
+  }
+
+  requestAnimationFrame(() => {
+    const left = secondItem.offsetLeft - (container.clientWidth - secondItem.clientWidth) / 2;
+    container.scrollLeft = Math.max(0, left);
+  });
+};
+
 const loadFeedItems = async ({ directory, indexUrl, defaultKind }) => {
   const [files, bannerImages] = await Promise.all([listIndexedFiles(indexUrl, directory), listWorkBanners()]);
   const items = await Promise.all(
@@ -168,8 +179,9 @@ export const initEditorialFeed = async ({
   const heroCount = Math.floor(items.length / 2);
   renderBand(heroRail, items.slice(0, heroCount), (item) => buildHeroCard(item, postUrl, defaultKind));
   renderBand(miniGrid, items.slice(heroCount), (item) => buildMiniCard(item, postUrl, defaultKind));
+  centerSecondItem(heroRail);
+  centerSecondItem(miniGrid);
 
-  initEditorialScroll(section, heroRail, miniGrid);
   loadMoreButton.hidden = true;
   loadMoreButton.disabled = true;
 };

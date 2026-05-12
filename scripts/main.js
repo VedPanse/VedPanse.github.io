@@ -1,7 +1,7 @@
-import { initIconBand } from "./icon-band.js";
+import { initIconBand } from "./icon-band.js?v=stack-labels";
 import { initContent } from "./content.js";
 import { initWorkSection, initWorkExperience } from "./work.js";
-import { initProjectsCarousel } from "./projects.js";
+import { initProjectsCarousel } from "./projects.js?v=stack-labels";
 import { initNavHighlight, initNavMenu } from "./nav.js";
 import { initResearch } from "./research.js";
 import { initBlogs } from "./blogs.js";

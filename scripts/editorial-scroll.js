@@ -4,6 +4,29 @@ const easeOutCubic = (value) => 1 - ((1 - value) ** 3);
 const HERO_SCROLL_TRAVEL_FACTOR = 0.42;
 const MINI_SCROLL_TRAVEL_FACTOR = 0.58;
 
+const scrollToNearestCard = (rail, targetLeft) => {
+  const cards = Array.from(rail.children);
+  if (!cards.length) {
+    rail.scrollLeft = targetLeft;
+    return;
+  }
+
+  const railCenter = targetLeft + rail.clientWidth / 2;
+  let closestLeft = targetLeft;
+  let closestDistance = Infinity;
+
+  cards.forEach((card) => {
+    const cardCenter = card.offsetLeft + card.clientWidth / 2;
+    const distance = Math.abs(cardCenter - railCenter);
+    if (distance < closestDistance) {
+      closestDistance = distance;
+      closestLeft = card.offsetLeft - (rail.clientWidth - card.clientWidth) / 2;
+    }
+  });
+
+  rail.scrollLeft = clamp(closestLeft, 0, rail.scrollWidth - rail.clientWidth);
+};
+
 export const initEditorialScroll = (section, heroRail, miniGrid) => {
   if (!section || !heroRail || !miniGrid) return () => {};
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return () => {};
@@ -34,8 +57,8 @@ export const initEditorialScroll = (section, heroRail, miniGrid) => {
     const rawProgress = (startOffset - rect.top) / totalTravel;
     const progress = easeOutCubic(clamp(rawProgress, 0, 1));
 
-    heroRail.scrollLeft = heroMax * progress * HERO_SCROLL_TRAVEL_FACTOR;
-    miniGrid.scrollLeft = miniMax * (1 - progress * MINI_SCROLL_TRAVEL_FACTOR);
+    scrollToNearestCard(heroRail, heroMax * progress * HERO_SCROLL_TRAVEL_FACTOR);
+    scrollToNearestCard(miniGrid, miniMax * (1 - progress * MINI_SCROLL_TRAVEL_FACTOR));
   };
 
   const requestApplyScroll = () => {

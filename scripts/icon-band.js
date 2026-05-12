@@ -1,4 +1,5 @@
-const ICONS_URL = "data/icons.json";
+import { createTechIconIndex, loadTechIcons, resolveTechStack } from "./core/tech-icons.js";
+
 const PROJECTS_URL = "data/projects.json";
 const CARDS_PER_COLUMN = 3;
 const DEFAULT_ICON_SIZE = 96;
@@ -137,17 +138,8 @@ const renderLoopingColumns = (band, columns, icons, metrics) => {
   return cycleWidth;
 };
 
-const loadIcons = async () => {
-  const response = await fetch(ICONS_URL);
-  if (!response.ok) {
-    return [];
-  }
-  const data = await response.json();
-  return Array.isArray(data.icons) ? data.icons : [];
-};
-
 const loadProjects = async () => {
-  const response = await fetch(PROJECTS_URL);
+  const response = await fetch(PROJECTS_URL, { cache: "no-store" });
   if (!response.ok) {
     return [];
   }
@@ -304,9 +296,14 @@ export const initIconBand = async () => {
     return;
   }
 
-  const [icons, projects] = await Promise.all([loadIcons(), loadProjects()]);
+  const [icons, rawProjects] = await Promise.all([loadTechIcons(), loadProjects()]);
   if (!icons.length) return;
 
+  const iconIndex = createTechIconIndex(icons);
+  const projects = rawProjects.map((project) => ({
+    ...project,
+    stack: resolveTechStack(project.stack, iconIndex),
+  }));
   const usageIndex = buildTechUsageIndex(projects);
   let activeButton = null;
   let cycleWidth = 0;

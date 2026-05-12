@@ -311,8 +311,37 @@
             <section
                 id="projects"
                 class="projects-section"
-                aria-label="Projects"
+                aria-labelledby="projects-carousel-title"
             >
+                <div class="projects-showcase-inner">
+                    <div class="projects-showcase-header">
+                        <h2 id="projects-carousel-title">
+                            Projects. Built systems.
+                        </h2>
+                        <div
+                            class="projects-showcase-controls"
+                            role="group"
+                            aria-label="Project carousel navigation"
+                        >
+                            <button
+                                class="projects-showcase-control"
+                                type="button"
+                                data-project-prev
+                                aria-label="Scroll project cards left"
+                            >
+                                <span aria-hidden="true">&#8592;</span>
+                            </button>
+                            <button
+                                class="projects-showcase-control"
+                                type="button"
+                                data-project-next
+                                aria-label="Scroll project cards right"
+                            >
+                                <span aria-hidden="true">&#8594;</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
                 <div
                     class="projects-carousel"
                     aria-label="Project carousel"
@@ -550,6 +579,6 @@
                 </div>
             </section>
         </main>
-        <script type="module" src="scripts/main.js"></script>
+        <script type="module" src="scripts/main.js?v=stack-labels"></script>
     </body>
 </html>

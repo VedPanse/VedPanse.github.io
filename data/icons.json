@@ -49,7 +49,7 @@
       "label": "Flask"
     },
     {
-      "src": "assets/tech/flutter-tech.png",
+      "src": "assets/tech/flutter.png",
       "label": "Flutter"
     },
     {
@@ -103,6 +103,10 @@
     {
       "src": "assets/tech/electron.png",
       "label": "Electron"
+    },
+    {
+      "src": "assets/tech/rpi.png",
+      "label": "Raspberry Pi"
     },
     {
       "src": "assets/tech/ruby.png",
