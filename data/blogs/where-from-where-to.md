@@ -7,7 +7,7 @@ excerpt: Reflections on infrastructure, AI, systems design, graphics, and the se
 
 # Software Engineering: Where From, Where To?
 
-![A quiet workspace filled with system diagrams, notebooks, and glowing monitors late at night](assets/banners/software-engineering-where-from-where-to.png)
+![A quiet workspace filled with system diagrams, notebooks, and glowing monitors late at night](assets/banners/where_to.png)
 
 I started programming a long time ago, and looking back, it has been an incredible journey. There were plenty of ups and downs, but I now feel like I have reached one of the biggest milestones a college student can realistically aim for: an internship at Apple.
 
