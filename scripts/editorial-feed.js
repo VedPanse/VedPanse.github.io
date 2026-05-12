@@ -1,3 +1,4 @@
+import { initEditorialMotion } from "./editorial-scroll.js?v=editorial-motion";
 import { extractTitle, parseFrontMatter } from "./markdown.js";
 
 const WORK_BANNERS_DIR = "assets/banners/work";
@@ -181,6 +182,7 @@ export const initEditorialFeed = async ({
   renderBand(miniGrid, items.slice(heroCount), (item) => buildMiniCard(item, postUrl, defaultKind));
   centerSecondItem(heroRail);
   centerSecondItem(miniGrid);
+  initEditorialMotion(section, heroRail, miniGrid);
 
   loadMoreButton.hidden = true;
   loadMoreButton.disabled = true;

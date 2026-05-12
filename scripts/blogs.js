@@ -1,4 +1,4 @@
-import { initEditorialFeed } from "./editorial-feed.js";
+import { initEditorialFeed } from "./editorial-feed.js?v=editorial-motion";
 
 export const initBlogs = () =>
   initEditorialFeed({

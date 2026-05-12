@@ -1,82 +1,70 @@
 const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
 
 const easeOutCubic = (value) => 1 - ((1 - value) ** 3);
-const HERO_SCROLL_TRAVEL_FACTOR = 0.42;
-const MINI_SCROLL_TRAVEL_FACTOR = 0.58;
 
-const scrollToNearestCard = (rail, targetLeft) => {
-  const cards = Array.from(rail.children);
-  if (!cards.length) {
-    rail.scrollLeft = targetLeft;
-    return;
-  }
-
-  const railCenter = targetLeft + rail.clientWidth / 2;
-  let closestLeft = targetLeft;
-  let closestDistance = Infinity;
-
-  cards.forEach((card) => {
-    const cardCenter = card.offsetLeft + card.clientWidth / 2;
-    const distance = Math.abs(cardCenter - railCenter);
-    if (distance < closestDistance) {
-      closestDistance = distance;
-      closestLeft = card.offsetLeft - (rail.clientWidth - card.clientWidth) / 2;
-    }
-  });
-
-  rail.scrollLeft = clamp(closestLeft, 0, rail.scrollWidth - rail.clientWidth);
+const setMotionVariable = (section, name, value) => {
+  section.style.setProperty(name, value);
 };
 
-export const initEditorialScroll = (section, heroRail, miniGrid) => {
+export const initEditorialMotion = (section, heroRail, miniGrid) => {
   if (!section || !heroRail || !miniGrid) return () => {};
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return () => {};
+
+  const cards = Array.from(section.querySelectorAll(".editorial-hero-card, .editorial-mini-card"));
+  cards.forEach((card, index) => {
+    card.style.setProperty("--editorial-card-index", String(index));
+    card.style.setProperty("--editorial-card-delay", `${Math.min(index, 5) * 54}ms`);
+  });
+
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    section.classList.add("is-editorial-ready");
+    cards.forEach((card) => card.classList.add("is-visible"));
+    return () => {};
+  }
 
   let rafId = 0;
-  const heroSnapType = heroRail.style.scrollSnapType;
-  const heroScrollBehavior = heroRail.style.scrollBehavior;
-  const miniSnapType = miniGrid.style.scrollSnapType;
-  const miniScrollBehavior = miniGrid.style.scrollBehavior;
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        entry.target.classList.toggle("is-visible", entry.isIntersecting);
+      });
+    },
+    { rootMargin: "0px 0px -12% 0px", threshold: 0.18 }
+  );
 
-  heroRail.style.scrollSnapType = "none";
-  heroRail.style.scrollBehavior = "auto";
-  miniGrid.style.scrollSnapType = "none";
-  miniGrid.style.scrollBehavior = "auto";
+  cards.forEach((card) => observer.observe(card));
+  section.classList.add("is-editorial-motion", "is-editorial-ready");
 
-  const applyScroll = () => {
+  const applyMotion = () => {
     rafId = 0;
-
-    const heroMax = Math.max(0, heroRail.scrollWidth - heroRail.clientWidth);
-    const miniMax = Math.max(0, miniGrid.scrollWidth - miniGrid.clientWidth);
-    if (!heroMax && !miniMax) return;
-
     const rect = section.getBoundingClientRect();
-    const startOffset = window.innerHeight * 0.82;
-    const totalTravel = startOffset + rect.height;
-    if (totalTravel <= 0) return;
+    const travel = window.innerHeight + rect.height;
+    const rawProgress = travel > 0 ? (window.innerHeight - rect.top) / travel : 0;
+    const progress = clamp(rawProgress, 0, 1);
+    const intro = easeOutCubic(clamp(progress * 2.1, 0, 1));
+    const exit = easeOutCubic(clamp((progress - 0.72) / 0.28, 0, 1));
 
-    const rawProgress = (startOffset - rect.top) / totalTravel;
-    const progress = easeOutCubic(clamp(rawProgress, 0, 1));
-
-    scrollToNearestCard(heroRail, heroMax * progress * HERO_SCROLL_TRAVEL_FACTOR);
-    scrollToNearestCard(miniGrid, miniMax * (1 - progress * MINI_SCROLL_TRAVEL_FACTOR));
+    setMotionVariable(section, "--editorial-title-y", `${(1 - intro) * 34 - exit * 14}px`);
+    setMotionVariable(section, "--editorial-title-opacity", (0.22 + intro * 0.78 - exit * 0.16).toFixed(3));
+    setMotionVariable(section, "--editorial-hero-y", `${(1 - intro) * 46 - exit * 18}px`);
+    setMotionVariable(section, "--editorial-mini-y", `${(1 - intro) * 66 - exit * 12}px`);
+    setMotionVariable(section, "--editorial-rail-scale", (0.965 + intro * 0.035).toFixed(4));
+    setMotionVariable(section, "--editorial-rail-opacity", (0.34 + intro * 0.66).toFixed(3));
+    setMotionVariable(section, "--editorial-media-y", `${(0.5 - progress) * 26}px`);
   };
 
-  const requestApplyScroll = () => {
+  const requestApplyMotion = () => {
     if (rafId) return;
-    rafId = window.requestAnimationFrame(applyScroll);
+    rafId = window.requestAnimationFrame(applyMotion);
   };
 
-  window.addEventListener("scroll", requestApplyScroll, { passive: true });
-  window.addEventListener("resize", requestApplyScroll);
-  requestApplyScroll();
+  window.addEventListener("scroll", requestApplyMotion, { passive: true });
+  window.addEventListener("resize", requestApplyMotion);
+  requestApplyMotion();
 
   return () => {
-    window.removeEventListener("scroll", requestApplyScroll);
-    window.removeEventListener("resize", requestApplyScroll);
-    heroRail.style.scrollSnapType = heroSnapType;
-    heroRail.style.scrollBehavior = heroScrollBehavior;
-    miniGrid.style.scrollSnapType = miniSnapType;
-    miniGrid.style.scrollBehavior = miniScrollBehavior;
+    window.removeEventListener("scroll", requestApplyMotion);
+    window.removeEventListener("resize", requestApplyMotion);
+    observer.disconnect();
     if (rafId) {
       window.cancelAnimationFrame(rafId);
     }
