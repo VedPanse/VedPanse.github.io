@@ -1,6 +1,6 @@
+import { loadProjects } from "./core/project-data.js?v=repo-refactor";
 import { createTechIconIndex, loadTechIcons, resolveTechStack } from "./core/tech-icons.js";
 
-const PROJECTS_URL = "data/projects.json";
 const CARDS_PER_COLUMN = 3;
 const DEFAULT_ICON_SIZE = 96;
 const DEFAULT_GAP = 20;
@@ -136,15 +136,6 @@ const renderLoopingColumns = (band, columns, icons, metrics) => {
   const cycleWidth = columns.scrollWidth / LOOP_SEGMENTS;
   band.scrollLeft = cycleWidth;
   return cycleWidth;
-};
-
-const loadProjects = async () => {
-  const response = await fetch(PROJECTS_URL, { cache: "no-store" });
-  if (!response.ok) {
-    return [];
-  }
-  const data = await response.json();
-  return Array.isArray(data.projects) ? data.projects : [];
 };
 
 const buildTechUsageIndex = (projects) => {

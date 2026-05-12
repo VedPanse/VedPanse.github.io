@@ -1,3 +1,5 @@
+import { parseCommaValues, loadIndexedFiles, sortByDateDesc } from "./core/content-utils.js?v=repo-refactor";
+import { createElement } from "./core/dom-factory.js?v=repo-refactor";
 import { applyLabelColor } from "./label-color.js";
 import { parseFrontMatter, extractExcerpt, extractTitle, parseMarkdown, escapeHtml } from "./markdown.js";
 import { initNavMenu } from "./nav.js";
@@ -7,17 +9,6 @@ import { initializeTheme } from "./theme.js";
 const DEFAULT_NOT_FOUND_URL = "/404.html";
 const DEFAULT_AUTHOR = "Ved Panse";
 const MAX_LEFT_RAIL_ITEMS = 6;
-
-const parseDateValue = (value) => {
-  const parsed = Date.parse(value || "");
-  return Number.isNaN(parsed) ? 0 : parsed;
-};
-
-const parseCommaValues = (value) =>
-  (value || "")
-    .split(",")
-    .map((entry) => entry.trim())
-    .filter(Boolean);
 
 const parseLabels = (value, fallback) => {
   const labels = parseCommaValues(value);
@@ -32,7 +23,7 @@ const setText = (selector, value) => {
 };
 
 const createPaginationLink = (href, title, direction) => {
-  const link = document.createElement("a");
+  const link = createElement("a");
   link.className = `blog-pagination-link blog-pagination-link--${direction}`;
   link.href = href;
   link.textContent = direction === "previous" ? "← Previous" : "Next →";
@@ -49,7 +40,7 @@ const renderLabels = (labels) => {
 
   labelRoot.innerHTML = "";
   labels.forEach((labelValue) => {
-    const chip = document.createElement("span");
+    const chip = createElement("span");
     chip.className = "blog-label-chip";
     chip.textContent = labelValue;
     applyLabelColor(chip, labelValue);
@@ -84,20 +75,8 @@ const redirectToNotFound = (url) => {
 
 const isValidSlug = (value) => /^[a-z0-9-]+$/i.test(value || "");
 
-const buildIndexFilePath = (directory, file) => (file.startsWith(directory) ? file : `${directory}/${file}`);
-
-const loadIndexFiles = async (indexUrl, directory) => {
-  const response = await fetch(indexUrl);
-  if (!response.ok) return [];
-
-  const indexData = await response.json();
-  if (!Array.isArray(indexData)) return [];
-
-  return indexData.map((file) => buildIndexFilePath(directory, file));
-};
-
 const loadSummaries = async ({ directory, indexUrl, defaultLabel }) => {
-  const files = await loadIndexFiles(indexUrl, directory);
+  const files = await loadIndexedFiles(indexUrl, directory);
   const items = await Promise.all(
     files.map(async (file) => {
       const response = await fetch(file);
@@ -117,7 +96,7 @@ const loadSummaries = async ({ directory, indexUrl, defaultLabel }) => {
     })
   );
 
-  return items.filter(Boolean).sort((a, b) => parseDateValue(b.date) - parseDateValue(a.date));
+  return sortByDateDesc(items.filter(Boolean));
 };
 
 const renderLeftRail = ({ items, activeSlug, postUrl, topicBrowseHref, topicAriaLabel }) => {
@@ -128,7 +107,7 @@ const renderLeftRail = ({ items, activeSlug, postUrl, topicBrowseHref, topicAria
 
   recentRoot.innerHTML = "";
   items.slice(0, MAX_LEFT_RAIL_ITEMS).forEach((item) => {
-    const link = document.createElement("a");
+    const link = createElement("a");
     link.className = "blog-recent-link";
     if (item.slug === activeSlug) {
       link.classList.add("is-active");
@@ -149,7 +128,7 @@ const renderLeftRail = ({ items, activeSlug, postUrl, topicBrowseHref, topicAria
 
   topicsRoot.innerHTML = "";
   uniqueTopics.forEach((topic) => {
-    const link = document.createElement("a");
+    const link = createElement("a");
     link.className = "blog-topic-link";
     link.href = topicBrowseHref;
     link.textContent = topic;

@@ -464,6 +464,98 @@ html[data-theme="light"] .blog-content img {
   justify-self: end;
 }
 
+.secure-blog-layout {
+  min-height: calc(100vh - var(--nav-height));
+  place-items: center;
+}
+
+.secure-gate {
+  width: min(520px, 100%);
+  margin: 72px auto;
+  padding: 34px;
+  border: 1px solid var(--blog-border);
+  border-radius: 24px;
+  background: color-mix(in srgb, var(--blog-panel) 82%, transparent);
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.26);
+  display: grid;
+  gap: 18px;
+}
+
+html[data-theme="light"] .secure-gate {
+  box-shadow: 0 24px 70px rgba(15, 15, 16, 0.12);
+}
+
+.secure-kicker,
+.secure-context,
+.secure-status,
+.secure-password-label {
+  color: var(--blog-muted);
+}
+
+.secure-kicker {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.secure-gate h1 {
+  margin: 0;
+  color: var(--blog-text);
+  font-size: clamp(30px, 6vw, 46px);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+.secure-context,
+.secure-status {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.secure-form {
+  display: grid;
+  gap: 12px;
+}
+
+.secure-password-label {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.secure-password-input {
+  width: 100%;
+  min-height: 48px;
+  border: 1px solid var(--blog-border);
+  border-radius: 14px;
+  background: var(--blog-code-bg);
+  color: var(--blog-text);
+  padding: 0 14px;
+  font: inherit;
+}
+
+.secure-password-input:focus {
+  outline: 2px solid var(--blog-accent);
+  outline-offset: 3px;
+}
+
+.secure-submit {
+  min-height: 48px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--blog-accent);
+  color: #ffffff;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.secure-submit:disabled {
+  cursor: default;
+  opacity: 0.58;
+}
+
 .blog-toc {
   position: relative;
   display: grid;

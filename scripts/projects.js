@@ -1,8 +1,7 @@
 import { DomFactory } from "./core/dom-factory.js";
-import { JsonRepository } from "./core/json-repository.js";
+import { loadProjects } from "./core/project-data.js?v=repo-refactor";
 import { createTechIconIndex, loadTechIcons, resolveTechStack } from "./core/tech-icons.js";
 
-const PROJECTS_URL = "data/projects.json";
 const STACK_COLUMNS = 3;
 const AUTOPLAY_DURATION_MS = 10000;
 const WHEEL_NAVIGATION_THRESHOLD_PX = 180;
@@ -21,27 +20,6 @@ const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
  *   url?: string
  * }} Project
  */
-
-class ProjectsRepository extends JsonRepository {
-  constructor() {
-    super(PROJECTS_URL);
-  }
-
-  /**
-   * @return {Promise<Array<Project>>}
-   */
-  async loadProjects() {
-    const response = await fetch(PROJECTS_URL, { cache: "no-store" });
-    if (!response.ok) {
-      return [];
-    }
-    const data = await response.json();
-    if (!data || typeof data !== "object" || !Array.isArray(data.projects)) {
-      return [];
-    }
-    return /** @type {Array<Project>} */ (data.projects);
-  }
-}
 
 class ProjectCardRenderer {
   /**
@@ -686,9 +664,8 @@ export const initProjectsCarousel = async () => {
     return;
   }
 
-  const repository = new ProjectsRepository();
   const [rawProjects, icons] = await Promise.all([
-    repository.loadProjects(),
+    loadProjects(),
     loadTechIcons(),
   ]);
   const iconIndex = createTechIconIndex(icons);

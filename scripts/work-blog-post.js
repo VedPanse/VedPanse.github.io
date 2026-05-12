@@ -1,4 +1,4 @@
-import { initPostPage } from "./post-page.js";
+import { initPostPage } from "./post-page.js?v=repo-refactor";
 import "./footer.js";
 
 initPostPage({

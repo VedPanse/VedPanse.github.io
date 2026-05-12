@@ -537,6 +537,24 @@
                             data-contact-started-at
                             value=""
                         />
+                        <input
+                            type="hidden"
+                            name="contact_nonce"
+                            data-contact-nonce
+                            value=""
+                        />
+                        <input
+                            type="hidden"
+                            name="contact_verified_at"
+                            data-contact-verified-at
+                            value=""
+                        />
+                        <input
+                            type="hidden"
+                            name="contact_proof"
+                            data-contact-proof
+                            value=""
+                        />
                         <label class="contact-honeypot" aria-hidden="true">
                             <span>Leave this field empty</span>
                             <input
@@ -544,6 +562,26 @@
                                 name="_gotcha"
                                 tabindex="-1"
                                 autocomplete="off"
+                            />
+                        </label>
+                        <label class="contact-honeypot" aria-hidden="true">
+                            <span>Website</span>
+                            <input
+                                type="url"
+                                name="website"
+                                tabindex="-1"
+                                autocomplete="off"
+                                data-contact-decoy
+                            />
+                        </label>
+                        <label class="contact-honeypot" aria-hidden="true">
+                            <span>Company</span>
+                            <input
+                                type="text"
+                                name="company"
+                                tabindex="-1"
+                                autocomplete="off"
+                                data-contact-decoy
                             />
                         </label>
                         <label class="contact-field">
@@ -568,6 +606,7 @@
                                 class="contact-submit"
                                 type="submit"
                                 aria-label="Send message"
+                                data-contact-submit
                             >
                                 <span
                                     class="contact-arrow"
@@ -579,6 +618,6 @@
                 </div>
             </section>
         </main>
-        <script type="module" src="scripts/main.js?v=editorial-motion"></script>
+        <script type="module" src="scripts/main.js?v=contact-protection"></script>
     </body>
 </html>

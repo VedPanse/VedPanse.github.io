@@ -4,8 +4,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Research Post | Ved Panse</title>
-  <meta name="description" content="Research update from Ved Panse." />
+  <title>Secure Blog | Ved Panse</title>
+  <meta name="description" content="Password-protected encrypted blog post from Ved Panse." />
+  <meta name="robots" content="noindex, nofollow" />
   <meta name="theme-color" content="#f5f5f7" />
   <meta name="color-scheme" content="light dark" />
   <script>
@@ -20,7 +21,7 @@
   <link rel="stylesheet" href="styles/blog.css" />
 </head>
 
-<body class="blog-view">
+<body class="blog-view secure-blog-view">
   <header class="site-header">
     <nav class="global-nav" aria-label="Primary">
       <div class="nav-inner">
@@ -29,7 +30,7 @@
           <a href="index.html#icon-columns">About</a>
           <a href="index.html#projects">Projects</a>
           <a href="index.html#work">Work</a>
-          <a href="index.html#research" class="is-active">Research</a>
+          <a href="index.html#research">Research</a>
           <a href="index.html#blogs">Blogs</a>
           <a href="index.html#current-focus">Current Focus</a>
           <a href="index.html#contact">Contact</a>
@@ -83,8 +84,23 @@
     </div>
   </div>
 
-  <main class="blog-layout" aria-live="polite">
-    <section class="blog-main" aria-label="Research post">
+  <main class="blog-layout secure-blog-layout" aria-live="polite">
+    <section class="secure-gate" data-secure-gate aria-label="Unlock secure blog post">
+      <p class="secure-kicker">Encrypted blog</p>
+      <h1>Enter password</h1>
+      <p class="secure-context">
+        <span data-secure-blog-vault></span> / <span data-secure-blog-post></span>
+      </p>
+      <form class="secure-form" data-secure-form>
+        <label class="secure-password-label" for="secure-password">Password</label>
+        <input id="secure-password" class="secure-password-input" data-secure-password type="password"
+          autocomplete="current-password" required />
+        <button class="secure-submit" data-secure-submit type="submit">Unlock</button>
+      </form>
+      <p class="secure-status" data-secure-status hidden></p>
+    </section>
+
+    <section class="blog-main" data-secure-article aria-label="Secure blog post" hidden>
       <header class="blog-main-header">
         <p class="blog-meta-row">
           <span data-blog-date></span>
@@ -96,7 +112,6 @@
       </header>
 
       <article class="blog-content" data-blog-content></article>
-      <nav class="blog-pagination" data-blog-pagination aria-label="Post navigation" hidden></nav>
     </section>
   </main>
 
@@ -123,7 +138,7 @@
     </div>
   </div>
 
-  <script type="module" src="scripts/research-post.js?v=repo-refactor"></script>
+  <script type="module" src="scripts/secure-blog-post.js?v=secure-blogs"></script>
 </body>
 
 </html>

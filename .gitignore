@@ -1,2 +1,5 @@
 .DS_Store
 **/.DS_Store
+secure-blogs/**/*.md
+secure-blogs/**/.password
+secure-blogs/**/.password.*

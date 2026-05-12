@@ -1,11 +1,11 @@
-import { initIconBand } from "./icon-band.js?v=stack-labels";
+import { initIconBand } from "./icon-band.js?v=repo-refactor";
 import { initContent } from "./content.js";
-import { initWorkSection, initWorkExperience } from "./work.js";
-import { initProjectsCarousel } from "./projects.js?v=stack-labels";
+import { initWorkSection, initWorkExperience } from "./work.js?v=repo-refactor";
+import { initProjectsCarousel } from "./projects.js?v=repo-refactor";
 import { initNavHighlight, initNavMenu } from "./nav.js";
-import { initResearch } from "./research.js?v=editorial-motion";
-import { initBlogs } from "./blogs.js?v=editorial-motion";
-import { initContactForm } from "./contact.js";
+import { initResearch } from "./research.js?v=repo-refactor";
+import { initBlogs } from "./blogs.js?v=repo-refactor";
+import { initContactForm } from "./contact.js?v=contact-protection";
 import { initSearchOverlay } from "./search.js";
 import { initializeTheme } from "./theme.js";
 import "./footer.js";

@@ -1,3 +1,16 @@
+/**
+ * @param {string} tagName
+ * @param {string=} className
+ * @return {HTMLElement}
+ */
+export const createElement = (tagName, className = "") => {
+  const element = document.createElement(tagName);
+  if (className) {
+    element.className = className;
+  }
+  return element;
+};
+
 export class DomFactory {
   /**
    * @param {string} tagName
@@ -5,10 +18,6 @@ export class DomFactory {
    * @return {HTMLElement}
    */
   static createElement(tagName, className = "") {
-    const element = document.createElement(tagName);
-    if (className) {
-      element.className = className;
-    }
-    return element;
+    return createElement(tagName, className);
   }
 }

@@ -1,47 +1,12 @@
+import { parseCommaValues, loadIndexedFiles, sortByDateDesc } from "./core/content-utils.js?v=repo-refactor";
+import { createElement } from "./core/dom-factory.js?v=repo-refactor";
 import { initEditorialMotion } from "./editorial-scroll.js?v=editorial-motion";
 import { extractTitle, parseFrontMatter } from "./markdown.js";
 
 const WORK_BANNERS_DIR = "assets/banners/work";
 const WORK_BANNERS_INDEX_URL = `${WORK_BANNERS_DIR}/index.json`;
 
-const createElement = (tag, className) => {
-  const element = document.createElement(tag);
-  if (className) {
-    element.className = className;
-  }
-  return element;
-};
-
-const parseDateValue = (value) => {
-  const parsed = Date.parse(value || "");
-  return Number.isNaN(parsed) ? 0 : parsed;
-};
-
-const parseCommaValues = (value) =>
-  (value || "")
-    .split(",")
-    .map((entry) => entry.trim())
-    .filter(Boolean);
-
-const listIndexedFiles = async (indexUrl, directory) => {
-  const response = await fetch(indexUrl);
-  if (!response.ok) return [];
-
-  const indexData = await response.json();
-  if (!Array.isArray(indexData)) return [];
-
-  return indexData.map((file) => (file.startsWith(directory) ? file : `${directory}/${file}`));
-};
-
-const listWorkBanners = async () => {
-  const response = await fetch(WORK_BANNERS_INDEX_URL);
-  if (!response.ok) return [];
-
-  const indexData = await response.json();
-  if (!Array.isArray(indexData)) return [];
-
-  return indexData.map((file) => (file.startsWith(WORK_BANNERS_DIR) ? file : `${WORK_BANNERS_DIR}/${file}`));
-};
+const listWorkBanners = () => loadIndexedFiles(WORK_BANNERS_INDEX_URL, WORK_BANNERS_DIR);
 
 const buildHeroCard = (item, postUrl, defaultKind) => {
   const link = createElement("a", "editorial-hero-card");
@@ -125,7 +90,7 @@ const centerSecondItem = (container) => {
 };
 
 const loadFeedItems = async ({ directory, indexUrl, defaultKind }) => {
-  const [files, bannerImages] = await Promise.all([listIndexedFiles(indexUrl, directory), listWorkBanners()]);
+  const [files, bannerImages] = await Promise.all([loadIndexedFiles(indexUrl, directory), listWorkBanners()]);
   const items = await Promise.all(
     files.map(async (file, index) => {
       const response = await fetch(file);
@@ -149,7 +114,7 @@ const loadFeedItems = async ({ directory, indexUrl, defaultKind }) => {
     })
   );
 
-  return items.filter(Boolean).sort((a, b) => parseDateValue(b.date) - parseDateValue(a.date));
+  return sortByDateDesc(items.filter(Boolean));
 };
 
 export const initEditorialFeed = async ({

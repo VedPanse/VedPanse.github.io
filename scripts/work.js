@@ -1,14 +1,11 @@
+import { loadIndexedFiles } from "./core/content-utils.js?v=repo-refactor";
+import { createElement } from "./core/dom-factory.js?v=repo-refactor";
+
 const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
 
 const WORK_DATA_URL = "data/work.json";
 const WORK_BANNERS_DIR = "assets/banners/work";
 const WORK_BANNERS_INDEX_URL = `${WORK_BANNERS_DIR}/index.json`;
-
-const createElement = (tag, className) => {
-  const element = document.createElement(tag);
-  if (className) element.className = className;
-  return element;
-};
 
 const TAU = Math.PI * 2;
 const GOLDEN_RATIO_CONJUGATE = 0.6180339887498949;
@@ -244,13 +241,7 @@ const resolveGradient = (item) => {
   };
 };
 
-const listWorkImages = async () => {
-  const response = await fetch(WORK_BANNERS_INDEX_URL);
-  if (!response.ok) return [];
-  const indexData = await response.json();
-  if (!Array.isArray(indexData)) return [];
-  return indexData.map((file) => (file.startsWith(WORK_BANNERS_DIR) ? file : `${WORK_BANNERS_DIR}/${file}`));
-};
+const listWorkImages = () => loadIndexedFiles(WORK_BANNERS_INDEX_URL, WORK_BANNERS_DIR);
 
 const renderWorkCard = (item) => {
   const article = createElement("article", "work-rail-card");
