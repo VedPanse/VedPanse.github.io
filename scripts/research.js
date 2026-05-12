@@ -1,4 +1,4 @@
-import { initEditorialFeed } from "./editorial-feed.js?v=repo-refactor";
+import { initEditorialFeed } from "./editorial-feed.js?v=no-editorial-motion";
 
 export const initResearch = () =>
   initEditorialFeed({
