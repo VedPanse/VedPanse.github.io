@@ -1339,7 +1339,7 @@ body.is-tech-detail-open {
 
 .editorial-hero-rail {
   --editorial-hero-gap: 14px;
-  --editorial-hero-peek: clamp(92px, 8vw, 136px);
+  --editorial-hero-peek: clamp(64px, 5.5vw, 96px);
   --editorial-hero-width: calc(100% - (var(--editorial-hero-peek) * 2) - var(--editorial-hero-gap));
   display: grid;
   grid-auto-flow: column;
@@ -1480,8 +1480,8 @@ body.is-tech-detail-open {
 
 .editorial-mini-grid {
   --editorial-mini-gap: 12px;
-  --editorial-mini-peek: clamp(32px, 4vw, 72px);
-  --editorial-mini-width: calc((100% - (var(--editorial-mini-peek) * 2) - (var(--editorial-mini-gap) * 2)) / 3);
+  --editorial-mini-peek: 0px;
+  --editorial-mini-width: calc((100% - var(--editorial-mini-gap)) / 2);
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: var(--editorial-mini-width);
@@ -1713,13 +1713,13 @@ body.is-tech-detail-open {
   }
 
   .editorial-hero-rail {
-    --editorial-hero-peek: clamp(48px, 6vw, 72px);
+    --editorial-hero-peek: clamp(36px, 4.5vw, 56px);
     --editorial-hero-width: calc(100% - (var(--editorial-hero-peek) * 2) - var(--editorial-hero-gap));
   }
 
   .editorial-mini-grid {
-    --editorial-mini-peek: 32px;
-    --editorial-mini-width: calc((100% - (var(--editorial-mini-peek) * 2) - var(--editorial-mini-gap)) / 2);
+    --editorial-mini-peek: 0px;
+    --editorial-mini-width: calc((100% - var(--editorial-mini-gap)) / 2);
   }
 }
 
@@ -1963,7 +1963,7 @@ body.is-tech-detail-open {
 
   .editorial-hero-rail {
     --editorial-hero-gap: 10px;
-    --editorial-hero-peek: 22px;
+    --editorial-hero-peek: 14px;
     --editorial-hero-width: calc(100% - (var(--editorial-hero-peek) * 2) - var(--editorial-hero-gap));
     gap: 10px;
     padding: 0 var(--editorial-hero-peek) 4px;
@@ -1971,7 +1971,7 @@ body.is-tech-detail-open {
 
   .editorial-mini-grid {
     --editorial-mini-gap: 10px;
-    --editorial-mini-peek: 24px;
+    --editorial-mini-peek: 0px;
     --editorial-mini-width: 78vw;
     grid-auto-columns: var(--editorial-mini-width);
     gap: 10px;
@@ -2037,8 +2037,9 @@ body.is-tech-detail-open {
   }
 
   .editorial-hero-overlay {
-    gap: 10px;
-    padding: 16px 16px 14px;
+    display: flex;
+    align-items: flex-end;
+    padding: 18px;
   }
 
   .editorial-hero-title {
@@ -2047,22 +2048,9 @@ body.is-tech-detail-open {
     line-height: 1.08;
   }
 
+  .editorial-hero-eyebrow,
   .editorial-hero-footer {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  .editorial-hero-pill {
-    min-width: 108px;
-    min-height: 34px;
-    padding: 0 14px;
-    font-size: 12px;
-  }
-
-  .editorial-hero-summary {
-    font-size: clamp(12px, 3.8vw, 14px);
-    line-height: 1.28;
+    display: none;
   }
 
   .editorial-mini-card {
