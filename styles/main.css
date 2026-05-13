@@ -1369,6 +1369,39 @@ body.is-tech-detail-open {
   background: #111318;
 }
 
+.editorial-hero-card,
+.editorial-mini-card {
+  animation: editorial-card-enter 0.7s cubic-bezier(0.2, 0.85, 0.22, 1) backwards;
+  transform-origin: center bottom;
+  transition: transform 0.45s cubic-bezier(0.2, 0.85, 0.22, 1), box-shadow 0.45s ease;
+}
+
+.editorial-hero-card:nth-child(2),
+.editorial-mini-card:nth-child(2) {
+  animation-delay: 70ms;
+}
+
+.editorial-hero-card:nth-child(3),
+.editorial-mini-card:nth-child(3) {
+  animation-delay: 120ms;
+}
+
+.editorial-hero-card:nth-child(n + 4),
+.editorial-mini-card:nth-child(n + 4) {
+  animation-delay: 160ms;
+}
+
+.editorial-hero-card:hover,
+.editorial-mini-card:hover {
+  transform: translateY(-3px) scale(1.006);
+  box-shadow: 0 20px 54px rgba(0, 0, 0, 0.24);
+}
+
+.editorial-hero-card:hover img,
+.editorial-mini-card:hover img {
+  transform: scale(1.035);
+}
+
 .editorial-hero-card:focus-visible {
   outline: 2px solid var(--editorial-focus);
   outline-offset: 4px;
@@ -1389,6 +1422,7 @@ body.is-tech-detail-open {
 .editorial-hero-media img {
   object-fit: cover;
   display: block;
+  transition: transform 0.7s cubic-bezier(0.2, 0.85, 0.22, 1);
 }
 
 .editorial-hero-overlay {
@@ -1530,6 +1564,7 @@ body.is-tech-detail-open {
 .editorial-mini-media img {
   object-fit: cover;
   display: block;
+  transition: transform 0.7s cubic-bezier(0.2, 0.85, 0.22, 1);
 }
 
 .editorial-mini-overlay {
@@ -1561,6 +1596,33 @@ body.is-tech-detail-open {
   letter-spacing: -0.018em;
   font-weight: 600;
   color: #ffffff;
+}
+
+@keyframes editorial-card-enter {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.985);
+    filter: saturate(0.92);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: saturate(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .editorial-hero-card,
+  .editorial-mini-card {
+    animation: none;
+    transition: none;
+  }
+
+  .editorial-hero-media img,
+  .editorial-mini-media img {
+    transition: none;
+  }
 }
 
 .focus-section {
