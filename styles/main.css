@@ -1363,7 +1363,7 @@ body.is-tech-detail-open {
   display: block;
   min-height: clamp(360px, 32vw, 560px);
   color: #ffffff;
-  border-radius: 0;
+  border-radius: 28px;
   overflow: hidden;
   scroll-snap-align: center;
   background: #111318;
@@ -1504,6 +1504,7 @@ body.is-tech-detail-open {
   position: relative;
   display: block;
   min-height: clamp(180px, 15vw, 248px);
+  border-radius: 22px;
   overflow: hidden;
   background: #111318;
   color: #ffffff;
@@ -1712,7 +1713,7 @@ body.is-tech-detail-open {
   }
 
   .editorial-hero-rail {
-    --editorial-hero-peek: clamp(68px, 8vw, 92px);
+    --editorial-hero-peek: clamp(48px, 6vw, 72px);
     --editorial-hero-width: calc(100% - (var(--editorial-hero-peek) * 2) - var(--editorial-hero-gap));
   }
 
@@ -1962,7 +1963,7 @@ body.is-tech-detail-open {
 
   .editorial-hero-rail {
     --editorial-hero-gap: 10px;
-    --editorial-hero-peek: 36px;
+    --editorial-hero-peek: 22px;
     --editorial-hero-width: calc(100% - (var(--editorial-hero-peek) * 2) - var(--editorial-hero-gap));
     gap: 10px;
     padding: 0 var(--editorial-hero-peek) 4px;
@@ -1996,7 +1997,8 @@ body.is-tech-detail-open {
   }
 
   .editorial-hero-card {
-    min-height: 62vw;
+    min-height: clamp(420px, 118vw, 520px);
+    border-radius: 24px;
   }
 
   .work-showcase-inner {
@@ -2065,6 +2067,7 @@ body.is-tech-detail-open {
 
   .editorial-mini-card {
     min-height: 50vw;
+    border-radius: 20px;
   }
 
   .editorial-mini-overlay {
