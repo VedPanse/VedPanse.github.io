@@ -4,7 +4,7 @@
       "name": "Smart Wild",
       "accent": "#5e5ce6",
       "description": "is a real-time wildlife and roadside hazard detection platform that combines live computer vision and deterrent systems to improve public safety.",
-      "longTitle": "SmartWild: a real-time wildlife and roadside hazard monitoring system with live ML inference, incident orchestration, geospatial risk mapping, deterrent control, and interactive public safety dashboards.",
+      "longTitle": "SmartWild: real-time wildlife and roadside hazard monitoring with live ML inference, incident orchestration, and safety dashboards.",
       "details": "SmartWild is a distributed wildlife and roadside safety platform built around live camera streams, cloud-hosted ML inference, event orchestration, and geospatial incident intelligence. Raspberry Pi edge cameras continuously stream video for real-time detection of animals and roadway hazards. When an incident is detected, the orchestration layer logs it into PostgreSQL, broadcasts alerts to connected Flutter and web clients through WebSockets, and can trigger deterrent systems like speakers and LED signals on edge devices. Historical incident data is visualized through an interactive authority dashboard that supports hotspot analysis, risk-zone overlays, accident correlation, sanctuary proximity analysis, and temporal filtering. The system is designed as a modular event-driven platform that separates video inference from incident coordination, allowing it to scale from wildlife detection into broader public safety and smart infrastructure applications.",
       "url": "https://github.com/VedPanse/smart-wild",
       "stack": [

@@ -316,6 +316,22 @@ class ProjectsCarousel {
       : absX > 0 && absX > absY * 2;
 
     if (!hasHorizontalIntent) {
+      const backFace = event.target instanceof Element
+        ? event.target.closest(".project-card-face--back")
+        : null;
+      const backContent = backFace ? backFace.querySelector(".project-card-back") : null;
+      const canScrollBackDown =
+        backContent &&
+        event.deltaY > 0 &&
+        backContent.scrollTop + backContent.clientHeight < backContent.scrollHeight - 1;
+      const canScrollBackUp = backContent && event.deltaY < 0 && backContent.scrollTop > 0;
+
+      if (canScrollBackDown || canScrollBackUp) {
+        event.preventDefault();
+        backContent.scrollTop += event.deltaY;
+        return;
+      }
+
       const scrollFace = event.target instanceof Element
         ? event.target.closest(".project-card-face--front, .project-card-face--back")
         : null;
