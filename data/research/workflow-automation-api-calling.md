@@ -1,5 +1,5 @@
 ---
-label: Research Notes,Web Spiders,Siri++
+label: Research Notes,Web Spiders,Friday
 date: February 20, 2026
 title: API service learning for efficient tool calling
 excerpt: Multi-modal virtual assistants need to maintain and learn the structure of the internet for tool calling. However, APIs are limited.

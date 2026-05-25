@@ -91,12 +91,12 @@
       ]
     },
     {
-      "name": "Siri++",
+      "name": "Friday",
       "accent": "#bf5af2",
       "description": "is a multimodal agent orchestration system focused on persistent memory, tool execution, and workflow completion.",
-      "longTitle": "Siri++: structured multimodal agent orchestration with persistent context and cross-tool execution.",
-      "details": "Siri++ explores the gap between single-turn LLM responses and sustained autonomous workflows. It integrates multimodal inputs (text, voice, images), structured memory, and tool invocation under explicit orchestration loops. Rather than wrapping APIs, the system models long-horizon task decomposition, state persistence, and recovery from execution failure—treating agent behavior as a systems problem, not a prompt problem.",
-      "url": "https://github.com/VedPanse/SiriPlusPlus",
+      "longTitle": "Friday: structured multimodal agent orchestration with persistent context and cross-tool execution.",
+      "details": "Friday explores the gap between single-turn LLM responses and sustained autonomous workflows. It integrates multimodal inputs (text, voice, images), structured memory, and tool invocation under explicit orchestration loops. Rather than wrapping APIs, the system models long-horizon task decomposition, state persistence, and recovery from execution failure—treating agent behavior as a systems problem, not a prompt problem.",
+      "url": "https://github.com/VedPanse/Friday",
       "stack": ["Swift", "Python", "Google Cloud Platform"],
       "focus": [
         "Agent control loops",

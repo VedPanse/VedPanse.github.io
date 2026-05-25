@@ -1,5 +1,5 @@
 ---
-label: Research Notes,Web Spiders,Siri++
+label: Research Notes,Web Spiders,Friday
 date: February 19, 2026
 title: Multi-modal agents with faster browser automation
 excerpt: Existing AI agents which rely on browser automation are slow. We can augment these technologies by using simple graph theory algorithms.
@@ -18,7 +18,7 @@ Can it recover from errors?
 Those questions matter — but they distract from the harder one:
 
 **How can agents, in the face of uncertainty, learn a new task under an unforeseen mode of input?**
-In pursuit of finding an answer, I started working on [Siri++](https://github.com/VedPanse/SiriPlusPlus), a virtual assistant that can assist the user by interacting with multiple input modes and output modes, with sequential tool usage pipelines to handle complicated requests.
+In pursuit of finding an answer, I started working on [Friday](https://github.com/VedPanse/Friday), a virtual assistant that can assist the user by interacting with multiple input modes and output modes, with sequential tool usage pipelines to handle complicated requests.
 
 ### Complicated requests over LLM models create noise
 Think of a complicated user request you would want Siri to handle: "When I get back home, order the usual dinner for me via Doordash."
@@ -60,6 +60,6 @@ The path we must therefore store in the AI agent's memory, so that it can be rec
 
 ![The final graph stored in memory](assets/research/multi-modal/fin_diagram.png)
 
-There are multiple methods we can use to make this graph shorter (like first scanning for all sinks and checking if the success state even lies in our domain, else rejecting the storage), but my goal in this research blog was to lay down the architecture and framework on which Siri++ browser automation will work.
+There are multiple methods we can use to make this graph shorter (like first scanning for all sinks and checking if the success state even lies in our domain, else rejecting the storage), but my goal in this research blog was to lay down the architecture and framework on which Friday browser automation will work.
 
 More to come.
