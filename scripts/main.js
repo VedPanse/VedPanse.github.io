@@ -2,6 +2,7 @@ import { initIconBand } from "./icon-band.js?v=repo-refactor";
 import { initContent } from "./content.js";
 import { initWorkSection, initWorkExperience } from "./work.js?v=repo-refactor";
 import { initProjectsCarousel } from "./projects.js?v=project-back-scroll";
+import { initProjectIconPyramid } from "./project-icon-pyramid.js?v=manifest-only";
 import { initNavHighlight, initNavMenu } from "./nav.js";
 import { initResearch } from "./research.js?v=no-editorial-motion";
 import { initBlogs } from "./blogs.js?v=no-editorial-motion";
@@ -17,6 +18,7 @@ class PortfolioApplication {
       initIconBand,
       initWorkSection,
       initWorkExperience,
+      initProjectIconPyramid,
       initProjectsCarousel,
       initNavHighlight,
       initNavMenu,

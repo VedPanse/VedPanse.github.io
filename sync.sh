@@ -51,3 +51,5 @@ if [ ! -d "$work_banners_dir" ]; then
   exit 1
 fi
 write_index_json "$work_banners_dir" "*"
+
+node "$ROOT_DIR/scripts/generate-icons.js"

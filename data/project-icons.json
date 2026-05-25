@@ -1,0 +1,72 @@
+{
+  "icons": [
+    {
+      "src": "assets/project-icons/Falcon Eye.png",
+      "label": "Falcon Eye"
+    },
+    {
+      "src": "assets/project-icons/OrbitFM.png",
+      "label": "OrbitFM"
+    },
+    {
+      "src": "assets/project-icons/arc.png",
+      "label": "ARC"
+    },
+    {
+      "src": "assets/project-icons/ballhawk.png",
+      "label": "Ballhawk"
+    },
+    {
+      "src": "assets/project-icons/daemon.png",
+      "label": "Daemon"
+    },
+    {
+      "src": "assets/project-icons/friday.png",
+      "label": "Friday"
+    },
+    {
+      "src": "assets/project-icons/ion.png",
+      "label": "ION"
+    },
+    {
+      "src": "assets/project-icons/javelinlang.png",
+      "label": "Javelinlang"
+    },
+    {
+      "src": "assets/project-icons/pulse.png",
+      "label": "Pulse"
+    },
+    {
+      "src": "assets/project-icons/rocket avionics.png",
+      "label": "Rocket avionics"
+    },
+    {
+      "src": "assets/project-icons/sentinel.png",
+      "label": "Sentinel"
+    },
+    {
+      "src": "assets/project-icons/shardwise.png",
+      "label": "Shardwise"
+    },
+    {
+      "src": "assets/project-icons/smartwild.png",
+      "label": "Smartwild"
+    },
+    {
+      "src": "assets/project-icons/sova.png",
+      "label": "Sova"
+    },
+    {
+      "src": "assets/project-icons/strata.png",
+      "label": "Strata"
+    },
+    {
+      "src": "assets/project-icons/task-registry.png",
+      "label": "Task Registry"
+    },
+    {
+      "src": "assets/project-icons/veditor.png",
+      "label": "Veditor"
+    }
+  ]
+}
