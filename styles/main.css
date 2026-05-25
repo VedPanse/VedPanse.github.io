@@ -1216,6 +1216,36 @@ body.is-tech-detail-open {
   color: var(--work-showcase-title);
 }
 
+.company-logo-strip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(18px, 2vw, 34px);
+  flex-wrap: wrap;
+  margin: 0 0 30px;
+}
+
+.company-logo-strip[hidden] {
+  display: none;
+}
+
+.company-logo-strip__item {
+  width: clamp(64px, 6vw, 96px);
+  height: clamp(64px, 6vw, 96px);
+  border-radius: 20px;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--work-showcase-title) 7%, transparent);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.18);
+  flex: 0 0 auto;
+}
+
+.company-logo-strip__item img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
 .work-showcase-control:disabled {
   opacity: 0.35;
   cursor: default;
@@ -2158,6 +2188,17 @@ body.is-tech-detail-open {
 
   .work-showcase-header {
     align-items: flex-end;
+  }
+
+  .company-logo-strip {
+    gap: 14px;
+    margin: 0 0 24px;
+  }
+
+  .company-logo-strip__item {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
   }
 
   .work-showcase-rail {

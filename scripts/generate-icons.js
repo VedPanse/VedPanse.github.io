@@ -4,9 +4,11 @@ const path = require("path");
 const assetsDir = path.join(__dirname, "..", "assets");
 const techIconsDir = path.join(assetsDir, "tech");
 const projectIconsDir = path.join(assetsDir, "project-icons");
+const companyLogosDir = path.join(assetsDir, "company-logo");
 const outputDir = path.join(__dirname, "..", "data");
 const techOutputFile = path.join(outputDir, "icons.json");
 const projectOutputFile = path.join(outputDir, "project-icons.json");
+const companyLogoOutputFile = path.join(outputDir, "company-logos.json");
 const allowedExt = new Set([".png", ".jpg", ".jpeg", ".webp", ".svg", ".gif", ".avif"]);
 
 const titleizeToken = (token) => {
@@ -79,8 +81,11 @@ const mergeWithExistingIcons = (generatedIcons, existingIcons) => {
 
 const techIcons = mergeWithExistingIcons(readIcons(techIconsDir, "assets/tech"), readExistingIcons(techOutputFile));
 const projectIcons = readIcons(projectIconsDir, "assets/project-icons");
+const companyLogos = readIcons(companyLogosDir, "assets/company-logo");
 
 fs.writeFileSync(techOutputFile, `${JSON.stringify({ icons: techIcons }, null, 2)}\n`);
 fs.writeFileSync(projectOutputFile, `${JSON.stringify({ icons: projectIcons }, null, 2)}\n`);
+fs.writeFileSync(companyLogoOutputFile, `${JSON.stringify({ icons: companyLogos }, null, 2)}\n`);
 console.log(`Wrote ${techIcons.length} icons to ${techOutputFile}`);
 console.log(`Wrote ${projectIcons.length} icons to ${projectOutputFile}`);
+console.log(`Wrote ${companyLogos.length} icons to ${companyLogoOutputFile}`);

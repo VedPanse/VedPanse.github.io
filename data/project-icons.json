@@ -33,6 +33,10 @@
       "label": "Javelinlang"
     },
     {
+      "src": "assets/project-icons/pomodoro.png",
+      "label": "Pomodoro"
+    },
+    {
       "src": "assets/project-icons/pulse.png",
       "label": "Pulse"
     },
