@@ -1,4 +1,5 @@
 const COMPANY_LOGO_MANIFEST_URL = "data/company-logos.json";
+let companyLogosPromise;
 
 const normalizeLogo = (logo) => {
   if (!logo || typeof logo !== "object" || !logo.src) return null;
@@ -9,16 +10,18 @@ const normalizeLogo = (logo) => {
 };
 
 const loadCompanyLogos = async () => {
-  try {
-    const response = await fetch(COMPANY_LOGO_MANIFEST_URL);
-    if (!response.ok) return [];
-    const data = await response.json();
-    return Array.isArray(data.icons)
-      ? data.icons.map(normalizeLogo).filter(Boolean)
-      : [];
-  } catch (error) {
-    return [];
+  if (!companyLogosPromise) {
+    companyLogosPromise = fetch(COMPANY_LOGO_MANIFEST_URL)
+      .then(async (response) => {
+        if (!response.ok) return [];
+
+        const data = await response.json();
+        return Array.isArray(data.icons) ? data.icons.map(normalizeLogo).filter(Boolean) : [];
+      })
+      .catch(() => []);
   }
+
+  return companyLogosPromise;
 };
 
 const createLogo = (logo) => {
@@ -27,9 +30,9 @@ const createLogo = (logo) => {
 
   const image = document.createElement("img");
   image.alt = logo.label;
-  image.loading = "eager";
+  image.loading = "lazy";
   image.decoding = "async";
-  image.fetchPriority = "high";
+  image.fetchPriority = "auto";
   image.src = logo.src;
 
   item.appendChild(image);

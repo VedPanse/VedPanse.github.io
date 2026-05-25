@@ -1,3 +1,5 @@
+const indexedFileCache = new Map();
+
 export const parseDateValue = (value) => {
   const parsed = Date.parse(value || "");
   return Number.isNaN(parsed) ? 0 : parsed;
@@ -15,7 +17,23 @@ export const parseCommaValues = (value) =>
 export const buildIndexedFilePath = (directory, file) =>
   file.startsWith(directory) ? file : `${directory}/${file}`;
 
-export const loadIndexedFiles = async (indexUrl, directory) => {
+/**
+ * Loads a static directory index once per page lifetime.
+ *
+ * Several homepage modules share the same Markdown and image indexes. Caching
+ * the in-flight promise prevents duplicate network requests during parallel
+ * initialization while still allowing normal browser HTTP caching.
+ */
+export const loadIndexedFiles = (indexUrl, directory) => {
+  const cacheKey = `${indexUrl}::${directory}`;
+  if (!indexedFileCache.has(cacheKey)) {
+    indexedFileCache.set(cacheKey, fetchIndexedFiles(indexUrl, directory));
+  }
+
+  return indexedFileCache.get(cacheKey);
+};
+
+const fetchIndexedFiles = async (indexUrl, directory) => {
   const response = await fetch(indexUrl);
   if (!response.ok) return [];
 

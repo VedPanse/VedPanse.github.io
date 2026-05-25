@@ -1,15 +1,15 @@
 {
   "icons": [
     {
-      "src": "assets/company-logo/apple.png",
+      "src": "assets/generated/company-logo/apple.webp",
       "label": "Apple"
     },
     {
-      "src": "assets/company-logo/bofa.png",
+      "src": "assets/generated/company-logo/bofa.webp",
       "label": "Bofa"
     },
     {
-      "src": "assets/company-logo/lockheed martin.png",
+      "src": "assets/generated/company-logo/lockheed martin.webp",
       "label": "Lockheed martin"
     }
   ]

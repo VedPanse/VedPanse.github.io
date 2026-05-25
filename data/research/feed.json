@@ -1,0 +1,65 @@
+[
+  {
+    "kind": "Research Note",
+    "title": "Affordance Learning for Embodied AI",
+    "date": "March 16, 2026",
+    "author": "Ved Panse",
+    "excerpt": "A research note on why agents must learn what actions the environment allows, not just what objects exist.",
+    "imageAlt": "Affordance Learning for Embodied AI",
+    "slug": "affordance-learning"
+  },
+  {
+    "kind": "Research Note",
+    "title": "Why Embodied AI Needs an Internal Body Schema",
+    "date": "March 16, 2026",
+    "author": "Ved Panse",
+    "excerpt": "A research note on why intelligent agents must learn internal models of their own bodies to interact reliably with the physical world.",
+    "imageAlt": "Why Embodied AI Needs an Internal Body Schema",
+    "slug": "embodied-ai-schema"
+  },
+  {
+    "kind": "Research Notes",
+    "title": "Multi-modal agents with faster browser automation",
+    "date": "February 19, 2026",
+    "author": "Ved Panse",
+    "excerpt": "Existing AI agents which rely on browser automation are slow. We can augment these technologies by using simple graph theory algorithms.",
+    "imageAlt": "Multi-modal agents with faster browser automation",
+    "slug": "making-multimodal-agents"
+  },
+  {
+    "kind": "Research Note",
+    "title": "From Multimodal Models to Multimodal Agents",
+    "date": "March 16, 2026",
+    "author": "Ved Panse",
+    "excerpt": "A research note exploring why multimodal models are not enough and what architectural layers are required to build real multimodal agents.",
+    "imageAlt": "From Multimodal Models to Multimodal Agents",
+    "slug": "multimodal-agents"
+  },
+  {
+    "kind": "Research Note",
+    "title": "Vision-Language-Action Models Deepdive",
+    "date": "March 16, 2026",
+    "author": "Ved Panse",
+    "excerpt": "A working hypothesis that many VLA bottlenecks may reduce to classic computer vision problems like detection, segmentation, and affordance estimation.",
+    "imageAlt": "Vision-Language-Action Models Deepdive",
+    "slug": "vla-cv-reduction"
+  },
+  {
+    "kind": "Research Notes",
+    "title": "API service learning for efficient tool calling",
+    "date": "February 20, 2026",
+    "author": "Ved Panse",
+    "excerpt": "Multi-modal virtual assistants need to maintain and learn the structure of the internet for tool calling. However, APIs are limited.",
+    "imageAlt": "API service learning for efficient tool calling",
+    "slug": "workflow-automation-api-calling"
+  },
+  {
+    "kind": "Research Note",
+    "title": "Why AI Agents Need World Models",
+    "date": "March 16, 2026",
+    "author": "Ved Panse",
+    "excerpt": "A research note on why agents require persistent internal models of their environments to plan and act over time.",
+    "imageAlt": "Why AI Agents Need World Models",
+    "slug": "world-models"
+  }
+]

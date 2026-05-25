@@ -326,7 +326,28 @@
                 <div
                     class="projects-carousel"
                     aria-label="Project carousel"
-                ></div>
+                >
+                    <article
+                        class="project-card project-card--placeholder"
+                        aria-hidden="true"
+                    >
+                        <div class="project-card-placeholder">
+                            <div class="project-card-placeholder__copy">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="project-card-placeholder__icons">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
                 <div
                     class="projects-controls"
                     role="group"
@@ -386,7 +407,30 @@
                         class="work-showcase-rail"
                         aria-label="Work experience cards"
                         data-work-rail
-                    ></div>
+                    >
+                        <article
+                            class="work-rail-card work-rail-card--placeholder"
+                            aria-hidden="true"
+                        >
+                            <div class="work-rail-media"></div>
+                            <div class="work-rail-copy">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </article>
+                        <article
+                            class="work-rail-card work-rail-card--placeholder"
+                            aria-hidden="true"
+                        >
+                            <div class="work-rail-media"></div>
+                            <div class="work-rail-copy">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </article>
+                    </div>
                 </div>
             </section>
 
@@ -399,8 +443,10 @@
                     <div class="work-stage">
                         <div class="work-visual" aria-hidden="true">
                             <img
-                                src="assets/banners/work/jetbrains.png"
+                                src="assets/generated/banners/work/jetbrains.webp"
                                 alt=""
+                                loading="lazy"
+                                decoding="async"
                             />
                         </div>
                         <div class="work-text">
@@ -426,11 +472,25 @@
                         <div
                             class="editorial-hero-rail"
                             data-research-hero
-                        ></div>
+                        >
+                            <article
+                                class="editorial-hero-card editorial-card--placeholder"
+                                aria-hidden="true"
+                            ></article>
+                        </div>
                         <div
                             class="editorial-mini-grid"
                             data-research-grid
-                        ></div>
+                        >
+                            <article
+                                class="editorial-mini-card editorial-card--placeholder"
+                                aria-hidden="true"
+                            ></article>
+                            <article
+                                class="editorial-mini-card editorial-card--placeholder"
+                                aria-hidden="true"
+                            ></article>
+                        </div>
                     </div>
                     <button
                         class="editorial-load-more"
@@ -458,8 +518,22 @@
                 <div class="blogs-inner">
                     <h2 id="blogs-title">Blogs</h2>
                     <div class="editorial-feed">
-                        <div class="editorial-hero-rail" data-blogs-hero></div>
-                        <div class="editorial-mini-grid" data-blogs-grid></div>
+                        <div class="editorial-hero-rail" data-blogs-hero>
+                            <article
+                                class="editorial-hero-card editorial-card--placeholder"
+                                aria-hidden="true"
+                            ></article>
+                        </div>
+                        <div class="editorial-mini-grid" data-blogs-grid>
+                            <article
+                                class="editorial-mini-card editorial-card--placeholder"
+                                aria-hidden="true"
+                            ></article>
+                            <article
+                                class="editorial-mini-card editorial-card--placeholder"
+                                aria-hidden="true"
+                            ></article>
+                        </div>
                     </div>
                     <button
                         class="editorial-load-more"
@@ -605,6 +679,6 @@
                 </div>
             </section>
         </main>
-        <script type="module" src="scripts/main.js?v=company-logo-strip"></script>
+        <script type="module" src="scripts/main.js?v=optimized-display-assets"></script>
     </body>
 </html>

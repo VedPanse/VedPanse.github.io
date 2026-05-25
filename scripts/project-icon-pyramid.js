@@ -1,5 +1,6 @@
 const PROJECT_ICON_MANIFEST_URL = "data/project-icons.json";
 const IMAGE_EXTENSIONS = new Set(["png", "jpg", "jpeg", "webp", "svg", "gif", "avif"]);
+let projectIconsPromise;
 
 const titleizeToken = (token) => {
   if (!token) return "";
@@ -32,16 +33,18 @@ const normalizeIcon = (icon) => {
 };
 
 const loadProjectIcons = async () => {
-  try {
-    const response = await fetch(PROJECT_ICON_MANIFEST_URL);
-    if (!response.ok) return [];
-    const data = await response.json();
-    return Array.isArray(data.icons)
-      ? data.icons.map(normalizeIcon).filter(Boolean)
-      : [];
-  } catch (error) {
-    return [];
+  if (!projectIconsPromise) {
+    projectIconsPromise = fetch(PROJECT_ICON_MANIFEST_URL)
+      .then(async (response) => {
+        if (!response.ok) return [];
+
+        const data = await response.json();
+        return Array.isArray(data.icons) ? data.icons.map(normalizeIcon).filter(Boolean) : [];
+      })
+      .catch(() => []);
   }
+
+  return projectIconsPromise;
 };
 
 const getColumnCount = () => {
@@ -95,15 +98,15 @@ const buildPyramidRows = (icons) => {
   return rows;
 };
 
-const createIcon = (icon) => {
+const createIcon = (icon, isPriority) => {
   const item = document.createElement("div");
   item.className = "project-icon-pyramid__item";
 
   const image = document.createElement("img");
   image.alt = icon.label;
-  image.loading = "eager";
+  image.loading = isPriority ? "eager" : "lazy";
   image.decoding = "async";
-  image.fetchPriority = "high";
+  image.fetchPriority = isPriority ? "high" : "auto";
   image.src = icon.src;
 
   item.appendChild(image);
@@ -120,7 +123,7 @@ const renderIcons = (grid, icons) => {
     if (index === rows.length - 1 && row.length === 1) {
       rowElement.classList.add("project-icon-pyramid__row--single");
     }
-    row.forEach((icon) => rowElement.appendChild(createIcon(icon)));
+    row.forEach((icon) => rowElement.appendChild(createIcon(icon, index === 0)));
     fragment.appendChild(rowElement);
   });
   grid.appendChild(fragment);

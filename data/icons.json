@@ -1,55 +1,55 @@
 {
   "icons": [
     {
-      "src": "assets/tech/aws.png",
+      "src": "assets/generated/tech/aws.webp",
       "label": "Amazon Web Services"
     },
     {
-      "src": "assets/tech/gcp.png",
+      "src": "assets/generated/tech/gcp.webp",
       "label": "Google Cloud Platform"
     },
     {
-      "src": "assets/tech/android-tech.png",
+      "src": "assets/generated/tech/android-tech.webp",
       "label": "Android"
     },
     {
-      "src": "assets/tech/awk.png",
+      "src": "assets/generated/tech/awk.webp",
       "label": "AWK"
     },
     {
-      "src": "assets/tech/azure.png",
+      "src": "assets/generated/tech/azure.webp",
       "label": "Microsoft Azure"
     },
     {
-      "src": "assets/tech/bash.png",
+      "src": "assets/generated/tech/bash.webp",
       "label": "Bash"
     },
     {
-      "src": "assets/tech/c.png",
+      "src": "assets/generated/tech/c.webp",
       "label": "C"
     },
     {
-      "src": "assets/tech/cpp.png",
+      "src": "assets/generated/tech/cpp.webp",
       "label": "C++"
     },
     {
-      "src": "assets/tech/cs.png",
+      "src": "assets/generated/tech/cs.webp",
       "label": "CS"
     },
     {
-      "src": "assets/tech/css.png",
+      "src": "assets/generated/tech/css.webp",
       "label": "CSS"
     },
     {
-      "src": "assets/tech/dart.png",
+      "src": "assets/generated/tech/dart.webp",
       "label": "Dart"
     },
     {
-      "src": "assets/tech/flask.png",
+      "src": "assets/generated/tech/flask.webp",
       "label": "Flask"
     },
     {
-      "src": "assets/tech/flutter.png",
+      "src": "assets/generated/tech/flutter.webp",
       "label": "Flutter"
     },
     {
@@ -57,79 +57,79 @@
       "label": "GitHub Tech"
     },
     {
-      "src": "assets/tech/go.png",
+      "src": "assets/generated/tech/go.webp",
       "label": "Go"
     },
     {
-      "src": "assets/tech/haskell.png",
+      "src": "assets/generated/tech/haskell.webp",
       "label": "Haskell"
     },
     {
-      "src": "assets/tech/html.png",
+      "src": "assets/generated/tech/html.webp",
       "label": "HTML"
     },
     {
-      "src": "assets/tech/java.png",
+      "src": "assets/generated/tech/java.webp",
       "label": "Java"
     },
     {
-      "src": "assets/tech/js.png",
+      "src": "assets/generated/tech/js.webp",
       "label": "JavaScript"
     },
     {
-      "src": "assets/tech/jetpack-compose.png",
+      "src": "assets/generated/tech/jetpack-compose.webp",
       "label": "Jetpack Compose"
     },
     {
-      "src": "assets/tech/kotlin.png",
+      "src": "assets/generated/tech/kotlin.webp",
       "label": "Kotlin"
     },
     {
-      "src": "assets/tech/langchain.png",
+      "src": "assets/generated/tech/langchain.webp",
       "label": "Langchain"
     },
     {
-      "src": "assets/tech/LLVM.png",
+      "src": "assets/generated/tech/LLVM.webp",
       "label": "LLVM"
     },
     {
-      "src": "assets/tech/react.png",
+      "src": "assets/generated/tech/react.webp",
       "label": "React"
     },
     {
-      "src": "assets/tech/python.png",
+      "src": "assets/generated/tech/python.webp",
       "label": "Python"
     },
     {
-      "src": "assets/tech/electron.png",
+      "src": "assets/generated/tech/electron.webp",
       "label": "Electron"
     },
     {
-      "src": "assets/tech/rpi.png",
+      "src": "assets/generated/tech/rpi.webp",
       "label": "Raspberry Pi"
     },
     {
-      "src": "assets/tech/ruby.png",
+      "src": "assets/generated/tech/ruby.webp",
       "label": "Ruby"
     },
     {
-      "src": "assets/tech/rust.png",
+      "src": "assets/generated/tech/rust.webp",
       "label": "Rust"
     },
     {
-      "src": "assets/tech/springboot.png",
+      "src": "assets/generated/tech/springboot.webp",
       "label": "Java Springboot"
     },
     {
-      "src": "assets/tech/sql.png",
+      "src": "assets/generated/tech/sql.webp",
       "label": "SQL"
     },
     {
-      "src": "assets/tech/swift.png",
+      "src": "assets/generated/tech/swift.webp",
       "label": "Swift"
     },
     {
-      "src": "assets/tech/ts.webp",
+      "src": "assets/generated/tech/ts.webp",
       "label": "TypeScript"
     },
     {

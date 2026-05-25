@@ -1,6 +1,6 @@
 import { DomFactory } from "./core/dom-factory.js";
-import { loadProjects } from "./core/project-data.js?v=repo-refactor";
-import { createTechIconIndex, loadTechIcons, resolveTechStack } from "./core/tech-icons.js";
+import { loadProjects } from "./core/project-data.js?v=shared-json-loads";
+import { createTechIconIndex, loadTechIcons, resolveTechStack } from "./core/tech-icons.js?v=shared-json-loads";
 
 const STACK_COLUMNS = 3;
 const AUTOPLAY_DURATION_MS = 10000;
@@ -71,7 +71,8 @@ class ProjectCardRenderer {
    * @param {Project} project
    * @return {HTMLElement}
    */
-  render(project) {
+  render(project, options = {}) {
+    const isPriority = Boolean(options.isPriority);
     const resolvedStack = this.resolveStack_(project.stack || []);
     const card = DomFactory.createElement("article", "project-card");
     card.setAttribute("data-project", "");
@@ -109,7 +110,9 @@ class ProjectCardRenderer {
         const image = document.createElement("img");
         image.src = item.src;
         image.alt = item.label || "Technology icon";
-        image.loading = "lazy";
+        image.loading = isPriority ? "eager" : "lazy";
+        image.decoding = "async";
+        image.fetchPriority = isPriority ? "high" : "auto";
         icon.appendChild(image);
         column.appendChild(icon);
       });
@@ -244,8 +247,9 @@ class ProjectsCarousel {
   }
 
   render_() {
-    this.cards_ = this.projects_.map((project) => this.cardRenderer_.render(project));
+    this.cards_ = this.projects_.map((project, index) => this.cardRenderer_.render(project, { isPriority: index === 0 }));
     this.carousel_.innerHTML = "";
+    this.carousel_.classList.add("is-loaded");
     this.cards_.forEach((card) => this.carousel_.appendChild(card));
     this.renderDots_();
     this.dots_ = Array.from(this.section_.querySelectorAll(".projects-dot"));

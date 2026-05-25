@@ -1,5 +1,5 @@
 import { parseCommaValues, loadIndexedFiles, sortByDateDesc } from "./core/content-utils.js?v=repo-refactor";
-import { createElement } from "./core/dom-factory.js?v=repo-refactor";
+import { createElement } from "./core/dom-factory.js";
 import { applyLabelColor } from "./label-color.js";
 import { parseFrontMatter, extractExcerpt, extractTitle, parseMarkdown, escapeHtml } from "./markdown.js";
 import { initNavMenu } from "./nav.js";

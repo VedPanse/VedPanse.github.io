@@ -1,8 +1,8 @@
-import { initIconBand } from "./icon-band.js?v=repo-refactor";
+import { initIconBand } from "./icon-band.js?v=shared-json-loads";
 import { initContent } from "./content.js";
 import { initWorkSection, initWorkExperience } from "./work.js?v=repo-refactor";
-import { initProjectsCarousel } from "./projects.js?v=project-back-scroll";
-import { initProjectIconPyramid } from "./project-icon-pyramid.js?v=manifest-only";
+import { initProjectsCarousel } from "./projects.js?v=project-load-fast";
+import { initProjectIconPyramid } from "./project-icon-pyramid.js?v=optimized-display-assets";
 import { initCompanyLogoStrip } from "./company-logo-strip.js";
 import { initNavHighlight, initNavMenu } from "./nav.js";
 import { initResearch } from "./research.js?v=no-editorial-motion";
@@ -27,15 +27,13 @@ class PortfolioApplication {
       initResearch,
       initBlogs,
       initContactForm,
-      initializeTheme,
       initSearchOverlay,
     ];
   }
 
   async bootstrap() {
-    for (const initialize of this.initializers_) {
-      await initialize();
-    }
+    await initializeTheme();
+    await Promise.all(this.initializers_.map((initialize) => initialize()));
   }
 }
 

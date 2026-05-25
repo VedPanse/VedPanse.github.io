@@ -1,8 +1,8 @@
-import { JsonRepository } from "./json-repository.js?v=repo-refactor";
+import { JsonRepository } from "./json-repository.js";
 
 export const PROJECTS_URL = "data/projects.json";
 
-const projectsRepository = new JsonRepository(PROJECTS_URL, { cache: "no-store" });
+const projectsRepository = new JsonRepository(PROJECTS_URL);
 
 export const loadProjects = async () => {
   const data = await projectsRepository.load();

@@ -1,6 +1,7 @@
 export const ICONS_URL = "data/icons.json";
 
 const normalizeLabel = (value) => String(value || "").trim().toLowerCase();
+let iconsPromise = null;
 
 /**
  * @typedef {{label?: string, src: string}} TechIcon
@@ -25,7 +26,16 @@ export const createTechIconIndex = (icons) => {
  * @return {Promise<Array<TechIcon>>}
  */
 export const loadTechIcons = async () => {
-  const response = await fetch(ICONS_URL, { cache: "no-store" });
+  if (iconsPromise) {
+    return iconsPromise;
+  }
+
+  iconsPromise = fetchTechIcons();
+  return iconsPromise;
+};
+
+const fetchTechIcons = async () => {
+  const response = await fetch(ICONS_URL);
   if (!response.ok) {
     return [];
   }

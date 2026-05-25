@@ -1,0 +1,74 @@
+[
+  {
+    "kind": "Personal",
+    "title": "Competitive Coding Has Been Weirdly Important For Me",
+    "date": "March 16, 2026",
+    "author": "Ved Panse",
+    "excerpt": "I started with Advent of Code in 2020 using Python. Now I mostly use Kotlin and occasionally stay up at unreasonable hours solving algorithm puzzles.",
+    "imageAlt": "Competitive Coding Has Been Weirdly Important For Me",
+    "slug": "competitive-coding"
+  },
+  {
+    "kind": "Personal",
+    "title": "Winning the DY Patil Cricket Tournament",
+    "date": "August 8, 2019",
+    "author": "Ved Panse",
+    "excerpt": "We just won the DY Patil Cricket Tournament today. Still can't believe it.",
+    "imageAlt": "Winning the DY Patil Cricket Tournament",
+    "slug": "cricket"
+  },
+  {
+    "kind": "Build Log",
+    "title": "I tried to invent my own UI language",
+    "date": "July 14, 2018",
+    "author": "Ved Panse",
+    "excerpt": "2019 me decided multiplatform UI frameworks were not enough and attempted to fix that.",
+    "imageAlt": "I tried to invent my own UI language",
+    "slug": "dsl-failing"
+  },
+  {
+    "kind": "Life",
+    "title": "Hi, I'm Ved.",
+    "date": "January 22, 2018",
+    "author": "Ved Panse",
+    "excerpt": "Some context before I start writing about broken systems and the things I’m trying to build.",
+    "imageAlt": "Hi, I'm Ved.",
+    "slug": "hi-im-ved"
+  },
+  {
+    "kind": "Build Log",
+    "title": "I booted an IBM 7094 and ran ELIZA",
+    "date": "September 3, 2019",
+    "author": "Ved Panse",
+    "excerpt": "I spent my weekend getting yelled at by a 1960s mainframe simulator until it finally ran a therapist program.",
+    "imageAlt": "I booted an IBM 7094 and ran ELIZA",
+    "slug": "ibm-7094"
+  },
+  {
+    "kind": "Personal",
+    "title": "Why I’m Becoming Increasingly Interested in Optical Computing",
+    "date": "March 15, 2026",
+    "author": "Ved Panse",
+    "excerpt": "Reflections on optical computing, compute-in-memory, and why new computing architectures might quietly reshape the future of AI.",
+    "imageAlt": "Why I’m Becoming Increasingly Interested in Optical Computing",
+    "slug": "optical-computing"
+  },
+  {
+    "kind": "Life",
+    "title": "I met the CIA Director in shorts",
+    "date": "February 18, 2026",
+    "author": "Ved Panse",
+    "excerpt": "I flew to D.C. after placing first internationally at USCC and accidentally dressed like I was going to Chipotle.",
+    "imageAlt": "I met the CIA Director in shorts",
+    "slug": "the-big-room"
+  },
+  {
+    "kind": "Career",
+    "title": "Software Engineering: Where From, Where To?",
+    "date": "May 12, 2026",
+    "author": "Ved Panse",
+    "excerpt": "Reflections on infrastructure, AI, systems design, graphics, and the search for the kind of engineer I want to become.",
+    "imageAlt": "Software Engineering: Where From, Where To?",
+    "slug": "where-from-where-to"
+  }
+]

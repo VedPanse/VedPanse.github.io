@@ -614,6 +614,7 @@ body.is-tech-detail-open {
   touch-action: pan-x pan-y;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
+  min-height: calc(min(78vh, 720px) + 52px);
 }
 
 .projects-carousel::-webkit-scrollbar {
@@ -682,6 +683,88 @@ body.is-tech-detail-open {
 
 .project-card:hover {
   cursor: pointer;
+}
+
+.project-card--placeholder {
+  pointer-events: none;
+  opacity: 0.72;
+}
+
+.project-card--placeholder::before,
+.project-card--placeholder::after {
+  display: none;
+}
+
+.project-card-placeholder {
+  width: 100%;
+  min-height: min(78vh, 720px);
+  border-radius: 36px;
+  padding: clamp(32px, 6vw, 64px);
+  background:
+    linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12), transparent) -120% 0 / 220% 100% no-repeat,
+    #262626;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 36px;
+  animation: project-placeholder-shimmer 1.4s ease-in-out infinite;
+}
+
+.project-card-placeholder__copy,
+.project-card-placeholder__icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.project-card-placeholder__copy {
+  max-width: 560px;
+  flex-direction: column;
+}
+
+.project-card-placeholder__copy span,
+.project-card-placeholder__icons span {
+  display: block;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.project-card-placeholder__copy span {
+  height: clamp(26px, 3vw, 40px);
+  border-radius: 12px;
+}
+
+.project-card-placeholder__copy span:nth-child(1) {
+  width: 78%;
+}
+
+.project-card-placeholder__copy span:nth-child(2) {
+  width: 96%;
+}
+
+.project-card-placeholder__copy span:nth-child(3) {
+  width: 62%;
+}
+
+.project-card-placeholder__icons {
+  align-content: flex-start;
+}
+
+.project-card-placeholder__icons span {
+  width: 100px;
+  height: 100px;
+  border-radius: 18px;
+}
+
+@keyframes project-placeholder-shimmer {
+  0% {
+    background-position: -120% 0, 0 0;
+  }
+
+  100% {
+    background-position: 120% 0, 0 0;
+  }
 }
 
 .project-card-rotator {
@@ -1358,6 +1441,49 @@ body.is-tech-detail-open {
   color: var(--work-showcase-link-hover);
 }
 
+.work-rail-card--placeholder {
+  pointer-events: none;
+  opacity: 0.72;
+}
+
+.work-rail-card--placeholder .work-rail-media,
+.editorial-card--placeholder {
+  background:
+    linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent) -120% 0 / 220% 100% no-repeat,
+    var(--editorial-media-bg, var(--work-showcase-card-shell, #151820));
+  animation: content-placeholder-shimmer 1.4s ease-in-out infinite;
+}
+
+.work-rail-card--placeholder .work-rail-copy {
+  display: grid;
+  gap: 10px;
+}
+
+.work-rail-card--placeholder .work-rail-copy span {
+  display: block;
+  height: 16px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--work-showcase-copy-strong) 14%, transparent);
+}
+
+.work-rail-card--placeholder .work-rail-copy span:nth-child(2) {
+  width: 84%;
+}
+
+.work-rail-card--placeholder .work-rail-copy span:nth-child(3) {
+  width: 56%;
+}
+
+@keyframes content-placeholder-shimmer {
+  0% {
+    background-position: -120% 0, 0 0;
+  }
+
+  100% {
+    background-position: 120% 0, 0 0;
+  }
+}
+
 @media (min-width: 1680px) {
   .work-showcase-rail {
     grid-auto-columns: calc((100% - (var(--work-card-gap) * 2)) / 3);
@@ -1643,6 +1769,11 @@ body.is-tech-detail-open {
   overflow: hidden;
   background: #111318;
   color: #ffffff;
+}
+
+.editorial-card--placeholder {
+  opacity: 0.72;
+  pointer-events: none;
 }
 
 .editorial-mini-card:focus-visible {
@@ -2019,6 +2150,7 @@ body.is-tech-detail-open {
 
   .projects-carousel {
     padding: 16px 0 40px;
+    min-height: 616px;
   }
 
   .projects-showcase-header {
@@ -2033,6 +2165,11 @@ body.is-tech-detail-open {
     backface-visibility: hidden;
     overflow: hidden;
     transition: opacity 0.2s ease, visibility 0.2s ease;
+  }
+
+  .project-card-placeholder {
+    min-height: 560px;
+    padding: 24px;
   }
 
   .project-card-face--front {
@@ -2113,6 +2250,12 @@ body.is-tech-detail-open {
   }
 
   .project-card-face--front .project-icon-band .app-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 18px;
+  }
+
+  .project-card-placeholder__icons span {
     width: 80px;
     height: 80px;
     border-radius: 18px;

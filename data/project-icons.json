@@ -1,75 +1,75 @@
 {
   "icons": [
     {
-      "src": "assets/project-icons/Falcon Eye.png",
+      "src": "assets/generated/project-icons/Falcon Eye.webp",
       "label": "Falcon Eye"
     },
     {
-      "src": "assets/project-icons/OrbitFM.png",
+      "src": "assets/generated/project-icons/OrbitFM.webp",
       "label": "OrbitFM"
     },
     {
-      "src": "assets/project-icons/arc.png",
+      "src": "assets/generated/project-icons/arc.webp",
       "label": "ARC"
     },
     {
-      "src": "assets/project-icons/ballhawk.png",
+      "src": "assets/generated/project-icons/ballhawk.webp",
       "label": "Ballhawk"
     },
     {
-      "src": "assets/project-icons/daemon.png",
+      "src": "assets/generated/project-icons/daemon.webp",
       "label": "Daemon"
     },
     {
-      "src": "assets/project-icons/friday.png",
+      "src": "assets/generated/project-icons/friday.webp",
       "label": "Friday"
     },
     {
-      "src": "assets/project-icons/ion.png",
+      "src": "assets/generated/project-icons/ion.webp",
       "label": "ION"
     },
     {
-      "src": "assets/project-icons/javelinlang.png",
+      "src": "assets/generated/project-icons/javelinlang.webp",
       "label": "Javelinlang"
     },
     {
-      "src": "assets/project-icons/pomodoro.png",
+      "src": "assets/generated/project-icons/pomodoro.webp",
       "label": "Pomodoro"
     },
     {
-      "src": "assets/project-icons/pulse.png",
+      "src": "assets/generated/project-icons/pulse.webp",
       "label": "Pulse"
     },
     {
-      "src": "assets/project-icons/rocket avionics.png",
+      "src": "assets/generated/project-icons/rocket avionics.webp",
       "label": "Rocket avionics"
     },
     {
-      "src": "assets/project-icons/sentinel.png",
+      "src": "assets/generated/project-icons/sentinel.webp",
       "label": "Sentinel"
     },
     {
-      "src": "assets/project-icons/shardwise.png",
+      "src": "assets/generated/project-icons/shardwise.webp",
       "label": "Shardwise"
     },
     {
-      "src": "assets/project-icons/smartwild.png",
+      "src": "assets/generated/project-icons/smartwild.webp",
       "label": "Smartwild"
     },
     {
-      "src": "assets/project-icons/sova.png",
+      "src": "assets/generated/project-icons/sova.webp",
       "label": "Sova"
     },
     {
-      "src": "assets/project-icons/strata.png",
+      "src": "assets/generated/project-icons/strata.webp",
       "label": "Strata"
     },
     {
-      "src": "assets/project-icons/task-registry.png",
+      "src": "assets/generated/project-icons/task-registry.webp",
       "label": "Task Registry"
     },
     {
-      "src": "assets/project-icons/veditor.png",
+      "src": "assets/generated/project-icons/veditor.webp",
       "label": "Veditor"
     }
   ]

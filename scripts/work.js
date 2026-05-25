@@ -1,11 +1,14 @@
 import { loadIndexedFiles } from "./core/content-utils.js?v=repo-refactor";
-import { createElement } from "./core/dom-factory.js?v=repo-refactor";
+import { createElement } from "./core/dom-factory.js";
 
 const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
 
 const WORK_DATA_URL = "data/work.json";
-const WORK_BANNERS_DIR = "assets/banners/work";
+const WORK_BANNERS_DIR = "assets/generated/banners/work";
 const WORK_BANNERS_INDEX_URL = `${WORK_BANNERS_DIR}/index.json`;
+const WORK_BANNERS_FALLBACK_DIR = "assets/banners/work";
+const WORK_BANNERS_FALLBACK_INDEX_URL = `${WORK_BANNERS_FALLBACK_DIR}/index.json`;
+let workItemsPromise;
 
 const TAU = Math.PI * 2;
 const GOLDEN_RATIO_CONJUGATE = 0.6180339887498949;
@@ -241,7 +244,25 @@ const resolveGradient = (item) => {
   };
 };
 
-const listWorkImages = () => loadIndexedFiles(WORK_BANNERS_INDEX_URL, WORK_BANNERS_DIR);
+const listWorkImages = async () => {
+  const optimizedImages = await loadIndexedFiles(WORK_BANNERS_INDEX_URL, WORK_BANNERS_DIR);
+  return optimizedImages.length
+    ? optimizedImages
+    : loadIndexedFiles(WORK_BANNERS_FALLBACK_INDEX_URL, WORK_BANNERS_FALLBACK_DIR);
+};
+
+const loadWorkItems = async () => {
+  if (!workItemsPromise) {
+    workItemsPromise = Promise.all([fetch(WORK_DATA_URL), listWorkImages()]).then(async ([response, workImages]) => {
+      if (!response.ok) return [];
+
+      const data = await response.json();
+      return Array.isArray(data) ? normalizeItems(data, workImages) : [];
+    });
+  }
+
+  return workItemsPromise;
+};
 
 const renderWorkCard = (item) => {
   const article = createElement("article", "work-rail-card");
@@ -319,21 +340,18 @@ export const initWorkExperience = async () => {
   const nextButton = document.querySelector("[data-work-next]");
   if (!rail || !previousButton || !nextButton) return;
 
-  let items = [];
   try {
-    const [response, workImages] = await Promise.all([fetch(WORK_DATA_URL), listWorkImages()]);
-    if (!response.ok) return;
-    const data = await response.json();
-    if (!Array.isArray(data) || !data.length) return;
-    items = normalizeItems(data, workImages);
+    const items = await loadWorkItems();
+    if (!items.length) return;
+
+    rail.innerHTML = "";
+    items.forEach((item) => {
+      rail.appendChild(renderWorkCard(item));
+    });
   } catch {
     return;
   }
 
-  rail.innerHTML = "";
-  items.forEach((item) => {
-    rail.appendChild(renderWorkCard(item));
-  });
   rail.scrollLeft = 0;
 
   const getScrollAmount = () => {

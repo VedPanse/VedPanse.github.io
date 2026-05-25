@@ -1,5 +1,5 @@
-import { loadProjects } from "./core/project-data.js?v=repo-refactor";
-import { createTechIconIndex, loadTechIcons, resolveTechStack } from "./core/tech-icons.js";
+import { loadProjects } from "./core/project-data.js?v=shared-json-loads";
+import { createTechIconIndex, loadTechIcons, resolveTechStack } from "./core/tech-icons.js?v=shared-json-loads";
 
 const CARDS_PER_COLUMN = 3;
 const DEFAULT_ICON_SIZE = 96;

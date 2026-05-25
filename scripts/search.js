@@ -20,7 +20,8 @@ export const initSearchOverlay = () => {
 
   const originalList = list.innerHTML;
   const documents = [];
-  let indexLoaded = false;
+  let documentsPromise = null;
+  const indexCache = new Map();
 
   const BLOG_INDEX_URL = "data/blogs/index.json";
   const RESEARCH_INDEX_URL = "data/research/index.json";
@@ -34,22 +35,32 @@ export const initSearchOverlay = () => {
       .trim();
 
   const loadIndex = async (url) => {
-    const response = await fetch(url);
-    if (!response.ok) return [];
-    const data = await response.json();
-    return Array.isArray(data) ? data : [];
+    if (indexCache.has(url)) {
+      return indexCache.get(url);
+    }
+
+    const promise = fetch(url).then(async (response) => {
+      if (!response.ok) return [];
+
+      const data = await response.json();
+      return Array.isArray(data) ? data : [];
+    });
+    indexCache.set(url, promise);
+    return promise;
   };
 
-  const buildDocs = async () => {
-    if (indexLoaded) return;
-    indexLoaded = true;
+  const fetchDocuments = async () => {
     const [blogs, research, workBlogs] = await Promise.all([
       loadIndex(BLOG_INDEX_URL),
       loadIndex(RESEARCH_INDEX_URL),
       loadIndex(WORK_BLOG_INDEX_URL),
     ]);
     const items = [
-      ...blogs.map((file) => ({ file: `data/blogs/${file}`, type: "Blog", url: `blog.html?post=${file.replace(/\.md$/i, "")}` })),
+      ...blogs.map((file) => ({
+        file: `data/blogs/${file}`,
+        type: "Blog",
+        url: `blog.html?post=${file.replace(/\.md$/i, "")}`,
+      })),
       ...research.map((file) => ({
         file: `data/research/${file}`,
         type: "Research",
@@ -81,16 +92,35 @@ export const initSearchOverlay = () => {
       })
     );
 
-    fetched.filter(Boolean).forEach((doc) => documents.push(doc));
+    return fetched.filter(Boolean);
+  };
+
+  const buildDocs = async () => {
+    if (!documentsPromise) {
+      documentsPromise = fetchDocuments().then((loadedDocuments) => {
+        documents.splice(0, documents.length, ...loadedDocuments);
+        return documents;
+      });
+    }
+
+    return documentsPromise;
   };
 
   const renderList = (items) => {
-    list.innerHTML = items
-      .map(
-        (item) =>
-          `<li><a href="${item.url}" data-search-item>${item.title}<span class="search-tag">${item.type}</span></a></li>`
-      )
-      .join("");
+    list.innerHTML = "";
+    items.forEach((item) => {
+      const row = document.createElement("li");
+      const link = document.createElement("a");
+      const tag = document.createElement("span");
+      link.href = item.url;
+      link.dataset.searchItem = "";
+      link.textContent = item.title;
+      tag.className = "search-tag";
+      tag.textContent = item.type;
+      link.appendChild(tag);
+      row.appendChild(link);
+      list.appendChild(row);
+    });
   };
 
   const applyFilter = (query) => {
@@ -134,6 +164,7 @@ export const initSearchOverlay = () => {
     toggleOverlay(overlay, true);
     document.body.classList.add("is-search-open");
     input.focus();
+    if (kicker) kicker.textContent = "Loading";
     buildDocs().then(() => applyFilter(input.value || ""));
   };
 
