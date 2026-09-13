@@ -270,7 +270,7 @@ const mergeWithExistingIcons = (generatedIcons, existingIcons) => {
 
 const hasOptimizedTechIcons = ensureOptimizedImages(techIconsDir, generatedTechIconsDir, {
   width: 256,
-  height: 256,
+  height: 0,
   quality: 82,
 });
 const hasOptimizedProjectIcons = ensureOptimizedImages(projectIconsDir, generatedProjectIconsDir, {
