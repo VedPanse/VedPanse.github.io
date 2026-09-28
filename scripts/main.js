@@ -7,7 +7,6 @@ import { initCompanyLogoStrip } from "./company-logo-strip.js";
 import { initNavHighlight, initNavMenu } from "./nav.js";
 import { initResearch } from "./research.js?v=no-editorial-motion";
 import { initBlogs } from "./blogs.js?v=no-editorial-motion";
-import { initContactForm } from "./contact.js?v=contact-protection";
 import { initSearchOverlay } from "./search.js";
 import { initializeTheme } from "./theme.js";
 import "./footer.js";
@@ -26,7 +25,6 @@ class PortfolioApplication {
       initNavMenu,
       initResearch,
       initBlogs,
-      initContactForm,
       initSearchOverlay,
     ];
   }

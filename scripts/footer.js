@@ -114,12 +114,18 @@ export const initFooter = () => {
     </div>
   `;
 
-  footer.querySelectorAll("[data-email-link]").forEach((link) => {
-    link.setAttribute("href", buildMailtoHref());
-    link.setAttribute("aria-label", `Email ${buildEmailAddress()}`);
-  });
-
   document.body.append(footer);
+
+  // Keep the address out of the DOM, including href and accessibility attributes.
+  document.addEventListener("click", (event) => {
+    const link = event.target instanceof Element
+      ? event.target.closest("[data-email-link]")
+      : null;
+    if (!link) return;
+    event.preventDefault();
+    if (!event.isTrusted) return;
+    window.location.href = buildMailtoHref();
+  });
 };
 
 initFooter();

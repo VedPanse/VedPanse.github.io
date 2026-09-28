@@ -4,6 +4,8 @@ import { createTechIconIndex, loadTechIcons, resolveTechStack } from "./core/tec
 
 const STACK_COLUMNS = 3;
 const AUTOPLAY_DURATION_MS = 10000;
+const AUTOPLAY_VISIBLE_RATIO = 0.8;
+const AUTOPLAY_SCROLL_SETTLE_MS = 350;
 const WHEEL_NAVIGATION_THRESHOLD_PX = 180;
 const WHEEL_NAVIGATION_COOLDOWN_MS = 760;
 
@@ -208,6 +210,7 @@ class ProjectsCarousel {
     this.progressValue_ = 0;
     this.autoPlayBeforeFlip_ = this.autoPlay_;
     this.isProjectsVisible_ = false;
+    this.lastPageScrollTime_ = performance.now();
     this.wheelNavigationTimeout_ = 0;
     this.wheelNavigationDelta_ = 0;
     this.navigationSettleTimeout_ = 0;
@@ -290,10 +293,17 @@ class ProjectsCarousel {
     window.addEventListener(
       "scroll",
       () => {
+        this.lastPageScrollTime_ = performance.now();
         requestAnimationFrame(() => this.updateControlsOffset_());
       },
       { passive: true }
     );
+
+    document.addEventListener("visibilitychange", () => {
+      this.startTime_ = performance.now() - this.progressValue_ * AUTOPLAY_DURATION_MS;
+      this.lastPageScrollTime_ = performance.now();
+      this.updateControlsOffset_();
+    });
 
     this.toggle_.addEventListener("click", () => this.toggleAutoPlay_());
     if (this.prevButton_) {
@@ -517,10 +527,18 @@ class ProjectsCarousel {
     this.controls_.style.removeProperty("transform");
     const carouselRect = this.carousel_.getBoundingClientRect();
     const activeCardRect = this.activeCard_.getBoundingClientRect();
+    const headerBottom = document.querySelector(".site-header")?.getBoundingClientRect().bottom || 0;
+    const viewportTop = Math.max(0, headerBottom) + 16;
+    const viewportBottom = window.innerHeight - 24;
+    const availableHeight = Math.max(0, viewportBottom - viewportTop);
     const visibleCardHeight = Math.max(
       0,
-      Math.min(activeCardRect.bottom, window.innerHeight) - Math.max(activeCardRect.top, 0)
+      Math.min(activeCardRect.bottom, viewportBottom) - Math.max(activeCardRect.top, viewportTop)
     );
+    // Tall cards should still be able to autoplay on short landscape screens.
+    const viewableCardHeight = Math.min(activeCardRect.height, availableHeight);
+    const comfortablyVisible = viewableCardHeight > 0 &&
+      visibleCardHeight >= viewableCardHeight * AUTOPLAY_VISIBLE_RATIO;
     const isActiveCardHalfVisible = visibleCardHeight >= activeCardRect.height * 0.5;
     const fixedBottomOffset = 24;
     const naturalControlsTop = carouselRect.bottom + 4;
@@ -534,10 +552,10 @@ class ProjectsCarousel {
       isViewingProjects &&
       carouselRect.top < fixedControlsTop &&
       naturalControlsTop <= fixedControlsTop;
-    this.isProjectsVisible_ = isViewingProjects;
+    this.isProjectsVisible_ = comfortablyVisible;
     this.controls_.classList.toggle("is-pinned", shouldPinControls);
     this.controls_.classList.toggle("is-at-end", isAtPinnedEnd);
-    if (!isViewingProjects) {
+    if (!comfortablyVisible) {
       this.startTime_ = performance.now() - this.progressValue_ * AUTOPLAY_DURATION_MS;
     }
   }
@@ -640,7 +658,9 @@ class ProjectsCarousel {
    * @param {number} time
    */
   tick_(time) {
-    if (this.autoPlay_ && this.isProjectsVisible_ && !this.isUserScrolling_) {
+    const pageScrollSettled = time - this.lastPageScrollTime_ >= AUTOPLAY_SCROLL_SETTLE_MS;
+    if (this.autoPlay_ && this.isProjectsVisible_ && !this.isUserScrolling_ &&
+        pageScrollSettled && !document.hidden) {
       const elapsed = time - this.startTime_;
       const nextProgress = elapsed / AUTOPLAY_DURATION_MS;
       if (nextProgress >= 1) {
