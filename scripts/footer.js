@@ -14,7 +14,6 @@ const FOOTER_SECTIONS = [
       { label: "Research", href: "index.html#research" },
       { label: "Blogs", href: "index.html#blogs" },
       { label: "Case Studies", href: "index.html#work" },
-      { label: "Contact", href: "index.html#contact" },
     ],
   },
   {
@@ -32,7 +31,6 @@ const FOOTER_SECTIONS = [
       { label: "Product Engineering", href: "index.html#projects" },
       { label: "Intelligent Systems", href: "index.html#research" },
       { label: "Software Craft", href: "index.html#work" },
-      { label: "Collaborations", href: "index.html#contact" },
     ],
   },
 ];
@@ -97,9 +95,8 @@ export const initFooter = () => {
       <div class="site-footer-shop">
         More ways to connect:
         <a href="#" data-email-link="footer-inline">Email</a>,
-        <a href="https://github.com/vedpanse" target="_blank" rel="noopener noreferrer">GitHub</a>,
-        <a href="https://www.linkedin.com/in/vedpanse/" target="_blank" rel="noopener noreferrer">LinkedIn</a>,
-        or explore the <a href="${escapeHtml(resolveHref("index.html#contact"))}">contact section</a>.
+        <a href="https://github.com/vedpanse" target="_blank" rel="noopener noreferrer">GitHub</a>, or
+        <a href="https://www.linkedin.com/in/vedpanse/" target="_blank" rel="noopener noreferrer">LinkedIn</a>.
       </div>
       <div class="site-footer-legal">
         <div class="site-footer-legal-links">
@@ -107,7 +104,6 @@ export const initFooter = () => {
           <a href="${escapeHtml(resolveHref("index.html#projects"))}">Projects</a>
           <a href="${escapeHtml(resolveHref("index.html#research"))}">Research</a>
           <a href="${escapeHtml(resolveHref("index.html#blogs"))}">Blogs</a>
-          <a href="${escapeHtml(resolveHref("index.html#contact"))}">Contact</a>
         </div>
         <span class="site-footer-region">United States</span>
       </div>
