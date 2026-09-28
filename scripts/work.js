@@ -194,7 +194,7 @@ const normalizeItems = (items, workImages) =>
       description: item.description || "",
       stats: normalizeStats(item),
       ctaText: item.ctaText || `Read ${fallbackTitle} work blog`,
-      ctaUrl: workPostUrl || item.ctaUrl || "#contact",
+      ctaUrl: workPostUrl || item.ctaUrl || "",
       visualImage: item.visualImage || (workImages.length ? workImages[index % workImages.length] : ""),
       visualAlt: item.visualAlt || `${fallbackTitle} showcase visual`,
       visual: {
@@ -273,9 +273,11 @@ const renderWorkCard = (item) => {
   article.setAttribute("aria-label", `${item.title} work experience`);
   article.tabIndex = 0;
 
-  const mediaLink = createElement("a", "work-rail-media");
-  mediaLink.href = item.ctaUrl;
-  mediaLink.setAttribute("aria-label", "Learn more");
+  const mediaLink = createElement(item.ctaUrl ? "a" : "div", "work-rail-media");
+  if (item.ctaUrl) {
+    mediaLink.href = item.ctaUrl;
+    mediaLink.setAttribute("aria-label", "Learn more");
+  }
   const image = document.createElement("img");
   image.className = "work-rail-media-image";
   image.src = item.visualImage;
@@ -311,23 +313,25 @@ const renderWorkCard = (item) => {
     stats.appendChild(statLine);
   });
 
-  const cta = createElement("a", "work-rail-link");
-  cta.href = item.ctaUrl;
-  cta.setAttribute("aria-label", "Learn more");
-
-  const ctaLabel = createElement("span", "work-rail-link-label");
-  ctaLabel.textContent = "Learn more";
-
-  const ctaArrow = createElement("span", "work-rail-link-arrow");
-  ctaArrow.textContent = "\u203a";
-  ctaArrow.setAttribute("aria-hidden", "true");
-
-  cta.appendChild(ctaLabel);
-  cta.appendChild(ctaArrow);
-
   copy.appendChild(description);
   copy.appendChild(stats);
-  copy.appendChild(cta);
+
+  if (item.ctaUrl) {
+    const cta = createElement("a", "work-rail-link");
+    cta.href = item.ctaUrl;
+    cta.setAttribute("aria-label", "Learn more");
+
+    const ctaLabel = createElement("span", "work-rail-link-label");
+    ctaLabel.textContent = "Learn more";
+
+    const ctaArrow = createElement("span", "work-rail-link-arrow");
+    ctaArrow.textContent = "\u203a";
+    ctaArrow.setAttribute("aria-hidden", "true");
+
+    cta.appendChild(ctaLabel);
+    cta.appendChild(ctaArrow);
+    copy.appendChild(cta);
+  }
 
   article.appendChild(mediaLink);
   article.appendChild(copy);

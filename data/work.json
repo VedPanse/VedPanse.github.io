@@ -2,22 +2,20 @@
   {
     "tabLabel": "Apple",
     "title": "Apple",
-    "description": "Incoming Software Engineering Intern on the Keyboard Infrastructure team at Apple, focused on building low-latency systems for typing and input experiences.",
+    "description": "Built cross-app context retention infrastructure in Objective-C and Swift, enabling context-aware keyboard suggestions and actions through XPC-based daemons.",
     "stats": [
       {
-        "value": "Real-Time",
-        "label": "input systems"
+        "value": "~2 sec",
+        "label": "end-to-end latency"
       },
       {
-        "value": "At Scale",
-        "label": "global user experiences"
+        "value": "Cross-App",
+        "label": "context retention for keyboard intelligence"
       }
     ],
-    "workPostSlug": "apple-keyboard-infrastructure",
-    "ctaText": "Exploring how real-time systems power everyday typing",
     "visual": {
       "label": "Apple",
-      "meta": "Systems / Input / Real-Time"
+      "meta": "Systems for AI / Keyboard Infrastructure"
     }
   },
   {

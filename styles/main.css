@@ -771,6 +771,7 @@ body.is-tech-detail-open {
   position: relative;
   width: 100%;
   min-height: min(78vh, 720px);
+  -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
   transition: transform 0.75s ease;
 }
@@ -781,17 +782,29 @@ body.is-tech-detail-open {
 
 .project-card.is-flipped .project-card-face--front {
   pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
 }
 
 .project-card:not(.is-flipped) .project-card-face--back {
   pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.project-card:not(.is-flipped) .project-card-face--front,
+.project-card.is-flipped .project-card-face--back {
+  opacity: 1;
+  visibility: visible;
 }
 
 .project-card-face {
   position: absolute;
   inset: 0;
   border-radius: 36px;
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
   background: #262626;
   box-shadow:
     0 20px 60px rgba(0, 0, 0, 0.45),
@@ -812,15 +825,12 @@ body.is-tech-detail-open {
   font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   overflow-x: hidden;
   overflow-y: hidden;
-  padding-bottom: 96px;
+  padding-bottom: 24px;
 }
 
 .project-card-face--front {
-  overflow-x: hidden;
-  overflow-y: auto;
-  overscroll-behavior-x: contain;
-  overscroll-behavior-y: auto;
-  -webkit-overflow-scrolling: touch;
+  --project-front-icon-size: 100px;
+  overflow: clip;
   padding-bottom: 112px;
 }
 
@@ -848,13 +858,20 @@ body.is-tech-detail-open {
   min-width: 0;
   align-self: start;
   display: grid;
+  grid-auto-rows: max-content;
+  align-content: start;
   gap: 16px;
   justify-items: start;
   overflow-x: hidden;
   overflow-y: auto;
+  scrollbar-width: none;
   overscroll-behavior-y: auto;
   -webkit-overflow-scrolling: touch;
-  padding-bottom: 84px;
+  padding-bottom: 24px;
+}
+
+.project-card-back::-webkit-scrollbar {
+  display: none;
 }
 
 .project-card-face--back p {
@@ -1055,10 +1072,12 @@ body.is-tech-detail-open {
 
 .project-card-face--front .project-icon-columns {
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: flex-start;
-  align-content: flex-start;
-  gap: clamp(8px, 1vw, 12px);
+  align-items: flex-start;
+  gap: min(1%, 12px);
+  width: 100%;
+  min-width: 0;
 }
 
 .project-card-face--front .project-icon-column {
@@ -1067,9 +1086,12 @@ body.is-tech-detail-open {
 }
 
 .project-card-face--front .project-icon-band .app-icon {
-  width: 100px;
-  height: 100px;
-  border-radius: 18px;
+  flex: 0 1 var(--project-front-icon-size);
+  min-width: 0;
+  width: var(--project-front-icon-size);
+  height: auto;
+  aspect-ratio: 1;
+  border-radius: 18%;
 }
 
 .project-card-face--front .project-stack {
@@ -2027,14 +2049,8 @@ body.is-tech-detail-open {
     padding: 28px;
   }
 
-  .project-card-face--front .project-icon-columns {
-    gap: 12px;
-  }
-
-  .project-card-face--front .project-icon-band .app-icon {
-    width: 80px;
-    height: 80px;
-    border-radius: 18px;
+  .project-card-face--front {
+    --project-front-icon-size: 80px;
   }
 
   .projects-indicator {
@@ -2161,10 +2177,7 @@ body.is-tech-detail-open {
   .project-card-face {
     padding: 24px;
     min-height: 560px;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
     overflow: hidden;
-    transition: opacity 0.2s ease, visibility 0.2s ease;
   }
 
   .project-card-placeholder {
@@ -2173,8 +2186,7 @@ body.is-tech-detail-open {
   }
 
   .project-card-face--front {
-    overflow-x: hidden;
-    overflow-y: auto;
+    overflow: clip;
     padding-bottom: 96px;
   }
 
@@ -2182,27 +2194,6 @@ body.is-tech-detail-open {
     overflow-x: hidden;
     overflow-y: hidden;
     place-items: start;
-  }
-
-  .project-card-rotator {
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-  }
-
-  .project-card.is-flipped .project-card-face--front {
-    opacity: 0;
-    visibility: hidden;
-  }
-
-  .project-card:not(.is-flipped) .project-card-face--back {
-    opacity: 0;
-    visibility: hidden;
-  }
-
-  .project-card:not(.is-flipped) .project-card-face--front,
-  .project-card.is-flipped .project-card-face--back {
-    opacity: 1;
-    visibility: visible;
   }
 
   .project-meta h3 {
@@ -2223,6 +2214,7 @@ body.is-tech-detail-open {
     height: 100%;
     max-height: 100%;
     min-height: 0;
+    padding-bottom: 84px;
   }
 
   .project-icon-band {
@@ -2231,10 +2223,6 @@ body.is-tech-detail-open {
 
   .project-icon-columns {
     gap: 16px;
-  }
-
-  .project-card-face--front .project-icon-columns {
-    gap: 10px;
   }
 
   .project-card-face--front .project-icon-band {
@@ -2249,10 +2237,8 @@ body.is-tech-detail-open {
     border-radius: 18px;
   }
 
-  .project-card-face--front .project-icon-band .app-icon {
-    width: 80px;
-    height: 80px;
-    border-radius: 18px;
+  .project-card-face--front {
+    --project-front-icon-size: 80px;
   }
 
   .project-card-placeholder__icons span {
@@ -2425,14 +2411,8 @@ body.is-tech-detail-open {
     line-height: 1.38;
   }
 
-  .project-card-face--front .project-icon-columns {
-    gap: 8px;
-  }
-
-  .project-card-face--front .project-icon-band .app-icon {
-    width: 64px;
-    height: 64px;
-    border-radius: 18px;
+  .project-card-face--front {
+    --project-front-icon-size: 64px;
   }
 }
 
